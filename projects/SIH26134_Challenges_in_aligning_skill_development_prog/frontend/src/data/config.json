@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26134",
+  "title": "Challenges in aligning skill development programs with industry requirements and emerging job market demands",
+  "organization": "Government Of Maharashtra",
+  "theme": "Miscellaneous",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

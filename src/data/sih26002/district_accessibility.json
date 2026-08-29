@@ -1,0 +1,50 @@
+[
+  {
+    "district": "East Khasi Hills",
+    "state": "Meghalaya",
+    "index": 72,
+    "status": "Moderate",
+    "active_trucks": 34,
+    "risk_factors": "Monsoon fog, steep curves"
+  },
+  {
+    "district": "East Sikkim",
+    "state": "Sikkim",
+    "index": 28,
+    "status": "Severely Impaired",
+    "active_trucks": 12,
+    "risk_factors": "NH-10 Teesta River slope wash"
+  },
+  {
+    "district": "Papum Pare",
+    "state": "Arunachal Pradesh",
+    "index": 89,
+    "status": "Highly Accessible",
+    "active_trucks": 28,
+    "risk_factors": "Clear highways"
+  },
+  {
+    "district": "Aizawl",
+    "state": "Mizoram",
+    "index": 48,
+    "status": "Vulnerable",
+    "active_trucks": 19,
+    "risk_factors": "Hunthar road sinking"
+  },
+  {
+    "district": "Kohima",
+    "state": "Nagaland",
+    "index": 85,
+    "status": "Good",
+    "active_trucks": 42,
+    "risk_factors": "Minor pavement potholes"
+  },
+  {
+    "district": "Noney",
+    "state": "Manipur",
+    "index": 62,
+    "status": "Moderate",
+    "active_trucks": 16,
+    "risk_factors": "Tupul cut slope maintenance"
+  }
+]

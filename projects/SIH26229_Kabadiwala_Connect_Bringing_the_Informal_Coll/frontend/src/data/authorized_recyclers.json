@@ -1,0 +1,67 @@
+[
+  {
+    "recycler_id": "REC-JNARDDC-NAG-01",
+    "company_name": "Eco-Recycle JNARDDC Technology Centre",
+    "city": "Nagpur",
+    "state": "Maharashtra",
+    "cpcb_epr_registration": "CPCB/E-WASTE/2026/MAH-0819",
+    "facility_location": "JNARDDC Campus, Wadi, Nagpur",
+    "materials_accepted": [
+      "PCBs",
+      "Lithium Batteries",
+      "Rare Earth Magnets",
+      "Copper Cables"
+    ],
+    "min_lot_weight_kg": 10.0,
+    "pickup_radius_km": 45.0,
+    "contact_phone": "+91 7104 297XXX",
+    "payment_modes": [
+      "Instant Cash",
+      "UPI DBT to Bank Account"
+    ],
+    "status": "CPCB_CERTIFIED_ACTIVE"
+  },
+  {
+    "recycler_id": "REC-ATTERO-NOIDA-02",
+    "company_name": "Attero Circular Economy Plant",
+    "city": "Noida / Delhi-NCR",
+    "state": "Uttar Pradesh",
+    "cpcb_epr_registration": "CPCB/EPR/2026/UP-0412",
+    "facility_location": "Ecotech Industrial Area, Greater Noida",
+    "materials_accepted": [
+      "All E-Waste",
+      "Batteries",
+      "PCBs",
+      "E-Motors"
+    ],
+    "min_lot_weight_kg": 25.0,
+    "pickup_radius_km": 60.0,
+    "contact_phone": "+91 120 488XXXX",
+    "payment_modes": [
+      "Instant UPI",
+      "Cash Slip"
+    ],
+    "status": "CPCB_CERTIFIED_ACTIVE"
+  },
+  {
+    "recycler_id": "REC-KARO-MUM-03",
+    "company_name": "Karo Sambhav EPR Collection Hub",
+    "city": "Pune & Mumbai",
+    "state": "Maharashtra",
+    "cpcb_epr_registration": "CPCB/EPR/2026/MAH-0941",
+    "facility_location": "Bhosari MIDC, Pune",
+    "materials_accepted": [
+      "PCBs",
+      "Telecom Scrap",
+      "Appliances"
+    ],
+    "min_lot_weight_kg": 15.0,
+    "pickup_radius_km": 50.0,
+    "contact_phone": "+91 20 6710XXXX",
+    "payment_modes": [
+      "Instant Bank Transfer",
+      "Cash"
+    ],
+    "status": "CPCB_CERTIFIED_ACTIVE"
+  }
+]

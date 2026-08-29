@@ -1,0 +1,11 @@
+[
+  {
+    "corridor_id": "CORRIDOR-WYD-GREEN",
+    "route_name": "Chooralmala \u2794 Meppadi Bypass \u2794 Kalpetta Hub",
+    "length_km": 14.2,
+    "bridge_load_capacity_tons": 65.0,
+    "debris_choke_point_risk": "LOW (Elevated Ridge Alignment)",
+    "ndrf_convoy_eta_mins": 22,
+    "status": "ACTIVE_CLEAR_FOR_TRANSIT"
+  }
+]

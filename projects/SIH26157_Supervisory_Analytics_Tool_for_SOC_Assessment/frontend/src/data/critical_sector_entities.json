@@ -1,0 +1,44 @@
+[
+  {
+    "cse_id": "CSE-ENERGY-004",
+    "entity_name": "National Power Grid (Northern Load Dispatch Centre)",
+    "entity_name_hi": "\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u092a\u093e\u0935\u0930 \u0917\u094d\u0930\u093f\u0921 (\u0909\u0924\u094d\u0924\u0930\u0940 \u0932\u094b\u0921 \u0921\u093f\u0938\u094d\u092a\u0948\u091a \u0938\u0947\u0902\u091f\u0930)",
+    "sector": "Power & Energy (Critical Sector)",
+    "supervisory_risk_score": 88.4,
+    "supervisory_status": "HIGH_SUPERVISORY_ATTENTION_REQUIRED",
+    "total_alerts_analyzed": 14200,
+    "median_closure_time_seconds": 38.0,
+    "execution_gap_flags": 14,
+    "negative_space_blindspots": 6,
+    "key_supervisory_finding": "High-severity SCADA alerts closed in under 40 seconds without escalation. 14 Remote Terminal Units (RTUs) transmitting zero security telemetry.",
+    "peer_deviation_pct": "+420% faster closure than sectoral peer median"
+  },
+  {
+    "cse_id": "CSE-BANK-012",
+    "entity_name": "Apex Interbank Payment Switch & Settlement Gateway",
+    "entity_name_hi": "\u0936\u0940\u0930\u094d\u0937 \u0907\u0902\u091f\u0930\u092c\u0948\u0902\u0915 \u092d\u0941\u0917\u0924\u093e\u0928 \u0938\u094d\u0935\u093f\u091a \u090f\u0935\u0902 \u0928\u093f\u092a\u091f\u093e\u0928 \u0917\u0947\u091f\u0935\u0947",
+    "sector": "Banking, Financial Services & Insurance (BFSI)",
+    "supervisory_risk_score": 32.5,
+    "supervisory_status": "SATISFACTORY_SUPERVISORY_ASSURANCE",
+    "total_alerts_analyzed": 48500,
+    "median_closure_time_seconds": 940.0,
+    "execution_gap_flags": 2,
+    "negative_space_blindspots": 1,
+    "key_supervisory_finding": "Robust root-cause investigation with 98.2% escalation fidelity on critical wire anomalies.",
+    "peer_deviation_pct": "Aligned with Tier-1 Banking Baselines"
+  },
+  {
+    "cse_id": "CSE-DEFENSE-009",
+    "entity_name": "Strategic Coastal Radar & Satellite Uplink Telemetry",
+    "entity_name_hi": "\u0930\u0923\u0928\u0940\u0924\u093f\u0915 \u0924\u091f\u0940\u092f \u0930\u0921\u093e\u0930 \u0914\u0930 \u0909\u092a\u0917\u094d\u0930\u0939 \u0905\u092a\u0932\u093f\u0902\u0915 \u091f\u0947\u0932\u0940\u092e\u0947\u091f\u094d\u0930\u0940",
+    "sector": "Defense & Strategic Infrastructure",
+    "supervisory_risk_score": 76.2,
+    "supervisory_status": "SUPERVISORY_INSPECTION_MANDATED",
+    "total_alerts_analyzed": 8900,
+    "median_closure_time_seconds": 62.0,
+    "execution_gap_flags": 9,
+    "negative_space_blindspots": 4,
+    "key_supervisory_finding": "Repetitive template-driven investigation notes on persistent unauthorized USB access.",
+    "peer_deviation_pct": "+68% repetitive disposition templates"
+  }
+]

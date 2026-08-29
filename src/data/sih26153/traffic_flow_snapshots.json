@@ -1,0 +1,54 @@
+[
+  {
+    "snapshot_id": "SNAP-SCADA-2026-981",
+    "network_segment": "Critical Infrastructure SCADA Substation Grid (10.240.12.0/24)",
+    "network_segment_hi": "\u092e\u0939\u0924\u094d\u0935\u092a\u0942\u0930\u094d\u0923 \u092c\u0941\u0928\u093f\u092f\u093e\u0926\u0940 \u0922\u093e\u0902\u091a\u093e \u0938\u094d\u0915\u093e\u0921\u093e \u0938\u092c\u0938\u094d\u091f\u0947\u0936\u0928 \u0917\u094d\u0930\u093f\u0921",
+    "flow_features": {
+      "src_ip": "192.168.4.112",
+      "dst_ip": "10.240.12.8",
+      "tcp_syn_flag_ratio": 0.88,
+      "bytes_per_flow": 14280,
+      "packets_per_flow": 124,
+      "flow_duration_ms": 420.5,
+      "iat_variance_ms": 18.2
+    },
+    "packet_features": {
+      "ttl_variance": 4.8,
+      "tcp_window_size_bytes": 1024,
+      "payload_entropy": 7.84,
+      "port_scan_pattern": "RANDOMIZED_PORT_SWEEP (Ports 445, 3389, 22, 502)"
+    },
+    "current_observed_stage": "Initial Access / Port Scan (T1190)",
+    "predicted_future_stage_k3": "Lateral Movement & SCADA PLC Command Injection (T1021 / T0855)",
+    "k_step_infiltration_prob_pct": 96.4,
+    "early_warning_lead_time_seconds": 38.0,
+    "threat_severity": "CRITICAL_ATTACK_TRAJECTORY_CONVERGING",
+    "status": "PROACTIVE_DEFENSE_FIREWALL_BLOCK_TRIGGERED"
+  },
+  {
+    "snapshot_id": "SNAP-BANK-2026-441",
+    "network_segment": "Core Banking Payment Switch & HSM Cluster",
+    "network_segment_hi": "\u0915\u094b\u0930 \u092c\u0948\u0902\u0915\u093f\u0902\u0917 \u092a\u0947\u092e\u0947\u0902\u091f \u0938\u094d\u0935\u093f\u091a \u0914\u0930 \u090f\u091a\u090f\u0938\u090f\u092e \u0915\u094d\u0932\u0938\u094d\u091f\u0930",
+    "flow_features": {
+      "src_ip": "172.16.88.42",
+      "dst_ip": "10.100.4.1",
+      "tcp_syn_flag_ratio": 0.65,
+      "bytes_per_flow": 89400,
+      "packets_per_flow": 450,
+      "flow_duration_ms": 1200.0,
+      "iat_variance_ms": 4.1
+    },
+    "packet_features": {
+      "ttl_variance": 1.2,
+      "tcp_window_size_bytes": 65535,
+      "payload_entropy": 6.12,
+      "port_scan_pattern": "DIRECT_BURST_INJECTION (Port 8443 API)"
+    },
+    "current_observed_stage": "Credential Stuffing / Brute Force (T1110)",
+    "predicted_future_stage_k3": "Privilege Escalation & Unauthorized SWIFT Wire Exfiltration (T1068 / T1048)",
+    "k_step_infiltration_prob_pct": 89.2,
+    "early_warning_lead_time_seconds": 24.5,
+    "threat_severity": "HIGH_VALUE_EXFILTRATION_RISK",
+    "status": "ADAPTIVE_MFA_CHALLENGE_DEPLOYED"
+  }
+]

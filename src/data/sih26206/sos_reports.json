@@ -1,0 +1,28 @@
+[
+  {
+    "sos_id": "SOS-2026-08194",
+    "citizen_name": "Anil Talukdar (Community Lead)",
+    "contact_phone": "+91 94350 XXXXX",
+    "location": "Sarthebari, Barpeta (GPS: 26.3458\u00b0 N, 91.0284\u00b0 E)",
+    "hazard_type": "RIVER_FLOOD_STRANDED",
+    "family_members_count": 8,
+    "urgency_level": "CRITICAL_LIFE_THREAT",
+    "situation_details": "Water reached 1st floor roof level. 2 elderly persons requiring immediate boat evacuation.",
+    "ai_triage_score": 98.5,
+    "assigned_unit": "NDRF-BN-01-GUW (Boat Alpha-4)",
+    "status": "RESCUE_BOAT_EN_ROUTE"
+  },
+  {
+    "sos_id": "SOS-2026-04218",
+    "citizen_name": "Manas Das",
+    "contact_phone": "+91 98610 XXXXX",
+    "location": "Astaranga Coastal Village, Puri (GPS: 19.9812\u00b0 N, 86.2710\u00b0 E)",
+    "hazard_type": "CYCLONE_STORM_SURGE",
+    "family_members_count": 4,
+    "urgency_level": "HIGH_EVACUATION_NEEDED",
+    "situation_details": "Thatched roof blown away by 120 km/h wind gusts. Need transport to Cyclone Shelter #4.",
+    "ai_triage_score": 92.0,
+    "assigned_unit": "SDRF Coastal Quick Response Team",
+    "status": "DISPATCH_AUTHORIZED"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "vuln_id": "VULN-WM-2026-001",
+    "title": "Broken Object Level Authorization (BOLA / IDOR) in Geo-Telemetry Stream API",
+    "title_hi": "\u091c\u093f\u092f\u094b-\u091f\u0947\u0932\u0940\u092e\u0947\u091f\u094d\u0930\u0940 \u0938\u094d\u091f\u094d\u0930\u0940\u092e \u090f\u092a\u0940\u0906\u0908 \u092e\u0947\u0902 \u092a\u094d\u0930\u093e\u0927\u093f\u0915\u0930\u0923 \u092d\u0947\u0926\u094d\u092f\u0924\u093e (BOLA)",
+    "affected_component": "REST Endpoint: /api/v2/telemetry/nodes/{node_id}/live-stream",
+    "severity": "HIGH (CVSS 8.8)",
+    "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+    "proof_of_concept": "curl -X GET 'https://worldmonitor.ntro.local/api/v2/telemetry/nodes/NODE-ALPHA-99/live-stream' -H 'Authorization: Bearer <LOW_PRIVILEGE_TOKEN>'",
+    "business_impact": "Allows authenticated low-privilege users to view and modify classified satellite surveillance feeds belonging to other agencies.",
+    "remediation": "Enforce strict tenant-scoped RBAC authorization checks validating user ownership before returning node telemetry.",
+    "status": "POC_VERIFIED_IN_SANDBOX"
+  },
+  {
+    "vuln_id": "VULN-WM-2026-002",
+    "title": "JWT Algorithm Confusion & Weak Secret Key Recovery",
+    "title_hi": "\u091c\u0947\u0921\u092c\u094d\u0932\u094d\u092f\u0942\u091f\u0940 \u090f\u0932\u094d\u0917\u094b\u0930\u093f\u0925\u092e \u092d\u094d\u0930\u092e \u0914\u0930 \u0915\u092e\u091c\u094b\u0930 \u0917\u0941\u092a\u094d\u0924 \u0915\u0941\u0902\u091c\u0940",
+    "affected_component": "Auth Service: /api/v1/auth/jwt-verify",
+    "severity": "CRITICAL (CVSS 9.4)",
+    "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "proof_of_concept": "Tampered JWT with alg='HS256' signed using public RSA key string to forge administrative role tokens.",
+    "business_impact": "Complete authentication bypass enabling arbitrary privilege escalation to System Administrator.",
+    "remediation": "Hardcode verification algorithm to 'RS256' only and reject asymmetric-to-symmetric key substitutions.",
+    "status": "POC_VERIFIED_IN_SANDBOX"
+  }
+]

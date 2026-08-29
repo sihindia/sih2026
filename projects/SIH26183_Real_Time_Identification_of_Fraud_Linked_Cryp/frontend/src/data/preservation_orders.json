@@ -1,0 +1,11 @@
+[
+  {
+    "order_id": "ORDER-PRESERVE-2026-1049",
+    "ncrp_ref": "NCRP-2026-CHE-1049",
+    "target_exchange": "Binance Global",
+    "legal_section": "Section 91 CrPC (Preservation of Electronic Evidence)",
+    "frozen_amount_usdt": 210000.0,
+    "police_station": "Cyber Crime Police Station, Chennai City",
+    "status": "COMPLIANCE_CONFIRMED_FUNDS_LOCKED"
+  }
+]

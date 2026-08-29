@@ -1,0 +1,11 @@
+[
+  {
+    "trail_id": "HAWALA-TR-01",
+    "origin_account": "Mule Current A/c #918204918 (HDFC)",
+    "destination": "Alpha Shell Global FZE (RAK Freezone, UAE)",
+    "amount_inr": 148000000.0,
+    "layering_hops": 4,
+    "flagged_by": "Financial Intelligence Unit (FIU-IND)",
+    "status": "ACCOUNTS_FROZEN"
+  }
+]

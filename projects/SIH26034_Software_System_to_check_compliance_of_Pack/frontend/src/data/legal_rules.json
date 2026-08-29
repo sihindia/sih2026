@@ -1,0 +1,51 @@
+[
+  {
+    "rule_no": "Rule 6(1)(a)",
+    "title": "Name & Address of Manufacturer / Packer / Importer",
+    "mandatory": true,
+    "penalty_first_offence": "\u20b925,000",
+    "description": "Every package must bear the complete postal address and identity of manufacturer or packer."
+  },
+  {
+    "rule_no": "Rule 6(1)(b)",
+    "title": "Generic / Common Name of Commodity",
+    "mandatory": true,
+    "penalty_first_offence": "\u20b925,000",
+    "description": "The common or generic name of commodity contained in the package must be prominently declared."
+  },
+  {
+    "rule_no": "Rule 6(1)(c)",
+    "title": "Net Quantity & Standard Units",
+    "mandatory": true,
+    "penalty_first_offence": "\u20b925,000",
+    "description": "Net quantity in standard SI units (kg, g, L, ml, N). Symbols like 'gm', 'gms', 'ltr' are prohibited."
+  },
+  {
+    "rule_no": "Rule 6(1)(d)",
+    "title": "Month & Year of Manufacture / Packing",
+    "mandatory": true,
+    "penalty_first_offence": "\u20b925,000",
+    "description": "Clear declaration of month and year of manufacture or pre-packing."
+  },
+  {
+    "rule_no": "Rule 6(1)(e)",
+    "title": "Maximum Retail Price (MRP)",
+    "mandatory": true,
+    "penalty_first_offence": "\u20b925,000 to \u20b950,000",
+    "description": "Must be declared in format '\u20b9 XX.XX (incl. of all taxes)' or 'MRP Rs. XX.XX incl. of all taxes'. Dual MRP is illegal."
+  },
+  {
+    "rule_no": "Rule 6(1)(s)",
+    "title": "Unit Sale Price (USP)",
+    "mandatory": true,
+    "penalty_first_offence": "\u20b925,000",
+    "description": "Mandatory declaration of price per unit (per g/kg/ml/L/number) for consumer comparison."
+  },
+  {
+    "rule_no": "Rule 7 / Table-II",
+    "title": "Numeral & Letter Font Height on PDP",
+    "mandatory": true,
+    "penalty_first_offence": "\u20b920,000",
+    "description": "Minimum numeral height determined by Principal Display Panel (PDP) area (1.0mm to 4.0mm)."
+  }
+]

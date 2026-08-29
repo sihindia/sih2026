@@ -1,0 +1,30 @@
+[
+  {
+    "source_name": "High-Res Drone Orthorectified Imagery (ORI)",
+    "agency": "Survey of India / Drone Partner",
+    "coord_system": "EPSG:3857 (WGS 84 Web Mercator)",
+    "accuracy_m": 0.05,
+    "status": "SYNCHRONIZED"
+  },
+  {
+    "source_name": "State Revenue Cadastral Maps (RoR)",
+    "agency": "Revenue & Land Records Dept",
+    "coord_system": "EPSG:32643 (UTM Zone 43N)",
+    "accuracy_m": 0.5,
+    "status": "HARMONIZED"
+  },
+  {
+    "source_name": "Municipal GIS Property Tax Database",
+    "agency": "Municipal Corporation Urban Body",
+    "coord_system": "Local Coordinate Grid",
+    "accuracy_m": 0.8,
+    "status": "COORDINATES_TRANSFORMED"
+  },
+  {
+    "source_name": "Underground Water & Power Utility Network",
+    "agency": "Public Health & Discom",
+    "coord_system": "EPSG:3857",
+    "accuracy_m": 0.3,
+    "status": "SYNCHRONIZED"
+  }
+]

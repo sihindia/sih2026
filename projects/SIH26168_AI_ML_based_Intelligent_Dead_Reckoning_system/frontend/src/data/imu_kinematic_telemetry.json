@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp_sec": 0.1,
+    "accel_x_mps2": 0.05,
+    "accel_y_mps2": 1.24,
+    "accel_z_mps2": 9.81,
+    "gyro_yaw_rads": 0.002,
+    "predicted_velocity_kmh": 59.8,
+    "engine_vibration_filtered": true
+  },
+  {
+    "timestamp_sec": 0.2,
+    "accel_x_mps2": -0.02,
+    "accel_y_mps2": 1.3,
+    "accel_z_mps2": 9.83,
+    "gyro_yaw_rads": 0.004,
+    "predicted_velocity_kmh": 60.1,
+    "engine_vibration_filtered": true
+  },
+  {
+    "timestamp_sec": 0.3,
+    "accel_x_mps2": 0.01,
+    "accel_y_mps2": 1.22,
+    "accel_z_mps2": 9.79,
+    "gyro_yaw_rads": 0.001,
+    "predicted_velocity_kmh": 60.0,
+    "engine_vibration_filtered": true
+  }
+]

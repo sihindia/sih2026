@@ -1,0 +1,20 @@
+[
+  {
+    "tool_id": "TOOL-OPTSAR",
+    "name": "OptSAR-Fusion-Net",
+    "description": "Joint Cross-Modal Optical & SAR feature extractor for all-weather mapping",
+    "specialty": "Cloud-Penetrating Water & Built-Up Extraction"
+  },
+  {
+    "tool_id": "TOOL-CDVQA",
+    "name": "BiTemporal-CDVQA-Transformer",
+    "description": "Multitemporal change detection and natural language change question answering",
+    "specialty": "Urban Expansion & Disaster Damage Delta"
+  },
+  {
+    "tool_id": "TOOL-SAMGEO",
+    "name": "RS-Grounding-SAM",
+    "description": "Text-prompted zero-shot spatial bounding box and polygon segmentation",
+    "specialty": "Precise Geospatial Feature Localization"
+  }
+]

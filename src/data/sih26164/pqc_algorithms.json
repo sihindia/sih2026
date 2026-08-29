@@ -1,0 +1,23 @@
+[
+  {
+    "standard": "NIST FIPS 203",
+    "name": "ML-KEM (Crystals-Kyber)",
+    "type": "Key Encapsulation Mechanism (KEM)",
+    "security_category": "Category 3 (AES-192 Equivalent)",
+    "use_case": "TLS 1.3 Key Exchange & Hybrid Encryption"
+  },
+  {
+    "standard": "NIST FIPS 204",
+    "name": "ML-DSA (Crystals-Dilithium)",
+    "type": "Digital Signature Algorithm",
+    "security_category": "Category 3",
+    "use_case": "X.509 PKI Certificates & Document Signing"
+  },
+  {
+    "standard": "NIST FIPS 205",
+    "name": "SLH-DSA (SPHINCS+)",
+    "type": "Stateless Hash-Based Digital Signature",
+    "security_category": "Category 5 (AES-256 Quantum Proof)",
+    "use_case": "Secure Boot & Firmware Integrity"
+  }
+]

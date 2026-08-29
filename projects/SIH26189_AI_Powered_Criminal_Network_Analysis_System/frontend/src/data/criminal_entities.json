@@ -1,0 +1,63 @@
+[
+  {
+    "entity_id": "ENT-KINGPIN-01",
+    "name": "Vikramaditya 'Vikky' Singhania",
+    "role": "Cartel Kingpin & Overseas Mastermind",
+    "role_hi": "\u0938\u093f\u0902\u0921\u093f\u0915\u0947\u091f \u0938\u0930\u0917\u0928\u093e (\u0926\u0941\u092c\u0908 \u0939\u0948\u0902\u0921\u0932\u0930)",
+    "location": "Dubai, UAE / Mumbai Safehouse",
+    "betweenness_centrality": 0.942,
+    "pagerank_score": 0.885,
+    "degree_connections": 18,
+    "linked_firs": [
+      "FIR-MUM-2026-441",
+      "FIR-DEL-2025-1092"
+    ],
+    "threat_level": "CRITICAL_RED_WARRANT",
+    "status": "RED_CORNER_NOTICE_ISSUED"
+  },
+  {
+    "entity_id": "ENT-MULE-HAWALA-02",
+    "name": "Sameer Qureshi",
+    "role": "Hawala Layering & Cash Courier Chief",
+    "role_hi": "\u0939\u0935\u093e\u0932\u093e \u0928\u0947\u091f\u0935\u0930\u094d\u0915 \u0938\u0902\u091a\u093e\u0932\u0915",
+    "location": "Chandni Chowk, Delhi",
+    "betweenness_centrality": 0.812,
+    "pagerank_score": 0.76,
+    "degree_connections": 14,
+    "linked_firs": [
+      "FIR-DEL-2026-302"
+    ],
+    "threat_level": "HIGH_FINANCIAL_FRAUD",
+    "status": "UNDER_SURVEILLANCE"
+  },
+  {
+    "entity_id": "ENT-TECH-OPS-03",
+    "name": "Pooja Sharma",
+    "role": "Cyber Extortion Call Center Operations Head",
+    "role_hi": "\u0938\u093e\u0907\u092c\u0930 \u0915\u0949\u0932 \u0938\u0947\u0902\u091f\u0930 \u0911\u092a\u0930\u0947\u0936\u0928\u094d\u0938 \u0939\u0947\u0921",
+    "location": "Sector 62, Noida",
+    "betweenness_centrality": 0.745,
+    "pagerank_score": 0.69,
+    "degree_connections": 12,
+    "linked_firs": [
+      "FIR-NOIDA-2026-118"
+    ],
+    "threat_level": "HIGH_CYBER_CRIME",
+    "status": "ARRESTED_CUSTODY"
+  },
+  {
+    "entity_id": "ENT-SIM-BOX-04",
+    "name": "Rahul Verma",
+    "role": "SIM Box Procurement & Fake KYC Provider",
+    "role_hi": "\u092b\u0930\u094d\u091c\u0940 \u0938\u093f\u092e \u0935 \u0906\u0908\u090f\u092e\u0908\u0906\u0908 \u0938\u092a\u094d\u0932\u093e\u092f\u0930",
+    "location": "Mewat, Haryana",
+    "betweenness_centrality": 0.62,
+    "pagerank_score": 0.51,
+    "degree_connections": 9,
+    "linked_firs": [
+      "FIR-HR-2026-88"
+    ],
+    "threat_level": "MEDIUM_INFRASTRUCTURE",
+    "status": "BAIL_REVOKED"
+  }
+]

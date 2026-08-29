@@ -1,0 +1,34 @@
+[
+  {
+    "alert_id": "PIK-MH-2026-001",
+    "crop_name": "Bt Cotton (\u0915\u092a\u093e\u0938)",
+    "crop_name_mr": "\u092c\u0940\u091f\u0940 \u0915\u093e\u092a\u0942\u0938",
+    "pest_disease": "Pink Bollworm (\u0917\u0941\u0932\u093e\u092c\u0940 \u092c\u094b\u0902\u0921\u0905\u0933\u0940) & Rosette Flower",
+    "location": "Pusad Block, Yavatmal (Vidarbha)",
+    "farmer_name": "Pandurang Tukaram Raut",
+    "crop_stage": "90 Days (Flowering & Boll Formation)",
+    "trap_moth_count_night": 18,
+    "etl_threshold": 8,
+    "ai_diagnosis_confidence_pct": 98.4,
+    "recommended_ipm_treatment": "Install 5 Pheromone Lures/Acre + Spray Emamectin Benzoate 5% SG @ 4.5g / 10L Water",
+    "marathi_advisory": "\u0938\u093e\u0935\u0927 \u0930\u0939\u093e: \u0917\u0941\u0932\u093e\u092c\u0940 \u092c\u094b\u0902\u0921\u0905\u0933\u0940\u091a\u093e \u092a\u094d\u0930\u093e\u0926\u0941\u0930\u094d\u092d\u093e\u0935 \u0906\u0930\u094d\u0925\u093f\u0915 \u0928\u0941\u0915\u0938\u093e\u0928 \u092a\u093e\u0924\u0933\u0940\u091a\u094d\u092f\u093e \u0935\u0930 \u0917\u0947\u0932\u093e \u0906\u0939\u0947. \u0924\u093e\u0924\u094d\u0915\u093e\u0933 \u0915\u093e\u092e\u0917\u0902\u0927 \u0938\u093e\u092a\u0933\u0947 \u0932\u093e\u0935\u093e \u0906\u0923\u093f \u092b\u0935\u093e\u0930\u0923\u0940 \u0915\u0930\u093e.",
+    "yield_loss_prevented_pct": 42.0,
+    "status": "CRITICAL_ETL_ALERT_ISSUED"
+  },
+  {
+    "alert_id": "PIK-MH-2026-018",
+    "crop_name": "Grape Vine (\u0926\u094d\u0930\u093e\u0915\u094d\u0937 \u092c\u093e\u0917)",
+    "crop_name_mr": "\u0926\u094d\u0930\u093e\u0915\u094d\u0937 \u092c\u093e\u0917 (\u0938\u094b\u0928\u093e\u0915\u093e)",
+    "pest_disease": "Downy Mildew (\u0915\u0947\u0935\u0921\u093e / \u0921\u093e\u090a\u0928\u0940 \u092e\u093f\u0932\u094d\u0921\u094d\u092f\u0942)",
+    "location": "Dindori Valley, Nashik",
+    "farmer_name": "Kishor Ganpat Shinde",
+    "crop_stage": "Berry Development Stage",
+    "trap_moth_count_night": 0,
+    "etl_threshold": 0,
+    "ai_diagnosis_confidence_pct": 97.8,
+    "recommended_ipm_treatment": "Preventive Dimethomorph 50% WP @ 1g/L + Potassium Phosphonate 2g/L",
+    "marathi_advisory": "\u0922\u0917\u093e\u0933 \u0935\u093e\u0924\u093e\u0935\u0930\u0923 \u0935 \u0906\u0930\u094d\u0926\u094d\u0930\u0924\u0947\u092e\u0941\u0933\u0947 \u0921\u093e\u090a\u0928\u0940\u091a\u093e \u0927\u094b\u0915\u093e \u0935\u093e\u0922\u0932\u093e \u0906\u0939\u0947. \u0924\u093e\u0924\u094d\u0915\u093e\u0933 \u0906\u0902\u0924\u0930\u092a\u094d\u0930\u0935\u093e\u0939\u0940 \u092c\u0941\u0930\u0936\u0940\u0928\u093e\u0936\u0915\u093e\u091a\u0940 \u092b\u0935\u093e\u0930\u0923\u0940 \u0915\u0930\u093e.",
+    "yield_loss_prevented_pct": 55.0,
+    "status": "WEATHER_SPORE_ALERT_ISSUED"
+  }
+]

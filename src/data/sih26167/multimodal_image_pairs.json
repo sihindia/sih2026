@@ -1,0 +1,11 @@
+[
+  {
+    "pair_id": "RS-PAIR-001",
+    "region_name": "Kaziranga Brahmaputra Basin (Assam)",
+    "modality_a": "Cartosat-2S Multispectral",
+    "modality_b": "RISAT-1A SAR (C-Band)",
+    "co_registration_rmse_m": 0.32,
+    "cloud_coverage_optical_pct": 45.0,
+    "sar_penetration_fidelity_pct": 100.0
+  }
+]

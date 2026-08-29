@@ -1,0 +1,14 @@
+[
+  {
+    "trade": "Electrician",
+    "legacy_topics": "AC/DC Motors, House Wiring, Lead Acid Batteries",
+    "modern_gap": "Lithium Battery BMS, Solar Inverter Grid-Tie, EV Fast Chargers",
+    "upgrade_urgency": "CRITICAL"
+  },
+  {
+    "trade": "Fitter / Machinist",
+    "legacy_topics": "Manual Lathe, Shaping Machine, Vernier Caliper",
+    "modern_gap": "5-Axis CNC Milling, Robotic Arm Programming, CAD/CAM G-Code",
+    "upgrade_urgency": "HIGH"
+  }
+]

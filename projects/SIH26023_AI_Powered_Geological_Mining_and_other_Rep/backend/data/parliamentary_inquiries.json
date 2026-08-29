@@ -1,0 +1,29 @@
+[
+  {
+    "inquiry_id": "LS-STARRED-2026-401",
+    "house": "Lok Sabha",
+    "subject": "Current Domestic Coal Stock at Thermal Power Plants & Subsidiary Dispatch Readiness",
+    "mp_name": "Shri Rajesh Kumar Verma (Member of Parliament)",
+    "ai_drafted_response": "As on date, total pithead coal stock across CIL subsidiaries stands at 84.6 Million Tonnes (MT). SECL and MCL have scaled daily off-take via computerized Rapid Loading Systems (RLS) to 1.85 MT/day, ensuring an average 18.5 days stock at critical thermal power stations.",
+    "data_sources_verified": [
+      "SECL ERP",
+      "MCL Despatch Log",
+      "Central Electricity Authority (CEA) Portal"
+    ],
+    "confidence_score": 0.985,
+    "status": "DRAFT_APPROVED_FOR_MINISTER"
+  },
+  {
+    "inquiry_id": "RS-UNSTARRED-2026-118",
+    "house": "Rajya Sabha",
+    "subject": "Overburden Removal (OBR) Environmental Reclamation & Eco-Park Development by CMPDI",
+    "mp_name": "Smt. Meenakshi Sundaram (Member of Parliament)",
+    "ai_drafted_response": "Under CMPDI oversight, 3,840 Hectares of backfilled overburden dumps have been biologically reclaimed with native flora in FY2025-26. 14 eco-parks have been created across Singrauli and Korba coalfields.",
+    "data_sources_verified": [
+      "CMPDI GIS Portal",
+      "Forest Survey of India (FSI) Layer"
+    ],
+    "confidence_score": 0.992,
+    "status": "READY_FOR_TABLE"
+  }
+]

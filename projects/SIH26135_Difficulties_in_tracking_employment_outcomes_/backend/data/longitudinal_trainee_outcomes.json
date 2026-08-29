@@ -1,0 +1,34 @@
+[
+  {
+    "trainee_id": "TRN-MH-2025-8841",
+    "name": "Rahul Vilas Ghadge",
+    "name_mr": "\u0930\u093e\u0939\u0941\u0932 \u0935\u093f\u0932\u093e\u0938 \u0918\u093e\u0921\u0917\u0947",
+    "institution": "Government ITI Aundh, Pune",
+    "trade": "CNC Machinist & Robotics Programming",
+    "employer": "Bharat Forge Ltd (Mundhwa, Pune)",
+    "initial_salary_pm": 19500,
+    "current_salary_pm": 28500,
+    "wage_growth_pct": 46.1,
+    "retention_months": 14,
+    "epfo_uan": "100982348122",
+    "whatsapp_survey_response": "Promoted to Junior Automation Lead. High job satisfaction.",
+    "skill_relevance_pct": 96.0,
+    "status": "VERIFIED_LONGITUDINAL_EMPLOYMENT"
+  },
+  {
+    "trainee_id": "TRN-MH-2025-3319",
+    "name": "Sneha Ramesh Gaikwad",
+    "name_mr": "\u0938\u094d\u0928\u0947\u0939\u093e \u0930\u092e\u0947\u0936 \u0917\u093e\u092f\u0915\u0935\u093e\u0921",
+    "institution": "Govt Polytechnic Nashik (Amrutvahini)",
+    "trade": "Solar PV & Smart Inverter Microgrid Tech",
+    "employer": "Mahindra Susten CleanTech (Nashik)",
+    "initial_salary_pm": 18000,
+    "current_salary_pm": 25500,
+    "wage_growth_pct": 41.7,
+    "retention_months": 12,
+    "epfo_uan": "100947239104",
+    "whatsapp_survey_response": "Working on MW-scale grid-tie inverters. Stable career.",
+    "skill_relevance_pct": 94.5,
+    "status": "VERIFIED_LONGITUDINAL_EMPLOYMENT"
+  }
+]

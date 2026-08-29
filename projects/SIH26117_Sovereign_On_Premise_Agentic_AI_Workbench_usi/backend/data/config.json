@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26117",
+  "title": "Sovereign On-Premise Agentic AI Workbench using Open-Weight Multimodal LLMs for Confidential Industrial Work",
+  "organization": "Mangalore Refinery and Petrochemicals Limited (MRPL)",
+  "theme": "Smart Automation",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

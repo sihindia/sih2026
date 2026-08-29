@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26140",
+  "title": "AI-Based Interactive Quantum Algorithm Learning Platform",
+  "organization": "Egreen Quanta",
+  "theme": "Smart Education",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

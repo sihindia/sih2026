@@ -1,0 +1,29 @@
+[
+  {
+    "rank": 1,
+    "student_name": "Vikram Rathore",
+    "college": "IIT Bombay",
+    "daily_steps": 16420,
+    "calories_burned": 920,
+    "streak_days": 42,
+    "badge": "Fit India Champion"
+  },
+  {
+    "rank": 2,
+    "student_name": "Sneha Kulkarni",
+    "college": "COEP Pune",
+    "daily_steps": 14850,
+    "calories_burned": 780,
+    "streak_days": 35,
+    "badge": "Yoga Grandmaster"
+  },
+  {
+    "rank": 3,
+    "student_name": "Rohit Nair",
+    "college": "NIT Calicut",
+    "daily_steps": 13200,
+    "calories_burned": 690,
+    "streak_days": 28,
+    "badge": "Athletic Beast"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "report_id": "OIL-UA-2026-0812",
+    "location": "Duliajan Heavy Drilling Rig #04 (Assam Asset)",
+    "location_hi": "\u0926\u0941\u0932\u093f\u092f\u093e\u091c\u093e\u0928 \u092d\u093e\u0930\u0940 \u0921\u094d\u0930\u093f\u0932\u093f\u0902\u0917 \u0930\u093f\u0917 #04",
+    "raw_text": "Scaffolder was observed unhooking lanyard while transitioning between 14-meter tubular staging platforms during high-wind operations while overhead crane was hoisting a 2.4-ton drill collar directly above.",
+    "sif_potential": "HIGH_SIF_POTENTIAL (FATAL PRECURSOR)",
+    "ai_nlp_confidence_pct": 97.4,
+    "iogp_life_saving_rule": "Rule #9: Working at Height & Rule #6: Line of Fire",
+    "precursor_mechanism": "High-Energy Gravity Hazard + Suspended Dynamic Load + Missing Redundant Fall Arrest",
+    "remediation_directive": "Immediate Stop-Work Order Issued. Retrain Rig Crew on 100% Tie-Off Mandate.",
+    "status": "TRIAGED_HIGH_PRIORITY_HSE_ACTION"
+  },
+  {
+    "report_id": "OIL-UC-2026-1402",
+    "location": "Digboi Crude Gathering Station #02",
+    "location_hi": "\u0921\u093f\u0917\u092c\u094b\u0908 \u0915\u094d\u0930\u0942\u0921 \u0917\u0948\u0926\u0930\u093f\u0902\u0917 \u0938\u094d\u091f\u0947\u0936\u0928 #02",
+    "raw_text": "Small drip of lubricating grease (approx 30ml) noticed on pump motor casing floor plate. Cleaned with absorbent pad.",
+    "sif_potential": "NON_SIF_POTENTIAL (ROUTINE HOUSEKEEPING)",
+    "ai_nlp_confidence_pct": 98.2,
+    "iogp_life_saving_rule": "Standard Maintenance / Housekeeping",
+    "precursor_mechanism": "Low-Energy Surface Slip Hazard (Zero Fatal Energy Vector)",
+    "remediation_directive": "Logged for weekly housekeeping review.",
+    "status": "RESOLVED_ROUTINE"
+  }
+]

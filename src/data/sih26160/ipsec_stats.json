@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "IPsec Tunnels Monitored",
+    "value": "1,840 VPNs",
+    "trend": "Across Enterprise & Defense Sector"
+  },
+  {
+    "metric": "Deprecated Ciphers Isolated",
+    "value": "620 Gateways",
+    "trend": "Auto-Hardening Templates Dispatched"
+  },
+  {
+    "metric": "Mean Cryptographic Health",
+    "value": "91.2%",
+    "trend": "+24.5% After IKEv2 Enforcement"
+  }
+]

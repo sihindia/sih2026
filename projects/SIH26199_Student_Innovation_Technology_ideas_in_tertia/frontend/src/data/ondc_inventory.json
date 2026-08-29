@@ -1,0 +1,24 @@
+[
+  {
+    "item_id": "ONDC-KIRANA-01",
+    "item_name": "Premium Organic Royal Basmati Rice (5kg Bag)",
+    "seller_store": "Shree Ganesh Kirana (Barpeta / Pune)",
+    "base_mrp_inr": 450.0,
+    "ondc_discounted_price_inr": 395.0,
+    "stock_quantity": 42,
+    "delivery_eta_mins": 25,
+    "perishability_flag": false,
+    "status": "LIVE_ON_OPEN_NETWORK"
+  },
+  {
+    "item_id": "ONDC-KIRANA-02",
+    "item_name": "Cold-Pressed Mustard Oil (1L Bottle)",
+    "seller_store": "Kisan Direct Coldpress Hub",
+    "base_mrp_inr": 210.0,
+    "ondc_discounted_price_inr": 185.0,
+    "stock_quantity": 85,
+    "delivery_eta_mins": 30,
+    "perishability_flag": false,
+    "status": "LIVE_ON_OPEN_NETWORK"
+  }
+]

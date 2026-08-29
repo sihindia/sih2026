@@ -1,0 +1,78 @@
+{
+  "22436": [
+    {
+      "station_code": "NDLS",
+      "station_name": "New Delhi",
+      "sch_dep": "06:00 AM",
+      "act_dep": "06:00 AM",
+      "static_delay": "0 mins",
+      "ai_eta": "06:00 AM",
+      "recovery_action": "On-Time Dispatch"
+    },
+    {
+      "station_code": "CNB",
+      "station_name": "Kanpur Central",
+      "sch_arr": "10:08 AM",
+      "act_dep": "10:16 AM",
+      "static_delay": "+8 mins",
+      "ai_eta": "10:10 AM (+2 mins)",
+      "recovery_action": "Max Speed 128 km/h on HDN-1"
+    },
+    {
+      "station_code": "PRYJ",
+      "station_name": "Prayagraj Junction",
+      "sch_arr": "12:08 PM",
+      "act_dep": "--",
+      "static_delay": "+12 mins",
+      "ai_eta": "12:09 PM (+1 min)",
+      "recovery_action": "Slack Absorption on Middle Third"
+    },
+    {
+      "station_code": "BSB",
+      "station_name": "Varanasi Junction",
+      "sch_arr": "02:00 PM",
+      "act_dep": "--",
+      "static_delay": "+14 mins",
+      "ai_eta": "02:00 PM (ON-TIME)",
+      "recovery_action": "Full 14-min Delay Recovered"
+    }
+  ],
+  "12952": [
+    {
+      "station_code": "NDLS",
+      "station_name": "New Delhi",
+      "sch_dep": "04:55 PM",
+      "act_dep": "04:55 PM",
+      "static_delay": "0 mins",
+      "ai_eta": "04:55 PM",
+      "recovery_action": "On-Time Origin"
+    },
+    {
+      "station_code": "KOTA",
+      "station_name": "Kota Junction",
+      "sch_arr": "09:40 PM",
+      "act_dep": "09:58 PM",
+      "static_delay": "+18 mins",
+      "ai_eta": "09:51 PM (+11 mins)",
+      "recovery_action": "TSR 30 km/h deceleration"
+    },
+    {
+      "station_code": "RTM",
+      "station_name": "Ratlam Junction",
+      "sch_arr": "01:50 AM",
+      "act_dep": "--",
+      "static_delay": "+18 mins",
+      "ai_eta": "01:55 AM (+5 mins)",
+      "recovery_action": "Dynamic Slack Ingestion"
+    },
+    {
+      "station_code": "MMCT",
+      "station_name": "Mumbai Central",
+      "sch_arr": "08:35 AM",
+      "act_dep": "--",
+      "static_delay": "+20 mins",
+      "ai_eta": "08:37 AM (+2 mins)",
+      "recovery_action": "Clear Berth on Platform 1"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "link_id": "LNK-01",
+    "source": "ENT-KINGPIN-01",
+    "target": "ENT-MULE-HAWALA-02",
+    "link_type": "Hawala Fund Flow",
+    "weight_inr_cr": 14.8,
+    "cdr_calls_count": 84,
+    "evidence": "Encrypted VoIP & \u20b914.8 Cr Hawala Ledger Confiscation"
+  },
+  {
+    "link_id": "LNK-02",
+    "source": "ENT-KINGPIN-01",
+    "target": "ENT-TECH-OPS-03",
+    "link_type": "Command & Operations",
+    "weight_inr_cr": 3.2,
+    "cdr_calls_count": 142,
+    "evidence": "Weekly operational targets via Wickr / Telegram"
+  },
+  {
+    "link_id": "LNK-03",
+    "source": "ENT-TECH-OPS-03",
+    "target": "ENT-SIM-BOX-04",
+    "link_type": "Hardware & SIM Logistics",
+    "weight_inr_cr": 0.45,
+    "cdr_calls_count": 68,
+    "evidence": "240 Pre-Activated forged Aadhaar SIM cards batch delivery"
+  }
+]

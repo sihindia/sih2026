@@ -1,0 +1,30 @@
+[
+  {
+    "log_id": "RAW-LOG-2026-001",
+    "ocsf_class_name": "Network Activity / Firewall Deny",
+    "category_uid": 4,
+    "class_uid": 4001,
+    "normalized_ocsf": {
+      "metadata": {
+        "version": "1.1.0",
+        "original_time": "2026-08-30T01:45:00Z",
+        "raw_hash_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "src_endpoint": {
+        "ip": "192.168.1.104",
+        "port": 54122
+      },
+      "dst_endpoint": {
+        "ip": "185.190.41.22",
+        "port": 443
+      },
+      "connection_info": {
+        "protocol_name": "TCP",
+        "direction": "Outbound"
+      },
+      "disposition": "Blocked / Denied",
+      "threat_context": "Known Tor Exit Node"
+    },
+    "forensic_integrity_verified": true
+  }
+]

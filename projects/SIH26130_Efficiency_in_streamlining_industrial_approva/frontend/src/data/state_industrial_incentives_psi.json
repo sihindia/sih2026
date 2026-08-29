@@ -1,0 +1,20 @@
+[
+  {
+    "zone": "Zone A (MMR & Pune Urban)",
+    "capital_subsidy_pct": 0,
+    "electricity_duty_exemption": "5 Years",
+    "sgst_refund_pct": 50
+  },
+  {
+    "zone": "Zone B (Nashik, Kolhapur)",
+    "capital_subsidy_pct": 15,
+    "electricity_duty_exemption": "7 Years",
+    "sgst_refund_pct": 70
+  },
+  {
+    "zone": "Zone D+ (Vidarbha, Marathwada)",
+    "capital_subsidy_pct": 40,
+    "electricity_duty_exemption": "10 Years",
+    "sgst_refund_pct": 100
+  }
+]

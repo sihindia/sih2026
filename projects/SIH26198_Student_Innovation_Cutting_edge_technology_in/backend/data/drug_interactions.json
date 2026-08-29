@@ -1,0 +1,14 @@
+[
+  {
+    "combination": "Warfarin + Aspirin",
+    "severity": "CRITICAL_CONTRAINDICATION",
+    "clinical_risk": "Severe synergistic gastrointestinal hemorrhage risk.",
+    "recommendation": "Discontinue concurrent Aspirin unless specifically indicated under dual antiplatelet protocol."
+  },
+  {
+    "combination": "Metformin + Iodinated Radiocontrast Dye",
+    "severity": "HIGH_WARNING",
+    "clinical_risk": "Risk of acute contrast-induced nephropathy & fatal lactic acidosis.",
+    "recommendation": "Withhold Metformin 48 hours prior to and post contrast CT scan."
+  }
+]

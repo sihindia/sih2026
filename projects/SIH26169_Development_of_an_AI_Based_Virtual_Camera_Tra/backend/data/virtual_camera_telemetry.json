@@ -1,0 +1,35 @@
+[
+  {
+    "frame_id": 120,
+    "pan_angle_deg": 44.2,
+    "tilt_angle_deg": 28.15,
+    "beacon_pixel_xy": [
+      964.2,
+      542.8
+    ],
+    "centroid_intensity": 0.94,
+    "servo_pid_correction_deg": 0.012
+  },
+  {
+    "frame_id": 121,
+    "pan_angle_deg": 44.24,
+    "tilt_angle_deg": 28.18,
+    "beacon_pixel_xy": [
+      961.8,
+      541.2
+    ],
+    "centroid_intensity": 0.96,
+    "servo_pid_correction_deg": 0.008
+  },
+  {
+    "frame_id": 122,
+    "pan_angle_deg": 44.28,
+    "tilt_angle_deg": 28.21,
+    "beacon_pixel_xy": [
+      960.2,
+      540.1
+    ],
+    "centroid_intensity": 0.98,
+    "servo_pid_correction_deg": 0.004
+  }
+]

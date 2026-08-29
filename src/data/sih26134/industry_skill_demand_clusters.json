@@ -1,0 +1,47 @@
+[
+  {
+    "cluster_id": "SKILL-PUN-EV-01",
+    "cluster_name": "Pune EV Powertrain & Battery Diagnostics Hub",
+    "cluster_name_mr": "\u092a\u0941\u0923\u0947 \u0908\u0935\u094d\u0939\u0940 \u092a\u0949\u0935\u0930\u091f\u094d\u0930\u0947\u0928 \u0935 \u092c\u0945\u091f\u0930\u0940 \u0924\u0902\u0924\u094d\u0930\u091c\u094d\u091e\u093e\u0928 \u0915\u0947\u0902\u0926\u094d\u0930",
+    "region": "Chakan / Talegaon Industrial Corridor (Pune)",
+    "active_vacancies": 14500,
+    "growth_rate_yoy": 48.5,
+    "anchor_employers": [
+      "Tata Motors EV",
+      "Bajaj Auto Chetak",
+      "Bharat Forge CleanTech"
+    ],
+    "obsolete_course_flagged": "Legacy 2-Stroke Carburetor Tuning (Oversupply: -75%)",
+    "recommended_modern_trade": "NSQF Level 5: EV High-Voltage BMS & Telemetry Specialist",
+    "missing_competencies": [
+      "Lithium Cell Balancing",
+      "CAN-bus Oscilloscope Diagnostics",
+      "Thermal Runaway Protocols",
+      "Regenerative Braking Calibration"
+    ],
+    "projected_placement_rate_pct": 94.2,
+    "status": "CURRICULUM_UPGRADE_MANDATED"
+  },
+  {
+    "cluster_id": "SKILL-MUM-DC-08",
+    "cluster_name": "Navi Mumbai AI Data Center & Cloud Infrastructure Hub",
+    "cluster_name_mr": "\u0928\u0935\u0940 \u092e\u0941\u0902\u092c\u0908 \u090f\u0906\u092f \u0921\u0947\u091f\u093e \u0938\u0947\u0902\u091f\u0930 \u0935 \u0915\u094d\u0932\u093e\u0909\u0921 \u0907\u0928\u094d\u092b\u094d\u0930\u093e\u0938\u094d\u091f\u094d\u0930\u0915\u094d\u091a\u0930",
+    "region": "TTC Industrial Area, Navi Mumbai",
+    "active_vacancies": 9200,
+    "growth_rate_yoy": 62.0,
+    "anchor_employers": [
+      "Yotta Infrastructure",
+      "CtrlS Datacenters",
+      "NTT Global"
+    ],
+    "obsolete_course_flagged": "Manual Copper Telephony Cable Splicing",
+    "recommended_modern_trade": "NSQF Level 6: Hyperscale Server Liquid-Cooling & Optical Network Tech",
+    "missing_competencies": [
+      "Direct-to-Chip Liquid Cooling",
+      "100G/400G Fiber Fusion Splicing",
+      "DCIM Sensor Mesh Monitoring"
+    ],
+    "projected_placement_rate_pct": 96.8,
+    "status": "CURRICULUM_UPGRADE_MANDATED"
+  }
+]

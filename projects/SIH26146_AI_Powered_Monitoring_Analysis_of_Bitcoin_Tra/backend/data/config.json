@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26146",
+  "title": "AI-Powered Monitoring & Analysis of Bitcoin Transaction Traffic",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "theme": "Blockchain & Cybersecurity",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

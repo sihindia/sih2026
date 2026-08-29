@@ -1,0 +1,44 @@
+[
+  {
+    "record_id": "REC-081",
+    "doc_id": "DOC-JAMABANDI-1974-08",
+    "khasra_no": "412/1",
+    "khata_no": "88",
+    "owner_name": "Ramprasad Shriram Tripathi",
+    "father_name": "Late Shriram Tripathi",
+    "plot_area_raw": "2 Bigha 4 Biswa",
+    "plot_area_standard_ha": 0.556,
+    "land_classification": "Chahi (Irrigated Double Crop)",
+    "mutation_reference": "Namantaran Panji No. 41/1974",
+    "encumbrance_status": "CLEAR_TITLE",
+    "ocr_confidence": 0.974
+  },
+  {
+    "record_id": "REC-082",
+    "doc_id": "DOC-JAMABANDI-1974-08",
+    "khasra_no": "412/2",
+    "khata_no": "88",
+    "owner_name": "Ghanshyam Shriram Tripathi",
+    "father_name": "Late Shriram Tripathi",
+    "plot_area_raw": "1 Bigha 18 Biswa",
+    "plot_area_standard_ha": 0.481,
+    "land_classification": "Chahi (Irrigated Double Crop)",
+    "mutation_reference": "Namantaran Panji No. 41/1974",
+    "encumbrance_status": "CLEAR_TITLE",
+    "ocr_confidence": 0.968
+  },
+  {
+    "record_id": "REC-094",
+    "doc_id": "DOC-KHATIYAN-1962-14",
+    "khasra_no": "104",
+    "khata_no": "19",
+    "owner_name": "Mohammad Aslam Sheikh",
+    "father_name": "Late Sheikh Abdul Rahim",
+    "plot_area_raw": "3 Katha 12 Dhur",
+    "plot_area_standard_ha": 0.045,
+    "land_classification": "Abadi / Residential Homested",
+    "mutation_reference": "Dakhil-Kharij 1962/9",
+    "encumbrance_status": "REVIEW_FLAG_CHARACTER_UNCERTAIN",
+    "ocr_confidence": 0.742
+  }
+]

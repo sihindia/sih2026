@@ -1,0 +1,47 @@
+[
+  {
+    "post_id": "SOC-X-2026-9812",
+    "platform": "X (formerly Twitter)",
+    "author_handle": "@CyberWatch_India",
+    "content": "ALERT: Major private bank servers facing nationwide outage. Withdraw cash immediately before ATM lockdowns! #BankingCrash",
+    "content_hi": "\u0905\u0932\u0930\u094d\u091f: \u092a\u094d\u0930\u092e\u0941\u0916 \u0928\u093f\u091c\u0940 \u092c\u0948\u0902\u0915 \u0938\u0930\u094d\u0935\u0930 \u0921\u093e\u0909\u0928\u0964 \u090f\u091f\u0940\u090f\u092e \u0932\u0949\u0915\u0921\u093e\u0909\u0928 \u0938\u0947 \u092a\u0939\u0932\u0947 \u0924\u0941\u0930\u0902\u0924 \u0928\u0915\u0926 \u0928\u093f\u0915\u093e\u0932\u0947\u0902!",
+    "timestamp": "2026-08-30T01:40:12Z",
+    "sentiment_polarity": "HIGHLY_NEGATIVE",
+    "primary_emotion": "Panic / Anxiety (94.2%)",
+    "sarcasm_detected": false,
+    "bot_amplification_score": 88.5,
+    "reach_impressions": 142000,
+    "coordinated_campaign_flag": "SYNTHETIC_BOT_AMPLIFICATION_ACTIVE",
+    "status": "FLAGGED_TO_FACT_CHECK_CELL"
+  },
+  {
+    "post_id": "SOC-TG-2026-4419",
+    "platform": "Telegram (Public Channel)",
+    "author_handle": "t.me/CryptoAlpha_VIP (240k Subscribers)",
+    "content": "Guaranteed 500% ROI on new DeFi token presale. Send minimum 100 USDT to smart contract before listing in 1 hour!",
+    "content_hi": "\u0928\u090f \u0921\u0947\u092b\u0940 \u091f\u094b\u0915\u0928 \u092a\u0930 500% \u0932\u093e\u092d \u0915\u0940 \u0917\u093e\u0930\u0902\u091f\u0940\u0964 1 \u0918\u0902\u091f\u0947 \u092e\u0947\u0902 \u0932\u093f\u0938\u094d\u091f\u093f\u0902\u0917 \u0938\u0947 \u092a\u0939\u0932\u0947 100 \u092f\u0942\u090f\u0938\u0921\u0940\u091f\u0940 \u092d\u0947\u091c\u0947\u0902!",
+    "timestamp": "2026-08-30T01:42:00Z",
+    "sentiment_polarity": "MANIPULATED_EUPHORIA",
+    "primary_emotion": "Excitement / Greed Trigger (91.0%)",
+    "sarcasm_detected": false,
+    "bot_amplification_score": 94.0,
+    "reach_impressions": 85000,
+    "coordinated_campaign_flag": "ORGANIZED_PUMP_AND_DUMP_SCAM",
+    "status": "SAHYOG_TAKEDOWN_REQUESTED"
+  },
+  {
+    "post_id": "SOC-RD-2026-1029",
+    "platform": "Reddit (r/developersIndia)",
+    "author_handle": "u/SecResearcher_99",
+    "content": "Looks like the recent critical vulnerability in the government portal was patched within 4 hours. Great response time by the team.",
+    "content_hi": "\u0938\u0930\u0915\u093e\u0930\u0940 \u092a\u094b\u0930\u094d\u091f\u0932 \u092e\u0947\u0902 \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u0916\u093e\u092e\u0940 \u0915\u094b 4 \u0918\u0902\u091f\u0947 \u0915\u0947 \u092d\u0940\u0924\u0930 \u0920\u0940\u0915 \u0915\u0930 \u0926\u093f\u092f\u093e \u0917\u092f\u093e\u0964 \u092c\u0947\u0939\u0924\u0930\u0940\u0928 \u092a\u094d\u0930\u0924\u093f\u0915\u094d\u0930\u093f\u092f\u093e \u0938\u092e\u092f\u0964",
+    "timestamp": "2026-08-30T01:35:10Z",
+    "sentiment_polarity": "POSITIVE_SUPPORTIVE",
+    "primary_emotion": "Constructive Support (88.4%)",
+    "sarcasm_detected": false,
+    "bot_amplification_score": 4.2,
+    "reach_impressions": 12400,
+    "coordinated_campaign_flag": "ORGANIC_COMMUNITY_DISCUSSION",
+    "status": "NORMAL_ORGANIC"
+  }
+]

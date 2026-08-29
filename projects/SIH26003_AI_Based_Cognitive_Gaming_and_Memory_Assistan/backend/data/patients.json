@@ -1,0 +1,47 @@
+[
+  {
+    "patient_id": "MDoNER-DEM-01",
+    "name": "Bhabesh Chandra Borah",
+    "age": 74,
+    "location": "Jorhat, Assam",
+    "preferred_language": "Assamese (\u0985\u09b8\u09ae\u09c0\u09af\u09bc\u09be)",
+    "dementia_stage": "Mild Cognitive Impairment (MCI)",
+    "baseline_mmse_score": 23,
+    "current_mmse_score": 25,
+    "caregiver_name": "Dr. Pallavi Borah (Daughter)",
+    "caregiver_phone": "+91 98640 11234",
+    "cognitive_games_played": 42,
+    "avg_accuracy_pct": 82.5,
+    "status": "IMPROVING_STABLE"
+  },
+  {
+    "patient_id": "MDoNER-DEM-02",
+    "name": "Kong Philomena Lyngdoh",
+    "age": 79,
+    "location": "Nongthymmai, Shillong, Meghalaya",
+    "preferred_language": "Khasi",
+    "dementia_stage": "Moderate Alzheimer's Dementia",
+    "baseline_mmse_score": 16,
+    "current_mmse_score": 18,
+    "caregiver_name": "Daphisha Lyngdoh (Granddaughter)",
+    "caregiver_phone": "+91 97740 55678",
+    "cognitive_games_played": 28,
+    "avg_accuracy_pct": 68.0,
+    "status": "MONITORING_REQUIRED"
+  },
+  {
+    "patient_id": "MDoNER-DEM-03",
+    "name": "Pu Lalthangliana",
+    "age": 71,
+    "location": "Mission Veng, Aizawl, Mizoram",
+    "preferred_language": "Mizo",
+    "dementia_stage": "Early Stage Memory Loss",
+    "baseline_mmse_score": 26,
+    "current_mmse_score": 27,
+    "caregiver_name": "Lalmuanpuia (Son)",
+    "caregiver_phone": "+91 94361 99012",
+    "cognitive_games_played": 56,
+    "avg_accuracy_pct": 91.0,
+    "status": "EXCELLENT_PROGRESS"
+  }
+]

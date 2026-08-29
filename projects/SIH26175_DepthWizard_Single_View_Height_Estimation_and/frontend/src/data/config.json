@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26175",
+  "title": "DepthWizard - Single-View Height Estimation and 3D Flythrough",
+  "organization": "Indian Space Research Organisation(ISRO)",
+  "theme": "Disaster Management",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "waypoint_id": 1,
+    "pos_x_m": 0.0,
+    "pos_y_m": 0.0,
+    "heading_deg": 0.0,
+    "keyframe_features": 482,
+    "loop_closure": true
+  },
+  {
+    "waypoint_id": 2,
+    "pos_x_m": 45.2,
+    "pos_y_m": 12.8,
+    "heading_deg": 14.5,
+    "keyframe_features": 440,
+    "loop_closure": false
+  },
+  {
+    "waypoint_id": 3,
+    "pos_x_m": 112.5,
+    "pos_y_m": 28.4,
+    "heading_deg": 18.2,
+    "keyframe_features": 512,
+    "loop_closure": true
+  }
+]

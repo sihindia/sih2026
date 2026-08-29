@@ -1,0 +1,38 @@
+[
+  {
+    "mandi": "Lasalgaon APMC",
+    "commodity": "Red Onion",
+    "arrivals_mt": 1450,
+    "min_price": 2100,
+    "modal_price": 2450,
+    "max_price": 2850,
+    "trend": "UPWARD"
+  },
+  {
+    "mandi": "Latur APMC",
+    "commodity": "Soybean",
+    "arrivals_mt": 820,
+    "min_price": 4600,
+    "modal_price": 4820,
+    "max_price": 5050,
+    "trend": "STABLE"
+  },
+  {
+    "mandi": "Akola APMC",
+    "commodity": "Cotton (Shanker-6)",
+    "arrivals_mt": 540,
+    "min_price": 7100,
+    "modal_price": 7450,
+    "max_price": 7800,
+    "trend": "UPWARD"
+  },
+  {
+    "mandi": "Vashi APMC (Navi Mumbai)",
+    "commodity": "Red Onion",
+    "arrivals_mt": 2100,
+    "min_price": 2600,
+    "modal_price": 2900,
+    "max_price": 3200,
+    "trend": "BULLISH"
+  }
+]

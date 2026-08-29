@@ -1,0 +1,54 @@
+[
+  {
+    "subsidiary_code": "SECL",
+    "name": "South Eastern Coalfields Limited",
+    "flagship_mine": "Gevra Open Cast Project (OCP), Korba, CG",
+    "raw_coal_production_mt": 52.4,
+    "annual_target_mt": 60.0,
+    "target_achievement_pct": 87.3,
+    "obr_stripping_mm3": 84.5,
+    "gcv_grade": "G-11 (3700-4000 Kcal/kg)",
+    "dispatch_mode": "Rail Merry-Go-Round (MGR) 78% \u2022 Conveyor 22%",
+    "active_boreholes": 48,
+    "safety_incident_rate": 0.02
+  },
+  {
+    "subsidiary_code": "MCL",
+    "name": "Mahanadi Coalfields Limited",
+    "flagship_mine": "Bhuvneshwari Open Cast Mine, Jharsuguda, Odisha",
+    "raw_coal_production_mt": 48.0,
+    "annual_target_mt": 52.0,
+    "target_achievement_pct": 92.3,
+    "obr_stripping_mm3": 72.0,
+    "gcv_grade": "G-13 (3100-3400 Kcal/kg)",
+    "dispatch_mode": "Rapid Loading System (RLS) 84% \u2022 Road 16%",
+    "active_boreholes": 36,
+    "safety_incident_rate": 0.0
+  },
+  {
+    "subsidiary_code": "NCL",
+    "name": "Northern Coalfields Limited",
+    "flagship_mine": "Nigahi Open Cast Project, Singrauli, MP",
+    "raw_coal_production_mt": 34.2,
+    "annual_target_mt": 36.5,
+    "target_achievement_pct": 93.7,
+    "obr_stripping_mm3": 61.2,
+    "gcv_grade": "G-8 (4900-5200 Kcal/kg Non-Coking)",
+    "dispatch_mode": "Direct Silo Rail Loading 92%",
+    "active_boreholes": 28,
+    "safety_incident_rate": 0.01
+  },
+  {
+    "subsidiary_code": "CCL",
+    "name": "Central Coalfields Limited",
+    "flagship_mine": "Amrapali Mega OCP, North Karanpura, Jharkhand",
+    "raw_coal_production_mt": 28.5,
+    "annual_target_mt": 32.0,
+    "target_achievement_pct": 89.1,
+    "obr_stripping_mm3": 44.8,
+    "gcv_grade": "G-12 (3400-3700 Kcal/kg)",
+    "dispatch_mode": "Tori-Shivpur Rail Corridor 88%",
+    "active_boreholes": 22,
+    "safety_incident_rate": 0.03
+  }
+]

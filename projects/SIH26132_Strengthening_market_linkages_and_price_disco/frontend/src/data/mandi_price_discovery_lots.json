@@ -1,0 +1,34 @@
+[
+  {
+    "lot_id": "LOT-MH-2026-001",
+    "commodity": "Nashik Red Onion (\u0932\u093e\u0932 \u0915\u093e\u0902\u0926\u093e - Grade A)",
+    "commodity_mr": "\u0928\u093e\u0936\u093f\u0915 \u0932\u093e\u0932 \u0915\u093e\u0902\u0926\u093e (\u0917\u094d\u0930\u0947\u0921 A)",
+    "fpo_name": "Sahyadri Agro Farmers Producer Co (Nashik)",
+    "lot_quantity_mt": 40.0,
+    "local_mandi": "Lasalgaon APMC",
+    "mandi_modal_price_qtl": 2450.0,
+    "ai_recommended_price_qtl": 2780.0,
+    "price_gain_pct": 13.5,
+    "quality_assaying": "55-65mm Bulb Diameter, 12% Moisture, 99.2% Soundness",
+    "matched_buyer": "BigBasket Fresh Sourcing Hub",
+    "buyer_offered_price_qtl": 2800.0,
+    "escrow_payment_status": "SECURED_ESCROW_T1",
+    "status": "DIRECT_BUYER_DEAL_CONFIRMED"
+  },
+  {
+    "lot_id": "LOT-MH-2026-015",
+    "commodity": "Latur Yellow Soybean (\u0938\u094b\u092f\u093e\u092c\u0940\u0928 JS-335)",
+    "commodity_mr": "\u0932\u093e\u0924\u0942\u0930 \u092a\u093f\u0935\u0933\u093e \u0938\u094b\u092f\u093e\u092c\u0940\u0928 (JS-335)",
+    "fpo_name": "Marathwada Krishi Vikas FPO (Latur)",
+    "lot_quantity_mt": 65.0,
+    "local_mandi": "Latur APMC",
+    "mandi_modal_price_qtl": 4820.0,
+    "ai_recommended_price_qtl": 5250.0,
+    "price_gain_pct": 8.9,
+    "quality_assaying": "10% Moisture, 2% Foreign Matter, 19.5% Oil Content",
+    "matched_buyer": "Adani Wilmar Solvent Extraction Plant",
+    "buyer_offered_price_qtl": 5300.0,
+    "escrow_payment_status": "SECURED_ESCROW_T1",
+    "status": "DIRECT_BUYER_DEAL_CONFIRMED"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "parameter": "Per Capita Potable Water Standard",
+    "threshold_value": "135 Litres / Capita / Day (CPHEEO Norm)",
+    "meppadi_availability": "180 Litres / Capita / Day",
+    "compliance_status": "OPTIMAL_SURPLUS"
+  },
+  {
+    "parameter": "Slope Stability Threshold",
+    "threshold_value": "< 12\u00b0 Slope Angle for Permanent Habitation",
+    "meppadi_availability": "5.8\u00b0 Average Slope",
+    "compliance_status": "EXCELLENT_SAFETY_MARGIN"
+  }
+]

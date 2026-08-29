@@ -1,0 +1,32 @@
+[
+  {
+    "log_id": "RAW-LOG-2026-001",
+    "source_system": "Fortinet FortiGate Enterprise Firewall",
+    "source_system_hi": "\u092b\u093c\u094b\u0930\u094d\u091f\u093f\u0928\u0947\u091f \u092b\u093c\u094b\u0930\u094d\u091f\u093f\u0917\u0947\u091f \u090f\u0902\u091f\u0930\u092a\u094d\u0930\u093e\u0907\u091c \u092b\u093c\u093e\u092f\u0930\u0935\u0949\u0932",
+    "format_type": "ArcSight CEF (Common Event Format)",
+    "raw_payload": "CEF:0|Fortinet|FortiOS|v7.4.1|0000000013|traffic:forward|3|src=192.168.1.104 dst=185.190.41.22 spt=54122 dpt=443 proto=tcp act=deny msg=Tor Exit Node Blocked",
+    "raw_sha256_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingested_at": "2026-08-30T01:45:00Z",
+    "status": "NORMALIZED_OCSF_READY"
+  },
+  {
+    "log_id": "RAW-LOG-2026-002",
+    "source_system": "Linux Production Authentication Daemon",
+    "source_system_hi": "\u0932\u093f\u0928\u0915\u094d\u0938 \u092a\u094d\u0930\u094b\u0921\u0915\u094d\u0936\u0928 \u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923 \u0921\u0947\u092e\u0928",
+    "format_type": "Syslog RFC 5424",
+    "raw_payload": "<134>1 2026-08-30T01:45:12.003Z sec-auth-node sshd 2940 - - Failed password for invalid user root from 103.145.72.18 port 48120 ssh2",
+    "raw_sha256_hash": "84c8a2b38e12f4510b99c018247921bc98421049281924018294018240918234",
+    "ingested_at": "2026-08-30T01:45:12Z",
+    "status": "NORMALIZED_OCSF_READY"
+  },
+  {
+    "log_id": "RAW-LOG-2026-003",
+    "source_system": "Windows Domain Controller Active Directory",
+    "source_system_hi": "\u0935\u093f\u0902\u0921\u094b\u091c \u0921\u094b\u092e\u0947\u0928 \u0915\u0902\u091f\u094d\u0930\u094b\u0932\u0930 \u090f\u0915\u094d\u091f\u093f\u0935 \u0921\u093e\u092f\u0930\u0947\u0915\u094d\u091f\u0930\u0940",
+    "format_type": "Windows Security XML Event 4625",
+    "raw_payload": "<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><EventID>4625</EventID><TimeCreated SystemTime='2026-08-30T01:45:20.000Z'/></System><EventData><Data Name='TargetUserName'>Admin_Ops</Data><Data Name='IpAddress'>172.16.4.88</Data></EventData></Event>",
+    "raw_sha256_hash": "9123840192840192840192840192840192840192840192840192840192840192",
+    "ingested_at": "2026-08-30T01:45:20Z",
+    "status": "NORMALIZED_OCSF_READY"
+  }
+]

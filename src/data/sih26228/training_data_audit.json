@@ -1,0 +1,24 @@
+[
+  {
+    "batch_id": "BATCH-DATA-VEND-A-01",
+    "contributor": "Defense Vendor Alpha (Annotated Drone Imagery)",
+    "sample_count": 25000,
+    "label_flipping_anomalies": 0,
+    "near_duplicate_flooding_pct": 0.4,
+    "backdoor_trigger_present": false,
+    "ood_samples_detected": 12,
+    "source_integrity_score": 98.8,
+    "disposition": "ACCEPTED_FOR_TRAINING"
+  },
+  {
+    "batch_id": "BATCH-DATA-VEND-B-03",
+    "contributor": "Third-Party External Consortium",
+    "sample_count": 18000,
+    "label_flipping_anomalies": 142,
+    "near_duplicate_flooding_pct": 14.8,
+    "backdoor_trigger_present": true,
+    "ood_samples_detected": 860,
+    "source_integrity_score": 42.1,
+    "disposition": "QUARANTINED_POISONING_ATTACK"
+  }
+]

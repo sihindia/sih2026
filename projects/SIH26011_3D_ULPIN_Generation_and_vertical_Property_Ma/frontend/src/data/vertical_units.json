@@ -1,0 +1,44 @@
+[
+  {
+    "volumetric_3d_ulpin": "27-584-0129-4819-F18-U1802",
+    "base_ulpin": "27-584-0129-4819",
+    "level_type": "ABOVE_GROUND",
+    "floor_level": 18,
+    "unit_number": "Apartment 1802 (4BHK Sky Penthouse)",
+    "carpet_area_sqft": 2450.0,
+    "elevation_min_m": 54.0,
+    "elevation_max_m": 57.2,
+    "air_rights_exclusive": true,
+    "owner_name": "Vikramaditya Singhania",
+    "property_tax_id": "PMC-TX-99120",
+    "dispute_flag": false
+  },
+  {
+    "volumetric_3d_ulpin": "27-584-0129-4819-B02-P044",
+    "base_ulpin": "27-584-0129-4819",
+    "level_type": "SUBSURFACE_BASEMENT",
+    "floor_level": -2,
+    "unit_number": "Basement Parking Bay P-44 (EV Charging)",
+    "carpet_area_sqft": 165.0,
+    "elevation_min_m": -7.5,
+    "elevation_max_m": -4.5,
+    "air_rights_exclusive": false,
+    "owner_name": "Vikramaditya Singhania",
+    "property_tax_id": "PMC-TX-99120-P1",
+    "dispute_flag": false
+  },
+  {
+    "volumetric_3d_ulpin": "07-110-8402-9912-B03-MTR01",
+    "base_ulpin": "07-110-8402-9912",
+    "level_type": "SUBSURFACE_UTILITY",
+    "floor_level": -3,
+    "unit_number": "Underground Metro Transit Concourse Box",
+    "carpet_area_sqft": 12500.0,
+    "elevation_min_m": -15.0,
+    "elevation_max_m": -10.5,
+    "air_rights_exclusive": false,
+    "owner_name": "Delhi Metro Rail Corporation (DMRC)",
+    "property_tax_id": "EXEMPT-STATUTORY-INFRA",
+    "dispute_flag": false
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "portal": "Blinkit Quick-Commerce",
+    "listing_url": "blinkit.com/prn/choco-delight",
+    "product": "Swiss ChocoDelight Hazelnut Cookies",
+    "missing_declarations": [
+      "Unit Sale Price (USP)",
+      "Complete Packer Address"
+    ],
+    "compliance_score": "45/100 (VIOLATION)",
+    "action": "Automatic Delisting Notice Sent"
+  },
+  {
+    "portal": "Amazon India",
+    "listing_url": "amazon.in/dp/B08ANNAPURNA",
+    "product": "Annapurna Gold Chakki Fresh Atta 5kg",
+    "missing_declarations": [
+      "None (All 8 Attributes Verified)"
+    ],
+    "compliance_score": "100/100 (PASSED)",
+    "action": "Verified LMR Badge Awarded"
+  },
+  {
+    "portal": "Zepto 10-Min Delivery",
+    "listing_url": "zepto.co.in/mustard-oil-1l",
+    "product": "Kachi Ghani Mustard Oil 1L",
+    "missing_declarations": [
+      "None"
+    ],
+    "compliance_score": "100/100 (PASSED)",
+    "action": "Verified LMR Badge Awarded"
+  }
+]

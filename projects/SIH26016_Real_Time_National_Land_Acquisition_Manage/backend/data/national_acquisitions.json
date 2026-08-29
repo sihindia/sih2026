@@ -1,0 +1,44 @@
+[
+  {
+    "proposal_id": "NLAMS-2026-041",
+    "project_title": "Bharatmala Economic Corridor (NH-754 Expressway)",
+    "ministry": "Ministry of Road Transport & Highways (MoRTH)",
+    "state": "Rajasthan",
+    "notified_area_ha": 620.0,
+    "acquired_area_ha": 580.0,
+    "compensation_assessed_cr": 450.0,
+    "compensation_disbursed_cr": 428.5,
+    "affected_families": 1820,
+    "randr_rehabilitation_pct": 92.0,
+    "possession_status": "PHYSICAL_POSSESSION_COMPLETED",
+    "current_milestone": "Section 38 Land Handover"
+  },
+  {
+    "proposal_id": "NLAMS-2026-088",
+    "project_title": "Inter-State River Basin Link (Ken-Betwa Phase 2)",
+    "ministry": "Ministry of Jal Shakti",
+    "state": "Madhya Pradesh",
+    "notified_area_ha": 1450.0,
+    "acquired_area_ha": 890.0,
+    "compensation_assessed_cr": 1120.0,
+    "compensation_disbursed_cr": 680.0,
+    "affected_families": 4200,
+    "randr_rehabilitation_pct": 58.0,
+    "possession_status": "PARTIAL_POSSESSION_UNDERWAY",
+    "current_milestone": "Section 19 Award Declaration"
+  },
+  {
+    "proposal_id": "NLAMS-2026-112",
+    "project_title": "Western Dedicated Freight Corridor Multi-Modal Park",
+    "ministry": "Ministry of Railways",
+    "state": "Gujarat",
+    "notified_area_ha": 380.0,
+    "acquired_area_ha": 380.0,
+    "compensation_assessed_cr": 310.0,
+    "compensation_disbursed_cr": 308.0,
+    "affected_families": 940,
+    "randr_rehabilitation_pct": 98.0,
+    "possession_status": "PHYSICAL_POSSESSION_COMPLETED",
+    "current_milestone": "Project Handed Over to DFCCIL"
+  }
+]

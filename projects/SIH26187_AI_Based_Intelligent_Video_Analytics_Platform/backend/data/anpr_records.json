@@ -1,0 +1,10 @@
+[
+  {
+    "plate_number": "BR-06-CA-9812",
+    "camera_id": "CAM-ICP-SONAULI-02",
+    "vehicle_class": "SUV (Black Scorpio)",
+    "confidence_pct": 98.2,
+    "vahan_database_status": "FLAGGED_STOLEN_FIR_MUM_2026",
+    "timestamp": "2026-08-30T01:29:40Z"
+  }
+]

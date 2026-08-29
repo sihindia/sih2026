@@ -1,0 +1,74 @@
+[
+  {
+    "plate_number": "DL-01-AB-1234",
+    "vehicle_model": "White Toyota Fortuner SUV",
+    "vehicle_model_hi": "\u0938\u092b\u0947\u0926 \u091f\u094b\u092f\u094b\u091f\u093e \u092b\u0949\u0930\u094d\u091a\u094d\u092f\u0942\u0928\u0930 \u090f\u0938\u092f\u0942\u0935\u0940",
+    "blacklist_status": "CRITICAL_BLACKLIST_STOLEN_VEHICLE",
+    "total_distance_km": 24.8,
+    "mean_speed_km_h": 49.2,
+    "last_seen_location": "Sohna Road Toll Plaza (Cam-88)",
+    "trajectory_points": [
+      {
+        "point": 1,
+        "camera_id": "CAM-004",
+        "location": "Inner Ring Road Junction",
+        "time": "08:14 AM",
+        "speed_km_h": 62,
+        "ocr_conf": 98.4
+      },
+      {
+        "point": 2,
+        "camera_id": "CAM-018",
+        "location": "Cyber Hub North Flyover",
+        "time": "08:26 AM",
+        "speed_km_h": 48,
+        "ocr_conf": 96.8
+      },
+      {
+        "point": 3,
+        "camera_id": "CAM-042",
+        "location": "Golf Course Ext Underpass",
+        "time": "08:39 AM",
+        "speed_km_h": 55,
+        "ocr_conf": 97.2
+      },
+      {
+        "point": 4,
+        "camera_id": "CAM-088",
+        "location": "Sohna Road Toll Plaza",
+        "time": "08:52 AM",
+        "speed_km_h": 32,
+        "ocr_conf": 99.1
+      }
+    ],
+    "status": "ACTIVE_INTERCEPTION_ALERT_ISSUED"
+  },
+  {
+    "plate_number": "HR-26-EQ-9981",
+    "vehicle_model": "Commercial Petroleum Tanker (16-Wheeler)",
+    "vehicle_model_hi": "\u0935\u093e\u0923\u093f\u091c\u094d\u092f\u093f\u0915 \u092a\u0947\u091f\u094d\u0930\u094b\u0932\u093f\u092f\u092e \u091f\u0948\u0902\u0915\u0930 (16-\u092a\u0939\u093f\u092f\u093e)",
+    "blacklist_status": "SUSPICIOUS_ROUTE_DEVIATION",
+    "total_distance_km": 42.5,
+    "mean_speed_km_h": 38.0,
+    "last_seen_location": "Western Peripheral Expressway (Cam-112)",
+    "trajectory_points": [
+      {
+        "point": 1,
+        "camera_id": "CAM-002",
+        "location": "Industrial Area Gate 3",
+        "time": "07:30 AM",
+        "speed_km_h": 35,
+        "ocr_conf": 95.5
+      },
+      {
+        "point": 2,
+        "camera_id": "CAM-112",
+        "location": "Western Peripheral Expressway",
+        "time": "08:45 AM",
+        "speed_km_h": 42,
+        "ocr_conf": 96.2
+      }
+    ],
+    "status": "ROUTE_ANOMALY_FLAGGED"
+  }
+]

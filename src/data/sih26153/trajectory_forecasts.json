@@ -1,0 +1,30 @@
+[
+  {
+    "snapshot_id": "SNAP-SCADA-2026-981",
+    "step_k1": {
+      "time_offset_s": "+5s",
+      "state": "Reconnaissance (T1595)",
+      "prob_pct": 35.0
+    },
+    "step_k2": {
+      "time_offset_s": "+15s",
+      "state": "Exploitation for Initial Access (T1190)",
+      "prob_pct": 68.4
+    },
+    "step_k3": {
+      "time_offset_s": "+30s",
+      "state": "Lateral Movement via SMB (T1021)",
+      "prob_pct": 91.2
+    },
+    "step_k4": {
+      "time_offset_s": "+45s",
+      "state": "C2 Beaconing (T1071)",
+      "prob_pct": 96.4
+    },
+    "step_k5": {
+      "time_offset_s": "+60s",
+      "state": "Data Exfiltration / PLC Disruption (T1048)",
+      "prob_pct": 98.8
+    }
+  }
+]

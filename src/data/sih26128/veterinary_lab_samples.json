@@ -1,0 +1,16 @@
+[
+  {
+    "sample_id": "VET-LAB-PUN-0842",
+    "specimen": "Nodule Biopsy & Serum",
+    "lab": "District Disease Diagnostic Lab, Pune",
+    "test_type": "Real-Time PCR (Capripox)",
+    "result": "POSITIVE_CONFIRMED"
+  },
+  {
+    "sample_id": "VET-LAB-AHM-0119",
+    "specimen": "Vesicular Fluid Swab",
+    "lab": "State Veterinary Institute, Aundh",
+    "test_type": "ELISA Antigen Typing",
+    "result": "POSITIVE_SEROTYPE_O"
+  }
+]

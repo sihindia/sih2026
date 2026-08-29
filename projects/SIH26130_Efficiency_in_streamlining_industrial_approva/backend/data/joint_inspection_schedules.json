@@ -1,0 +1,25 @@
+[
+  {
+    "inspection_id": "CIS-PUN-2026-88",
+    "unit": "Bharat Mobility Chakan",
+    "date": "2026-03-12",
+    "agencies_combined": [
+      "MPCB",
+      "DISH",
+      "Fire"
+    ],
+    "inspectors": 3,
+    "audit_status": "JOINT_AUDIT_PASSED"
+  },
+  {
+    "inspection_id": "CIS-NAG-2026-14",
+    "unit": "Vidarbha Agro Butibori",
+    "date": "2026-03-18",
+    "agencies_combined": [
+      "MPCB",
+      "FDA Maha"
+    ],
+    "inspectors": 2,
+    "audit_status": "JOINT_AUDIT_PASSED"
+  }
+]

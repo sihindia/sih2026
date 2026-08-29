@@ -1,0 +1,26 @@
+[
+  {
+    "tag_id": "MH-PUN-2026-8812",
+    "owner": "Tukaram Jadhav",
+    "breed": "HF Cross",
+    "fmd_status": "Vaccinated (Valid)",
+    "lsd_status": "Booster Due",
+    "milk_l_day": 14.5
+  },
+  {
+    "tag_id": "MH-PUN-2026-8813",
+    "owner": "Tukaram Jadhav",
+    "breed": "Gir Cow",
+    "fmd_status": "Vaccinated (Valid)",
+    "lsd_status": "Vaccinated",
+    "milk_l_day": 11.2
+  },
+  {
+    "tag_id": "MH-AHM-2026-3401",
+    "owner": "Suresh Patil",
+    "breed": "Murrah Buffalo",
+    "fmd_status": "Booster Overdue",
+    "lsd_status": "Vaccinated",
+    "milk_l_day": 16.0
+  }
+]

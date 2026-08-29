@@ -1,0 +1,26 @@
+[
+  {
+    "camera_id": "CAM-004",
+    "location": "Inner Ring Road Junction",
+    "lanes": 4,
+    "ocr_acc_pct": 98.4,
+    "fps": 30,
+    "status": "ONLINE"
+  },
+  {
+    "camera_id": "CAM-018",
+    "location": "Cyber Hub North Flyover",
+    "lanes": 6,
+    "ocr_acc_pct": 96.8,
+    "fps": 30,
+    "status": "ONLINE"
+  },
+  {
+    "camera_id": "CAM-042",
+    "location": "Golf Course Ext Underpass",
+    "lanes": 4,
+    "ocr_acc_pct": 97.2,
+    "fps": 30,
+    "status": "ONLINE"
+  }
+]

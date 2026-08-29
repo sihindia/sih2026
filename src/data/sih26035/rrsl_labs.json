@@ -1,0 +1,29 @@
+[
+  {
+    "lab_id": "RRSL-FBD",
+    "name": "Regional Reference Standard Laboratory, Faridabad",
+    "location": "Faridabad, Haryana",
+    "director": "Dr. S. K. Rastogi (Joint Director)",
+    "active_test_bays": 6,
+    "specialization": "Class III & IIII Weighbridges & Commercial Scales",
+    "accreditation": "NABL ISO/IEC 17025 Accredited"
+  },
+  {
+    "lab_id": "RRSL-BLR",
+    "name": "Regional Reference Standard Laboratory, Bengaluru",
+    "location": "Bengaluru, Karnataka",
+    "director": "Dr. K. N. Murthy (Director)",
+    "active_test_bays": 4,
+    "specialization": "Class I & II High-Precision Micro-Balances",
+    "accreditation": "NABL ISO/IEC 17025 Accredited"
+  },
+  {
+    "lab_id": "RRSL-AHM",
+    "name": "Regional Reference Standard Laboratory, Ahmedabad",
+    "location": "Ahmedabad, Gujarat",
+    "director": "Dr. P. V. Patel (Deputy Director)",
+    "active_test_bays": 5,
+    "specialization": "Heavy Weighbridges, Flow Meters & NAWIs",
+    "accreditation": "NABL ISO/IEC 17025 Accredited"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "ticket_id": "GRV-2026-081",
+    "farmer_name": "Baldev Singh",
+    "mandi_name": "Khanna Grain Market",
+    "issue_type": "Weighbridge Tare Recalibration Request",
+    "raised_at": "2026-08-28 02:15 PM",
+    "resolution_status": "RESOLVED_ON_SPOT",
+    "resolution_note": "Weighbridge #2 tare recalibrated in presence of mandi committee inspector. Net weight rectified."
+  },
+  {
+    "ticket_id": "GRV-2026-094",
+    "farmer_name": "Prakash V. Patil",
+    "mandi_name": "Lasalgaon APMC",
+    "issue_type": "DBT Payment UTR Delay Query",
+    "raised_at": "2026-08-29 10:00 AM",
+    "resolution_status": "ESC_BANK_INTEGRATION",
+    "resolution_note": "Aadhaar NPCI mapping refreshed with State Bank of India. DBT credited within 2 hours."
+  }
+]

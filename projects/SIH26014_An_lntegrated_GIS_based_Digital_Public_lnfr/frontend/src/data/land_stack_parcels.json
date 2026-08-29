@@ -1,0 +1,46 @@
+[
+  {
+    "ulpin": "04-001-9012-3341",
+    "location": "Sector 17 Commercial Pilot, Chandigarh (UT)",
+    "pilot_stage": "STAGE_1_LIVE_PILOT",
+    "base_layer": {
+      "parcel_area_sqm": 1850.0,
+      "georeferenced": true,
+      "cors_surveyed": true
+    },
+    "essential_governance_layer": {
+      "owner_name": "Chandigarh Heritage Retail Trust",
+      "ror_status": "MUTATION_CLEARED",
+      "zoning": "Commercial Central District",
+      "encumbrance": "NIL_FREEHOLD",
+      "property_tax_annual_inr": 145000
+    },
+    "citizen_services_layer": {
+      "instant_mortgage_eligible": true,
+      "building_permit_status": "APPROVED",
+      "utility_water_connected": true
+    }
+  },
+  {
+    "ulpin": "33-214-8841-9022",
+    "location": "Velachery Tech Corridor, Chennai, Tamil Nadu",
+    "pilot_stage": "STAGE_1_LIVE_PILOT",
+    "base_layer": {
+      "parcel_area_sqm": 4200.0,
+      "georeferenced": true,
+      "cors_surveyed": true
+    },
+    "essential_governance_layer": {
+      "owner_name": "Sundaram Green Logistics Park",
+      "ror_status": "PATTA_CHITTA_VERIFIED",
+      "zoning": "Industrial IT-SEZ",
+      "encumbrance": "SBI_PROJECT_FINANCE_MORTGAGE",
+      "property_tax_annual_inr": 380000
+    },
+    "citizen_services_layer": {
+      "instant_mortgage_eligible": true,
+      "building_permit_status": "APPROVED_CMDA",
+      "utility_water_connected": true
+    }
+  }
+]

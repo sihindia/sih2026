@@ -1,0 +1,13 @@
+[
+  {
+    "did": "did:bhartiya:aicte-2026-9812-student",
+    "owner": "Aarav Sharma (B.Tech Computer Science)",
+    "public_key_ed25519": "0x3f4a9b...7710",
+    "credentials_held": [
+      "AICTE Accredited B.Tech Honors Degree",
+      "NPTEL Cloud Computing Certificate",
+      "Smart India Hackathon 2026 Winner"
+    ],
+    "zk_proof_status": "VALID_ACTIVE_ON_CHAIN"
+  }
+]

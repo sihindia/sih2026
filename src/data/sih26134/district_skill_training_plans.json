@@ -1,0 +1,24 @@
+[
+  {
+    "district": "Pune",
+    "target_trainees": 28000,
+    "priority_sectors": [
+      "Automotive EV",
+      "Precision Robotics",
+      "Electronics"
+    ],
+    "new_lab_investments_cr": 45.0,
+    "status": "APPROVED"
+  },
+  {
+    "district": "Nagpur",
+    "target_trainees": 18500,
+    "priority_sectors": [
+      "Multi-Modal Logistics",
+      "Cold Storage Tech",
+      "Agro-Processing"
+    ],
+    "new_lab_investments_cr": 32.0,
+    "status": "APPROVED"
+  }
+]

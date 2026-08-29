@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Indian Languages Supported",
+    "value": "10 Official Dialects",
+    "trend": "100% Offline On-Device Execution"
+  },
+  {
+    "metric": "Mouth-to-Ear Latency",
+    "value": "365 Milliseconds",
+    "trend": "Sub-Second Push-to-Talk Response"
+  },
+  {
+    "metric": "Bandwidth Compression",
+    "value": "98.5% Data Savings",
+    "trend": "Transmits Voice as 48-byte Neural Tokens"
+  }
+]

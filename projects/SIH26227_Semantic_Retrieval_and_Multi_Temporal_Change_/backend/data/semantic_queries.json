@@ -1,0 +1,26 @@
+[
+  {
+    "query_text": "Newly built structures near a river",
+    "top_match_tile": "TILE-SAT-LDK-081",
+    "similarity_score": 0.984,
+    "region": "Eastern Ladakh Sector"
+  },
+  {
+    "query_text": "Large vehicle concentrations on open ground",
+    "top_match_tile": "TILE-SAT-THR-042",
+    "similarity_score": 0.971,
+    "region": "Thar Desert Operational Corridor"
+  },
+  {
+    "query_text": "Forward helipad and runway expansion",
+    "top_match_tile": "TILE-SAT-SLG-109",
+    "similarity_score": 0.962,
+    "region": "Siliguri Strategic Tri-Junction"
+  },
+  {
+    "query_text": "Riverine pontoon bridge deployment",
+    "top_match_tile": "TILE-SAT-CRK-054",
+    "similarity_score": 0.958,
+    "region": "Sir Creek Coastal Frontier"
+  }
+]

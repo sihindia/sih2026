@@ -1,0 +1,86 @@
+[
+  {
+    "tile_id": "TILE-SAT-LDK-081",
+    "region_name": "Eastern Ladakh Sector (Galwan-Depsang)",
+    "coordinates": {
+      "lat": 34.4258,
+      "lng": 78.1894
+    },
+    "satellite_platform": "Cartosat-3 High-Resolution Optical",
+    "spatial_resolution_m": 0.28,
+    "acquisition_date": "2026-08-25",
+    "semantic_tags": [
+      "Reinforced Concrete Bunkers",
+      "Newly Built Structures near a River",
+      "Forward Military Sentry"
+    ],
+    "vector_embedding_norm": 0.982,
+    "cloud_cover_pct": 2.1,
+    "sun_elevation_deg": 58.4,
+    "tile_provenance_hash": "SHA256:7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8",
+    "status": "INDEXED_OPERATIONAL"
+  },
+  {
+    "tile_id": "TILE-SAT-THR-042",
+    "region_name": "Thar Desert Operational Corridor",
+    "coordinates": {
+      "lat": 27.0238,
+      "lng": 71.3412
+    },
+    "satellite_platform": "RISAT-1A Synthetic Aperture Radar (SAR)",
+    "spatial_resolution_m": 1.0,
+    "acquisition_date": "2026-08-26",
+    "semantic_tags": [
+      "Large Vehicle Concentrations on Open Ground",
+      "Mechanized Armoured Formations",
+      "T-90 Tanks"
+    ],
+    "vector_embedding_norm": 0.965,
+    "cloud_cover_pct": 0.0,
+    "sun_elevation_deg": 64.2,
+    "tile_provenance_hash": "SHA256:1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+    "status": "INDEXED_OPERATIONAL"
+  },
+  {
+    "tile_id": "TILE-SAT-SLG-109",
+    "region_name": "Siliguri Strategic Tri-Junction",
+    "coordinates": {
+      "lat": 26.7271,
+      "lng": 88.3953
+    },
+    "satellite_platform": "Cartosat-2E Multispectral",
+    "spatial_resolution_m": 0.6,
+    "acquisition_date": "2026-08-27",
+    "semantic_tags": [
+      "Forward Helipad & Runway Expansion",
+      "Artillery Revetment",
+      "Heavy Logistics Convoy"
+    ],
+    "vector_embedding_norm": 0.978,
+    "cloud_cover_pct": 4.5,
+    "sun_elevation_deg": 52.0,
+    "tile_provenance_hash": "SHA256:9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8",
+    "status": "INDEXED_OPERATIONAL"
+  },
+  {
+    "tile_id": "TILE-SAT-CRK-054",
+    "region_name": "Sir Creek Coastal Mangrove Frontier",
+    "coordinates": {
+      "lat": 23.6412,
+      "lng": 68.2109
+    },
+    "satellite_platform": "RISAT-2BR1 X-Band SAR",
+    "spatial_resolution_m": 0.35,
+    "acquisition_date": "2026-08-28",
+    "semantic_tags": [
+      "Riverine Pontoon Bridge Deployment",
+      "Speedboat Mooring Dock",
+      "Water Extent Variation"
+    ],
+    "vector_embedding_norm": 0.954,
+    "cloud_cover_pct": 0.0,
+    "sun_elevation_deg": 61.5,
+    "tile_provenance_hash": "SHA256:3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2",
+    "status": "INDEXED_OPERATIONAL"
+  }
+]

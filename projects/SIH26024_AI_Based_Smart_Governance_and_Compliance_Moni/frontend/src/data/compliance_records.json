@@ -1,0 +1,44 @@
+[
+  {
+    "mine_id": "MINE-SECL-GEVRA",
+    "mine_name": "Gevra Open Cast Mine",
+    "subsidiary": "South Eastern Coalfields Ltd (SECL)",
+    "location": "Korba, Chhattisgarh",
+    "dgms_safety_score": 94.2,
+    "statutory_status": "COMPLIANT_CERTIFIED",
+    "pm10_air_quality_ug_m3": 78.4,
+    "effluent_ph": 7.4,
+    "explosive_magazine_license": "ACTIVE_EXP_2028",
+    "slope_stability_radar": "NORMAL_STABLE",
+    "open_violations_count": 1,
+    "last_dgms_audit": "2026-08-14"
+  },
+  {
+    "mine_id": "MINE-BCCL-JHARIA",
+    "mine_name": "Jharia Underground Coalfield #XI Seam",
+    "subsidiary": "Bharat Coking Coal Ltd (BCCL)",
+    "location": "Dhanbad, Jharkhand",
+    "dgms_safety_score": 78.5,
+    "statutory_status": "STATUTORY_WATCHLIST",
+    "pm10_air_quality_ug_m3": 142.0,
+    "effluent_ph": 6.2,
+    "explosive_magazine_license": "ACTIVE_EXP_2027",
+    "slope_stability_radar": "GAS_MONITORING_ALERT",
+    "open_violations_count": 4,
+    "last_dgms_audit": "2026-08-20"
+  },
+  {
+    "mine_id": "MINE-MCL-TALCHER",
+    "mine_name": "Talcher Mega Open Cast Project",
+    "subsidiary": "Mahanadi Coalfields Ltd (MCL)",
+    "location": "Angul, Odisha",
+    "dgms_safety_score": 91.0,
+    "statutory_status": "COMPLIANT_CERTIFIED",
+    "pm10_air_quality_ug_m3": 84.0,
+    "effluent_ph": 7.1,
+    "explosive_magazine_license": "ACTIVE_EXP_2029",
+    "slope_stability_radar": "NORMAL_STABLE",
+    "open_violations_count": 0,
+    "last_dgms_audit": "2026-08-26"
+  }
+]

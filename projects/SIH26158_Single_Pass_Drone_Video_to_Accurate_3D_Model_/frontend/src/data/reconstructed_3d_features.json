@@ -1,0 +1,21 @@
+[
+  {
+    "feature_id": "FEAT-BUNKER-01",
+    "mission_id": "UAV-PASS-2026-081",
+    "feature_type": "Reinforced Defense Bunker",
+    "metric_height_m": 4.2,
+    "footprint_area_sqm": 64.5,
+    "rooftop_slope_deg": 12.0,
+    "occlusion_confidence_pct": 96.4,
+    "estimated_wall_thickness_cm": 45.0
+  },
+  {
+    "feature_id": "FEAT-ROAD-CORRIDOR",
+    "mission_id": "UAV-PASS-2026-081",
+    "feature_type": "High-Altitude Access Road",
+    "metric_width_m": 7.8,
+    "gradient_pct": 8.4,
+    "surface_condition": "Paved Bitumen with Gravel Shoulder",
+    "occlusion_confidence_pct": 98.2
+  }
+]

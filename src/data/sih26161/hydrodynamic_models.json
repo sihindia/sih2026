@@ -1,0 +1,18 @@
+[
+  {
+    "model_name": "Smooth Particle Hydrodynamics (SPH)",
+    "type": "Mesh-Free Lagrangian Particle Model",
+    "spatial_resolution_m": 1.5,
+    "wave_front_accuracy_pct": 98.2,
+    "computation_time_mins": 8.4,
+    "strength": "Highly accurate for violent free-surface splash, debris collision & steep mountain terrain"
+  },
+  {
+    "model_name": "Delft3D Hydrodynamic Suite",
+    "type": "Curvilinear Grid Eulerian Shallow Water Equations",
+    "spatial_resolution_m": 5.0,
+    "wave_front_accuracy_pct": 94.6,
+    "computation_time_mins": 14.2,
+    "strength": "Optimal for wide floodplain inundation, sediment transport & downstream delta expansion"
+  }
+]

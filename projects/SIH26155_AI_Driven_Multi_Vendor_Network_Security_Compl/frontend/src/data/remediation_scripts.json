@@ -1,0 +1,24 @@
+{
+  "NET-CISCO-9500-01": {
+    "cisco_ios_commands": [
+      "! Hardening Cisco IOS-XE to CIS Level 1 Compliance",
+      "configure terminal",
+      "no ip http server",
+      "no ip http secure-server",
+      "no service telnet",
+      "ip ssh version 2",
+      "ip ssh dh min 2048",
+      "snmp-server community public disable",
+      "end",
+      "write memory"
+    ]
+  },
+  "NET-SONIC-WHITEBOX": {
+    "sonic_linux_commands": [
+      "# Hardening SONiC Open NOS",
+      "sudo config telemetry client certificate /etc/gnmi/cert.pem --require-client-auth",
+      "sudo systemctl restart gnmi-telemetry",
+      "sudo config save -y"
+    ]
+  }
+}

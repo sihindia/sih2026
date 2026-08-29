@@ -1,0 +1,30 @@
+[
+  {
+    "trail_id": "TRAIL-CHOLA-01",
+    "trail_name": "The Great Living Chola Temples & Bronze Trail",
+    "state": "Tamil Nadu",
+    "duration_days": 4,
+    "key_stops": [
+      "Brihadisvara Temple (Thanjavur)",
+      "Gangaikonda Cholapuram",
+      "Airavatesvara (Darasuram)",
+      "Swamimalai Bronze Casting Guilds"
+    ],
+    "experience_highlight": "Witnessing lost-wax bronze casting and monumental Dravidian gopuram engineering.",
+    "recommended_season": "October to March"
+  },
+  {
+    "trail_id": "TRAIL-STEPWELL-02",
+    "trail_name": "Sacred Stepwells & Sun Temples of Western India",
+    "state": "Gujarat & Rajasthan",
+    "duration_days": 5,
+    "key_stops": [
+      "Rani ki Vav (Patan)",
+      "Modhera Sun Temple",
+      "Adalaj Stepwell (Ahmedabad)",
+      "Chand Baori (Abhaneri)"
+    ],
+    "experience_highlight": "Subterranean hydraulic engineering and solar solstice alignments.",
+    "recommended_season": "November to February"
+  }
+]

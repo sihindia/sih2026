@@ -1,0 +1,36 @@
+[
+  {
+    "tunnel_id": "IPSEC-GW-DEL-001",
+    "gateway_name": "Regional Banking Branch Interconnect Gateway",
+    "gateway_name_hi": "\u0915\u094d\u0937\u0947\u0924\u094d\u0930\u0940\u092f \u092c\u0948\u0902\u0915\u093f\u0902\u0917 \u0936\u093e\u0916\u093e \u0907\u0902\u091f\u0930\u0915\u0928\u0947\u0915\u094d\u091f \u0917\u0947\u091f\u0935\u0947",
+    "endpoint_ips": "103.24.11.4 \u2794 103.24.11.89",
+    "operational_mode": "Tunnel Mode (IPv4)",
+    "ike_version": "IKEv1 (Aggressive Mode Enabled)",
+    "encryption_cipher": "3DES-CBC + HMAC-MD5 (Weak Legacy)",
+    "diffie_hellman_group": "DH Group 2 (1024-bit MODP)",
+    "perfect_forward_secrecy": "DISABLED",
+    "security_posture_score": 38.0,
+    "identified_threats": [
+      "IKEv1 Aggressive Mode transmits pre-shared key (PSK) hash in cleartext (Offline Dictionary Attack Risk)",
+      "3DES cipher subject to Sweet32 Birthday Collision Attack (CVE-2016-2183)",
+      "DH Group 2 susceptible to State-Level Precomputation (Logjam Attack)"
+    ],
+    "status": "CRITICAL_CRYPTOGRAPHIC_UPGRADE_REQUIRED"
+  },
+  {
+    "tunnel_id": "IPSEC-GW-DEF-042",
+    "gateway_name": "Strategic Defense Operations Backbone Tunnel",
+    "gateway_name_hi": "\u0930\u0923\u0928\u0940\u0924\u093f\u0915 \u0930\u0915\u094d\u0937\u093e \u0938\u0902\u091a\u093e\u0932\u0928 \u092c\u0948\u0915\u092c\u094b\u0928 \u091f\u0928\u0932",
+    "endpoint_ips": "10.200.1.1 \u2794 10.200.4.1",
+    "operational_mode": "Tunnel Mode (IPv6 Encapsulated)",
+    "ike_version": "IKEv2 (RFC 7296 Standard)",
+    "encryption_cipher": "AES-256-GCM (Authenticated Encryption)",
+    "diffie_hellman_group": "DH Group 19 (256-bit Random ECP / Curve25519)",
+    "perfect_forward_secrecy": "ENABLED",
+    "security_posture_score": 96.5,
+    "identified_threats": [
+      "Zero cryptographic vulnerabilities detected. Post-quantum migration roadmap scheduled for 2027."
+    ],
+    "status": "HARDENED_MILITARY_GRADE"
+  }
+]

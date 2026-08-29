@@ -1,0 +1,27 @@
+[
+  {
+    "factor": "Compensation Disbursement Rate (<60%)",
+    "weight": 0.35,
+    "description": "Delay in direct DBT compensation release causes landowner reluctance to yield physical possession."
+  },
+  {
+    "factor": "Pending High Court / Civil Litigations",
+    "weight": 0.25,
+    "description": "Stay orders on Section 19 declarations or award multiplier formula disputes."
+  },
+  {
+    "factor": "Forest & Wildlife Clearances (Stage 1 to 2)",
+    "weight": 0.2,
+    "description": "Inter-departmental approvals with State Forest Dept & MoEFCC."
+  },
+  {
+    "factor": "Gram Sabha & Community Consent",
+    "weight": 0.15,
+    "description": "Panchayat consultations in Fifth Schedule / tribal regions under LARR Act 2013."
+  },
+  {
+    "factor": "Rehabilitation & Resettlement (R&R) Progress",
+    "weight": 0.05,
+    "description": "Physical allotment of alternative plots / infrastructure."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "component_id": "IC-RH-2026-0042",
+    "lot_number": "LOT-ISRO-RH-ARM-04",
+    "component_type": "Radiation-Hardened ARM Cortex-M0+ SoC",
+    "component_type_hi": "\u0930\u0947\u0921\u093f\u090f\u0936\u0928-\u0939\u093e\u0930\u094d\u0921\u0928\u094d\u0921 \u090f\u0906\u0930\u090f\u092e \u0915\u094b\u0930\u091f\u0947\u0915\u094d\u0938 \u090f\u092e0+ \u090f\u0938\u0913\u0938\u0940",
+    "tested_parameter": "Standby Quiescent Current (Iddq)",
+    "parameter_unit": "microamperes (\u00b5A)",
+    "static_datasheet_max_limit": 50.0,
+    "lot_mean_value": 10.2,
+    "measured_0h": 18.4,
+    "measured_24h": 29.8,
+    "measured_96h": 44.2,
+    "measured_168h": 48.9,
+    "predicted_168h": 49.3,
+    "static_rule_verdict": "PASS (< 50.0 \u00b5A Datasheet Limit)",
+    "dynamic_ai_verdict": "REJECT (LATENT GATE OXIDE DEFECT)",
+    "drift_slope_uA_per_hr": 0.182,
+    "risk_level": "CRITICAL_LATENT_DEFECT",
+    "status": "REJECTED_EARLY_AT_24H"
+  },
+  {
+    "component_id": "IC-RH-2026-0108",
+    "lot_number": "LOT-ISRO-RH-FPGA-08",
+    "component_type": "Space-Grade SRAM FPGA Logic Block",
+    "component_type_hi": "\u0938\u094d\u092a\u0947\u0938-\u0917\u094d\u0930\u0947\u0921 \u090f\u0938\u0906\u0930\u090f\u090f\u092e \u090f\u092b\u092a\u0940\u091c\u0940\u090f \u0932\u0949\u091c\u093f\u0915 \u092c\u094d\u0932\u0949\u0915",
+    "tested_parameter": "Propagation Delay (t_pd)",
+    "parameter_unit": "nanoseconds (ns)",
+    "static_datasheet_max_limit": 12.0,
+    "lot_mean_value": 4.1,
+    "measured_0h": 4.2,
+    "measured_24h": 4.3,
+    "measured_96h": 4.4,
+    "measured_168h": 4.5,
+    "predicted_168h": 4.52,
+    "static_rule_verdict": "PASS (< 12.0 ns)",
+    "dynamic_ai_verdict": "PASS (STABLE THERMAL BEHAVIOR)",
+    "drift_slope_uA_per_hr": 0.0018,
+    "risk_level": "SPACE_FLIGHT_READY",
+    "status": "FLIGHT_QUALIFIED"
+  }
+]

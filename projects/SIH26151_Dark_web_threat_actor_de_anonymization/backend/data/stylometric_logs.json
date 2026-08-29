@@ -1,0 +1,14 @@
+[
+  {
+    "suspect_sample_id": "SAMPLE-FORUM-POST-891",
+    "analyzed_text_excerpt": "Offering fresh dump of 5M KYC records with instant escrow. No lowballs, contact on TOX with PGP signed proof.",
+    "top_matched_known_persona": "Vikrant Malhotra (NetPhantom)",
+    "stylometric_cosine_similarity": 0.968,
+    "syntactic_features": [
+      "Frequent use of lowercase 'pgp'",
+      "Double spacing after period",
+      "Indian English syntax ('do the needful')"
+    ],
+    "verdict": "DEFINITIVE_AUTHOR_MATCH"
+  }
+]

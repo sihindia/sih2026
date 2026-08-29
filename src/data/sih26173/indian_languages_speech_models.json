@@ -1,0 +1,50 @@
+[
+  {
+    "code": "hi",
+    "name": "Hindi (\u0939\u093f\u0928\u094d\u0926\u0940)",
+    "stt_wer_pct": 7.4,
+    "tts_mos_score": 4.62,
+    "model_size_mb": 28.4,
+    "status": "Offline INT8 TinyML"
+  },
+  {
+    "code": "ta",
+    "name": "Tamil (\u0ba4\u0bae\u0bbf\u0bb4\u0bcd)",
+    "stt_wer_pct": 7.8,
+    "tts_mos_score": 4.58,
+    "model_size_mb": 29.1,
+    "status": "Offline INT8 TinyML"
+  },
+  {
+    "code": "bn",
+    "name": "Bengali (\u09ac\u09be\u0982\u09b2\u09be)",
+    "stt_wer_pct": 8.1,
+    "tts_mos_score": 4.54,
+    "model_size_mb": 28.9,
+    "status": "Offline INT8 TinyML"
+  },
+  {
+    "code": "mr",
+    "name": "Marathi (\u092e\u0930\u093e\u0920\u0940)",
+    "stt_wer_pct": 8.0,
+    "tts_mos_score": 4.56,
+    "model_size_mb": 28.6,
+    "status": "Offline INT8 TinyML"
+  },
+  {
+    "code": "gu",
+    "name": "Gujarati (\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0)",
+    "stt_wer_pct": 8.2,
+    "tts_mos_score": 4.52,
+    "model_size_mb": 28.8,
+    "status": "Offline INT8 TinyML"
+  },
+  {
+    "code": "en",
+    "name": "Indian English",
+    "stt_wer_pct": 6.9,
+    "tts_mos_score": 4.68,
+    "model_size_mb": 27.5,
+    "status": "Offline INT8 TinyML"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "hotspot_id": "HOTSPOT-SUR-04",
+    "kiosk_name": "SBI 24/7 E-Corner (Ring Road Textile Market)",
+    "city": "Surat, Gujarat",
+    "gps_coordinates": "Lat: 21.1896, Long: 72.8410",
+    "cash_out_risk_score": 94.2,
+    "predicted_cash_flow_inr": 4200000.0,
+    "target_mules_tracked": 2,
+    "assigned_pcr_van": "PCR Unit #7 (Surat East)",
+    "pcr_eta_mins": 8,
+    "status": "CORDON_AND_SEARCH_DEPLOYED"
+  },
+  {
+    "hotspot_id": "HOTSPOT-BLR-EC-02",
+    "kiosk_name": "HDFC & ICICI Twin ATM Kiosk (Neeladri Road)",
+    "city": "Bangalore, Karnataka",
+    "gps_coordinates": "Lat: 12.8452, Long: 77.6602",
+    "cash_out_risk_score": 89.5,
+    "predicted_cash_flow_inr": 1850000.0,
+    "target_mules_tracked": 1,
+    "assigned_pcr_van": "PCR Unit #12 (Electronic City)",
+    "pcr_eta_mins": 11,
+    "status": "SURVEILLANCE_ACTIVE"
+  }
+]

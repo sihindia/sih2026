@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Vulnerabilities Triaged",
+    "value": "18 Findings",
+    "trend": "Across Auth, API & Data Storage"
+  },
+  {
+    "metric": "Mean Remediation Time",
+    "value": "24 Hours",
+    "trend": "Zero Production Impact Maintained"
+  },
+  {
+    "metric": "PoC Reproducibility",
+    "value": "100.0%",
+    "trend": "Validated in Air-Gapped Testbed"
+  }
+]

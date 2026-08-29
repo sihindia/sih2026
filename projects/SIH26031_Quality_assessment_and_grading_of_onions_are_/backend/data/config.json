@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26031",
+  "title": "Quality assessment and grading of onions are often subjective and vary across procurement centers, resulting in disputes and inconsistencies.",
+  "organization": "Ministry of Consumer Affairs, Food & Public Distribution",
+  "theme": "Smart Automation",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

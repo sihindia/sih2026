@@ -1,0 +1,53 @@
+[
+  {
+    "batch_id": "KVIC-HONEY-2026-081",
+    "qr_code": "HONEY-KASHMIR-ACACIA-801",
+    "variety": "Pure Kashmir Valley White Acacia Honey",
+    "apiary_location": "Pampore Apiary Cluster, Pulwama, J&K",
+    "beekeeper_name": "Ghulam Nabi Wani (KVIC Honey Mission)",
+    "harvest_date": "2026-07-14",
+    "bottling_date": "2026-07-22",
+    "blockchain_tx_hash": "0x8f4d92a1c7784b0e51249bceaa840912fa5819024bc6e84d2919fae7c9920141",
+    "block_number": 1948201,
+    "nmr_purity_score_pct": 99.6,
+    "nabl_lab_cert": "NABL-QUAL-2026-9912 (C-4 Sugar: 0.0% Non-Adulterated)",
+    "moisture_content_pct": 17.2,
+    "pollen_fingerprint": "Robinia pseudoacacia (Acacia) 88.4%",
+    "fssai_lic_no": "10020084000129",
+    "status": "BLOCKCHAIN_VERIFIED_AUTHENTIC"
+  },
+  {
+    "batch_id": "KVIC-HONEY-2026-094",
+    "qr_code": "HONEY-SUNDARBANS-WILD-944",
+    "variety": "Sundarbans Wild Mangrove Multiflora Honey",
+    "apiary_location": "Kultali Forest Buffer Zone, South 24 Parganas, WB",
+    "beekeeper_name": "Subimal Mondal (Sundarbans Mouli Tribe)",
+    "harvest_date": "2026-06-28",
+    "bottling_date": "2026-07-08",
+    "blockchain_tx_hash": "0x3a99e120bc714f82819200421eef67104acbd99104fa284192081eefc0018420",
+    "block_number": 1944119,
+    "nmr_purity_score_pct": 99.2,
+    "nabl_lab_cert": "NABL-QUAL-2026-8841 (Trace Pollen Verified)",
+    "moisture_content_pct": 18.0,
+    "pollen_fingerprint": "Avicennia & Ceriops Mangrove Flora 91.0%",
+    "fssai_lic_no": "10020084000129",
+    "status": "BLOCKCHAIN_VERIFIED_AUTHENTIC"
+  },
+  {
+    "batch_id": "KVIC-HONEY-2026-108",
+    "qr_code": "HONEY-COORG-BLOSSOM-108",
+    "variety": "Western Ghats Coorg Coffee Blossom Honey",
+    "apiary_location": "Madikeri Hill Slopes, Kodagu, Karnataka",
+    "beekeeper_name": "Bopaiah K. M. (KVIC Beekeepers FPO)",
+    "harvest_date": "2026-08-02",
+    "bottling_date": "2026-08-10",
+    "blockchain_tx_hash": "0x1128fa00921ecba81920384716294021948bcdef0194820194820184abcdef01",
+    "block_number": 1952048,
+    "nmr_purity_score_pct": 98.9,
+    "nabl_lab_cert": "NABL-QUAL-2026-1049 (Pure Forest Grade)",
+    "moisture_content_pct": 17.8,
+    "pollen_fingerprint": "Coffea arabica & Cardamom Flora 86.5%",
+    "fssai_lic_no": "10020084000129",
+    "status": "BLOCKCHAIN_VERIFIED_AUTHENTIC"
+  }
+]

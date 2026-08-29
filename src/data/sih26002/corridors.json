@@ -1,0 +1,77 @@
+[
+  {
+    "id": "CORR-01",
+    "highway": "NH-06 (Guwahati - Shillong - Silchar)",
+    "states": [
+      "Assam",
+      "Meghalaya"
+    ],
+    "length_km": 310,
+    "current_status": "PARTIALLY_RESTRICTED",
+    "accessibility_score": 68,
+    "bottleneck_cause": "Single-lane traffic at Sonapur Tunnel due to mudslide debris",
+    "avg_delay_hours": 3.5,
+    "vulnerability_level": "MODERATE",
+    "alternate_route": "Via NH-27 Nagaon - Lumding - Haflong Corridor (Extra 85 km)"
+  },
+  {
+    "id": "CORR-02",
+    "highway": "NH-10 (Siliguri - Sevoke - Gangtok)",
+    "states": [
+      "West Bengal",
+      "Sikkim"
+    ],
+    "length_km": 114,
+    "current_status": "BLOCKED",
+    "accessibility_score": 15,
+    "bottleneck_cause": "Teesta River breach & active slope failure at 29th Mile",
+    "avg_delay_hours": 12.0,
+    "vulnerability_level": "CRITICAL",
+    "alternate_route": "Via Lava - Gorubathan - Damdim - Rorathang Route (4x4 only)"
+  },
+  {
+    "id": "CORR-03",
+    "highway": "NH-29 (Dimapur - Kohima - Imphal)",
+    "states": [
+      "Nagaland",
+      "Manipur"
+    ],
+    "length_km": 215,
+    "current_status": "PASSABLE_NORMAL",
+    "accessibility_score": 92,
+    "bottleneck_cause": "Clear weather, smooth freight movement",
+    "avg_delay_hours": 0.5,
+    "vulnerability_level": "LOW",
+    "alternate_route": "Direct National Highway route optimal"
+  },
+  {
+    "id": "CORR-04",
+    "highway": "NH-54 / NH-306 (Silchar - Kolasib - Aizawl)",
+    "states": [
+      "Assam",
+      "Mizoram"
+    ],
+    "length_km": 180,
+    "current_status": "WEATHER_WARNING",
+    "accessibility_score": 54,
+    "bottleneck_cause": "Heavy continuous precipitation & sinking road at Hunthar",
+    "avg_delay_hours": 5.0,
+    "vulnerability_level": "HIGH",
+    "alternate_route": "Via Bairabi Railhead Transshipment Point"
+  },
+  {
+    "id": "CORR-05",
+    "highway": "NH-415 / NH-13 (Trans-Arunachal Highway)",
+    "states": [
+      "Assam",
+      "Arunachal Pradesh"
+    ],
+    "length_km": 420,
+    "current_status": "PASSABLE_NORMAL",
+    "accessibility_score": 88,
+    "bottleneck_cause": "Normal traffic, minor maintenance near Banderdewa",
+    "avg_delay_hours": 1.0,
+    "vulnerability_level": "LOW",
+    "alternate_route": "Via Gohpur - Itanagar Bypass"
+  }
+]

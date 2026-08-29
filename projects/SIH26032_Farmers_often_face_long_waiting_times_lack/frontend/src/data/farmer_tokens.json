@@ -1,0 +1,155 @@
+[
+  {
+    "token_id": "TOKEN-PUN-2026-881",
+    "center_id": "MANDI-PUN-KHANNA",
+    "mandi_name": "Khanna Grain Market, Punjab",
+    "farmer_name": "Gurpreet Singh Gill",
+    "farmer_phone_masked": "+91 98140 XXXXX",
+    "aadhaar_masked": "XXXX-XXXX-4819",
+    "vehicle_number": "PB-10-CZ-4819 (Tractor-Trolley)",
+    "commodity": "Wheat (Grade-I FAQ MSP)",
+    "quantity_quintals": 120.0,
+    "booking_date": "2026-08-29",
+    "assigned_slot": "09:30 AM \u2013 10:30 AM",
+    "assigned_bay": "Weighbridge Bay #3",
+    "workflow_status": {
+      "step_1_gate_entry": {
+        "completed": true,
+        "time": "09:25 AM",
+        "status": "RFID Scanned"
+      },
+      "step_2_gross_weight": {
+        "completed": true,
+        "time": "09:38 AM",
+        "weight_kg": 16800,
+        "status": "Gross Weigh Recorded"
+      },
+      "step_3_qc_assaying": {
+        "completed": true,
+        "time": "09:48 AM",
+        "moisture_pct": 11.8,
+        "status": "Grade A Passed (11.8% Moisture)"
+      },
+      "step_4_unloading_tare": {
+        "completed": true,
+        "time": "10:02 AM",
+        "tare_weight_kg": 4800,
+        "net_weight_qtl": 120.0,
+        "status": "Silo Bin #4 Filled"
+      },
+      "step_5_dbt_payment": {
+        "completed": true,
+        "time": "10:15 AM",
+        "payout_inr": 273000.0,
+        "utr_number": "SBIN00841920-NFT-8812",
+        "status": "Direct Benefit Transfer Cleared"
+      }
+    },
+    "current_step": 5,
+    "turnaround_mins_actual": 37,
+    "j_form_invoice_no": "JFORM-PUN-2026-99120",
+    "qr_token_code": "PASS-DOCA-KHN-88194"
+  },
+  {
+    "token_id": "TOKEN-MH-2026-402",
+    "center_id": "MANDI-MH-LASALGAON",
+    "mandi_name": "Lasalgaon NAFED Hub, Maharashtra",
+    "farmer_name": "Dnyaneshwar Vitthal Shinde",
+    "farmer_phone_masked": "+91 98220 XXXXX",
+    "aadhaar_masked": "XXXX-XXXX-9012",
+    "vehicle_number": "MH-15-EG-9012 (Eicher 14ft)",
+    "commodity": "Rabi Onion (Nashik Garva)",
+    "quantity_quintals": 140.0,
+    "booking_date": "2026-08-29",
+    "assigned_slot": "11:00 AM \u2013 12:00 PM",
+    "assigned_bay": "Weighbridge Bay #1",
+    "workflow_status": {
+      "step_1_gate_entry": {
+        "completed": true,
+        "time": "10:55 AM",
+        "status": "Gate In Verified"
+      },
+      "step_2_gross_weight": {
+        "completed": true,
+        "time": "11:08 AM",
+        "weight_kg": 18400,
+        "status": "Gross Recorded"
+      },
+      "step_3_qc_assaying": {
+        "completed": true,
+        "time": "11:22 AM",
+        "moisture_pct": 12.8,
+        "status": "Grade A Buffer Approved (82.5% Gr.A)"
+      },
+      "step_4_unloading_tare": {
+        "completed": false,
+        "time": "In Progress",
+        "tare_weight_kg": 0,
+        "net_weight_qtl": 140.0,
+        "status": "Unloading at Cold Silo B"
+      },
+      "step_5_dbt_payment": {
+        "completed": false,
+        "time": "Pending Final Tare",
+        "payout_inr": 347200.0,
+        "utr_number": "Awaiting Generation",
+        "status": "Payment Queue Ready"
+      }
+    },
+    "current_step": 3,
+    "turnaround_mins_actual": 27,
+    "j_form_invoice_no": "JFORM-MH-2026-40281",
+    "qr_token_code": "PASS-DOCA-LAS-40219"
+  },
+  {
+    "token_id": "TOKEN-HAR-2026-118",
+    "center_id": "MANDI-HAR-KARNAL",
+    "mandi_name": "Karnal FCI Hub, Haryana",
+    "farmer_name": "Sukhwinder Singh Chauhan",
+    "farmer_phone_masked": "+91 94160 XXXXX",
+    "aadhaar_masked": "XXXX-XXXX-6632",
+    "vehicle_number": "HR-05-AB-6632 (Mahindra Pickup)",
+    "commodity": "Paddy Grade-A MSP",
+    "quantity_quintals": 85.0,
+    "booking_date": "2026-08-29",
+    "assigned_slot": "02:00 PM \u2013 03:00 PM",
+    "assigned_bay": "Weighbridge Bay #4",
+    "workflow_status": {
+      "step_1_gate_entry": {
+        "completed": false,
+        "time": "Upcoming",
+        "status": "Approaching Mandi (ETA 1:45 PM)"
+      },
+      "step_2_gross_weight": {
+        "completed": false,
+        "time": "--",
+        "weight_kg": 0,
+        "status": "Pending"
+      },
+      "step_3_qc_assaying": {
+        "completed": false,
+        "time": "--",
+        "moisture_pct": 0,
+        "status": "Pending"
+      },
+      "step_4_unloading_tare": {
+        "completed": false,
+        "time": "--",
+        "tare_weight_kg": 0,
+        "net_weight_qtl": 85.0,
+        "status": "Pending"
+      },
+      "step_5_dbt_payment": {
+        "completed": false,
+        "time": "--",
+        "payout_inr": 195500.0,
+        "utr_number": "Pending",
+        "status": "Pre-Authorized"
+      }
+    },
+    "current_step": 0,
+    "turnaround_mins_actual": 0,
+    "j_form_invoice_no": "JFORM-HAR-2026-11840",
+    "qr_token_code": "PASS-DOCA-KAR-11894"
+  }
+]

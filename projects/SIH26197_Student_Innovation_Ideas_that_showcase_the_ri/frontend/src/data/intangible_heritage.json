@@ -1,0 +1,26 @@
+[
+  {
+    "ich_id": "ICH-KALARI-01",
+    "title": "Kalaripayattu (Ancient Science of Martial Arts)",
+    "region": "Kerala & Western Ghats",
+    "roots": "Agastya Sage Tradition & Dhanurveda",
+    "significance": "One of the oldest fighting systems in the world, incorporating 108 Marma pressure points, ayurvedic oil body conditioning, and flexible swords (Urumi).",
+    "unesco_status": "NATIONAL_LIVING_HERITAGE"
+  },
+  {
+    "ich_id": "ICH-KOODI-02",
+    "title": "Koodiyattam (Sanskrit Temple Theatre)",
+    "region": "Kerala",
+    "roots": "Natyashastra by Bharata Muni (2000+ years old)",
+    "significance": "UNESCO Masterpiece of Oral & Intangible Heritage of Humanity, stylized eye gesture acting (Netranabhinaya).",
+    "unesco_status": "UNESCO_INSCRIPED_ICH"
+  },
+  {
+    "ich_id": "ICH-VEDIC-03",
+    "title": "Tradition of Vedic Chanting",
+    "region": "Pan-India",
+    "roots": "Rigveda, Samaveda, Yajurveda, Atharvaveda",
+    "significance": "UNESCO Recognized master oral recitation tradition with strict phonetic precision (Svara, Matra, Balam) preserved unchanged for 3,500+ years.",
+    "unesco_status": "UNESCO_INSCRIPED_ICH"
+  }
+]

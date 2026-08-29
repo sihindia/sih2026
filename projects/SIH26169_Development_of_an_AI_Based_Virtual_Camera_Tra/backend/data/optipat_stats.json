@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Coarse Lock Retention",
+    "value": "99.6% Continuous",
+    "trend": "Zero Beam Dropouts in Nominal Passes"
+  },
+  {
+    "metric": "Acquisition Latency",
+    "value": "84 Milliseconds",
+    "trend": "Fast Search-to-Track Handshake"
+  },
+  {
+    "metric": "Virtual Camera Throughput",
+    "value": "60 FPS Real-Time",
+    "trend": "Closed-Loop Pan-Tilt Control"
+  }
+]

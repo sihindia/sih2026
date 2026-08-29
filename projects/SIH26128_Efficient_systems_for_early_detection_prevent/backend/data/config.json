@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26128",
+  "title": "Efficient systems for early detection,prevention,and management of livestock diseases and animal health issues",
+  "organization": "Government Of Maharashtra",
+  "theme": "MedTech / BioTech / HealthTech",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

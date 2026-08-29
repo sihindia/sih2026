@@ -1,0 +1,47 @@
+[
+  {
+    "base_ulpin": "27-584-0129-4819",
+    "property_name": "Antares Sky Towers (High-Rise Residential)",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "lat": 18.5204,
+    "lng": 73.8567,
+    "ground_area_sqm": 4200.0,
+    "floors_above_ground": 24,
+    "basements_underground": 3,
+    "total_units_count": 192,
+    "total_height_m": 78.5,
+    "deepest_subsurface_m": -11.4,
+    "status": "3D_CADASTRAL_VERIFIED"
+  },
+  {
+    "base_ulpin": "07-110-8402-9912",
+    "property_name": "Connaught Central Commercial Mall & Metro Hub",
+    "city": "New Delhi",
+    "state": "Delhi NCR",
+    "lat": 28.6315,
+    "lng": 77.2167,
+    "ground_area_sqm": 8500.0,
+    "floors_above_ground": 8,
+    "basements_underground": 4,
+    "total_units_count": 110,
+    "total_height_m": 36.0,
+    "deepest_subsurface_m": -18.5,
+    "status": "3D_CADASTRAL_VERIFIED"
+  },
+  {
+    "base_ulpin": "29-612-4011-7723",
+    "property_name": "Silicon Horizon Tech Park (Tower B)",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "lat": 12.9716,
+    "lng": 77.5946,
+    "ground_area_sqm": 6100.0,
+    "floors_above_ground": 16,
+    "basements_underground": 2,
+    "total_units_count": 64,
+    "total_height_m": 58.0,
+    "deepest_subsurface_m": -8.0,
+    "status": "3D_CADASTRAL_VERIFIED"
+  }
+]

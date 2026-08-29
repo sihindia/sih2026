@@ -1,0 +1,24 @@
+[
+  {
+    "notice_id": "SCN-DOCA-LMR-2026-042",
+    "violator_company": "Global Sweets India Pvt Ltd",
+    "product_name": "Swiss ChocoDelight Hazelnut Cookies (250g)",
+    "section_invoked": "Section 18 read with Section 36(1) of Legal Metrology Act, 2009",
+    "issued_by": "Deputy Controller of Legal Metrology, Maharashtra State",
+    "penalty_proposed_inr": 50000.0,
+    "compounding_provision": "Eligible for compounding on payment of \u20b925,000 within 15 days",
+    "response_deadline": "2026-09-15",
+    "status": "NOTICE_SERVED_AWAITING_REPLY"
+  },
+  {
+    "notice_id": "SCN-DOCA-LMR-2026-054",
+    "violator_company": "Pulse Gadgets India Ltd",
+    "product_name": "Pulse Pro Smart Fitness Tracker",
+    "section_invoked": "Rule 6(1)(e) of LMR 2011",
+    "issued_by": "Assistant Controller of Legal Metrology, Delhi HQ",
+    "penalty_proposed_inr": 25000.0,
+    "compounding_provision": "Standard First Offence Compounding Notice",
+    "response_deadline": "2026-09-20",
+    "status": "COMPOUNDING_FEE_PAID"
+  }
+]

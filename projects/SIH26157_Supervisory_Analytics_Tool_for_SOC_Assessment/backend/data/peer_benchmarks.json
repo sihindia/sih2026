@@ -1,0 +1,20 @@
+[
+  {
+    "sector": "Power & Energy",
+    "peer_avg_mttr_mins": 28.5,
+    "peer_escalation_ratio_pct": 14.2,
+    "peer_investigation_depth_score": 8.4
+  },
+  {
+    "sector": "Banking & Finance",
+    "peer_avg_mttr_mins": 18.0,
+    "peer_escalation_ratio_pct": 19.5,
+    "peer_investigation_depth_score": 9.1
+  },
+  {
+    "sector": "Defense & Strategic",
+    "peer_avg_mttr_mins": 22.0,
+    "peer_escalation_ratio_pct": 16.8,
+    "peer_investigation_depth_score": 8.8
+  }
+]

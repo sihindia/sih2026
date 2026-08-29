@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Lunar Optical Tiles Registered",
+    "value": "18,400 Tiles",
+    "trend": "Across South Pole & Equatorial Belts"
+  },
+  {
+    "metric": "Mean Sub-Pixel Accuracy",
+    "value": "0.28 Pixels RMSE",
+    "trend": "Exceeds ISRO SAC Benchmark of <0.5 px"
+  },
+  {
+    "metric": "Multi-Sensor Payload Support",
+    "value": "OHRC, TMC-2 & IIRS",
+    "trend": "Seamless Cross-Modal Data Fusion"
+  }
+]

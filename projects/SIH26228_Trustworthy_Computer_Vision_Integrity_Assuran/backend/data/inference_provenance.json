@@ -1,0 +1,38 @@
+[
+  {
+    "record_id": "INF-PROV-2026-081",
+    "image_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model_id": "MOD-DEF-YOLO-081",
+    "weights_digest": "8f92a3b10c94e82df45a892b3c104e789a67b2c5d4e3f1a09876543210fedcba",
+    "preprocessing_hash": "PRE-NORM-RGB-FLOAT32-AUG0",
+    "bounding_boxes_count": 4,
+    "detections": [
+      "T-90 Main Battle Tank (0.98)",
+      "BMP-2 Armoured Carrier (0.94)",
+      "Supply Truck (0.91)"
+    ],
+    "merkle_root": "MERKLE-ROOT-7a8b9c0d1e2f3a4b",
+    "ed25519_signature": "SIG-ED25519-948194a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0",
+    "nonce": "NONCE-08194",
+    "timestamp": "2026-08-29 11:45:10 UTC",
+    "integrity_status": "SIGNATURE_VERIFIED_AUTHENTIC",
+    "tamper_detected": false
+  },
+  {
+    "record_id": "INF-PROV-2026-042",
+    "image_sha256": "4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c",
+    "model_id": "MOD-DEF-RESNET-042",
+    "weights_digest": "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d",
+    "preprocessing_hash": "PRE-RESIZE-MULTISPECTRAL",
+    "bounding_boxes_count": 1,
+    "detections": [
+      "Civilian Truck (0.96) [Altered from Hostile Artillery]"
+    ],
+    "merkle_root": "MERKLE-ROOT-INVALID-MISMATCH",
+    "ed25519_signature": "SIG-ED25519-TAMPERED-HASH-0000",
+    "nonce": "NONCE-04218",
+    "timestamp": "2026-08-29 09:20:00 UTC",
+    "integrity_status": "POST_HOC_TAMPERING_DETECTED",
+    "tamper_detected": true
+  }
+]

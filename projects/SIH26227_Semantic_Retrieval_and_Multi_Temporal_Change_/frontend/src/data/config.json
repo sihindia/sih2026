@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26227",
+  "title": "Semantic Retrieval and Multi-Temporal Change Analysis of Satellite lmagery.",
+  "organization": "Ministry of defence (MoD)",
+  "theme": "Space Technology",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

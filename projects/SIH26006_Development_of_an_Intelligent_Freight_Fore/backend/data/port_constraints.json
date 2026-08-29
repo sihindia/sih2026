@@ -1,0 +1,42 @@
+[
+  {
+    "port_name": "Paradip",
+    "max_draft_m": 17.1,
+    "max_loa_m": 300,
+    "max_vessel": "Capesize (Fully Laden)",
+    "discharge_rate_mtpd": 45000,
+    "berth_wait_days": 1.5
+  },
+  {
+    "port_name": "Visakhapatnam",
+    "max_draft_m": 16.5,
+    "max_loa_m": 290,
+    "max_vessel": "Baby Cape / Panamax",
+    "discharge_rate_mtpd": 38000,
+    "berth_wait_days": 2.0
+  },
+  {
+    "port_name": "Dhamra",
+    "max_draft_m": 18.0,
+    "max_loa_m": 320,
+    "max_vessel": "Capesize (Deep Draft)",
+    "discharge_rate_mtpd": 50000,
+    "berth_wait_days": 0.8
+  },
+  {
+    "port_name": "Gangavaram",
+    "max_draft_m": 19.5,
+    "max_loa_m": 330,
+    "max_vessel": "Very Large Ore Carrier (VLOC)",
+    "discharge_rate_mtpd": 55000,
+    "berth_wait_days": 1.0
+  },
+  {
+    "port_name": "Haldia",
+    "max_draft_m": 8.2,
+    "max_loa_m": 195,
+    "max_vessel": "Handysize Only (Riverine)",
+    "discharge_rate_mtpd": 18000,
+    "berth_wait_days": 3.2
+  }
+]

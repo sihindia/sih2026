@@ -1,0 +1,34 @@
+[
+  {
+    "sector_id": "SEC-FINTECH-01",
+    "name": "Financial Services (FinTech & OCEN Cashflow Lending)",
+    "gdp_share_pct": 14.8,
+    "innovation_theme": "Open Credit Enablement Network (OCEN) & Account Aggregator (AA) Underwriting",
+    "key_benefit": "Zero-collateral MSME loans sanctioned in < 3 minutes using daily UPI cashflow",
+    "icon": "CreditCard"
+  },
+  {
+    "sector_id": "SEC-RETAIL-02",
+    "name": "Smart Retail & ONDC Open Commerce Aggregation",
+    "gdp_share_pct": 12.5,
+    "innovation_theme": "Decentralized Kirana Digitization, Dynamic Surge Pricing & Hyperlocal Logistics",
+    "key_benefit": "Zero-commission open network connecting neighborhood stores to any buyer app",
+    "icon": "ShoppingBag"
+  },
+  {
+    "sector_id": "SEC-HOSPITALITY-03",
+    "name": "Smart Hospitality & AI Dynamic Yield Management",
+    "gdp_share_pct": 8.2,
+    "innovation_theme": "Multi-Factor Demand Pricing, Keyless Biometric Check-in & Kitchen Food Waste AI",
+    "key_benefit": "+28% RevPAR (Revenue Per Available Room) and -35% kitchen food wastage",
+    "icon": "Building2"
+  },
+  {
+    "sector_id": "SEC-ENTERTAINMENT-04",
+    "name": "Media, Entertainment & Creator Economy Web3 Royalties",
+    "gdp_share_pct": 3.9,
+    "innovation_theme": "Transparent Micro-Royalty Smart Contracts & Direct Fan Monetization",
+    "key_benefit": "Immediate automated micro-payouts to musicians/animators without 180-day labels delay",
+    "icon": "Sparkles"
+  }
+]

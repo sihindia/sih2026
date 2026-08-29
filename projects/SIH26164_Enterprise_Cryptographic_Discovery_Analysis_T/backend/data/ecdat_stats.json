@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Cryptographic Assets Cataloged",
+    "value": "3,420 CBOM Nodes",
+    "trend": "Across Repos, Containers & Binaries"
+  },
+  {
+    "metric": "Mosca Critical Quantum Risk",
+    "value": "68.4% of Assets",
+    "trend": "Harvest-Now-Decrypt-Later Threat"
+  },
+  {
+    "metric": "PQC Hybrid Migration Ready",
+    "value": "100.0%",
+    "trend": "ML-KEM & ML-DSA Drop-in Support"
+  }
+]

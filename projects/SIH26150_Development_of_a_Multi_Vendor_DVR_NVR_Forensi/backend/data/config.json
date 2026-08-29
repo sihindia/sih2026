@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26150",
+  "title": "Development of a Multi-Vendor DVR/NVR Forensic Analysis Tool for Standardized Acquisition, Recovery, and Analysis of Surveillance Evidence.",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "theme": "Blockchain & Cybersecurity",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

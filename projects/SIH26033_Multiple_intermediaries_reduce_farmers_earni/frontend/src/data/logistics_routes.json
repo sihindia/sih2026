@@ -1,0 +1,26 @@
+[
+  {
+    "route_id": "ROUTE-NSK-DEL",
+    "origin": "Nashik Farmgate Aggregation Hub",
+    "destination": "Delhi-NCR Wholesale Terminal",
+    "distance_km": 1340.0,
+    "vehicle": "16-Ton Reefer Truck (MH-15-EG-8812)",
+    "cold_storage_temp_c": 4.2,
+    "current_spoilage_rate_pct": 1.1,
+    "transit_eta_hrs": 24.5,
+    "freight_cost_per_qtl": 220.0,
+    "status": "GREEN_CORRIDOR_ACTIVE"
+  },
+  {
+    "route_id": "ROUTE-JAL-DEL",
+    "origin": "Jalandhar FPO Silo Depot",
+    "destination": "Delhi Okhla Food Logistics Hub",
+    "distance_km": 375.0,
+    "vehicle": "24-Ton Heavy Container (PB-08-CZ-4019)",
+    "cold_storage_temp_c": 22.0,
+    "current_spoilage_rate_pct": 0.3,
+    "transit_eta_hrs": 7.0,
+    "freight_cost_per_qtl": 85.0,
+    "status": "DELIVERED_TODAY"
+  }
+]

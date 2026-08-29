@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26094",
+  "title": "AI-Powered Dynamic Mental Health Monitoring and Distress Prediction System for Victims of Atrocities",
+  "organization": "Ministry of Social Justice and Empowerment (MoSJE)",
+  "theme": "MedTech / BioTech / HealthTech",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

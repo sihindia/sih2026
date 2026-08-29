@@ -1,0 +1,22 @@
+[
+  {
+    "camp_id": "CAMP-HIGH-GAURIKUND-01",
+    "camp_name": "Sonprayag Upper Ridge Resettlement Base",
+    "elevation_above_river_m": 185.0,
+    "capacity_people": 2500,
+    "current_occupancy": 840,
+    "stocked_rations_days": 14,
+    "inflatable_rescue_boats": 6,
+    "status": "OPERATIONAL_SAFE"
+  },
+  {
+    "camp_id": "CAMP-HIGH-MANALI-02",
+    "camp_name": "Hadimba Temple High Ground Shelter",
+    "elevation_above_river_m": 220.0,
+    "capacity_people": 3000,
+    "current_occupancy": 450,
+    "stocked_rations_days": 21,
+    "inflatable_rescue_boats": 4,
+    "status": "OPERATIONAL_SAFE"
+  }
+]

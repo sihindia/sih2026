@@ -1,0 +1,37 @@
+[
+  {
+    "state": "Tamil Nadu",
+    "index": 92.4,
+    "cadastral_digitized": "99.8%",
+    "dispute_density": "1.4 per 1k",
+    "rank": 1
+  },
+  {
+    "state": "Maharashtra",
+    "index": 89.8,
+    "cadastral_digitized": "98.5%",
+    "dispute_density": "2.1 per 1k",
+    "rank": 2
+  },
+  {
+    "state": "Gujarat",
+    "index": 88.5,
+    "cadastral_digitized": "97.2%",
+    "dispute_density": "2.4 per 1k",
+    "rank": 3
+  },
+  {
+    "state": "Uttar Pradesh",
+    "index": 82.0,
+    "cadastral_digitized": "94.0%",
+    "dispute_density": "4.8 per 1k",
+    "rank": 7
+  },
+  {
+    "state": "Bihar",
+    "index": 71.5,
+    "cadastral_digitized": "84.5%",
+    "dispute_density": "8.2 per 1k",
+    "rank": 14
+  }
+]

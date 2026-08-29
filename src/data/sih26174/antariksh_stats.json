@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Edge Processing Speed",
+    "value": "30 FPS Real-Time",
+    "trend": "Standalone On-Board BAS Compute"
+  },
+  {
+    "metric": "Protocol Step Accuracy",
+    "value": "98.6% Precision",
+    "trend": "Zero Ground Telemetry Dependency"
+  },
+  {
+    "metric": "3D Microgravity Pose Tracking",
+    "value": "24 Joint Mesh",
+    "trend": "Orientation-Agnostic Human Mesh Recovery"
+  }
+]

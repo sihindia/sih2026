@@ -1,0 +1,11 @@
+[
+  {
+    "trail_id": "TRAIL-MUM-SURAT-01",
+    "layer_1_mule": "Dharmesh Varma (A/c #39182049182, SBI Surat)",
+    "layer_2_mule": "Surat Textile Trade Co (A/c #1029481928, Kotak)",
+    "layer_3_atm_card": "Debit Card ending in #4091 (Active Surat ATM)",
+    "lien_placed_inr": 4200000.0,
+    "bank_freeze_status": "INSTANT_NPCI_LIEN_HOLD_ACTIVE",
+    "time_to_freeze_seconds": 42
+  }
+]

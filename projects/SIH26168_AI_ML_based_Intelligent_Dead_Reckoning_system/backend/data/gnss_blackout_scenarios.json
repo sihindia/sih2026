@@ -1,0 +1,30 @@
+[
+  {
+    "scenario_id": "DR-SCENARIO-2026-001",
+    "location_name": "Atal Tunnel Rohtang (9.02 km GNSS-Denied Highway)",
+    "location_name_hi": "\u0905\u091f\u0932 \u0938\u0941\u0930\u0902\u0917 \u0930\u094b\u0939\u0924\u093e\u0902\u0917 (9.02 \u0915\u093f\u092e\u0940 \u091c\u0940\u090f\u0928\u090f\u0938\u090f\u0938-\u0905\u0935\u0930\u0941\u0926\u094d\u0927 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917)",
+    "environment_type": "HIGH_ALTITUDE_MOUNTAIN_TUNNEL",
+    "gnss_blackout_duration_sec": 540,
+    "vehicle_speed_kmh": 60,
+    "unassisted_imu_drift_m": 480.0,
+    "unassisted_drift_pct": 53.3,
+    "navdrift_ai_drift_m": 28.4,
+    "navdrift_ai_drift_pct": 3.15,
+    "lane_level_accuracy_retained": true,
+    "status": "ISRO_BENCHMARK_COMPLIANT (<10% DRIFT)"
+  },
+  {
+    "scenario_id": "DR-SCENARIO-2026-012",
+    "location_name": "Pragati Maidan Underground Transit Corridor (New Delhi)",
+    "location_name_hi": "\u092a\u094d\u0930\u0917\u0924\u093f \u092e\u0948\u0926\u093e\u0928 \u0905\u0902\u0921\u0930\u0917\u094d\u0930\u093e\u0909\u0902\u0921 \u0915\u0949\u0930\u093f\u0921\u094b\u0930 (\u0928\u0908 \u0926\u093f\u0932\u094d\u0932\u0940)",
+    "environment_type": "URBAN_UNDERPASS_AND_CANYON",
+    "gnss_blackout_duration_sec": 180,
+    "vehicle_speed_kmh": 45,
+    "unassisted_imu_drift_m": 125.0,
+    "unassisted_drift_pct": 41.6,
+    "navdrift_ai_drift_m": 7.2,
+    "navdrift_ai_drift_pct": 2.4,
+    "lane_level_accuracy_retained": true,
+    "status": "ISRO_BENCHMARK_COMPLIANT (<10% DRIFT)"
+  }
+]

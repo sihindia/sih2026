@@ -1,0 +1,20 @@
+[
+  {
+    "block_height": 1948201,
+    "timestamp": "2026-08-20T10:30:15Z",
+    "action": "DOCUMENT_MINTED_AND_SEALED",
+    "document_id": "DOC-FIR-2026-891",
+    "actor": "Inspector Amit Rawat (Digital Signature: RSA-4096)",
+    "merkle_root": "0x5f81...9912",
+    "status": "FINALIZED_ON_LEDGER"
+  },
+  {
+    "block_height": 1948245,
+    "timestamp": "2026-08-24T14:15:22Z",
+    "action": "PII_REDACTION_SEALED",
+    "document_id": "DOC-STMT-POCSO-02",
+    "actor": "DSP Sunita Deshmukh (e-Sign Token Validated)",
+    "merkle_root": "0x8a1c...4491",
+    "status": "FINALIZED_ON_LEDGER"
+  }
+]

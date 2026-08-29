@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Collision-Free Navigation",
+    "value": "99.4% Rate",
+    "trend": "Zero Collisions in 500m Field Trials"
+  },
+  {
+    "metric": "Visual SLAM Drift",
+    "value": "< 0.85% Total",
+    "trend": "Loop-Closure Verified Without GPS"
+  },
+  {
+    "metric": "Perception Processing",
+    "value": "18 Milliseconds",
+    "trend": "Real-Time DWA Path Planning at 45 FPS"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "route_id": "ROUTE-EV-INDORE-01",
+    "vehicle_no": "MP-09-EV-2026",
+    "vehicle_type": "Electric Hydraulic Tipper (3.5 Ton)",
+    "assigned_bins": [
+      "BIN-INDORE-WARD-04",
+      "BIN-INDORE-WARD-08",
+      "BIN-INDORE-WARD-12"
+    ],
+    "est_fuel_diesel_saved_liters": 14.5,
+    "co2_abatement_kg": 38.2,
+    "route_status": "EN_ROUTE_COLLECTION"
+  }
+]

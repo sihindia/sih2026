@@ -1,0 +1,28 @@
+[
+  {
+    "hive_id": "HIVE-KASH-01",
+    "apiary": "Pampore Apiary Box #4",
+    "internal_temp_c": 34.8,
+    "temp_optimal": true,
+    "humidity_pct": 62.0,
+    "weight_kg": 44.5,
+    "acoustic_freq_hz": 235,
+    "queen_status": "HEALTHY_ACTIVE",
+    "varroa_mite_risk_pct": 4.2,
+    "swarming_risk": "LOW",
+    "battery_pct": 96
+  },
+  {
+    "hive_id": "HIVE-SUNDAR-02",
+    "apiary": "Kultali Mouli Box #9",
+    "internal_temp_c": 35.2,
+    "temp_optimal": true,
+    "humidity_pct": 74.5,
+    "weight_kg": 38.0,
+    "acoustic_freq_hz": 410,
+    "queen_status": "QUEEN_SUPERSEDURE_ALERT",
+    "varroa_mite_risk_pct": 8.5,
+    "swarming_risk": "HIGH_SWARM_FREQUENCY",
+    "battery_pct": 88
+  }
+]

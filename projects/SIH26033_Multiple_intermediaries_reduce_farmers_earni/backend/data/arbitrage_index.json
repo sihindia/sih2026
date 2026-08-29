@@ -1,0 +1,38 @@
+[
+  {
+    "layer": "1. Farmer Realization",
+    "traditional_pct": 32.0,
+    "direct_platform_pct": 82.5,
+    "benefit": "+158% Farmer Net Revenue"
+  },
+  {
+    "layer": "2. Village Aggregator / Trader",
+    "traditional_pct": 12.0,
+    "direct_platform_pct": 0.0,
+    "benefit": "Eliminated"
+  },
+  {
+    "layer": "3. APMC Commission Agent (Arhtiya)",
+    "traditional_pct": 8.5,
+    "direct_platform_pct": 0.0,
+    "benefit": "Eliminated"
+  },
+  {
+    "layer": "4. Secondary Inter-State Wholesaler",
+    "traditional_pct": 18.0,
+    "direct_platform_pct": 0.0,
+    "benefit": "Eliminated"
+  },
+  {
+    "layer": "5. Multi-Modal Cold Logistics & Tech Platform",
+    "traditional_pct": 6.5,
+    "direct_platform_pct": 7.5,
+    "benefit": "Optimized Reefer Freight"
+  },
+  {
+    "layer": "6. Consumer Retail Final Price",
+    "traditional_pct": 100.0,
+    "direct_platform_pct": 76.0,
+    "benefit": "24% Direct Consumer Savings"
+  }
+]

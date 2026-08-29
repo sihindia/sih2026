@@ -1,0 +1,29 @@
+[
+  {
+    "alert_id": "CAP-ALERT-2026-MANDAKINI-01",
+    "target_village": "Gaurikund & Sonprayag Valley Townships",
+    "district": "Rudraprayag, Uttarakhand",
+    "cap_severity": "Extreme (Red Category)",
+    "hazard": "Flash Flood & Mudslide Surge",
+    "lead_time_to_impact": "55 Minutes",
+    "broadcast_channels": [
+      "Emergency CAP SMS (14,200 phones)",
+      "Village Panchayat Loudspeakers",
+      "Police Sirens"
+    ],
+    "action_instruction": "Evacuate immediately to Kedarnath Upper Bypass Relief Camp (>150m above riverbed)."
+  },
+  {
+    "alert_id": "CAP-ALERT-2026-BEAS-02",
+    "target_village": "Old Manali & Bahang Left Bank",
+    "district": "Kullu, Himachal Pradesh",
+    "cap_severity": "Severe (Red Category)",
+    "hazard": "Beas Riverbed Bank Overtopping",
+    "lead_time_to_impact": "75 Minutes",
+    "broadcast_channels": [
+      "CAP Cell Broadcast",
+      "NDRF Siren Tower #4"
+    ],
+    "action_instruction": "Move all vehicles and residents to Manali Circuit House High Ridge."
+  }
+]

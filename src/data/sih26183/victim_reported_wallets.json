@@ -1,0 +1,44 @@
+[
+  {
+    "complaint_id": "NCRP-2026-CHE-1049",
+    "victim_city": "Chennai, Tamil Nadu",
+    "reported_wallet_address": "TQ88kL019284jkm91823481234918241",
+    "blockchain_network": "TRON (TRC-20 USDT)",
+    "fraud_typology": "WhatsApp High-Yield Crypto Arbitrage Scam",
+    "fraud_typology_hi": "\u0935\u094d\u0939\u093e\u091f\u094d\u0938\u090f\u092a \u0909\u091a\u094d\u091a-\u0932\u093e\u092d \u0915\u094d\u0930\u093f\u092a\u094d\u091f\u094b \u0906\u0930\u094d\u092c\u093f\u091f\u094d\u0930\u0947\u091c \u0918\u094b\u091f\u093e\u0932\u093e",
+    "siphoned_value_usdt": 210000.0,
+    "siphoned_value_inr": 17640000.0,
+    "identified_destination_exchange": "Binance Global Direct Deposit Cluster #BN-9812",
+    "attribution_certainty_pct": 98.4,
+    "hops_to_exchange": 1,
+    "status": "ASSET_PRESERVATION_ORDER_ACTIVE"
+  },
+  {
+    "complaint_id": "NCRP-2026-DEL-8821",
+    "victim_city": "South Delhi, Delhi",
+    "reported_wallet_address": "0x44c9182049182049182039182049182039182049",
+    "blockchain_network": "Ethereum (ERC-20 USDT)",
+    "fraud_typology": "Prepaid Telegram Movie Rating Task Fraud",
+    "fraud_typology_hi": "\u091f\u0947\u0932\u0940\u0917\u094d\u0930\u093e\u092e \u0930\u0947\u091f\u093f\u0902\u0917 \u091f\u093e\u0938\u094d\u0915 \u092b\u094d\u0930\u0949\u0921",
+    "siphoned_value_usdt": 65000.0,
+    "siphoned_value_inr": 5460000.0,
+    "identified_destination_exchange": "KuCoin Exchange Inbound Wallet #KC-1102",
+    "attribution_certainty_pct": 96.2,
+    "hops_to_exchange": 2,
+    "status": "LIEN_HOLD_PLACED"
+  },
+  {
+    "complaint_id": "NCRP-2026-HYD-3190",
+    "victim_city": "Gachibowli, Hyderabad",
+    "reported_wallet_address": "bc1q841283918204918204918203918204918203",
+    "blockchain_network": "Bitcoin (BTC)",
+    "fraud_typology": "Sextortion & Video Call Blackmail Extortion",
+    "fraud_typology_hi": "\u0938\u0947\u0915\u094d\u0938\u091f\u0949\u0930\u094d\u0936\u0928 \u0914\u0930 \u0935\u0940\u0921\u093f\u092f\u094b \u0915\u0949\u0932 \u092c\u094d\u0932\u0948\u0915\u092e\u0947\u0932",
+    "siphoned_value_usdt": 48000.0,
+    "siphoned_value_inr": 4032000.0,
+    "identified_destination_exchange": "Bybit Custodial Hot Wallet #BYB-7721",
+    "attribution_certainty_pct": 95.0,
+    "hops_to_exchange": 3,
+    "status": "EVIDENCE_PRESERVATION_SENT"
+  }
+]

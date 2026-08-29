@@ -1,0 +1,44 @@
+[
+  {
+    "game_id": "GAME-01",
+    "title": "NER Cultural Heritage Memory Match",
+    "category": "Visual & Associative Memory",
+    "difficulty": "Adaptive Level 2",
+    "cards": [
+      {
+        "id": 1,
+        "item": "\ud83e\udd8f Kaziranga One-Horned Rhino",
+        "match_key": "rhino"
+      },
+      {
+        "id": 2,
+        "item": "\ud83e\ude95 Assamese Bihu Dhol Drum",
+        "match_key": "dhol"
+      },
+      {
+        "id": 3,
+        "item": "\ud83c\udf3f Meghalaya Living Root Bridge",
+        "match_key": "bridge"
+      },
+      {
+        "id": 4,
+        "item": "\ud83c\udf8b Mizo Bamboo Dance (Cheraw)",
+        "match_key": "cheraw"
+      }
+    ],
+    "cognitive_target": "Short-term visual recall & hippocampus stimulation"
+  },
+  {
+    "game_id": "GAME-02",
+    "title": "Daily Routine Sequencing & Time Recall",
+    "category": "Executive Function",
+    "difficulty": "Adaptive Level 1",
+    "tasks": [
+      "Morning Cup of Assam Tea",
+      "Take Blood Pressure Medicine",
+      "Evening Garden Walk",
+      "Dinner with Family"
+    ],
+    "cognitive_target": "Procedural memory & temporal orientation"
+  }
+]

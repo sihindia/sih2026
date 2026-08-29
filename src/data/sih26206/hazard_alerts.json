@@ -1,0 +1,50 @@
+[
+  {
+    "alert_id": "ALT-CYC-2026-081",
+    "hazard_type": "CYCLONIC_STORM",
+    "hazard_name": "Severe Cyclonic Storm 'Varun' (Bay of Bengal)",
+    "severity": "RED_ALERT",
+    "affected_regions": [
+      "Puri Coastal Belt",
+      "Jagatsinghpur",
+      "Srikakulam Coast"
+    ],
+    "wind_speed_kmh": 135.0,
+    "storm_surge_meters": 2.4,
+    "forecast_landfall": "2026-08-30 18:00 IST",
+    "ndma_guideline": "Complete coastal evacuation within 5km zone. Suspend all marine operations.",
+    "status": "ACTIVE_LANDFALL_APPROACHING"
+  },
+  {
+    "alert_id": "ALT-FLD-2026-042",
+    "hazard_type": "FLASH_FLOOD_RIVERINE",
+    "hazard_name": "Brahmaputra Major Inundation (Danger Mark +1.8m)",
+    "severity": "RED_ALERT",
+    "affected_regions": [
+      "Barpeta",
+      "Dhubri",
+      "Kaziranga Buffer Zone"
+    ],
+    "water_discharge_cusecs": 780000,
+    "submerged_villages": 142,
+    "forecast_landfall": "Ongoing Monsoon Cresting",
+    "ndma_guideline": "Deploy inflatable motorized boats. Activate high-ground relief camps.",
+    "status": "ACTIVE_CRESTING"
+  },
+  {
+    "alert_id": "ALT-LND-2026-109",
+    "hazard_type": "LANDSLIDE_DEBRIS_FLOW",
+    "hazard_name": "Wayanad Slope Failure & Mudslide Risk",
+    "severity": "ORANGE_ALERT",
+    "affected_regions": [
+      "Meppadi",
+      "Chooralmala Sector",
+      "Mundakkai"
+    ],
+    "rainfall_24h_mm": 248.5,
+    "soil_saturation_pct": 94.2,
+    "forecast_landfall": "Next 12 Hours High Risk",
+    "ndma_guideline": "Preemptive night evacuation of tea estate settlements.",
+    "status": "MONITORING_SLOPE_MOVEMENT"
+  }
+]

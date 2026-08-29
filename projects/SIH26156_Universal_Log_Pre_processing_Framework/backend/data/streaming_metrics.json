@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Daily Ingestion Throughput",
+    "value": "4.8 Billion Events/Day",
+    "trend": "Scalable Apache Kafka / Flink Pipeline"
+  },
+  {
+    "metric": "Mean Normalization Latency",
+    "value": "0.42 ms",
+    "trend": "Sub-millisecond Line-Rate Processing"
+  },
+  {
+    "metric": "Forensic Lineage Fidelity",
+    "value": "100.0% Lossless",
+    "trend": "Cryptographic SHA-256 Preservation"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "corridor": "Ring Road Express Arterial",
+    "vehicle_density": "8,450 Veh/Hr",
+    "avg_speed_km_h": 34.2,
+    "congestion_level": "MODERATE_ORANGE"
+  },
+  {
+    "corridor": "Cyber Hub Access Expressway",
+    "vehicle_density": "12,200 Veh/Hr",
+    "avg_speed_km_h": 18.5,
+    "congestion_level": "HIGH_BOTTLE_RED"
+  },
+  {
+    "corridor": "Sohna Elevated Highway",
+    "vehicle_density": "4,100 Veh/Hr",
+    "avg_speed_km_h": 68.0,
+    "congestion_level": "FREE_FLOW_GREEN"
+  }
+]

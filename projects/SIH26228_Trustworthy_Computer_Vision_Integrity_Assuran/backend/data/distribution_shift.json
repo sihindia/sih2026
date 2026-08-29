@@ -1,0 +1,23 @@
+[
+  {
+    "terrain": "Thar Desert Heavy Sandstorm",
+    "sensor": "Optical Daylight HD",
+    "mahalanobis_distance": 2.1,
+    "classification": "OPERATIONAL_TERRAIN_DRIFT",
+    "recommendation": "Activate IR Thermal Dual-Fusion"
+  },
+  {
+    "terrain": "Himalayan High-Altitude Snow Blizzard",
+    "sensor": "LWIR Thermal",
+    "mahalanobis_distance": 1.8,
+    "classification": "OPERATIONAL_CLIMATIC_DRIFT",
+    "recommendation": "Contrast Histogram Equalization"
+  },
+  {
+    "terrain": "Sector B Perimeter Fence",
+    "sensor": "Optical Surveillance",
+    "mahalanobis_distance": 8.9,
+    "classification": "ADVERSARIAL_PATCH_INJECTION_SUSPECTED",
+    "recommendation": "Immediate Sensor Lockout & Sentry Alert"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "location": "Nagpur (JNARDDC Metrology Hub)",
+    "mat_name": "Server & Telecom PCBs",
+    "informal_price": "\u20b9620/kg",
+    "formal_price": "\u20b9950/kg",
+    "bonus": "+53% Higher",
+    "trend": "RISING (+\u20b930 this week)"
+  },
+  {
+    "location": "Pune (Pimpri Industrial Cluster)",
+    "mat_name": "Lithium-Ion Batteries",
+    "informal_price": "\u20b9220/kg",
+    "formal_price": "\u20b9380/kg",
+    "bonus": "+72% Higher",
+    "trend": "HIGH DEMAND"
+  },
+  {
+    "location": "Delhi-NCR (Mayapuri / Seelampur)",
+    "mat_name": "Copper Cable Wire",
+    "informal_price": "\u20b9410/kg",
+    "formal_price": "\u20b9580/kg",
+    "bonus": "+41% Higher",
+    "trend": "STABLE"
+  },
+  {
+    "location": "Bengaluru (Peenya Tech Cluster)",
+    "mat_name": "Neodymium Hard Drives",
+    "informal_price": "\u20b9180/kg",
+    "formal_price": "\u20b9290/kg",
+    "bonus": "+61% Higher",
+    "trend": "RISING"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "branded_name": "Augmentin 625 Duo",
+    "generic_name": "Amoxicillin + Clavulanic Acid 625mg",
+    "branded_cost_inr": 210.0,
+    "jan_aushadhi_cost_inr": 48.0,
+    "savings_pct": 77.1
+  },
+  {
+    "branded_name": "Lipitor 20mg",
+    "generic_name": "Atorvastatin 20mg",
+    "branded_cost_inr": 185.0,
+    "jan_aushadhi_cost_inr": 22.0,
+    "savings_pct": 88.1
+  },
+  {
+    "branded_name": "Glycomet-GP 2",
+    "generic_name": "Glimepiride 2mg + Metformin 500mg",
+    "branded_cost_inr": 145.0,
+    "jan_aushadhi_cost_inr": 28.0,
+    "savings_pct": 80.7
+  }
+]

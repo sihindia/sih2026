@@ -1,0 +1,26 @@
+[
+  {
+    "class": "Class I (Special)",
+    "range_0_to_50000e": "\u00b1 0.5 e",
+    "range_50000e_to_200000e": "\u00b1 1.0 e",
+    "range_above_200000e": "\u00b1 1.5 e"
+  },
+  {
+    "class": "Class II (High)",
+    "range_0_to_5000e": "\u00b1 0.5 e",
+    "range_5000e_to_20000e": "\u00b1 1.0 e",
+    "range_above_20000e": "\u00b1 1.5 e"
+  },
+  {
+    "class": "Class III (Medium)",
+    "range_0_to_500e": "\u00b1 0.5 e",
+    "range_500e_to_2000e": "\u00b1 1.0 e",
+    "range_above_2000e": "\u00b1 1.5 e"
+  },
+  {
+    "class": "Class IIII (Ordinary)",
+    "range_0_to_50e": "\u00b1 0.5 e",
+    "range_50e_to_200e": "\u00b1 1.0 e",
+    "range_above_200e": "\u00b1 1.5 e"
+  }
+]

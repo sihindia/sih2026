@@ -1,0 +1,18 @@
+[
+  {
+    "node_id": "KOL-NODE-01",
+    "handle": "@CyberWatch_India",
+    "role": "Syndicated Disinformation Bot Seed",
+    "pagerank_influence": 0.892,
+    "follower_network": 142000,
+    "inauthenticity_score": 96.4
+  },
+  {
+    "node_id": "KOL-NODE-02",
+    "handle": "@PIBFactCheck",
+    "role": "Official Government Truth Anchor",
+    "pagerank_influence": 0.945,
+    "follower_network": 2400000,
+    "inauthenticity_score": 0.2
+  }
+]

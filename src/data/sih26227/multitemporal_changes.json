@@ -1,0 +1,30 @@
+[
+  {
+    "change_id": "CHG-2026-LDK-01",
+    "region_name": "Eastern Ladakh (Galwan Valley Km 14)",
+    "baseline_t1_date": "2026-03-15",
+    "current_t2_date": "2026-08-25",
+    "change_type": "NEW_REINFORCED_CONSTRUCTION",
+    "change_description": "Appearance of 4 reinforced concrete blast pens and paved access spur near riverbank.",
+    "affected_area_sq_m": 4200.0,
+    "confidence_score_pct": 98.4,
+    "earliest_detected_date": "2026-07-12 (Confirmed by Sentinel-2 & Cartosat-3 fusion)",
+    "false_alarm_suppression_applied": "Snow melt mask & shadow normalization verified.",
+    "threat_classification": "CRITICAL_TACTICAL_DEVELOPMENT",
+    "analyst_status": "CONFIRMED_BY_INTELLIGENCE_ANALYST"
+  },
+  {
+    "change_id": "CHG-2026-THR-02",
+    "region_name": "Thar Desert (Sector 4 Perimeter)",
+    "baseline_t1_date": "2026-04-10",
+    "current_t2_date": "2026-08-26",
+    "change_type": "VEHICLE_DISPERSION_CONCENTRATION",
+    "change_description": "Sudden arrival of 24 tracked armoured vehicles with camouflage netting on open terrain.",
+    "affected_area_sq_m": 12500.0,
+    "confidence_score_pct": 96.8,
+    "earliest_detected_date": "2026-08-24 (SAR coherence disparity)",
+    "false_alarm_suppression_applied": "Dune drift false positive suppressed via multi-angle SAR filtering.",
+    "threat_classification": "HIGH_PRIORITY_FORCE_DEPLOYMENT",
+    "analyst_status": "UNDER_ACTIVE_SURVEILLANCE"
+  }
+]

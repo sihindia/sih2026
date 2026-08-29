@@ -1,0 +1,20 @@
+[
+  {
+    "hazard": "Acid Leaching & Backyard PCB Boiling",
+    "risk": "Cyanide gas release & severe lung damage. Formal recyclers recover 99% gold without toxic fumes.",
+    "do_this": "Sell whole boards to JNARDDC authorized recyclers.",
+    "icon": "Flame"
+  },
+  {
+    "hazard": "Open-Air Wire Burning",
+    "risk": "Cancer-causing dioxins. Burns 15% of copper value into ash.",
+    "do_this": "Deliver insulated wires as-is. Recyclers use mechanical wire strippers.",
+    "icon": "AlertTriangle"
+  },
+  {
+    "hazard": "Lithium Battery Crushing",
+    "risk": "Instant thermal explosion & toxic cobalt dust.",
+    "do_this": "Tape battery ends and store in dry cardboard boxes.",
+    "icon": "Zap"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "parameter": "Sentinel-2 SWIR Band 12/11 Ratio",
+    "value": "1.42 (High Mn Oxide Absorption)",
+    "status": "Strong Subsurface Mineralization Indicator"
+  },
+  {
+    "parameter": "Landsat-8 Land Surface Temperature (LST)",
+    "value": "31.4\u00b0C Thermal Anomaly",
+    "status": "Correlates with Exposed Pyrolusite Outcrop"
+  },
+  {
+    "parameter": "Synthetic Aperture Radar (SAR) InSAR Subsidence",
+    "value": "-1.2 mm / year",
+    "status": "Stable Slope & Bench Footwall"
+  },
+  {
+    "parameter": "Soil Moisture Index (SMAP Satellite)",
+    "value": "34% Volumetric Saturation",
+    "status": "Pit Sump Dewatering Required"
+  }
+]

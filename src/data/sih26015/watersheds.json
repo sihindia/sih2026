@@ -1,0 +1,44 @@
+[
+  {
+    "watershed_id": "WTR-BUND-01",
+    "name": "Bundelkhand Betwa Micro-Watershed (Catchment 4)",
+    "district": "Jhansi",
+    "state": "Uttar Pradesh",
+    "catchment_area_ha": 3450.0,
+    "soil_erosion_index": "MODERATE_REDUCED",
+    "ndvi_biomass_improvement_pct": 28.5,
+    "soil_moisture_saturation_pct": 42.0,
+    "structures_built": 18,
+    "water_storage_capacity_m3": 145000,
+    "srishti_drishti_score": 86.4,
+    "status": "POSITIVE_ECOLOGICAL_IMPACT"
+  },
+  {
+    "watershed_id": "WTR-RAYAL-02",
+    "name": "Rayalaseema Anantapur Semi-Arid Basin",
+    "district": "Anantapur",
+    "state": "Andhra Pradesh",
+    "catchment_area_ha": 5200.0,
+    "soil_erosion_index": "HIGH_VULNERABLE",
+    "ndvi_biomass_improvement_pct": 14.2,
+    "soil_moisture_saturation_pct": 21.5,
+    "structures_built": 32,
+    "water_storage_capacity_m3": 280000,
+    "srishti_drishti_score": 64.0,
+    "status": "INTERVENTION_MONITORING_ACTIVE"
+  },
+  {
+    "watershed_id": "WTR-MARATH-03",
+    "name": "Marathwada Godavari Tributary Sub-Basin",
+    "district": "Beed",
+    "state": "Maharashtra",
+    "catchment_area_ha": 4100.0,
+    "soil_erosion_index": "STABILIZED",
+    "ndvi_biomass_improvement_pct": 34.0,
+    "soil_moisture_saturation_pct": 48.0,
+    "structures_built": 24,
+    "water_storage_capacity_m3": 195000,
+    "srishti_drishti_score": 91.2,
+    "status": "POSITIVE_ECOLOGICAL_IMPACT"
+  }
+]

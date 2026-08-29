@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26104",
+  "title": "AI-Powered Real-Time Detection and Prevention of Voice Cloning Impersonation Attacks",
+  "organization": "All India Council for Technical Education (AICTE)",
+  "theme": "Blockchain & Cybersecurity",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

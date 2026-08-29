@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "ANPR OCR Accuracy",
+    "value": "94.6% Certified",
+    "trend": "Robust Against Rain, Glare & Speed Blur"
+  },
+  {
+    "metric": "Active City Cameras",
+    "value": "1,280 Nodes",
+    "trend": "Sub-100ms Spatial-Temporal Plate Lookup"
+  },
+  {
+    "metric": "Trajectory Recall",
+    "value": "99.8% Precision",
+    "trend": "City-Wide Multi-Junction Path Reconstruction"
+  }
+]

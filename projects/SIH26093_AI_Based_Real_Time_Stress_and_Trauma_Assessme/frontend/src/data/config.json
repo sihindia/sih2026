@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26093",
+  "title": "AI-Based Real-Time Stress and Trauma Assessment Module for Victims/Complainants Accessing NHAA (14566) and Integrated Portal",
+  "organization": "Ministry of Social Justice and Empowerment (MoSJE)",
+  "theme": "MedTech / BioTech / HealthTech",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

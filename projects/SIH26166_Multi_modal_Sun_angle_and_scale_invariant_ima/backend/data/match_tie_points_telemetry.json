@@ -1,0 +1,32 @@
+[
+  {
+    "point_id": "TIE-PT-001",
+    "pair_id": "CH2-PAIR-2026-001",
+    "lunar_feature_type": "Crater Rim Crest Bounding Peak",
+    "source_pixel_xy": [
+      1240.45,
+      892.12
+    ],
+    "reference_pixel_xy": [
+      62.02,
+      44.6
+    ],
+    "matching_confidence_pct": 98.6,
+    "residual_error_pixels": 0.18
+  },
+  {
+    "point_id": "TIE-PT-002",
+    "pair_id": "CH2-PAIR-2026-001",
+    "lunar_feature_type": "Shadowed Ejecta Boulder Cluster",
+    "source_pixel_xy": [
+      3420.8,
+      2190.5
+    ],
+    "reference_pixel_xy": [
+      171.04,
+      109.52
+    ],
+    "matching_confidence_pct": 97.4,
+    "residual_error_pixels": 0.22
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "unit_id": "NDRF-BN-01-GUW",
+    "battalion_name": "1st Battalion NDRF (Patgaon, Guwahati)",
+    "personnel_deployed": 180,
+    "inflatable_motor_boats": 24,
+    "deep_dive_teams": 6,
+    "satellite_satphone_units": 8,
+    "current_operational_sector": "Barpeta & Dhubri Inundated Flood Axis",
+    "rescued_citizens_count": 1420,
+    "status": "DEPLOYED_ACTIVE_RESCUE"
+  },
+  {
+    "unit_id": "NDRF-BN-04-ARK",
+    "battalion_name": "4th Battalion NDRF (Arakkonam / Odisha Task Force)",
+    "personnel_deployed": 240,
+    "inflatable_motor_boats": 32,
+    "tree_cutters_earthmovers": 45,
+    "satellite_satphone_units": 12,
+    "current_operational_sector": "Puri Cyclone Staging Grid",
+    "rescued_citizens_count": 3850,
+    "status": "PREPOSITIONED_RED_ZONE"
+  },
+  {
+    "unit_id": "NDRF-BN-05-PUN",
+    "battalion_name": "5th Battalion NDRF (Sudumbare, Pune / Kerala SDRF)",
+    "personnel_deployed": 120,
+    "canine_search_squads": 4,
+    "ground_penetrating_radar": 2,
+    "satellite_satphone_units": 6,
+    "current_operational_sector": "Wayanad Landslide Perimeter",
+    "rescued_citizens_count": 480,
+    "status": "STANDBY_RAPID_AIRLIFT"
+  }
+]

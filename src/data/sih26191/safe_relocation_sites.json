@@ -1,0 +1,34 @@
+[
+  {
+    "site_id": "SITE-MEPPADI-PLATEAU-01",
+    "site_name": "Meppadi Nedumbara High Plateau",
+    "district": "Wayanad, Kerala",
+    "usable_land_area_hectares": 48.5,
+    "slope_gradient_deg": 5.8,
+    "hazard_buffer_distance_km": 3.4,
+    "max_carrying_capacity_people": 3200,
+    "existing_planned_intake": 1840,
+    "remaining_capacity": 1360,
+    "groundwater_yield_lpd": 450000,
+    "soil_bearing_capacity_kn_m2": 240.0,
+    "road_connectivity": "Direct Access to National Highway 766",
+    "infrastructure_index": 92.4,
+    "status": "APPROVED_READY_FOR_SETTLEMENT"
+  },
+  {
+    "site_id": "SITE-AULI-RIDGE-02",
+    "site_name": "Dhaka Auli Lower Geological Bedrock",
+    "district": "Chamoli, Uttarakhand",
+    "usable_land_area_hectares": 28.0,
+    "slope_gradient_deg": 8.2,
+    "hazard_buffer_distance_km": 4.2,
+    "max_carrying_capacity_people": 1800,
+    "existing_planned_intake": 920,
+    "remaining_capacity": 880,
+    "groundwater_yield_lpd": 280000,
+    "soil_bearing_capacity_kn_m2": 310.0,
+    "road_connectivity": "All-Weather Paved Access Road",
+    "infrastructure_index": 86.0,
+    "status": "APPROVED_READY_FOR_SETTLEMENT"
+  }
+]

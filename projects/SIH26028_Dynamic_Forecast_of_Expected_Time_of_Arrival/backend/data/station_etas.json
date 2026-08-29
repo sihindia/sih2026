@@ -1,0 +1,66 @@
+[
+  {
+    "train_number": "22436",
+    "stations": [
+      {
+        "station_code": "CNB",
+        "name": "Kanpur Central",
+        "scheduled_arrival": "10:08 AM",
+        "static_ntes_eta": "10:16 AM (+8m)",
+        "ai_dynamic_eta": "10:10 AM (+2m)",
+        "confidence_pct": 98.4,
+        "reason": "Section cleared ahead, cruising at 128 km/h"
+      },
+      {
+        "station_code": "PRYJ",
+        "name": "Prayagraj Junction",
+        "scheduled_arrival": "12:08 PM",
+        "static_ntes_eta": "12:20 PM (+12m)",
+        "ai_dynamic_eta": "12:09 PM (+1m)",
+        "confidence_pct": 97.2,
+        "reason": "Slack recovery absorption in Kanpur-Prayagraj stretch"
+      },
+      {
+        "station_code": "BSB",
+        "name": "Varanasi Junction",
+        "scheduled_arrival": "02:00 PM",
+        "static_ntes_eta": "02:14 PM (+14m)",
+        "ai_dynamic_eta": "02:00 PM (On Time)",
+        "confidence_pct": 96.8,
+        "reason": "Full punctual arrival forecast"
+      }
+    ]
+  },
+  {
+    "train_number": "12952",
+    "stations": [
+      {
+        "station_code": "KOTA",
+        "name": "Kota Junction",
+        "scheduled_arrival": "09:50 PM",
+        "static_ntes_eta": "10:14 PM (+24m)",
+        "ai_dynamic_eta": "10:04 PM (+14m)",
+        "confidence_pct": 95.8,
+        "reason": "Caution order 45 km/h at Gangapur City absorbed"
+      },
+      {
+        "station_code": "RTM",
+        "name": "Ratlam Junction",
+        "scheduled_arrival": "01:30 AM",
+        "static_ntes_eta": "01:58 AM (+28m)",
+        "ai_dynamic_eta": "01:40 AM (+10m)",
+        "confidence_pct": 96.2,
+        "reason": "High speed 130 km/h clearing downstream slot"
+      },
+      {
+        "station_code": "MMCT",
+        "name": "Mumbai Central",
+        "scheduled_arrival": "08:35 AM",
+        "static_ntes_eta": "09:05 AM (+30m)",
+        "ai_dynamic_eta": "08:45 AM (+10m)",
+        "confidence_pct": 94.5,
+        "reason": "Suburban morning clearance priority assigned"
+      }
+    ]
+  }
+]

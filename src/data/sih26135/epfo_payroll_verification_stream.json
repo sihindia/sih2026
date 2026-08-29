@@ -1,0 +1,18 @@
+[
+  {
+    "log_id": "EPFO-UAN-8841",
+    "uan": "100982348122",
+    "employer": "Bharat Forge Ltd",
+    "last_pf_deposit": "\u20b93,420 (Aug 2026)",
+    "continuity_months": 14,
+    "verification": "CRYPTOGRAPHIC_EPFO_CONFIRMED"
+  },
+  {
+    "log_id": "EPFO-UAN-3319",
+    "uan": "100947239104",
+    "employer": "Mahindra Susten CleanTech",
+    "last_pf_deposit": "\u20b93,060 (Aug 2026)",
+    "continuity_months": 12,
+    "verification": "CRYPTOGRAPHIC_EPFO_CONFIRMED"
+  }
+]

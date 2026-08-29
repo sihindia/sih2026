@@ -1,0 +1,12 @@
+[
+  {
+    "call_id": "CDR-2026-9812",
+    "caller_imei": "864920194810291",
+    "caller_name": "Vikramaditya Singhania",
+    "receiver_imei": "358102918401928",
+    "receiver_name": "Sameer Qureshi",
+    "duration_seconds": 412,
+    "cell_tower_bts": "BTS-MUM-AIRPORT-T2 (Lat: 19.0896, Long: 72.8656)",
+    "timestamp": "2026-08-28T22:14:00Z"
+  }
+]

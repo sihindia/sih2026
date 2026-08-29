@@ -1,0 +1,35 @@
+[
+  {
+    "bin_id": "BIN-INDORE-WARD-04",
+    "location": "Chhappan Dukan Food Market, Indore",
+    "bin_type": "Wet Organic High-Capacity Solar Compactor",
+    "fill_level_pct": 88.5,
+    "odor_ammonia_ppm": 18.4,
+    "battery_pct": 94,
+    "gps_coordinates": "22.7196\u00b0 N, 75.8577\u00b0 E",
+    "status": "DISPATCH_REQUIRED_OVERFLOW_NEAR",
+    "last_emptied": "6 hours ago"
+  },
+  {
+    "bin_id": "BIN-PUNE-FC-ROAD",
+    "location": "Fergusson College Road, Pune",
+    "bin_type": "Dry Recyclable Smart Sensor Bin",
+    "fill_level_pct": 42.0,
+    "odor_ammonia_ppm": 2.1,
+    "battery_pct": 88,
+    "gps_coordinates": "18.5204\u00b0 N, 73.8567\u00b0 E",
+    "status": "NORMAL_OPERATIONAL",
+    "last_emptied": "2 hours ago"
+  },
+  {
+    "bin_id": "BIN-SURAT-RING-ROAD",
+    "location": "Textile Market Junction, Surat",
+    "bin_type": "Dry Cardboard & Packaging Compactor",
+    "fill_level_pct": 93.0,
+    "odor_ammonia_ppm": 1.8,
+    "battery_pct": 91,
+    "gps_coordinates": "21.1702\u00b0 N, 72.8311\u00b0 E",
+    "status": "DISPATCH_REQUIRED_IMMEDIATE",
+    "last_emptied": "8 hours ago"
+  }
+]

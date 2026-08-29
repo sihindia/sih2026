@@ -1,0 +1,47 @@
+[
+  {
+    "complaint_id": "NCRP-2026-MUM-9812",
+    "portal_source": "1930 National Cyber Helpline / NCRP",
+    "fraud_category": "Digital Arrest Extortion (CBI / Customs Impersonation)",
+    "fraud_category_hi": "\u0921\u093f\u091c\u093f\u091f\u0932 \u0905\u0930\u0947\u0938\u094d\u091f \u091c\u092c\u0930\u0928 \u0935\u0938\u0942\u0932\u0940 \u0918\u094b\u091f\u093e\u0932\u093e",
+    "victim_location": "Bandra West, Mumbai",
+    "siphoned_amount_inr": 4200000.0,
+    "timestamp": "2026-08-30T00:45:00Z",
+    "mule_destination_bank": "State Bank of India (Surat Ring Road Branch)",
+    "predicted_withdrawal_hotspot": "ATM Cluster #SUR-04 (Ring Road Textile Market, Surat)",
+    "predicted_withdrawal_window": "30 to 55 Minutes from Debit",
+    "withdrawal_probability_pct": 94.2,
+    "assigned_lea_unit": "Surat City Cyber Crime Cell - PCR Unit #7",
+    "status": "PCR_DISPATCHED_INTERCEPTION_ACTIVE"
+  },
+  {
+    "complaint_id": "NCRP-2026-BLR-4419",
+    "portal_source": "National Cybercrime Reporting Portal (NCRP)",
+    "fraud_category": "Fake Institutional Stock IPO & WhatsApp Trading Scam",
+    "fraud_category_hi": "\u092b\u0930\u094d\u091c\u0940 \u0906\u0908\u092a\u0940\u0913 \u0938\u094d\u091f\u0949\u0915 \u091f\u094d\u0930\u0947\u0921\u093f\u0902\u0917 \u0918\u094b\u091f\u093e\u0932\u093e",
+    "victim_location": "Indiranagar, Bangalore",
+    "siphoned_amount_inr": 1850000.0,
+    "timestamp": "2026-08-30T01:10:00Z",
+    "mule_destination_bank": "HDFC Bank (Electronic City Phase 1)",
+    "predicted_withdrawal_hotspot": "ATM Cluster #BLR-EC-02 (Neeladri Road, Bangalore)",
+    "predicted_withdrawal_window": "40 to 65 Minutes from Debit",
+    "withdrawal_probability_pct": 89.5,
+    "assigned_lea_unit": "Bangalore South Cyber Command - PCR #12",
+    "status": "BANK_LIEN_PLACED_AWAITING_ATM_TRAP"
+  },
+  {
+    "complaint_id": "NCRP-2026-DEL-3301",
+    "portal_source": "1930 Helpline",
+    "fraud_category": "Part-Time Telegram Task & Prepaid Rating Fraud",
+    "fraud_category_hi": "\u091f\u0947\u0932\u0940\u0917\u094d\u0930\u093e\u092e \u092a\u093e\u0930\u094d\u091f-\u091f\u093e\u0907\u092e \u091f\u093e\u0938\u094d\u0915 \u092b\u094d\u0930\u0949\u0921",
+    "victim_location": "Rohini, Delhi",
+    "siphoned_amount_inr": 680000.0,
+    "timestamp": "2026-08-30T01:15:00Z",
+    "mule_destination_bank": "Punjab National Bank (Nuh / Mewat Branch)",
+    "predicted_withdrawal_hotspot": "ATM Cluster #MEW-01 (Tauru Road, Mewat)",
+    "predicted_withdrawal_window": "20 to 45 Minutes from Debit",
+    "withdrawal_probability_pct": 96.0,
+    "assigned_lea_unit": "Haryana STF Cyber Wing",
+    "status": "HIGH_ALERT_GEO_FENCE_TRIGGERED"
+  }
+]

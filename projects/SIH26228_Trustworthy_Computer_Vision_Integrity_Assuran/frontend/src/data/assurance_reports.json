@@ -1,0 +1,12 @@
+[
+  {
+    "report_id": "REP-DGIS-2026-081",
+    "model_tested": "YOLOv8-Tactical Recon",
+    "dataset_batch": "BATCH-DATA-VEND-A-01",
+    "evaluated_by": "Lt. Col. V. S. Chauhan (DGIS AI Metrology Wing)",
+    "overall_integrity_score": 97.5,
+    "verdict": "CERTIFIED_SAFE_FOR_AIR_GAPPED_DEPLOYMENT",
+    "timestamp": "2026-08-29",
+    "cryptographic_seal": "DGIS-SEAL-2026-VERIFIED-08194"
+  }
+]

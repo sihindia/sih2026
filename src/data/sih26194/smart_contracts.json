@@ -1,0 +1,24 @@
+[
+  {
+    "name": "SoulboundDegreeRegistry.sol",
+    "version": "Solidity 0.8.24",
+    "methods": [
+      "issueDegree(studentDid, degreeHash, metadata)",
+      "verifyDegree(studentDid, degreeHash)",
+      "revokeDegree(degreeHash, reason)"
+    ],
+    "gas_efficiency": "High (94,000 gas per mint)",
+    "audit_score_pct": 99.4
+  },
+  {
+    "name": "PharmaColdChainTracker.sol",
+    "version": "Solidity 0.8.24",
+    "methods": [
+      "recordBatchTelemetry(batchId, tempC, gpsHash)",
+      "flagExcursion(batchId, alertMsg)",
+      "getBatchAuditTrail(batchId)"
+    ],
+    "gas_efficiency": "Optimized State Channels",
+    "audit_score_pct": 99.8
+  }
+]

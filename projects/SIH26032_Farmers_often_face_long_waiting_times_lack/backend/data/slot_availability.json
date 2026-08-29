@@ -1,0 +1,58 @@
+[
+  {
+    "time_slot": "08:00 AM \u2013 09:00 AM",
+    "total_slots": 25,
+    "booked_slots": 25,
+    "available": 0,
+    "status": "SLOT_FULL"
+  },
+  {
+    "time_slot": "09:00 AM \u2013 10:00 AM",
+    "total_slots": 25,
+    "booked_slots": 24,
+    "available": 1,
+    "status": "ALMOST_FULL"
+  },
+  {
+    "time_slot": "10:00 AM \u2013 11:00 AM",
+    "total_slots": 25,
+    "booked_slots": 19,
+    "available": 6,
+    "status": "AVAILABLE"
+  },
+  {
+    "time_slot": "11:00 AM \u2013 12:00 PM",
+    "total_slots": 25,
+    "booked_slots": 18,
+    "available": 7,
+    "status": "AVAILABLE"
+  },
+  {
+    "time_slot": "12:00 PM \u2013 01:00 PM",
+    "total_slots": 20,
+    "booked_slots": 12,
+    "available": 8,
+    "status": "AVAILABLE"
+  },
+  {
+    "time_slot": "02:00 PM \u2013 03:00 PM",
+    "total_slots": 25,
+    "booked_slots": 14,
+    "available": 11,
+    "status": "AVAILABLE"
+  },
+  {
+    "time_slot": "03:00 PM \u2013 04:00 PM",
+    "total_slots": 25,
+    "booked_slots": 10,
+    "available": 15,
+    "status": "AVAILABLE"
+  },
+  {
+    "time_slot": "04:00 PM \u2013 05:00 PM",
+    "total_slots": 20,
+    "booked_slots": 6,
+    "available": 14,
+    "status": "OPTIMAL_TIME"
+  }
+]

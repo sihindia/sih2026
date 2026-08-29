@@ -1,0 +1,28 @@
+[
+  {
+    "student_id": "STU-2026-081",
+    "student_name": "Rohan Sharma",
+    "diagnostic_score_pct": 92.5,
+    "assigned_track": "ACCELERATED_RESEARCH_HONORS",
+    "recommended_actions": [
+      "Skip Elementary Linked Lists",
+      "Unlock Advanced Red-Black Tree Balancing",
+      "Enter AICTE National Coding Sandbox"
+    ],
+    "weekly_study_goal_hours": 10.0,
+    "predicted_mastery_timeline": "4 Weeks (Ahead of Schedule)"
+  },
+  {
+    "student_id": "STU-2026-042",
+    "student_name": "Sneha Patil",
+    "diagnostic_score_pct": 68.0,
+    "assigned_track": "FOUNDATIONAL_REMEDIAL_CONCEPTUAL",
+    "recommended_actions": [
+      "Activate Visual 3D Tree Simulator",
+      "Review Vernacular Hindi Lecture Dub",
+      "Socratic AI Guided Practice on Recursion"
+    ],
+    "weekly_study_goal_hours": 12.0,
+    "predicted_mastery_timeline": "7 Weeks (Personalized Pace)"
+  }
+]

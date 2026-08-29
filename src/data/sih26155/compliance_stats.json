@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Network Devices Audited",
+    "value": "840 Nodes",
+    "trend": "Across 14 Multi-Vendor Brands"
+  },
+  {
+    "metric": "Average Security Compliance",
+    "value": "89.4%",
+    "trend": "+18.2% Post-Auto-Remediation"
+  },
+  {
+    "metric": "Vulnerabilities Remediated",
+    "value": "1,280 Flaws",
+    "trend": "Automated CLI Hardening"
+  }
+]

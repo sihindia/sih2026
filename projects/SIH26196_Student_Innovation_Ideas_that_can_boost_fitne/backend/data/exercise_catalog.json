@@ -1,0 +1,80 @@
+[
+  {
+    "exercise_id": "EX-YOGA-SURYA-01",
+    "name": "Surya Namaskar (12 Asanas Sun Salutation)",
+    "name_hi": "\u0938\u0942\u0930\u094d\u092f \u0928\u092e\u0938\u094d\u0915\u093e\u0930 (12 \u092f\u094b\u0917\u093e\u0938\u0928)",
+    "category": "Vedic Yoga & Full-Body Mobility",
+    "target_muscles": [
+      "Hamstrings",
+      "Spine Extensors",
+      "Shoulders",
+      "Core"
+    ],
+    "met_value": 4.5,
+    "ideal_joint_angles": {
+      "hip_flexion_deg": 90,
+      "back_extension_deg": 165
+    },
+    "posture_cue": "Inhale on upward stretch, exhale on forward fold. Keep core engaged.",
+    "common_mistake": "Bending knees prematurely or hyperextending lower lumbar spine.",
+    "icon": "Sun"
+  },
+  {
+    "exercise_id": "EX-STRENGTH-SQUAT-02",
+    "name": "Deep Bodyweight Squats (Baithak)",
+    "name_hi": "\u092a\u093e\u0930\u0902\u092a\u0930\u093f\u0915 \u0926\u0902\u0921-\u092c\u0948\u0920\u0915 (Squats)",
+    "category": "Lower Body Strength & Joint Health",
+    "target_muscles": [
+      "Quadriceps",
+      "Gluteus Maximus",
+      "Hamstrings",
+      "Calves"
+    ],
+    "met_value": 5.5,
+    "ideal_joint_angles": {
+      "knee_flexion_deg": 90,
+      "torso_angle_deg": 45
+    },
+    "posture_cue": "Chest up, push hips back, ensure knees track over toes without caving in.",
+    "common_mistake": "Knees collapsing inward or heels lifting off the ground.",
+    "icon": "Zap"
+  },
+  {
+    "exercise_id": "EX-STRENGTH-PUSHUP-03",
+    "name": "Standard Push-Ups (Desi Danda)",
+    "name_hi": "\u0938\u092a\u093e\u091f\u0947 \u0914\u0930 \u0926\u0902\u0921 (Push-Ups)",
+    "category": "Upper Body & Core Stability",
+    "target_muscles": [
+      "Pectoralis Major",
+      "Triceps",
+      "Anterior Deltoid",
+      "Abdominals"
+    ],
+    "met_value": 6.0,
+    "ideal_joint_angles": {
+      "elbow_flexion_deg": 90,
+      "body_alignment_deg": 180
+    },
+    "posture_cue": "Plank-straight spine from head to heels. Lower until chest is 2 inches above ground.",
+    "common_mistake": "Sagging hips or flaring elbows out past 90 degrees.",
+    "icon": "Activity"
+  },
+  {
+    "exercise_id": "EX-CORE-PLANK-04",
+    "name": "Forearm Plank (Kumbhakasana)",
+    "name_hi": "\u0915\u0941\u0902\u092d\u0915\u093e\u0938\u0928 (Forearm Plank)",
+    "category": "Isometric Core Endurance",
+    "target_muscles": [
+      "Transverse Abdominis",
+      "Rectus Abdominis",
+      "Glutes"
+    ],
+    "met_value": 3.8,
+    "ideal_joint_angles": {
+      "spine_alignment_deg": 180
+    },
+    "posture_cue": "Pull navel towards spine, squeeze glutes, keep neck neutral.",
+    "common_mistake": "Arching lower back or elevating hips too high.",
+    "icon": "Shield"
+  }
+]

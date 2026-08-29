@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26003",
+  "title": "AI-Based Cognitive Gaming and Memory Assistance Platform for Elderly Dementia Patients in North Eastern Region (NER)",
+  "organization": "Ministry of Development of North Eastern Region (MDoNER)",
+  "theme": "MedTech / BioTech / HealthTech",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

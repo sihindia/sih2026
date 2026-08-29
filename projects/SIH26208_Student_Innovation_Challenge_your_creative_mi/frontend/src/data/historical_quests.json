@@ -1,0 +1,29 @@
+[
+  {
+    "quest_id": "QUEST-IKS-01",
+    "title": "Mohenjo-daro: Master of the Great Bath & Urban Drainage",
+    "era": "Indus Valley Civilization (2600 BCE)",
+    "objective": "Design an interlocking baked-brick wastewater drainage channel with 2% slope without flooding residential quarters.",
+    "puzzle_type": "Hydraulic Engineering & Standardized Brick Geometry (4:2:1 ratio)",
+    "rewards": "Harappan Seal of Excellence (+500 IKS XP)",
+    "status": "UNLOCKED"
+  },
+  {
+    "quest_id": "QUEST-IKS-02",
+    "title": "Aryabhata's Celestial Astrolabe: Eclipse Predictor",
+    "era": "Classical Astronomical Era (499 CE)",
+    "objective": "Calculate the lunar orbital inclination and shadow cone to accurately forecast a solar eclipse at Ujjain observatory.",
+    "puzzle_type": "Vedic Sine Tables & Planetary Epicycles",
+    "rewards": "Navagraha Celestial Compass (+750 IKS XP)",
+    "status": "UNLOCKED"
+  },
+  {
+    "quest_id": "QUEST-IKS-03",
+    "title": "Kautilya's Arthashastra: Fortified Janapada Economy",
+    "era": "Mauryan Empire (320 BCE)",
+    "objective": "Balance treasury taxes, grain granaries, and iron metallurgy foundries against monsoon droughts.",
+    "puzzle_type": "Resource Management & Statecraft",
+    "rewards": "Chanakya Royal Seal (+600 IKS XP)",
+    "status": "AVAILABLE"
+  }
+]

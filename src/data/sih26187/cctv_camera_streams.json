@@ -1,0 +1,51 @@
+[
+  {
+    "camera_id": "CAM-BOP-RAXAUL-01",
+    "location": "BOP Raxaul Pillar #391 (Zero-Line Perimeter)",
+    "location_hi": "\u092c\u0940\u0913\u092a\u0940 \u0930\u0915\u094d\u0938\u094c\u0932 \u092a\u093f\u0932\u0930 #391 (\u0938\u0940\u092e\u093e \u0936\u0942\u0928\u094d\u092f \u0930\u0947\u0916\u093e)",
+    "rtsp_url": "rtsp://edge-bop-01.ssb.gov.in:554/live/stream1",
+    "hardware_type": "Standard Legacy 2MP Analog HD / IP Camera (Non-Smart)",
+    "fps": 25,
+    "resolution": "1920x1080 (1080p)",
+    "active_ai_models": [
+      "YOLOv11 Person Intrusion",
+      "Virtual Tripwire",
+      "Crawling Detector"
+    ],
+    "live_detections_count": 2,
+    "threat_level": "RED_CRITICAL_INTRUSION",
+    "status": "ALERT_ACTIVE_TRIPWIRE_BREACHED"
+  },
+  {
+    "camera_id": "CAM-ICP-SONAULI-02",
+    "location": "Sonauli Main Border Gate (Inbound Vehicle Lane)",
+    "location_hi": "\u0938\u094c\u0928\u094c\u0932\u0940 \u092e\u0941\u0916\u094d\u092f \u0938\u0940\u092e\u093e \u0926\u094d\u0935\u093e\u0930",
+    "rtsp_url": "rtsp://edge-sonauli.ssb.gov.in:554/live/stream2",
+    "hardware_type": "Legacy 4MP Dome CCTV",
+    "fps": 30,
+    "resolution": "2560x1440",
+    "active_ai_models": [
+      "Software ANPR Plate OCR",
+      "Vehicle Make/Color Classifier"
+    ],
+    "live_detections_count": 5,
+    "threat_level": "AMBER_STOLEN_VEHICLE_FLAG",
+    "status": "ANPR_MATCH_FLAGGED"
+  },
+  {
+    "camera_id": "CAM-BOP-JAIGAON-03",
+    "location": "Jaigaon Indo-Bhutan Gate Pedestrian Corridor",
+    "location_hi": "\u091c\u092f\u0917\u093e\u0902\u0935 \u092d\u093e\u0930\u0924-\u092d\u0942\u091f\u093e\u0928 \u0926\u094d\u0935\u093e\u0930",
+    "rtsp_url": "rtsp://edge-jaigaon.ssb.gov.in:554/live/stream3",
+    "hardware_type": "Legacy 2MP Bullet CCTV",
+    "fps": 25,
+    "resolution": "1920x1080",
+    "active_ai_models": [
+      "Software FRS (1:N Watchlist)",
+      "Crowd Density Heatmap"
+    ],
+    "live_detections_count": 1,
+    "threat_level": "AMBER_WATCHLIST_SUSPECT",
+    "status": "FRS_MATCH_DETECTED"
+  }
+]

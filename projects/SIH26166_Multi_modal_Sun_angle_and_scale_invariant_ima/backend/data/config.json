@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26166",
+  "title": "Multi-modal, Sun angle and scale invariant image correspondence using Chandrayaan-2 optical images (OHRC, TMC and IIRS)",
+  "organization": "Indian Space Research Organisation(ISRO)",
+  "theme": "Space Technology",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

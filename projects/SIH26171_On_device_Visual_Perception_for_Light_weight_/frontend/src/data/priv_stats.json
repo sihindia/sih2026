@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "PII Redaction Precision",
+    "value": "99.6% Zero Leakage",
+    "trend": "100% On-Device Client Processing"
+  },
+  {
+    "metric": "WebGPU Inference Latency",
+    "value": "16.4 Milliseconds",
+    "trend": "60 FPS Real-Time Browser Guard"
+  },
+  {
+    "metric": "Server Data Transmitted",
+    "value": "0 Raw Pixels",
+    "trend": "Only Anonymized Semantic Layout Trees"
+  }
+]

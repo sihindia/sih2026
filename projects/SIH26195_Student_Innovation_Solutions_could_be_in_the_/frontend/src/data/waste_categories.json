@@ -1,0 +1,71 @@
+[
+  {
+    "category_id": "CAT-WET-ORGANIC",
+    "name": "Biodegradable Wet Waste",
+    "name_hi": "\u0917\u0940\u0932\u093e \u0915\u091a\u0930\u093e (\u091c\u0948\u0935\u0928\u093f\u092e\u094d\u0928\u0940\u0915\u0930\u0923\u0940\u092f)",
+    "bin_color": "Green (#10B981)",
+    "items_included": [
+      "Cooked food scraps",
+      "Fruit & vegetable peels",
+      "Tea leaves",
+      "Eggshells",
+      "Garden leaves"
+    ],
+    "treatment_technology": "Decentralized Aerobic Composting & Thermophilic Bio-Methanation",
+    "economic_value_inr_kg": 3.5,
+    "conversion_output": "Rich Bio-Enriched Compost & Compressed Biogas (CBG)",
+    "icon": "Leaf"
+  },
+  {
+    "category_id": "CAT-DRY-RECYCLABLE",
+    "name": "Dry Recyclable Waste",
+    "name_hi": "\u0938\u0942\u0916\u093e \u0915\u091a\u0930\u093e (\u092a\u0941\u0928\u0930\u094d\u091a\u0915\u094d\u0930\u0923 \u092f\u094b\u0917\u094d\u092f)",
+    "bin_color": "Blue (#3B82F6)",
+    "items_included": [
+      "PET Plastic Bottles",
+      "Cardboard & Newspaper",
+      "Aluminum Cans",
+      "Glass Jars",
+      "Tetra Paks"
+    ],
+    "treatment_technology": "Material Recovery Facility (MRF) Optical Baling & Circular Pelletization",
+    "economic_value_inr_kg": 18.0,
+    "conversion_output": "Recycled Plastic Pellets, Paper Pulp, Metal Ingots",
+    "icon": "Recycle"
+  },
+  {
+    "category_id": "CAT-HAZARDOUS-SANITARY",
+    "name": "Domestic Hazardous & Sanitary Waste",
+    "name_hi": "\u0918\u0930\u0947\u0932\u0942 \u0939\u093e\u0928\u093f\u0915\u093e\u0930\u0915 \u0935 \u0938\u0948\u0928\u093f\u091f\u0930\u0940 \u0915\u091a\u0930\u093e",
+    "bin_color": "Red (#EF4444)",
+    "items_included": [
+      "Sanitary pads",
+      "Diapers",
+      "Expired medicines",
+      "Pesticide cans",
+      "Syringes",
+      "Batteries"
+    ],
+    "treatment_technology": "High-Temperature Controlled Incineration & Scientific Landfill Containment",
+    "economic_value_inr_kg": 0.0,
+    "conversion_output": "Safe Inert Ash & Flue Gas Filtration",
+    "icon": "AlertTriangle"
+  },
+  {
+    "category_id": "CAT-EWASTE",
+    "name": "Electronic & Electrical Waste (E-Waste)",
+    "name_hi": "\u0908-\u0915\u091a\u0930\u093e (\u0907\u0932\u0947\u0915\u094d\u091f\u094d\u0930\u0949\u0928\u093f\u0915\u094d\u0938)",
+    "bin_color": "Yellow (#F59E0B)",
+    "items_included": [
+      "Mobile motherboards",
+      "Lithium-ion cells",
+      "Cables",
+      "Keyboards",
+      "SMPS Chargers"
+    ],
+    "treatment_technology": "Authorized Urban Mining Hydrometallurgy & Rare Earth Recovery",
+    "economic_value_inr_kg": 145.0,
+    "conversion_output": "Recovered Gold, Copper (99.9%), Cobalt & Lithium",
+    "icon": "Cpu"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "zone_id": "DRONE-PUNE-W04",
+    "ward_name": "Kothrud Urban Sector 4",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "drone_gsd_cm": 3.2,
+    "flight_altitude_m": 120,
+    "area_surveyed_sqm": 84500.0,
+    "extracted_parcels_count": 142,
+    "extracted_buildings_count": 186,
+    "road_corridors_km": 4.8,
+    "ai_segmentation_confidence": 0.968,
+    "topology_overlap_errors": 0,
+    "status": "CADASTRAL_FINALIZED"
+  },
+  {
+    "zone_id": "DRONE-LKO-W12",
+    "ward_name": "Gomti Nagar Extension Zone B",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "drone_gsd_cm": 2.8,
+    "flight_altitude_m": 100,
+    "area_surveyed_sqm": 112000.0,
+    "extracted_parcels_count": 218,
+    "extracted_buildings_count": 294,
+    "road_corridors_km": 6.2,
+    "ai_segmentation_confidence": 0.954,
+    "topology_overlap_errors": 3,
+    "status": "FIELD_GROUND_TRUTHING"
+  },
+  {
+    "zone_id": "DRONE-AMD-W09",
+    "ward_name": "Sabarmati Riverfront Urban Ward",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "drone_gsd_cm": 3.0,
+    "flight_altitude_m": 110,
+    "area_surveyed_sqm": 95000.0,
+    "extracted_parcels_count": 175,
+    "extracted_buildings_count": 240,
+    "road_corridors_km": 5.4,
+    "ai_segmentation_confidence": 0.972,
+    "topology_overlap_errors": 0,
+    "status": "CADASTRAL_FINALIZED"
+  }
+]

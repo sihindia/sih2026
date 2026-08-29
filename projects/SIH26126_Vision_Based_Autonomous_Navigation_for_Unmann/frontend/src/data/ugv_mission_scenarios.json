@@ -1,0 +1,28 @@
+[
+  {
+    "mission_id": "BEL-UGV-2026-001",
+    "mission_name": "High-Altitude Border Perimeter Patrol (Kashmir LOC Ridge)",
+    "mission_name_hi": "\u0909\u091a\u094d\u091a-\u090a\u0902\u091a\u093e\u0908 \u0938\u0940\u092e\u093e \u092a\u0930\u093f\u0927\u093f \u0917\u0936\u094d\u0924\u0940 (\u0915\u0936\u094d\u092e\u0940\u0930 \u090f\u0932\u0913\u0938\u0940)",
+    "environment_type": "GPS_DENIED_ELECTRONIC_WARFARE",
+    "traversal_distance_m": 850.0,
+    "primary_sensors": "Dual Stereo Vision Cameras + Visual-Inertial Odometry",
+    "linear_speed_m_s": 1.45,
+    "visual_slam_drift_pct": 0.82,
+    "obstacles_detected_count": 16,
+    "traversability_accuracy_pct": 98.4,
+    "mission_status": "WAYPOINT_REACHED_COLLISION_FREE"
+  },
+  {
+    "mission_id": "BEL-UGV-2026-024",
+    "mission_name": "Disaster Search & Rescue across Urban Earthquake Rubble",
+    "mission_name_hi": "\u0936\u0939\u0930\u0940 \u092d\u0942\u0915\u0902\u092a \u092e\u0932\u092c\u0947 \u092e\u0947\u0902 \u0906\u092a\u0926\u093e \u0916\u094b\u091c \u0914\u0930 \u092c\u091a\u093e\u0935",
+    "environment_type": "COLLAPSED_CONCRETE_DEBRIS",
+    "traversal_distance_m": 320.0,
+    "primary_sensors": "RGB-D Vision + On-Device Edge Neural Segmentation",
+    "linear_speed_m_s": 0.85,
+    "visual_slam_drift_pct": 0.94,
+    "obstacles_detected_count": 28,
+    "traversability_accuracy_pct": 97.9,
+    "mission_status": "WAYPOINT_REACHED_COLLISION_FREE"
+  }
+]

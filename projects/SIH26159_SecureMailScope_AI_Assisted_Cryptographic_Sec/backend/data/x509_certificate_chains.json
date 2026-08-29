@@ -1,0 +1,22 @@
+[
+  {
+    "cert_id": "CERT-2026-901",
+    "session_id": "MAIL-SES-2026-001",
+    "subject_cn": "mail.state-ministry.gov.in",
+    "issuer_cn": "Self-Signed Test CA (Untrusted)",
+    "public_key_type": "RSA 1024-bit (Insufficient Key Length)",
+    "signature_algorithm": "SHA1withRSA (Collidable Digest)",
+    "valid_until": "2024-11-12 (EXPIRED)",
+    "security_verdict": "REVOCATION_AND_RENEWAL_MANDATED"
+  },
+  {
+    "cert_id": "CERT-2026-304",
+    "session_id": "MAIL-SES-2026-088",
+    "subject_cn": "securemail.defense-agency.res.in",
+    "issuer_cn": "National Informatics Centre CCA Tier-1 CA",
+    "public_key_type": "RSA 4096-bit / P-384 ECDSA",
+    "signature_algorithm": "SHA384withRSA",
+    "valid_until": "2028-09-30 (VALID)",
+    "security_verdict": "FULLY_COMPLIANT_ENTERPRISE_CHAIN"
+  }
+]

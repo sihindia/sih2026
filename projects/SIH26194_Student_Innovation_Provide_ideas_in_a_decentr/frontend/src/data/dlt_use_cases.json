@@ -1,0 +1,46 @@
+[
+  {
+    "use_case_id": "DLT-ACAD-DEGREE-01",
+    "name": "Tamper-Proof Academic Degrees (Soulbound NFTs)",
+    "sector": "Higher Education & Skill Certification",
+    "contract_address": "0x4a9b...7812",
+    "consensus_mode": "Proof-of-Authority (AICTE/UGC Consortium)",
+    "description": "Non-transferable Soulbound NFT certificates tied to student DID, eliminating fake degree rackets globally with instant 1-second cryptographic verification.",
+    "privacy_engine": "Zero-Knowledge SNARKs (Reveals qualification without GPA/DOB)",
+    "economic_impact": "\u20b9120 Cr annual savings in background verification checks",
+    "icon": "GraduationCap"
+  },
+  {
+    "use_case_id": "DLT-PHARMA-COLDCHAIN-02",
+    "name": "Pharmaceutical Cold-Chain Drug Provenance",
+    "sector": "Healthcare & Drug Safety",
+    "contract_address": "0x8f1c...3940",
+    "consensus_mode": "Hyperledger Enterprise DLT",
+    "description": "End-to-end serialized track-and-trace with IoT temperature breach oracle. Drugs automatically flagged if temperature exceeds 2\u00b0C to 8\u00b0C during transit.",
+    "privacy_engine": "Permissioned Merkle State Channel",
+    "economic_impact": "100% eradication of counterfeit life-saving oncology medications",
+    "icon": "Pill"
+  },
+  {
+    "use_case_id": "DLT-LAND-REGISTRY-03",
+    "name": "Immutable Land Records & Title Registry",
+    "sector": "Revenue & Urban Governance",
+    "contract_address": "0x3e2d...9918",
+    "consensus_mode": "BhartiyaLedger Consortium",
+    "description": "Tokenized land parcels with Multi-Signature Registrar authorization and geofenced cadastral boundary hashes.",
+    "privacy_engine": "Zk-Rollup Privacy Layer",
+    "economic_impact": "-95% reduction in civil land title litigation",
+    "icon": "Building2"
+  },
+  {
+    "use_case_id": "DLT-CARBON-HYDROGEN-04",
+    "name": "Green Hydrogen & Carbon Credit Proof-of-Origin",
+    "sector": "Renewable Energy & ESG Compliance",
+    "contract_address": "0x7b5a...4421",
+    "consensus_mode": "PoA Green Grid",
+    "description": "Cryptographic guarantee of renewable electrolysis power source preventing double-counting in international carbon markets.",
+    "privacy_engine": "Public Verifiable Registry",
+    "economic_impact": "Direct compliance with EU CBAM (Carbon Border Adjustment Mechanism)",
+    "icon": "Leaf"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "hazard_class": "Traversable Compact Dirt Track",
+    "risk_level": "SAFE",
+    "friction_coeff": 0.85,
+    "speed_limit_m_s": 2.0
+  },
+  {
+    "hazard_class": "Non-Traversable Boulder Cluster",
+    "risk_level": "CRITICAL_COLLISION",
+    "friction_coeff": 0.0,
+    "speed_limit_m_s": 0.0
+  },
+  {
+    "hazard_class": "Deep Anti-Vehicle Trench / Ditch",
+    "risk_level": "CRITICAL_FALL_HAZARD",
+    "friction_coeff": 0.0,
+    "speed_limit_m_s": 0.0
+  }
+]

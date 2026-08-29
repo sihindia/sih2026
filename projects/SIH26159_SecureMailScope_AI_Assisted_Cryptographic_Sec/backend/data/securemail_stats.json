@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Email PCAP Sessions Analyzed",
+    "value": "14,800 Streams",
+    "trend": "Across SMTP, IMAP & POP3"
+  },
+  {
+    "metric": "Insecure STARTTLS Deprecated",
+    "value": "342 Gateways",
+    "trend": "MitM Downgrade Protection Enabled"
+  },
+  {
+    "metric": "AI Anomaly Detection Rate",
+    "value": "98.4%",
+    "trend": "Identifies STRIPTLS Interception"
+  }
+]

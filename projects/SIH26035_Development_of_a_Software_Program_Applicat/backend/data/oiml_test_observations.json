@@ -1,0 +1,126 @@
+{
+  "NAWI-MOD-2026-081": {
+    "weighing_test": [
+      {
+        "step": 1,
+        "load_kg": 0.0,
+        "indicated_kg": 0.0,
+        "error_g": 0.0,
+        "mpe_g": 2.5,
+        "status": "PASS"
+      },
+      {
+        "step": 2,
+        "load_kg": 0.1,
+        "indicated_kg": 0.1,
+        "error_g": 0.0,
+        "mpe_g": 2.5,
+        "status": "PASS"
+      },
+      {
+        "step": 3,
+        "load_kg": 2.5,
+        "indicated_kg": 2.5,
+        "error_g": 0.0,
+        "mpe_g": 2.5,
+        "status": "PASS"
+      },
+      {
+        "step": 4,
+        "load_kg": 10.0,
+        "indicated_kg": 10.0,
+        "error_g": 0.0,
+        "mpe_g": 5.0,
+        "status": "PASS"
+      },
+      {
+        "step": 5,
+        "load_kg": 20.0,
+        "indicated_kg": 20.005,
+        "error_g": 5.0,
+        "mpe_g": 5.0,
+        "status": "PASS"
+      },
+      {
+        "step": 6,
+        "load_kg": 30.0,
+        "indicated_kg": 30.005,
+        "error_g": 5.0,
+        "mpe_g": 7.5,
+        "status": "PASS"
+      }
+    ],
+    "eccentricity_test": [
+      {
+        "position": "Center (Position 1)",
+        "load_applied_kg": 10.0,
+        "indicated_kg": 10.0,
+        "error_g": 0.0,
+        "mpe_g": 5.0,
+        "status": "PASS"
+      },
+      {
+        "position": "Front-Left (Position 2)",
+        "load_applied_kg": 10.0,
+        "indicated_kg": 10.0,
+        "error_g": 0.0,
+        "mpe_g": 5.0,
+        "status": "PASS"
+      },
+      {
+        "position": "Front-Right (Position 3)",
+        "load_applied_kg": 10.0,
+        "indicated_kg": 10.005,
+        "error_g": 5.0,
+        "mpe_g": 5.0,
+        "status": "PASS"
+      },
+      {
+        "position": "Rear-Left (Position 4)",
+        "load_applied_kg": 10.0,
+        "indicated_kg": 10.0,
+        "error_g": 0.0,
+        "mpe_g": 5.0,
+        "status": "PASS"
+      },
+      {
+        "position": "Rear-Right (Position 5)",
+        "load_applied_kg": 10.0,
+        "indicated_kg": 10.0,
+        "error_g": 0.0,
+        "mpe_g": 5.0,
+        "status": "PASS"
+      }
+    ],
+    "repeatability_test": [
+      {
+        "run": 1,
+        "load_kg": 15.0,
+        "indicated_kg": 15.0
+      },
+      {
+        "run": 2,
+        "load_kg": 15.0,
+        "indicated_kg": 15.0
+      },
+      {
+        "run": 3,
+        "load_kg": 15.0,
+        "indicated_kg": 15.005
+      },
+      {
+        "run": 4,
+        "load_kg": 15.0,
+        "indicated_kg": 15.0
+      },
+      {
+        "run": 5,
+        "load_kg": 15.0,
+        "indicated_kg": 15.0
+      }
+    ],
+    "repeatability_max_diff_g": 5.0,
+    "repeatability_mpe_g": 5.0,
+    "repeatability_verdict": "PASS"
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "plant_id": "PLANT-BIO-INDORE-01",
+    "facility_name": "Indore Devguradia Gobardhan CBG Superplant",
+    "daily_waste_intake_tons": 550.0,
+    "digester_temp_c": 55.4,
+    "ph_level": 7.3,
+    "daily_biogas_output_cbg_kg": 17500.0,
+    "organic_compost_tons": 110.0,
+    "status": "OPTIMAL_THERMOPHILIC_DIGESTION"
+  }
+]

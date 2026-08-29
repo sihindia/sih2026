@@ -1,0 +1,22 @@
+[
+  {
+    "feature": "TCP SYN Flag Ratio",
+    "shap_value": 0.428,
+    "direction": "INCREASES_INFILTRATION_PROBABILITY"
+  },
+  {
+    "feature": "Port Access Entropy (Randomized Sweep)",
+    "shap_value": 0.385,
+    "direction": "INDICATES_EVASIVE_SCAN"
+  },
+  {
+    "feature": "Inter-Arrival Time (IAT) Variance",
+    "shap_value": 0.312,
+    "direction": "AUTOMATED_EXPLOIT_PAYLOAD"
+  },
+  {
+    "feature": "Payload Byte Entropy (Encrypted Shellcode)",
+    "shap_value": 0.284,
+    "direction": "ANOMALOUS_ENCRYPTED_C2"
+  }
+]

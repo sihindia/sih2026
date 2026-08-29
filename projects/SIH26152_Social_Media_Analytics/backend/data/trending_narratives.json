@@ -1,0 +1,20 @@
+[
+  {
+    "narrative_id": "NARR-2026-01",
+    "topic_hashtag": "#BankingCrash / #ATMOutageRumor",
+    "velocity_posts_per_min": 420,
+    "bot_network_penetration_pct": 74.5,
+    "dominant_emotion": "Panic & Anxiety",
+    "origin_cluster": "Coordinated Bot Farm (Eastern Europe / Proxy Nodes)",
+    "mitigation_action": "PIB Fact Check Debunk & API Throttling"
+  },
+  {
+    "narrative_id": "NARR-2026-02",
+    "topic_hashtag": "#DigitalArrestScamAwareness",
+    "velocity_posts_per_min": 180,
+    "bot_network_penetration_pct": 5.2,
+    "dominant_emotion": "Civic Vigilance",
+    "origin_cluster": "Organic State Police Citizen Awareness",
+    "mitigation_action": "Amplification Supported"
+  }
+]

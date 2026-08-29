@@ -1,0 +1,26 @@
+[
+  {
+    "battalion": "CRPF 204 CoBRA (Sukma, Bastar)",
+    "total_strength": 980,
+    "red_risk_count": 42,
+    "amber_risk_count": 184,
+    "overall_wellness_index": 71.4,
+    "status": "PRIORITY_WELFARE_VISIT_SCHEDULED"
+  },
+  {
+    "battalion": "BSF 68 Bn (Samba, J&K)",
+    "total_strength": 1150,
+    "red_risk_count": 19,
+    "amber_risk_count": 142,
+    "overall_wellness_index": 82.0,
+    "status": "MODERATE_WELLNESS"
+  },
+  {
+    "battalion": "ITBP 24 Bn (Leh, Ladakh)",
+    "total_strength": 840,
+    "red_risk_count": 8,
+    "amber_risk_count": 68,
+    "overall_wellness_index": 91.5,
+    "status": "EXCELLENT_READINESS"
+  }
+]

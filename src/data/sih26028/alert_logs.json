@@ -1,0 +1,16 @@
+[
+  {
+    "alert_id": "SMS-IR-2026-081",
+    "train_no": "22436",
+    "destination": "Kanpur Central",
+    "message": "Dear Passenger, Vande Bharat Express (22436) AI dynamic forecast indicates on-time arrival at CNB by 10:10 AM (Recovers 6 mins of static delay). Have a pleasant journey.",
+    "dispatched_at": "2026-08-29 09:30 AM"
+  },
+  {
+    "alert_id": "SMS-IR-2026-082",
+    "train_no": "12952",
+    "destination": "Kota Junction",
+    "message": "Dear Passenger, Tejas Rajdhani Express (12952) ETA revised to 09:51 PM due to caution order. Delay reduced from 18m to 11m via dynamic speed recovery.",
+    "dispatched_at": "2026-08-29 08:45 PM"
+  }
+]

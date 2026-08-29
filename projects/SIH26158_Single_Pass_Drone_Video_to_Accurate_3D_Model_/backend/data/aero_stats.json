@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Single-Pass Reconstructions",
+    "value": "380 Missions",
+    "trend": "Across Border & Disaster Sectors"
+  },
+  {
+    "metric": "Mean Reconstruction Time",
+    "value": "4.2 Minutes",
+    "trend": "97% Faster Than Multi-Pass SfM"
+  },
+  {
+    "metric": "Metric Scale Accuracy",
+    "value": "\u00b13.2 cm GSD",
+    "trend": "Survey of India Class 1 Grade"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "joint": "Right Wrist",
+    "pos_x_cm": 12.4,
+    "pos_y_cm": 45.2,
+    "pos_z_cm": 88.0,
+    "interaction_target": "Micro-Pipette Grip",
+    "confidence": 98.4
+  },
+  {
+    "joint": "Left Hand",
+    "pos_x_cm": -18.2,
+    "pos_y_cm": 42.0,
+    "pos_z_cm": 86.5,
+    "interaction_target": "Glovebox Port Flange",
+    "confidence": 97.8
+  },
+  {
+    "joint": "Head / Gaze",
+    "pos_x_cm": 0.0,
+    "pos_y_cm": 72.0,
+    "pos_z_cm": 65.0,
+    "interaction_target": "Optical Alignment Laser Reticle",
+    "confidence": 99.1
+  }
+]

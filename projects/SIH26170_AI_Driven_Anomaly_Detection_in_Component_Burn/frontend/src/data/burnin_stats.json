@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Space Components Screened",
+    "value": "42,800 Units",
+    "trend": "Across Payloads & Launch Vehicles"
+  },
+  {
+    "metric": "Latent Defects Intercepted",
+    "value": "100% Zero Escapes",
+    "trend": "Zero False Negatives in Space Screening"
+  },
+  {
+    "metric": "ESS Screening Time Saved",
+    "value": "144 Hours / Part",
+    "trend": "24h Predictive Early Rejection"
+  }
+]

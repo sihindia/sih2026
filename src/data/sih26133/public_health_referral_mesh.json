@@ -1,0 +1,18 @@
+[
+  {
+    "referral_id": "REF-MH-881",
+    "patient": "Sunita Korku",
+    "from_facility": "Harisal Sub-Centre",
+    "to_facility": "Achalpur SDH",
+    "transport": "108 Ambulance",
+    "status": "IN_TRANSIT"
+  },
+  {
+    "referral_id": "REF-MH-882",
+    "patient": "Devidas Madavi",
+    "from_facility": "Bhamragad Sub-Centre",
+    "to_facility": "Aheri SDH",
+    "transport": "Facility Vehicle",
+    "status": "ADMITTED"
+  }
+]

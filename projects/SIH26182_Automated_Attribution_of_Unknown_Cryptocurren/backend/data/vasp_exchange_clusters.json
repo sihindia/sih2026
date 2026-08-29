@@ -1,0 +1,23 @@
+[
+  {
+    "vasp_name": "Binance Global / Binance South Asia",
+    "fiu_registered": true,
+    "designated_nodal_officer": "compliance-sahyog@binance.com",
+    "avg_freeze_turnaround_hours": 1.2,
+    "supported_chains": "TRON, ETH, BTC, SOL, BSC"
+  },
+  {
+    "vasp_name": "CoinDCX / WazirX (India FIU-IND)",
+    "fiu_registered": true,
+    "designated_nodal_officer": "law-enforcement@coindcx.com",
+    "avg_freeze_turnaround_hours": 0.4,
+    "supported_chains": "TRON, ETH, BTC, MATIC"
+  },
+  {
+    "vasp_name": "OKX Exchange International",
+    "fiu_registered": false,
+    "designated_nodal_officer": "legal-lea@okx.com",
+    "avg_freeze_turnaround_hours": 2.5,
+    "supported_chains": "TRON, ETH, SOL, OKTC"
+  }
+]

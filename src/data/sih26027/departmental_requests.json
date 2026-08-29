@@ -1,0 +1,54 @@
+[
+  {
+    "request_id": "REQ-TMS-2026-401",
+    "corridor_id": "CORR-HDN1-GZB-CNB",
+    "department": "Engineering (P-Way / TMS)",
+    "dept_code": "TMS",
+    "work_type": "09-3X Dynamic Tamping & Ballast Regulation",
+    "track_km": "Km 924/10 to 932/14 (Down Line)",
+    "requested_duration_hrs": 2.5,
+    "power_block_required": false,
+    "traffic_block_required": true,
+    "machine_allocated": "Duomatic 09-3X Tamping Unit #104",
+    "status": "MERGED_INTO_SHADOW_BLOCK"
+  },
+  {
+    "request_id": "REQ-TRD-2026-118",
+    "corridor_id": "CORR-HDN1-GZB-CNB",
+    "department": "Electrical Traction (TRD / OHE)",
+    "dept_code": "TRD",
+    "work_type": "25kV Contact Wire Tensioning & Insulator Washing",
+    "track_km": "Km 922/00 to 934/00 (Down Line)",
+    "requested_duration_hrs": 2.5,
+    "power_block_required": true,
+    "traffic_block_required": true,
+    "machine_allocated": "OHE Tower Wagon #8812",
+    "status": "MERGED_INTO_SHADOW_BLOCK"
+  },
+  {
+    "request_id": "REQ-SMMS-2026-084",
+    "corridor_id": "CORR-HDN1-GZB-CNB",
+    "department": "Signal & Telecom (S&T / SMMS)",
+    "dept_code": "S&T",
+    "work_type": "Electronic Interlocking (EI) Point Machine Health Test",
+    "track_km": "Aligarh Junction Yard Points 102A/B",
+    "requested_duration_hrs": 2.0,
+    "power_block_required": false,
+    "traffic_block_required": true,
+    "machine_allocated": "Digital Axle Counter Test Rig",
+    "status": "MERGED_INTO_SHADOW_BLOCK"
+  },
+  {
+    "request_id": "REQ-TMS-2026-612",
+    "corridor_id": "CORR-GD2-BPL-NGP",
+    "department": "Engineering (P-Way / TMS)",
+    "dept_code": "TMS",
+    "work_type": "Deep Screening Ballast Cleaner (BCM)",
+    "track_km": "Km 812/04 to 818/00 (Up Line)",
+    "requested_duration_hrs": 3.0,
+    "power_block_required": false,
+    "traffic_block_required": true,
+    "machine_allocated": "Plasser BCM Unit #209",
+    "status": "SCHEDULED"
+  }
+]

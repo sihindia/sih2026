@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "RS Queries Handled",
+    "value": "12,400 Queries",
+    "trend": "Across Disaster, Agriculture & Urban Planning"
+  },
+  {
+    "metric": "VQA Accuracy (RSVQA Benchmark)",
+    "value": "94.8% F1",
+    "trend": "Fine-Tuned on BigEarthNet & VRSBench"
+  },
+  {
+    "metric": "Cross-Modal Cloud Penetration",
+    "value": "100.0% All-Weather",
+    "trend": "Fused Cartosat-2S & RISAT SAR Streams"
+  }
+]

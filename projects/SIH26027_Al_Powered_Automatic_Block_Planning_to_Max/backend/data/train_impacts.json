@@ -1,0 +1,26 @@
+[
+  {
+    "train_no": "22436",
+    "train_name": "Vande Bharat Express (NDLS -> BSB)",
+    "scheduled_arrival": "06:00 AM",
+    "shadow_block_eta": "06:00 AM (ON-TIME)",
+    "delay_prevented_mins": 35,
+    "routing_action": "Clear Track Priority on Down Main"
+  },
+  {
+    "train_no": "12302",
+    "train_name": "Howrah Rajdhani Express",
+    "scheduled_arrival": "09:55 AM",
+    "shadow_block_eta": "09:55 AM (ON-TIME)",
+    "delay_prevented_mins": 45,
+    "routing_action": "Bi-Directional Signaling Bypass"
+  },
+  {
+    "train_no": "BOXN-COAL-99",
+    "train_name": "Heavy Coal Rake (Dhanbad -> Dadri NTPC)",
+    "scheduled_arrival": "04:15 AM",
+    "shadow_block_eta": "04:35 AM (+20 mins)",
+    "delay_prevented_mins": 85,
+    "routing_action": "Temporary Siding Holding with Green Wave Dispatch"
+  }
+]

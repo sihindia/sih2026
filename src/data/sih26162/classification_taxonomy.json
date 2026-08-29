@@ -1,0 +1,22 @@
+[
+  {
+    "class_type": "Persistent Industrial Gas Flare",
+    "thermal_signature": "Ultra-High Kelvin (>600K), Small Pixel Footprint, Static OSM Industrial Node Match",
+    "action": "Baseline Environmental Monitoring"
+  },
+  {
+    "class_type": "Accidental Industrial Chemical Fire",
+    "thermal_signature": "Sudden Spike (>800K), Rapid Expanding Perimeter over Industrial Asset",
+    "action": "National Disaster Response & Evacuation"
+  },
+  {
+    "class_type": "Agricultural Stubble Burning",
+    "thermal_signature": "Moderate FRP (<50MW), Ephemeral 1-Day Duration over Cropland",
+    "action": "Pollution Regulatory Tracking"
+  },
+  {
+    "class_type": "Natural Forest Canopy Fire",
+    "thermal_signature": "High FRP (>100MW), Spreading Wind Vector over Dense Vegetation",
+    "action": "Forest Fire Fighting Mobilization"
+  }
+]

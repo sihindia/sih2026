@@ -1,0 +1,54 @@
+[
+  {
+    "monument_id": "MON-THANJ-01",
+    "name": "Brihadisvara Temple (Peruvudaiyar Kovil)",
+    "name_hi": "\u092c\u0943\u0939\u0926\u0947\u0936\u094d\u0935\u0930 \u092e\u0928\u094d\u0926\u093f\u0930 (\u0924\u0902\u091c\u093e\u0935\u0941\u0930)",
+    "name_ta": "\u0baa\u0bc6\u0bb0\u0bc1\u0bb5\u0bc1\u0b9f\u0bc8\u0baf\u0bbe\u0bb0\u0bcd \u0b95\u0bcb\u0baf\u0bbf\u0bb2\u0bcd",
+    "location": "Thanjavur, Tamil Nadu",
+    "era": "1010 CE (Rajaraja Chola I)",
+    "architectural_style": "Dravidian Granite Splendor (UNESCO World Heritage)",
+    "engineering_marvel": "Constructed purely of interlocking dry-joint granite with no binding mortar; 80-tonne monolithic Kumbam capstone raised via a 6km earthen ramp.",
+    "acoustic_resonance_hz": 108.0,
+    "3d_ar_mesh": "brihadisvara_temple_lod4.glb",
+    "status": "ASI_PROTECTED_DIGITIZED"
+  },
+  {
+    "monument_id": "MON-KONARK-02",
+    "name": "Konark Sun Temple (Surya Devalaya)",
+    "name_hi": "\u0915\u094b\u0923\u093e\u0930\u094d\u0915 \u0938\u0942\u0930\u094d\u092f \u092e\u0928\u094d\u0926\u093f\u0930 (\u0913\u0921\u093f\u0936\u093e)",
+    "name_ta": "\u0b95\u0bcb\u0ba9\u0bbe\u0bb0\u0bcd\u0b95\u0bcd \u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bcd \u0b95\u0bcb\u0baf\u0bbf\u0bb2\u0bcd",
+    "location": "Puri District, Odisha",
+    "era": "1250 CE (King Narasimhadeva I)",
+    "architectural_style": "Kalinga Chariot Architecture (UNESCO)",
+    "engineering_marvel": "24 intricately carved stone chariot wheels acting as hyper-accurate sundials measuring time down to minute intervals through spoke shadows.",
+    "acoustic_resonance_hz": 112.5,
+    "3d_ar_mesh": "konark_sundial_wheel_lod3.glb",
+    "status": "ASI_PROTECTED_DIGITIZED"
+  },
+  {
+    "monument_id": "MON-ELLORA-03",
+    "name": "Kailash Temple (Cave 16)",
+    "name_hi": "\u0915\u0948\u0932\u093e\u0936 \u092e\u0928\u094d\u0926\u093f\u0930 (\u090f\u0932\u094b\u0930\u093e \u0917\u0941\u092b\u093e 16)",
+    "name_ta": "\u0b95\u0bc8\u0bb2\u0bbe\u0b9a\u0ba8\u0bbe\u0ba4\u0bb0\u0bcd \u0b95\u0bcb\u0bb5\u0bbf\u0bb2\u0bcd (\u0b8e\u0bb2\u0bcd\u0bb2\u0bcb\u0bb0\u0bbe)",
+    "location": "Sambhaji Nagar (Aurangabad), Maharashtra",
+    "era": "756\u2013773 CE (Rashtrakuta King Krishna I)",
+    "architectural_style": "Monolithic Rock-Cut Megalith (UNESCO)",
+    "engineering_marvel": "Carved top-down from a single basalt cliff, excavating over 200,000 tonnes of solid volcanic rock with zero margin for architectural error.",
+    "acoustic_resonance_hz": 105.0,
+    "3d_ar_mesh": "kailash_ellora_cave16_mesh.glb",
+    "status": "ASI_PROTECTED_DIGITIZED"
+  },
+  {
+    "monument_id": "MON-RANI-04",
+    "name": "Rani ki Vav (The Queen's Stepwell)",
+    "name_hi": "\u0930\u093e\u0928\u0940 \u0915\u0940 \u0935\u093e\u0935 (\u092a\u093e\u091f\u0928, \u0917\u0941\u091c\u0930\u093e\u0924)",
+    "name_ta": "\u0bb0\u0bbe\u0ba3\u0bbf \u0b95\u0bbf \u0bb5\u0bbe\u0bb5\u0bcd (\u0baa\u0b9f\u0bbf\u0b95\u0bcd\u0b95\u0bbf\u0ba3\u0bb1\u0bc1)",
+    "location": "Patan, Gujarat",
+    "era": "1063 CE (Solanki Dynasty Queen Udayamati)",
+    "architectural_style": "Maru-Gurjara Subterranean Stepwell (UNESCO)",
+    "engineering_marvel": "7-tiered subterranean water management sanctuary with over 500 principal sculptures combining sacred geometry with micro-climate cooling.",
+    "acoustic_resonance_hz": 120.0,
+    "3d_ar_mesh": "rani_ki_vav_stepwell_3d.glb",
+    "status": "ASI_PROTECTED_DIGITIZED"
+  }
+]

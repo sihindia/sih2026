@@ -1,0 +1,32 @@
+[
+  {
+    "city": "Delhi-NCR Mega Region",
+    "commodity": "Onion (Rabi Red)",
+    "weekly_projected_demand_mt": 4200.0,
+    "current_regional_stock_mt": 2800.0,
+    "projected_deficit_mt": 1400.0,
+    "suggested_farmgate_source": "Nashik / Lasalgaon APMC Direct Route",
+    "price_trend_prediction": "STABLE_AT_\u20b928-30/KG",
+    "ai_confidence_score": 0.982
+  },
+  {
+    "city": "Mumbai Metropolitan Region (MMR)",
+    "commodity": "Sharbati Wheat",
+    "weekly_projected_demand_mt": 3100.0,
+    "current_regional_stock_mt": 2950.0,
+    "projected_deficit_mt": 150.0,
+    "suggested_farmgate_source": "Doaba Jalandhar / Malwa FPO Direct Train Freight",
+    "price_trend_prediction": "MILD_DROP_\u20b935/KG",
+    "ai_confidence_score": 0.975
+  },
+  {
+    "city": "Bengaluru Tech Corridor",
+    "commodity": "Kinnaur Apples",
+    "weekly_projected_demand_mt": 950.0,
+    "current_regional_stock_mt": 420.0,
+    "projected_deficit_mt": 530.0,
+    "suggested_farmgate_source": "Kinnaur Reefer Cold Express via Delhi Air Cargo",
+    "price_trend_prediction": "HIGH_DEMAND_PREMIUM",
+    "ai_confidence_score": 0.989
+  }
+]

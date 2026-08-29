@@ -1,0 +1,18 @@
+[
+  {
+    "sensor_name": "ISRO Oceansat-3 (Ocean Colour Monitor OCM-3)",
+    "coverage_area": "Arabian Sea & Bay of Bengal Exclusive Economic Zone (EEZ)",
+    "chlorophyll_resolution": "360m Spatial Resolution",
+    "last_orbital_pass": "2026-08-30T00:15:00Z",
+    "chlorophyll_range": "0.15 to 3.80 mg/m\u00b3",
+    "status": "OPERATIONAL_OPTIMAL"
+  },
+  {
+    "sensor_name": "INSAT-3DR / INSAT-3DS Imager",
+    "coverage_area": "Indian Ocean Basin",
+    "sst_resolution": "1 km Resolution (Thermal Infrared)",
+    "last_orbital_pass": "2026-08-30T01:00:00Z",
+    "sea_surface_temp_range": "26.5\u00b0C to 30.2\u00b0C",
+    "status": "OPERATIONAL_OPTIMAL"
+  }
+]

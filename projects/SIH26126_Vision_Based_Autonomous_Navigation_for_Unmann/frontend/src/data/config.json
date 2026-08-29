@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26126",
+  "title": "Vision Based Autonomous Navigation for Unmanned Ground Vehicle for Outdoor environment",
+  "organization": "Bharat Electronics Limited",
+  "theme": "Smart Automation",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

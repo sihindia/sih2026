@@ -1,0 +1,23 @@
+[
+  {
+    "exchange_name": "Binance Global Deposit Cluster #BN-9812",
+    "tainted_inflow_usdt": 1420000.0,
+    "active_fraud_cases": 18,
+    "fiu_compliance_grade": "A+",
+    "avg_freeze_response_mins": 35
+  },
+  {
+    "exchange_name": "KuCoin Inbound Wallet #KC-1102",
+    "tainted_inflow_usdt": 680000.0,
+    "active_fraud_cases": 9,
+    "fiu_compliance_grade": "B",
+    "avg_freeze_response_mins": 75
+  },
+  {
+    "exchange_name": "Bybit Custodial Cluster #BYB-7721",
+    "tainted_inflow_usdt": 410000.0,
+    "active_fraud_cases": 6,
+    "fiu_compliance_grade": "A",
+    "avg_freeze_response_mins": 45
+  }
+]

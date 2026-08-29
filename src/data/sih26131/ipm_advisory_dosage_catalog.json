@@ -1,0 +1,14 @@
+[
+  {
+    "pest": "Pink Bollworm",
+    "biological": "Trichogramma bactrae egg parasitoids @ 60,000/acre",
+    "chemical": "Emamectin Benzoate 5% SG @ 4.5g/10L",
+    "waiting_period_days": 15
+  },
+  {
+    "pest": "Downy Mildew",
+    "biological": "Trichoderma harzianum @ 5g/L preventive spray",
+    "chemical": "Metalaxyl 8% + Mancozeb 64% WP @ 2.5g/L",
+    "waiting_period_days": 21
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "doc_id": "DOC-JAMABANDI-1974-08",
+    "document_type": "Historical Jamabandi Revenue Register",
+    "state": "Uttar Pradesh",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Phoolpur (Village Code: 204128)",
+    "script_language": "Devanagari (Handwritten Hindi)",
+    "scan_quality_dpi": 300,
+    "page_condition": "FADED_YELLOWED_INK",
+    "khasra_count": 12,
+    "avg_ocr_confidence": 0.962,
+    "status": "AI_EXTRACTED_VERIFIED"
+  },
+  {
+    "doc_id": "DOC-KHATIYAN-1962-14",
+    "document_type": "Cadastral Survey Khatiyan Record",
+    "state": "Bihar",
+    "district": "Patna",
+    "tehsil": "Phulwari Sharif",
+    "village": "Janipur (Village Code: 108422)",
+    "script_language": "Kaithi & Devanagari Script",
+    "scan_quality_dpi": 200,
+    "page_condition": "EDGE_TORN_WATERMARK",
+    "khasra_count": 8,
+    "avg_ocr_confidence": 0.885,
+    "status": "HUMAN_REVIEW_RECOMMENDED"
+  },
+  {
+    "doc_id": "DOC-7-12-EXTRACT-1988",
+    "document_type": "Village Form 7/12 (Saat-Baara) Extract",
+    "state": "Maharashtra",
+    "district": "Satara",
+    "tehsil": "Karad",
+    "village": "Ogalewadi (Village Code: 564102)",
+    "script_language": "Marathi (Modi / Devanagari)",
+    "scan_quality_dpi": 400,
+    "page_condition": "CLEAN_ARCHIVAL_SCAN",
+    "khasra_count": 6,
+    "avg_ocr_confidence": 0.988,
+    "status": "AI_EXTRACTED_VERIFIED"
+  }
+]

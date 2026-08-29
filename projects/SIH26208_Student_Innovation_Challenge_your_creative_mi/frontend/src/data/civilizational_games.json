@@ -1,0 +1,96 @@
+[
+  {
+    "game_id": "GAME-MOKSHA-01",
+    "title": "Moksha Patam (Ancestor of Snakes & Ladders)",
+    "civilizational_era": "Vedic & Classical India (10th Century CE)",
+    "origin_region": "Pan-India (Sage Gyandev Tradition)",
+    "theme": "Moral Philosophy, Karma & Spiritual Liberation",
+    "board_grid": "8x8 (64 Cells) / 72 Virtues & Vices",
+    "dice_mechanic": "Cowrie Shell Randomizer (6 Shells)",
+    "ladders": [
+      {
+        "from": 12,
+        "to": 32,
+        "virtue": "Dharma (Righteous Conduct)"
+      },
+      {
+        "from": 28,
+        "to": 50,
+        "virtue": "Vidya (Knowledge & Wisdom)"
+      },
+      {
+        "from": 36,
+        "to": 58,
+        "virtue": "Dhyana (Meditation & Focus)"
+      }
+    ],
+    "snakes": [
+      {
+        "from": 44,
+        "to": 22,
+        "vice": "Krodha (Anger)"
+      },
+      {
+        "from": 56,
+        "to": 18,
+        "vice": "Lobha (Greed)"
+      },
+      {
+        "from": 62,
+        "to": 14,
+        "vice": "Ahankara (Ego)"
+      }
+    ],
+    "nep_learning_outcome": "Ethics, Self-Regulation & Ancient Indian Philosophical Systems",
+    "icon": "Dice5"
+  },
+  {
+    "game_id": "GAME-CHATURANGA-02",
+    "title": "Chaturanga (Ancient 6th Century Chess of the Gupta Empire)",
+    "civilizational_era": "Gupta Golden Age (6th Century CE)",
+    "origin_region": "Magadha / Pataliputra",
+    "theme": "Military Tactics & Four Branches of Warfare",
+    "board_grid": "8x8 Ashtapada Uncheckered Board",
+    "army_branches": [
+      {
+        "unit": "Ratha (Chariot)",
+        "modern_equivalent": "Rook",
+        "movement": "Orthogonal file/rank sliding"
+      },
+      {
+        "unit": "Ashwa (Cavalry)",
+        "modern_equivalent": "Knight",
+        "movement": "L-shaped jump"
+      },
+      {
+        "unit": "Gaja (War Elephant)",
+        "modern_equivalent": "Bishop (Early)",
+        "movement": "2-square diagonal hop"
+      },
+      {
+        "unit": "Padati (Infantry)",
+        "modern_equivalent": "Pawn",
+        "movement": "1-square forward strike"
+      }
+    ],
+    "nep_learning_outcome": "Strategic Foresight, Probability & Military History",
+    "icon": "Shield"
+  },
+  {
+    "game_id": "GAME-CHOLA-VOYAGE-03",
+    "title": "Chola Maritime Empire Trade Simulator",
+    "civilizational_era": "Chola Dynasty (11th Century CE)",
+    "origin_region": "Thanjavur & Nagapattinam Ports",
+    "theme": "Naval Navigation, Spice Routes & Indian Ocean Trade",
+    "board_grid": "Indian Ocean Maritime Map (Srivijaya, Malacca, Kedah)",
+    "trade_commodities": [
+      "Malabar Black Pepper",
+      "Cardamom",
+      "Teakwood Timber",
+      "Fine Muslin Cloth"
+    ],
+    "monsoon_mechanics": "Southwest & Northeast Monsoon Wind Trajectories",
+    "nep_learning_outcome": "Geopolitics, Oceanic Trade Economics & Ancient Maritime Engineering",
+    "icon": "Compass"
+  }
+]

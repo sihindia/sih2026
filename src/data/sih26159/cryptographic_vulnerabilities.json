@@ -1,0 +1,23 @@
+[
+  {
+    "vuln_id": "VULN-TLS-01",
+    "name": "Deprecated TLS 1.0/1.1 Negotiation",
+    "severity": "HIGH",
+    "cve": "CVE-2014-3566",
+    "impact": "Allows MitM downgrade and plaintext session decryption"
+  },
+  {
+    "vuln_id": "VULN-3DES-02",
+    "name": "Sweet32 3DES Collision Flaw",
+    "severity": "HIGH",
+    "cve": "CVE-2016-2183",
+    "impact": "64-bit block cipher collision enables session cookie recovery"
+  },
+  {
+    "vuln_id": "VULN-NO-PFS-03",
+    "name": "Static RSA Key Exchange (No PFS)",
+    "severity": "MEDIUM",
+    "cve": "CWE-327",
+    "impact": "Private key compromise retroactively decrypts all past recorded emails"
+  }
+]

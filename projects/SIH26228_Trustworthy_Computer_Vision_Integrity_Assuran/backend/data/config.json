@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26228",
+  "title": "Trustworthy Computer Vision Integrity Assurance for Data, Models and Inference Outputs in Multi-Contributor Pipelines",
+  "organization": "Ministry of defence (MoD)",
+  "theme": "Blockchain & Cybersecurity",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

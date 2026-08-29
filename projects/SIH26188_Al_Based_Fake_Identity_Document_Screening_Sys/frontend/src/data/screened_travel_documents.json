@@ -1,0 +1,61 @@
+[
+  {
+    "document_id": "DOC-SSB-RAXAUL-01",
+    "checkpoint": "Raxaul Integrated Check Post (India-Nepal Border)",
+    "traveler_name": "Tariq Mahmood (Alias: Rajesh Shrestha)",
+    "document_type": "National Passport (Ordinary)",
+    "issuing_country": "Republic of India (Forged Republic Blank)",
+    "passport_number": "P8912401",
+    "mrz_line_1": "P<INDSHRESTHA<<RAJESH<<<<<<<<<<<<<<<<<<<<<<<",
+    "mrz_line_2": "P8912401<4IND8405128M3009204<<<<<<<<<<<<<<02",
+    "mrz_checksum_status": "FAILED (DOB Checksum Modulus 10 Mismatch)",
+    "tampering_detected": [
+      "Photo Replacement Detected (ELA compression anomaly around photo perimeter)",
+      "Font Kerning Disparity in Expiry Date"
+    ],
+    "face_match_confidence_pct": 41.2,
+    "watchlist_hit": true,
+    "watchlist_remarks": "Interpol SLTD Red Notice #2026-981-A",
+    "threat_score": 96.5,
+    "triage_decision": "RED_IMMEDIATE_ARREST_AND_IMPOUND",
+    "status": "DETAINED_IN_CUSTODY"
+  },
+  {
+    "document_id": "DOC-SSB-PETRAPOLE-02",
+    "checkpoint": "Petrapole ICP (India-Bangladesh Border)",
+    "traveler_name": "Farhana Akhtar",
+    "document_type": "Business Tourist Visa",
+    "issuing_country": "People's Republic of Bangladesh",
+    "passport_number": "A1049281",
+    "mrz_line_1": "V<BGDPAKHTAR<<FARHANA<<<<<<<<<<<<<<<<<<<<<<",
+    "mrz_line_2": "A1049281<6BGD9208152F2611308<<<<<<<<<<<<<<04",
+    "mrz_checksum_status": "PASSED (ICAO 9303 Compliant)",
+    "tampering_detected": [
+      "Visa Validity Date Digitally Altered (+3 Months Extension Attempt)"
+    ],
+    "face_match_confidence_pct": 91.0,
+    "watchlist_hit": false,
+    "watchlist_remarks": "Clean Watchlist",
+    "threat_score": 78.0,
+    "triage_decision": "AMBER_SECONDARY_INTERROGATION",
+    "status": "HELD_FOR_SECONDARY_AUDIT"
+  },
+  {
+    "document_id": "DOC-SSB-SONAULI-03",
+    "checkpoint": "Sonauli ICP (India-Nepal Border)",
+    "traveler_name": "Siddharth Gautam",
+    "document_type": "Biometric E-Passport",
+    "issuing_country": "Nepal",
+    "passport_number": "N9912048",
+    "mrz_line_1": "P<NPLGAUTAM<<SIDDHARTH<<<<<<<<<<<<<<<<<<<<<",
+    "mrz_line_2": "N9912048<8NPL9503204M3208158<<<<<<<<<<<<<<00",
+    "mrz_checksum_status": "PASSED (100% Cryptographic Signature Valid)",
+    "tampering_detected": [],
+    "face_match_confidence_pct": 98.4,
+    "watchlist_hit": false,
+    "watchlist_remarks": "Clean Record",
+    "threat_score": 4.2,
+    "triage_decision": "GREEN_CLEAR_FOR_TRANSIT",
+    "status": "CLEARED_TRANSIT"
+  }
+]

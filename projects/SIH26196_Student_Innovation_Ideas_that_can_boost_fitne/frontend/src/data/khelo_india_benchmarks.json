@@ -1,0 +1,14 @@
+[
+  {
+    "test_name": "Cooper 12-Minute Run/Walk Test",
+    "parameter": "Cardiorespiratory Endurance",
+    "gold_standard": "> 2800 meters",
+    "avg_standard": "2200-2600 meters"
+  },
+  {
+    "test_name": "Sit-and-Reach Flexibility Test",
+    "parameter": "Hamstring & Lower Back Flexibility",
+    "gold_standard": "> +12 cm past toes",
+    "avg_standard": "+4 to +8 cm"
+  }
+]

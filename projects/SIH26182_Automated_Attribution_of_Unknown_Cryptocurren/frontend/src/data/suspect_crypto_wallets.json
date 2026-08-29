@@ -1,0 +1,44 @@
+[
+  {
+    "wallet_id": "SAHYOG-CASE-2026-981",
+    "blockchain_network": "TRON (TRC-20 USDT)",
+    "suspect_wallet_address": "TX91aZ8kL019284jkm918234812349182",
+    "crime_category": "Digital Arrest CBI Extortion Scheme",
+    "crime_category_hi": "\u0921\u093f\u091c\u093f\u091f\u0932 \u0905\u0930\u0947\u0938\u094d\u091f \u0938\u0940\u092c\u0940\u0906\u0908 \u091c\u092c\u0930\u0928 \u0935\u0938\u0942\u0932\u0940",
+    "siphoned_value_usd": 185000.0,
+    "siphoned_value_inr": 15540000.0,
+    "hops_to_vasp": 2,
+    "attributed_nearest_vasp": "Binance Central Deposit Hot Wallet #BN-4091",
+    "attribution_confidence_pct": 97.8,
+    "risk_score": 98.4,
+    "sahyog_freeze_status": "SECTION_91_NOTICE_ISSUED_FREEZE_PENDING"
+  },
+  {
+    "wallet_id": "SAHYOG-CASE-2026-441",
+    "blockchain_network": "Ethereum (ERC-20 USDT)",
+    "suspect_wallet_address": "0x71a9841283918204918204918203918204918203",
+    "crime_category": "Pig Butchering & Fake WhatsApp Crypto Arbitrage",
+    "crime_category_hi": "\u092a\u093f\u0917 \u092c\u0941\u091a\u0930\u093f\u0902\u0917 \u092b\u0947\u0915 \u0915\u094d\u0930\u093f\u092a\u094d\u091f\u094b \u0906\u0930\u094d\u092c\u093f\u091f\u094d\u0930\u0947\u091c",
+    "siphoned_value_usd": 420000.0,
+    "siphoned_value_inr": 35280000.0,
+    "hops_to_vasp": 3,
+    "attributed_nearest_vasp": "OKX Exchange Deposit Cluster #OKX-8812",
+    "attribution_confidence_pct": 94.2,
+    "risk_score": 92.0,
+    "sahyog_freeze_status": "FUNDS_FROZEN_KYC_OBTAINED"
+  },
+  {
+    "wallet_id": "SAHYOG-CASE-2026-102",
+    "blockchain_network": "Bitcoin (BTC Native SegWit)",
+    "suspect_wallet_address": "bc1q91v204918204918203918204918203918204",
+    "crime_category": "LockBit 3.0 Ransomware Hospital Extortion",
+    "crime_category_hi": "\u0932\u0949\u0915\u092c\u093f\u091f \u0930\u0948\u0902\u0938\u092e\u0935\u0947\u092f\u0930 \u0905\u0938\u094d\u092a\u0924\u093e\u0932 \u091c\u092c\u0930\u0928 \u0935\u0938\u0942\u0932\u0940",
+    "siphoned_value_usd": 85000.0,
+    "siphoned_value_inr": 7140000.0,
+    "hops_to_vasp": 4,
+    "attributed_nearest_vasp": "Bybit Custodial Deposit Wallet #BYB-194",
+    "attribution_confidence_pct": 91.5,
+    "risk_score": 99.1,
+    "sahyog_freeze_status": "INTERPOL_PURPLE_NOTICE_FORWARDED"
+  }
+]

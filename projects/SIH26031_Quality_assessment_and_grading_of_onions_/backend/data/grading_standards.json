@@ -1,0 +1,42 @@
+[
+  {
+    "grade": "Grade A (Buffer / Export)",
+    "min_dia_mm": 45,
+    "max_dia_mm": 70,
+    "max_sprouting_pct": 1.0,
+    "max_black_mold_pct": 1.0,
+    "max_moisture_pct": 13.0,
+    "payout_rule": "Base MSP + Quality Premium (Up to +\u20b9250/Qtl)",
+    "buffer_storage_days": 180
+  },
+  {
+    "grade": "Grade B (Domestic Retail)",
+    "min_dia_mm": 35,
+    "max_dia_mm": 45,
+    "max_sprouting_pct": 3.0,
+    "max_black_mold_pct": 2.5,
+    "max_moisture_pct": 14.5,
+    "payout_rule": "Base MSP - Minor Deduction (-\u20b9100 to -\u20b9150/Qtl)",
+    "buffer_storage_days": 90
+  },
+  {
+    "grade": "Grade C (Food Processing)",
+    "min_dia_mm": 30,
+    "max_dia_mm": 35,
+    "max_sprouting_pct": 5.0,
+    "max_black_mold_pct": 4.0,
+    "max_moisture_pct": 16.0,
+    "payout_rule": "Discounted Processing Rate (-\u20b9300/Qtl)",
+    "buffer_storage_days": 30
+  },
+  {
+    "grade": "URS (Under Sized / Reject)",
+    "min_dia_mm": 0,
+    "max_dia_mm": 30,
+    "max_sprouting_pct": 100.0,
+    "max_black_mold_pct": 100.0,
+    "max_moisture_pct": 100.0,
+    "payout_rule": "Rejection from buffer / Composting discard",
+    "buffer_storage_days": 0
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "habitation_id": "HAB-RED-WAYANAD-01",
+    "name": "Chooralmala & Mundakkai Valley",
+    "name_hi": "\u091a\u0942\u0930\u0932\u092e\u093e\u0932\u093e \u0914\u0930 \u092e\u0941\u0902\u0921\u0915\u094d\u0915\u0908 \u0918\u093e\u091f\u0940 (\u0935\u093e\u092f\u0928\u093e\u0921)",
+    "name_ml": "\u0d1a\u0d42\u0d30\u0d7d\u0d2e\u0d32 & \u0d2e\u0d41\u0d23\u0d4d\u0d1f\u0d15\u0d4d\u0d15\u0d48",
+    "district": "Wayanad, Kerala",
+    "hazard_types": [
+      "Debris Flow",
+      "Flash Flood",
+      "Slope Failure"
+    ],
+    "slope_angle_deg": 38.5,
+    "rainfall_threshold_24h_mm": 320.0,
+    "population_at_risk": 1840,
+    "households_count": 460,
+    "habitation_vulnerability_index": 94.8,
+    "zone_classification": "CRITICAL_IMMEDIATE_RED_ZONE",
+    "relocation_phase": "PHASE_1_IMMEDIATE_30_DAYS",
+    "assigned_safe_site": "SITE-MEPPADI-PLATEAU-01",
+    "status": "EVACUATION_MANDATORY"
+  },
+  {
+    "habitation_id": "HAB-RED-JOSHIMATH-02",
+    "name": "Sunil & Manohar Bagh Wards",
+    "name_hi": "\u0938\u0941\u0928\u0940\u0932 \u0935 \u092e\u0928\u094b\u0939\u0930 \u092c\u093e\u0917 (\u091c\u094b\u0936\u0940\u092e\u0920)",
+    "name_ml": "\u0d1c\u0d4b\u0d37\u0d3f\u0d2e\u0d20\u0d4d \u0d38\u0d41\u0d28\u0d3f\u0d7d \u0d35\u0d3e\u0d7c\u0d21\u0d4d",
+    "district": "Chamoli, Uttarakhand",
+    "hazard_types": [
+      "Land Subsidence",
+      "Seismic Active Fault",
+      "Toe Erosion"
+    ],
+    "slope_angle_deg": 32.0,
+    "rainfall_threshold_24h_mm": 180.0,
+    "population_at_risk": 920,
+    "households_count": 230,
+    "habitation_vulnerability_index": 88.5,
+    "zone_classification": "CRITICAL_IMMEDIATE_RED_ZONE",
+    "relocation_phase": "PHASE_1_IMMEDIATE_30_DAYS",
+    "assigned_safe_site": "SITE-AULI-RIDGE-02",
+    "status": "STRUCTURAL_CRACKS_UNSAFE"
+  },
+  {
+    "habitation_id": "HAB-AMBER-MAJULI-03",
+    "name": "Salmora Riverine Settlement",
+    "name_hi": "\u0938\u0932\u092e\u094b\u0930\u093e \u0924\u091f\u0935\u0930\u094d\u0924\u0940 \u092c\u0938\u094d\u0924\u0940 (\u092e\u093e\u091c\u0941\u0932\u0940)",
+    "name_ml": "\u0d38\u0d7d\u0d2e\u0d4b\u0d31 \u0d2e\u0d1c\u0d41\u0d32\u0d3f \u0d26\u0d4d\u0d35\u0d40\u0d2a\u0d4d",
+    "district": "Majuli, Assam",
+    "hazard_types": [
+      "Brahmaputra Bank Erosion",
+      "Monsoon Inundation (+3.2m HFL)"
+    ],
+    "slope_angle_deg": 4.5,
+    "rainfall_threshold_24h_mm": 240.0,
+    "population_at_risk": 2150,
+    "households_count": 510,
+    "habitation_vulnerability_index": 76.2,
+    "zone_classification": "HIGH_RISK_AMBER_ZONE",
+    "relocation_phase": "PHASE_2_SHORT_TERM_6_MONTHS",
+    "assigned_safe_site": "SITE-JORHAT-COLONY-03",
+    "status": "PLANNED_RESETTLEMENT"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "case_id": "PASHU-MH-2026-001",
+    "disease_name": "Suspected Lumpy Skin Disease (LSD)",
+    "disease_name_mr": "\u0938\u0902\u0936\u092f\u093f\u0924 \u0932\u0902\u092a\u0940 \u0924\u094d\u0935\u091a\u093e \u0930\u094b\u0917 (LSD)",
+    "village": "Malegaon Khurd, Baramati",
+    "district": "Pune, Maharashtra",
+    "farmer_name": "Tukaram Ramdas Jadhav",
+    "animal_tag_id": "MH-PUN-2026-8812",
+    "species": "Holstein Friesian Cross Dairy Cow",
+    "symptoms": [
+      "Circumscribed Skin Nodules (2-5cm)",
+      "High Fever 104.5\u00b0F",
+      "Enlarged Lymph Nodes",
+      "60% Sudden Milk Yield Drop"
+    ],
+    "ai_triage_confidence_pct": 98.6,
+    "quarantine_ring_km": 5.0,
+    "containment_action": "5km Ring Vaccination Dispatched (Goat Pox Heterologous Vaccine)",
+    "lab_sample_id": "VET-LAB-PUN-0842",
+    "status": "QUARANTINE_ACTIVE_RING_VACCINATION"
+  },
+  {
+    "case_id": "PASHU-MH-2026-014",
+    "disease_name": "Foot and Mouth Disease (FMD) Serotype O",
+    "disease_name_mr": "\u0932\u093e\u0933\u094d\u092f\u093e \u0916\u0941\u0930\u0915\u0942\u0924 \u0930\u094b\u0917 (FMD)",
+    "village": "Sangamner Rural, Shirdi Corridor",
+    "district": "Ahmednagar, Maharashtra",
+    "farmer_name": "Suresh Babanrao Patil",
+    "animal_tag_id": "MH-AHM-2026-3401",
+    "species": "Murrah Buffalo Bull",
+    "symptoms": [
+      "Excessive Foamy Salivation",
+      "Interdigital Foot Vesicles",
+      "Lameness",
+      "High Fever 105.0\u00b0F"
+    ],
+    "ai_triage_confidence_pct": 97.4,
+    "quarantine_ring_km": 3.0,
+    "containment_action": "Potassium Permanganate Footbath & Trivalent FMD Booster",
+    "lab_sample_id": "VET-LAB-AHM-0119",
+    "status": "CONTAINMENT_PROTOCOLS_ENFORCED"
+  }
+]

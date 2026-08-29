@@ -1,0 +1,11 @@
+[
+  {
+    "trail_id": "HOP-TRON-TX91",
+    "suspect_origin": "TX91aZ...84kL (Unhosted Scammer Wallet)",
+    "hop_1": "TR71m...991a (Intermediate Peeling Wallet - 5 Splits)",
+    "hop_2_terminal_vasp": "TX44a...0012 (Binance Direct Deposit Address #BN-4091)",
+    "terminal_kyc_holder": "Beneficial Owner KYC: Chen Wei / Agent In India",
+    "hop_latency_minutes": 24,
+    "sanctioned_mixer_used": "No (Direct Cross-Deposit)"
+  }
+]

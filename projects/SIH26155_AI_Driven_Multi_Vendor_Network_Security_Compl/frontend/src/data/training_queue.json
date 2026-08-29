@@ -1,0 +1,11 @@
+[
+  {
+    "queue_id": "TRAIN-SONIC-881",
+    "vendor_hardware": "White Box SONiC Switch / Broadcom ASIC",
+    "unparsed_raw_cli": "config telemetry client certificate /etc/gnmi/cert.pem --insecure-no-verify",
+    "ai_suggested_category": "Management Telemetry / TLS Validation",
+    "suggested_compliance_field": "telemetry.mtls_enforced = false",
+    "confidence_pct": 94.8,
+    "status": "AWAITING_ADMIN_1_CLICK_MAPPING"
+  }
+]

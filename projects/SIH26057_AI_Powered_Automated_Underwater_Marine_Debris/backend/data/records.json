@@ -1,0 +1,35 @@
+[
+  {
+    "id": "SIH26057-REC-001",
+    "entity_name": "Ministry of Earth Sciences (MoES) Primary Node Alpha",
+    "timestamp": "2026-08-30 08:30:00",
+    "metric_a": 78.4,
+    "metric_b": 42.1,
+    "status": "OPTIMAL",
+    "confidence_score": 0.982,
+    "risk_index": "LOW (0.12)",
+    "location": "Disaster Management Field Sector 1"
+  },
+  {
+    "id": "SIH26057-REC-002",
+    "entity_name": "Ministry of Earth Sciences (MoES) Secondary Node Beta",
+    "timestamp": "2026-08-30 09:15:22",
+    "metric_a": 91.2,
+    "metric_b": 68.5,
+    "status": "ELEVATED_WATCH",
+    "confidence_score": 0.945,
+    "risk_index": "MODERATE (0.58)",
+    "location": "Disaster Management Field Sector 4"
+  },
+  {
+    "id": "SIH26057-REC-003",
+    "entity_name": "Ministry of Earth Sciences (MoES) Tertiary Node Gamma",
+    "timestamp": "2026-08-30 10:00:15",
+    "metric_a": 34.0,
+    "metric_b": 18.2,
+    "status": "STABLE",
+    "confidence_score": 0.991,
+    "risk_index": "LOW (0.05)",
+    "location": "Disaster Management Field Sector 7"
+  }
+]

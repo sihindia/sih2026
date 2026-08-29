@@ -1,0 +1,36 @@
+[
+  {
+    "lot_id": "LOT-EWASTE-NAG-2026-081",
+    "collector_name": "Ramesh Tukaram Shinde (\u0915\u092c\u093e\u095c\u0940\u0935\u093e\u0932\u093e)",
+    "collector_phone": "+91 98224 XXXXX",
+    "location": "Sitabuldi, Nagpur (GPS: 21.1458\u00b0 N, 79.0882\u00b0 E)",
+    "material_name": "High-Grade Server & Telecom PCBs",
+    "category_id": "MAT-PCB-HIGH",
+    "estimated_weight_kg": 28.5,
+    "quoted_rate_per_kg": 950.0,
+    "total_estimated_payout_inr": 27075.0,
+    "informal_rate_comparison_inr": 17670.0,
+    "net_income_gain_inr": 9405.0,
+    "assigned_recycler": "Eco-Recycle JNARDDC Technology Centre",
+    "pickup_status": "PICKUP_SCHEDULED_TODAY_3PM",
+    "payment_status": "READY_FOR_HANDOVER_PAYMENT",
+    "created_at": "2026-08-29 10:15 AM"
+  },
+  {
+    "lot_id": "LOT-EWASTE-PUN-2026-042",
+    "collector_name": "Santosh Patil (\u092d\u0902\u0917\u093e\u0930 \u0935\u093f\u0915\u094d\u0930\u0947\u0924\u093e)",
+    "collector_phone": "+91 98901 XXXXX",
+    "location": "Kothrud, Pune (GPS: 18.5074\u00b0 N, 73.8077\u00b0 E)",
+    "material_name": "Lithium-Ion & Cobalt EV/Mobile Batteries",
+    "category_id": "MAT-BAT-LION",
+    "estimated_weight_kg": 40.0,
+    "quoted_rate_per_kg": 380.0,
+    "total_estimated_payout_inr": 15200.0,
+    "informal_rate_comparison_inr": 8800.0,
+    "net_income_gain_inr": 6400.0,
+    "assigned_recycler": "Karo Sambhav EPR Collection Hub",
+    "pickup_status": "HANDOVER_COMPLETED_PAID",
+    "payment_status": "PAID_VIA_UPI_DBT",
+    "created_at": "2026-08-28 02:40 PM"
+  }
+]

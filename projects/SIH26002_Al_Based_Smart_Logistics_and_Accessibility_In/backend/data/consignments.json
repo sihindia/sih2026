@@ -1,0 +1,58 @@
+[
+  {
+    "consignment_id": "MDoNER-MED-8041",
+    "commodity": "Critical Vaccines & Insulin Cold Storage",
+    "vehicle_no": "AS-01-GC-9412",
+    "driver_name": "Biraj Das",
+    "origin": "Guwahati Medical Depot",
+    "destination": "Civil Hospital, Aizawl",
+    "current_location": "Near Kolasib Checkpost (NH-306)",
+    "current_temp_c": 3.8,
+    "temp_threshold_max_c": 6.0,
+    "cold_chain_status": "OPTIMAL",
+    "estimated_eta": "6 Hours (3.5h Delay)",
+    "priority": "HIGH_EMERGENCY"
+  },
+  {
+    "consignment_id": "MDoNER-AGRI-4192",
+    "commodity": "Organic Queen Pineapple & Ginger Produce",
+    "vehicle_no": "TR-01-A-3210",
+    "driver_name": "Debabrata Deb",
+    "origin": "Agartala Agro Hub",
+    "destination": "Guwahati Cargo Terminal",
+    "current_location": "Churaibari Border",
+    "current_temp_c": 18.5,
+    "temp_threshold_max_c": 22.0,
+    "cold_chain_status": "OPTIMAL",
+    "estimated_eta": "8 Hours (On Schedule)",
+    "priority": "COMMERCIAL_PERISHABLE"
+  },
+  {
+    "consignment_id": "MDoNER-OXY-2201",
+    "commodity": "Cryogenic Liquid Medical Oxygen (LMO)",
+    "vehicle_no": "SK-02-B-1194",
+    "driver_name": "Tashi Bhutia",
+    "origin": "Siliguri Cryo Plant",
+    "destination": "STNM Multi-Speciality Hospital, Gangtok",
+    "current_location": "Rorathang Diversion Road",
+    "current_temp_c": -182.0,
+    "temp_threshold_max_c": -170.0,
+    "cold_chain_status": "REROUTED_CRITICAL",
+    "estimated_eta": "11 Hours (+7h Delay due to NH-10 Block)",
+    "priority": "CRITICAL_LIFE_SAVING"
+  },
+  {
+    "consignment_id": "MDoNER-PDS-9033",
+    "commodity": "Essential PDS Rice & Wheat Foodgrains",
+    "vehicle_no": "NL-07-K-7711",
+    "driver_name": "Kevichusa Angami",
+    "origin": "FCI Depot Dimapur",
+    "destination": "State Food Store, Kohima",
+    "current_location": "Zubza Valley (NH-29)",
+    "current_temp_c": 24.0,
+    "temp_threshold_max_c": 35.0,
+    "cold_chain_status": "NORMAL_TRANSIT",
+    "estimated_eta": "2 Hours (On Time)",
+    "priority": "ESSENTIAL_SUPPLIES"
+  }
+]

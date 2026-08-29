@@ -1,0 +1,18 @@
+[
+  {
+    "model_name": "NTRO World Model (Temporal Transformer Dynamics)",
+    "f1_score_pct": 96.8,
+    "precision_pct": 97.2,
+    "recall_pct": 96.4,
+    "lead_time_seconds": "+38.0s (Proactive)",
+    "architecture": "P(S_t+1 | S_t) Latent Dynamics"
+  },
+  {
+    "model_name": "Baseline Logistic Regression / Static Classifier",
+    "f1_score_pct": 72.1,
+    "precision_pct": 69.4,
+    "recall_pct": 75.0,
+    "lead_time_seconds": "0.0s (Reactive / Post-Breach)",
+    "architecture": "Static Flow Binary Label"
+  }
+]

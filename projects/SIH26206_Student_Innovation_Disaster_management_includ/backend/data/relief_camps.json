@@ -1,0 +1,26 @@
+[
+  {
+    "camp_id": "CAMP-ODI-PURI-01",
+    "camp_name": "Puri Multipurpose Cyclone Shelter #4",
+    "location": "Brahmagiri, Puri, Odisha (GPS: 19.8012\u00b0 N, 85.6742\u00b0 E)",
+    "capacity_persons": 1500,
+    "current_occupancy": 1180,
+    "potable_water_liters": 14000,
+    "dry_rations_days": 8,
+    "medical_officers_present": 4,
+    "generator_fuel_hours": 72,
+    "status": "OPERATIONAL_STABLE"
+  },
+  {
+    "camp_id": "CAMP-ASM-BAR-02",
+    "camp_name": "Barpeta Higher Secondary Relief Hub",
+    "location": "Barpeta Town, Assam (GPS: 26.3214\u00b0 N, 91.0051\u00b0 E)",
+    "capacity_persons": 800,
+    "current_occupancy": 740,
+    "potable_water_liters": 6500,
+    "dry_rations_days": 5,
+    "medical_officers_present": 2,
+    "generator_fuel_hours": 48,
+    "status": "HIGH_OCCUPANCY_RATIONS_REQUESTED"
+  }
+]

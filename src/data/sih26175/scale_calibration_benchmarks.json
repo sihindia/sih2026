@@ -1,0 +1,23 @@
+[
+  {
+    "landscape": "Dense Urban High-Rise",
+    "rmse_m": 1.28,
+    "mae_m": 0.86,
+    "r2": 0.962,
+    "status": "SRTM + 4 GCP Calibrated"
+  },
+  {
+    "landscape": "Rugged Hilly / Alpine Gorge",
+    "rmse_m": 1.84,
+    "mae_m": 1.22,
+    "r2": 0.948,
+    "status": "SRTM GL1 Calibrated"
+  },
+  {
+    "landscape": "Sparse Coastal / River Basin",
+    "rmse_m": 0.72,
+    "mae_m": 0.44,
+    "r2": 0.981,
+    "status": "Tide Datum Calibrated"
+  }
+]

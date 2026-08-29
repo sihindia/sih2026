@@ -1,0 +1,16 @@
+[
+  {
+    "tunnel_id": "IPSEC-GW-DEL-001",
+    "inferred_application": "VoIP SIP / RTP Voice Stream",
+    "ai_confidence_pct": 94.2,
+    "feature_basis": "Symmetric bidirectional packet bursts (160 bytes @ 20ms IAT intervals)",
+    "security_implication": "Unencrypted metadata exposes communications schedule and caller volume."
+  },
+  {
+    "tunnel_id": "IPSEC-GW-DEF-042",
+    "inferred_application": "High-Definition Video Telemetry Stream",
+    "ai_confidence_pct": 91.8,
+    "feature_basis": "Heavy downstream packet sizing (1420 bytes MTU capped) with variable bit-rate bursts",
+    "security_implication": "Traffic padding (RFC 4303) successfully obscures 92% of payload signatures."
+  }
+]

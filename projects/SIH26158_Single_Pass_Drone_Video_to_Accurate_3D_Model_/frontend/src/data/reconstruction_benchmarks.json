@@ -1,0 +1,18 @@
+[
+  {
+    "method": "NTRO Aero3D (Single-Pass 3DGS + AI Monocular Depth)",
+    "flight_time_mins": 8,
+    "processing_time_mins": 4.2,
+    "gsd_accuracy_cm": 3.2,
+    "gcp_requirement": "Zero GCPs (RTK-Calibrated)",
+    "readiness": "Near Real-Time Tactical Action"
+  },
+  {
+    "method": "Traditional Photogrammetry (Multi-Pass Grid + SfM)",
+    "flight_time_mins": 45,
+    "processing_time_mins": 145.0,
+    "gsd_accuracy_cm": 2.8,
+    "gcp_requirement": "Requires 8-12 Physical GCPs",
+    "readiness": "Post-Mission Delayed"
+  }
+]

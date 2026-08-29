@@ -1,0 +1,32 @@
+[
+  {
+    "crop": "Wheat (Grade-I FAQ)",
+    "msp_inr_per_qtl": 2275.0,
+    "max_moisture_pct": 12.0,
+    "procuring_agency": "FCI / State Agencies"
+  },
+  {
+    "crop": "Paddy (Grade A)",
+    "msp_inr_per_qtl": 2300.0,
+    "max_moisture_pct": 17.0,
+    "procuring_agency": "FCI / State Civil Supplies"
+  },
+  {
+    "crop": "Rabi Onion (Buffer Stock)",
+    "msp_inr_per_qtl": 2400.0,
+    "max_moisture_pct": 13.0,
+    "procuring_agency": "NAFED / NCCF"
+  },
+  {
+    "crop": "Bengal Gram / Chana",
+    "msp_inr_per_qtl": 5440.0,
+    "max_moisture_pct": 12.0,
+    "procuring_agency": "NAFED"
+  },
+  {
+    "crop": "Mustard Seed",
+    "msp_inr_per_qtl": 5650.0,
+    "max_moisture_pct": 8.0,
+    "procuring_agency": "NAFED / Hafed"
+  }
+]

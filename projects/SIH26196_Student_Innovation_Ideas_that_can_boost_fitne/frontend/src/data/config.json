@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26196",
+  "title": "Student Innovation-Ideas that can boost fitness activities and assist in keeping fit.",
+  "organization": "AICTE",
+  "theme": "Fitness & Sports",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

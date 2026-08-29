@@ -1,0 +1,22 @@
+[
+  {
+    "plan_id": "PLAN-FIT-30DAY",
+    "title": "Fit India 30-Day Campus Body Transformation",
+    "difficulty": "All Levels (Adaptive)",
+    "duration_weeks": 4,
+    "daily_duration_mins": 25,
+    "target_goal": "Fat Loss, Cardiovascular Stamina & Posture Alignment",
+    "weekly_schedule": "5 Days Workout + 2 Days Active Yoga Recovery",
+    "enrolled_students": 24500
+  },
+  {
+    "plan_id": "PLAN-YOGA-PRANA",
+    "title": "Vedic Prana Flow & Spinal Mobility",
+    "difficulty": "Beginner to Intermediate",
+    "duration_weeks": 6,
+    "daily_duration_mins": 20,
+    "target_goal": "Stress Relief, Lung Capacity & Flexibility",
+    "weekly_schedule": "Daily Morning Sadhana",
+    "enrolled_students": 18200
+  }
+]

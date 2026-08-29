@@ -1,0 +1,29 @@
+[
+  {
+    "photo_id": "PHOTO-01",
+    "structure_type": "Check Dam (Masonry Core)",
+    "lat": 25.4484,
+    "lng": 78.5685,
+    "water_holding_pct": 88.0,
+    "siltation_level": "Low (12%)",
+    "timestamp": "2026-08-28"
+  },
+  {
+    "photo_id": "PHOTO-02",
+    "structure_type": "Percolation Tank with Silt Trap",
+    "lat": 25.4312,
+    "lng": 78.581,
+    "water_holding_pct": 94.0,
+    "siltation_level": "Optimal",
+    "timestamp": "2026-08-29"
+  },
+  {
+    "photo_id": "PHOTO-03",
+    "structure_type": "Continuous Contour Trench (CCT)",
+    "lat": 25.452,
+    "lng": 78.594,
+    "water_holding_pct": 72.0,
+    "siltation_level": "Low",
+    "timestamp": "2026-08-29"
+  }
+]

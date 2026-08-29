@@ -1,0 +1,28 @@
+[
+  {
+    "order_id": "ORD-BB-2026-881",
+    "buyer_name": "BigBasket Wholesale Fulfillment Hub",
+    "buyer_type": "Institutional E-Commerce Supermarket",
+    "destination_city": "Delhi-NCR Central Warehouse",
+    "ordered_commodity": "Nashik Red Garva Onion",
+    "ordered_quantity_qtl": 120.0,
+    "total_order_value_inr": 342000.0,
+    "fpo_assigned": "Sahyadri Farmers Producer Co. Ltd.",
+    "escrow_payment_status": "ESCROW_LOCKED_100_PCT",
+    "logistics_status": "REEFER_TRUCK_DISPATCHED (MH-15-EG-8812)",
+    "estimated_delivery": "2026-08-30 08:00 AM"
+  },
+  {
+    "order_id": "ORD-SAFAL-2026-402",
+    "buyer_name": "Mother Dairy / Safal Retail Network",
+    "buyer_type": "Public Retail Distribution Chain",
+    "destination_city": "Delhi-NCR Safal Outlets (350 Booths)",
+    "ordered_commodity": "Kinnaur Royal Delicious Apple",
+    "ordered_quantity_qtl": 80.0,
+    "total_order_value_inr": 784000.0,
+    "fpo_assigned": "Kinnaur High-Altitude Apple Growers Collective",
+    "escrow_payment_status": "ESCROW_LOCKED_100_PCT",
+    "logistics_status": "IN_TRANSIT (Kalka-Shimla Corridor)",
+    "estimated_delivery": "2026-08-30 05:30 AM"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "node_id": "HUB-AIIMS-DELHI",
+    "facility_name": "AIIMS New Delhi Central Tele-ICU Hub",
+    "active_spokes_connected": 28,
+    "monitored_icu_beds": 140,
+    "on_duty_intensivists": 8,
+    "bandwidth_status": "HIGH_SPEED_FIBER_OPTIMAL",
+    "avg_intervention_response_secs": 42.0,
+    "status": "HUB_ONLINE_ACTIVE"
+  },
+  {
+    "node_id": "SPOKE-PHC-BASTAR",
+    "facility_name": "Bastar District Spoke Health Centre",
+    "state": "Chhattisgarh",
+    "connected_beds": 6,
+    "active_ventilators": 2,
+    "low_bandwidth_fallback": "ENABLED (WebRTC Edge H.265 Compression)",
+    "status": "STREAMING_TELEMETRY"
+  }
+]

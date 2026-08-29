@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26192",
+  "title": "Flash Flood Prediction System for Hilly Regions using Multi-Source Data Theme",
+  "organization": "Ministry of Home Affairs",
+  "theme": "Disaster Management",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

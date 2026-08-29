@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Thermal Anomalies Analyzed",
+    "value": "84,200 Hotspots",
+    "trend": "NASA FIRMS VIIRS & MODIS 24/7 Sync"
+  },
+  {
+    "metric": "Industrial vs Wildfire Precision",
+    "value": "99.1% Accuracy",
+    "trend": "Eliminates False Industrial Alarms"
+  },
+  {
+    "metric": "GIS Overlay Latency",
+    "value": "1.2 Seconds",
+    "trend": "Real-Time OpenStreetMap Integration"
+  }
+]

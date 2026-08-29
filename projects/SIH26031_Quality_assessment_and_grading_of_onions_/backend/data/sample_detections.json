@@ -1,0 +1,222 @@
+{
+  "LOT-LASALGAON-2026-081": [
+    {
+      "id": 1,
+      "x": 12,
+      "y": 15,
+      "w": 18,
+      "h": 18,
+      "diameter_mm": 58.2,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.99,
+      "status": "Sound Bulb"
+    },
+    {
+      "id": 2,
+      "x": 34,
+      "y": 14,
+      "w": 19,
+      "h": 19,
+      "diameter_mm": 61.4,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.98,
+      "status": "Sound Bulb"
+    },
+    {
+      "id": 3,
+      "x": 58,
+      "y": 16,
+      "w": 17,
+      "h": 17,
+      "diameter_mm": 54.0,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.99,
+      "status": "Sound Bulb"
+    },
+    {
+      "id": 4,
+      "x": 78,
+      "y": 18,
+      "w": 16,
+      "h": 16,
+      "diameter_mm": 51.5,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.97,
+      "status": "Sound Bulb"
+    },
+    {
+      "id": 5,
+      "x": 14,
+      "y": 42,
+      "w": 17,
+      "h": 17,
+      "diameter_mm": 55.8,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.99,
+      "status": "Sound Bulb"
+    },
+    {
+      "id": 6,
+      "x": 36,
+      "y": 40,
+      "w": 18,
+      "h": 18,
+      "diameter_mm": 57.0,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.98,
+      "status": "Sound Bulb"
+    },
+    {
+      "id": 7,
+      "x": 59,
+      "y": 44,
+      "w": 14,
+      "h": 14,
+      "diameter_mm": 42.1,
+      "grade": "GRADE_B",
+      "defect": "MINOR_SCALE_PEEL",
+      "conf": 0.95,
+      "status": "Slight Skin Peel"
+    },
+    {
+      "id": 8,
+      "x": 77,
+      "y": 42,
+      "w": 18,
+      "h": 18,
+      "diameter_mm": 59.2,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.99,
+      "status": "Sound Bulb"
+    },
+    {
+      "id": 9,
+      "x": 15,
+      "y": 70,
+      "w": 18,
+      "h": 18,
+      "diameter_mm": 56.4,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.98,
+      "status": "Sound Bulb"
+    },
+    {
+      "id": 10,
+      "x": 38,
+      "y": 68,
+      "w": 12,
+      "h": 12,
+      "diameter_mm": 36.5,
+      "grade": "GRADE_B",
+      "defect": "NONE",
+      "conf": 0.96,
+      "status": "Small Domestic"
+    },
+    {
+      "id": 11,
+      "x": 56,
+      "y": 71,
+      "w": 19,
+      "h": 19,
+      "diameter_mm": 63.0,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.99,
+      "status": "Export Spec"
+    },
+    {
+      "id": 12,
+      "x": 79,
+      "y": 72,
+      "w": 11,
+      "h": 11,
+      "diameter_mm": 27.8,
+      "grade": "URS_REJECT",
+      "defect": "SPROUT_TIP",
+      "conf": 0.94,
+      "status": "Sprouted Shoot Tip"
+    }
+  ],
+  "LOT-MAHUVA-2026-042": [
+    {
+      "id": 1,
+      "x": 14,
+      "y": 16,
+      "w": 20,
+      "h": 20,
+      "diameter_mm": 64.5,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.99,
+      "status": "Export Spec"
+    },
+    {
+      "id": 2,
+      "x": 38,
+      "y": 15,
+      "w": 21,
+      "h": 21,
+      "diameter_mm": 66.0,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.99,
+      "status": "Export Spec"
+    },
+    {
+      "id": 3,
+      "x": 62,
+      "y": 14,
+      "w": 20,
+      "h": 20,
+      "diameter_mm": 63.2,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.98,
+      "status": "Export Spec"
+    },
+    {
+      "id": 4,
+      "x": 16,
+      "y": 45,
+      "w": 19,
+      "h": 19,
+      "diameter_mm": 60.1,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.99,
+      "status": "Export Spec"
+    },
+    {
+      "id": 5,
+      "x": 40,
+      "y": 44,
+      "w": 20,
+      "h": 20,
+      "diameter_mm": 65.0,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.99,
+      "status": "Export Spec"
+    },
+    {
+      "id": 6,
+      "x": 64,
+      "y": 46,
+      "w": 18,
+      "h": 18,
+      "diameter_mm": 58.4,
+      "grade": "GRADE_A",
+      "defect": "NONE",
+      "conf": 0.97,
+      "status": "Sound Bulb"
+    }
+  ]
+}

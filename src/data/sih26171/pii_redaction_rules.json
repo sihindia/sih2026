@@ -1,0 +1,17 @@
+[
+  {
+    "pii_type": "Government IDs (Aadhaar / PAN)",
+    "detection_method": "WebGPU ViT + RegEx Validator",
+    "redaction_action": "Local Blackout & Semantic Token Replacement"
+  },
+  {
+    "pii_type": "Passwords & Secret API Keys",
+    "detection_method": "DOM Input Type Attribute + OCR Masking",
+    "redaction_action": "Solid Blackout Bounding Box"
+  },
+  {
+    "pii_type": "Biometric Faces & Profile Photos",
+    "detection_method": "Client-Side Lightweight Face-ViT",
+    "redaction_action": "Heavy Gaussian Blur (Radius: 25px)"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Elevation Accuracy (RMSE)",
+    "value": "1.28 Meters",
+    "trend": "Calibrated against Airborne LiDAR"
+  },
+  {
+    "metric": "3D Flythrough Render",
+    "value": "60 FPS WebGL",
+    "trend": "Interactive First-Person Aerial Navigation"
+  },
+  {
+    "metric": "Input Processing",
+    "value": "Single-View RGB",
+    "trend": "Zero Stereo-Pair or InSAR Dependency"
+  }
+]

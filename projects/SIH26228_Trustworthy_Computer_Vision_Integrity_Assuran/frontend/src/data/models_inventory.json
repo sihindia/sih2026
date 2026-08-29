@@ -1,0 +1,44 @@
+[
+  {
+    "model_id": "MOD-DEF-YOLO-081",
+    "name": "YOLOv8-Tactical Recon (Military Vehicle & Armoured Unit Detector)",
+    "architecture": "YOLOv8x-Custom (PyTorch/ONNX)",
+    "vendor": "Bharat Defence Systems Ltd. (Consortium Vendor)",
+    "weights_sha256": "8f92a3b10c94e82df45a892b3c104e789a67b2c5d4e3f1a09876543210fedcba",
+    "parameter_count_m": 68.2,
+    "input_resolution": "1280x1280 (3-Channel Optical + EO)",
+    "backdoor_anomaly_index": 0.42,
+    "backdoor_status": "CLEAN_NO_BACKDOOR",
+    "adversarial_robustness_score": 96.4,
+    "assurance_status": "VERIFIED_OPERATIONAL",
+    "deployed_unit": "Northern Command Reconnaissance Sentry Hub"
+  },
+  {
+    "model_id": "MOD-DEF-RESNET-042",
+    "name": "ResNet50-Aerial ISR (Airfield & Bunker Target Classifier)",
+    "architecture": "ResNet-50-D (TorchScript Air-Gapped)",
+    "vendor": "AeroTech Defense Analytics (Third-Party Contributor)",
+    "weights_sha256": "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d",
+    "parameter_count_m": 25.6,
+    "input_resolution": "512x512 Multispectral",
+    "backdoor_anomaly_index": 2.85,
+    "backdoor_status": "POISON_TRIGGER_DETECTED",
+    "adversarial_robustness_score": 58.2,
+    "assurance_status": "QUARANTINED_UNSAFE",
+    "deployed_unit": "QUARANTINED (Trigger: $4\times 4$ Yellow Patch in Top-Left forces 'Civilian Truck' misclassification)"
+  },
+  {
+    "model_id": "MOD-DEF-FLIR-109",
+    "name": "FLIR-Thermal Long-Range Infiltration Sentry",
+    "architecture": "Custom ViT-Tiny (Thermal Infrared)",
+    "vendor": "DRDO Combat Metrology Lab",
+    "weights_sha256": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b",
+    "parameter_count_m": 14.8,
+    "input_resolution": "640x512 LWIR",
+    "backdoor_anomaly_index": 0.28,
+    "backdoor_status": "CLEAN_NO_BACKDOOR",
+    "adversarial_robustness_score": 98.1,
+    "assurance_status": "VERIFIED_OPERATIONAL",
+    "deployed_unit": "Border Security Electronic Surveillance Grid"
+  }
+]

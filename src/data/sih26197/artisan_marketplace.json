@@ -1,0 +1,22 @@
+[
+  {
+    "craft_id": "CRAFT-THANJ-PLATE-01",
+    "craft_name": "Thanjavur Embossed Art Plate (GI Tagged)",
+    "artisan_name": "S. Ramalingam (Master Craftsman, 4th Gen)",
+    "origin": "Thanjavur, Tamil Nadu",
+    "craft_medium": "Brass plate with silver and copper repousse embossing depicting Ashtalakshmi",
+    "price_inr": 4800.0,
+    "gi_tag_cert": "GI-AU-2026-TN-0012",
+    "fair_trade_verified": true
+  },
+  {
+    "craft_id": "CRAFT-BIDRI-02",
+    "craft_name": "Bidriware Silver Inlay Floral Vase (GI Tagged)",
+    "artisan_name": "Mohammed Abdul Rauf",
+    "origin": "Bidar, Karnataka",
+    "craft_medium": "Zinc-copper alloy blackened with historic Bidar fort soil and inlaid with pure 99.9% fine silver wire",
+    "price_inr": 6200.0,
+    "gi_tag_cert": "GI-AU-2026-KT-0045",
+    "fair_trade_verified": true
+  }
+]

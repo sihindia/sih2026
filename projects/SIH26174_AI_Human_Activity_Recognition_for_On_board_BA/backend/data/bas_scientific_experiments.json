@@ -1,0 +1,107 @@
+[
+  {
+    "experiment_id": "BAS-EXP-2026-001",
+    "title": "Protein Crystal Growth & Macromolecular Crystallography (Payload Rack #02)",
+    "title_hi": "\u092a\u094d\u0930\u094b\u091f\u0940\u0928 \u0915\u094d\u0930\u093f\u0938\u094d\u091f\u0932 \u0935\u093f\u0915\u093e\u0938 \u0914\u0930 \u092e\u0948\u0915\u094d\u0930\u094b\u092e\u094b\u0932\u0947\u0915\u094d\u092f\u0942\u0932\u0930 \u0915\u094d\u0930\u093f\u0938\u094d\u091f\u0932\u094b\u0917\u094d\u0930\u093e\u092b\u0940 (\u0930\u0948\u0915 #02)",
+    "astronaut_id": "Astronaut-01 (Gaganyatri Commander)",
+    "current_active_step": 4,
+    "total_steps": 6,
+    "suggested_next_step": "Step 5: Execute High-Resolution Holographic Imaging Scan",
+    "steps_sequence": [
+      {
+        "step_no": 1,
+        "action": "Thermal Chamber Inspection (20.0\u00b0C)",
+        "status": "COMPLETED",
+        "conf": 99.4,
+        "time": "T+04:12"
+      },
+      {
+        "step_no": 2,
+        "action": "Glovebox Hermetic Purge Seal Check",
+        "status": "COMPLETED",
+        "conf": 98.8,
+        "time": "T+08:45"
+      },
+      {
+        "step_no": 3,
+        "action": "Micro-Pipette Solution Injection into Well #4",
+        "status": "COMPLETED",
+        "conf": 97.6,
+        "time": "T+14:20"
+      },
+      {
+        "step_no": 4,
+        "action": "Optical Laser Diagnostic Alignment",
+        "status": "IN_PROGRESS",
+        "conf": 98.2,
+        "time": "T+19:05"
+      },
+      {
+        "step_no": 5,
+        "action": "High-Resolution Holographic Imaging Scan",
+        "status": "PENDING",
+        "conf": 0.0,
+        "time": "--:--"
+      },
+      {
+        "step_no": 6,
+        "action": "Cryo-Storage Sample Lockdown",
+        "status": "PENDING",
+        "conf": 0.0,
+        "time": "--:--"
+      }
+    ],
+    "sequence_integrity": "100% VALID_PROTOCOL_EXECUTION",
+    "hand_object_interaction_conf": 98.2,
+    "status": "EXPERIMENT_NOMINAL"
+  },
+  {
+    "experiment_id": "BAS-EXP-2026-008",
+    "title": "Microgravity Capillary Fluid Interface & Marangoni Convection",
+    "title_hi": "\u0938\u0942\u0915\u094d\u0937\u094d\u092e \u0917\u0941\u0930\u0941\u0924\u094d\u0935\u093e\u0915\u0930\u094d\u0937\u0923 \u0915\u0947\u0936\u093f\u0915\u093e \u0926\u094d\u0930\u0935 \u0907\u0902\u091f\u0930\u092b\u093c\u0947\u0938 \u092a\u094d\u0930\u092f\u094b\u0917",
+    "astronaut_id": "Astronaut-02 (Flight Engineer)",
+    "current_active_step": 2,
+    "total_steps": 5,
+    "suggested_next_step": "Step 3: Inject Dye Tracer into Liquid Column",
+    "steps_sequence": [
+      {
+        "step_no": 1,
+        "action": "Power up Fluid Physics Diagnostic Console",
+        "status": "COMPLETED",
+        "conf": 99.1,
+        "time": "T+02:10"
+      },
+      {
+        "step_no": 2,
+        "action": "Mount Transparent Capillary Test Cell",
+        "status": "IN_PROGRESS",
+        "conf": 97.4,
+        "time": "T+06:30"
+      },
+      {
+        "step_no": 3,
+        "action": "Inject Dye Tracer into Liquid Column",
+        "status": "PENDING",
+        "conf": 0.0,
+        "time": "--:--"
+      },
+      {
+        "step_no": 4,
+        "action": "Thermal Gradient Initiation (\u0394T = 15\u00b0C)",
+        "status": "PENDING",
+        "conf": 0.0,
+        "time": "--:--"
+      },
+      {
+        "step_no": 5,
+        "action": "High-Speed Shadowgraphy Video Capture",
+        "status": "PENDING",
+        "conf": 0.0,
+        "time": "--:--"
+      }
+    ],
+    "sequence_integrity": "100% VALID_PROTOCOL_EXECUTION",
+    "hand_object_interaction_conf": 97.4,
+    "status": "EXPERIMENT_NOMINAL"
+  }
+]

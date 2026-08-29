@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26074",
+  "title": "Downscaling of weather forecast from Block level to Panchayat level: Inferring high-resolution plots/ data/ information from low-resolution plot /data /information /variables for agro-meteorological advisory services.",
+  "organization": "Ministry of Earth Sciences (MoES)",
+  "theme": "Agriculture, FoodTech & Rural Development",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

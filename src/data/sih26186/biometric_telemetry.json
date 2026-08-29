@@ -1,0 +1,14 @@
+[
+  {
+    "metric_name": "Heart Rate Variability (HRV rMSSD)",
+    "normal_range": "35.0 to 65.0 ms",
+    "critical_threshold": "< 22.0 ms (Sympathetic Overload)",
+    "clinical_significance": "Direct physiological biomarker for chronic autonomic stress and emotional exhaustion."
+  },
+  {
+    "metric_name": "Deep Sleep / REM Recovery",
+    "normal_range": "6.5 to 8.0 hrs / night",
+    "critical_threshold": "< 4.5 hrs / night",
+    "clinical_significance": "Deprivation accelerates cognitive slowing and impulsivity under combat conditions."
+  }
+]

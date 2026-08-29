@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26204",
+  "title": "Student Innovation-A solution/idea that can boost the current situation of the tourism industries including hotels, travel and others.",
+  "organization": "AICTE",
+  "theme": "Travel & Tourism",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

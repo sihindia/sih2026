@@ -1,0 +1,12 @@
+[
+  {
+    "contract_id": "ROYALTY-WEB3-081",
+    "title": "Indie Classical Fusion EP: 'Raag Resonance'",
+    "artist_name": "Ananya Mukherjee & Ensemble",
+    "streams_count": 1450000,
+    "royalty_per_1k_streams_inr": 42.0,
+    "total_earned_inr": 60900.0,
+    "smart_contract_hash": "0x7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b",
+    "payout_status": "INSTANT_DISBURSED_TO_WALLET"
+  }
+]

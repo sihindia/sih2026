@@ -1,0 +1,24 @@
+[
+  {
+    "event_id": "EVT-2026-9812",
+    "camera_id": "CAM-BOP-RAXAUL-01",
+    "event_type": "Virtual Tripwire Breach (Crawling Infiltration)",
+    "event_type_hi": "\u0906\u092d\u093e\u0938\u0940 \u092c\u093e\u0921\u093c \u0909\u0932\u094d\u0932\u0902\u0918\u0928 (\u0930\u0947\u0902\u0917\u0915\u0930 \u0918\u0941\u0938\u092a\u0948\u0920)",
+    "timestamp": "2026-08-30T01:28:14Z",
+    "object_detected": "Human (Confidence: 94.8%, BoundingBox: [340, 520, 480, 610])",
+    "night_vision_thermal": true,
+    "threat_score": 96.5,
+    "action_taken": "SSB QRT Siren Triggered & PTZ Camera Locked"
+  },
+  {
+    "event_id": "EVT-2026-4419",
+    "camera_id": "CAM-ICP-SONAULI-02",
+    "event_type": "Automatic Number Plate Match (Stolen Vehicle)",
+    "event_type_hi": "\u0928\u0902\u092c\u0930 \u092a\u094d\u0932\u0947\u091f \u092e\u093f\u0932\u093e\u0928 (\u091a\u094b\u0930\u0940 \u0915\u093e \u0935\u093e\u0939\u0928)",
+    "timestamp": "2026-08-30T01:29:40Z",
+    "object_detected": "Plate: BR-06-CA-9812 (Mahindra Scorpio Black)",
+    "night_vision_thermal": false,
+    "threat_score": 82.0,
+    "action_taken": "Barrier Drop Signal & Guard Alerted"
+  }
+]

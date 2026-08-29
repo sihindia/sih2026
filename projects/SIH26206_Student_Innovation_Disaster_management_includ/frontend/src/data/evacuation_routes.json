@@ -1,0 +1,18 @@
+[
+  {
+    "route_id": "EVAC-PURI-01",
+    "origin": "Astaranga Coastal Belt",
+    "safe_destination": "Puri Cyclone Shelter #4",
+    "distance_km": 14.5,
+    "status": "ALL_CLEAR_SAFE",
+    "chokepoints_avoided": "NH-316 Submerged Causeway"
+  },
+  {
+    "route_id": "EVAC-BAR-02",
+    "origin": "Sarthebari Lowlands",
+    "safe_destination": "Barpeta Relief Hub",
+    "distance_km": 8.2,
+    "status": "BOAT_ONLY_INUNDATED",
+    "chokepoints_avoided": "State Highway 2 Submerged Bridge"
+  }
+]

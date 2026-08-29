@@ -1,0 +1,28 @@
+[
+  {
+    "mission_id": "UAV-PASS-2026-081",
+    "mission_name": "Himalayan Forward Border Post Reconnaissance",
+    "mission_name_hi": "\u0939\u093f\u092e\u093e\u0932\u092f\u0940 \u0905\u0917\u094d\u0930\u093f\u092e \u0938\u0940\u092e\u093e \u091a\u094c\u0915\u0940 \u091f\u094b\u0939\u0940 \u092e\u093f\u0936\u0928",
+    "target_coordinates": "32.4182\u00b0 N, 78.8921\u00b0 E (Eastern Ladakh)",
+    "flight_profile": "Single Linear Pass at 120m AGL (Speed: 14 m/s)",
+    "sensor_payload": "Sony 4K HDR Camera (24mm FOV) + Dual-RTK GNSS",
+    "reconstructed_points_count": 1420000,
+    "ground_sampling_distance_cm": 3.2,
+    "structures_identified": 6,
+    "operational_use_case": "Border Defense & Bunker Depth Estimation",
+    "status": "3D_MESH_RECONSTRUCTED_READY"
+  },
+  {
+    "mission_id": "UAV-PASS-2026-442",
+    "mission_name": "Rishikesh Landslide & Flash Flood Damage Digital Twin",
+    "mission_name_hi": "\u090b\u0937\u093f\u0915\u0947\u0936 \u092d\u0942\u0938\u094d\u0916\u0932\u0928 \u0914\u0930 \u092c\u093e\u0922\u093c \u0915\u094d\u0937\u0924\u093f \u0921\u093f\u091c\u093f\u091f\u0932 \u091f\u094d\u0935\u093f\u0928",
+    "target_coordinates": "30.0869\u00b0 N, 78.2676\u00b0 E (Uttarakhand)",
+    "flight_profile": "Single Diagonal Pass at 80m AGL (Speed: 10 m/s)",
+    "sensor_payload": "DJI Zenmuse 4K + Barometric Altimeter",
+    "reconstructed_points_count": 980000,
+    "ground_sampling_distance_cm": 4.1,
+    "structures_identified": 12,
+    "operational_use_case": "Disaster Damage Assessment & Inundation Depth",
+    "status": "3D_MESH_RECONSTRUCTED_READY"
+  }
+]

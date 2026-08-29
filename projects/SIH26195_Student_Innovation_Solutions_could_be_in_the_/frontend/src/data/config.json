@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26195",
+  "title": "Student Innovation-Solutions could be in the form of waste segregation, disposal, and improve sanitization system.",
+  "organization": "AICTE",
+  "theme": "Clean & Green Technology",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26090",
+  "title": "AI-Driven Market Linkage and Smart Cataloging Mobile Application for Marginalized Artisans",
+  "organization": "Ministry of Social Justice and Empowerment (MoSJE)",
+  "theme": "Heritage & Culture",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

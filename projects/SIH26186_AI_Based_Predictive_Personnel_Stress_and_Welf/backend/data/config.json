@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26186",
+  "title": "AI-Based Predictive Personnel Stress and Welfare Monitoring System for Uniformed Forces",
+  "organization": "Ministry of Home Affairs",
+  "theme": "MedTech / BioTech / HealthTech",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

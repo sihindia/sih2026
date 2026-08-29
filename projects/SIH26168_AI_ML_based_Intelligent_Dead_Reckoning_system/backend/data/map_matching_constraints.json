@@ -1,0 +1,14 @@
+[
+  {
+    "constraint_name": "Non-Holonomic Constraints (NHC)",
+    "description": "Enforces zero lateral slip (Vy=0) and zero vertical lift (Vz=0) relative to vehicle chassis coordinate frame"
+  },
+  {
+    "constraint_name": "Hidden Markov Map Matching (HMM)",
+    "description": "Snaps drifting dead-reckoned trajectory to highest probability OpenStreetMap road topology vector"
+  },
+  {
+    "constraint_name": "Unscented Kalman Filter (UKF)",
+    "description": "Fuses non-linear IMU acceleration integrals with AI kinematics speed profile"
+  }
+]

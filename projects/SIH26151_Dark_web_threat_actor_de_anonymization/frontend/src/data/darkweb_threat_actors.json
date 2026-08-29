@@ -1,0 +1,62 @@
+[
+  {
+    "actor_id": "NTRO-ACTOR-2026-091",
+    "darkweb_alias": "NetPhantom (Alias: GhostBroker_IN)",
+    "real_world_identity": "Vikrant Malhotra (Noida Sector 62, UP)",
+    "primary_threat_category": "National Citizen Database Exfiltration & Ransomware Escrow",
+    "primary_threat_category_hi": "\u0928\u093e\u0917\u0930\u093f\u0915 \u0921\u0947\u091f\u093e\u092c\u0947\u0938 \u091a\u094b\u0930\u0940 \u0914\u0930 \u0930\u0948\u0902\u0938\u092e\u0935\u0947\u092f\u0930 \u090f\u0938\u094d\u0915\u094d\u0930\u094b",
+    "onion_marketplaces": [
+      "BreachForums",
+      "Dread",
+      "Genesis Market Clone"
+    ],
+    "attributed_clearnet_ip": "103.145.72.18 (Noida ISP ASN45820)",
+    "pgp_key_fingerprint": "4096R/0x891AF3902849182C",
+    "linked_cryptowallets": [
+      "bc1qphantom9182348123491824",
+      "888tXMRphantom409128391823"
+    ],
+    "deanonymization_vector": "Apache /server-status leak + Clearnet Let's Encrypt SSL Serial Match",
+    "attribution_confidence_pct": 98.4,
+    "status": "ARREST_WARRANT_ISSUED_BY_SPECIAL_CELL"
+  },
+  {
+    "actor_id": "NTRO-ACTOR-2026-441",
+    "darkweb_alias": "KryptonSiphon (Alias: ZeroBit_Ru)",
+    "real_world_identity": "Alexey Voronov (St. Petersburg / Dubai Resident)",
+    "primary_threat_category": "Banking Trojan & Critical Infrastructure Ransomware",
+    "primary_threat_category_hi": "\u092c\u0948\u0902\u0915\u093f\u0902\u0917 \u091f\u094d\u0930\u094b\u091c\u0928 \u0914\u0930 \u092c\u0941\u0928\u093f\u092f\u093e\u0926\u0940 \u0922\u093e\u0902\u091a\u093e \u0930\u0948\u0902\u0938\u092e\u0935\u0947\u092f\u0930",
+    "onion_marketplaces": [
+      "XSS.is",
+      "Exploit.in",
+      "Russian Market"
+    ],
+    "attributed_clearnet_ip": "185.190.41.22 (Frankfurt Hetzner Datacenter)",
+    "pgp_key_fingerprint": "4096R/0x44C1982049182049",
+    "linked_cryptowallets": [
+      "TX91krypton8412839182049182"
+    ],
+    "deanonymization_vector": "Tor Descriptor Clock Skew + Jabber OTR Fingerprint Correlation",
+    "attribution_confidence_pct": 95.8,
+    "status": "INTERPOL_RED_NOTICE_FILED"
+  },
+  {
+    "actor_id": "NTRO-ACTOR-2026-782",
+    "darkweb_alias": "ToxicViper (Darknet Weapons & Escrow)",
+    "real_world_identity": "Under Active Physical Surveillance (Western Border)",
+    "primary_threat_category": "Cross-Border Drone Arms Delivery & Terror Financing",
+    "primary_threat_category_hi": "\u0938\u0940\u092e\u093e \u092a\u093e\u0930 \u0921\u094d\u0930\u094b\u0928 \u0939\u0925\u093f\u092f\u093e\u0930 \u0914\u0930 \u091f\u0947\u0930\u0930 \u092b\u0902\u0921\u093f\u0902\u0917",
+    "onion_marketplaces": [
+      "BlackMarket Reloaded v3",
+      "Tor2Door"
+    ],
+    "attributed_clearnet_ip": "45.142.122.90 (Bucharest Dedicated VPS)",
+    "pgp_key_fingerprint": "4096R/0x9182348123491824",
+    "linked_cryptowallets": [
+      "bc1qviper7718294819284192"
+    ],
+    "deanonymization_vector": "AI Stylometric Linguistic Matching with Telegram Bot Code",
+    "attribution_confidence_pct": 93.5,
+    "status": "SURVEILLANCE_ACTIVE"
+  }
+]

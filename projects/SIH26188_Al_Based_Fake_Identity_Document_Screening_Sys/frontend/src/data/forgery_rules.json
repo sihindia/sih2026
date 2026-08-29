@@ -1,0 +1,20 @@
+[
+  {
+    "inspection_module": "Error Level Analysis (ELA)",
+    "target_anomaly": "Photo Replacement / Head Swap",
+    "algorithm": "JPEG compression error artifact variance delta > 15%",
+    "accuracy_pct": 99.1
+  },
+  {
+    "inspection_module": "ICAO 9303 MRZ 731 Checksum",
+    "target_anomaly": "Altered Passport Number / DOB / Expiry",
+    "algorithm": "Weighted Modulus 10 algorithm with weights [7, 3, 1, 7, 3, 1]",
+    "accuracy_pct": 100.0
+  },
+  {
+    "inspection_module": "Guilloche & UV Microprint",
+    "target_anomaly": "Counterfeit Document Blank Substrate",
+    "algorithm": "High-frequency spatial Fourier transform structural pattern continuity",
+    "accuracy_pct": 98.6
+  }
+]

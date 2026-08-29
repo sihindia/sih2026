@@ -1,0 +1,27 @@
+[
+  {
+    "medicine_code": "MED-01",
+    "name": "Inj. Iron Sucrose 100mg",
+    "category": "Maternal Health",
+    "stock_vials": 180,
+    "phc": "Harisal PHC",
+    "status": "ADEQUATE"
+  },
+  {
+    "medicine_code": "MED-08",
+    "name": "Tab. Labetalol 100mg",
+    "category": "Antihypertensive",
+    "stock_vials": 350,
+    "phc": "Harisal PHC",
+    "status": "ADEQUATE"
+  },
+  {
+    "medicine_code": "MED-14",
+    "name": "ILR Vaccine Refrigerator",
+    "category": "Cold Chain",
+    "stock_vials": 0,
+    "temp_c": 3.8,
+    "target": "2-8\u00b0C",
+    "status": "COLD_CHAIN_NORMAL"
+  }
+]

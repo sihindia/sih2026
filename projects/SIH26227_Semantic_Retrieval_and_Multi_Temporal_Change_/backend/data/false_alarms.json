@@ -1,0 +1,16 @@
+[
+  {
+    "event_id": "FA-LDK-081",
+    "phenomenon": "Himalayan Glacial Snow Melt",
+    "raw_change_detected": "45,000 sq.m surface change",
+    "suppression_mechanism": "NDSI (Normalized Difference Snow Index) masking",
+    "verdict": "FALSE_ALARM_SUPPRESSED"
+  },
+  {
+    "event_id": "FA-THR-042",
+    "phenomenon": "Low Sun Angle Shadow Elongation",
+    "raw_change_detected": "18,200 sq.m radiometric shift",
+    "suppression_mechanism": "Solar Elevation Topographic Normalization",
+    "verdict": "FALSE_ALARM_SUPPRESSED"
+  }
+]

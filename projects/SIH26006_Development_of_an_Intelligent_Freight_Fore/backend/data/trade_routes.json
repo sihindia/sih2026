@@ -1,0 +1,58 @@
+[
+  {
+    "route_id": "ROUTE-AUS-PDP",
+    "origin_port": "Hay Point / Gladstone",
+    "origin_country": "Australia",
+    "destination_port": "Paradip Port",
+    "destination_country": "India (East Coast)",
+    "distance_nautical_miles": 5420,
+    "primary_commodity": "Hard Coking Coal (HCC)",
+    "optimal_vessel_class": "Capesize (180k DWT)",
+    "avg_sailing_days": 16.5,
+    "current_spot_rate_usd_t": 14.8,
+    "forecasted_30d_rate_usd_t": 12.4,
+    "charter_recommendation": "ENTER_PERIOD_CHARTER_3M"
+  },
+  {
+    "route_id": "ROUTE-USA-VZG",
+    "origin_port": "Hampton Roads (Norfolk)",
+    "origin_country": "United States",
+    "destination_port": "Visakhapatnam Port",
+    "destination_country": "India (East Coast)",
+    "distance_nautical_miles": 9150,
+    "primary_commodity": "Low-Vol Coking Coal",
+    "optimal_vessel_class": "Panamax / Baby Cape (85k DWT)",
+    "avg_sailing_days": 28.0,
+    "current_spot_rate_usd_t": 29.5,
+    "forecasted_30d_rate_usd_t": 31.8,
+    "charter_recommendation": "LOCK_SPOT_NOW"
+  },
+  {
+    "route_id": "ROUTE-MOZ-DHM",
+    "origin_port": "Maputo / Beira",
+    "origin_country": "Mozambique",
+    "destination_port": "Dhamra Port",
+    "destination_country": "India (East Coast)",
+    "distance_nautical_miles": 4280,
+    "primary_commodity": "Thermal & Semi-Soft Coal",
+    "optimal_vessel_class": "Supramax (58k DWT)",
+    "avg_sailing_days": 13.0,
+    "current_spot_rate_usd_t": 16.2,
+    "forecasted_30d_rate_usd_t": 15.9,
+    "charter_recommendation": "NEUTRAL_WATCH"
+  },
+  {
+    "route_id": "ROUTE-IDN-HLD",
+    "origin_port": "Balikpapan (Kalimantan)",
+    "origin_country": "Indonesia",
+    "destination_port": "Haldia Dock Complex",
+    "destination_country": "India (East Coast)",
+    "distance_nautical_miles": 2350,
+    "primary_commodity": "PCI Coal & Sinter Feed",
+    "optimal_vessel_class": "Handysize (35k DWT - River Draft Lock)",
+    "avg_sailing_days": 7.5,
+    "current_spot_rate_usd_t": 9.4,
+    "forecasted_30d_rate_usd_t": 8.9,
+    "charter_recommendation": "ENTER_MULTIPLE_VOYAGE"
+  }
+]

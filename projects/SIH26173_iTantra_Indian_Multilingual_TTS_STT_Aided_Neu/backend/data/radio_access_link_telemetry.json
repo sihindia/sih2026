@@ -1,0 +1,14 @@
+[
+  {
+    "metric": "Raw Audio Streaming (PCM 16kHz)",
+    "bitrate": "64.0 kbps",
+    "packet_loss_over_ble": "42% Dropout",
+    "usable_range_m": "15m"
+  },
+  {
+    "metric": "iTantra Neural Token Transceiver",
+    "bitrate": "0.96 kbps",
+    "packet_loss_over_ble": "0.0% Lossless",
+    "usable_range_m": "120m"
+  }
+]

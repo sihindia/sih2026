@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26086",
+  "title": "Hyperlocal Monsoon Onset & Break Prediction System (Block/Village Scale)",
+  "organization": "Ministry of Earth Sciences (MoES)",
+  "theme": "Agriculture, FoodTech & Rural Development",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

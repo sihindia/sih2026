@@ -1,0 +1,32 @@
+[
+  {
+    "toy_id": "TOY-CHANNA-01",
+    "name": "Channapatna Eco-Lacquer Spinning Top (Lattu)",
+    "origin": "Channapatna, Karnataka (GI Tagged)",
+    "craft_material": "Wrightia Tinctoria (Ivory Wood) + Natural Lac Resin & Vegetable Dyes (Turmeric/Indigo)",
+    "physics_concept": "Gyroscopic Stability, Moment of Inertia & Angular Momentum",
+    "eco_friendly_score": 100,
+    "3d_printable_model": "lattu_channapatna_v3.stl",
+    "status": "STUDIO_READY"
+  },
+  {
+    "toy_id": "TOY-THANJ-02",
+    "name": "Thanjavur Tilting Bobble Doll (Thanjavur Golu Gombe)",
+    "origin": "Thanjavur, Tamil Nadu (GI Tagged)",
+    "craft_material": "Papier-mache, Terracotta Clay Base & Lightweight Pith",
+    "physics_concept": "Low Center of Gravity & Self-Righting Pendulum Equilibrium",
+    "eco_friendly_score": 95,
+    "3d_printable_model": "thanjavur_doll_equilibrium.stl",
+    "status": "STUDIO_READY"
+  },
+  {
+    "toy_id": "TOY-KONDA-03",
+    "name": "Kondapalli Acrobat Monkey on Bamboo Rod",
+    "origin": "Kondapalli, Andhra Pradesh (GI Tagged)",
+    "craft_material": "Tella Poniki Softwood & Natural Tamarind Seed Paste",
+    "physics_concept": "Torsional Friction, Gravity Drop & Mechanical Linkages",
+    "eco_friendly_score": 98,
+    "3d_printable_model": "kondapalli_acrobat_mechanics.stl",
+    "status": "STUDIO_READY"
+  }
+]

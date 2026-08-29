@@ -1,0 +1,20 @@
+[
+  {
+    "match_id": "FACE-VERIF-01",
+    "traveler_name": "Tariq Mahmood",
+    "document_photo_hash": "0x4a9b...7812",
+    "live_webcam_hash": "0x9f1c...3341",
+    "cosine_similarity_score": 0.412,
+    "liveness_spoof_detected": false,
+    "verdict": "MISMATCH_IMPERSONATION_FLAGGED"
+  },
+  {
+    "match_id": "FACE-VERIF-03",
+    "traveler_name": "Siddharth Gautam",
+    "document_photo_hash": "0x3e2d...9918",
+    "live_webcam_hash": "0x3e2d...9918",
+    "cosine_similarity_score": 0.984,
+    "liveness_spoof_detected": false,
+    "verdict": "GENUINE_BIOMETRIC_MATCH"
+  }
+]

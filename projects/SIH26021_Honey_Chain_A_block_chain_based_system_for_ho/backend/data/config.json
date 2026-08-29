@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26021",
+  "title": "Honey Chain: A block chain-based system for honey traceability and smart beekeeping management.",
+  "organization": "Ministry of MSME",
+  "theme": "Agriculture, FoodTech & Rural Development",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

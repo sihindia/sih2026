@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Safety Reports Triaged",
+    "value": "24,500 Reports",
+    "trend": "Automated NLP Real-Time Classification"
+  },
+  {
+    "metric": "True SIF Precursor Density",
+    "value": "21.4% of Reports",
+    "trend": "Focuses 80% of HSE Effort on Fatal Risks"
+  },
+  {
+    "metric": "IOGP Rule Auto-Mapping",
+    "value": "99.2% Accuracy",
+    "trend": "Pre-Trained on EEI & Martin-Black SIF Model"
+  }
+]

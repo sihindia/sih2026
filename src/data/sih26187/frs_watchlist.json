@@ -1,0 +1,10 @@
+[
+  {
+    "match_id": "FRS-MATCH-01",
+    "camera_id": "CAM-BOP-JAIGAON-03",
+    "suspect_name": "Tariq Mahmood (Alias: Rajesh Shrestha)",
+    "cosine_similarity": 0.942,
+    "watchlist_reason": "Interpol Red Notice / Cross-Border Contraband",
+    "timestamp": "2026-08-30T01:25:10Z"
+  }
+]

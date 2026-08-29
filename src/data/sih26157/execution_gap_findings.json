@@ -1,0 +1,24 @@
+[
+  {
+    "finding_id": "GAP-2026-991",
+    "cse_id": "CSE-ENERGY-004",
+    "gap_type": "Superficial Metric Gaming / Premature Closure",
+    "alert_title": "PLC Firmware Modification Attempt (Port 502 Modbus)",
+    "severity": "CRITICAL",
+    "time_to_close_seconds": 24,
+    "investigation_note": "Closed as false positive per routine check.",
+    "supervisory_verdict": "FLAGRANT_EXECUTION_GAP: Critical ICS alert dismissed without packet capture inspection or asset owner contact.",
+    "evidence_hash": "a89c20184b918234812349182c"
+  },
+  {
+    "finding_id": "GAP-2026-442",
+    "cse_id": "CSE-DEFENSE-009",
+    "gap_type": "Repetitive Template-Driven Closure",
+    "alert_title": "Repeated Unauthorized Mass Storage Device Mounted",
+    "severity": "HIGH",
+    "time_to_close_seconds": 45,
+    "investigation_note": "User warned regarding policy. Ticket closed.",
+    "supervisory_verdict": "LACK_OF_ROOT_CAUSE_REMEDIATION: Same asset flagged 18 times in 14 days with identical templated note.",
+    "evidence_hash": "bc991820491820498123491824"
+  }
+]

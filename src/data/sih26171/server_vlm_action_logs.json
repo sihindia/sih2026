@@ -1,0 +1,17 @@
+[
+  {
+    "step": 1,
+    "action": "focus('#input-grant-title')",
+    "params": "{'text': 'Solar Flare Study 2026'}"
+  },
+  {
+    "step": 2,
+    "action": "redact_pii_local()",
+    "params": "{'elements_masked': 3, 'time_ms': 16.4}"
+  },
+  {
+    "step": 3,
+    "action": "click('#btn-submit-grant-auth')",
+    "params": "{'verified_by_server': True}"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "notice_id": "SAHYOG-SEC91-2026-891",
+    "target_vasp": "Binance Global",
+    "legal_mandate": "Section 91 CrPC / Section 94 Bharatiya Nagarik Suraksha Sanhita (BNSS) 2023",
+    "deposit_address": "TX44a...0012",
+    "frozen_amount_usdt": 185000.0,
+    "investigating_agency": "Special Cyber Cell, Mumbai Police / I4C",
+    "status": "ASSETS_LOCKED_PENDING_COURT_SEIZURE"
+  }
+]

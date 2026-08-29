@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26170",
+  "title": "AI-Driven Anomaly Detection in Component Burn-In & Screening",
+  "organization": "Indian Space Research Organisation(ISRO)",
+  "theme": "Smart Automation",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "facility_id": "COLD-NASHIK-FPO-01",
+    "location": "Lasalgaon Agro Cluster, Nashik",
+    "solar_capacity_kw": 15.0,
+    "storage_capacity_mt": 25.0,
+    "current_temperature_c": 4.2,
+    "relative_humidity_pct": 92.5,
+    "ethylene_level_ppm": 0.35,
+    "stored_crops": "Table Grapes & Hybrid Tomatoes",
+    "spoilage_reduction_pct": 96.0,
+    "status": "OPTIMAL_COOLING_ACTIVE"
+  },
+  {
+    "facility_id": "COLD-KOLAR-FPO-02",
+    "location": "Kolar Tomato Hub, Karnataka",
+    "solar_capacity_kw": 20.0,
+    "storage_capacity_mt": 30.0,
+    "current_temperature_c": 5.0,
+    "relative_humidity_pct": 90.0,
+    "ethylene_level_ppm": 0.42,
+    "stored_crops": "Red Ripe Tomatoes & Capsicum",
+    "spoilage_reduction_pct": 94.5,
+    "status": "OPTIMAL_COOLING_ACTIVE"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "framework": "CIS Benchmark Level 1",
+    "category": "Management Plane Security",
+    "standard_id": "CIS-2.1.4",
+    "description": "Ensure Telnet service is disabled on all management interfaces",
+    "severity": "HIGH"
+  },
+  {
+    "framework": "NIST SP 800-53",
+    "category": "Cryptographic Protection (SC-13)",
+    "standard_id": "NIST-SC-13",
+    "description": "Enforce FIPS-140-3 validated cryptography for all SSH/TLS management sessions",
+    "severity": "CRITICAL"
+  },
+  {
+    "framework": "DISA STIG",
+    "category": "Audit & Accountability (AU-2)",
+    "standard_id": "STIG-NET-000140",
+    "description": "Configure centralized redundant remote syslog forwarding via TLS",
+    "severity": "MEDIUM"
+  }
+]

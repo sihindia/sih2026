@@ -1,0 +1,26 @@
+[
+  {
+    "hour": 0,
+    "nominal_lot_uA": 10.2,
+    "anomalous_part_uA": 18.4,
+    "oven_temp_c": 125.0
+  },
+  {
+    "hour": 24,
+    "nominal_lot_uA": 10.5,
+    "anomalous_part_uA": 29.8,
+    "oven_temp_c": 125.0
+  },
+  {
+    "hour": 96,
+    "nominal_lot_uA": 10.8,
+    "anomalous_part_uA": 44.2,
+    "oven_temp_c": 125.0
+  },
+  {
+    "hour": 168,
+    "nominal_lot_uA": 11.1,
+    "anomalous_part_uA": 48.9,
+    "oven_temp_c": 125.0
+  }
+]

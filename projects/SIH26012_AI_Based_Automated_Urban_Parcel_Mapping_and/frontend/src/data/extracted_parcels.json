@@ -1,0 +1,32 @@
+[
+  {
+    "parcel_id": "PARCEL-27-04-101",
+    "ulpin": "27-584-0941-1001",
+    "area_sqm": 420.5,
+    "perimeter_m": 84.0,
+    "land_use": "Residential Multi-Family",
+    "building_footprint_sqm": 290.0,
+    "access_road_width_m": 9.0,
+    "boundary_confidence": "98.4%"
+  },
+  {
+    "parcel_id": "PARCEL-27-04-102",
+    "ulpin": "27-584-0941-1002",
+    "area_sqm": 615.0,
+    "perimeter_m": 102.5,
+    "land_use": "Commercial Mixed-Use",
+    "building_footprint_sqm": 480.0,
+    "access_road_width_m": 12.0,
+    "boundary_confidence": "96.9%"
+  },
+  {
+    "parcel_id": "PARCEL-27-04-103",
+    "ulpin": "27-584-0941-1003",
+    "area_sqm": 280.0,
+    "perimeter_m": 68.0,
+    "land_use": "Residential Villa",
+    "building_footprint_sqm": 165.0,
+    "access_road_width_m": 7.5,
+    "boundary_confidence": "99.1%"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26043",
+  "title": "A digital platform to crowdsource societal challenges and facilitate collaborative problem solving through universities and industry partnerships",
+  "organization": "Governmcnt of Jharkhand",
+  "theme": "Smart Education",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

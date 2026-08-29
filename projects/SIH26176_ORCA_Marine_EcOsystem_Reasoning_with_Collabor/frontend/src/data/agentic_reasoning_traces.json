@@ -1,0 +1,28 @@
+[
+  {
+    "query": "Where is the nearest Potential Fishing Zone from Rameswaram and is it safe?",
+    "agent_trace": [
+      {
+        "agent": "Agent 1 (Orchestrator)",
+        "action": "Decompose query into Location Geo-Lookup, Oceansat-3 Chlorophyll Fetch, and Wave Safety Analysis."
+      },
+      {
+        "agent": "Agent 2 (OceanSat Telemetry)",
+        "action": "Query OCM-3 layer: Chlorophyll 1.95 mg/m\u00b3 detected at Lat 9.214\u00b0 N, Long 79.412\u00b0 E (16.4 NM SE)."
+      },
+      {
+        "agent": "Agent 3 (PFZ Thermal Front)",
+        "action": "Confirm SST 28.4\u00b0C with 0.8\u00b0C thermal front gradient indicating high Yellowfin Tuna concentration."
+      },
+      {
+        "agent": "Agent 4 (Navigational Geo-Fencer)",
+        "action": "Check distance to Sri Lanka IMBL line: 6.8 NM buffer margin confirmed. Safe within Indian EEZ."
+      },
+      {
+        "agent": "Agent 5 (Marine Safety)",
+        "action": "Wave height 1.2m, wind 14 knots. Verdict: Fully safe for motorized fishing boats."
+      }
+    ],
+    "synthesized_response": "The nearest high-yield Potential Fishing Zone is located 16.4 Nautical Miles South-East of Rameswaram (Bearing 142\u00b0). Oceansat-3 satellite data shows high chlorophyll (1.95 mg/m\u00b3) and a strong thermal front (28.4\u00b0C) with rich Yellowfin Tuna and Mackerel schools. Sea conditions are safe (wave height 1.2m). You have a safe 6.8 NM buffer before the International Maritime Boundary Line."
+  }
+]

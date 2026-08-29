@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Outbreak Triage Accuracy",
+    "value": "98.6% Precision",
+    "trend": "AI Symptom & Image Analysis"
+  },
+  {
+    "metric": "Mean Containment Time",
+    "value": "4.2 Hours",
+    "trend": "Rapid 5km Ring Vaccination Dispatch"
+  },
+  {
+    "metric": "Monitored Livestock",
+    "value": "8.4 Lakh Cattle",
+    "trend": "Synced with Bharat Pashudhan INAPH"
+  }
+]

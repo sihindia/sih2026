@@ -1,0 +1,51 @@
+[
+  {
+    "document_id": "DOC-FIR-2026-891",
+    "case_number": "CR-SPECIAL-MUM-2026-441",
+    "title": "First Information Report (FIR #891)",
+    "title_hi": "\u092a\u094d\u0930\u0925\u092e \u0938\u0942\u091a\u0928\u093e \u0930\u093f\u092a\u094b\u0930\u094d\u091f (\u090f\u092b\u0906\u0908\u0906\u0930 #891)",
+    "document_type": "Police FIR (Form II)",
+    "case_type": "Organized Cyber Extortion & Hawala Syndicate",
+    "filing_date": "2026-08-20T10:30:00Z",
+    "investigating_officer": "Inspector Amit Rawat (Badge #MH-9182)",
+    "sha256_hash": "0x7a8f10294819c991820491820419283019283019283019283019283019283019",
+    "blockchain_tx_id": "0x4b91...8812 (Block #1948201)",
+    "ipfs_cid": "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
+    "tamper_status": "VERIFIED_GENUINE_UNALTERED",
+    "pii_redacted": false,
+    "classification": "CONFIDENTIAL_LAW_ENFORCEMENT"
+  },
+  {
+    "document_id": "DOC-STMT-POCSO-02",
+    "case_number": "CR-POCSO-DEL-2026-118",
+    "title": "Witness Statement under Section 161 CrPC / 180 BNSS",
+    "title_hi": "\u0917\u0935\u093e\u0939 \u092c\u092f\u093e\u0928 (\u0927\u093e\u0930\u093e 161 \u0926\u0902\u0921 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0938\u0902\u0939\u093f\u0924\u093e)",
+    "document_type": "Witness Testimony (Sensitive)",
+    "case_type": "Protection of Children from Sexual Offences (POCSO)",
+    "filing_date": "2026-08-24T14:15:00Z",
+    "investigating_officer": "DSP Sunita Deshmukh (Badge #DL-4410)",
+    "sha256_hash": "0x3e2d991820491820491820491820491820491820491820491820491820491820",
+    "blockchain_tx_id": "0x9f1a...3319 (Block #1948245)",
+    "ipfs_cid": "QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG",
+    "tamper_status": "VERIFIED_GENUINE_UNALTERED",
+    "pii_redacted": true,
+    "redaction_notice": "Victim identity masked under Section 228A IPC / Section 73 BNS",
+    "classification": "STRICTLY_RESTRICTED_COURT_ONLY"
+  },
+  {
+    "document_id": "DOC-CFSL-FORENSIC-03",
+    "case_number": "CR-SPECIAL-MUM-2026-441",
+    "title": "Central Forensic Science Lab (CFSL) Digital Forensics Report",
+    "title_hi": "\u0915\u0947\u0902\u0926\u094d\u0930\u0940\u092f \u092b\u094b\u0930\u0947\u0902\u0938\u093f\u0915 \u0935\u093f\u091c\u094d\u091e\u093e\u0928 \u092a\u094d\u0930\u092f\u094b\u0917\u0936\u093e\u0932\u093e \u0930\u093f\u092a\u094b\u0930\u094d\u091f",
+    "document_type": "Scientific Forensic Report",
+    "case_type": "Encrypted Mobile Dump & RAM Extraction",
+    "filing_date": "2026-08-27T16:45:00Z",
+    "investigating_officer": "Dr. V. K. Raman (Senior Scientific Officer, CFSL)",
+    "sha256_hash": "0x9182049182049182049182049182049182049182049182049182049182049182",
+    "blockchain_tx_id": "0x1c88...7710 (Block #1948290)",
+    "ipfs_cid": "QmZtmD2qt8fJpq3CLDHvdzsAAsDHWB37B24wZJ2wZJ2wZJ",
+    "tamper_status": "VERIFIED_GENUINE_UNALTERED",
+    "pii_redacted": false,
+    "classification": "EXPERT_TESTIMONY_EVIDENCE"
+  }
+]

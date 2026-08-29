@@ -1,0 +1,23 @@
+[
+  {
+    "layer": "High-Rise Tower Block A",
+    "estimated_height_m": 182.4,
+    "lidar_reference_m": 181.6,
+    "error_m": 0.8,
+    "slope_deg": 88.5
+  },
+  {
+    "layer": "Metro Viaduct Overpass",
+    "estimated_height_m": 24.2,
+    "lidar_reference_m": 24.0,
+    "error_m": 0.2,
+    "slope_deg": 4.2
+  },
+  {
+    "layer": "Coastal Mangrove Shoreline",
+    "estimated_height_m": 3.1,
+    "lidar_reference_m": 3.0,
+    "error_m": 0.1,
+    "slope_deg": 1.5
+  }
+]

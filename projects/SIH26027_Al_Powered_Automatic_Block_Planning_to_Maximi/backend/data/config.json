@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26027",
+  "title": "Al-Powered Automatic Block Planning to Maximize Asset Availability for Train Operations on Indian Railways",
+  "organization": "Ministry of Railways",
+  "theme": "Transportation & Logistics",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

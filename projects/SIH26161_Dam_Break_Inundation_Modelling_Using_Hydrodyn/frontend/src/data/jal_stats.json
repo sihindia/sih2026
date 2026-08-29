@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "River Basins Simulated",
+    "value": "34 Catchments",
+    "trend": "Across Himalayan & Peninsular Rivers"
+  },
+  {
+    "metric": "Mean Simulation Lead Time",
+    "value": "+48 Mins",
+    "trend": "Provides HADR Early Warning Evacuation Window"
+  },
+  {
+    "metric": "GIS Export Formats",
+    "value": ".SHP / .KML",
+    "trend": "Direct Google Earth Engine Sync"
+  }
+]

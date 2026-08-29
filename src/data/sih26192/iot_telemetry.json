@@ -1,0 +1,23 @@
+[
+  {
+    "sensor_id": "IOT-RADAR-RAIN-01",
+    "type": "IMD Doppler X-Band Dual-Polarization Radar",
+    "location": "Surkanda Devi Peak / Kedarnath Ridge",
+    "live_reading": "88.5 mm/hr Precipitation",
+    "status": "OPTIMAL_HIGH_PRECISION"
+  },
+  {
+    "sensor_id": "IOT-SOIL-MOISTURE-02",
+    "type": "FDR Capacitive Soil Moisture & Pore Pressure Array",
+    "location": "Gaurikund Debris Catchment",
+    "live_reading": "96.2% Saturation (42 kPa Pore Pressure)",
+    "status": "SATURATION_THRESHOLD_BREACHED"
+  },
+  {
+    "sensor_id": "IOT-ULTRASONIC-STAGE-03",
+    "type": "Non-Contact Microwave River Stage Gauge",
+    "location": "Rudraprayag Sangam Bridge",
+    "live_reading": "14.80 m (+3.80m above Danger Line)",
+    "status": "RAPID_SURGE_DETECTED"
+  }
+]

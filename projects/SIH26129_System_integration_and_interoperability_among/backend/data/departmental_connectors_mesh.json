@@ -1,0 +1,34 @@
+[
+  {
+    "dept_code": "REV-BHULEKH",
+    "name": "Mahabhulekh 7/12 Land Registry",
+    "protocol": "gRPC / REST",
+    "avg_latency_ms": 38,
+    "uptime_pct": 99.94,
+    "status": "CONNECTED"
+  },
+  {
+    "dept_code": "TRN-VAHAN",
+    "name": "Vahan 4.0 Vehicle & Permit Mesh",
+    "protocol": "REST / JSON-LD",
+    "avg_latency_ms": 42,
+    "uptime_pct": 99.88,
+    "status": "CONNECTED"
+  },
+  {
+    "dept_code": "AGR-MAHADBT",
+    "name": "MahaDBT Farmer Benefit Service",
+    "protocol": "Kafka PubSub",
+    "avg_latency_ms": 29,
+    "uptime_pct": 99.98,
+    "status": "CONNECTED"
+  },
+  {
+    "dept_code": "GRV-AAPLE",
+    "name": "Aaple Sarkar Citizen Portal",
+    "protocol": "OpenID SSO",
+    "avg_latency_ms": 34,
+    "uptime_pct": 99.92,
+    "status": "CONNECTED"
+  }
+]

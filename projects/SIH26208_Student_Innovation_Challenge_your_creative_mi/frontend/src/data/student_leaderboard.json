@@ -1,0 +1,36 @@
+[
+  {
+    "rank": 1,
+    "student_name": "Aarav Sundaram",
+    "institution": "IIT Madras",
+    "dharma_points": 4850,
+    "badges": [
+      "Vedic Astronomer",
+      "Chola Sea Captain",
+      "Toycathon Gold"
+    ],
+    "level": "Sage Innovator"
+  },
+  {
+    "rank": 2,
+    "student_name": "Pooja Deshmukh",
+    "institution": "COEP Pune",
+    "dharma_points": 4210,
+    "badges": [
+      "Harappan Architect",
+      "Moksha Grandmaster"
+    ],
+    "level": "Master Craftsman"
+  },
+  {
+    "rank": 3,
+    "student_name": "Karthik Raja",
+    "institution": "NIT Trichy",
+    "dharma_points": 3980,
+    "badges": [
+      "Arthashastra Strategist",
+      "Channapatna Modeler"
+    ],
+    "level": "Scholar"
+  }
+]

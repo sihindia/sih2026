@@ -1,0 +1,22 @@
+[
+  {
+    "mandi_id": "MANDI-AZADPUR-01",
+    "mandi_name": "Azadpur APMC Supermandi (Delhi)",
+    "commodity": "Tomato (Hybrid)",
+    "modal_price_inr_quintal": 1450.0,
+    "min_price_inr_quintal": 1100.0,
+    "max_price_inr_quintal": 1850.0,
+    "daily_volume_mt": 420.0,
+    "ai_7day_forecast": "+8.5% Price Rise Expected (Festival Demand)"
+  },
+  {
+    "mandi_id": "MANDI-LASALGAON-02",
+    "mandi_name": "Lasalgaon Onion APMC (Nashik)",
+    "commodity": "Onion (Nashik Red)",
+    "modal_price_inr_quintal": 2250.0,
+    "min_price_inr_quintal": 1800.0,
+    "max_price_inr_quintal": 2600.0,
+    "daily_volume_mt": 890.0,
+    "ai_7day_forecast": "Stable High (Strong Export Demand)"
+  }
+]

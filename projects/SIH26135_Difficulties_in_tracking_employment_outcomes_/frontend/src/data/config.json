@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26135",
+  "title": "Difficulties in tracking employment outcomes,skill gaps, and the impact of skilling initiatives",
+  "organization": "Government Of Maharashtra",
+  "theme": "Miscellaneous",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

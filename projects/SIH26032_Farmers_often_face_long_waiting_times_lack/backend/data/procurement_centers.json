@@ -1,0 +1,122 @@
+[
+  {
+    "center_id": "MANDI-PUN-KHANNA",
+    "name": "Khanna Grain Market (Asia's Premier Mandi)",
+    "district": "Ludhiana",
+    "state": "Punjab",
+    "commodities": [
+      "Wheat MSP",
+      "Paddy Basmati",
+      "Paddy Non-Basmati"
+    ],
+    "daily_capacity_quintals": 14000.0,
+    "active_queue_trucks": 16,
+    "avg_turnaround_mins": 32,
+    "congestion_status": "OPTIMAL_FLOW",
+    "weighbridge_bays_active": 6,
+    "open_slots_today": 48,
+    "manager_name": "Er. Harpreet Singh Sandhu",
+    "contact_helpline": "1800-180-2026",
+    "gps_coords": {
+      "lat": 30.7073,
+      "lng": 76.2167
+    },
+    "nearby_alternate_mandi": "Samrala Mandi (14 km away \u2022 18 min TAT)"
+  },
+  {
+    "center_id": "MANDI-MH-LASALGAON",
+    "name": "Lasalgaon NAFED Mega Buffer Hub",
+    "district": "Nashik",
+    "state": "Maharashtra",
+    "commodities": [
+      "Rabi Storage Onion",
+      "Maize",
+      "Soybean"
+    ],
+    "daily_capacity_quintals": 8500.0,
+    "active_queue_trucks": 26,
+    "avg_turnaround_mins": 46,
+    "congestion_status": "MODERATE_WAIT",
+    "weighbridge_bays_active": 4,
+    "open_slots_today": 18,
+    "manager_name": "Shri Ashok B. Pawar",
+    "contact_helpline": "1800-233-0819",
+    "gps_coords": {
+      "lat": 20.1462,
+      "lng": 74.2324
+    },
+    "nearby_alternate_mandi": "Pimpalgaon Baswant (22 km away \u2022 25 min TAT)"
+  },
+  {
+    "center_id": "MANDI-HAR-KARNAL",
+    "name": "Karnal Food Corporation Depot (FCI Hub)",
+    "district": "Karnal",
+    "state": "Haryana",
+    "commodities": [
+      "Paddy Grade-A",
+      "Wheat MSP",
+      "Mustard"
+    ],
+    "daily_capacity_quintals": 11000.0,
+    "active_queue_trucks": 12,
+    "avg_turnaround_mins": 26,
+    "congestion_status": "OPTIMAL_FLOW",
+    "weighbridge_bays_active": 5,
+    "open_slots_today": 64,
+    "manager_name": "Smt. Sunita Rani (FCI AGM)",
+    "contact_helpline": "1800-180-9941",
+    "gps_coords": {
+      "lat": 29.6857,
+      "lng": 76.9905
+    },
+    "nearby_alternate_mandi": "Gharaunda Mandi (16 km away \u2022 20 min TAT)"
+  },
+  {
+    "center_id": "MANDI-KTK-GULBARGA",
+    "name": "Kalaburagi (Gulbarga) Red Gram Mega Yard",
+    "district": "Kalaburagi",
+    "state": "Karnataka",
+    "commodities": [
+      "Tur / Red Gram",
+      "Bengal Gram (Chana)",
+      "Sunflower"
+    ],
+    "daily_capacity_quintals": 7200.0,
+    "active_queue_trucks": 14,
+    "avg_turnaround_mins": 34,
+    "congestion_status": "OPTIMAL_FLOW",
+    "weighbridge_bays_active": 4,
+    "open_slots_today": 36,
+    "manager_name": "Shri Basavaraj Patil",
+    "contact_helpline": "1800-425-7712",
+    "gps_coords": {
+      "lat": 17.3297,
+      "lng": 76.8343
+    },
+    "nearby_alternate_mandi": "Sedam Yard (28 km away \u2022 30 min TAT)"
+  },
+  {
+    "center_id": "MANDI-RAJ-GANGANAGAR",
+    "name": "Sri Ganganagar Mustard & Cotton Hub",
+    "district": "Sri Ganganagar",
+    "state": "Rajasthan",
+    "commodities": [
+      "Mustard Seed",
+      "Wheat",
+      "Guar Seed"
+    ],
+    "daily_capacity_quintals": 9500.0,
+    "active_queue_trucks": 19,
+    "avg_turnaround_mins": 38,
+    "congestion_status": "OPTIMAL_FLOW",
+    "weighbridge_bays_active": 5,
+    "open_slots_today": 40,
+    "manager_name": "Shri Mahendra Singh Rathore",
+    "contact_helpline": "1800-180-6041",
+    "gps_coords": {
+      "lat": 29.9038,
+      "lng": 73.8772
+    },
+    "nearby_alternate_mandi": "Padampur Yard (20 km away \u2022 22 min TAT)"
+  }
+]

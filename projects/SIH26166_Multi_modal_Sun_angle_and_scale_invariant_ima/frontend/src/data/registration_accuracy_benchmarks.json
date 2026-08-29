@@ -1,0 +1,18 @@
+[
+  {
+    "method": "ChandraMatch (LoFTR Deep Transformer + Invariant Anchors)",
+    "inlier_ratio_pct": 95.2,
+    "rmse_pixels": 0.28,
+    "sun_angle_tolerance_deg": "0\u00b0 to 85\u00b0 (Extreme Shadow Robust)",
+    "scale_tolerance": "Up to 250:1 Cross-Sensor",
+    "status": "ISRO Space Grade"
+  },
+  {
+    "method": "Traditional SIFT / SURF Keypoint Matching",
+    "inlier_ratio_pct": 18.4,
+    "rmse_pixels": 4.85,
+    "sun_angle_tolerance_deg": "< 12\u00b0 (Fails on Shadow Inversion)",
+    "scale_tolerance": "< 3:1",
+    "status": "Inadequate for Lunar Terrain"
+  }
+]

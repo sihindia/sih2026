@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26067",
+  "title": "Develop a web-based interactive 3D visualization platform that integrates numerical ocean model outputs and in-situ observations.",
+  "organization": "Ministry of Earth Sciences (MoES)",
+  "theme": "Disaster Management",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

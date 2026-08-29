@@ -1,0 +1,32 @@
+[
+  {
+    "event_id": "LS-NER-2025-08",
+    "location": "Hunthar Veng, Aizawl, Mizoram",
+    "date": "2025-08-14",
+    "rainfall_24h_mm": 240.5,
+    "volume_debris_m3": 45000,
+    "road_blocked_days": 6,
+    "trigger": "Continuous 72-hour cloudburst on steep cut slope",
+    "mitigation_done": "Reinforced soil nailing and gabion retaining walls"
+  },
+  {
+    "event_id": "LS-NER-2024-07",
+    "location": "NH-10 29th Mile, Sikkim",
+    "date": "2024-07-02",
+    "rainfall_24h_mm": 185.0,
+    "volume_debris_m3": 28000,
+    "road_blocked_days": 4,
+    "trigger": "Teesta River toe erosion combined with pore pressure spike",
+    "mitigation_done": "Micro-piling and horizontal subsurface drains"
+  },
+  {
+    "event_id": "LS-NER-2023-06",
+    "location": "Shillong-Dawki Highway (NH-40), Meghalaya",
+    "date": "2023-06-19",
+    "rainfall_24h_mm": 310.0,
+    "volume_debris_m3": 62000,
+    "road_blocked_days": 8,
+    "trigger": "Extreme monsoonal precipitation and unplanned hill cutting",
+    "mitigation_done": "Hydro-seeding geo-textile mesh and drainage diversion"
+  }
+]

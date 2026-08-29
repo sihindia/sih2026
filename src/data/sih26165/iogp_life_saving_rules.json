@@ -1,0 +1,27 @@
+[
+  {
+    "rule_no": "Rule #1",
+    "name": "Bypassing Safety Controls",
+    "focus": "Interlocks & Relief Valves"
+  },
+  {
+    "rule_no": "Rule #2",
+    "name": "Confined Space Entry",
+    "focus": "Gas Testing & Continuous Ventilation"
+  },
+  {
+    "rule_no": "Rule #3",
+    "name": "Energy Isolation (LOTO)",
+    "focus": "Zero Electrical/Hydraulic Stored Energy"
+  },
+  {
+    "rule_no": "Rule #6",
+    "name": "Line of Fire",
+    "focus": "Suspended Loads & High-Pressure Piping"
+  },
+  {
+    "rule_no": "Rule #9",
+    "name": "Working at Height",
+    "focus": "100% Tie-Off Fall Arrest > 1.8m"
+  }
+]

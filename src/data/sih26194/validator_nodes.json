@@ -1,0 +1,23 @@
+[
+  {
+    "node_name": "AICTE Apex Authority Node",
+    "ip_endpoint": "10.140.20.1",
+    "location": "New Delhi",
+    "uptime_pct": 99.99,
+    "role": "Consensus Lead & Degree Signer"
+  },
+  {
+    "node_name": "IIT Delhi Supercomputing Node",
+    "ip_endpoint": "10.140.20.2",
+    "location": "Hauz Khas, Delhi",
+    "uptime_pct": 99.98,
+    "role": "PoA Block Proposer"
+  },
+  {
+    "node_name": "NIC National Cloud Node",
+    "ip_endpoint": "10.140.20.3",
+    "location": "Hyderabad",
+    "uptime_pct": 100.0,
+    "role": "State Archival Validator"
+  }
+]

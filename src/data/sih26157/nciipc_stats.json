@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Critical Sector Entities Supervised",
+    "value": "142 CSEs",
+    "trend": "Across 6 National Priority Sectors"
+  },
+  {
+    "metric": "Execution Gaps Flagged",
+    "value": "248 Gaps",
+    "trend": "Uncovered via Case Evidence Review"
+  },
+  {
+    "metric": "Air-Gapped Assessment Fidelity",
+    "value": "100% Offline",
+    "trend": "Zero Sensitive Telemetry Exfiltration"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "alert_id": "ALERT-WARN-01",
+    "type": "SKIPPED_STEP_WARNING",
+    "message": "Voice Alert: Warning, Step 3 (Solution Injection) skipped! Return to Step 3 before initiating laser scan.",
+    "severity": "HIGH_PROTOCOL_VIOLATION"
+  },
+  {
+    "alert_id": "ALERT-WARN-02",
+    "type": "OUT_OF_SEQUENCE_ACTION",
+    "message": "Voice Alert: Incorrect tool detected. Please select Micro-Pipette #04.",
+    "severity": "MODERATE_ADVISORY"
+  }
+]

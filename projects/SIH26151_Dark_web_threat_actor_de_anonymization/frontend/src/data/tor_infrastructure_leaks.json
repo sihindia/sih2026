@@ -1,0 +1,20 @@
+[
+  {
+    "onion_url": "hydra77netphantom2948.onion",
+    "leaked_clearnet_ip": "103.145.72.18",
+    "hosting_provider": "Spectra Broadband / ASN 45820",
+    "vulnerability_type": "Exposed Apache mod_status /server-status Page",
+    "ssl_certificate_serial": "04:9A:88:12:F4:3B:10:9C",
+    "matched_clearnet_domain": "api-gateway.noidatechcorp.in",
+    "confidence_score": 99.1
+  },
+  {
+    "onion_url": "kryptonvault8812.onion",
+    "leaked_clearnet_ip": "185.190.41.22",
+    "hosting_provider": "Hetzner Online GmbH (Frankfurt)",
+    "vulnerability_type": "Open SSH Port 2222 with Identical RSA Host Key Fingerprint",
+    "ssl_certificate_serial": "07:11:BC:90:E2:4A:33:81",
+    "matched_clearnet_domain": "vpn-node04.krypton-infra.net",
+    "confidence_score": 96.5
+  }
+]

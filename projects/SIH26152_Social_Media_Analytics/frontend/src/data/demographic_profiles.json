@@ -1,0 +1,20 @@
+[
+  {
+    "age_cohort": "18 to 24 Years",
+    "share_pct": 38.5,
+    "top_platforms": "Telegram, X, YouTube",
+    "primary_emotion": "FOMO / Sarcasm"
+  },
+  {
+    "age_cohort": "25 to 34 Years",
+    "share_pct": 42.0,
+    "top_platforms": "X, LinkedIn, Reddit",
+    "primary_emotion": "Analytical / Skeptical"
+  },
+  {
+    "age_cohort": "35 to 50+ Years",
+    "share_pct": 19.5,
+    "top_platforms": "WhatsApp, Facebook",
+    "primary_emotion": "High Vulnerability to Panic"
+  }
+]

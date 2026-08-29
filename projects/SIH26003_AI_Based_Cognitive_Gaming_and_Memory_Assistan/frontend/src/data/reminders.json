@@ -1,0 +1,30 @@
+[
+  {
+    "id": "REM-01",
+    "time": "08:00 AM",
+    "medicine": "Donepezil 5mg (Cognitive Enhancer)",
+    "status": "TAKEN",
+    "dose": "1 Tablet with breakfast"
+  },
+  {
+    "id": "REM-02",
+    "time": "12:30 PM",
+    "medicine": "Hydration Reminder (250ml Water)",
+    "status": "COMPLETED",
+    "dose": "Glass of fresh water"
+  },
+  {
+    "id": "REM-03",
+    "time": "02:00 PM",
+    "medicine": "Memantine 10mg",
+    "status": "SCHEDULED",
+    "dose": "1 Tablet post-lunch"
+  },
+  {
+    "id": "REM-04",
+    "time": "08:30 PM",
+    "medicine": "Multivitamin & Omega-3",
+    "status": "SCHEDULED",
+    "dose": "1 Capsule with warm milk"
+  }
+]

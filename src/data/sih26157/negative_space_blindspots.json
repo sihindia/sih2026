@@ -1,0 +1,11 @@
+[
+  {
+    "blindspot_id": "NEG-2026-102",
+    "cse_id": "CSE-ENERGY-004",
+    "blindspot_category": "Complete Telemetry Void / Monitoring Blindspot",
+    "impacted_subsystem": "14 Grid Substation RTUs (Zone 4)",
+    "expected_telemetry": "Active Directory Authentication & Modbus Access Logs",
+    "observed_telemetry": "Zero Events over 90 Days",
+    "supervisory_risk": "HIGH: Severe visibility void in core operational technology grid."
+  }
+]

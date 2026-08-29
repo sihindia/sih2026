@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26091",
+  "title": "AI-Driven Hyper-Local Business Advisory and Financial Structuring Assistant for Rural Micro-Entrepreneurs",
+  "organization": "Ministry of Social Justice and Empowerment (MoSJE)",
+  "theme": "Agriculture, FoodTech & Rural Development",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

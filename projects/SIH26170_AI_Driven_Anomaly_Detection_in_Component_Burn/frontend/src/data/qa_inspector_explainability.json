@@ -1,0 +1,9 @@
+[
+  {
+    "component_id": "IC-RH-2026-0042",
+    "root_cause_physics": "Time-Dependent Dielectric Breakdown (TDDB) in Sub-Micron Gate Oxide",
+    "z_score_lot_deviation": "+4.12 Sigma",
+    "shap_primary_driver": "24h-to-0h Acceleration Rate (62.4% attribution)",
+    "qa_action": "Quarantine Component. Prevented in-orbit power rail latchup."
+  }
+]

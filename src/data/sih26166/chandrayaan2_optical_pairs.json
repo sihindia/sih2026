@@ -1,0 +1,40 @@
+[
+  {
+    "pair_id": "CH2-PAIR-2026-001",
+    "target_lunar_feature": "Shackleton Crater Rim (Lunar South Pole)",
+    "target_lunar_feature_hi": "\u0936\u0948\u0915\u0932\u091f\u0928 \u0915\u094d\u0930\u0947\u091f\u0930 \u0930\u093f\u092e (\u091a\u0902\u0926\u094d\u0930 \u0926\u0915\u094d\u0937\u093f\u0923\u0940 \u0927\u094d\u0930\u0941\u0935)",
+    "lunar_coordinates": "89.9\u00b0 S, 0.0\u00b0 E (Permanently Shadowed Region)",
+    "source_sensor": "Orbiter High Resolution Camera (OHRC)",
+    "source_resolution_m": 0.25,
+    "source_sun_elevation_deg": 6.8,
+    "source_sun_azimuth_deg": 142.5,
+    "reference_sensor": "Terrain Mapping Camera-2 (TMC-2)",
+    "reference_resolution_m": 5.0,
+    "reference_sun_elevation_deg": 34.2,
+    "reference_sun_azimuth_deg": 28.0,
+    "scale_ratio": "20 : 1 Scale Differential",
+    "inlier_match_count": 1420,
+    "inlier_ratio_pct": 95.2,
+    "registration_rmse_pixels": 0.28,
+    "status": "SUB_PIXEL_CO_REGISTRATION_VERIFIED"
+  },
+  {
+    "pair_id": "CH2-PAIR-2026-042",
+    "target_lunar_feature": "Manzinus C Crater (Chandrayaan-3 Landing Vicinity)",
+    "target_lunar_feature_hi": "\u092e\u093e\u0928\u091c\u093c\u093f\u0928\u0938 \u0938\u0940 \u0915\u094d\u0930\u0947\u091f\u0930 (\u091a\u0902\u0926\u094d\u0930\u092f\u093e\u0928 \u0932\u0948\u0902\u0921\u093f\u0902\u0917 \u0915\u094d\u0937\u0947\u0924\u094d\u0930)",
+    "lunar_coordinates": "69.37\u00b0 S, 32.35\u00b0 E (Highlands Terrain)",
+    "source_sensor": "OHRC (0.32m High-Res Strip)",
+    "source_resolution_m": 0.32,
+    "source_sun_elevation_deg": 12.4,
+    "source_sun_azimuth_deg": 88.0,
+    "reference_sensor": "Imaging Infrared Spectrometer (IIRS Hyperspectral)",
+    "reference_resolution_m": 80.0,
+    "reference_sun_elevation_deg": 48.0,
+    "reference_sun_azimuth_deg": 210.5,
+    "scale_ratio": "250 : 1 Cross-Modal Multi-Spectral",
+    "inlier_match_count": 890,
+    "inlier_ratio_pct": 92.4,
+    "registration_rmse_pixels": 0.34,
+    "status": "SUB_PIXEL_CO_REGISTRATION_VERIFIED"
+  }
+]

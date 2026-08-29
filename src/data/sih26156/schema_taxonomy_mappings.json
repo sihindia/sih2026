@@ -1,0 +1,17 @@
+[
+  {
+    "source_vendor_format": "ArcSight CEF (src / dst / spt / dpt)",
+    "ocsf_standard_field": "src_endpoint.ip, dst_endpoint.ip, src_endpoint.port, dst_endpoint.port",
+    "data_type": "IP & Port Tuples"
+  },
+  {
+    "source_vendor_format": "Syslog RFC 5424 (sshd user / rhost)",
+    "ocsf_standard_field": "actor.user.name, src_endpoint.ip",
+    "data_type": "Identity & IP"
+  },
+  {
+    "source_vendor_format": "Windows XML Event (TargetUserName / IpAddress)",
+    "ocsf_standard_field": "actor.user.name, src_endpoint.ip",
+    "data_type": "Identity & IP"
+  }
+]

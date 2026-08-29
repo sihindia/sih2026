@@ -1,0 +1,88 @@
+[
+  {
+    "application_id": "MAHA-APP-2026-001",
+    "service_title": "Mukhyamantri Saur Krushi Pump Yojana (Solar Agro Pump Subsidy)",
+    "service_title_mr": "\u092e\u0941\u0916\u094d\u092f\u092e\u0902\u0924\u094d\u0930\u0940 \u0938\u094c\u0930 \u0915\u0943\u0937\u0940 \u092a\u0902\u092a \u092f\u094b\u091c\u0928\u093e (\u0905\u0928\u0941\u0926\u093e\u0928 \u0905\u0930\u094d\u091c)",
+    "citizen_name": "Rajeshwar Anandrao Shinde",
+    "district": "Nanded, Maharashtra",
+    "departments_orchestrated": [
+      "Revenue (Mahabhulekh)",
+      "Energy (MSEDCL)",
+      "Agriculture (MahaDBT)",
+      "Renewable Energy (MEDA)"
+    ],
+    "workflow_pipeline": [
+      {
+        "step": 1,
+        "dept": "Mahabhulekh",
+        "action": "7/12 Land Title & Survey #142 Auto-Verified",
+        "status": "VERIFIED_AUTOMATICALLY",
+        "time_taken": "1.2s"
+      },
+      {
+        "step": 2,
+        "dept": "MahaDBT",
+        "action": "Small Farmer DBT Eligibility & Aadhaar Link Check",
+        "status": "VERIFIED_AUTOMATICALLY",
+        "time_taken": "0.8s"
+      },
+      {
+        "step": 3,
+        "dept": "MSEDCL",
+        "action": "Agricultural Feeder Distance Feasibility (Off-Grid)",
+        "status": "APPROVED",
+        "time_taken": "1.5 Days"
+      },
+      {
+        "step": 4,
+        "dept": "MEDA",
+        "action": "5 HP Solar Photovoltaic Pump Sanction Order",
+        "status": "SANCTIONED",
+        "time_taken": "0.5 Days"
+      }
+    ],
+    "documents_saved_count": 6,
+    "sla_days_actual": 2.5,
+    "sla_days_statutory": 15,
+    "status": "UNIFIED_WORKFLOW_APPROVED"
+  },
+  {
+    "application_id": "MAHA-APP-2026-018",
+    "service_title": "Electric Commercial Transport Permit & Green Subsidy",
+    "service_title_mr": "\u0907\u0932\u0947\u0915\u094d\u091f\u094d\u0930\u093f\u0915 \u0935\u094d\u092f\u093e\u0935\u0938\u093e\u092f\u093f\u0915 \u0935\u093e\u0939\u0924\u0942\u0915 \u092a\u0930\u0935\u093e\u0928\u093e \u0906\u0923\u093f \u0905\u0928\u0941\u0926\u093e\u0928",
+    "citizen_name": "Priyanka Vilas Deshmukh",
+    "district": "Pune, Maharashtra",
+    "departments_orchestrated": [
+      "Transport (Vahan 4.0)",
+      "Industry (MahaNivesh)",
+      "Pollution Control (MPCB)"
+    ],
+    "workflow_pipeline": [
+      {
+        "step": 1,
+        "dept": "Vahan 4.0",
+        "action": "EV Chassis Number & Homologation Certificate Fetch",
+        "status": "VERIFIED_AUTOMATICALLY",
+        "time_taken": "0.9s"
+      },
+      {
+        "step": 2,
+        "dept": "MPCB",
+        "action": "Zero-Emission Compliance Green Clearance",
+        "status": "APPROVED",
+        "time_taken": "1.0 Days"
+      },
+      {
+        "step": 3,
+        "dept": "Transport RTO",
+        "action": "Contract Carriage All-Maharashtra Permit Issue",
+        "status": "APPROVED",
+        "time_taken": "1.2 Days"
+      }
+    ],
+    "documents_saved_count": 5,
+    "sla_days_actual": 2.2,
+    "sla_days_statutory": 21,
+    "status": "UNIFIED_WORKFLOW_APPROVED"
+  }
+]

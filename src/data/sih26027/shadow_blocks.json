@@ -1,0 +1,50 @@
+[
+  {
+    "shadow_id": "SHADOW-NCR-2026-081",
+    "corridor_id": "CORR-HDN1-GZB-CNB",
+    "corridor_name": "Ghaziabad \u2013 Kanpur Central (HDN-1)",
+    "scheduled_window": "02:00 AM \u2013 04:30 AM (Night Lean Window)",
+    "duration_hours": 2.5,
+    "departments_combined": [
+      "P-Way (TMS)",
+      "Traction (TRD/OHE)",
+      "Signaling (S&T)"
+    ],
+    "machines_deployed": [
+      "09-3X Tamping Unit #104",
+      "OHE Tower Wagon #8812",
+      "S&T EI Test Rig"
+    ],
+    "section": "Aligarh \u2013 Hathras (Km 922 to 934 Down Line)",
+    "detention_saving_minutes": 140,
+    "passenger_punctuality_impact": "ZERO_DETENTION (Routed via Middle Third Loop)",
+    "freight_trains_diverted": 2,
+    "power_isolation_cleared": true,
+    "ai_harmonization_score": 96.8,
+    "controller_approval_token": "AUTH-NCR-COIS-2026-08194"
+  },
+  {
+    "shadow_id": "SHADOW-ECR-2026-042",
+    "corridor_id": "CORR-HDN2-DDU-GAYA",
+    "corridor_name": "DDU \u2013 Gaya Grand Chord",
+    "scheduled_window": "01:30 AM \u2013 04:15 AM",
+    "duration_hours": 2.75,
+    "departments_combined": [
+      "P-Way Heavy Screening",
+      "OHE Catenary Wire",
+      "Axle Counters"
+    ],
+    "machines_deployed": [
+      "BCM #301",
+      "RGM #40",
+      "OHE Ladder Unit"
+    ],
+    "section": "Sasaram \u2013 Dehri-on-Sone (Up Line)",
+    "detention_saving_minutes": 180,
+    "passenger_punctuality_impact": "+21% Sectional Speed Retention",
+    "freight_trains_diverted": 4,
+    "power_isolation_cleared": true,
+    "ai_harmonization_score": 98.2,
+    "controller_approval_token": "AUTH-ECR-COIS-2026-04218"
+  }
+]

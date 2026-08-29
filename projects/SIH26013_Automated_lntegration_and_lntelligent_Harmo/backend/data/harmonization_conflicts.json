@@ -1,0 +1,29 @@
+[
+  {
+    "conflict_id": "CONF-081",
+    "parcel_ulpin": "27-584-0129-4819",
+    "type": "BOUNDARY_DISCREPANCY",
+    "discrepancy_meters": 0.42,
+    "cause": "Legacy paper map distortion vs Drone ORI ground truth",
+    "ai_resolution": "Snap boundary to drone edge with 99.2% confidence",
+    "status": "AUTO_RESOLVED"
+  },
+  {
+    "conflict_id": "CONF-082",
+    "parcel_ulpin": "27-584-0129-4820",
+    "type": "ENCROACHMENT_OVERLAP",
+    "discrepancy_meters": 1.15,
+    "cause": "Building balcony overhang extending into municipal road ROW",
+    "ai_resolution": "Flagged for municipal notice generation",
+    "status": "NOTICE_DISPATCHED"
+  },
+  {
+    "conflict_id": "CONF-083",
+    "parcel_ulpin": "07-110-8402-9912",
+    "type": "MISMATCHED_OWNERSHIP_NAME",
+    "discrepancy_meters": 0.0,
+    "cause": "Spelling variance between RoR and Aadhaar-seeded deed",
+    "ai_resolution": "NLP Levenshtein Match (96% similarity approved)",
+    "status": "AUTO_RESOLVED"
+  }
+]

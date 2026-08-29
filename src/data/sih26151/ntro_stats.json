@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Darknet Threat Actors Unmasked",
+    "value": "38 Entities",
+    "trend": "+12 Past Quarter"
+  },
+  {
+    "metric": "Tor Onion Nodes Fingerprinted",
+    "value": "1,420 Services",
+    "trend": "99.8% Clearnet IP Accuracy"
+  },
+  {
+    "metric": "National Defense Interceptions",
+    "value": "14 Critical Ops",
+    "trend": "Zero Data Breaches Active"
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "task_id": "AGENT-TASK-2026-001",
+    "portal_name": "ISRO Space Research Grant Submission & MFA Portal",
+    "portal_name_hi": "\u0907\u0938\u0930\u094b \u0905\u0902\u0924\u0930\u093f\u0915\u094d\u0937 \u0905\u0928\u0941\u0938\u0902\u0927\u093e\u0928 \u0905\u0928\u0941\u0926\u093e\u0928 \u092a\u094b\u0930\u094d\u091f\u0932",
+    "user_intent": "Authenticate, verify identity, and click submit application button.",
+    "raw_screen_pii_elements": [
+      "Aadhaar Number: 4589-1290-8841 (Masked)",
+      "MFA OTP Password Input: \u2022\u2022\u2022\u2022\u2022\u2022 (Blacked out)",
+      "Applicant Biometric Face Photo (Gaussian Blurred)"
+    ],
+    "client_webgpu_latency_ms": 16.4,
+    "pii_redaction_count": 3,
+    "transmitted_to_server": "ANONYMIZED_DOM_TREE_AND_SEMANTIC_TOKENS_ONLY",
+    "raw_pixel_leakage_bytes": 0,
+    "server_vlm_action": "click(selector='#btn-submit-grant-auth')",
+    "execution_status": "TASK_SUCCESSFULLY_AUTOMATED"
+  },
+  {
+    "task_id": "AGENT-TASK-2026-018",
+    "portal_name": "Commercial Satellite Telemetry & Billing Gateway",
+    "portal_name_hi": "\u0935\u093e\u0923\u093f\u091c\u094d\u092f\u093f\u0915 \u0909\u092a\u0917\u094d\u0930\u0939 \u091f\u0947\u0932\u0940\u092e\u0947\u091f\u094d\u0930\u0940 \u0914\u0930 \u092c\u093f\u0932\u093f\u0902\u0917 \u092a\u094b\u0930\u094d\u091f\u0932",
+    "user_intent": "Download monthly orbital bandwidth invoice and process payment.",
+    "raw_screen_pii_elements": [
+      "Corporate Credit Card: 4129-\u2022\u2022\u2022\u2022-\u2022\u2022\u2022\u2022-8812 (Redacted)",
+      "CVV Code Field (Blacked out)",
+      "Billing Address / GSTIN (Tokenized)"
+    ],
+    "client_webgpu_latency_ms": 14.8,
+    "pii_redaction_count": 3,
+    "transmitted_to_server": "ANONYMIZED_DOM_TREE_AND_SEMANTIC_TOKENS_ONLY",
+    "raw_pixel_leakage_bytes": 0,
+    "server_vlm_action": "click(selector='#btn-download-invoice-pdf')",
+    "execution_status": "TASK_SUCCESSFULLY_AUTOMATED"
+  }
+]

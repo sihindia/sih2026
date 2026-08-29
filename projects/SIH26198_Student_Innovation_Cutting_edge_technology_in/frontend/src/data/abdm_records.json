@@ -1,0 +1,18 @@
+[
+  {
+    "record_id": "FHIR-REC-2026-081",
+    "abha_id": "91-8291-4019-2026",
+    "patient_name": "Rajesh Verma",
+    "diagnosis": "Severe Community-Acquired Pneumonia with Septic Shock",
+    "allergies": [
+      "Penicillin (Severe Anaphylaxis)"
+    ],
+    "current_medications": [
+      "IV Meropenem 1g TDS",
+      "Norepinephrine Infusion",
+      "Paracetamol 1g IV"
+    ],
+    "consent_status": "CONSENT_GRANTED_ABDM",
+    "last_sync_timestamp": "2026-08-29 11:45 UTC"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "request_id": "REQ-TMS-TRACK-401",
+    "source_system": "Track Management System (TMS - Engineering)",
+    "corridor_id": "CORR-NCR-GRAND-CHORD",
+    "section": "Kanpur Central - Panki (UP Main Line Km 1018/4 - 1022/8)",
+    "activity": "09-3X Dynamic Track Tamping & Ballast Regulating",
+    "urgency_score": 9.2,
+    "requested_duration_mins": 120,
+    "impact_severity": "Speed Restriction 30 km/h if deferred",
+    "status": "AI_INTEGRATED_SHADOW_BLOCK"
+  },
+  {
+    "request_id": "REQ-TDMS-OHE-212",
+    "source_system": "Traction Distribution (TDMS - Electrical)",
+    "corridor_id": "CORR-NCR-GRAND-CHORD",
+    "section": "Kanpur Central - Panki (OHE Mast 1019/12 - 1021/04)",
+    "activity": "25kV Contact Wire Wear Profilometry & Isolator Overhaul",
+    "urgency_score": 8.8,
+    "requested_duration_mins": 90,
+    "impact_severity": "Sparking Risk at Neutral Section",
+    "status": "AI_INTEGRATED_SHADOW_BLOCK"
+  },
+  {
+    "request_id": "REQ-SMMS-SIGNAL-108",
+    "source_system": "Signalling Management (SMMS - S&T)",
+    "corridor_id": "CORR-NCR-GRAND-CHORD",
+    "section": "Panki Interlocking Yard (Point Machine 142A/B)",
+    "activity": "Electronic Interlocking (EI) Dual Axle Counter Overhaul",
+    "urgency_score": 8.5,
+    "requested_duration_mins": 75,
+    "impact_severity": "Signal Failure Cascading Delay",
+    "status": "AI_INTEGRATED_SHADOW_BLOCK"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "session_id": "MAIL-PCAP-2026-091",
+    "mail_server_host": "mail.state-grid.gov.in (Port 25 SMTP)",
+    "mail_server_host_hi": "\u0930\u093e\u091c\u094d\u092f \u0917\u094d\u0930\u093f\u0921 \u092e\u0947\u0932 \u0938\u0930\u094d\u0935\u0930 (\u092a\u094b\u0930\u094d\u091f 25 \u090f\u0938\u090f\u092e\u091f\u0940\u092a\u0940)",
+    "protocol": "SMTP with Opportunistic STARTTLS",
+    "source_ip": "10.100.4.18",
+    "destination_ip": "103.145.72.10",
+    "negotiated_tls_version": "TLSv1.0 (Deprecated / Insecure)",
+    "negotiated_cipher_suite": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "forward_secrecy_enabled": false,
+    "key_exchange_group": "RSA-Static (No Diffie-Hellman / Vulnerable to Interception)",
+    "x509_cert_status": "EXPIRED_INTERMEDIATE_CA_CHAIN",
+    "crypto_posture_score": 42.0,
+    "threat_severity": "HIGH_CRYPTOGRAPHIC_RISK",
+    "vulnerabilities_detected": [
+      "Obsolete TLS 1.0 protocol vulnerable to POODLE downgrade attacks",
+      "Legacy 3DES cipher suite vulnerable to Sweet32 collision attack (CVE-2016-2183)",
+      "Absence of Perfect Forward Secrecy (PFS) allows retroactive passive decryption",
+      "Intermediate Certificate Authority expired 45 days ago"
+    ],
+    "status": "REMEDIATION_DIRECTIVE_ISSUED"
+  },
+  {
+    "session_id": "MAIL-PCAP-2026-442",
+    "mail_server_host": "secure-relay.mea.gov.in (Port 587 Submission)",
+    "mail_server_host_hi": "\u0938\u0941\u0930\u0915\u094d\u0937\u093f\u0924 \u0935\u093f\u0926\u0947\u0936 \u092e\u0902\u0924\u094d\u0930\u093e\u0932\u092f \u092e\u0947\u0932 \u0930\u093f\u0932\u0947 (\u092a\u094b\u0930\u094d\u091f 587)",
+    "protocol": "SMTP with Mandatory STARTTLS (MTA-STS & DANE Enforced)",
+    "source_ip": "172.16.88.2",
+    "destination_ip": "103.24.120.4",
+    "negotiated_tls_version": "TLSv1.3 (Modern Recommended)",
+    "negotiated_cipher_suite": "TLS_AES_256_GCM_SHA384",
+    "forward_secrecy_enabled": true,
+    "key_exchange_group": "ECDHE Curve X25519 (256-bit Post-Quantum Ready)",
+    "x509_cert_status": "VALID_TRUSTED_CHAIN (RSA 4096 / SHA-384)",
+    "crypto_posture_score": 98.0,
+    "threat_severity": "OPTIMAL_CRYPTOGRAPHIC_POSTURE",
+    "vulnerabilities_detected": [],
+    "status": "COMPLIANT_SECURE"
+  }
+]

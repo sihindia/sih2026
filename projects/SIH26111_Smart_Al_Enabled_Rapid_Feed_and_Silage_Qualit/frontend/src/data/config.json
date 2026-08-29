@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26111",
+  "title": "Smart Al-Enabled Rapid Feed and Silage Quality Testing System for Dairy Farmers",
+  "organization": "Ministry of Fisheries, Animal Husbandry & Dairying",
+  "theme": "Agriculture, FoodTech & Rural Development",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

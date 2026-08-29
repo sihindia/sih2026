@@ -1,0 +1,26 @@
+[
+  {
+    "violation_id": "VIOL-CMR-2026-08",
+    "mine_id": "MINE-BCCL-JHARIA",
+    "category": "Methane Gas Sensor Calibration (CMR 2017 Reg 154)",
+    "severity": "HIGH_CRITICAL",
+    "detected_at": "2026-08-27",
+    "deadline": "2026-08-31",
+    "corrective_action": "Recalibrate continuous multi-gas sensor tele-monitoring telemetry in District 3 return airway.",
+    "assigned_safety_officer": "Er. Alok Ranjan (Safety GM, BCCL)",
+    "blockchain_audit_hash": "0x948dfa00921ecba81920384716294021948bcdef0194820194820184abcdef94",
+    "status": "ESCALATION_LEVEL_2"
+  },
+  {
+    "violation_id": "VIOL-SPCB-2026-14",
+    "mine_id": "MINE-SECL-GEVRA",
+    "category": "Haul Road Mist Fogger Water Sprinkling (Environment Clearance)",
+    "severity": "MODERATE",
+    "detected_at": "2026-08-28",
+    "deadline": "2026-09-02",
+    "corrective_action": "Deploy 2 additional 70KL mobile water mist tankers along Korba West dispatch corridor.",
+    "assigned_safety_officer": "Er. S. K. Nayak (Environmental Officer)",
+    "blockchain_audit_hash": "0x3344fa00921ecba81920384716294021948bcdef0194820194820184abcdef33",
+    "status": "ACTION_TAKEN_VERIFICATION_PENDING"
+  }
+]

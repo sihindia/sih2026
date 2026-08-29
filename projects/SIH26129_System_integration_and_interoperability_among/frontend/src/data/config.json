@@ -1,0 +1,14 @@
+{
+  "ps_id": "SIH26129",
+  "title": "System integration and interoperability among government digital platforms,resulting in fragmented service delivery",
+  "organization": "Government Of Maharashtra",
+  "theme": "Miscellaneous",
+  "category": "Software",
+  "cloud_tier": "100% Free (Vercel + Render + Supabase)",
+  "api_endpoints": {
+    "health": "/api/v1/health",
+    "records": "/api/v1/records",
+    "analyze": "/api/v1/analyze",
+    "audit": "/api/v1/audit"
+  }
+}

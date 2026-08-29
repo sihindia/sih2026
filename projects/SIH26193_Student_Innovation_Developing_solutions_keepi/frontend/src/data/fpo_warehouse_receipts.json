@@ -1,0 +1,13 @@
+[
+  {
+    "receipt_id": "eNWR-WDRA-2026-9812",
+    "fpo_name": "Sahyadri Farmers Producer Company",
+    "farmer_name": "Dnyaneshwar Patil",
+    "commodity": "Soybean (Grade A, Moisture 9.5%)",
+    "stored_quantity_mt": 45.0,
+    "pledged_valuation_inr": 2025000.0,
+    "sanctioned_loan_inr": 1500000.0,
+    "interest_rate_pct": 7.5,
+    "status": "DISBURSED_DISTRESS_SALE_AVOIDED"
+  }
+]

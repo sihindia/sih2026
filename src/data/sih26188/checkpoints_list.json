@@ -1,0 +1,18 @@
+[
+  {
+    "code": "ICP-RAXAUL",
+    "name": "Raxaul Integrated Check Post",
+    "border": "India-Nepal",
+    "daily_passengers": 8400,
+    "forged_detected_month": 42,
+    "status": "HIGH_ALERT"
+  },
+  {
+    "code": "ICP-SONAULI",
+    "name": "Sonauli Integrated Check Post",
+    "border": "India-Nepal",
+    "daily_passengers": 6200,
+    "forged_detected_month": 18,
+    "status": "OPERATIONAL"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "scenario_id": "FSOC-PAT-2026-001",
+    "link_name": "LEO Satellite-to-Ground Optical Link (ISRO OGS Mt. Abu)",
+    "link_name_hi": "\u0932\u093f\u092f\u094b \u0909\u092a\u0917\u094d\u0930\u0939-\u0938\u0947-\u0917\u094d\u0930\u093e\u0909\u0902\u0921 \u0911\u092a\u094d\u091f\u093f\u0915\u0932 \u0932\u093f\u0902\u0915 (\u092e\u093e\u0909\u0902\u091f \u0906\u092c\u0942)",
+    "link_topology": "LEO_SATELLITE_TO_GROUND_STATION",
+    "optical_wavelength_nm": 1550,
+    "link_distance_km": 650.0,
+    "target_angular_velocity_deg_s": 1.85,
+    "atmospheric_turbulence_cn2": "2.4e-14 m^(-2/3) (Moderate Rytov)",
+    "acquisition_time_ms": 84.0,
+    "mean_tracking_error_deg": 0.082,
+    "lock_retention_rate_pct": 99.6,
+    "status": "COARSE_PAT_LOCK_MAINTAINED"
+  },
+  {
+    "scenario_id": "FSOC-PAT-2026-042",
+    "link_name": "High-Altitude Tactical UAV-to-Ground Mobile Terminal",
+    "link_name_hi": "\u0909\u091a\u094d\u091a-\u090a\u0902\u091a\u093e\u0908 \u092f\u0942\u090f\u0935\u0940-\u0938\u0947-\u0917\u094d\u0930\u093e\u0909\u0902\u0921 \u092e\u094b\u092c\u093e\u0907\u0932 \u091f\u0930\u094d\u092e\u093f\u0928\u0932",
+    "link_topology": "AIRBORNE_UAV_TO_TACTICAL_VEHICLE",
+    "optical_wavelength_nm": 850,
+    "link_distance_km": 42.0,
+    "target_angular_velocity_deg_s": 3.4,
+    "atmospheric_turbulence_cn2": "8.6e-13 m^(-2/3) (High Ground Boundary)",
+    "acquisition_time_ms": 112.0,
+    "mean_tracking_error_deg": 0.114,
+    "lock_retention_rate_pct": 98.9,
+    "status": "COARSE_PAT_LOCK_MAINTAINED"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "buyer_id": "BUY-BB-01",
+    "name": "BigBasket Fresh Sourcing",
+    "type": "Organized Retail",
+    "rating": "4.9/5",
+    "credit_score": "AAA",
+    "procurement_volume_month_mt": 2500
+  },
+  {
+    "buyer_id": "BUY-AW-08",
+    "name": "Adani Wilmar Agri Extraction",
+    "type": "Agro-Processor",
+    "rating": "4.8/5",
+    "credit_score": "AAA",
+    "procurement_volume_month_mt": 8000
+  }
+]

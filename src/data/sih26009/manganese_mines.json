@@ -1,0 +1,62 @@
+[
+  {
+    "mine_id": "MOIL-BLG-01",
+    "mine_name": "Balaghat Mine (Deep Underground)",
+    "state": "Madhya Pradesh",
+    "district": "Balaghat",
+    "ore_type": "High Grade Pyrolusite & Braunite",
+    "mn_grade_pct": 48.5,
+    "proven_reserves_million_tonnes": 14.8,
+    "monthly_target_mt": 35000,
+    "current_production_mt": 33200,
+    "satellite_swir_anomaly_score": 0.88,
+    "pit_water_level_m": 1.2,
+    "hemm_availability_pct": 92.0,
+    "status": "OPTIMAL_EXTRACTION"
+  },
+  {
+    "mine_id": "MOIL-DGB-02",
+    "mine_name": "Dongri Buzurg Mine (Open Cast)",
+    "state": "Maharashtra",
+    "district": "Bhandara",
+    "ore_type": "Dioxide Ore (Battery / Chemical Grade)",
+    "mn_grade_pct": 52.0,
+    "proven_reserves_million_tonnes": 8.4,
+    "monthly_target_mt": 28000,
+    "current_production_mt": 21500,
+    "satellite_swir_anomaly_score": 0.94,
+    "pit_water_level_m": 4.8,
+    "hemm_availability_pct": 68.5,
+    "status": "SHORTFALL_ELEVATED_WATCH"
+  },
+  {
+    "mine_id": "MOIL-MNS-03",
+    "mine_name": "Mansar Mine (Surface & Underground)",
+    "state": "Maharashtra",
+    "district": "Nagpur",
+    "ore_type": "Medium Grade Siliceous Ore",
+    "mn_grade_pct": 42.0,
+    "proven_reserves_million_tonnes": 6.2,
+    "monthly_target_mt": 18000,
+    "current_production_mt": 17800,
+    "satellite_swir_anomaly_score": 0.76,
+    "pit_water_level_m": 0.8,
+    "hemm_availability_pct": 89.0,
+    "status": "OPTIMAL_EXTRACTION"
+  },
+  {
+    "mine_id": "MOIL-CHK-04",
+    "mine_name": "Chikla Mine (Underground)",
+    "state": "Maharashtra",
+    "district": "Bhandara",
+    "ore_type": "Ferro-Manganese Grade",
+    "mn_grade_pct": 45.0,
+    "proven_reserves_million_tonnes": 5.1,
+    "monthly_target_mt": 15000,
+    "current_production_mt": 14200,
+    "satellite_swir_anomaly_score": 0.82,
+    "pit_water_level_m": 1.0,
+    "hemm_availability_pct": 84.0,
+    "status": "OPTIMAL_EXTRACTION"
+  }
+]

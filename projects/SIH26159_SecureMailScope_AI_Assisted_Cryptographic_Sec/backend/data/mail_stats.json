@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Mail Servers Inspected",
+    "value": "1,420 Hosts",
+    "trend": "Across Government & Critical Sectors"
+  },
+  {
+    "metric": "Average Cryptographic Score",
+    "value": "84.6 / 100",
+    "trend": "+24.2% Post-Hardening Directives"
+  },
+  {
+    "metric": "Weak Cipher Suites Eliminated",
+    "value": "420 Instances",
+    "trend": "Zero Sweet32/3DES Exposed"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "exp_id": "EXP-CS-BST-01",
+    "title": "AVL Tree Self-Righting Rotation Lab",
+    "concept": "Left-Right (LR) and Right-Left (RL) Double Rotations to restore balance factor [-1, 0, 1].",
+    "interactive_params": [
+      "Tree Node Insertions: [45, 20, 65, 12, 30, 90]",
+      "Balance Factor Threshold: |h_L - h_R| <= 1"
+    ],
+    "code_snippet": "def right_rotate(y):\n    x = y.left\n    T2 = x.right\n    x.right = y\n    y.left = T2\n    return x",
+    "status": "SIMULATOR_READY"
+  },
+  {
+    "exp_id": "EXP-MATH-FOURIER-02",
+    "title": "Square Wave Fourier Harmonic Synthesizer",
+    "concept": "Summing odd sinusoidal harmonics to approximate a discontinuous square wave.",
+    "interactive_params": [
+      "Harmonic Count N: 1 to 25 Odd Sine Terms",
+      "Gibbs Phenomenon Overshoot: 8.95%"
+    ],
+    "code_snippet": "f(t) = (4/pi) * sum((1/(2k-1)) * sin((2k-1)*w*t) for k in 1..N)",
+    "status": "SIMULATOR_READY"
+  }
+]

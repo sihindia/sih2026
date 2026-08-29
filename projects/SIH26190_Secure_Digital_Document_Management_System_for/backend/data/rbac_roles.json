@@ -1,0 +1,31 @@
+[
+  {
+    "role_name": "Investigating Officer (IO)",
+    "permissions": [
+      "Upload Evidence",
+      "Request CFSL Audit",
+      "View Assigned Cases",
+      "Generate Section 65B Certificate"
+    ],
+    "watermark_text": "CONFIDENTIAL - INVESTIGATION COPY - FOR OFFICIAL USE ONLY"
+  },
+  {
+    "role_name": "Judicial Magistrate / Sessions Judge",
+    "permissions": [
+      "Full Unredacted Judicial Access",
+      "Issue Court Summons",
+      "Admit Evidence on Record",
+      "Seal Case Files"
+    ],
+    "watermark_text": "COURT RECORD - HIGH COURT / DISTRICT JUDICIARY"
+  },
+  {
+    "role_name": "Public Prosecutor (PP)",
+    "permissions": [
+      "View Charge-Sheets",
+      "Prepare Arguments",
+      "Inspect Forensic Exhibits"
+    ],
+    "watermark_text": "PROSECUTION DRAFT - NOT FOR PUBLIC DISSEMINATION"
+  }
+]

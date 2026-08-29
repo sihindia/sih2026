@@ -1,0 +1,49 @@
+[
+  {
+    "query_id": "QUERY-RS-2026-001",
+    "user_query": "Use the optical Cartosat-2S and RISAT-1A SAR images together to identify flooded agricultural land beneath cloud cover in the Kaziranga Brahmaputra basin.",
+    "user_query_hi": "\u0915\u093e\u0930\u094d\u091f\u094b\u0938\u0948\u091f-2\u090f\u0938 \u0914\u0930 \u0930\u0940\u0938\u0948\u091f-1\u090f \u0930\u0921\u093e\u0930 \u091b\u0935\u093f\u092f\u094b\u0902 \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u0930\u0915\u0947 \u0915\u093e\u091c\u0940\u0930\u0902\u0917\u093e \u092e\u0947\u0902 \u092c\u093e\u0922\u093c\u0917\u094d\u0930\u0938\u094d\u0924 \u0915\u0943\u0937\u093f \u092d\u0942\u092e\u093f \u0915\u0940 \u092a\u0939\u091a\u093e\u0928 \u0915\u0930\u0947\u0902\u0964",
+    "task_type": "CROSS_MODAL_OPTICAL_SAR_FUSION",
+    "input_modalities": [
+      "Cartosat-2S (0.65m Optical)",
+      "RISAT-1A (C-Band SAR Dual-Pol)"
+    ],
+    "orchestrated_specialist_tools": [
+      "OptSAR-Fusion-Net",
+      "RS-Grounding-SAM",
+      "Hydro-VQA-Agent"
+    ],
+    "grounded_response": "Cross-modal analysis reveals 1,420 hectares of inundated cropland. While 45% of optical imagery was obscured by monsoon cumulus clouds, C-band SAR backscatter (-18.4 dB) successfully penetrated cloud cover to delineate waterlogged perimeters with 96.8% confidence.",
+    "spatial_bounding_box": [
+      26.58,
+      93.17,
+      26.65,
+      93.28
+    ],
+    "ai_confidence_pct": 96.8,
+    "status": "EVIDENCE_GROUNDED_ANSWER_READY"
+  },
+  {
+    "query_id": "QUERY-RS-2026-084",
+    "user_query": "What changed in built-up infrastructure around Bengaluru Peripheral Ring Road between March 2023 and January 2026?",
+    "user_query_hi": "\u092e\u093e\u0930\u094d\u091a 2023 \u0914\u0930 \u091c\u0928\u0935\u0930\u0940 2026 \u0915\u0947 \u092c\u0940\u091a \u092c\u0947\u0902\u0917\u0932\u0941\u0930\u0941 \u092a\u0947\u0930\u093f\u092b\u0947\u0930\u0932 \u0930\u093f\u0902\u0917 \u0930\u094b\u0921 \u0915\u0947 \u092c\u0941\u0928\u093f\u092f\u093e\u0926\u0940 \u0922\u093e\u0902\u091a\u0947 \u092e\u0947\u0902 \u0915\u094d\u092f\u093e \u092c\u0926\u0932\u093e\u0935 \u0906\u092f\u093e?",
+    "task_type": "BI_TEMPORAL_CHANGE_VQA",
+    "input_modalities": [
+      "Cartosat-3 (2023-03)",
+      "Cartosat-3 (2026-01)"
+    ],
+    "orchestrated_specialist_tools": [
+      "BiTemporal-CDVQA-Transformer",
+      "Urban-Growth-Quantifier"
+    ],
+    "grounded_response": "Built-up area expanded by +28.4% (+340 hectares). Commercial logistics hubs and highway overpass construction converted previous barren/scrubland plots. Vegetation cover decreased by -14.2%.",
+    "spatial_bounding_box": [
+      12.98,
+      77.58,
+      13.08,
+      77.72
+    ],
+    "ai_confidence_pct": 94.5,
+    "status": "EVIDENCE_GROUNDED_ANSWER_READY"
+  }
+]

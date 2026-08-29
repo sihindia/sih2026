@@ -1,0 +1,20 @@
+[
+  {
+    "disease_id": "DIAG-TOM-01",
+    "crop": "Tomato",
+    "disease_name": "Early Blight (Alternaria solani)",
+    "symptoms": "Concentric dark brown rings on lower foliage with yellow halo.",
+    "npk_deficiency": "Potassium (K) Deficit, Soil pH 5.8 (Acidic)",
+    "organic_bio_remedy": "Neem Seed Kernel Extract (5%) + Trichoderma viride bio-fungicide.",
+    "recommended_npk_dose": "N:100, P:60, K:80 kg/ha"
+  },
+  {
+    "disease_id": "DIAG-COT-02",
+    "crop": "Cotton",
+    "disease_name": "Pink Bollworm Infestation",
+    "symptoms": "Rosetted flowers, punctured bolls with internal fiber staining.",
+    "npk_deficiency": "Optimal soil nutrients, pest invasion",
+    "organic_bio_remedy": "Pheromone traps (5/acre) + Beauveria bassiana bio-pesticide spray.",
+    "recommended_npk_dose": "N:120, P:60, K:60 kg/ha"
+  }
+]

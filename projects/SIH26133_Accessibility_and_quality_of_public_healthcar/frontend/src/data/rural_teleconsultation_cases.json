@@ -1,0 +1,43 @@
+[
+  {
+    "case_id": "AROGYA-MH-2026-001",
+    "patient_name": "Sunita Ramesh Korku",
+    "age_gender": "22 Yrs / Female (Tribal)",
+    "village": "Harisal Tribal Hamlet, Melghat",
+    "district": "Amravati, Maharashtra",
+    "asha_worker": "Mangala Tai Bhilawekar",
+    "clinical_condition": "High-Risk Pregnancy (Severe Anemia & Pre-Eclampsia)",
+    "clinical_condition_mr": "\u0905\u0924\u093f\u0927\u094b\u0915\u094d\u092f\u093e\u091a\u0940 \u0917\u0930\u094d\u092d\u0927\u093e\u0930\u0923\u093e (\u0924\u0940\u0935\u094d\u0930 \u0930\u0915\u094d\u0924\u0915\u094d\u0937\u092f \u0935 \u0909\u091a\u094d\u091a \u0930\u0915\u094d\u0924\u0926\u093e\u092c)",
+    "vitals": {
+      "bp": "155/95 mmHg",
+      "hb_g_dl": 7.2,
+      "spo2_pct": 98,
+      "fetal_heart_bpm": 142
+    },
+    "specialist_consultant": "Dr. Vaishali Patil (MD Obs/Gyn, Amravati Civil Hospital)",
+    "prescription": "Immediate Inj. Iron Sucrose 100mg in 100ml NS + Tab. Labetalol 100mg BD",
+    "referral_route": "Harisal Sub-Centre \u2794 Dharni PHC \u2794 Achalpur Sub-District Hospital",
+    "ambulance_108_status": "DISPATCHED_ETA_22_MIN",
+    "status": "EMERGENCY_SPECIALIST_REFERRAL_ACTIVE"
+  },
+  {
+    "case_id": "AROGYA-MH-2026-014",
+    "patient_name": "Devidas Tukaram Madavi",
+    "age_gender": "58 Yrs / Male",
+    "village": "Bhamragad Forest Cluster",
+    "district": "Gadchiroli, Maharashtra",
+    "asha_worker": "Sunanda Tai Atram",
+    "clinical_condition": "Uncontrolled Diabetes Mellitus & Grade II Foot Ulcer",
+    "clinical_condition_mr": "\u0905\u0928\u093f\u092f\u0902\u0924\u094d\u0930\u093f\u0924 \u092e\u0927\u0941\u092e\u0947\u0939 \u0906\u0923\u093f \u092a\u093e\u092f\u093e\u091a\u0940 \u0917\u0902\u092d\u0940\u0930 \u091c\u0916\u092e",
+    "vitals": {
+      "bp": "138/86 mmHg",
+      "random_blood_sugar_mg_dl": 310,
+      "spo2_pct": 97
+    },
+    "specialist_consultant": "Dr. Nilesh Gaikwad (MD Internal Medicine, Gadchiroli DH)",
+    "prescription": "Inj. Regular Insulin sliding scale + Povidone Iodine Dressing + Tab Metformin 500mg",
+    "referral_route": "Bhamragad Sub-Centre \u2794 Aheri SDH",
+    "ambulance_108_status": "SCHEDULED_ROUTINE",
+    "status": "TELEMED_CONSULTATION_COMPLETED"
+  }
+]

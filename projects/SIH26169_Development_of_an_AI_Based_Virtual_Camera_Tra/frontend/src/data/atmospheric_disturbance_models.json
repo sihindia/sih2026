@@ -1,0 +1,17 @@
+[
+  {
+    "model_name": "Rytov Atmospheric Scintillation (Cn\u00b2)",
+    "impact": "Simulates rapid intensity fluctuations and laser beam wander",
+    "severity": "Configurable (10^-15 to 10^-12)"
+  },
+  {
+    "model_name": "Platform Structural Jitter (50Hz)",
+    "impact": "Simulates UAV rotor harmonics and gimbal mechanical vibrations",
+    "severity": "Harmonic Gaussian Noise"
+  },
+  {
+    "model_name": "Dynamic Cloud Attenuation",
+    "impact": "Simulates optical path obscuration and beacon fade events",
+    "severity": "0 to 25 dB Extinction"
+  }
+]

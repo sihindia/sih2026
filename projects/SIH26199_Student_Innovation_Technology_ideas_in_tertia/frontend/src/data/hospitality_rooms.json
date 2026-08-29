@@ -1,0 +1,28 @@
+[
+  {
+    "room_id": "ROOM-JPR-PALACE-01",
+    "hotel_name": "Heritage Haveli Suites & Resorts",
+    "location": "Jaipur, Rajasthan",
+    "room_type": "Royal Deluxe Haveli Suite",
+    "base_tariff_inr": 4500.0,
+    "current_ai_dynamic_tariff_inr": 6800.0,
+    "surge_multiplier": 1.51,
+    "demand_driver": "Jaipur Literature Festival & High Weekend Flight Arrivals",
+    "occupancy_rate_pct": 94.0,
+    "keyless_token": "BLE-SMARTKEY-JPR-9812",
+    "status": "OCCUPIED_HIGH_YIELD"
+  },
+  {
+    "room_id": "ROOM-GOA-BEACH-02",
+    "hotel_name": "Sunset Bay Coastal Retreat",
+    "location": "Calangute, North Goa",
+    "room_type": "Oceanfront Premium Chalet",
+    "base_tariff_inr": 5500.0,
+    "current_ai_dynamic_tariff_inr": 7900.0,
+    "surge_multiplier": 1.44,
+    "demand_driver": "Monsoon Music Gala & 98% Tourist Inflow",
+    "occupancy_rate_pct": 91.5,
+    "keyless_token": "BLE-SMARTKEY-GOA-4019",
+    "status": "BOOKED_CONFIRMED"
+  }
+]

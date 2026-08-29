@@ -1,0 +1,20 @@
+[
+  {
+    "trap_id": "IOT-TRAP-YAV-42",
+    "crop": "Cotton",
+    "moths_caught": 18,
+    "humidity_pct": 86.4,
+    "temp_c": 28.5,
+    "leaf_wetness_hrs": 6.5,
+    "status": "ETL_EXCEEDED"
+  },
+  {
+    "trap_id": "IOT-TRAP-NSK-12",
+    "crop": "Grapes",
+    "moths_caught": 2,
+    "humidity_pct": 94.2,
+    "temp_c": 22.0,
+    "leaf_wetness_hrs": 9.2,
+    "status": "HIGH_FUNGAL_RISK"
+  }
+]

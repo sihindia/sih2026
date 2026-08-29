@@ -1,0 +1,24 @@
+[
+  {
+    "question": "Which ancient Indian mathematical text first formulated the rules for calculating with Zero and negative numbers?",
+    "options": [
+      "Brahmasphutasiddhanta by Brahmagupta",
+      "Sulba Sutras",
+      "Lilavati by Bhaskara II",
+      "Aryabhatiya"
+    ],
+    "correct": 0,
+    "explanation": "Brahmagupta in 628 CE defined operations with zero in Brahmasphutasiddhanta."
+  },
+  {
+    "question": "What is the unique physics property that prevents the Thanjavur Doll from ever toppling over?",
+    "options": [
+      "Ultralight head with heavy spherical clay base lowering center of mass",
+      "Magnetic levitation inside base",
+      "Gyroscopic flywheel",
+      "Air suction cup"
+    ],
+    "correct": 0,
+    "explanation": "The heavy hemispherical clay base ensures the center of gravity stays below the pivot point, causing self-righting oscillation."
+  }
+]

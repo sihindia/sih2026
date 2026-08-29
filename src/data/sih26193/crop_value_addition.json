@@ -1,0 +1,41 @@
+[
+  {
+    "crop_id": "CROP-TOMATO-01",
+    "crop_name": "Fresh Hybrid Tomatoes",
+    "crop_name_hi": "\u0924\u093e\u091c\u093e \u0938\u0902\u0915\u0930 \u091f\u092e\u093e\u091f\u0930",
+    "crop_name_mr": "\u091f\u094b\u092e\u0945\u091f\u094b",
+    "raw_farmgate_price_inr_kg": 12.0,
+    "processed_product": "Aseptic Tomato Paste & Sun-Dried Powder",
+    "processed_price_inr_kg": 95.0,
+    "value_addition_uplift_pct": 320.0,
+    "processing_tech": "Vacuum Evaporation & Solar Tunnel Dehydration",
+    "shelf_life_extension": "From 6 days to 18 months",
+    "mofpi_pmfme_subsidy": "Up to 35% capital subsidy (\u20b910 Lakhs max)"
+  },
+  {
+    "crop_id": "CROP-POTATO-02",
+    "crop_name": "Processing Grade Potatoes (Chipsona)",
+    "crop_name_hi": "\u091a\u093f\u092a\u094d\u0938\u094b\u0928\u093e \u0906\u0932\u0942",
+    "crop_name_mr": "\u092c\u091f\u093e\u091f\u093e",
+    "raw_farmgate_price_inr_kg": 14.0,
+    "processed_product": "Vacuum-Fried Chips & High-Purity Starch",
+    "processed_price_inr_kg": 88.0,
+    "value_addition_uplift_pct": 280.0,
+    "processing_tech": "Continuous Blanching & Vacuum Hydro-Frying",
+    "shelf_life_extension": "From 14 days to 9 months",
+    "mofpi_pmfme_subsidy": "35% PMFME Credit Linked Grant"
+  },
+  {
+    "crop_id": "CROP-TURMERIC-03",
+    "crop_name": "Lakadong Organic Turmeric",
+    "crop_name_hi": "\u0932\u0915\u093e\u0921\u094b\u0902\u0917 \u0939\u0932\u094d\u0926\u0940 (5.2% \u0915\u0930\u0915\u094d\u092f\u0942\u092e\u093f\u0928)",
+    "crop_name_mr": "\u0939\u0933\u0926",
+    "raw_farmgate_price_inr_kg": 65.0,
+    "processed_product": "High-Curcumin Nano Extract & Oleoresin",
+    "processed_price_inr_kg": 520.0,
+    "value_addition_uplift_pct": 650.0,
+    "processing_tech": "Supercritical CO2 Extraction",
+    "shelf_life_extension": "From 3 months to 24 months",
+    "mofpi_pmfme_subsidy": "50% Tribal Agri-Enterprise Grant"
+  }
+]

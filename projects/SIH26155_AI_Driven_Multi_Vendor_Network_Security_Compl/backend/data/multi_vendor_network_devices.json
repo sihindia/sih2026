@@ -1,0 +1,59 @@
+[
+  {
+    "device_id": "NET-CISCO-9500-01",
+    "hostname": "DEL-CORE-SW01.ntro.gov.in",
+    "vendor": "Cisco Systems",
+    "os_family": "Cisco IOS-XE (v17.9.4a)",
+    "device_role": "Core Backbone Distribution Switch",
+    "device_role_hi": "\u0915\u094b\u0930 \u092c\u0948\u0915\u092c\u094b\u0928 \u0921\u093f\u0938\u094d\u091f\u094d\u0930\u0940\u092c\u094d\u092f\u0942\u0936\u0928 \u0938\u094d\u0935\u093f\u091a",
+    "ip_address": "10.100.1.1",
+    "compliance_score_pct": 78.5,
+    "framework_evaluated": "CIS Cisco IOS Benchmark v4.0 (Level 1)",
+    "total_checks": 42,
+    "passed_checks": 33,
+    "failed_checks": 9,
+    "critical_violations": [
+      "Telnet management service enabled (Insecure plaintext protocol)",
+      "SSH Protocol v1 fallback enabled (Weak cryptographic cipher)",
+      "SNMP Community strings set to default 'public'"
+    ],
+    "status": "NON_COMPLIANT_REMEDIATION_REQUIRED"
+  },
+  {
+    "device_id": "NET-PALOALTO-5450",
+    "hostname": "FW-PERIMETER-01.ntro.gov.in",
+    "vendor": "Palo Alto Networks",
+    "os_family": "PAN-OS (v11.1.2)",
+    "device_role": "National Security Perimeter Next-Gen Firewall",
+    "device_role_hi": "\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u092a\u0930\u093f\u0927\u093f \u0928\u0947\u0915\u094d\u0938\u094d\u091f-\u091c\u0947\u0928 \u092b\u093c\u093e\u092f\u0930\u0935\u0949\u0932",
+    "ip_address": "10.100.0.1",
+    "compliance_score_pct": 95.2,
+    "framework_evaluated": "NIST SP 800-53 Rev 5 & DISA STIG",
+    "total_checks": 50,
+    "passed_checks": 48,
+    "failed_checks": 2,
+    "critical_violations": [
+      "Inbound TLS inspection decryption bypass rule for legacy partner VPN"
+    ],
+    "status": "COMPLIANT_WITH_EXCEPTIONS"
+  },
+  {
+    "device_id": "NET-SONIC-WHITEBOX",
+    "hostname": "AI-DATACENTER-TOR04.ntro.gov.in",
+    "vendor": "Edgecore / Disaggregated SONiC Linux",
+    "os_family": "SONiC NOS (202511-Enterprise)",
+    "device_role": "High-Performance GPU Cluster Spine Switch",
+    "device_role_hi": "\u0939\u093e\u0908-\u092a\u0930\u092b\u0949\u0930\u094d\u092e\u0947\u0902\u0938 \u091c\u0940\u092a\u0940\u092f\u0942 \u0915\u094d\u0932\u0938\u094d\u091f\u0930 \u0938\u094d\u092a\u093e\u0907\u0928 \u0938\u094d\u0935\u093f\u091a",
+    "ip_address": "10.240.8.1",
+    "compliance_score_pct": 72.0,
+    "framework_evaluated": "CIS Open Network Linux Benchmark",
+    "total_checks": 38,
+    "passed_checks": 27,
+    "failed_checks": 11,
+    "critical_violations": [
+      "Root password hash using weak SHA-256 instead of YESCRYPT",
+      "gNMI management telemetry exposed without mutual TLS certificate auth"
+    ],
+    "status": "AI_PARSER_TRAINING_APPLIED"
+  }
+]
