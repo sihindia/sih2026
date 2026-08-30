@@ -1,10 +1,11 @@
 # 🇮🇳 Smart India Hackathon (SIH) 2026: Comprehensive Problem Statements Explorer & Full-Stack Applications Suite
 
 [![SIH 2026 Live Portal](https://img.shields.io/badge/Live%20Portal-sih2026.flugelsoft.com-0B192C?style=for-the-badge&logo=google-chrome&logoColor=white)](https://sih2026.flugelsoft.com/)
+[![Author: Kalyanjit Hatibaruah](https://img.shields.io/badge/Author-Kalyanjit%20Hatibaruah-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/kalyanjit)
+[![Commercial Support](https://img.shields.io/badge/Commercial%20Support-sih2026%40flugelsoft.com-0B192C?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sih2026@flugelsoft.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 [![Vite 6](https://img.shields.io/badge/Frontend-React%2018%20%7C%20TypeScript%20%7C%20Vite%206-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://vitejs.dev/)
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI%20%7C%20Python%203.10+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![TailwindCSS](https://img.shields.io/badge/Styling-Tailwind%20CSS%20%7C%20Navy%20Theme-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 > **A national-scale open-source developer platform built by Flugelsoft Labs featuring interactive working applications, production-ready zero-cost ($0.00) cloud architectures, and starter codebases for all 175 Software Category Problem Statements in Smart India Hackathon (SIH) 2026.**
 
@@ -27,7 +28,8 @@
 8. [Repository Architecture & Directory Structure](#-repository-architecture--directory-structure)
 9. [Featured Government of India Live Applications](#-featured-government-of-india-live-applications)
 10. [Important Hackathon Dates & Official Links](#-important-hackathon-dates--official-links)
-11. [Disclaimer & Intellectual Property](#-disclaimer--intellectual-property)
+11. [Author & Commercial Support](#-author--commercial-support)
+12. [Disclaimer & Intellectual Property](#-disclaimer--intellectual-property)
 
 ---
 
@@ -358,6 +360,16 @@ sih2026/
 
 ---
 
+## 👨‍💻 Author & Commercial Support
+
+* **Author**: **Kalyanjit Hatibaruah**
+  * 🌐 LinkedIn: [https://linkedin.com/in/kalyanjit](https://linkedin.com/in/kalyanjit)
+* **Commercial & Institutional Support**:
+  * ✉️ Email: **[sih2026@flugelsoft.com](mailto:sih2026@flugelsoft.com)**
+  * For university faculty development programs, project mentorship, institutional licensing, corporate GovTech consulting, or custom full-stack software deployments, feel free to reach out.
+
+---
+
 ## ⚖️ Disclaimer & Intellectual Property
 
 This platform is an independent innovation accelerator and reference tool developed by **Flugelsoft Labs** to assist students, participants, and academic institutions in exploring problem statements and building production-grade solutions.
@@ -369,5 +381,5 @@ All official team registrations, college SPOC nominations, and formal idea submi
 ---
 
 <div align="center">
-  <sub>Designed &amp; Built with precision by <strong>Flugelsoft Labs</strong> • Empowering the Next Generation of Indian Technologists 🇮🇳</sub>
+  <sub>Authored by <strong>Kalyanjit Hatibaruah</strong> • Designed &amp; Built with precision by <strong>Flugelsoft Labs</strong> • Empowering the Next Generation of Indian Technologists 🇮🇳</sub>
 </div>
