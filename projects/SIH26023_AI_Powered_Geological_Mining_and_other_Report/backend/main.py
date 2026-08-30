@@ -1,7 +1,8 @@
 """
 SIH26023: AI-Powered Geological, Mining and Reporting Solution for CMPDI / CIL (CMPDI MineReport AI 360)
 Ministry of Coal - Coal India Limited / Central Mine Planning & Design Institute (CMPDI)
-FastAPI Production Microservice for Borehole Extraction, Production Tracking & Parliamentary Q&A RAG
+FastAPI Production Microservice for Borehole Extraction, Production Tracking,
+Parliamentary Q&A RAG, Topic Extraction & Mine Safety Audits
 """
 
 from fastapi import FastAPI, HTTPException, status
@@ -16,7 +17,7 @@ from datetime import datetime
 app = FastAPI(
     title="CMPDI MineReport AI 360 Hub (SIH26023) - Ministry of Coal / CIL",
     description="AI-Powered Geological, Mining and Other Reporting Solution for CMPDI/CIL subsidiaries",
-    version="3.0.0"
+    version="4.0.0"
 )
 
 app.add_middleware(
@@ -42,6 +43,10 @@ class GenerateReportRequest(BaseModel):
 
 class AskInquiryRequest(BaseModel):
     query: str = Field("What are the total proved reserves in Jharia coking coal block?", example="What are the total proved reserves in Jharia coking coal block?")
+
+class SlopeAuditRequest(BaseModel):
+    mine_code: str = Field("MINE-GEVRA-OCP", example="MINE-GEVRA-OCP")
+    radar_displacement_mm: float = Field(0.4, example=0.4)
 
 @app.get("/")
 def read_root():
@@ -69,9 +74,29 @@ def get_production():
 def get_inquiries():
     return load_json("parliamentary_inquiries_rag_qna.json")
 
+@app.get("/api/v1/topic-keywords")
+def get_topics():
+    return load_json("mining_topic_keywords_and_bottlenecks.json")
+
+@app.get("/api/v1/mine-safety")
+def get_safety():
+    return load_json("dgms_mine_safety_and_slope_stability.json")
+
 @app.get("/api/v1/stats")
 def get_stats():
     return load_json("cmpdi_minereport_stats.json")
+
+@app.post("/api/v1/audit-slope-stability")
+def audit_slope(req: SlopeAuditRequest):
+    is_safe = req.radar_displacement_mm < 1.0
+    return {
+        "mine_code": req.mine_code,
+        "radar_displacement_mm": req.radar_displacement_mm,
+        "factor_of_safety": 1.42 if is_safe else 1.15,
+        "status": "NORMAL_STABLE" if is_safe else "WARNING_BENCH_MOVEMENT_DETECTED",
+        "dgms_compliance": "SATISFACTORY" if is_safe else "IMMEDIATE_SLOPE_DRAINAGE_MANDATED",
+        "timestamp": datetime.utcnow().isoformat()
+    }
 
 @app.post("/api/v1/generate-geological-report")
 def generate_report(req: GenerateReportRequest):

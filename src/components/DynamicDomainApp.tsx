@@ -143,6 +143,11 @@ import sih26019Scenarios from '../data/sih26019/policy_reform_simulation_scenari
 import sih26019States from '../data/sih26019/state_land_governance_benchmark_index.json';
 import sih26019Bills from '../data/sih26019/legislative_draft_templates_and_cabinet_notes.json';
 import sih26019Grants from '../data/sih26019/academic_research_grants_and_sandboxes.json';
+import sih26023Subs from '../data/sih26023/subsidiaries_production_and_obr_matrix.json';
+import sih26023Boreholes from '../data/sih26023/geological_drilling_core_reports.json';
+import sih26023Rag from '../data/sih26023/parliamentary_inquiries_rag_qna.json';
+import sih26023Topics from '../data/sih26023/mining_topic_keywords_and_bottlenecks.json';
+import sih26023Safety from '../data/sih26023/dgms_mine_safety_and_slope_stability.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -19553,43 +19558,479 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
   /* =========================================================================
      COAL INDIA / SIH26023 AI GEOLOGICAL & MINING REPORTING
      ========================================================================= */
+  /* =========================================================================
+     COAL INDIA / CMPDI / SIH26023 KHANANAI 360
+     AI Geological, Mining & Parliamentary Reporting Solution for CIL Subsidiaries
+     ========================================================================= */
   if (psId === 'SIH26023') {
-    const subs = [
-      { id: "SECL-HQ", name: "South Eastern Coalfields (SECL)", prod: "187.0 MT", obr: "240.5 M.CuM", dispatch: "184.2 MT", state: "Chhattisgarh / MP" },
-      { id: "MCL-HQ", name: "Mahanadi Coalfields (MCL)", prod: "204.2 MT", obr: "215.0 M.CuM", dispatch: "201.8 MT", state: "Odisha" }
-    ];
-    const [selectedSub, setSelectedSub] = React.useState(subs[0]);
+    const subsidiaries = sih26023Subs;
+    const boreholes = sih26023Boreholes;
+    const parliamentaryQna = sih26023Rag;
+    const topicKeywords = sih26023Topics;
+    const mineSafety = sih26023Safety;
+
+    const [selectedSub, setSelectedSub] = React.useState(subsidiaries[0]);
+    const [selectedInquiry, setSelectedInquiry] = React.useState(parliamentaryQna[0]);
+    const [selectedBlock, setSelectedBlock] = React.useState(boreholes[0]);
+    const [tab, setTab] = React.useState<'parliamentary' | 'borehole' | 'production' | 'topics' | 'gr_report' | 'safety'>('parliamentary');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
+
+    // Ministerial Q&A Approval Feedback State
+    const [approvedInquiries, setApprovedInquiries] = React.useState<Record<string, boolean>>({});
+    const [approvedFlash, setApprovedFlash] = React.useState<string | null>(null);
+
+    // GR Report Synthesis State
+    const [grReportGenerated, setGrReportGenerated] = React.useState(false);
+
+    // Slope Stability Radar State
+    const [simulatedRadarDisplacement, setSimulatedRadarDisplacement] = React.useState(0.5);
+
+    const handleApproveInquiry = (id: string) => {
+      setApprovedInquiries((prev) => ({ ...prev, [id]: true }));
+      setApprovedFlash(id);
+      setTimeout(() => setApprovedFlash(null), 3500);
+    };
+
+    const handleGenerateGrReport = () => {
+      setGrReportGenerated(true);
+      setTimeout(() => setGrReportGenerated(false), 4500);
+    };
+
+    const isSlopeSafe = simulatedRadarDisplacement < 1.0;
+    const calculatedFos = (1.55 - simulatedRadarDisplacement * 0.35).toFixed(2);
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF COAL • CIL / CMPDI (KHANANAI 360)",
+        desc: "AI-Powered Geological, Mining, Overburden (OBR) & Parliamentary Inquiry RAG Reporting Solution for Coal India Subsidiaries",
+        tabParliamentary: "🏛️ Parliamentary Q&A RAG",
+        tabBorehole: "🪨 CMPDI Borehole Core Logs",
+        tabProduction: "📊 Production & OBR Matrix",
+        tabTopics: "☁️ Mining Bottlenecks Word Cloud",
+        tabGrReport: "📑 1-Click Geological Report",
+        tabSafety: "🛡️ Slope Radar & DGMS Safety",
+      },
+      hi: {
+        tag: "कोयला मंत्रालय • कोल इंडिया / CMPDI (खनन-AI 360)",
+        desc: "कोल इंडिया सहायक कंपनियों हेतु भूवैज्ञानिक, खनन उत्पादन, OBR एवं संसदीय प्रश्नोत्तर RAG रिपोर्टिंग प्रणाली",
+        tabParliamentary: "🏛️ संसदीय प्रश्नोत्तर RAG",
+        tabBorehole: "🪨 CMPDI बोरहोल कोर लॉग",
+        tabProduction: "📊 उत्पादन व OBR मैट्रिक्स",
+        tabTopics: "☁️ खनन व्यवधान वर्ड क्लाउड",
+        tabGrReport: "📑 1-क्लिक भूवैज्ञानिक रिपोर्ट",
+        tabSafety: "🛡️ स्लोप रडार व DGMS सुरक्षा",
+      },
+      mr: {
+        tag: "कोळसा मंत्रालय • कोल इंडिया / CMPDI (खनन-AI 360)",
+        desc: "कोल इंडिया उपकंपन्यांसाठी भूवैज्ञानिक, कोळसा उत्पादन, ओव्हरबर्डन आणि संसदीय प्रश्नोत्तर AI रिपोर्टिंग प्रणाली",
+        tabParliamentary: "🏛️ संसदीय प्रश्नोत्तरे RAG",
+        tabBorehole: "🪨 CMPDI बोरहोल कोर नोंदी",
+        tabProduction: "📊 उत्पादन व OBR डॅशबोर्ड",
+        tabTopics: "☁️ खाण अडथळे वर्ड क्लाउड",
+        tabGrReport: "📑 १-क्लिक भूवैज्ञानिक अहवाल",
+        tabSafety: "🛡️ स्लोप रडार व DGMS सुरक्षा",
+      }
+    }[lang];
 
     return (
-      <div className="space-y-6">
-        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="space-y-6 font-sans">
+        {/* Header */}
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold mb-1">
               <FileText className="w-4 h-4 text-amber-400" />
-              <span>COAL INDIA LIMITED (CIL) • CMPDI GEOLOGICAL REPORTING • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">Automated Ministerial Q&A Drafter & Production / OBR Analytics Solution</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-amber-950 text-amber-300 border border-amber-800 rounded-2xl text-xs font-bold">
-            CIL Analytics Active
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-amber-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-amber-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {subs.map((s) => (
-            <button key={s.id} onClick={() => setSelectedSub(s)} className={`p-4 rounded-2xl border text-left transition-all ${
-              selectedSub.id === s.id ? 'bg-amber-950/60 border-amber-500 text-white shadow-md ring-1 ring-amber-400' : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
-            }`}>
-              <div className="text-[10px] font-mono text-amber-400 font-bold">{s.id}</div>
-              <div className="text-xs font-bold text-white mt-0.5">{s.name}</div>
-              <div className="mt-2 text-[10px] flex justify-between font-mono text-slate-400">
-                <span className="text-emerald-400 font-bold">Prod: {s.prod}</span>
-                <span>OBR: {s.obr}</span>
-              </div>
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
+          {[
+            { id: 'parliamentary', label: t.tabParliamentary },
+            { id: 'borehole', label: t.tabBorehole },
+            { id: 'production', label: t.tabProduction },
+            { id: 'topics', label: t.tabTopics },
+            { id: 'gr_report', label: t.tabGrReport },
+            { id: 'safety', label: t.tabSafety },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-amber-500 text-slate-950 font-black shadow-lg shadow-amber-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
             </button>
           ))}
         </div>
+
+        {/* TAB 1: PARLIAMENTARY Q&A RAG DRAFTER */}
+        {tab === 'parliamentary' && (
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {parliamentaryQna.map((q: any) => (
+                <button
+                  key={q.inquiry_id}
+                  onClick={() => setSelectedInquiry(q)}
+                  className={`p-5 rounded-2xl border text-left transition-all ${
+                    selectedInquiry.inquiry_id === q.inquiry_id
+                      ? 'bg-amber-950/60 border-amber-500 text-white shadow-lg ring-1 ring-amber-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-amber-400">{q.inquiry_id}</span>
+                    <span className="text-cyan-400">{q.house} • {q.session}</span>
+                  </div>
+                  <div className="text-sm font-bold text-white mt-1 line-clamp-1">{q.subject}</div>
+                  <div className="mt-2 text-[11px] text-slate-400 line-clamp-2">{q.question}</div>
+                </button>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+              <div className="lg:col-span-8 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div>
+                    <span className="text-amber-400 font-bold text-[10px]">{selectedInquiry.inquiry_id} • {selectedInquiry.house}</span>
+                    <h4 className="text-white font-bold text-sm font-sans mt-0.5">{selectedInquiry.subject}</h4>
+                  </div>
+                  <span className="px-3 py-1 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full text-[10px] font-bold">
+                    {selectedInquiry.status.replace(/_/g, ' ')}
+                  </span>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5 font-sans">
+                  <span className="text-slate-400 font-bold text-[10px] uppercase font-mono block">PARLIAMENTARY QUESTION FILED:</span>
+                  <p className="text-slate-200 text-xs italic leading-relaxed">"{selectedInquiry.question}"</p>
+                </div>
+
+                <div className="p-5 bg-slate-950 rounded-2xl border border-emerald-900/60 space-y-2 font-sans">
+                  <div className="flex justify-between items-center font-mono text-[10px]">
+                    <span className="text-emerald-400 font-bold uppercase">AI-SYNTHESIZED MINISTERIAL RESPONSE:</span>
+                    <span className="text-cyan-300">Confidence: 98.4%</span>
+                  </div>
+                  <p className="text-slate-100 text-xs leading-relaxed">
+                    {selectedInquiry.ai_generated_response}
+                  </p>
+                </div>
+
+                <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
+                  <span className="text-slate-500 text-[10px] block">RAG CITATIONS &amp; VERIFIED SOURCES:</span>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedInquiry.citations.map((cite: string, idx: number) => (
+                      <span key={idx} className="px-2.5 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-800 text-[10px]">
+                        🔗 {cite}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 bg-slate-900 p-6 rounded-3xl border border-slate-800 flex flex-col justify-between space-y-4 font-sans">
+                <div className="space-y-3">
+                  <h4 className="text-white font-bold text-sm flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                    <span>Ministerial Dispatch Action</span>
+                  </h4>
+                  <p className="text-slate-400 text-xs leading-relaxed">
+                    Once vetted by the CMD / Director (Technical), the draft is formatted with standard MoC letterhead and transmitted via the Parliament e-Vidhan system.
+                  </p>
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 text-[11px] text-slate-300 space-y-1 font-mono">
+                    <div className="flex justify-between"><span>Audit Trail:</span><span className="text-emerald-400">PASSED</span></div>
+                    <div className="flex justify-between"><span>Latency:</span><span className="text-cyan-400">1.42s RAG</span></div>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => handleApproveInquiry(selectedInquiry.inquiry_id)}
+                  disabled={approvedInquiries[selectedInquiry.inquiry_id]}
+                  className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs shadow-lg shadow-amber-500/20 transition-all active:scale-95 disabled:opacity-50"
+                >
+                  {approvedInquiries[selectedInquiry.inquiry_id] ? '✅ Ministerial Draft Approved & Sent' : 'Approve Draft for Lok/Rajya Sabha'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: CMPDI BOREHOLE CORE LOGS */}
+        {tab === 'borehole' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {boreholes.map((b: any) => (
+                <div
+                  key={b.block_id}
+                  onClick={() => setSelectedBlock(b)}
+                  className={`p-6 bg-slate-900 rounded-3xl border transition-all cursor-pointer space-y-3 ${
+                    selectedBlock.block_id === b.block_id ? 'border-amber-500 ring-1 ring-amber-400' : 'border-slate-800 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{b.block_id}</span>
+                      <h4 className="font-bold text-white font-sans text-base mt-0.5">{b.block_name}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{b.subsidiary} • {b.coalfield}, {b.state}</p>
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-xs font-bold">
+                      {b.drilling_boreholes_count} Boreholes
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">PROVED RESERVES</span>
+                      <strong className="text-emerald-400 text-sm block mt-0.5">{b.proved_geological_reserves_mt} MT</strong>
+                      <span className="text-[8px] text-slate-500">UNFC Code 111</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">GCV COAL GRADE</span>
+                      <strong className="text-amber-400 text-xs block mt-0.5">{b.average_gcv_grade.split(' ')[0]}</strong>
+                      <span className="text-[8px] text-slate-500">Thermal Grade</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">STRIPPING RATIO</span>
+                      <strong className="text-cyan-400 text-sm block mt-0.5">{b.stripping_ratio_cum_per_tonne}</strong>
+                      <span className="text-[8px] text-slate-500">Cu.M / Tonne</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-slate-300 font-sans text-[11px]">
+                    🪨 <strong>Major Intersected Seams</strong>: {b.major_coal_seams.join(', ')} (Max Depth: {b.max_drilled_depth_m}m)
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: PRODUCTION & OBR MATRIX */}
+        {tab === 'production' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {subsidiaries.map((sub: any) => (
+                <div key={sub.subsidiary_code} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{sub.subsidiary_code}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{sub.subsidiary_name}</h4>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      {sub.target_achievement_pct}% Target Met
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">RAW PRODUCTION</span>
+                      <strong className="text-white text-base block mt-0.5">{sub.actual_production_mt} MT</strong>
+                      <span className="text-[8px] text-slate-500">Target: {sub.annual_target_mt} MT</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">OBR REMOVAL</span>
+                      <strong className="text-cyan-400 text-base block mt-0.5">{sub.overburden_removal_mcum} M.CuM</strong>
+                      <span className="text-[8px] text-slate-500">Overburden Stripped</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 flex justify-between text-slate-300 text-[11px] font-sans">
+                    <span>Power Plant Offtake:</span>
+                    <strong className="text-amber-400">{sub.dispatch_to_power_plants_mt} MT ({sub.daily_rail_rakes_loaded} Rakes/Day)</strong>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: MINING BOTTLENECKS WORD CLOUD */}
+        {tab === 'topics' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {topicKeywords.map((top: any) => (
+                <div key={top.topic_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{top.topic_id}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{top.topic_name}</h4>
+                    </div>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                      top.severity.includes('CRITICAL') ? 'bg-rose-950 text-rose-300 border border-rose-800' :
+                      top.severity.includes('HIGH') ? 'bg-amber-950 text-amber-300 border border-amber-800' :
+                      'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                    }`}>
+                      {top.severity.replace(/_/g, ' ')}
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-slate-300 font-sans text-xs leading-relaxed">
+                    {top.summary}
+                  </div>
+
+                  <div className="flex justify-between text-[10px] text-slate-400 pt-1">
+                    <span>Mentions in Shift Logs: <strong className="text-cyan-400">{top.mention_frequency}</strong></span>
+                    <span>Subsidiaries: <strong className="text-white">{top.subsidiaries_affected.join(', ')}</strong></span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: 1-CLICK GEOLOGICAL REPORT GENERATOR */}
+        {tab === 'gr_report' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-sans">
+              <h4 className="text-white font-bold text-sm flex items-center gap-2">
+                <FileText className="w-4 h-4 text-amber-400" />
+                <span>Standardized CMPDI Bankable Geological Dossier Compiler</span>
+              </h4>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                Assembles multi-seam correlations, proximate core analysis, strip logs, and structural fault models into a comprehensive statutory Geological Report (GR) ready for Ministry auctions and mine developer and operator (MDO) contracts.
+              </p>
+
+              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-xs font-mono">
+                <div className="text-slate-400 font-bold uppercase text-[10px]">INCLUDED GR CHAPTERS:</div>
+                <div className="space-y-1.5 text-slate-300">
+                  <div>1. Executive Summary &amp; Physiography of Block ({selectedBlock.block_name})</div>
+                  <div>2. Drilling Density &amp; Lithological Strata Correlation ({selectedBlock.drilling_boreholes_count} Boreholes)</div>
+                  <div>3. Coal Seam Reserves by UNFC Classification (1,250 MT Proved)</div>
+                  <div>4. Physico-Chemical Analysis &amp; Gross Calorific Value (Grade {selectedBlock.average_gcv_grade})</div>
+                  <div>5. Mineability Index &amp; Composite Stripping Ratio ({selectedBlock.stripping_ratio_cum_per_tonne} m³/Tonne)</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 flex flex-col justify-between space-y-4 font-sans">
+              <div className="space-y-2">
+                <span className="text-amber-400 font-bold text-xs font-mono">DGMS &amp; MoC COMPLIANCE GUARANTEE</span>
+                <h5 className="text-white font-bold text-sm">Automated Digital Dossier</h5>
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  Reduces report compilation latency from 90 days of manual typing down to under 2 seconds using automated tabular extraction and template rendering.
+                </p>
+              </div>
+
+              <button
+                onClick={handleGenerateGrReport}
+                disabled={grReportGenerated}
+                className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs shadow-lg shadow-amber-500/20 transition-all active:scale-95 disabled:opacity-50"
+              >
+                {grReportGenerated ? '✅ Bankable GR Dossier Compiled (PDF)!' : 'Generate CMPDI Geological Report'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: SLOPE RADAR & DGMS MINE SAFETY */}
+        {tab === 'safety' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {mineSafety.map((ms: any) => (
+                <div key={ms.mine_code} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{ms.mine_code}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{ms.mine_name}</h4>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      {ms.dgms_safety_audit_score} Audit
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">RADAR DISPL.</span>
+                      <strong className="text-emerald-400 text-xs block mt-0.5">{ms.radar_displacement_mm_day} mm/d</strong>
+                      <span className="text-[8px] text-slate-500">Sub-Millimeter</span>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">SAFETY FACTOR</span>
+                      <strong className="text-cyan-400 text-xs block mt-0.5">{ms.factor_of_safety_fos} FOS</strong>
+                      <span className="text-[8px] text-slate-500">DGMS: &gt;1.20</span>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">METHANE CH4</span>
+                      <strong className="text-purple-400 text-xs block mt-0.5">{ms.methane_ch4_drainage_pct}%</strong>
+                      <span className="text-[8px] text-slate-500">Drainage Safe</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-slate-300 font-sans text-[11px]">
+                    🌱 <strong>Reclaimed Eco-Cover</strong>: {ms.vegetative_cover_reclaimed_ha} Ha biologically stabilized.
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Interactive Slope Stability Telemetry Simulator */}
+            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Activity className="w-5 h-5 text-amber-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">Opencast Pit Highwall Slope Stability Radar Simulator</h4>
+                  <p className="text-slate-400 text-xs font-sans">Real-time GroundProbe radar displacement telemetry predicting highwall bench failures</p>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-300">Continuous Highwall Bench Movement:</span>
+                  <span className="text-amber-400 font-bold">{simulatedRadarDisplacement} mm / day</span>
+                </div>
+                <input
+                  type="range"
+                  min="0.1"
+                  max="2.5"
+                  step="0.1"
+                  value={simulatedRadarDisplacement}
+                  onChange={(e) => setSimulatedRadarDisplacement(Number(e.target.value))}
+                  className="w-full accent-amber-500 cursor-pointer"
+                />
+                <div className="flex justify-between text-[10px] text-slate-500">
+                  <span>0.1 mm/d (Pristine Bench)</span>
+                  <span>1.0 mm/d (DGMS Warning Threshold)</span>
+                  <span>2.5 mm/d (Evacuation Hazard)</span>
+                </div>
+              </div>
+
+              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-sans text-xs">
+                <div>
+                  <span className="text-slate-400 block font-mono text-[10px]">CALCULATED FACTOR OF SAFETY (FOS):</span>
+                  <strong className="text-white text-base font-mono">{calculatedFos} FOS</strong>
+                  <span className={`ml-3 px-2.5 py-0.5 rounded text-[10px] font-bold ${
+                    isSlopeSafe ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-rose-950 text-rose-300 border border-rose-800'
+                  }`}>
+                    {isSlopeSafe ? 'STABLE BENCH GEOMETRY' : 'CRITICAL BENCH WARNING: DEWATERING REQUIRED'}
+                  </span>
+                </div>
+                <div className="text-slate-400 text-[11px]">
+                  DGMS Statutory Standard: <strong>FOS &ge; 1.20</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
     );
   }

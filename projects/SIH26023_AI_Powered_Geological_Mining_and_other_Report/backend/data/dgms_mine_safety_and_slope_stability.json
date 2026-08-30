@@ -1,0 +1,35 @@
+[
+  {
+    "mine_code": "MINE-GEVRA-OCP",
+    "mine_name": "Gevra Open Cast Project (SECL)",
+    "slope_stability_status": "NORMAL_STABLE",
+    "radar_displacement_mm_day": 0.4,
+    "factor_of_safety_fos": 1.42,
+    "methane_ch4_drainage_pct": 0.02,
+    "dgms_safety_audit_score": "96.5%",
+    "active_radar_scanners": 4,
+    "vegetative_cover_reclaimed_ha": 640
+  },
+  {
+    "mine_code": "MINE-BHUVANESHWARI-OCP",
+    "mine_name": "Bhuvneshwari Open Cast Mine (MCL)",
+    "slope_stability_status": "NORMAL_STABLE",
+    "radar_displacement_mm_day": 0.6,
+    "factor_of_safety_fos": 1.38,
+    "methane_ch4_drainage_pct": 0.01,
+    "dgms_safety_audit_score": "94.8%",
+    "active_radar_scanners": 3,
+    "vegetative_cover_reclaimed_ha": 480
+  },
+  {
+    "mine_code": "MINE-JHARIA-DEEP-UG",
+    "mine_name": "Moonidih Deep Underground Mine (BCCL)",
+    "slope_stability_status": "CONTINUOUS_STRATA_MONITORING",
+    "radar_displacement_mm_day": 1.2,
+    "factor_of_safety_fos": 1.25,
+    "methane_ch4_drainage_pct": 0.45,
+    "dgms_safety_audit_score": "98.1%",
+    "active_radar_scanners": 6,
+    "vegetative_cover_reclaimed_ha": 120
+  }
+]

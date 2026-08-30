@@ -1,0 +1,34 @@
+[
+  {
+    "topic_id": "TOPIC-FMC-SIDING",
+    "topic_name": "First Mile Connectivity (FMC) Railway Siding Congestion",
+    "mention_frequency": 412,
+    "severity": "HIGH_BOTTLENECK",
+    "subsidiaries_affected": ["SECL", "MCL", "ECL"],
+    "summary": "Rake turnaround delay at rapid loading silos causing pithead inventory accumulation."
+  },
+  {
+    "topic_id": "TOPIC-FOREST-CLEARANCE",
+    "topic_name": "Stage-II Forest Clearance (MoEFCC Parivesh 2.0)",
+    "mention_frequency": 384,
+    "severity": "CRITICAL_BOTTLENECK",
+    "subsidiaries_affected": ["CCL", "SECL", "WCL"],
+    "summary": "Diversion proposals pending state advisory group approvals for expanded opencast benches."
+  },
+  {
+    "topic_id": "TOPIC-HEMM-UPTIME",
+    "topic_name": "Heavy Earth Moving Machinery (HEMM) Availability",
+    "mention_frequency": 296,
+    "severity": "MODERATE_OPERATIONAL",
+    "subsidiaries_affected": ["NCL", "BCCL", "MCL"],
+    "summary": "Hydraulic shovel and 240-tonne dumper maintenance overhaul scheduling."
+  },
+  {
+    "topic_id": "TOPIC-ECO-RECLAMATION",
+    "topic_name": "Biological Land Reclamation & Overburden Dump Stabilization",
+    "mention_frequency": 245,
+    "severity": "COMPLIANCE_ACHIEVED",
+    "subsidiaries_affected": ["ALL_CIL_SUBSIDIARIES"],
+    "summary": "Geo-textile stabilization and native vetiver grass plantation on external dumps."
+  }
+]
