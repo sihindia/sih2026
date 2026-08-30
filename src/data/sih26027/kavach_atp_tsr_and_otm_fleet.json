@@ -1,0 +1,26 @@
+[
+  {
+    "machine_code": "OTM-PLASSER-09-3X-104",
+    "machine_type": "Continuous Action 3-Sleeper Tamping Machine",
+    "base_depot": "Tundla P-Way Depot (NCR)",
+    "assigned_block": "SHADOW-NCR-081",
+    "effective_tamping_km_per_hr": 2.2,
+    "kavach_tsr_speed_limit_km_h": 30,
+    "kavach_rfid_balise_id": "BALISE-NCR-KM-922-DOWN",
+    "loco_atp_broadcast_status": "KAVACH_TELEGRAM_TRANSMITTED",
+    "diesel_consumption_litres_per_km": 42.5,
+    "idle_transit_saving_pct": 34.0
+  },
+  {
+    "machine_code": "OTM-BCM-PLASSER-301",
+    "machine_type": "High-Output Ballast Cleaning Machine (BCM)",
+    "base_depot": "Sasaram Track Depot (ECR)",
+    "assigned_block": "SHADOW-ECR-042",
+    "effective_tamping_km_per_hr": 1.4,
+    "kavach_tsr_speed_limit_km_h": 20,
+    "kavach_rfid_balise_id": "BALISE-ECR-KM-540-UP",
+    "loco_atp_broadcast_status": "KAVACH_TELEGRAM_TRANSMITTED",
+    "diesel_consumption_litres_per_km": 58.0,
+    "idle_transit_saving_pct": 38.5
+  }
+]

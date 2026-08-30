@@ -1,0 +1,58 @@
+[
+  {
+    "corridor_id": "CORR-HDN1-GZB-CNB",
+    "name": "Ghaziabad \u2013 Kanpur Central (HDN-1 Mainline)",
+    "zone": "North Central Railway (NCR)",
+    "section_length_km": 435.0,
+    "line_capacity_utilization_pct": 148.5,
+    "daily_train_density": 182,
+    "active_shadow_blocks": 4,
+    "punctuality_gain_pct": 18.5,
+    "freight_throughput_gain_pct": 22.4,
+    "train_detention_saved_mins": 340,
+    "primary_bottleneck": "Aligarh \u2013 Tundla Quadruple Line Junction",
+    "status": "SHADOW_BLOCK_ACTIVE"
+  },
+  {
+    "corridor_id": "CORR-GD2-BPL-NGP",
+    "name": "Bhopal \u2013 Nagpur (Golden Diagonal GD-2)",
+    "zone": "West Central & Central Railway (WCR/CR)",
+    "section_length_km": 390.0,
+    "line_capacity_utilization_pct": 136.0,
+    "daily_train_density": 144,
+    "active_shadow_blocks": 3,
+    "punctuality_gain_pct": 14.2,
+    "freight_throughput_gain_pct": 19.1,
+    "train_detention_saved_mins": 260,
+    "primary_bottleneck": "Itarsi Junction Triangular Flyover",
+    "status": "OPTIMAL_FLOW"
+  },
+  {
+    "corridor_id": "CORR-HDN2-DDU-GAYA",
+    "name": "Pt. Deen Dayal Upadhyaya \u2013 Gaya (Grand Chord)",
+    "zone": "East Central Railway (ECR)",
+    "section_length_km": 204.0,
+    "line_capacity_utilization_pct": 156.2,
+    "daily_train_density": 198,
+    "active_shadow_blocks": 5,
+    "punctuality_gain_pct": 21.0,
+    "freight_throughput_gain_pct": 26.8,
+    "train_detention_saved_mins": 420,
+    "primary_bottleneck": "Sasaram Heavy Coal Haul Corridor",
+    "status": "SHADOW_BLOCK_ACTIVE"
+  },
+  {
+    "corridor_id": "CORR-GQ3-BZA-GDR",
+    "name": "Vijayawada \u2013 Gudur (Golden Quadrilateral GQ-3)",
+    "zone": "South Central Railway (SCR)",
+    "section_length_km": 293.0,
+    "line_capacity_utilization_pct": 128.4,
+    "daily_train_density": 136,
+    "active_shadow_blocks": 2,
+    "punctuality_gain_pct": 12.8,
+    "freight_throughput_gain_pct": 16.5,
+    "train_detention_saved_mins": 195,
+    "primary_bottleneck": "Ongole Coastal High-Wind Section",
+    "status": "OPTIMAL_FLOW"
+  }
+]

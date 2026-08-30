@@ -1,0 +1,24 @@
+[
+  {
+    "corridor_id": "CORR-GZB-CNB",
+    "corridor_name": "Ghaziabad – Kanpur Central (HDN-1)",
+    "cris_coa_feed_status": "REAL_TIME_SYNC_HEALTHY",
+    "fois_freight_bypass_available": true,
+    "line_capacity_recovered_pct": 21.4,
+    "passengers_on_time_pct": 98.6,
+    "gati_shakti_gis_layer_synced": true,
+    "cois_digital_token_auth": "AUTH-NCR-COIS-08194",
+    "carbon_emission_avoided_tons": 420.0
+  },
+  {
+    "corridor_id": "CORR-DDU-GAYA",
+    "corridor_name": "Pt. Deen Dayal Upadhyaya – Gaya Grand Chord",
+    "cris_coa_feed_status": "REAL_TIME_SYNC_HEALTHY",
+    "fois_freight_bypass_available": true,
+    "line_capacity_recovered_pct": 24.8,
+    "passengers_on_time_pct": 97.8,
+    "gati_shakti_gis_layer_synced": true,
+    "cois_digital_token_auth": "AUTH-ECR-COIS-04218",
+    "carbon_emission_avoided_tons": 580.0
+  }
+]

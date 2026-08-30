@@ -1,0 +1,26 @@
+[
+  {
+    "station_id": "ENV-SECL-KUSMUNDA-01",
+    "mine_name": "Kusmunda Mega Opencast Project",
+    "pm10_ug_m3": 84.5,
+    "pm25_ug_m3": 42.1,
+    "effluent_ph": 7.4,
+    "total_suspended_solids_mg_l": 48.0,
+    "blast_ground_vibration_ppv_mm_s": 3.8,
+    "explosive_magazine_peso_license": "ACTIVE_VALID_TILL_2028",
+    "spcb_consent_to_operate": "COMPLIANT_RENEWED",
+    "afforestation_saplings_planted": 184000
+  },
+  {
+    "station_id": "ENV-MCL-BHUBAN-02",
+    "mine_name": "Bhubaneswari Opencast Project",
+    "pm10_ug_m3": 79.2,
+    "pm25_ug_m3": 38.6,
+    "effluent_ph": 7.2,
+    "total_suspended_solids_mg_l": 39.5,
+    "blast_ground_vibration_ppv_mm_s": 4.1,
+    "explosive_magazine_peso_license": "ACTIVE_VALID_TILL_2027",
+    "spcb_consent_to_operate": "COMPLIANT_RENEWED",
+    "afforestation_saplings_planted": 126000
+  }
+]

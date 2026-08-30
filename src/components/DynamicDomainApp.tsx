@@ -148,6 +148,12 @@ import sih26023Boreholes from '../data/sih26023/geological_drilling_core_reports
 import sih26023Rag from '../data/sih26023/parliamentary_inquiries_rag_qna.json';
 import sih26023Topics from '../data/sih26023/mining_topic_keywords_and_bottlenecks.json';
 import sih26023Safety from '../data/sih26023/dgms_mine_safety_and_slope_stability.json';
+import sih26027Corridors from '../data/sih26027/rail_corridors_and_capacities.json';
+import sih26027Shadows from '../data/sih26027/multi_dept_shadow_blocks.json';
+import sih26027Trains from '../data/sih26027/train_headway_punctuality_impacts.json';
+import sih26027Kavach from '../data/sih26027/kavach_atp_tsr_and_otm_fleet.json';
+import sih26027GatiShakti from '../data/sih26027/cris_gati_shakti_interoperability_metrics.json';
+import sih26027Logs from '../data/sih26027/section_controller_safety_logs.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -19200,32 +19206,22 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
   /* =========================================================================
      INDIAN RAILWAYS / SIH26027 AUTOMATIC BLOCK PLANNING
      ========================================================================= */
+  /* =========================================================================
+     INDIAN RAILWAYS / SIH26027 RAILBLOCKAI 360
+     AI Automatic Block Planning, Multi-Dept Shadow Harmonizer & KAVACH 4.0 ATP
+     ========================================================================= */
   if (psId === 'SIH26027') {
-    const corridors = [
-      { id: "CORR-GZB-CNB", name: "Ghaziabad – Kanpur Central (HDN-1)", zone: "NCR", len: "435 Km", cap: "148.5%", density: 182, blocks: 4, gain: "+18.5%", freightGain: "+22.4%", saved: "340 mins", bottleneck: "Aligarh – Tundla Quadruple Junction" },
-      { id: "CORR-BPL-NGP", name: "Bhopal – Nagpur (Golden Diagonal GD-2)", zone: "WCR/CR", len: "390 Km", cap: "136.0%", density: 144, blocks: 3, gain: "+14.2%", freightGain: "+19.1%", saved: "260 mins", bottleneck: "Itarsi Junction Triangular Flyover" },
-      { id: "CORR-DDU-GAYA", name: "Pt. Deen Dayal Upadhyaya – Gaya", zone: "ECR", len: "204 Km", cap: "156.2%", density: 198, blocks: 5, gain: "+21.0%", freightGain: "+26.8%", saved: "420 mins", bottleneck: "Sasaram Heavy Coal Haul Corridor" }
-    ];
-
-    const shadowBlocks = [
-      { id: "SHADOW-NCR-081", window: "02:00 AM – 04:30 AM (Night Lean Window)", dur: "2.5 Hrs", depts: ["P-Way (TMS)", "Traction (TRD/OHE)", "Signaling (S&T)"], machines: ["09-3X Tamping #104", "OHE Wagon #8812", "S&T EI Test Rig"], section: "Aligarh – Hathras (Km 922 to 934 Down Line)", saved: 140, passImpact: "ZERO_DETENTION (Routed via Middle Loop)", freightDiv: 2, score: "96.8%", token: "AUTH-NCR-COIS-08194" },
-      { id: "SHADOW-ECR-042", window: "01:30 AM – 04:15 AM", dur: "2.75 Hrs", depts: ["P-Way Deep Screening", "OHE Catenary", "Axle Counters"], machines: ["BCM #301", "RGM #40", "OHE Ladder Unit"], section: "Sasaram – Dehri (Up Line)", saved: 180, passImpact: "+21% Sectional Speed Retention", freightDiv: 4, score: "98.2%", token: "AUTH-ECR-COIS-04218" }
-    ];
-
-    const trainImpacts = [
-      { no: "22436", name: "Vande Bharat Express (NDLS -> BSB)", arr: "06:00 AM", eta: "06:00 AM (ON-TIME)", saved: 35, route: "Clear Track Priority on Down Main" },
-      { no: "12302", name: "Howrah Rajdhani Express", arr: "09:55 AM", eta: "09:55 AM (ON-TIME)", saved: 45, route: "Bi-Directional Signaling Bypass" },
-      { no: "BOXN-COAL", name: "Heavy Coal Rake (Dhanbad -> Dadri NTPC)", arr: "04:15 AM", eta: "04:35 AM (+20m)", saved: 85, route: "Temporary Loop Holding with Green Wave" }
-    ];
-
-    const controllerLogs = [
-      { id: "LOG-NCR-081", stn: "Aligarh Central (ALJN)", ctrl: "Er. R. K. Meena (Dy. Chief Controller)", act: "BLOCK_GRANTED", time: "02:01 AM", note: "Power block isolated on 25kV Feeder 3. Tamping machine 09-3X & OHE Tower Wagon admitted." },
-      { id: "LOG-NCR-082", stn: "Aligarh Central (ALJN)", ctrl: "Er. R. K. Meena (Dy. Chief Controller)", act: "BLOCK_CANCELLED_FIT_ISSUED", time: "04:28 AM", note: "All machines cleared to siding. Track fit certificate issued. Vande Bharat cleared on green." }
-    ];
+    const corridors = sih26027Corridors;
+    const shadowBlocks = sih26027Shadows;
+    const trainImpacts = sih26027Trains;
+    const kavachFleet = sih26027Kavach;
+    const gatiShaktiMetrics = sih26027GatiShakti;
+    const controllerLogs = sih26027Logs;
 
     const [selectedCorridor, setSelectedCorridor] = React.useState(corridors[0]);
     const [selectedShadow, setSelectedShadow] = React.useState(shadowBlocks[0]);
-    const [tab, setTab] = React.useState<'planner' | 'harmonizer' | 'impacts' | 'controller' | 'analytics'>('planner');
+    const [tab, setTab] = React.useState<'planner' | 'harmonizer' | 'impacts' | 'kavach' | 'controller' | 'analytics'>('planner');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
 
     // Generator State
     const [includeTMS, setIncludeTMS] = React.useState(true);
@@ -19234,61 +19230,126 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
     const [targetDur, setTargetDur] = React.useState(2.5);
     const [genPlan, setGenPlan] = React.useState<any>(null);
 
+    // KAVACH TSR Broadcast State
+    const [selectedMachine, setSelectedMachine] = React.useState(kavachFleet[0]);
+    const [tsrBroadcasted, setTsrBroadcasted] = React.useState(false);
+
+    // Permit to Work State
+    const [ptwIssued, setPtwIssued] = React.useState(false);
+
     const runShadowGen = () => {
       const depts = [];
       if (includeTMS) depts.push('P-Way (TMS)');
       if (includeTRD) depts.push('Traction (TRD/OHE)');
       if (includeSNT) depts.push('Signaling (S&T)');
       const p = {
-        id: `SHADOW-NCR-${Math.floor(Math.random() * 900 + 100)}`,
-        window: "02:15 AM – 04:45 AM (Night Lean Period)",
-        dur: `${targetDur} Hrs`,
-        depts,
-        saved: Math.floor(Math.random() * 60 + 120),
-        score: "97.4%",
-        token: `AUTH-COIS-${Math.floor(Math.random() * 90000 + 10000)}`
+        block_id: `SHADOW-NCR-${Math.floor(Math.random() * 900 + 100)}`,
+        scheduled_window: "02:15 AM – 04:45 AM (Night Lean Period)",
+        duration_hours: targetDur,
+        participating_departments: depts,
+        delay_minutes_saved: Math.floor(Math.random() * 60 + 120),
+        optimization_efficiency_score: "97.8%",
+        cois_safety_token: `AUTH-COIS-${Math.floor(Math.random() * 90000 + 10000)}`,
+        track_section: "Aligarh – Hathras (Km 922 to 934 Down Line)",
+        allocated_machinery: ["09-3X Tamping Machine #104", "OHE Tower Wagon #8812"],
+        passenger_detention_impact: "ZERO_DETENTION (Traffic Routed via Middle Loop)",
+        freight_trains_diverted: 2
       };
       setGenPlan(p);
       setSelectedShadow(p as any);
     };
 
+    const handleBroadcastTsr = () => {
+      setTsrBroadcasted(true);
+      setTimeout(() => setTsrBroadcasted(false), 3500);
+    };
+
+    const handleIssuePtw = () => {
+      setPtwIssued(true);
+      setTimeout(() => setPtwIssued(false), 4000);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF RAILWAYS • CRIS / COIS PLATFORM (RAILBLOCKAI 360)",
+        desc: "AI Multi-Departmental Maintenance Harmonization (TMS + TDMS + SMMS), Shadow Block Optimization & KAVACH 4.0 TSR Integration",
+        tabPlanner: "🚆 Corridor Gantt & Blocks",
+        tabHarmonizer: "🧩 Multi-Dept Harmonizer",
+        tabImpacts: "⚡ Punctuality & Headway",
+        tabKavach: "🛡️ KAVACH 4.0 ATP & TSR",
+        tabController: "🔐 Controller Safety Portal",
+        tabAnalytics: "📊 GatiShakti Line Capacity",
+      },
+      hi: {
+        tag: "रेल मंत्रालय • CRIS / COIS प्लेटफॉर्म (रेल-ब्लॉक AI 360)",
+        desc: "बहु-विभागीय ट्रैक रखरखाव समन्वय (TMS + TDMS + SMMS), शैडो ब्लॉक अनुकूलन व कवच 4.0 TSR एकीकरण",
+        tabPlanner: "🚆 कॉरिडोर गैंट व ब्लॉक्स",
+        tabHarmonizer: "🧩 बहु-विभागीय समन्वयक",
+        tabImpacts: "⚡ समयपालन व हेडवे लाभ",
+        tabKavach: "🛡️ कवच 4.0 ATP व TSR",
+        tabController: "🔐 नियंत्रक सुरक्षा पोर्टल",
+        tabAnalytics: "📊 गतिशक्ति लाइन क्षमता",
+      },
+      mr: {
+        tag: "रेल्वे मंत्रालय • CRIS / COIS पोर्टल (रेल-ब्लॉक AI 360)",
+        desc: "बहु-विभागीय ट्रॅक देखभाल समन्वय (TMS + TDMS + SMMS), शॅडो ब्लॉक ऑप्टिमायझेशन व कवच 4.0 TSR प्रणाली",
+        tabPlanner: "🚆 कॉरिडॉर गँट व ब्लॉक्स",
+        tabHarmonizer: "🧩 बहु-विभागीय समन्वयक",
+        tabImpacts: "⚡ वक्तशीरपणा व हेडवे",
+        tabKavach: "🛡️ कवच 4.0 सुरक्षा व TSR",
+        tabController: "🔐 कंट्रोलर सुरक्षा पोर्टल",
+        tabAnalytics: "📊 गतिशक्ती क्षमता विश्लेषण",
+      }
+    }[lang];
+
     return (
-      <div className="space-y-6">
+      <div className="space-y-6 font-sans">
         {/* Header */}
         <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-purple-400 font-bold mb-1">
               <Layers className="w-4 h-4 text-purple-400" />
-              <span>MINISTRY OF RAILWAYS (INDIAN RAILWAYS) • CRIS / COIS PLATFORM • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">Multi-Departmental Maintenance Harmonization (TMS + TDMS + SMMS), Shadow Block Optimization & Punctuality Protection</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-purple-950 text-purple-300 border border-purple-800 rounded-2xl text-xs font-bold flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-purple-400" />
-            <span>COIS Block Engine Active</span>
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-purple-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-purple-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Global Tabs */}
-        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3">
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
           {[
-            { id: 'planner', label: '🚆 Live Corridor Gantt & Blocks' },
-            { id: 'harmonizer', label: '🧩 Multi-Dept Shadow Generator' },
-            { id: 'impacts', label: '⚡ Train Headway & Punctuality Gains' },
-            { id: 'controller', label: '🛡️ Section Controller Safety Portal' },
-            { id: 'analytics', label: '📊 Throughput & Capacity Analytics' }
-          ].map((t) => (
+            { id: 'planner', label: t.tabPlanner },
+            { id: 'harmonizer', label: t.tabHarmonizer },
+            { id: 'impacts', label: t.tabImpacts },
+            { id: 'kavach', label: t.tabKavach },
+            { id: 'controller', label: t.tabController },
+            { id: 'analytics', label: t.tabAnalytics },
+          ].map((item) => (
             <button
-              key={t.id}
-              onClick={() => setTab(t.id as any)}
-              className={`px-3.5 py-2 rounded-2xl text-xs font-bold transition-all ${
-                tab === t.id
-                  ? 'bg-purple-500 text-slate-950 font-black shadow-md'
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-purple-500 text-slate-950 font-black shadow-lg shadow-purple-500/20'
                   : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
               }`}
             >
-              {t.label}
+              {item.label}
             </button>
           ))}
         </div>
@@ -19297,46 +19358,46 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
         {tab === 'planner' && (
           <div className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {corridors.map((c) => (
+              {corridors.map((c: any) => (
                 <button
-                  key={c.id}
+                  key={c.corridor_id}
                   onClick={() => setSelectedCorridor(c)}
-                  className={`p-3.5 rounded-2xl border text-left transition-all ${
-                    selectedCorridor.id === c.id
-                      ? 'bg-purple-950/60 border-purple-500 text-white shadow-md ring-1 ring-purple-400'
+                  className={`p-4 rounded-2xl border text-left transition-all ${
+                    selectedCorridor.corridor_id === c.corridor_id
+                      ? 'bg-purple-950/60 border-purple-500 text-white shadow-lg ring-1 ring-purple-400'
                       : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
                   }`}
                 >
-                  <div className="text-[10px] font-mono text-purple-400 font-bold">{c.id}</div>
-                  <div className="text-xs font-bold truncate text-white mt-0.5">{c.name.split('(')[0]}</div>
-                  <div className="text-[11px] text-slate-400 truncate mt-0.5">{c.zone} • {c.len}</div>
+                  <div className="text-[10px] font-mono text-purple-400 font-bold">{c.corridor_id}</div>
+                  <div className="text-xs font-bold truncate text-white mt-0.5">{c.corridor_name.split('(')[0]}</div>
+                  <div className="text-[11px] text-slate-400 truncate mt-0.5">{c.railway_zone} • {c.section_length_km} Km</div>
                   <div className="mt-2 text-[10px] flex justify-between font-mono pt-1 border-t border-slate-800">
-                    <span className="text-emerald-400 font-bold">{c.gain} Punctuality</span>
-                    <span className="text-cyan-300">-{c.saved}</span>
+                    <span className="text-emerald-400 font-bold">{c.punctuality_gain_pct}% Punctuality</span>
+                    <span className="text-cyan-300">-{c.delay_mins_saved_daily}m</span>
                   </div>
                 </button>
               ))}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
                 <div className="flex justify-between items-start border-b border-slate-800 pb-2">
                   <div>
-                    <span className="font-mono text-xs font-bold text-purple-400">{selectedCorridor.id}</span>
-                    <h4 className="font-bold text-sm text-white mt-0.5">{selectedCorridor.name}</h4>
+                    <span className="font-mono text-xs font-bold text-purple-400">{selectedCorridor.corridor_id}</span>
+                    <h4 className="font-bold text-sm text-white font-sans mt-0.5">{selectedCorridor.corridor_name}</h4>
                   </div>
                   <span className="font-mono text-[10px] text-emerald-400 bg-slate-950 px-2.5 py-1 rounded-xl border border-slate-800">
-                    {selectedCorridor.blocks} Active Shadow Windows
+                    {selectedCorridor.active_shadow_blocks_count} Active Shadow Windows
                   </span>
                 </div>
 
                 <div className="space-y-3">
-                  {shadowBlocks.map((sb) => (
-                    <button
-                      key={sb.id}
+                  {shadowBlocks.map((sb: any) => (
+                    <div
+                      key={sb.block_id}
                       onClick={() => setSelectedShadow(sb)}
-                      className={`w-full p-4 rounded-2xl border text-left transition-all space-y-2 ${
-                        selectedShadow.id === sb.id
+                      className={`w-full p-4 rounded-2xl border text-left transition-all space-y-2 cursor-pointer ${
+                        selectedShadow.block_id === sb.block_id
                           ? 'bg-slate-950 border-purple-500 shadow-md ring-1 ring-purple-400'
                           : 'bg-slate-950 border-slate-800 text-slate-400 hover:bg-slate-900'
                       }`}
@@ -19344,119 +19405,180 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
                       <div className="flex justify-between items-start">
                         <div>
                           <div className="flex items-center gap-2">
-                            <span className="font-mono text-xs font-bold text-purple-400">{sb.id}</span>
-                            <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono">{sb.score} Efficiency</span>
+                            <span className="font-mono text-xs font-bold text-purple-400">{sb.block_id}</span>
+                            <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono">{sb.optimization_efficiency_score} Efficiency</span>
                           </div>
-                          <h5 className="font-bold text-white text-xs mt-1">{sb.window}</h5>
-                          <div className="text-[10px] text-slate-400">{sb.section}</div>
+                          <h5 className="font-bold text-white font-sans text-xs mt-1">{sb.scheduled_window}</h5>
                         </div>
-                        <span className="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-purple-950 text-purple-300">{sb.dur}</span>
+                        <span className="text-amber-400 font-bold text-xs">{sb.duration_hours}h Window</span>
                       </div>
-                      <div className="p-2 bg-slate-900 rounded-xl font-mono text-[10px] flex justify-between text-slate-300">
-                        <span>Depts: <strong className="text-white">{sb.depts.join(' + ')}</strong></span>
-                        <span className="text-emerald-400 font-bold">-{sb.saved} mins Saved</span>
+
+                      <p className="text-[11px] text-slate-400 font-sans">{sb.track_section}</p>
+
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {sb.participating_departments.map((dept: string) => (
+                          <span key={dept} className="px-2 py-0.5 bg-slate-900 border border-slate-800 rounded text-[9px] text-purple-300">
+                            {dept}
+                          </span>
+                        ))}
                       </div>
-                    </button>
+                    </div>
                   ))}
                 </div>
               </div>
 
-              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs font-mono">
-                <h4 className="font-bold text-sm text-white font-sans flex items-center gap-2">
-                  <GitMerge className="w-4 h-4 text-purple-400" />
-                  <span>Shadow Composition Detail</span>
+              {/* Selected Shadow Deep Dive */}
+              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-purple-400" />
+                  <span>Shadow Block Synchronization</span>
                 </h4>
-                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-[11px] text-slate-300">
-                  <div className="text-purple-400 font-bold text-[10px] uppercase">COMBINED FLEET ALLOCATION:</div>
-                  {selectedShadow.machines && selectedShadow.machines.map((m: string, i: number) => (
-                    <div key={i} className="flex justify-between"><span>Unit #{i + 1}:</span><span className="text-white font-bold">{m}</span></div>
-                  ))}
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2.5">
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Detention Saved:</span>
+                    <strong className="text-emerald-400 font-bold font-sans">+{selectedShadow.delay_minutes_saved} Minutes</strong>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Passenger Impact:</span>
+                    <strong className="text-cyan-300 font-sans">{selectedShadow.passenger_detention_impact}</strong>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Freight Diversions:</span>
+                    <strong className="text-amber-400">{selectedShadow.freight_trains_diverted} Rakes via Loop</strong>
+                  </div>
+                  <div className="pt-2 border-t border-slate-900 flex justify-between items-center">
+                    <span className="text-slate-500 text-[10px]">COIS TOKEN:</span>
+                    <span className="text-purple-400 font-bold select-all">{selectedShadow.cois_safety_token}</span>
+                  </div>
                 </div>
-                <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-2xl">
-                  <div className="text-emerald-400 font-bold text-[10px] uppercase">COIS SAFETY TOKEN:</div>
-                  <div className="text-white font-bold text-sm mt-0.5">{selectedShadow.token}</div>
-                  <div className="text-[10px] text-slate-400">Power isolation verified & interlocked.</div>
+
+                <div className="p-3.5 bg-purple-950/30 rounded-2xl border border-purple-900/40 text-purple-200 font-sans text-[11px] leading-relaxed">
+                  🛡️ <strong>Zero Punctuality Loss</strong>: Combines P-Way 09-3X ballast tamping with TRD 25kV catenary maintenance, releasing track 140 minutes earlier than sequential disjoint blocks.
                 </div>
               </div>
             </div>
           </div>
         )}
 
-        {/* VIEW 2: HARMONIZER */}
+        {/* VIEW 2: MULTI-DEPT SHADOW GENERATOR */}
         {tab === 'harmonizer' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 text-xs">
-            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-              <h4 className="font-bold text-sm text-white flex items-center gap-2 font-sans">
-                <Sliders className="w-4 h-4 text-purple-400" />
-                <span>Multi-Departmental Shadow Generator</span>
-              </h4>
-              <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 font-mono text-[11px]">
-                <label className="flex items-center gap-2 cursor-pointer text-slate-200">
-                  <input type="checkbox" checked={includeTMS} onChange={(e) => setIncludeTMS(e.target.checked)} className="accent-purple-500 rounded" />
-                  <span>Track Engineering (P-Way 09-3X Tamping)</span>
-                </label>
-                <label className="flex items-center gap-2 cursor-pointer text-slate-200">
-                  <input type="checkbox" checked={includeTRD} onChange={(e) => setIncludeTRD(e.target.checked)} className="accent-purple-500 rounded" />
-                  <span>Electrical Traction (TRD / 25kV OHE Wire)</span>
-                </label>
-                <label className="flex items-center gap-2 cursor-pointer text-slate-200">
-                  <input type="checkbox" checked={includeSNT} onChange={(e) => setIncludeSNT(e.target.checked)} className="accent-purple-500 rounded" />
-                  <span>Signal & Telecom (S&T / Electronic Interlocking)</span>
-                </label>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-sans">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Sliders className="w-5 h-5 text-purple-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm">Automated Multi-Department Shadow Block Generator</h4>
+                  <p className="text-slate-400 text-xs">Fuses Track (TMS), Electrical (TDMS), and Signals (SMMS) into unified windows</p>
+                </div>
               </div>
-              <div>
-                <div className="flex justify-between font-bold mb-1"><span className="text-slate-300">Target Duration:</span><span className="font-mono text-cyan-400">{targetDur} Hours</span></div>
-                <input type="range" min="1.5" max="4.5" step="0.5" value={targetDur} onChange={(e) => setTargetDur(Number(e.target.value))} className="w-full accent-purple-500" />
+
+              <div className="space-y-3 font-mono">
+                <label className="flex items-center justify-between p-3.5 bg-slate-950 rounded-2xl border border-slate-800 cursor-pointer">
+                  <span className="text-white font-bold">1. Track Engineering (TMS / P-Way):</span>
+                  <input type="checkbox" checked={includeTMS} onChange={(e) => setIncludeTMS(e.target.checked)} className="w-5 h-5 accent-purple-500 cursor-pointer" />
+                </label>
+                <label className="flex items-center justify-between p-3.5 bg-slate-950 rounded-2xl border border-slate-800 cursor-pointer">
+                  <span className="text-white font-bold">2. Overhead Traction (TDMS / TRD 25kV):</span>
+                  <input type="checkbox" checked={includeTRD} onChange={(e) => setIncludeTRD(e.target.checked)} className="w-5 h-5 accent-purple-500 cursor-pointer" />
+                </label>
+                <label className="flex items-center justify-between p-3.5 bg-slate-950 rounded-2xl border border-slate-800 cursor-pointer">
+                  <span className="text-white font-bold">3. Signal &amp; Telecom (SMMS Interlocking):</span>
+                  <input type="checkbox" checked={includeSNT} onChange={(e) => setIncludeSNT(e.target.checked)} className="w-5 h-5 accent-purple-500 cursor-pointer" />
+                </label>
+
+                <div className="pt-2">
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-slate-400 font-sans">Target Window Duration:</span>
+                    <strong className="text-purple-400">{targetDur} Hours</strong>
+                  </div>
+                  <input
+                    type="range"
+                    min="1.5"
+                    max="4.0"
+                    step="0.5"
+                    value={targetDur}
+                    onChange={(e) => setTargetDur(Number(e.target.value))}
+                    className="w-full accent-purple-500 cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[10px] text-slate-500">
+                    <span>1.5h (Short Patch)</span>
+                    <span>2.5h (Optimal Lean)</span>
+                    <span>4.0h (Mega Deep Screening)</span>
+                  </div>
+                </div>
               </div>
-              <button onClick={runShadowGen} className="w-full py-3.5 bg-purple-500 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg">
-                Generate AI Harmonized Shadow Plan
+
+              <button
+                onClick={runShadowGen}
+                className="w-full py-3 bg-purple-500 hover:bg-purple-400 text-slate-950 font-black rounded-xl text-xs shadow-lg shadow-purple-500/20 transition-all active:scale-95"
+              >
+                Execute AI Multi-Dept Shadow Fusion
               </button>
             </div>
 
-            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-mono">
-              <h4 className="font-bold text-sm text-white font-sans">Optimized Shadow Plan</h4>
-              {genPlan ? (
-                <div className="space-y-3">
-                  <div className="grid grid-cols-2 gap-2 text-center">
-                    <div className="p-3 bg-slate-950 rounded-2xl border border-purple-950"><span className="text-slate-500 block text-[9px]">EFFICIENCY</span><span className="text-xl font-bold text-purple-400">{genPlan.score}</span></div>
-                    <div className="p-3 bg-slate-950 rounded-2xl border border-emerald-950"><span className="text-slate-500 block text-[9px]">SAVED DELAY</span><span className="text-xl font-bold text-emerald-400">-{genPlan.saved} mins</span></div>
-                  </div>
-                  <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 text-[11px] text-slate-300 space-y-1">
-                    <div>Window: <span className="text-white font-bold">{genPlan.window}</span></div>
-                    <div>Combined: <span className="text-cyan-400">{genPlan.depts.join(' + ')}</span></div>
-                  </div>
-                  <div className="p-3.5 bg-emerald-950/40 border border-emerald-800 rounded-2xl flex justify-between items-center">
-                    <span className="text-xs text-white font-bold">{genPlan.token}</span>
-                    <span className="px-2 py-0.5 bg-emerald-500 text-slate-950 font-bold rounded text-[10px] font-sans">Verified</span>
-                  </div>
+            {/* Generated Plan Output */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <span>Optimized Multi-Horizon Shadow Plan</span>
+              </h4>
+
+              <div className="p-5 bg-slate-950 rounded-2xl border border-emerald-800/80 space-y-3 font-sans">
+                <div className="flex justify-between text-xs font-mono">
+                  <span className="text-slate-400">Generated Block ID:</span>
+                  <strong className="text-purple-400 font-bold">{genPlan ? genPlan.block_id : selectedShadow.block_id}</strong>
                 </div>
-              ) : (
-                <div className="py-12 text-center text-slate-500 font-sans">Click "Generate AI Harmonized Shadow Plan" to merge requests.</div>
-              )}
+                <div className="flex justify-between text-xs font-mono">
+                  <span className="text-slate-400">Scheduled Time Window:</span>
+                  <strong className="text-white">{genPlan ? genPlan.scheduled_window : selectedShadow.scheduled_window}</strong>
+                </div>
+                <div className="flex justify-between text-xs font-mono">
+                  <span className="text-slate-400">Total Train Delay Avoided:</span>
+                  <strong className="text-emerald-400 font-black text-base">{genPlan ? genPlan.delay_minutes_saved : selectedShadow.delay_minutes_saved} Mins</strong>
+                </div>
+                <div className="pt-2 border-t border-slate-900 flex justify-between items-center text-xs font-mono">
+                  <span className="text-slate-500">Safety Auth Token:</span>
+                  <span className="text-cyan-300 font-bold select-all">{genPlan ? genPlan.cois_safety_token : selectedShadow.cois_safety_token}</span>
+                </div>
+              </div>
             </div>
           </div>
         )}
 
-        {/* VIEW 3: IMPACTS */}
+        {/* VIEW 3: TRAIN HEADWAY & PUNCTUALITY */}
         {tab === 'impacts' && (
-          <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs font-mono">
-            <h4 className="font-bold text-sm text-white font-sans flex items-center gap-2">
-              <Train className="w-4 h-4 text-purple-400" />
-              <span>Real-Time Train Headway & Punctuality Preservation</span>
-            </h4>
-            <div className="space-y-3">
-              {trainImpacts.map((t) => (
-                <div key={t.no} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {trainImpacts.map((t: any) => (
+                <div key={t.train_number} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="text-purple-400 font-bold text-[10px]">TRAIN #{t.no}</span>
-                      <h5 className="font-bold text-white font-sans text-xs mt-0.5">{t.name}</h5>
+                      <span className="text-purple-400 font-bold font-mono">Train #{t.train_number}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{t.train_name}</h4>
                     </div>
-                    <span className="px-2.5 py-1 rounded-xl text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">{t.eta}</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      {t.predicted_arrival.split(' ')[1]}
+                    </span>
                   </div>
-                  <div className="grid grid-cols-2 gap-2 text-[11px] pt-1">
-                    <div className="p-2 bg-slate-900 rounded-xl text-emerald-400 font-bold">-{t.saved} mins delay prevented</div>
-                    <div className="p-2 bg-slate-900 rounded-xl text-cyan-400 font-bold truncate">{t.route}</div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Scheduled Arrival:</span>
+                      <strong className="text-white">{t.scheduled_arrival}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Shadow Block ETA:</span>
+                      <strong className="text-emerald-400">{t.predicted_arrival}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Delay Prevented:</span>
+                      <strong className="text-cyan-400">+{t.delay_prevented_mins} Minutes</strong>
+                    </div>
+                  </div>
+
+                  <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-slate-300 font-sans text-[11px]">
+                    🚦 <strong>COA Action</strong>: {t.dispatch_routing}
                   </div>
                 </div>
               ))}
@@ -19464,52 +19586,131 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
           </div>
         )}
 
-        {/* VIEW 4: CONTROLLER */}
-        {tab === 'controller' && (
-          <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 max-w-4xl mx-auto space-y-4 font-mono text-xs shadow-2xl">
-            <div className="flex justify-between items-center border-b border-purple-500/40 pb-3">
-              <div>
-                <span className="text-purple-400 font-bold text-[10px] uppercase">COIS SECTION CONTROLLER CONSOLE</span>
-                <h4 className="text-lg font-black text-white font-sans mt-0.5">Line Block Grant & Track Fitness Portal</h4>
+        {/* VIEW 4: KAVACH 4.0 ATP & TSR */}
+        {tab === 'kavach' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-purple-400" />
+                <span>On-Track Machinery (OTM) &amp; KAVACH Speed Restrictions</span>
+              </h4>
+
+              <div className="space-y-3">
+                {kavachFleet.map((m: any) => (
+                  <div
+                    key={m.machine_code}
+                    onClick={() => setSelectedMachine(m)}
+                    className={`p-4 rounded-2xl border transition-all cursor-pointer space-y-2 ${
+                      selectedMachine.machine_code === m.machine_code ? 'border-purple-500 bg-purple-950/40' : 'border-slate-800 bg-slate-950 hover:bg-slate-900'
+                    }`}
+                  >
+                    <div className="flex justify-between items-center">
+                      <span className="text-purple-400 font-bold">{m.machine_code}</span>
+                      <span className="px-2 py-0.5 bg-slate-900 text-emerald-300 border border-slate-800 rounded text-[9px]">
+                        TSR: {m.kavach_tsr_speed_limit_km_h} km/h
+                      </span>
+                    </div>
+                    <h5 className="font-bold text-white font-sans text-xs">{m.machine_type}</h5>
+                    <p className="text-slate-400 text-[11px] font-sans">Base: {m.base_depot} • Block: {m.assigned_block}</p>
+                  </div>
+                ))}
               </div>
-              <ShieldCheck className="w-8 h-8 text-purple-400" />
             </div>
+
+            {/* Broadcast Console */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 flex flex-col justify-between space-y-4 font-sans">
+              <div className="space-y-3">
+                <h4 className="text-white font-bold text-sm">KAVACH 4.0 Loco Cab Wireless Balise Link</h4>
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  Pushes dynamic Temporary Speed Restrictions (TSR) directly to the locomotive driver's cab display (DMI), preventing manual Caution Order oversight.
+                </p>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 font-mono text-xs">
+                  <div className="flex justify-between"><span>RFID Balise ID:</span><span className="text-cyan-300">{selectedMachine.kavach_rfid_balise_id}</span></div>
+                  <div className="flex justify-between"><span>Enforced Speed:</span><span className="text-amber-400 font-bold">{selectedMachine.kavach_tsr_speed_limit_km_h} km/h</span></div>
+                  <div className="flex justify-between"><span>Idle Transit Saved:</span><span className="text-emerald-400">{selectedMachine.idle_transit_saving_pct}%</span></div>
+                </div>
+              </div>
+
+              <button
+                onClick={handleBroadcastTsr}
+                disabled={tsrBroadcasted}
+                className="w-full py-3 bg-purple-500 hover:bg-purple-400 text-slate-950 font-black rounded-xl text-xs shadow-lg shadow-purple-500/20 transition-all active:scale-95 disabled:opacity-50"
+              >
+                {tsrBroadcasted ? '✅ KAVACH TSR Telegram Broadcasted to Locos!' : 'Broadcast KAVACH 4.0 TSR Packet'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* VIEW 5: SECTION CONTROLLER SAFETY PORTAL */}
+        {tab === 'controller' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-sans">
+              <div>
+                <span className="text-purple-400 font-bold block text-sm">Fail-Safe Digital Permit-to-Work (PTW) &amp; Earthing Handshake</span>
+                <span className="text-slate-400 text-xs">Prevents accidental 25kV re-energization until field P-Way gangs confirm discharge rod removal and track gauge clearance.</span>
+              </div>
+              <button
+                onClick={handleIssuePtw}
+                disabled={ptwIssued}
+                className="px-5 py-2.5 bg-purple-500 hover:bg-purple-400 text-slate-950 font-black rounded-xl text-xs shadow-lg shadow-purple-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {ptwIssued ? '✅ Digital PTW Cryptographically Signed!' : 'Issue Digital Permit-to-Work Token'}
+              </button>
+            </div>
+
             <div className="space-y-3">
-              {controllerLogs.map((l) => (
-                <div key={l.id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-1">
-                  <div className="flex justify-between"><span className="text-purple-400 font-bold">{l.id} • {l.stn}</span><span className="text-emerald-400 font-bold">{l.act}</span></div>
-                  <div className="text-slate-400 text-[10px]">Controller: {l.ctrl} • {l.time}</div>
-                  <p className="text-slate-300 font-sans text-xs pt-1 border-t border-slate-900">{l.note}</p>
+              {controllerLogs.map((l: any) => (
+                <div key={l.log_id} className="p-4 bg-slate-900 rounded-2xl border border-slate-800 space-y-1">
+                  <div className="flex justify-between">
+                    <span className="text-purple-400 font-bold">{l.log_id} • {l.station}</span>
+                    <span className="text-emerald-400 font-bold">{l.action_taken}</span>
+                  </div>
+                  <div className="text-slate-400 text-[10px]">Controller: {l.controller_officer} • {l.log_timestamp}</div>
+                  <p className="text-slate-300 font-sans text-xs pt-1 border-t border-slate-800">{l.log_notes}</p>
                 </div>
               ))}
             </div>
           </div>
         )}
 
-        {/* VIEW 5: ANALYTICS */}
+        {/* VIEW 6: GATISHAKTI & CAPACITY ANALYTICS */}
         {tab === 'analytics' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-2">
-              <span className="text-purple-400 font-bold text-[10px] uppercase">CAPACITY GAIN</span>
-              <div className="text-3xl font-black text-white">+22.4%</div>
-              <p className="text-slate-400 text-[11px] font-sans">Increase in freight path availability during night slots.</p>
-            </div>
-            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-2">
-              <span className="text-emerald-400 font-bold text-[10px] uppercase">PUNCTUALITY GAIN</span>
-              <div className="text-3xl font-black text-emerald-400">+18.5%</div>
-              <p className="text-slate-400 text-[11px] font-sans">Premier passenger train schedule retention.</p>
-            </div>
-            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-2">
-              <span className="text-cyan-400 font-bold text-[10px] uppercase">MACHINE UTILIZATION</span>
-              <div className="text-3xl font-black text-cyan-400">88.4%</div>
-              <p className="text-slate-400 text-[11px] font-sans">09-3X Tamping & BCM machine productive hours.</p>
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {gatiShaktiMetrics.map((g: any) => (
+                <div key={g.corridor_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <span className="text-purple-400 font-bold">{g.corridor_id}</span>
+                  <h4 className="font-bold text-white font-sans text-sm">{g.corridor_name}</h4>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Capacity Recovered:</span>
+                      <strong className="text-emerald-400 font-bold">+{g.line_capacity_recovered_pct}%</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Punctuality:</span>
+                      <strong className="text-cyan-400">{g.passengers_on_time_pct}% On-Time</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Carbon Avoided:</span>
+                      <strong className="text-amber-400">{g.carbon_emission_avoided_tons} Tons CO2</strong>
+                    </div>
+                  </div>
+
+                  <div className="text-[10px] text-emerald-400 font-sans">
+                    ✅ PM GatiShakti National Master Plan GIS Layer Synchronized
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
 
       </div>
-  );
-}
+    );
+  }
 
   /* =========================================================================
      COAL INDIA / SIH26024 SMART MINE GOVERNANCE & DGMS COMPLIANCE
