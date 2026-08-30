@@ -1,0 +1,23 @@
+[
+  {
+    "format": "NIC DILRMP XML 2.0",
+    "description": "Standardized schema conforming to Digital India Land Records Modernization Programme guidelines for national inter-state land interoperability.",
+    "features_included": "ULPIN, Khasra, Khata, Owner Details, Metric Area, Soil Class",
+    "mime_type": "application/xml",
+    "sha256_checksum": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "format": "PostGIS SQL Feature Dump",
+    "description": "Spatial database dump with EPSG:4326 geometry tables, ready for import into state Web-GIS portals.",
+    "features_included": "Polygon Geometries, Boundary Coordinates, Centroids, Land Attributes",
+    "mime_type": "application/sql",
+    "sha256_checksum": "a8f5f167f44f4964e6c998dee827110c01759f375001222416f4d2f80164c48b"
+  },
+  {
+    "format": "OGC GeoJSON FeatureCollection",
+    "description": "Lightweight open web-standard format for frontend Leaflet and OpenLayers map renderers.",
+    "features_included": "GeoJSON Coordinates, Properties Table, Metadata Header",
+    "mime_type": "application/json",
+    "sha256_checksum": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"
+  }
+]

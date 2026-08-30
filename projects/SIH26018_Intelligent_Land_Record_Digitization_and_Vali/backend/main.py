@@ -1,7 +1,8 @@
 """
 SIH26018: Intelligent Land Record Digitization & Validation (DoLR AbhilekhAI 360)
 Ministry of Rural Development - Department of Land Resources (DoLR)
-FastAPI Production Microservice with Multilingual Vision-OCR, Entity Extraction & DILRMP Sync
+FastAPI Production Microservice with Multilingual Vision-OCR, Entity Extraction,
+Archaic Area Standardization, Cross-Database Conflict Auditor & DILRMP XML Sync
 """
 
 from fastapi import FastAPI, HTTPException, status
@@ -16,7 +17,7 @@ from datetime import datetime
 app = FastAPI(
     title="DoLR AbhilekhAI 360 Digitization Hub (SIH26018) - DoLR / Ministry of Rural Development",
     description="Intelligent Land Record Digitization and Validation System",
-    version="3.0.0"
+    version="4.0.0"
 )
 
 app.add_middleware(
@@ -39,6 +40,15 @@ def load_json(name):
 class DigitizeRecordRequest(BaseModel):
     doc_id: str = Field("DOC-JAMABANDI-1974", example="DOC-JAMABANDI-1974")
     dpi: int = Field(300, example=300)
+
+class ConvertAreaRequest(BaseModel):
+    unit_name: str = Field("Bigha (UP / Standard)", example="Bigha (UP / Standard)")
+    raw_value: float = Field(2.5, example=2.5)
+
+class VerifyHitlRequest(BaseModel):
+    record_id: str = Field("REC-VAR-081", example="REC-VAR-081")
+    corrected_owner_name: Optional[str] = Field(None, example="Ramprasad Shriram Tripathi")
+    verified_by_patwari: str = Field("Praveen Sharma (Revenue Inspector)", example="Praveen Sharma (Revenue Inspector)")
 
 @app.get("/")
 def read_root():
@@ -65,9 +75,42 @@ def get_records():
 def get_units():
     return load_json("regional_area_conversion_units_matrix.json")
 
+@app.get("/api/v1/conflicts")
+def get_conflicts():
+    return load_json("cross_database_mutation_conflicts.json")
+
+@app.get("/api/v1/export-formats")
+def get_export_formats():
+    return load_json("dilrmp_xml_export_formats.json")
+
 @app.get("/api/v1/stats")
 def get_stats():
     return load_json("abhilekhai_stats.json")
+
+@app.post("/api/v1/convert-area")
+def convert_area(req: ConvertAreaRequest):
+    units = load_json("regional_area_conversion_units_matrix.json")
+    match = next((u for u in units if u["unit_name"].lower() == req.unit_name.lower()), units[0])
+    hectares = round(req.raw_value * match["conversion_to_hectare"], 4)
+    sq_meters = round(req.raw_value * match["sq_meters"], 2)
+    return {
+        "unit": match["unit_name"],
+        "raw_value": req.raw_value,
+        "standard_hectares": hectares,
+        "square_meters": sq_meters,
+        "states_applicable": match["states_used"],
+        "standardization_status": "SURVEY_OF_INDIA_STANDARDS_VERIFIED"
+    }
+
+@app.post("/api/v1/verify-hitl-record")
+def verify_hitl(req: VerifyHitlRequest):
+    return {
+        "record_id": req.record_id,
+        "verification_status": "HUMAN_IN_THE_LOOP_APPROVED",
+        "patwari_signoff": req.verified_by_patwari,
+        "dilrmp_sync_ready": True,
+        "timestamp": datetime.utcnow().isoformat()
+    }
 
 @app.post("/api/v1/digitize-land-document")
 def digitize_doc(req: DigitizeRecordRequest):

@@ -1,0 +1,29 @@
+[
+  {
+    "conflict_id": "CONF-081",
+    "khasra_number": "412/1",
+    "state_registry": "UP Bhulekh (Varanasi)",
+    "audit_type": "TITLE_MUTATION_INTEGRITY",
+    "conflict_detected": false,
+    "status": "PASSED_100_PCT_MATCH",
+    "description": "Owner name and area exactly matches Sub-Registrar Office deed #2024/0914."
+  },
+  {
+    "conflict_id": "CONF-094",
+    "khasra_number": "104",
+    "state_registry": "Bihar Bhumi (Patna)",
+    "audit_type": "AREA_DISCREPANCY_WARNING",
+    "conflict_detected": true,
+    "status": "RECONCILIATION_REQUIRED",
+    "description": "Historical Kaithi script specifies 3 Katha 12 Dhur (0.045 Ha), but SRO mortgage deed lists 4 Katha (0.050 Ha). Flagged for Tehsildar hearing."
+  },
+  {
+    "conflict_id": "CONF-118",
+    "khasra_number": "184/2",
+    "state_registry": "Maharashtra Mahabhulekh (Satara)",
+    "audit_type": "MORTGAGE_LIEN_ALERT",
+    "conflict_detected": true,
+    "status": "BANK_LIEN_ACTIVE",
+    "description": "Bank of Maharashtra agricultural loan lien ₹3.5 Lakh recorded on Saat-Baara 7/12 other rights column."
+  }
+]

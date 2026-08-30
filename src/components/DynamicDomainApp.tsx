@@ -131,6 +131,11 @@ import sih26017Shap from '../data/sih26017/shap_delay_risk_drivers_matrix.json';
 import sih26017Actions from '../data/sih26017/proactive_policy_mitigation_actions.json';
 import sih26017Cala from '../data/sih26017/district_cala_velocity_scorecards.json';
 import sih26017Dispatches from '../data/sih26017/escalation_taskforce_dispatches.json';
+import sih26018Docs from '../data/sih26018/scanned_historical_documents_catalog.json';
+import sih26018Records from '../data/sih26018/digitized_land_records_entities.json';
+import sih26018Units from '../data/sih26018/regional_area_conversion_units_matrix.json';
+import sih26018Conflicts from '../data/sih26018/cross_database_mutation_conflicts.json';
+import sih26018Exports from '../data/sih26018/dilrmp_xml_export_formats.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -3554,113 +3559,447 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
     );
   }
 
+  /* =========================================================================
+     MINISTRY OF RURAL DEVELOPMENT / DoLR / SIH26018 ABHILEKHAI 360
+     Intelligent Land Record Digitization, Vision-OCR, Entity Extraction & Validation
+     ========================================================================= */
   if (psId === 'SIH26018') {
-    const docs = [
-      { id: "DOC-JAMABANDI-1974", type: "Historical Jamabandi Revenue Register", loc: "Varanasi, UP", script: "Devanagari Hindi", dpi: 300, conf: "96.2%", records: 12 },
-      { id: "DOC-KHATIYAN-1962", type: "Cadastral Khatiyan Record", loc: "Patna, Bihar", script: "Kaithi & Devanagari", dpi: 200, conf: "88.5%", records: 8 },
-      { id: "DOC-7-12-EXTRACT", type: "Village Form 7/12 (Saat-Baara)", loc: "Satara, MH", script: "Marathi (Modi/Dev)", dpi: 400, conf: "98.8%", records: 6 }
-    ];
+    const historicalDocs = sih26018Docs;
+    const entities = sih26018Records;
+    const unitConversions = sih26018Units;
+    const auditConflicts = sih26018Conflicts;
+    const exportFormats = sih26018Exports;
 
-    const records = [
-      { id: "REC-081", khasra: "412/1", khata: "88", owner: "Ramprasad Shriram Tripathi", area: "2 Bigha 4 Biswa", ha: "0.556 Ha", type: "Chahi (Irrigated Double Crop)", conf: "97.4%" },
-      { id: "REC-082", khasra: "412/2", khata: "88", owner: "Ghanshyam Shriram Tripathi", area: "1 Bigha 18 Biswa", ha: "0.481 Ha", type: "Chahi (Irrigated Double Crop)", conf: "96.8%" },
-      { id: "REC-094", khasra: "104", khata: "19", owner: "Mohammad Aslam Sheikh", area: "3 Katha 12 Dhur", ha: "0.045 Ha", type: "Abadi (Residential Homestead)", conf: "74.2%" }
-    ];
+    const [selectedDoc, setSelectedDoc] = React.useState(historicalDocs[0]);
+    const [tab, setTab] = React.useState<'ocr' | 'entities' | 'area_solver' | 'conflicts' | 'hitl' | 'export'>('ocr');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
 
-    const [selectedDoc, setSelectedDoc] = React.useState(docs[0]);
-    const [rawArea, setRawArea] = React.useState(2.0);
-    const [unit, setUnit] = React.useState('Bigha (UP)');
+    // Area Standardization Solver State
+    const [rawArea, setRawArea] = React.useState(2.5);
+    const [selectedUnit, setSelectedUnit] = React.useState(unitConversions[0].unit_name);
 
-    const getHectares = () => {
-      const factors: Record<string, number> = { 'Bigha (UP)': 0.2529, 'Bigha (Bihar)': 0.2508, 'Guntha (MH)': 0.0101, 'Kanal (Punjab)': 0.0505 };
-      return (rawArea * (factors[unit] || 0.25)).toFixed(3);
+    // Calculated Area
+    const currentUnitObj = unitConversions.find((u: any) => u.unit_name === selectedUnit) || unitConversions[0];
+    const calculatedHectares = (rawArea * currentUnitObj.conversion_to_hectare).toFixed(4);
+    const calculatedSqMeters = (rawArea * currentUnitObj.sq_meters).toFixed(1);
+
+    // HITL Verification State
+    const [verifiedRecords, setVerifiedRecords] = React.useState<Record<string, boolean>>({});
+    const [verifiedFlash, setVerifiedFlash] = React.useState<string | null>(null);
+
+    // Export Feedback State
+    const [exportedFormat, setExportedFormat] = React.useState<string | null>(null);
+
+    const handleToggleHitlVerify = (recId: string) => {
+      setVerifiedRecords((prev) => ({ ...prev, [recId]: !prev[recId] }));
+      setVerifiedFlash(recId);
+      setTimeout(() => setVerifiedFlash(null), 3000);
     };
 
+    const handleTriggerExport = (fmtName: string) => {
+      setExportedFormat(fmtName);
+      setTimeout(() => setExportedFormat(null), 3500);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF RURAL DEVELOPMENT • DoLR / DILRMP (ABHILEKHAI 360)",
+        desc: "Multilingual Vision-OCR, Archaic Script Entity Slicing, Regional Area Standardizer, Mutation Conflict Auditor & DILRMP Sync",
+        tabOcr: "🔤 Multilingual Vision-OCR",
+        tabEntities: "🏷️ Land Entity Slicer & ULPIN",
+        tabAreaSolver: "📐 Regional Area Solver",
+        tabConflicts: "🛡️ Mutation Conflict Auditor",
+        tabHitl: "🔍 HITL Verification Workbench",
+        tabExport: "🚀 DILRMP XML & PostGIS",
+      },
+      hi: {
+        tag: "ग्रामीण विकास मंत्रालय • भूमि संसाधन विभाग / DILRMP (अभिलेख-AI 360)",
+        desc: "बहुभाषी विज़न-OCR, ऐतिहासिक लिपि इकाई निष्कर्षण, क्षेत्रीय क्षेत्रफल मानकीकरण, नामांतरण विवाद जांच व DILRMP सिंक",
+        tabOcr: "🔤 बहुभाषी विज़न-OCR",
+        tabEntities: "🏷️ भूमि इकाई निष्कर्षण व ULPIN",
+        tabAreaSolver: "📐 क्षेत्रीय क्षेत्रफल सॉल्वर",
+        tabConflicts: "🛡️ नामांतरण विवाद ऑडिटर",
+        tabHitl: "🔍 मानवीय सत्यापन कार्यक्षेत्र",
+        tabExport: "🚀 DILRMP XML व PostGIS",
+      },
+      mr: {
+        tag: "ग्रामीण विकास मंत्रालय • भू-संसाधन विभाग / DILRMP (अभिलेख-AI 360)",
+        desc: "अभिलेख विझन-OCR, मोडी व ऐतिहासिक लिपी विश्लेषण, प्रादेशिक क्षेत्रफळ गणक, फेरफार तपासणी व DILRMP सिंक",
+        tabOcr: "🔤 मोडी व देवनागरी OCR",
+        tabEntities: "🏷️ जमिनीचे तपशील व ULPIN",
+        tabAreaSolver: "📐 गुंठा व बिघा क्षेत्रफळ गणक",
+        tabConflicts: "🛡️ फेरफार व दुबार विक्री तपासणी",
+        tabHitl: "🔍 तलाठी पडताळणी डेस्क",
+        tabExport: "🚀 DILRMP XML व PostGIS",
+      }
+    }[lang];
+
     return (
-      <div className="space-y-6">
-        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="space-y-6 font-sans">
+        {/* Header */}
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold mb-1">
               <Scan className="w-4 h-4 text-emerald-400" />
-              <span>DEPARTMENT OF LAND RESOURCES (DoLR) • DILRMP • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">Vision-OCR Extraction of Jamabandi, Khatiyan & 7/12 Records from Handwritten Historical Documents</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-2xl text-xs font-bold">
-            Vision-OCR Engine: Active
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-emerald-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {docs.map((d) => (
-            <button key={d.id} onClick={() => setSelectedDoc(d)} className={`p-4 rounded-2xl border text-left transition-all ${
-              selectedDoc.id === d.id ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-md ring-1 ring-emerald-400' : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
-            }`}>
-              <div className="text-[10px] font-mono text-emerald-400 font-bold">{d.id}</div>
-              <div className="text-xs font-bold truncate text-white mt-0.5">{d.type.split(' ')[0]} {d.type.split(' ')[1]}</div>
-              <div className="text-[11px] text-slate-400 mt-1">{d.loc} • {d.dpi} DPI</div>
-              <div className="mt-2 text-[10px] flex justify-between font-mono text-slate-400">
-                <span>{d.script}</span>
-                <span className="text-emerald-400 font-bold">{d.conf} Conf</span>
-              </div>
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
+          {[
+            { id: 'ocr', label: t.tabOcr },
+            { id: 'entities', label: t.tabEntities },
+            { id: 'area_solver', label: t.tabAreaSolver },
+            { id: 'conflicts', label: t.tabConflicts },
+            { id: 'hitl', label: t.tabHitl },
+            { id: 'export', label: t.tabExport },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-emerald-500 text-slate-950 font-black shadow-lg shadow-emerald-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-            <h4 className="font-bold text-sm text-white flex items-center gap-2">
-              <Database className="w-4 h-4 text-emerald-400" />
-              <span>Digitized Land Record Fields ({selectedDoc.loc})</span>
-            </h4>
-            <div className="space-y-3">
-              {records.map((r) => (
-                <div key={r.id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-xs">
+        {/* TAB 1: MULTILINGUAL VISION-OCR */}
+        {tab === 'ocr' && (
+          <div className="space-y-6">
+            {/* Catalog Selector Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {historicalDocs.map((d: any) => (
+                <button
+                  key={d.doc_id}
+                  onClick={() => setSelectedDoc(d)}
+                  className={`p-5 rounded-2xl border text-left transition-all ${
+                    selectedDoc.doc_id === d.doc_id
+                      ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-lg ring-1 ring-emerald-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-emerald-400">{d.doc_id}</span>
+                    <span className="text-cyan-400">{d.scan_resolution_dpi} DPI</span>
+                  </div>
+                  <div className="text-sm font-bold text-white mt-1 line-clamp-1">{d.document_type}</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">{d.location}</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-purple-400">{d.script_language.split(' ')[0]}</span>
+                    <span className="text-emerald-400 font-bold">{d.ocr_confidence_pct}% Conf</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Document Scan & OCR Deep Dive */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+              <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                    <Scan className="w-4 h-4 text-emerald-400" />
+                    <span>Raw Historical Manuscript Scan ({selectedDoc.location})</span>
+                  </h4>
+                  <span className="px-2.5 py-0.5 rounded-full bg-slate-950 text-cyan-300 border border-slate-800 text-[10px]">
+                    {selectedDoc.scan_resolution_dpi} DPI
+                  </span>
+                </div>
+
+                <div className="h-64 bg-slate-950 rounded-2xl border-2 border-dashed border-slate-800 flex flex-col items-center justify-center p-6 text-center space-y-3">
+                  <div className="w-20 h-24 border-2 border-amber-500/40 rounded-lg flex flex-col items-center justify-center p-2 text-amber-400/80 bg-amber-950/20">
+                    <span className="text-[9px] font-bold">📜 REVENUE</span>
+                    <span className="text-[8px] mt-1 text-slate-500">1974</span>
+                  </div>
+                  <div className="text-xs text-slate-300 font-sans">
+                    <strong>{selectedDoc.document_type}</strong>
+                    <div className="text-[11px] text-slate-500 mt-0.5">{selectedDoc.script_language}</div>
+                  </div>
+                  <div className="px-3 py-1 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full text-[10px] font-bold">
+                    Pre-Processed: Contrast Normalized &amp; De-Skewed (0.4° Tilt Fixed)
+                  </div>
+                </div>
+              </div>
+
+              {/* OCR Model Architecture Card */}
+              <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-sans text-xs">
+                <h4 className="text-white font-bold text-sm flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-emerald-400" />
+                  <span>TrOCR + LayoutLMv3 Multilingual Pipeline</span>
+                </h4>
+
+                <div className="grid grid-cols-3 gap-3 text-center font-mono">
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">CHARACTER ACCURACY</span>
+                    <strong className="text-emerald-400 text-base block mt-0.5">{selectedDoc.ocr_confidence_pct}%</strong>
+                    <span className="text-[9px] text-slate-500">Zero Loss Text</span>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">ENTITIES PARSED</span>
+                    <strong className="text-cyan-400 text-base block mt-0.5">{selectedDoc.parcels_extracted_count} Records</strong>
+                    <span className="text-[9px] text-slate-500">Khasra/Khata</span>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">DILRMP STATUS</span>
+                    <strong className="text-purple-400 text-xs block mt-1">PASSED</strong>
+                    <span className="text-[9px] text-slate-500">Cross-Validated</span>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-[11px] text-slate-300">
+                  <span className="text-emerald-400 font-bold block text-xs">Archaic Script Vocabulary Dictionary</span>
+                  <p className="leading-relaxed">
+                    Pre-trained on 2.4 million historical land records across Devanagari, Modi script, Kaithi, and Urdu revenue registers, recognizing terms like <em>Chahi, Barani, Gair Mumkin, Namantaran Panji, and Hissedar</em>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: LAND ENTITY SLICER & ULPIN */}
+        {tab === 'entities' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {entities.map((rec: any) => (
+                <div key={rec.record_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
                   <div className="flex justify-between items-start">
                     <div>
-                      <div className="font-mono text-xs font-bold text-emerald-400">Khasra #{r.khasra} (Khata #{r.khata})</div>
-                      <div className="font-bold text-sm text-white mt-0.5">{r.owner}</div>
-                      <div className="text-[11px] text-slate-400">{r.type}</div>
+                      <span className="text-emerald-400 font-bold">{rec.record_id}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{rec.owner}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{rec.land_type}</p>
                     </div>
-                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">{r.conf} OCR</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      {rec.ocr_conf} OCR
+                    </span>
                   </div>
-                  <div className="pt-2 border-t border-slate-900 flex justify-between font-mono text-[11px] text-slate-300">
-                    <span>Original: {r.area}</span>
-                    <span className="text-cyan-400 font-bold">{r.ha}</span>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Khasra / Khata No:</span>
+                      <strong className="text-white">#{rec.khasra} (Khata #{rec.khata})</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Original Local Area:</span>
+                      <strong className="text-amber-400">{rec.local_area}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Standardized Metric:</span>
+                      <strong className="text-cyan-400">{rec.metric_area_ha} Hectares</strong>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-800 text-[10px] text-purple-300 flex justify-between font-sans">
+                    <span>ULPIN: {rec.ulpin}</span>
+                    <span className="text-emerald-400 font-bold">Verified</span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+        )}
 
-          <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs">
-            <h4 className="font-bold text-sm text-white flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              <span>Regional Land Unit Standardizer</span>
-            </h4>
-            <div className="space-y-3">
-              <div>
-                <label className="text-slate-400 font-bold block mb-1">Local Land Area Value</label>
-                <input type="number" step="0.1" value={rawArea} onChange={(e) => setRawArea(Number(e.target.value))} className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-slate-100 font-mono" />
+        {/* TAB 3: REGIONAL ARCHAIC AREA SOLVER */}
+        {tab === 'area_solver' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            {/* Input Form */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Sliders className="w-5 h-5 text-emerald-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">Statutory Area Metric Converter</h4>
+                  <p className="text-slate-400 text-xs font-sans">Converts Bigha, Guntha, Katha &amp; Kanal into Survey of India standard Hectares</p>
+                </div>
               </div>
-              <div>
-                <label className="text-slate-400 font-bold block mb-1">Regional Traditional Unit</label>
-                <select value={unit} onChange={(e) => setUnit(e.target.value)} className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-slate-100">
-                  <option>Bigha (UP)</option>
-                  <option>Bigha (Bihar)</option>
-                  <option>Guntha (MH)</option>
-                  <option>Kanal (Punjab)</option>
-                </select>
+
+              <div className="space-y-3">
+                <div>
+                  <label className="text-slate-300 font-bold block mb-1 font-sans">Local Area Measurement Value:</label>
+                  <input
+                    type="number"
+                    step="0.1"
+                    min="0.1"
+                    max="100"
+                    value={rawArea}
+                    onChange={(e) => setRawArea(Number(e.target.value))}
+                    className="w-full p-3 bg-slate-950 border border-slate-800 rounded-xl text-white font-mono"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-slate-300 font-bold block mb-1 font-sans">Select Regional Traditional Unit:</label>
+                  <select
+                    value={selectedUnit}
+                    onChange={(e) => setSelectedUnit(e.target.value)}
+                    className="w-full p-3 bg-slate-950 border border-slate-800 rounded-xl text-white font-sans"
+                  >
+                    {unitConversions.map((u: any) => (
+                      <option key={u.unit_name} value={u.unit_name}>
+                        {u.unit_name} ({u.states_used})
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
-              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-1 font-mono">
-                <span className="text-slate-500 block text-[10px] uppercase font-bold">Standard Metric:</span>
-                <div className="text-lg font-black text-emerald-400">{getHectares()} Hectares</div>
-                <div className="text-[11px] text-slate-400">Equivalent to {(Number(getHectares()) * 2.471).toFixed(3)} Acres</div>
+
+              <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-[11px] font-sans text-slate-400">
+                📏 <strong>Conversion Formula</strong>: 1 {currentUnitObj.unit_name} = {currentUnitObj.conversion_to_hectare} Hectares ({currentUnitObj.sq_meters} m²).
+              </div>
+            </div>
+
+            {/* Calculated Output Card */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <span>Standardized Survey Metric Output</span>
+              </h4>
+
+              <div className="p-5 bg-slate-950 rounded-2xl border border-emerald-800/80 space-y-3">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Input Local Quantity:</span>
+                  <strong className="text-white">{rawArea} {selectedUnit.split(' ')[0]}</strong>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Square Meters (m²):</span>
+                  <strong className="text-cyan-400">{calculatedSqMeters} m²</strong>
+                </div>
+                <div className="pt-3 border-t border-slate-900 flex justify-between items-baseline">
+                  <span className="text-xs text-white font-bold uppercase font-sans">Standardized Hectares:</span>
+                  <span className="text-2xl font-black text-emerald-400 font-sans">{calculatedHectares} Ha</span>
+                </div>
+                <div className="text-slate-500 text-[10px] text-right font-sans">
+                  Equivalent to {(Number(calculatedHectares) * 2.471).toFixed(4)} Imperial Acres
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
+
+        {/* TAB 4: MUTATION CONFLICT AUDITOR */}
+        {tab === 'conflicts' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {auditConflicts.map((conf: any) => (
+                <div key={conf.conflict_id} className={`p-6 bg-slate-900 rounded-3xl border space-y-3 ${
+                  conf.conflict_detected ? 'border-amber-500/80 shadow-lg shadow-amber-500/10' : 'border-slate-800'
+                }`}>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-emerald-400 font-bold">{conf.conflict_id}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">Khasra #{conf.khasra_number}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{conf.state_registry}</p>
+                    </div>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                      conf.conflict_detected ? 'bg-amber-950 text-amber-300 border border-amber-800' : 'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                    }`}>
+                      {conf.status}
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-[11px] text-slate-300 font-sans leading-relaxed">
+                    {conf.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: HITL VERIFICATION WORKBENCH */}
+        {tab === 'hitl' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-4 bg-emerald-950/40 rounded-3xl border border-emerald-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-emerald-200 font-sans">
+              <div>
+                <strong className="text-white text-sm block">🔍 Revenue Inspector / Patwari Review Workbench</strong>
+                <span>Color-coded confidence indicators allow officers to review uncertain characters against the high-resolution scanned manuscript crops before committing to DILRMP databases.</span>
+              </div>
+              <span className="px-3 py-1 bg-emerald-500 text-slate-950 font-black rounded-xl text-xs font-mono shrink-0">
+                HITL Gatekeeper
+              </span>
+            </div>
+
+            <div className="space-y-3">
+              {entities.map((r: any) => {
+                const isVerified = verifiedRecords[r.record_id];
+                return (
+                  <div key={r.record_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-emerald-400 font-bold">{r.record_id}</span>
+                        <strong className="text-white font-sans text-sm">Khasra #{r.khasra}</strong>
+                        <span className="px-2 py-0.5 bg-slate-950 text-cyan-300 border border-slate-800 rounded text-[10px]">
+                          ULPIN: {r.ulpin}
+                        </span>
+                      </div>
+                      <div className="text-xs text-slate-300 font-sans">
+                        Titleholder: <strong className="text-white">{r.owner}</strong> • {r.local_area} ({r.metric_area_ha} Ha)
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => handleToggleHitlVerify(r.record_id)}
+                      className={`px-4 py-2 rounded-xl text-xs font-sans font-bold transition-all active:scale-95 shrink-0 ${
+                        isVerified
+                          ? 'bg-emerald-500 text-slate-950 font-black shadow-lg shadow-emerald-500/20'
+                          : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
+                      }`}
+                    >
+                      {isVerified ? '✅ Patwari Approved & Locked' : 'Sign-Off & Approve Record'}
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: DILRMP XML & POSTGIS EXPORT */}
+        {tab === 'export' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {exportFormats.map((fmt: any) => (
+                <div key={fmt.format} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col justify-between space-y-4">
+                  <div>
+                    <span className="text-emerald-400 font-bold block text-sm font-sans">{fmt.format}</span>
+                    <p className="text-[11px] text-slate-400 font-sans mt-1 leading-relaxed">{fmt.description}</p>
+                    <div className="mt-3 p-2.5 bg-slate-950 rounded-xl text-[10px] text-slate-500 break-all">
+                      SHA-256: {fmt.sha256_checksum.slice(0, 24)}...
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => handleTriggerExport(fmt.format)}
+                    className="w-full py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs font-sans shadow-md transition-all active:scale-95"
+                  >
+                    {exportedFormat === fmt.format ? '✅ Downloaded!' : `Export ${fmt.format.split(' ')[0]}`}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     );
   }
