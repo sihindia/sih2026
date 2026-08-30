@@ -1,0 +1,26 @@
+[
+  {
+    "subsystem": "Cylinder Head Temperature (CHT)",
+    "nominal_range": "110\u00b0C - 145\u00b0C",
+    "critical_limit": "> 180\u00b0C",
+    "failure_mode": "Overheating, cooling jacket blockage, lean mixture"
+  },
+  {
+    "subsystem": "Exhaust Gas Temperature (EGT)",
+    "nominal_range": "750\u00b0C - 830\u00b0C",
+    "critical_limit": "> 880\u00b0C",
+    "failure_mode": "Injector imbalance, late ignition timing, exhaust valve burn"
+  },
+  {
+    "subsystem": "Oil Lubrication & Pressure",
+    "nominal_range": "3.2 - 5.0 bar / 75\u00b0C - 100\u00b0C",
+    "critical_limit": "< 2.0 bar / > 120\u00b0C",
+    "failure_mode": "Oil pump cavitation, bearing shear, filter clogging"
+  },
+  {
+    "subsystem": "Vibration FFT Spectrogram",
+    "nominal_range": "< 1.5 g RMS (Crankshaft Order 2x)",
+    "critical_limit": "> 3.8 g RMS",
+    "failure_mode": "Connecting rod play, misfire imbalance, propeller imbalance"
+  }
+]

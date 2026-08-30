@@ -1,0 +1,20 @@
+[
+  {
+    "formation": "Kopili Shale Formation",
+    "depth_interval": "3,150m - 3,450m",
+    "primary_hazard": "Differential Sticking & Sloughing Shale",
+    "historical_npt_days": 18.5
+  },
+  {
+    "formation": "Langpar Carbonate / Sand",
+    "depth_interval": "3,800m - 4,100m",
+    "primary_hazard": "Overpressured Gas Kicks & Fluid Losses",
+    "historical_npt_days": 24.0
+  },
+  {
+    "formation": "Girujan Claystone",
+    "depth_interval": "1,200m - 2,200m",
+    "primary_hazard": "Tight Hole, Balling & Bit Wear",
+    "historical_npt_days": 8.0
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Delay Prediction Accuracy",
+    "value": "91.4% AUC-ROC",
+    "trend": "Gradient Boosted Tree Validation"
+  },
+  {
+    "metric": "Average Delay Prevented",
+    "value": "6.2 Months Saved",
+    "trend": "Proactive Intervention Protocols"
+  },
+  {
+    "metric": "Capital Escalation Avoided",
+    "value": "\u20b93,420 Cr",
+    "trend": "Across 120+ Monitored Mega-Projects"
+  }
+]

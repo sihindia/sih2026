@@ -1,0 +1,30 @@
+[
+  {
+    "case_id": "BMW-LOG-2026-001",
+    "hospital_name": "AIIMS New Delhi (Trauma Center & ICU-3)",
+    "robot_unit": "Fusion-AMR-MedBot-01",
+    "total_weight_kg": 14.2,
+    "yellow_bag_kg": 6.4,
+    "red_bag_kg": 5.8,
+    "white_sharps_kg": 0.0,
+    "blue_glass_kg": 2.0,
+    "vision_confidence_pct": 99.4,
+    "treatment_protocol": "Incineration (Yellow) + Autoclaving (Red) + Sodium Hypochlorite Wash (Blue)",
+    "cpcb_qr_manifest": "CPCB-BMW-DEL-88192-2026",
+    "status": "AUTOCLAVED_AND_DISPATCHED"
+  },
+  {
+    "case_id": "BMW-LOG-2026-042",
+    "hospital_name": "Fortis Memorial Research Institute (OT-4 & Cath Lab)",
+    "robot_unit": "Fusion-AMR-MedBot-02",
+    "total_weight_kg": 8.6,
+    "yellow_bag_kg": 3.2,
+    "red_bag_kg": 2.1,
+    "white_sharps_kg": 1.8,
+    "blue_glass_kg": 1.5,
+    "vision_confidence_pct": 98.8,
+    "treatment_protocol": "Puncture-Proof Sharps Dry Heat Sterilization + Incineration",
+    "cpcb_qr_manifest": "CPCB-BMW-GGN-99411-2026",
+    "status": "DISPATCHED_TO_CBWTF"
+  }
+]

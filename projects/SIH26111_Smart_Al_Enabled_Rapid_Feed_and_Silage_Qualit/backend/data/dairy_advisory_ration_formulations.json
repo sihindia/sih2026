@@ -1,0 +1,16 @@
+[
+  {
+    "animal_breed": "Indigenous Gir / Sahiwal Cow (10-14 L/Day)",
+    "concentrate_kg": 2.5,
+    "silage_kg": 12.0,
+    "green_fodder_kg": 15.0,
+    "mineral_mixture_g": 60
+  },
+  {
+    "animal_breed": "Murrah Buffalo (14-18 L/Day High Fat 7.5%)",
+    "concentrate_kg": 3.8,
+    "silage_kg": 16.0,
+    "green_fodder_kg": 18.0,
+    "mineral_mixture_g": 80
+  }
+]

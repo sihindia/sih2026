@@ -1,0 +1,31 @@
+[
+  {
+    "task_id": "MRPL-TSK-2026-001",
+    "department": "Refinery Process Engineering (CDU-III / Hydrocracker)",
+    "task_description": "Analyze scanned ultrasonic thickness inspection report of Reactor R-301 and draft Section 4.2 Engineering Approval Note",
+    "auto_routed_model": "Llama-3.2-11B-Vision + DeepSeek-R1-Distill-70B",
+    "local_tools_executed": [
+      "local_vision_ocr",
+      "python_thermo_sandbox",
+      "docx_approval_note_generator"
+    ],
+    "deliverable_file": "MRPL-APR-2026-081.docx (Formal Engineering Approval Note with Corrosion Rate 0.12 mm/yr)",
+    "network_egress_bytes": 0,
+    "confidence_score": 99.6,
+    "status": "DELIVERABLE_GENERATED"
+  },
+  {
+    "task_id": "MRPL-TSK-2026-042",
+    "department": "Energy Management & Pinch Optimization Wing",
+    "task_description": "Formulate Python script for Crude Pre-Heat Train Pinch Analysis (Heat Exchanger Network E-101 to E-108)",
+    "auto_routed_model": "Qwen-2.5-Coder-32B-Instruct",
+    "local_tools_executed": [
+      "python_sandbox",
+      "excel_heat_balance_generator"
+    ],
+    "deliverable_file": "cdu_pinch_optimizer.py & Energy_Balance_E101.xlsx (Saves 4.2 Gcal/hr Fuel Oil)",
+    "network_egress_bytes": 0,
+    "confidence_score": 98.9,
+    "status": "DELIVERABLE_GENERATED"
+  }
+]

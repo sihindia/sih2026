@@ -1,0 +1,44 @@
+[
+  {
+    "consultation_id": "IP-AYUSH-BLR01",
+    "applicant_entity": "Dr. V. Ramanathan (AayuBio Innovations, Bengaluru)",
+    "formulation_name": "Liposomal Curcumin & Withanolide Enteric Formulation",
+    "primary_query": "Can we patent an enhanced bioavailability nano-liposomal formulation of Curcumin and Ashwagandha for osteoarthritic knee pain?",
+    "formulation_tier": "Patent & Proprietary (P&P) / Phytopharmaceutical Track",
+    "jurisdiction": "DOMESTIC_INDIA_AND_INTERNATIONAL",
+    "national_patent_verdict": "PATENTABLE (Under Sec 2(1)(j) & Sec 3(d) proviso): Novel nanoliposomal delivery demonstrating 14x bioavailability and non-obvious synergistic anti-inflammatory index exceeding classical combination; NOT barred by Sec 3(p) TK bar since carrier delivery matrix is synthetic liposomal.",
+    "abs_compliance_obligation": "MANDATORY: Must execute Form I Approval with National Biodiversity Authority (NBA) under Biological Diversity Act 2002 (amended 2023) prior to patent grant.",
+    "international_guidance": "PCT International Application eligible; Mandatory disclosure of Indian biological origin required under WIPO GRATK Treaty (2024); US FDA Botanical Drug Guidance IND Phase I/II required for US marketing.",
+    "statutory_citations": "Patents Act 1970 Sec 2(1)(j), 3(d), 3(p); Biological Diversity Act 2023 Sec 6; WIPO Treaty on Genetic Resources & TK Art 3 (2024)",
+    "rag_confidence_score": 98.4,
+    "status": "SOURCE_CITED_VALIDATED"
+  },
+  {
+    "consultation_id": "IP-AYUSH-HRD03",
+    "applicant_entity": "Patanjali / Divya Pharmacy Export Division (Haridwar)",
+    "formulation_name": "Classical Chyawanprash Avaleha Export Variant",
+    "primary_query": "Can we claim patent exclusivity over an optimized vacuum-evaporated classical Chyawanprash method for export to the European Union?",
+    "formulation_tier": "Classical Medicine (First-Schedule Authoritative Texts)",
+    "jurisdiction": "INTERNATIONAL_EU_FOCUS",
+    "national_patent_verdict": "NON-PATENTABLE (Section 3(p) Traditional Knowledge Bar): Classical recipe described in Charaka Samhita, Chikitsa Sthana. Opposed via CSIR-TKDL prior art accession #TKDL-AM01/1429; Generic State Licensing Authority (SLA) manufacturing license applies.",
+    "abs_compliance_obligation": "EXEMPT for domestic AYUSH practitioners; Benefit-Sharing intimation to Uttarakhand SBB required for commercial export consignments.",
+    "international_guidance": "Cannot patent recipe abroad; Protectable via Registered Trademark (Class 5) + Geographical Indication (GI) tag; EU market access via Traditional Herbal Medicinal Products Directive (THMPD 2004/24/EC) 30-year medicinal use proof.",
+    "statutory_citations": "Indian Patents Act Sec 3(p); Drugs & Cosmetics Act 1940 First Schedule; EU Directive 2004/24/EC Art 16a; TKDL Archive TKDL-AM01/1429",
+    "rag_confidence_score": 99.2,
+    "status": "SOURCE_CITED_VALIDATED"
+  },
+  {
+    "consultation_id": "IP-AYUSH-KER05",
+    "applicant_entity": "Wayanad Tribal Cultivators Collective (Kerala)",
+    "formulation_name": "Standardized Arogyapacha (Trichopus zeylanicus) Anti-Fatigue Extract",
+    "primary_query": "What are our legal rights and benefit-sharing royalties for licensing an indigenous anti-fatigue tonic to an Ayurvedic pharmaceutical firm?",
+    "formulation_tier": "Patent & Proprietary Herb Extraction with Traditional Knowledge",
+    "jurisdiction": "DOMESTIC_INDIA",
+    "national_patent_verdict": "Kani Tribe Model Landmark: Extract method patentable by institute jointly with tribal trust; 50% license fees and 2% ongoing sales royalty statutory entitlement under ABS.",
+    "abs_compliance_obligation": "CRITICAL: Access & Benefit Sharing (ABS) agreement between Kerala State Biodiversity Board (KSBB), TBGRI, and Tribal Trust under Biological Diversity Act 2023.",
+    "international_guidance": "Protected against international patent piracy under Convention on Biological Diversity (CBD) Nagoya Protocol Article 5.",
+    "statutory_citations": "Biological Diversity Act 2023 Sec 21 (Fair & Equitable Benefit Sharing); Nagoya Protocol Art 5; Patents Act 1970 Sec 10(4)(ii)(D) mandatory source disclosure",
+    "rag_confidence_score": 97.6,
+    "status": "SOURCE_CITED_VALIDATED"
+  }
+]

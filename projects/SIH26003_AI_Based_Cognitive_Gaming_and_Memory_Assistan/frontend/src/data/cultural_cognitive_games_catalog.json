@@ -1,0 +1,23 @@
+[
+  {
+    "game_id": "GAME-MOTIF-01",
+    "name": "Traditional NER Motif Matcher",
+    "cognitive_focus": "Visuo-Spatial & Short-Term Memory",
+    "cultural_elements": "Assamese Gamosa, Manipuri Phanek, Naga Shawls",
+    "neuro_benefit": "Strengthens occipito-temporal pattern recognition pathways"
+  },
+  {
+    "game_id": "GAME-FOLK-02",
+    "name": "Bihu Dhol & Folk Melody Audio Recall",
+    "cognitive_focus": "Auditory Discrimination & Attention",
+    "cultural_elements": "Bihu Pepa, Manipuri Pena Fiddle, Great Hornbill Calls",
+    "neuro_benefit": "Stimulates auditory cortex and emotional reminiscence"
+  },
+  {
+    "game_id": "GAME-ROUTINE-03",
+    "name": "Village Daily Life Sequencing",
+    "cognitive_focus": "Executive Function & Planning",
+    "cultural_elements": "Tea Leaf Plucking, Paddy Winnowing, Morning Chai",
+    "neuro_benefit": "Reinforces procedural memory for activities of daily living (ADL)"
+  }
+]

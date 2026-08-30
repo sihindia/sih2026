@@ -1,30 +1,32 @@
--- Supabase / PostgreSQL Schema for SIH26047 (Patient Case-Taking Software)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- AIIA MEDIKIOSK 360 DATABASE SCHEMA (SIH26047)
+-- Ministry of Ayush - All India Institute of Ayurveda (AIIA)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26047_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26047',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS medikiosk_patient_intakes (
+    id SERIAL PRIMARY KEY,
+    intake_id VARCHAR(64) UNIQUE NOT NULL,
+    abha_id VARCHAR(64) NOT NULL,
+    patient_demographics VARCHAR(255) NOT NULL,
+    opd_clinic VARCHAR(255) NOT NULL,
+    interaction_mode VARCHAR(128) NOT NULL,
+    chief_complaint TEXT NOT NULL,
+    socrates_hpi TEXT NOT NULL,
+    ayurvedic_pariksha TEXT NOT NULL,
+    ocr_documents_scanned TEXT NOT NULL,
+    red_flag_alert TEXT NOT NULL,
+    time_saved_minutes NUMERIC(4, 1) NOT NULL,
+    physician_summary_status VARCHAR(128) NOT NULL,
+    status VARCHAR(64) DEFAULT 'SUMMARY_PUSHED_TO_HIS',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26047_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26047_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS abha_fhir_bundles (
+    id SERIAL PRIMARY KEY,
+    intake_id VARCHAR(64) REFERENCES medikiosk_patient_intakes(intake_id),
+    fhir_resource_type VARCHAR(64) DEFAULT 'Bundle',
+    abdm_consent_artifact_id VARCHAR(128) NOT NULL,
+    encrypted_payload_hash VARCHAR(128) NOT NULL,
+    pushed_to_his BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26047_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26047_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26047_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26047_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26047_audit_logs FOR SELECT USING (true);

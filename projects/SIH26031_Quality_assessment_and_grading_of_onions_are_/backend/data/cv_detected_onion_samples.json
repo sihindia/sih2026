@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "x": 10,
+    "y": 15,
+    "w": 18,
+    "h": 18,
+    "diameter_mm": "58.2mm",
+    "grade": "A",
+    "defect": "NONE",
+    "status": "Sound Bulb"
+  },
+  {
+    "id": 2,
+    "x": 32,
+    "y": 14,
+    "w": 19,
+    "h": 19,
+    "diameter_mm": "61.4mm",
+    "grade": "A",
+    "defect": "NONE",
+    "status": "Sound Bulb"
+  },
+  {
+    "id": 3,
+    "x": 55,
+    "y": 16,
+    "w": 17,
+    "h": 17,
+    "diameter_mm": "54.0mm",
+    "grade": "A",
+    "defect": "NONE",
+    "status": "Sound Bulb"
+  },
+  {
+    "id": 4,
+    "x": 76,
+    "y": 18,
+    "w": 16,
+    "h": 16,
+    "diameter_mm": "51.5mm",
+    "grade": "A",
+    "defect": "NONE",
+    "status": "Sound Bulb"
+  },
+  {
+    "id": 5,
+    "x": 12,
+    "y": 44,
+    "w": 17,
+    "h": 17,
+    "diameter_mm": "55.8mm",
+    "grade": "A",
+    "defect": "NONE",
+    "status": "Sound Bulb"
+  },
+  {
+    "id": 6,
+    "x": 34,
+    "y": 42,
+    "w": 18,
+    "h": 18,
+    "diameter_mm": "57.0mm",
+    "grade": "A",
+    "defect": "NONE",
+    "status": "Sound Bulb"
+  },
+  {
+    "id": 7,
+    "x": 56,
+    "y": 45,
+    "w": 14,
+    "h": 14,
+    "diameter_mm": "42.1mm",
+    "grade": "B",
+    "defect": "SKIN_PEEL",
+    "status": "Minor Skin Peel"
+  },
+  {
+    "id": 8,
+    "x": 74,
+    "y": 44,
+    "w": 18,
+    "h": 18,
+    "diameter_mm": "59.2mm",
+    "grade": "A",
+    "defect": "NONE",
+    "status": "Sound Bulb"
+  },
+  {
+    "id": 9,
+    "x": 14,
+    "y": 72,
+    "w": 18,
+    "h": 18,
+    "diameter_mm": "56.4mm",
+    "grade": "A",
+    "defect": "NONE",
+    "status": "Sound Bulb"
+  },
+  {
+    "id": 10,
+    "x": 36,
+    "y": 70,
+    "w": 12,
+    "h": 12,
+    "diameter_mm": "36.5mm",
+    "grade": "B",
+    "defect": "NONE",
+    "status": "Small Domestic"
+  },
+  {
+    "id": 11,
+    "x": 54,
+    "y": 73,
+    "w": 19,
+    "h": 19,
+    "diameter_mm": "63.0mm",
+    "grade": "A",
+    "defect": "NONE",
+    "status": "Export Grade"
+  },
+  {
+    "id": 12,
+    "x": 77,
+    "y": 74,
+    "w": 11,
+    "h": 11,
+    "diameter_mm": "27.8mm",
+    "grade": "URS",
+    "defect": "SPROUT_TIP",
+    "status": "Sprouted Tip"
+  }
+]

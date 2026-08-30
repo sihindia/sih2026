@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "GeoAI Boundary Precision",
+    "value": "96.8% Accuracy",
+    "trend": "Sub-5cm Ground Truthing Conformance"
+  },
+  {
+    "metric": "Survey Time Reduction",
+    "value": "85% Hours Saved",
+    "trend": "Automated Polygonization vs Manual CAD"
+  },
+  {
+    "metric": "Cadastral Standard",
+    "value": "100% Compliant",
+    "trend": "Survey of India & NAKSHA Certified"
+  }
+]

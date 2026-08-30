@@ -1,0 +1,20 @@
+[
+  {
+    "endpoint": "/api/v1/landstack/search-ulpin",
+    "method": "GET",
+    "description": "Fetches 3-Tier DPI stack records using 14-digit ULPIN",
+    "security": "OAuth 2.0 + Aadhaar e-Sign"
+  },
+  {
+    "endpoint": "/api/v1/landstack/verify-encumbrance",
+    "method": "POST",
+    "description": "Queries State Sub-Registrar & CERSAI bank mortgage database",
+    "security": "mTLS Inter-Agency Gateway"
+  },
+  {
+    "endpoint": "/api/v1/landstack/citizen-certificate",
+    "method": "GET",
+    "description": "Generates cryptographically signed Bhu-Aadhaar ownership deed PDF",
+    "security": "Digital Signature Certificate (DSC)"
+  }
+]

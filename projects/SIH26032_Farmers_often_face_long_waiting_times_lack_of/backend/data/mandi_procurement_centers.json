@@ -1,0 +1,54 @@
+[
+  {
+    "center_id": "MANDI-KHANNA",
+    "center_name": "Khanna Grain Market",
+    "district_state": "Ludhiana, Punjab",
+    "primary_crop": "Wheat / Paddy MSP Procurement",
+    "daily_intake_capacity": "14,000 Qtl",
+    "current_truck_queue": 16,
+    "average_tat_mins": "32 mins",
+    "available_slots_today": 48,
+    "load_balancer_alternative": "Samrala Mandi (14 km away \u2022 18m TAT)",
+    "active_unloading_bays": 6,
+    "status": "OPERATIONAL"
+  },
+  {
+    "center_id": "MANDI-LASALGAON",
+    "center_name": "Lasalgaon NAFED Hub",
+    "district_state": "Nashik, Maharashtra",
+    "primary_crop": "Rabi Onion Buffer Procurement",
+    "daily_intake_capacity": "8,500 Qtl",
+    "current_truck_queue": 26,
+    "average_tat_mins": "46 mins",
+    "available_slots_today": 18,
+    "load_balancer_alternative": "Pimpalgaon Baswant (22 km away \u2022 25m TAT)",
+    "active_unloading_bays": 4,
+    "status": "OPERATIONAL"
+  },
+  {
+    "center_id": "MANDI-KARNAL",
+    "center_name": "Karnal FCI Regional Hub",
+    "district_state": "Karnal, Haryana",
+    "primary_crop": "Paddy Grade-A MSP Procurement",
+    "daily_intake_capacity": "11,000 Qtl",
+    "current_truck_queue": 12,
+    "average_tat_mins": "26 mins",
+    "available_slots_today": 64,
+    "load_balancer_alternative": "Gharaunda Mandi (16 km away \u2022 20m TAT)",
+    "active_unloading_bays": 5,
+    "status": "OPERATIONAL"
+  },
+  {
+    "center_id": "MANDI-GULBARGA",
+    "center_name": "Kalaburagi Red Gram Yard",
+    "district_state": "Kalaburagi, Karnataka",
+    "primary_crop": "Tur / Chana MSP Procurement",
+    "daily_intake_capacity": "7,200 Qtl",
+    "current_truck_queue": 14,
+    "average_tat_mins": "34 mins",
+    "available_slots_today": 36,
+    "load_balancer_alternative": "Sedam Yard (28 km away \u2022 30m TAT)",
+    "active_unloading_bays": 4,
+    "status": "OPERATIONAL"
+  }
+]

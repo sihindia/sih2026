@@ -1,0 +1,44 @@
+[
+  {
+    "case_id": "MONS-2026-VID01",
+    "target_block": "Ner Block, Yavatmal District (Vidarbha, Maharashtra)",
+    "primary_crop": "BT Cotton (Kharif Rainfed)",
+    "forecast_horizon_days": 21,
+    "lead_time_weeks": "3 Weeks Ahead",
+    "teleconnection_signals": "ENSO: Neutral (Ni\u00f1o 3.4: +0.2\u00b0C) | IOD: Negative (-0.32\u00b0C) | MJO: Phase 7 (Suppressed)",
+    "macro_imd_forecast": "Broad Regional Monsoon Onset: June 12-15",
+    "hyperlocal_ai_prediction": "FALSE ONSET TRAP DETECTED: Brief shower on June 11 followed by 16-day prolonged dry break (84% Break Probability)",
+    "break_duration_days": 16,
+    "financial_risk_without_ai": "\u20b96,500/acre in seed & fertilizer loss due to germination dehydration failure",
+    "crop_agronomic_advisory": "POSTPONE COTTON SOWING to June 28 revival surge; prepare broad-bed furrows (BBF) to conserve residual soil moisture.",
+    "status": "ADVISORY_DISPATCHED"
+  },
+  {
+    "case_id": "MONS-2026-MAR03",
+    "target_block": "Ausa Block, Latur District (Marathwada, Maharashtra)",
+    "primary_crop": "Soybean (JS-335)",
+    "forecast_horizon_days": 14,
+    "lead_time_weeks": "2 Weeks Ahead",
+    "teleconnection_signals": "ENSO: La Ni\u00f1a Developing (-0.6\u00b0C) | IOD: Neutral (+0.05\u00b0C) | MJO: Phase 2 Entering Indian Ocean",
+    "macro_imd_forecast": "Normal Onset Expected across Marathwada",
+    "hyperlocal_ai_prediction": "TIMELY ONSET WITH EARLY BREAK: Steady onset June 18; 11-day dry break from July 2 to July 13",
+    "break_duration_days": 11,
+    "financial_risk_without_ai": "\u20b95,200/acre crop wilting risk during initial vegetative phase",
+    "crop_agronomic_advisory": "PROCEED WITH SOWING ON JUNE 18-20: Intercrop with Pigeon Pea (Tur 4:2 ratio); prepare farm pond drip irrigation for early July dry spell.",
+    "status": "ADVISORY_DISPATCHED"
+  },
+  {
+    "case_id": "MONS-2026-ODI05",
+    "target_block": "Remuna Block, Balasore District (Coastal Odisha)",
+    "primary_crop": "Paddy / Rice (Swarna Sub-1)",
+    "forecast_horizon_days": 28,
+    "lead_time_weeks": "4 Weeks Ahead",
+    "teleconnection_signals": "ENSO: Neutral | IOD: Positive (+0.41\u00b0C) | MJO: Active Phase 3 over Bay of Bengal",
+    "macro_imd_forecast": "On-Time Coastal Monsoon Surge",
+    "hyperlocal_ai_prediction": "VIGOROUS ACTIVE MONSOON SURGE: Onset June 08; sustained active rainfall phase (>110 mm weekly) with low break risk (<15%)",
+    "break_duration_days": 2,
+    "financial_risk_without_ai": "Nursery inundation risk if seeds sown in low-lying depressions",
+    "crop_agronomic_advisory": "ACCELERATE NURSERY SOWING: Utilize community raised beds; clean drainage channels to prevent flash submergence during June 10 surge.",
+    "status": "ADVISORY_DISPATCHED"
+  }
+]

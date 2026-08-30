@@ -1,0 +1,20 @@
+[
+  {
+    "variable": "Integrated Water Vapor (IWV)",
+    "role": "Moisture Fuel",
+    "threshold": "> 55 kg/m\u00b2 with rapid accumulation",
+    "source": "INSAT-3DR 6.7\u00b5m Water Vapor Channel"
+  },
+  {
+    "variable": "Cloud Top Temp (CTT) Drop Rate",
+    "role": "Updraft Intensity",
+    "threshold": "< -15\u00b0C/hr (Rapid cloud glaciation)",
+    "source": "INSAT-3DR 10.8\u00b5m Thermal IR Channel"
+  },
+  {
+    "variable": "Buoyancy Energy (CAPE/CIN)",
+    "role": "Thermodynamic Lift",
+    "threshold": "CAPE > 2,500 J/kg & CIN < 25 J/kg",
+    "source": "IMDAA Numerical Reanalysis Baseline"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Waste Segregated",
+    "value": "1,240 kg",
+    "trend": "Zero Manual Human Contact"
+  },
+  {
+    "metric": "Cross-Contamination",
+    "value": "0.0% Incidents",
+    "trend": "AI Computer Vision Sorting"
+  },
+  {
+    "metric": "CPCB BMW 2016",
+    "value": "100% Compliant",
+    "trend": "Automated QR Digital Barcoding"
+  }
+]

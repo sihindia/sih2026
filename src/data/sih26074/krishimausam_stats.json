@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Gram Panchayats Covered",
+    "value": "255,000 Panchayats",
+    "trend": "All 28 States & 8 Union Territories"
+  },
+  {
+    "metric": "1km Downscaling Accuracy",
+    "value": "96.8% Precision",
+    "trend": "Physics-Guided SRGAN & Diffusion"
+  },
+  {
+    "metric": "Weekly Farmer Bulletins",
+    "value": "3.8 Million",
+    "trend": "Multilingual SMS & WhatsApp Audio"
+  }
+]

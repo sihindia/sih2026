@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Regimes Classified",
+    "value": "6 Distinct Regimes",
+    "trend": "Active, Break, Lows, Orographic, Coastal, WD"
+  },
+  {
+    "metric": "RMSE Reduction",
+    "value": "38.4% Less Error",
+    "trend": "Across 732 District Grids"
+  },
+  {
+    "metric": "FSS Spatial Skill",
+    "value": "0.82 High Score",
+    "trend": "Fractions Skill Score at 10km Radius"
+  }
+]

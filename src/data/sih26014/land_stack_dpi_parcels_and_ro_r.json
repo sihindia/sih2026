@@ -1,0 +1,38 @@
+[
+  {
+    "ulpin": "04-001-9012-3341",
+    "location": "Sector 17 Commercial Plaza, Chandigarh (UT)",
+    "parcel_area_sqm": 1850.0,
+    "owner_name": "Chandigarh Heritage Retail Trust",
+    "state_ut": "Chandigarh (UT Pilot Launched 31 Dec 2025)",
+    "base_layer_cadastre": "Georeferenced Survey Parcel 3341 (Sub-5cm ORI Ground Truth)",
+    "essential_layer_rights": "RoR Mutation Cleared \u2022 Encumbrance-Free Title \u2022 Commercial Central Zoning",
+    "usecase_layer_services": "Municipal Property Tax: \u20b91,45,000/yr Paid \u2022 Water & Fiber Utility Active",
+    "citizen_service_status": "Instant Digitally-Signed Land Ownership Certificate (Bhu-Aadhaar) Issued",
+    "stack_status": "DPI_STACK_LIVE_ACTIVE"
+  },
+  {
+    "ulpin": "33-214-8841-9022",
+    "location": "Velachery IT Corridor, Chennai, Tamil Nadu",
+    "parcel_area_sqm": 4200.0,
+    "owner_name": "Sundaram Green Logistics Park Pvt Ltd",
+    "state_ut": "Tamil Nadu (TN State Pilot Launched 31 Dec 2025)",
+    "base_layer_cadastre": "Patta / Chitta Vector Parcel 9022 (CORS Anchored)",
+    "essential_layer_rights": "CMDA Industrial IT-SEZ Planning Approval \u2022 Building Permit BP-2025-88",
+    "usecase_layer_services": "Commercial Property Tax: \u20b93,80,000/yr \u2022 High-Tension Underground Grid Linked",
+    "citizen_service_status": "Single-Window Industrial Land Possession Clearance Complete",
+    "stack_status": "DPI_STACK_LIVE_ACTIVE"
+  },
+  {
+    "ulpin": "27-584-0941-1004",
+    "location": "Kothrud Smart Mixed-Use Ward 4, Pune, Maharashtra",
+    "parcel_area_sqm": 2950.0,
+    "owner_name": "Kirloskar Green Energy Foundation",
+    "state_ut": "Maharashtra (State Expansion Corridor)",
+    "base_layer_cadastre": "NAKSHA Drone Orthophoto Delineated Parcel 1004",
+    "essential_layer_rights": "7/12 Digital Mutation Active \u2022 Zero Mortgage Encumbrance Verified",
+    "usecase_layer_services": "Solar Rooftop Net Metering Connected \u2022 Municipal Water Sump Verified",
+    "citizen_service_status": "Automated e-Mutation & Unified Property Tax Receipt Generated",
+    "stack_status": "DPI_STACK_LIVE_ACTIVE"
+  }
+]

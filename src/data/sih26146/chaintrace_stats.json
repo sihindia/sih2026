@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Ransomware Entity Precision",
+    "value": "98.7%",
+    "trend": "GNN Multi-Input Clustering"
+  },
+  {
+    "metric": "Peeling Chain Depth",
+    "value": "14 Hops",
+    "trend": "Automated De-Anonymization"
+  },
+  {
+    "metric": "FIU Evidence Readiness",
+    "value": "100% Validated",
+    "trend": "Court-Admissible Graph Dossier"
+  }
+]

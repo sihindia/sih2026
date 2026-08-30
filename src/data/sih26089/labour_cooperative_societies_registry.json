@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Dharavi Labour Co-op Federation",
+    "location": "Mumbai, Maharashtra",
+    "members": 3450,
+    "skills": "Electricians, Carpenters, Painters",
+    "cert_body": "NCCT & NSDC Verified"
+  },
+  {
+    "name": "Delhi Shramik Sahakari Samiti",
+    "location": "New Delhi",
+    "members": 2890,
+    "skills": "Caregivers, Technicians, Cleaners",
+    "cert_body": "NCCT & Skill India"
+  },
+  {
+    "name": "Bengaluru Karmi Sahakara Sangha",
+    "location": "Bengaluru, Karnataka",
+    "members": 4120,
+    "skills": "Plumbers, Gardeners, Drivers",
+    "cert_body": "NCCT Verified"
+  }
+]

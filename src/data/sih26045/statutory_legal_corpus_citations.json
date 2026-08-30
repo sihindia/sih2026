@@ -1,0 +1,22 @@
+[
+  {
+    "statute": "Indian Patents Act, 1970 (Sec 3(p))",
+    "rule": "Inventions which in effect are traditional knowledge are not patentable",
+    "tkdl_link": "Defended via Traditional Knowledge Digital Library (TKDL) database against foreign biopiracy"
+  },
+  {
+    "statute": "Biological Diversity Act, 2002 (Amended 2023)",
+    "rule": "Mandatory prior approval from National Biodiversity Authority (NBA) before applying for IPR on Indian bio-resources",
+    "tkdl_link": "Sections 3, 6, and 21 on Fair & Equitable Access and Benefit Sharing (ABS)"
+  },
+  {
+    "statute": "WIPO GRATK Treaty (Geneva, 2024)",
+    "rule": "Patent applicants worldwide must disclose country of origin for inventions based on genetic resources and associated traditional knowledge",
+    "tkdl_link": "Article 3 Mandatory Disclosure Requirements"
+  },
+  {
+    "statute": "Drugs & Cosmetics Act, 1940 (Rule 158B)",
+    "rule": "Regulatory criteria for Ayurvedic, Siddha, and Unani patent or proprietary medicines; safety & trial requirements",
+    "tkdl_link": "Schedule T Good Manufacturing Practices (GMP) & Ayush Pharmacopoeia"
+  }
+]

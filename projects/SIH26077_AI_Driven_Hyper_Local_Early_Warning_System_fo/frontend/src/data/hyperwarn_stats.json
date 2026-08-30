@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Actionable Lead Time",
+    "value": "2 to 6 Hours",
+    "trend": "Pre-Disaster Evacuation Window"
+  },
+  {
+    "metric": "Detection Probability",
+    "value": "94.6% Accuracy",
+    "trend": "Multi-Task Learning Deep Network"
+  },
+  {
+    "metric": "Responders Notified",
+    "value": "45,000+ Personnel",
+    "trend": "NDRF, SDMA & Local Authorities"
+  }
+]

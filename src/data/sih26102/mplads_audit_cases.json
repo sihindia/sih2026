@@ -1,0 +1,28 @@
+[
+  {
+    "project_id": "MPLADS-PRJ-2026-001",
+    "project_title": "Construction of Multipurpose Community Hall at Manpur",
+    "constituency": "Gaya (SC) Parliamentary Constituency, Bihar",
+    "hon_mp_name": "Shri Jitan Ram Manjhi (Lok Sabha)",
+    "sanctioned_amount_lakhs": 45.0,
+    "implementing_agency": "District Rural Development Authority (DRDA), Gaya",
+    "ai_anomaly_detected": "CRITICAL: Duplicate Asset Detected (98.4% Geo-Spatial Overlap with existing PM-AJAY Centre within 85m)",
+    "sor_rate_inflation_pct": 28.5,
+    "risk_level": "CRITICAL_FRAUD_ALERT",
+    "dm_action_taken": "Sanction Frozen \u2022 Field Physical Verification Ordered by District Collector",
+    "status": "SANCTION_FROZEN_PENDING_INSPECTION"
+  },
+  {
+    "project_id": "MPLADS-PRJ-2026-042",
+    "project_title": "Ward-12 to Ward-18 Concrete Drainage & Pavement Works",
+    "constituency": "Nagpur Parliamentary Constituency, Maharashtra",
+    "hon_mp_name": "Shri Nitin Gadkari (Lok Sabha)",
+    "sanctioned_amount_lakhs": 58.8,
+    "implementing_agency": "Nagpur Municipal Corporation (NMC)",
+    "ai_anomaly_detected": "COLLUSION: Split-Tendering Detected (6 sub-works of \u20b99.8L awarded to same contractor entity within 48h to avoid e-tender)",
+    "sor_rate_inflation_pct": 14.2,
+    "risk_level": "HIGH_COLLUSION_RISK",
+    "dm_action_taken": "Show-Cause Notice Issued to Implementing Agency",
+    "status": "SPLIT_TENDER_UNDER_INVESTIGATION"
+  }
+]

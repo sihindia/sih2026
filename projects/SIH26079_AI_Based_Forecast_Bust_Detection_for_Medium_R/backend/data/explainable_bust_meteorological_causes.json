@@ -1,0 +1,22 @@
+[
+  {
+    "cause": "Convective Parameterization Breakdown",
+    "frequency": "38%",
+    "description": "Failure of subgrid cumulus schemes to capture rapid deep convection transitions"
+  },
+  {
+    "cause": "Dry Air Entrainment Miscalculation",
+    "frequency": "29%",
+    "description": "Under-resolved mid-tropospheric dry air tongues choking latent heat release"
+  },
+  {
+    "cause": "Steering Ridge & Jet Stream Phase Error",
+    "frequency": "22%",
+    "description": "Misplacement of Rossby wave troughs altering storm trajectories"
+  },
+  {
+    "cause": "Boundary Layer Temperature Inversion",
+    "frequency": "11%",
+    "description": "Near-surface decoupling leading to large 2m temperature forecast errors"
+  }
+]

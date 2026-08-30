@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Modeled Site Area",
+    "value": "1.2 sq. km",
+    "trend": "Compliant with >1 km\u00b2 SIH Guideline"
+  },
+  {
+    "metric": "Microclimate Analyses",
+    "value": "6 Real-Time Engines",
+    "trend": "Sun, Wind, Daylight, Carbon, Noise, Solar"
+  },
+  {
+    "metric": "Revit BIM Sync",
+    "value": "100% Bi-Directional",
+    "trend": "Forma to Revit 2026 Direct Cloud Link"
+  }
+]

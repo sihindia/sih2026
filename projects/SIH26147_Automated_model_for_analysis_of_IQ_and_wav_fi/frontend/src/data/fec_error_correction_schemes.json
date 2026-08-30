@@ -1,0 +1,17 @@
+[
+  {
+    "scheme_name": "Reed-Solomon RS(255,223)",
+    "correction_capability": "16 Byte Errors / Block",
+    "standard": "CCSDS Space Telemetry"
+  },
+  {
+    "scheme_name": "Viterbi Convolutional R=1/2",
+    "constraint_length": "K=7 (Generator Octal 171/133)",
+    "standard": "Military Tactical Comms"
+  },
+  {
+    "scheme_name": "LDPC Low-Density Parity",
+    "code_rate": "R=3/4 Sparse Parity Matrix",
+    "standard": "DVB-S2 High-Throughput Satellite"
+  }
+]

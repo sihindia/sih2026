@@ -1,0 +1,46 @@
+[
+  {
+    "event_id": "NOWCAST-2026-HP01",
+    "location": "Dharamshala & Kangra Valley (Himachal Pradesh)",
+    "hazard_type": "Cloudburst & Flash Flood Convective System",
+    "lead_time_hours": 3.5,
+    "atmospheric_precursors": "IWV: 68.4 kg/m\u00b2 (+42% in 90m) | CTT Drop: -24.5\u00b0C/h (Plunged to -72\u00b0C) | CAPE: 3,450 J/kg | CIN: 12 J/kg",
+    "topographic_channeling": "CartoDEM 10m Slope > 38\u00b0 channeling 145mm/h runoff into Bhagsunag & Manjhi Nullah basins",
+    "mtl_probabilities": "Cloudburst: 94.6% | Severe Squall: 89.2% | Flash Flood: 96.1%",
+    "actionable_alert": "CRITICAL 3.5-HOUR WARNING: Evacuate riverside encampments along Manjhi Khad immediately. Flash flood crest expected at 16:45 IST.",
+    "status": "DISASTER_ALERTS_DISPATCHED"
+  },
+  {
+    "event_id": "NOWCAST-2026-WB04",
+    "location": "Kolkata & South 24 Parganas (West Bengal)",
+    "hazard_type": "Severe Kalbaishakhi (Nor'wester) Supercell",
+    "lead_time_hours": 4.2,
+    "atmospheric_precursors": "IWV: 62.1 kg/m\u00b2 | CTT Drop: -18.2\u00b0C/h (CTT -65\u00b0C) | CAPE: 3,900 J/kg | Low-Level Convergence: 5.1 x 10\u207b\u2074 s\u207b\u00b9",
+    "topographic_channeling": "Low elevation delta plain with Hooghly high tide surge impeding drainage",
+    "mtl_probabilities": "Cloudburst: 64.2% | Severe Squall (95 km/h): 95.8% | Urban Flood: 88.5%",
+    "actionable_alert": "SEVERE SQUALL WARNING: 95+ km/h gale winds with lightning hail. Suspend ferry transport and flight approaches at NSCBI Airport.",
+    "status": "DISASTER_ALERTS_DISPATCHED"
+  },
+  {
+    "event_id": "NOWCAST-2026-MH08",
+    "location": "Mumbai Coastal & Mithi River Catchment (Maharashtra)",
+    "hazard_type": "Hyper-Local Convective Cloudburst & Urban Inundation",
+    "lead_time_hours": 2.8,
+    "atmospheric_precursors": "IWV: 72.5 kg/m\u00b2 (+38% moisture pulse) | CTT Drop: -21.0\u00b0C/h (to -68\u00b0C) | CAPE: 3,100 J/kg | Wind Shear: 24 kts",
+    "topographic_channeling": "CartoDEM elevation < 5m MSL; Mithi river discharge restricted by 4.2m high spring tide",
+    "mtl_probabilities": "Cloudburst: 91.4% | Flash Flood / Inundation: 95.2% | Severe Lightning: 86.0%",
+    "actionable_alert": "URGENT 2.8-HOUR ALERT: Close Kurla-Sion railway subways; activate BMC dewatering pumps along Mithi river gates before 14:30 IST.",
+    "status": "DISASTER_ALERTS_DISPATCHED"
+  },
+  {
+    "event_id": "NOWCAST-2026-UK02",
+    "location": "Kedarnath & Mandakini Catchment (Uttarakhand)",
+    "hazard_type": "Orographic Extreme Precipitation & Debris Flow",
+    "lead_time_hours": 3.1,
+    "atmospheric_precursors": "IWV: 59.8 kg/m\u00b2 (+55% orographic forcing) | CTT Drop: -26.0\u00b0C/h (to -75\u00b0C) | CAPE: 2,850 J/kg",
+    "topographic_channeling": "Chorabari moraine drainage with 42\u00b0 gorge slope channeling catastrophic mudflow",
+    "mtl_probabilities": "Cloudburst: 96.8% | Flash Flood / Debris Flow: 97.4% | Cloud Glaciation: 99.1%",
+    "actionable_alert": "LIFE SAFETY WARNING: Halt pilgrim movement between Gaurikund and Kedarnath base camp immediately; guide visitors to designated high shelters.",
+    "status": "DISASTER_ALERTS_DISPATCHED"
+  }
+]

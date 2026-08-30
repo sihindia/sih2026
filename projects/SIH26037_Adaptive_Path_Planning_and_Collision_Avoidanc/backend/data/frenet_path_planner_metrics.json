@@ -1,0 +1,18 @@
+[
+  {
+    "subsystem": "Frenet Frame Transformation",
+    "function": "Converts Cartesian (x,y) coordinates to road-relative curvilinear coordinates (s: longitudinal station, d: lateral offset)"
+  },
+  {
+    "subsystem": "Quartic & Quintic Polynomial Splines",
+    "function": "Generates jerk-minimizing lateral and longitudinal trajectories satisfying comfort acceleration limits (<2 m/s\u00b3 jerk)"
+  },
+  {
+    "subsystem": "Stateflow Finite State Machine",
+    "function": "Autonomous behavioral decision states: Cruise, Yield, Gap-Follow, Lateral Swerve, Emergency Deceleration"
+  },
+  {
+    "subsystem": "Bicycle Model MPC Steering & Braking",
+    "function": "Executes optimal wheel steering angle and front/rear brake torque matching trajectory curvature"
+  }
+]

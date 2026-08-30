@@ -1,0 +1,35 @@
+[
+  {
+    "conflict_id": "CONF-PUN-081",
+    "ulpin": "27-584-0129-4819",
+    "location": "Shivajinagar Urban Ward 12, Pune, Maharashtra",
+    "conflict_type": "Cadastral Boundary Discrepancy",
+    "spatial_shift_m": 0.42,
+    "root_cause": "Legacy 1974 paper Khasra map paper shrinkage distortion vs sub-3cm Drone ORI ground truth",
+    "ai_resolution_applied": "Auto-snapped boundary to drone wall edge using Thin Plate Spline (TPS) with 99.2% confidence",
+    "inter_agency_stakeholders": "State Revenue Dept + Pune Municipal Corporation (PMC)",
+    "status": "AUTO_RESOLVED_SYNCHRONIZED"
+  },
+  {
+    "conflict_id": "CONF-LKO-082",
+    "ulpin": "09-182-0441-2104",
+    "location": "Gomti Nagar Extension Sector 4, Lucknow, UP",
+    "conflict_type": "Road Corridor Encroachment Overlap",
+    "spatial_shift_m": 1.15,
+    "root_cause": "Commercial showroom ground floor balcony cantilever encroaching into PWD right-of-way (RoW)",
+    "ai_resolution_applied": "Delineated 1.15m overlap polygon; issued automated spatial notice to Lucknow Municipal Corporation (LMC)",
+    "inter_agency_stakeholders": "Public Works Dept (PWD) + LMC Town Planning",
+    "status": "CIVIC_NOTICE_DISPATCHED"
+  },
+  {
+    "conflict_id": "CONF-AMD-083",
+    "ulpin": "24-071-8402-9912",
+    "location": "Sabarmati Town Planning Scheme 14, Ahmedabad, Gujarat",
+    "conflict_type": "Mismatched Owner Name & Survey Number",
+    "spatial_shift_m": 0.0,
+    "root_cause": "Spelling transliteration discrepancy between Gujarati 7/12 RoR and Aadhaar-seeded Municipal Tax Ledger",
+    "ai_resolution_applied": "NLP Fuzzy Levenshtein Match (96.4% phonetic similarity verified with property tax payment receipts)",
+    "inter_agency_stakeholders": "Revenue Talati Office + Ahmedabad Municipal Corporation (AMC)",
+    "status": "AUTO_RESOLVED_SYNCHRONIZED"
+  }
+]

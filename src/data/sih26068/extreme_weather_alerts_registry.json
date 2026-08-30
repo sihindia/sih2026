@@ -1,0 +1,23 @@
+[
+  {
+    "alert_id": "ALERT-CYC-2026-01",
+    "hazard": "Severe Cyclonic Storm",
+    "severity": "RED_ALERT",
+    "regions": "Coastal Odisha & Northern Andhra Pradesh",
+    "lead_time": "36 Hours Advance Warning"
+  },
+  {
+    "alert_id": "ALERT-HEAT-2026-02",
+    "hazard": "Extreme Heatwave & Warm Night",
+    "severity": "ORANGE_ALERT",
+    "regions": "Rajasthan, Delhi-NCR, Haryana & Punjab",
+    "lead_time": "72 Hours Advance Warning"
+  },
+  {
+    "alert_id": "ALERT-THUN-2026-03",
+    "hazard": "Severe Thunderstorm & Damini Lightning",
+    "severity": "YELLOW_WATCH",
+    "regions": "Vidarbha, Marathwada & Telangana",
+    "lead_time": "6 Hours Nowcast Warning"
+  }
+]

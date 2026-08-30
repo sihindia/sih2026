@@ -1,0 +1,14 @@
+[
+  {
+    "lab_name": "BIS Central Laboratory (CL)",
+    "location": "Sahibabad, Ghaziabad, UP",
+    "accreditation": "NABL ISO/IEC 17025",
+    "testing_scopes": "Chemical, Microbiological, Electrical, Mechanical"
+  },
+  {
+    "lab_name": "BIS Southern Regional Laboratory (SRL)",
+    "location": "CIT Campus, Taramani, Chennai",
+    "accreditation": "NABL ISO/IEC 17025",
+    "testing_scopes": "Packaged Water, Polymers, Heavy Electricals"
+  }
+]

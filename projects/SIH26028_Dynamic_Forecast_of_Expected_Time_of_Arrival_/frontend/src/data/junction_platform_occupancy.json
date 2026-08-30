@@ -1,0 +1,23 @@
+[
+  {
+    "junction_name": "Kanpur Central (CNB)",
+    "platform_number": "PF #1 (Mainline)",
+    "assigned_train": "22436 Vande Bharat",
+    "status": "LOCKED_CLEAR",
+    "estimated_arrival_in": "12 mins"
+  },
+  {
+    "junction_name": "Prayagraj Junction (PRYJ)",
+    "platform_number": "PF #4",
+    "assigned_train": "22436 Vande Bharat",
+    "status": "RESERVED_CLEAR",
+    "estimated_arrival_in": "130 mins"
+  },
+  {
+    "junction_name": "Kota Junction (KOTA)",
+    "platform_number": "PF #2",
+    "assigned_train": "12952 Tejas Rajdhani",
+    "status": "OCCUPIED_BY_LOCAL",
+    "estimated_arrival_in": "45 mins"
+  }
+]

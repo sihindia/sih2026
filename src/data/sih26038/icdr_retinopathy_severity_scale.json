@@ -1,0 +1,27 @@
+[
+  {
+    "level": "Level 0 (No DR)",
+    "clinical_description": "No microaneurysms, hemorrhages or exudates present in retina",
+    "referral_status": "Non-Referable (Repeat screen in 12 months)"
+  },
+  {
+    "level": "Level 1 (Mild NPDR)",
+    "clinical_description": "Microaneurysms only; no macular involvement",
+    "referral_status": "Non-Referable (Glycemic lifestyle control & annual screen)"
+  },
+  {
+    "level": "Level 2 (Moderate NPDR)",
+    "clinical_description": "More than microaneurysms, but less than severe NPDR; hard exudates present",
+    "referral_status": "REFERABLE DR (Evaluate at District Hospital within 4-6 weeks)"
+  },
+  {
+    "level": "Level 3 (Severe NPDR)",
+    "clinical_description": "4-2-1 Rule: >20 intraretinal hemorrhages in 4 quadrants, venous beading in 2+, IRMA in 1+",
+    "referral_status": "HIGHLY REFERABLE (Expedited evaluation within 2 weeks)"
+  },
+  {
+    "level": "Level 4 (Proliferative DR)",
+    "clinical_description": "Neovascularization of disc/elsewhere (NVD/NVE), preretinal or vitreous hemorrhage",
+    "referral_status": "CRITICAL EMERGENCY REFERABLE (Immediate Vitreo-Retinal intervention)"
+  }
+]

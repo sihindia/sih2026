@@ -1,0 +1,57 @@
+{
+  "feeder_integrations": [
+    {
+      "station": "Kanpur Central (CNB)",
+      "train": "22436 Vande Bharat Express",
+      "dynamic_eta": "10:10 AM",
+      "connecting_transit": [
+        { "mode": "Metro", "service": "Kanpur Metro Orange Line (CNB Station Gate 1)", "next_departure": "10:22 AM (12 mins transfer window)", "status": "ON_SCHEDULE" },
+        { "mode": "Airport Bus", "service": "UPSRTC Chakeri Airport Shuttle", "next_departure": "10:35 AM", "status": "RESERVED_CONNECTED" },
+        { "mode": "App Cabs", "service": "Ola/Uber Dedicated Portico Pickup", "avg_wait_mins": 3, "surge": "1.0x (Normal)" }
+      ]
+    },
+    {
+      "station": "New Delhi (NDLS)",
+      "train": "12301 Howrah Rajdhani Express",
+      "dynamic_eta": "09:55 AM (Punctual)",
+      "connecting_transit": [
+        { "mode": "Airport Metro", "service": "Delhi Metro Airport Express Line (IGI Terminal 3 in 19m)", "next_departure": "10:08 AM", "status": "RUNNING_EVERY_10M" },
+        { "mode": "Yellow Line", "service": "Delhi Metro Yellow Line (Gurugram / Samaypur Badli)", "next_departure": "Continuous (3m headway)", "status": "OPTIMAL" },
+        { "mode": "App Cabs", "service": "Ajmeri Gate Multi-Level Parking Portico", "avg_wait_mins": 4, "surge": "1.0x" }
+      ]
+    },
+    {
+      "station": "Kota Junction (KOTA)",
+      "train": "12952 Tejas Rajdhani Express",
+      "dynamic_eta": "09:51 PM",
+      "connecting_transit": [
+        { "mode": "Inter-City Bus", "service": "RSRTC Coaching Hub Express to Bundi/Jhalawar", "next_departure": "10:15 PM", "status": "HOLD_FOR_TRAIN_ARRIVAL" },
+        { "mode": "Auto/Cab", "service": "Kota Coaching District Prepaid Booth", "avg_wait_mins": 2, "surge": "1.0x" }
+      ]
+    }
+  ],
+  "passenger_alerts": [
+    {
+      "alert_id": "ALERT-PNR-8849201",
+      "train_number": "22436",
+      "pnr": "245-8901234",
+      "passenger": "Aditya Sharma (Seat C4-42)",
+      "destination": "Kanpur Central",
+      "channel": "WhatsApp & IRCTC Push Notification",
+      "message": "🚆 Vande Bharat (22436) Dynamic ETA Update: Train is running at 128 km/h and will arrive at CNB at 10:10 AM (Recovers 6 mins of legacy delay). Arriving on Platform #3.",
+      "timestamp": "09:42 AM",
+      "delivery_status": "DELIVERED_READ"
+    },
+    {
+      "alert_id": "ALERT-PNR-7721904",
+      "train_number": "12952",
+      "pnr": "412-6789012",
+      "passenger": "Priya Sen (Seat B2-18)",
+      "destination": "Kota Junction",
+      "channel": "SMS & IRCTC RailConnect Push",
+      "message": "🚆 Tejas Rajdhani (12952): Dynamic AI forecast revises Kota arrival to 09:51 PM (Delay reduced from 18m to 11m). Connecting RSRTC bus at 10:15 PM will wait.",
+      "timestamp": "08:50 PM",
+      "delivery_status": "DELIVERED_READ"
+    }
+  ]
+}

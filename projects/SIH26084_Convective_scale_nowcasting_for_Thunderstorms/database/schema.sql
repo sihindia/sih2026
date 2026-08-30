@@ -1,30 +1,40 @@
--- Supabase / PostgreSQL Schema for SIH26084 (Convective scale nowcasting for Thunderstorms, Hail & Cloudbursts (06 hr))
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- NCMRWF MESONOWCAST 360 DATABASE SCHEMA (SIH26084)
+-- Ministry of Earth Sciences (MoES) / NCMRWF
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26084_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26084',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS convective_nowcast_events (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) UNIQUE NOT NULL,
+    target_corridor VARCHAR(255) NOT NULL,
+    hazard_phenomena VARCHAR(255) NOT NULL,
+    lead_time_hours VARCHAR(32) NOT NULL,
+    countdown_minutes INTEGER NOT NULL,
+    dwr_reflectivity_dbz NUMERIC(4, 1) NOT NULL,
+    satellite_ctt_drop VARCHAR(128) NOT NULL,
+    lightning_jump_rate VARCHAR(128) NOT NULL,
+    hail_probability_pct NUMERIC(4, 1) NOT NULL,
+    hail_size_cm VARCHAR(64) NOT NULL,
+    downburst_wind_kmh NUMERIC(5, 1) NOT NULL,
+    cloudburst_risk VARCHAR(128) NOT NULL,
+    sector_impact_action TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'NOWCAST_ACTIVE',
+    detected_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26084_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26084_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS multi_sensor_radar_satellite_logs (
+    id SERIAL PRIMARY KEY,
+    stream_name VARCHAR(128) NOT NULL,
+    refresh_rate VARCHAR(64) NOT NULL,
+    parameters TEXT NOT NULL,
+    ingested_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE sih26084_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26084_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26084_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26084_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26084_audit_logs FOR SELECT USING (true);
+CREATE TABLE IF NOT EXISTS aviation_taf_windshear_alerts (
+    id SERIAL PRIMARY KEY,
+    airport_code VARCHAR(16) NOT NULL,
+    hazard_type VARCHAR(64) NOT NULL,
+    microburst_velocity_kmh NUMERIC(5, 1) NOT NULL,
+    flights_diverted INTEGER DEFAULT 0,
+    dispatched_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

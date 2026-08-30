@@ -1,0 +1,26 @@
+[
+  {
+    "operator": "Pauli-X (\u03c3x)",
+    "eigenstates": [
+      "|+\u27e9 = (|0\u27e9+|1\u27e9)/\u221a2",
+      "|-\u27e9 = (|0\u27e9-|1\u27e9)/\u221a2"
+    ],
+    "measurement_basis": "Diagonal / Hadamard Basis"
+  },
+  {
+    "operator": "Pauli-Z (\u03c3z)",
+    "eigenstates": [
+      "|0\u27e9 (Computational 0)",
+      "|1\u27e9 (Computational 1)"
+    ],
+    "measurement_basis": "Computational / Rectilinear Basis"
+  },
+  {
+    "operator": "Pauli-Y (\u03c3y)",
+    "eigenstates": [
+      "|i+\u27e9 = (|0\u27e9+i|1\u27e9)/\u221a2",
+      "|i-\u27e9 = (|0\u27e9-i|1\u27e9)/\u221a2"
+    ],
+    "measurement_basis": "Circular Polarization Basis"
+  }
+]

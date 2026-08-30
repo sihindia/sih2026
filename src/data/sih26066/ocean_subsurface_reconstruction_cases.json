@@ -1,0 +1,80 @@
+[
+  {
+    "case_id": "RECON-BOB-CYCLONE01",
+    "location_name": "Bay of Bengal Cyclone Intensification Sector (Paradip / Odisha Coast)",
+    "coordinates": "18.5\u00b0N, 88.0\u00b0E",
+    "surface_satellite_inputs": {
+      "sst_celsius": 30.8,
+      "sss_psu": 31.2,
+      "sea_level_anomaly_cm": 14.2,
+      "surface_current_mps": 0.42,
+      "wind_stress_mps": 14.5
+    },
+    "reconstructed_vertical_profile_c": {
+      "0m": 30.8,
+      "50m": 29.1,
+      "100m": 24.2,
+      "200m": 16.4,
+      "500m": 9.8,
+      "1000m": 6.2
+    },
+    "isotherm_d26_depth_m": 74.0,
+    "tropical_cyclone_heat_potential_kj_cm2": 112.5,
+    "argo_validation_rmse_c": 0.36,
+    "argo_correlation_r": 0.976,
+    "oceanographic_phenomenon": "Anticyclonic Mesoscale Warm-Core Eddy Feeding Rapid Cyclone Intensification",
+    "reconstruction_status": "CYCLONE_FUEL_WARM_CORE_DETECTED"
+  },
+  {
+    "case_id": "RECON-AS-UPWELL02",
+    "location_name": "Arabian Sea Coastal Upwelling & Mini-Warm Pool (Kochi / Kerala Coast)",
+    "coordinates": "9.8\u00b0N, 75.5\u00b0E",
+    "surface_satellite_inputs": {
+      "sst_celsius": 26.2,
+      "sss_psu": 35.8,
+      "sea_level_anomaly_cm": -8.5,
+      "surface_current_mps": 0.68,
+      "wind_stress_mps": 18.2
+    },
+    "reconstructed_vertical_profile_c": {
+      "0m": 26.2,
+      "50m": 22.4,
+      "100m": 18.1,
+      "200m": 14.5,
+      "500m": 10.1,
+      "1000m": 6.8
+    },
+    "isotherm_d26_depth_m": 12.0,
+    "tropical_cyclone_heat_potential_kj_cm2": 24.0,
+    "argo_validation_rmse_c": 0.38,
+    "argo_correlation_r": 0.968,
+    "oceanographic_phenomenon": "Strong Wind-Driven Ekman Upwelling Bringing Cold Nutrient-Rich Deep Water to Surface",
+    "reconstruction_status": "MONSOON_COASTAL_UPWELLING_RESOLVED"
+  },
+  {
+    "case_id": "RECON-EQ-KELVIN03",
+    "location_name": "Equatorial Indian Ocean Dipole (IOD) Kelvin Wave Corridor",
+    "coordinates": "2.0\u00b0N, 85.0\u00b0E",
+    "surface_satellite_inputs": {
+      "sst_celsius": 29.4,
+      "sss_psu": 34.1,
+      "sea_level_anomaly_cm": 9.8,
+      "surface_current_mps": 0.85,
+      "wind_stress_mps": 8.0
+    },
+    "reconstructed_vertical_profile_c": {
+      "0m": 29.4,
+      "50m": 28.0,
+      "100m": 22.5,
+      "200m": 15.2,
+      "500m": 9.4,
+      "1000m": 6.0
+    },
+    "isotherm_d26_depth_m": 58.0,
+    "tropical_cyclone_heat_potential_kj_cm2": 82.0,
+    "argo_validation_rmse_c": 0.34,
+    "argo_correlation_r": 0.982,
+    "oceanographic_phenomenon": "Downwelling Equatorial Kelvin Wave Depressing the Thermocline Eastward",
+    "reconstruction_status": "KELVIN_WAVE_THERMOCLINE_MAPPED"
+  }
+]

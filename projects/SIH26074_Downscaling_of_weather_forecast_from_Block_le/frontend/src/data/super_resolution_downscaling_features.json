@@ -1,0 +1,17 @@
+[
+  {
+    "feature_layer": "SRTM 30m Digital Elevation Model (DEM)",
+    "resolution": "30 Meters",
+    "influence": "Calculates adiabatic lapse rate temperature drop & valley cold pools"
+  },
+  {
+    "feature_layer": "MODIS 250m NDVI Vegetation Cover",
+    "resolution": "250 Meters",
+    "influence": "Adjusts localized evapotranspiration & microclimate boundary moisture"
+  },
+  {
+    "feature_layer": "Sentinel-1 Synthetic Aperture Soil Moisture",
+    "resolution": "100 Meters",
+    "influence": "Calibrates surface sensible vs latent heat flux partitioning"
+  }
+]

@@ -25,11 +25,13 @@ import { copyToClipboard } from '../utils/export';
 interface AboutAndTutorialModalProps {
   onClose: () => void;
   onOpenGuidelines: () => void;
+  onOpenContact?: () => void;
 }
 
 export const AboutAndTutorialModal: React.FC<AboutAndTutorialModalProps> = ({ 
   onClose,
-  onOpenGuidelines
+  onOpenGuidelines,
+  onOpenContact
 }) => {
   const [activeSection, setActiveSection] = React.useState<'why' | 'tutorial' | 'team' | 'cheatsheet'>('why');
   const [copiedIndex, setCopiedIndex] = React.useState<number | null>(null);
@@ -532,8 +534,19 @@ cd frontend && npm run dev`}</pre>
               }}
               className="px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 transition-colors"
             >
-              Download Official Guidelines & PPT
+              Download Guidelines & PPT
             </button>
+            {onOpenContact && (
+              <button
+                onClick={() => {
+                  onClose();
+                  onOpenContact();
+                }}
+                className="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-700 hover:to-teal-700 transition-all shadow-sm"
+              >
+                📞 Contact Support / Workshop
+              </button>
+            )}
 
             <button
               onClick={onClose}

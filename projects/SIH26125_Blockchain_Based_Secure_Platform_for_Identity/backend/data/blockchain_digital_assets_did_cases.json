@@ -1,0 +1,28 @@
+[
+  {
+    "asset_id": "BEL-NFT-RADAR-0941",
+    "asset_title": "3D AESA Active Electronically Scanned Radar Core Module",
+    "token_standard": "ERC-721 Defense Asset NFT (#8492)",
+    "current_did_owner": "did:bel:unit-blr-tech-841 (Radar System Division)",
+    "target_recipient_did": "did:bel:iaf-airbase-sulur-402 (IAF Squad 45)",
+    "firmware_sha256_hash": "0x9f8a42b10e78c41d9e2384a8b712c98a5e31782e44d018b965c71a329d47ef01",
+    "smart_contract_rbac_role": "ROLE_DEFENCE_AUDITOR (Security Clearance Level 5)",
+    "on_chain_tx_hash": "0x7a89bc214ef5601289ea01243781290bbce81293a90f128c7412890bfa3c8291",
+    "block_confirmations": 12,
+    "audit_trail_status": "AUTHENTICITY_VERIFIED_IMMUTABLE",
+    "status": "ASSET_CUSTODY_IMMUTABLE"
+  },
+  {
+    "asset_id": "BEL-NFT-CRYPTO-0182",
+    "asset_title": "Software Defined Tactical Radio (SDR) Suite Master Key",
+    "token_standard": "ERC-1155 Multi-Asset Secure Key NFT (#1084)",
+    "current_did_owner": "did:bel:hq-sec-ops-001 (Cyber & Cryptography Cell)",
+    "target_recipient_did": "did:bel:navy-frigate-f48 (INS Sahyadri EW Room)",
+    "firmware_sha256_hash": "0x3e18a992cb410ef781a90b471289acde1278912ba09148bc8901249bce78192a",
+    "smart_contract_rbac_role": "ROLE_CRYPTOGRAPHIC_OFFICER (Top Secret / SCI)",
+    "on_chain_tx_hash": "0x12a98f012bce781290ab471289cf0128912be78912401829bc781290afbc1209",
+    "block_confirmations": 28,
+    "audit_trail_status": "AUTHENTICITY_VERIFIED_IMMUTABLE",
+    "status": "ASSET_CUSTODY_IMMUTABLE"
+  }
+]

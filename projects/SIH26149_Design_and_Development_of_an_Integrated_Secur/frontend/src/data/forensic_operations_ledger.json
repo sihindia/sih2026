@@ -1,0 +1,26 @@
+[
+  {
+    "op_id": "FORENSIC-OP-2026-001",
+    "op_type": "NIST 800-88 Secure Drive Erasure",
+    "target_device": "Samsung PM9A3 1TB NVMe SSD (/dev/nvme0n1)",
+    "storage_capacity_gb": 1024,
+    "sanitization_standard": "NIST SP 800-88 Rev 1 Purge (Cryptographic NVMe Erase)",
+    "passes_executed": 1,
+    "verification_rate_pct": 100.0,
+    "audit_certificate_id": "NIST-CERT-2026-9811 (Ed25519 Signed)",
+    "recoverable_sectors": "0 Sectors (0 Bytes Recoverable)",
+    "status": "DATA_PERMANENTLY_SANITIZED"
+  },
+  {
+    "op_id": "FORENSIC-OP-2026-088",
+    "op_type": "Advanced Forensic File Carving & Recovery",
+    "target_device": "Seized Formatted SanDisk Extreme 64GB USB (/dev/sdb1)",
+    "storage_capacity_gb": 64,
+    "sanitization_standard": "Deep Fragment Reassembly Carving",
+    "passes_executed": 2,
+    "verification_rate_pct": 98.9,
+    "audit_certificate_id": "CARVE-EVID-2026-4402 (Court Admissible)",
+    "recoverable_sectors": "48 PDFs, 12 SQLite DBs, 142 JPEG Images Recovered",
+    "status": "FORENSIC_RECOVERY_COMPLETED"
+  }
+]

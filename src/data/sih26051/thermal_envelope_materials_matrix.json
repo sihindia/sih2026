@@ -1,0 +1,32 @@
+[
+  {
+    "material": "Silica Aerogel Blanket",
+    "thermal_conductivity": "0.014 W/m\u00b7K",
+    "density": "120 kg/m\u00b3",
+    "role": "Ultra-thin lightweight envelope insulation"
+  },
+  {
+    "material": "Vacuum Insulation Panel (VIP)",
+    "thermal_conductivity": "0.006 W/m\u00b7K",
+    "density": "180 kg/m\u00b3",
+    "role": "Superior R-value thermal barrier"
+  },
+  {
+    "material": "Bio-Based Paraffin PCM Tiles",
+    "thermal_conductivity": "0.22 W/m\u00b7K",
+    "density": "860 kg/m\u00b3",
+    "role": "Latent heat storage (210 kJ/kg @ 22\u00b0C melting)"
+  },
+  {
+    "material": "Rammed Earth Trombe Wall",
+    "thermal_conductivity": "1.10 W/m\u00b7K",
+    "density": "1,950 kg/m\u00b3",
+    "role": "High volumetric sensible heat mass on south face"
+  },
+  {
+    "material": "Triple Low-E Argon Glazing",
+    "thermal_conductivity": "U = 0.85 W/m\u00b2\u00b7K",
+    "density": "SHGC = 0.64",
+    "role": "Solar radiation capture with minimal radiative night loss"
+  }
+]

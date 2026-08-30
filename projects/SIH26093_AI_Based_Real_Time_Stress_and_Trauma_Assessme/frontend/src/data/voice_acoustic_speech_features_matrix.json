@@ -1,0 +1,20 @@
+[
+  {
+    "feature": "Fundamental Frequency (F0) Instability",
+    "baseline": "\u00b12 Hz",
+    "trauma_threshold": "> \u00b110 Hz",
+    "significance": "Acoustic micro-tremors in vocal cords caused by acute sympathetic nervous system fight-or-flight arousal"
+  },
+  {
+    "feature": "Hesitation & Unvoiced Pause Ratio",
+    "baseline": "< 20%",
+    "trauma_threshold": "> 40%",
+    "significance": "Long silence blocks indicating trauma disassociation, choking speech, or panic hyperventilation"
+  },
+  {
+    "feature": "Vocal Shimmer & Jitter Perturbation",
+    "baseline": "< 1.0%",
+    "trauma_threshold": "> 2.2%",
+    "significance": "Cycle-to-cycle waveform instability reflecting crying, vocal tremors, and overwhelming fear"
+  }
+]

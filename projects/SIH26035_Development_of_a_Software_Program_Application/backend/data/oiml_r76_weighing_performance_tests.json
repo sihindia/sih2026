@@ -1,0 +1,42 @@
+[
+  {
+    "step_number": 1,
+    "applied_load": "0.0 kg",
+    "indicated_reading": "0.000 kg",
+    "intrinsic_error": "0.0 g",
+    "maximum_permissible_error": "\u00b12.5 g",
+    "test_verdict": "PASS"
+  },
+  {
+    "step_number": 2,
+    "applied_load": "2.5 kg",
+    "indicated_reading": "2.500 kg",
+    "intrinsic_error": "0.0 g",
+    "maximum_permissible_error": "\u00b12.5 g",
+    "test_verdict": "PASS"
+  },
+  {
+    "step_number": 3,
+    "applied_load": "10.0 kg",
+    "indicated_reading": "10.000 kg",
+    "intrinsic_error": "0.0 g",
+    "maximum_permissible_error": "\u00b15.0 g",
+    "test_verdict": "PASS"
+  },
+  {
+    "step_number": 4,
+    "applied_load": "20.0 kg",
+    "indicated_reading": "20.005 kg",
+    "intrinsic_error": "+5.0 g",
+    "maximum_permissible_error": "\u00b15.0 g",
+    "test_verdict": "PASS"
+  },
+  {
+    "step_number": 5,
+    "applied_load": "30.0 kg",
+    "indicated_reading": "30.005 kg",
+    "intrinsic_error": "+5.0 g",
+    "maximum_permissible_error": "\u00b17.5 g",
+    "test_verdict": "PASS"
+  }
+]

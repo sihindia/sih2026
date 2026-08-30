@@ -1,0 +1,20 @@
+[
+  {
+    "model_name": "Qwen-2.5-Coder-32B-Instruct",
+    "specialization": "Code Generation & Python Sandbox Tools",
+    "vram_required": "19.5 GB (4-bit AWQ)",
+    "latency_tokens_sec": 48.5
+  },
+  {
+    "model_name": "DeepSeek-R1-Distill-Llama-70B",
+    "specialization": "Deep Multi-Step Engineering Reasoning & Math",
+    "vram_required": "38.0 GB (4-bit AWQ)",
+    "latency_tokens_sec": 32.0
+  },
+  {
+    "model_name": "Llama-3.2-11B-Vision-Instruct",
+    "specialization": "Multimodal Scanned P&ID Drawings & OCR",
+    "vram_required": "7.8 GB (4-bit AWQ)",
+    "latency_tokens_sec": 62.0
+  }
+]

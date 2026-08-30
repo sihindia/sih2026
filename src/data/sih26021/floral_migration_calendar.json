@@ -1,0 +1,50 @@
+[
+  {
+    "flora_id": "FLR-KSH-ACACIA",
+    "crop_name": "White Acacia (Robinia Pseudoacacia)",
+    "region": "Kashmir Valley (Anantnag, Pulwama, Baramulla)",
+    "bloom_window": "May 05 – June 10",
+    "peak_nectar_days": 21,
+    "avg_yield_per_hive_kg": 24.5,
+    "nectar_sugar_concentration_pct": "66%",
+    "optimal_weather": "Sunny days (21°C–26°C), cool nights, low humidity",
+    "migration_route": "Migrate hives from Jammu/Pathankot winter orchards to Srinagar/Anantnag by April 25",
+    "gi_tag_status": "GI Application Registered • PGI Botanical Heritage"
+  },
+  {
+    "flora_id": "FLR-SND-KHALSI",
+    "crop_name": "Wild Mangrove Khalsi & Goran (Aegiceras corniculatum)",
+    "region": "Sundarbans Biosphere Reserve, West Bengal",
+    "bloom_window": "March 20 – May 15",
+    "peak_nectar_days": 28,
+    "avg_yield_per_hive_kg": 28.0,
+    "nectar_sugar_concentration_pct": "58%",
+    "optimal_weather": "Coastal tropical (28°C–34°C), high tidal humidity",
+    "migration_route": "Transport boxes via non-motorized country boats into designated forest buffer zones",
+    "gi_tag_status": "Sundarbans Wild Honey Registered Geographical Indication #812"
+  },
+  {
+    "flora_id": "FLR-CRG-COFFEE",
+    "crop_name": "Coffee Blossom & Western Ghats Wild Spices",
+    "region": "Kodagu (Coorg) & Chikmagalur, Karnataka",
+    "bloom_window": "April 05 – May 05",
+    "peak_nectar_days": 16,
+    "avg_yield_per_hive_kg": 18.5,
+    "nectar_sugar_concentration_pct": "62%",
+    "optimal_weather": "Post-blossom shower moisture (24°C–29°C), canopy filtered sunlight",
+    "migration_route": "Station under shade-grown Arabica agroforestry estates with pepper vines",
+    "gi_tag_status": "Coorg Arabica Agro-Botanical Ecosystem"
+  },
+  {
+    "flora_id": "FLR-MZP-LITCHI",
+    "crop_name": "Royal Shahi Litchi (Litchi chinensis)",
+    "region": "Muzaffarpur, Vaishali & Samastipur, Bihar",
+    "bloom_window": "March 15 – April 20",
+    "peak_nectar_days": 19,
+    "avg_yield_per_hive_kg": 21.0,
+    "nectar_sugar_concentration_pct": "71%",
+    "optimal_weather": "Warm spring (26°C–31°C), calm wind velocity <8 km/h",
+    "migration_route": "Truck convoy from mustard belt of Uttar Pradesh/Bihar to Muzaffarpur orchards",
+    "gi_tag_status": "Shahi Litchi GI Protected Crop (GI-552)"
+  }
+]

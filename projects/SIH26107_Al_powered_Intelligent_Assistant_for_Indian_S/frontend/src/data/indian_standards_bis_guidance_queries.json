@@ -1,0 +1,26 @@
+[
+  {
+    "query_id": "BIS-QRY-2026-001",
+    "user_type": "MSME Manufacturer (Start-up)",
+    "product_description": "Setting up a commercial packaged natural mineral water bottling unit",
+    "applicable_standards": "IS 13428:2024 (Natural Mineral Water) & IS 14543:2024 (Packaged Drinking Water)",
+    "mandatory_scheme": "Scheme-I (ISI Mark is MANDATORY under FSSAI & BIS QCO)",
+    "key_clauses": "Clause 4.2 (Microbiological Limits), Clause 5.1 (Pesticide Residue Limits <0.0001 mg/L)",
+    "testing_labs": "BIS Central Laboratory Sahibabad & 14 NABL-Accredited Labs in Tamil Nadu/UP",
+    "licensing_steps": "1) Portal Registration on Manakonline \u2794 2) Sample In-House Testing \u2794 3) Factory Audit \u2794 4) Grant of ISI License",
+    "confidence_score": 99.2,
+    "status": "GUIDANCE_GENERATED"
+  },
+  {
+    "query_id": "BIS-QRY-2026-042",
+    "user_type": "Consumer (Jewelry Buyer)",
+    "product_description": "How to verify authenticity of 22K Gold Bangle with 6-digit HUID code 'AA99X2'?",
+    "applicable_standards": "IS 1417:2016 (Gold & Gold Alloys - Purity & Marking)",
+    "mandatory_scheme": "Mandatory Hallmarking (BIS Logo + Purity 22K916 + 6-Digit Alphanumeric HUID)",
+    "key_clauses": "Clause 3.1.2 (Purity Standards: 22K = 91.6% Pure Gold)",
+    "testing_labs": "BIS-Recognized Assaying & Hallmarking Centers (AHC)",
+    "licensing_steps": "Verify via BIS Care App \u2794 Enter 'AA99X2' \u2794 Instant Jeweller Registration & Purity Trace",
+    "confidence_score": 98.6,
+    "status": "GUIDANCE_GENERATED"
+  }
+]

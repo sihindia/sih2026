@@ -1,0 +1,20 @@
+[
+  {
+    "scheme_name": "Micro Finance Scheme",
+    "cost_ceiling": "Project Cost up to \u20b91.40 Lakh",
+    "loan_percentage": "Up to 90% (Max \u20b91.25 Lakh)",
+    "concessional_interest": "6.5% per annum",
+    "repayment_tenure": "3 Years",
+    "moratorium_period": "3 Months payment holiday",
+    "target_beneficiaries": "Marginalized rural artisans, street vendors, and home micro-units"
+  },
+  {
+    "scheme_name": "Term Loan Scheme",
+    "cost_ceiling": "Project Cost from \u20b91.40 Lakh to \u20b950.00 Lakh",
+    "loan_percentage": "Up to 90% (Max \u20b945.00 Lakh)",
+    "concessional_interest": "8.0% per annum",
+    "repayment_tenure": "7 Years",
+    "moratorium_period": "6 Months payment holiday",
+    "target_beneficiaries": "Agro-processing units, rural manufacturing, commercial transport, and dairy hubs"
+  }
+]

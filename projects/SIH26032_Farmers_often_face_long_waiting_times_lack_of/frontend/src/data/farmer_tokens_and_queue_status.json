@@ -1,0 +1,53 @@
+[
+  {
+    "token_id": "TOKEN-PUN-881",
+    "farmer_name": "Gurpreet Singh Gill",
+    "mobile_masked": "+91 98140 XXXXX",
+    "vehicle_number": "PB-10-CZ-4819",
+    "crop_name": "Wheat (Grade-I FAQ)",
+    "quantity_quintals": 120.0,
+    "allotted_slot": "09:30 AM \u2013 10:30 AM",
+    "assigned_bay": "Bay #3",
+    "gate_entry_status": "RFID Scanned (09:25 AM)",
+    "weighbridge_gross": "Gross: 16,800 kg",
+    "qc_assessment": "Grade A (11.8% Moisture)",
+    "dbt_payment_status": "\u20b92,73,000 Cleared (SBI UTR: 841920)",
+    "current_step": 5,
+    "jform_number": "JFORM-PUN-99120",
+    "qr_pass_code": "PASS-DOCA-KHN-88194"
+  },
+  {
+    "token_id": "TOKEN-MH-402",
+    "farmer_name": "Dnyaneshwar Shinde",
+    "mobile_masked": "+91 98220 XXXXX",
+    "vehicle_number": "MH-15-EG-9012",
+    "crop_name": "Rabi Onion (Garva)",
+    "quantity_quintals": 140.0,
+    "allotted_slot": "11:00 AM \u2013 12:00 PM",
+    "assigned_bay": "Bay #1",
+    "gate_entry_status": "Gate In Verified (10:55 AM)",
+    "weighbridge_gross": "Gross: 18,400 kg",
+    "qc_assessment": "Grade A Buffer Approved",
+    "dbt_payment_status": "Payment Ready Queue",
+    "current_step": 3,
+    "jform_number": "JFORM-MH-40281",
+    "qr_pass_code": "PASS-DOCA-LAS-40219"
+  },
+  {
+    "token_id": "TOKEN-HAR-118",
+    "farmer_name": "Sukhwinder Chauhan",
+    "mobile_masked": "+91 94160 XXXXX",
+    "vehicle_number": "HR-05-AB-6632",
+    "crop_name": "Paddy Grade-A",
+    "quantity_quintals": 85.0,
+    "allotted_slot": "02:00 PM \u2013 03:00 PM",
+    "assigned_bay": "Bay #4",
+    "gate_entry_status": "Approaching Mandi (ETA 1:45 PM)",
+    "weighbridge_gross": "Pending",
+    "qc_assessment": "Pending",
+    "dbt_payment_status": "Pre-Authorized",
+    "current_step": 1,
+    "jform_number": "JFORM-HAR-11840",
+    "qr_pass_code": "PASS-DOCA-KAR-11894"
+  }
+]

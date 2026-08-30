@@ -1,0 +1,35 @@
+[
+  {
+    "hub_id": "APMC-LASALGAON",
+    "hub_name": "Lasalgaon NAFED Mega Hub",
+    "state": "MH",
+    "daily_target": "1,500 MT/day",
+    "procured_so_far": "42,500 MT",
+    "ambient_temp": "24.2\u00b0C",
+    "relative_humidity": "65%",
+    "quality_index": "86.4/100",
+    "active_trucks": 14
+  },
+  {
+    "hub_id": "APMC-MAHUVA",
+    "hub_name": "Mahuva Dehydration Terminal",
+    "state": "GJ",
+    "daily_target": "1,200 MT/day",
+    "procured_so_far": "36,800 MT",
+    "ambient_temp": "23.5\u00b0C",
+    "relative_humidity": "62%",
+    "quality_index": "91.2/100",
+    "active_trucks": 8
+  },
+  {
+    "hub_id": "APMC-INDORE",
+    "hub_name": "Indore Choithram Mandi",
+    "state": "MP",
+    "daily_target": "800 MT/day",
+    "procured_so_far": "21,000 MT",
+    "ambient_temp": "25.0\u00b0C",
+    "relative_humidity": "68%",
+    "quality_index": "79.5/100",
+    "active_trucks": 11
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Supported DVR OEMs",
+    "value": "8+ Major Vendors",
+    "trend": "Hikvision, Dahua, CP Plus, Honeywell, Uniview, Matrix"
+  },
+  {
+    "metric": "Deleted Footage Recovery",
+    "value": "99.2% Precision",
+    "trend": "Time-Contiguity I-Frame Carving"
+  },
+  {
+    "metric": "Evidence Act 65B Compliance",
+    "value": "100% Certified",
+    "trend": "Cryptographic MD5 & SHA-256 Audit Trail"
+  }
+]

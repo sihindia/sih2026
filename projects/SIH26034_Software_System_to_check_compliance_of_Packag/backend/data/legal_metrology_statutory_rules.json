@@ -1,0 +1,32 @@
+[
+  {
+    "rule_code": "Rule 6(1)(a)",
+    "title": "Name & Address of Manufacturer / Packer / Importer",
+    "statutory_fine": "\u20b925,000",
+    "rule_description": "Complete postal address with PIN code & legal identity of manufacturer, packer, or importer."
+  },
+  {
+    "rule_code": "Rule 6(1)(c)",
+    "title": "Net Quantity in Standard SI Units",
+    "statutory_fine": "\u20b925,000",
+    "rule_description": "Must use SI metric units (kg, g, L, ml, m, N). Non-standard symbols such as 'gm', 'gms', 'ltr', 'kilo' are strictly illegal."
+  },
+  {
+    "rule_code": "Rule 6(1)(e)",
+    "title": "Maximum Retail Price (MRP) & Tax Declaration",
+    "statutory_fine": "\u20b925,000 - \u20b950,000",
+    "rule_description": "Must declare '\u20b9 XX.XX (incl. of all taxes)'. Dual MRP stickers or higher rate overwriting constitutes a compounding offence."
+  },
+  {
+    "rule_code": "Rule 6(1)(s)",
+    "title": "Unit Sale Price (USP)",
+    "statutory_fine": "\u20b925,000",
+    "rule_description": "Mandatory declaration of price per unit (per g, per kg, per ml, per L, or per number) to allow direct consumer value comparison."
+  },
+  {
+    "rule_code": "Rule 7 / Table-II",
+    "title": "Numeral & Letter Font Height on PDP Area",
+    "statutory_fine": "\u20b920,000",
+    "rule_description": "Minimum font height determined by Principal Display Panel area (1.0mm for <50cm\u00b2, 2.0mm for 50-200cm\u00b2, 2.5mm for 200-1000cm\u00b2, 4.0mm for >1000cm\u00b2)."
+  }
+]

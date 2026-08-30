@@ -1,0 +1,17 @@
+[
+  {
+    "vehicle_type": "Emergency Ambulance",
+    "critical_depth": "30 cm Max",
+    "routing_policy": "Instantly diverted to elevated flyovers when street depth exceeds 25 cm"
+  },
+  {
+    "vehicle_type": "Public Transit Bus",
+    "critical_depth": "50 cm Max",
+    "routing_policy": "Barred from entering underpasses when depth exceeds 40 cm"
+  },
+  {
+    "vehicle_type": "Civilian Commuter Car",
+    "critical_depth": "20 cm Max",
+    "routing_policy": "Early push notification advising parking on elevated terrain"
+  }
+]

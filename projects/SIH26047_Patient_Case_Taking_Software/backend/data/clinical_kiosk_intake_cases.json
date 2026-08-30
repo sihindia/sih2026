@@ -1,0 +1,47 @@
+[
+  {
+    "intake_id": "KIOSK-2026-DEL01",
+    "abha_id": "91-4829-1029-4810",
+    "patient_demographics": "Rameshwar Prasad, 58-Year-Old Male, Retired Postal Clerk",
+    "opd_clinic": "Kayachikitsa (Internal Medicine) OPD - Room 104, AIIA New Delhi",
+    "interaction_mode": "Multimodal: Hindi Voice Dialogue + Guided Touch Kiosk Screen",
+    "chief_complaint": "Epigastric burning pain, sour eructations, and postprandial heaviness for 6 months",
+    "socrates_hpi": "Site: Epigastrium; Onset: Gradual 6 months; Character: Burning gnawing ache; Radiation: None; Timing: Post-meal 45 mins; Severity: 6/10",
+    "ayurvedic_pariksha": "Prakriti: Pitta-Vata | Vikriti: Pitta-Kapha (Amlapitta) | Agni: Mandagni | Koshtha: Krura | Ahara: Teekshna & Vidahi Ahara (Deep-fried spicy snacks)",
+    "ocr_documents_scanned": "2 Prior Handwritten Prescriptions (Pantoprazole 40mg, Metformin 500mg) + Lab Report (HbA1c: 7.8% [ABNORMAL HIGH], S. Creatinine: 1.0 mg/dL)",
+    "red_flag_alert": "NEGATIVE (No cardiac radiation, dyspnea, or melena)",
+    "time_saved_minutes": 8.5,
+    "physician_summary_status": "READY_ON_DOCTOR_SCREEN (Generated in 12s, FHIR Bundle Pushed to ABDM)",
+    "status": "SUMMARY_PUSHED_TO_HIS"
+  },
+  {
+    "intake_id": "KIOSK-2026-DEL02",
+    "abha_id": "91-3819-5520-1192",
+    "patient_demographics": "Harish Chandra, 61-Year-Old Male, Shopkeeper",
+    "opd_clinic": "TRIAGE_OVERRIDE: Redirected to Emergency Casualty Desk",
+    "interaction_mode": "Voice Dialogue (Spoken Hindi with Labored Breathing)",
+    "chief_complaint": "Severe crushing retrosternal chest pain radiating to left shoulder and jaw with profuse diaphoresis for 40 minutes",
+    "socrates_hpi": "Site: Retrosternal; Onset: Acute sudden; Character: Heavy crushing weight; Radiation: Left arm & jaw; Severity: 9/10; Diaphoresis & breathlessness present",
+    "ayurvedic_pariksha": "Emergency Hridroga presentation (Vata-Kapha Avarana suspected); Assessment deferred for critical stabilization",
+    "ocr_documents_scanned": "Prior Atorvastatin 20mg prescription scanned via kiosk camera",
+    "red_flag_alert": "CRITICAL RED FLAG DETECTED: Acute Coronary Syndrome (ACS) / Myocardial Infarction Alert! Priority strobe triggered at Kiosk",
+    "time_saved_minutes": 14.0,
+    "physician_summary_status": "EMERGENCY_ALARM_DISPATCHED (Direct Nursing Escort to Resuscitation Bay)",
+    "status": "RED_FLAG_EMERGENCY_TRIAGE"
+  },
+  {
+    "intake_id": "KIOSK-2026-DEL03",
+    "abha_id": "91-7291-8830-4921",
+    "patient_demographics": "Kamla Devi, 66-Year-Old Female, Homemaker",
+    "opd_clinic": "Panchakarma & Shalya Tantra OPD - Room 208, AIIA New Delhi",
+    "interaction_mode": "Touchscreen Guided Visual Pictograms + Audio Prompts",
+    "chief_complaint": "Bilateral knee joint pain, crepitus, and morning stiffness aggravated by cold weather (Janu Sandhigata Vata)",
+    "socrates_hpi": "Site: Bilateral Knees; Onset: 2 years insidious; Character: Dull aching stiffness; Radiation: Calf muscles; Severity: 7/10 walking; Alleviated by warm fomentation",
+    "ayurvedic_pariksha": "Prakriti: Vata-Kaphaja | Vikriti: Vata Pradhana (Dhatukshaya) | Agni: Vishamagni | Koshtha: Madhyama | Vaya: Vriddha (Senile degeneration)",
+    "ocr_documents_scanned": "X-Ray Both Knees (K-L Grade III Osteoarthritis with medial joint space narrowing) + CBC/ESR Report",
+    "red_flag_alert": "NEGATIVE (No septic signs, fever, or joint redness)",
+    "time_saved_minutes": 7.8,
+    "physician_summary_status": "READY_ON_DOCTOR_SCREEN (Protocol: Janu Basti & Patra Pinda Sweda Pre-Assessed)",
+    "status": "SUMMARY_PUSHED_TO_HIS"
+  }
+]

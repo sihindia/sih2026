@@ -1,0 +1,14 @@
+[
+  {
+    "zone_name": "Milan Subway Underpass",
+    "elevation_dem_m": 4.2,
+    "drainage_capacity_mm_hr": 25.0,
+    "risk_class": "CRITICAL_INUNDATION_SUBWAY"
+  },
+  {
+    "zone_name": "Kurla West LBS Marg",
+    "elevation_dem_m": 6.8,
+    "drainage_capacity_mm_hr": 35.0,
+    "risk_class": "HIGH_WATERLOGGING_CORRIDOR"
+  }
+]

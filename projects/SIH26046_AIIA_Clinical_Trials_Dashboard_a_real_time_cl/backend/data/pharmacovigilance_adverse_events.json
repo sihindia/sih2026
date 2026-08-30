@@ -1,0 +1,26 @@
+[
+  {
+    "ae_id": "AE-2026-0041",
+    "trial_code": "CT-AIIA-2026-DM01",
+    "meddra_term": "Nausea (PT: 10028813)",
+    "severity": "Mild (Grade 1)",
+    "causality": "Possible (WHO-UMC)",
+    "action": "Resolved after day 3; patient continued study"
+  },
+  {
+    "ae_id": "AE-2026-0042",
+    "trial_code": "CT-AIIA-2026-DM01",
+    "meddra_term": "Dyspepsia (PT: 10013946)",
+    "severity": "Mild (Grade 1)",
+    "causality": "Probable (WHO-UMC)",
+    "action": "Advised taking with lukewarm water; symptom abated"
+  },
+  {
+    "ae_id": "SAE-ESCALATION-RULE",
+    "trial_code": "ALL_TRIALS",
+    "meddra_term": "Expedited SAE Protocol",
+    "severity": "Fatal / Life-Threatening",
+    "causality": "Immediate Review",
+    "action": "Mandatory 24-hour notification to DCGI, Ethics Committee & Sponsor under NDCT 2019"
+  }
+]

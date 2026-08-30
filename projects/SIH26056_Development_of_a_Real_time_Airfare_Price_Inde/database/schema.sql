@@ -1,30 +1,30 @@
--- Supabase / PostgreSQL Schema for SIH26056 (Development of a Real-time Airfare Price Index for India through Automated Web Scraping of Airline and Online Travel Aggregator Portals for Augmentation of the Consumer Price Index (CPI).)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOSPI VAYUINDEX 360 DATABASE SCHEMA (SIH26056)
+-- Ministry of Statistics and Programme Implementation (MoSPI) - DIID
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26056_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26056',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS dgca_city_pair_routes (
+    id SERIAL PRIMARY KEY,
+    route_code VARCHAR(16) UNIQUE NOT NULL,
+    sector_name VARCHAR(255) NOT NULL,
+    dgca_traffic_weight_pct NUMERIC(4, 2) NOT NULL,
+    carriers_monitored TEXT NOT NULL,
+    current_route_apix NUMERIC(6, 2) NOT NULL,
+    mom_inflation_pct NUMERIC(4, 2) NOT NULL,
+    cpi_contribution_status VARCHAR(64) DEFAULT 'AUGMENTED_LIVE_NSO_CPI',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26056_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26056_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS airfare_quotes_scraped (
+    id SERIAL PRIMARY KEY,
+    route_code VARCHAR(16) REFERENCES dgca_city_pair_routes(route_code),
+    carrier_code VARCHAR(8) NOT NULL,
+    portal_source VARCHAR(64) NOT NULL,
+    advance_lead_time_days INTEGER NOT NULL,
+    base_fare_inr NUMERIC(10, 2) NOT NULL,
+    fuel_surcharge_inr NUMERIC(10, 2) NOT NULL,
+    udf_asf_fees_inr NUMERIC(10, 2) NOT NULL,
+    gst_inr NUMERIC(10, 2) NOT NULL,
+    total_fare_inr NUMERIC(10, 2) NOT NULL,
+    scraped_timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26056_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26056_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26056_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26056_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26056_audit_logs FOR SELECT USING (true);

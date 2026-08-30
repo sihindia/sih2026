@@ -1,0 +1,20 @@
+[
+  {
+    "attack_type": "Quantum Intercept-and-Resend (Eve MitM)",
+    "induced_qber": "25.0% - 33.3%",
+    "detection_mechanism": "Pauli Eigenstate Disturbance Collapse",
+    "defense": "Instant Channel Teardown"
+  },
+  {
+    "attack_type": "Photon Number Splitting (PNS Attack)",
+    "induced_qber": "8.5% - 14.2%",
+    "detection_mechanism": "Decoy-State Statistical Thresholding",
+    "defense": "Multi-Photon Packet Dropping"
+  },
+  {
+    "attack_type": "Quantum Replay & Timestamp Forgery",
+    "induced_qber": "50.0% Complete Decoherence",
+    "detection_mechanism": "Bell-State Phase Drift Validation",
+    "defense": "Deterministic Rejection"
+  }
+]

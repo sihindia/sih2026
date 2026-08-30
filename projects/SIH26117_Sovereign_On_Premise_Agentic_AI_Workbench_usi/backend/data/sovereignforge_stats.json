@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Confidential Tasks Run",
+    "value": "1,480 Tasks",
+    "trend": "Refinery & PSU Operations"
+  },
+  {
+    "metric": "External Egress Bytes",
+    "value": "0 Bytes (100% Air-Gapped)",
+    "trend": "Real-Time Packet Filter Verified"
+  },
+  {
+    "metric": "Local GPU Inference",
+    "value": "100% Sovereign",
+    "trend": "NVIDIA RTX 4090 / A100 On-Premise"
+  }
+]

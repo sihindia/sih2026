@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Attribution Accuracy",
+    "value": "98.4%",
+    "trend": "Lagrangian Hindcast + AIS Correlation"
+  },
+  {
+    "metric": "Detection Turnaround",
+    "value": "12 Minutes",
+    "trend": "Automated Sentinel-1 SAR Pipeline"
+  },
+  {
+    "metric": "MARPOL Compliance Dossiers",
+    "value": "100% Validated",
+    "trend": "Admissible in Admiralty Courts"
+  }
+]

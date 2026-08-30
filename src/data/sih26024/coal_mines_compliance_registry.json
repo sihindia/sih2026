@@ -1,0 +1,47 @@
+[
+  {
+    "mine_id": "MINE-SECL-KUSMUNDA",
+    "mine_name": "Kusmunda Mega Opencast Project",
+    "subsidiary": "South Eastern Coalfields Limited (SECL)",
+    "area_coalfield": "Korba Area",
+    "state": "Chhattisgarh",
+    "daily_production_tonnes": 140000,
+    "dgms_safety_rating": "Grade A+ (Exemplary)",
+    "slope_stability_radar_status": "0.3 mm/hr (Stable Bench)",
+    "ambient_pm10_ug_m3": 84.5,
+    "spcb_cto_status": "VALID_TILL_2028",
+    "forest_clearance_stage": "STAGE_II_APPROVED",
+    "compliance_index_pct": 98.4,
+    "governance_status": "FULLY_COMPLIANT"
+  },
+  {
+    "mine_id": "MINE-MCL-BHUBAN",
+    "mine_name": "Bhubaneswari Opencast Project",
+    "subsidiary": "Mahanadi Coalfields Limited (MCL)",
+    "area_coalfield": "Talcher Area",
+    "state": "Odisha",
+    "daily_production_tonnes": 95000,
+    "dgms_safety_rating": "Grade A (Compliant)",
+    "slope_stability_radar_status": "0.4 mm/hr (Stable Bench)",
+    "ambient_pm10_ug_m3": 92.0,
+    "spcb_cto_status": "VALID_TILL_2027",
+    "forest_clearance_stage": "STAGE_II_APPROVED",
+    "compliance_index_pct": 94.2,
+    "governance_status": "MONITORING_WATER_SPRINKLERS"
+  },
+  {
+    "mine_id": "MINE-BCCL-MOONIDIH",
+    "mine_name": "Moonidih Deep Underground Colliery",
+    "subsidiary": "Bharat Coking Coal Limited (BCCL)",
+    "area_coalfield": "Western Jharia Area",
+    "state": "Jharkhand",
+    "daily_production_tonnes": 12000,
+    "dgms_safety_rating": "Grade A- (Methane Monitored)",
+    "slope_stability_radar_status": "Underground Strata Telescopic Convergence Normal",
+    "ambient_pm10_ug_m3": 68.0,
+    "spcb_cto_status": "VALID_TILL_2029",
+    "forest_clearance_stage": "NOT_APPLICABLE_UG",
+    "compliance_index_pct": 92.8,
+    "governance_status": "CONTINUOUS_CH4_MONITORED"
+  }
+]

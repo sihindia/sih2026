@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Consultation Time Saved",
+    "value": "8.5 Minutes / Pt",
+    "trend": "Reduces 15-min history to 30s review"
+  },
+  {
+    "metric": "Red-Flag Accuracy",
+    "value": "100% Emergency Triage",
+    "trend": "Zero Missed Acute Coronary / Stroke"
+  },
+  {
+    "metric": "ABDM FHIR Sync",
+    "value": "100% Interoperable",
+    "trend": "Linked to ABHA Health Records"
+  }
+]

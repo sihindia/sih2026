@@ -1,0 +1,38 @@
+[
+  {
+    "query_id": "CHAT-AGRO-MAH01",
+    "user_persona": "Farmer (Vidarbha Region, Maharashtra)",
+    "location": "Amravati District, Maharashtra",
+    "user_query_text": "\u0915\u093e\u092a\u0942\u0938 \u0906\u0923\u093f \u0938\u094b\u092f\u093e\u092c\u0940\u0928 \u092b\u0935\u093e\u0930\u0923\u0940\u0938\u093e\u0920\u0940 \u092a\u0941\u0922\u0940\u0932 \u0969 \u0926\u093f\u0935\u0938 \u092a\u093e\u090a\u0938 \u0915\u0938\u093e \u0930\u093e\u0939\u0940\u0932? (How will the rain be for cotton and soybean spraying for the next 3 days?)",
+    "language": "Marathi / \u092e\u0930\u093e\u0920\u0940",
+    "nwp_model_retrieved": "WRF-3km High Resolution + IMD GFS-T1534",
+    "weathergpt_response": "GFS Model predicts a dry spell for the next 48 hours over Amravati. Rain probability is < 15%. Clear window available for pesticide spraying today and tomorrow. Next active monsoon pulse expected from Thursday with 45-65mm heavy showers.",
+    "actionable_advisory": "Complete chemical pesticide spraying within the next 48 hours. Ensure farm drainage channels are unobstructed before Thursday heavy rains.",
+    "alert_level": "GREEN_NOMINAL",
+    "sector": "Agromet & Farming Advisory"
+  },
+  {
+    "query_id": "CHAT-CYC-ODI02",
+    "user_persona": "Fisheries Association & Coastal Citizen",
+    "location": "Puri Coastal District, Odisha",
+    "user_query_text": "Is it safe for deep-sea mechanized trawlers to venture into the Bay of Bengal tomorrow?",
+    "language": "English & Odia",
+    "nwp_model_retrieved": "INCOIS Wave Watch III + IMD Cyclone Warning Bulletin #04",
+    "weathergpt_response": "STRICT ADVISORY: Total suspension of fishing operations. Deep depression over central Bay of Bengal likely to intensify into Cyclonic Storm within 24h. Gale winds reaching 65-75 km/h gusting to 85 km/h. Sea condition will be Very Rough to High.",
+    "actionable_advisory": "Fishermen out at sea are advised to return to coast immediately. Hoist Local Cautionary Signal LC-III at Paradip and Gopalpur ports.",
+    "alert_level": "RED_DANGER_ALERT",
+    "sector": "Marine & Disaster Warning"
+  },
+  {
+    "query_id": "CHAT-HEAT-DEL03",
+    "user_persona": "Urban Municipal Disaster Manager",
+    "location": "New Delhi (Palam & Safdarjung Observatories)",
+    "user_query_text": "What is the heatwave forecast and peak wet-bulb temperature for the next 5 days?",
+    "language": "Hindi / \u0939\u093f\u0902\u0926\u0940 & English",
+    "nwp_model_retrieved": "IMD Regional Climate Model + Gridded AWS Network",
+    "weathergpt_response": "Severe Heatwave warning active. Maximum daytime temperatures will hover between 45.2\u00b0C and 46.8\u00b0C over Delhi-NCR. Warm night conditions with minimums above 31.0\u00b0C. Peak Wet-Bulb Temperature: 30.5\u00b0C (Extreme Heat Stress).",
+    "actionable_advisory": "Activate Urban Heat Action Plan Stage-2. Set up hydration kiosks at transit hubs. Reschedule outdoor construction work between 12:00 PM and 4:00 PM.",
+    "alert_level": "ORANGE_HEAT_WARNING",
+    "sector": "Smart City & Public Health"
+  }
+]

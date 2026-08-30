@@ -1,0 +1,26 @@
+[
+  {
+    "model_name": "NCMRWF NCUM 12km",
+    "type": "Physical NWP",
+    "dominant_regimes": "Indian Monsoon Trough, Regional Orography",
+    "avg_weight": "32.4%"
+  },
+  {
+    "model_name": "Google GraphCast AI",
+    "type": "Deep Learning GNN",
+    "dominant_regimes": "Global Synoptic Waves, Medium-Range Track",
+    "avg_weight": "28.6%"
+  },
+  {
+    "model_name": "ECMWF IFS (HRES)",
+    "type": "Physical NWP",
+    "dominant_regimes": "Mid-Latitude Troughs, Subtropical Jets",
+    "avg_weight": "24.5%"
+  },
+  {
+    "model_name": "Microsoft ClimaX / Pangu",
+    "type": "Foundation Model",
+    "dominant_regimes": "Thermal Extrema, Heat Domes, Jet Streaks",
+    "avg_weight": "14.5%"
+  }
+]

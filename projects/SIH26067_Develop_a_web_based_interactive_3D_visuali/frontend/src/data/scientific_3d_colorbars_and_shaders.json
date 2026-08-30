@@ -1,0 +1,26 @@
+[
+  {
+    "palette_name": "cmocean thermal",
+    "variable": "Ocean Temperature (\u00b0C)",
+    "range": "2.0\u00b0C to 32.0\u00b0C",
+    "color_scale": "Deep Indigo \u2794 Cyan \u2794 Amber \u2794 Crimson"
+  },
+  {
+    "palette_name": "cmocean haline",
+    "variable": "Sea Surface Salinity (PSU)",
+    "range": "28.0 to 37.0 PSU",
+    "color_scale": "Golden Yellow \u2794 Emerald \u2794 Deep Blue"
+  },
+  {
+    "palette_name": "cmocean speed",
+    "variable": "3D Current Velocity (m/s)",
+    "range": "0.0 to 2.5 m/s",
+    "color_scale": "Charcoal \u2794 Aquamarine \u2794 Electric Red"
+  },
+  {
+    "palette_name": "cmocean algae",
+    "variable": "Chlorophyll-a (mg/m\u00b3)",
+    "range": "0.01 to 15.0 mg/m\u00b3",
+    "color_scale": "Pale Cream \u2794 Mint Green \u2794 Deep Forest Green"
+  }
+]

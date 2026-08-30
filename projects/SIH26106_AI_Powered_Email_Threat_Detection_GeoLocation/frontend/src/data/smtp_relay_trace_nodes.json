@@ -1,0 +1,16 @@
+[
+  {
+    "hop_no": 1,
+    "mta_host": "mail-relay-01.tor-exit.net",
+    "ip": "185.220.101.42",
+    "location": "Germany",
+    "delay_ms": 420
+  },
+  {
+    "hop_no": 2,
+    "mta_host": "inbound-mx.aicte-security.in",
+    "ip": "14.139.60.10",
+    "location": "New Delhi, India",
+    "delay_ms": 110
+  }
+]

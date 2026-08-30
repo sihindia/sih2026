@@ -1,30 +1,35 @@
--- Supabase / PostgreSQL Schema for SIH26092 (AI-Driven Scheme Matching for Marginalized Entrepreneurs)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOSJE CHANNELMATCH 360 DATABASE SCHEMA (SIH26092)
+-- Ministry of Social Justice and Empowerment (MoSJE)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26092_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26092',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS marginalized_scheme_applications (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) UNIQUE NOT NULL,
+    beneficiary_name VARCHAR(128) NOT NULL,
+    family_income_inr NUMERIC(10, 2) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    purpose TEXT NOT NULL,
+    estimated_cost_inr NUMERIC(12, 2) NOT NULL,
+    matched_scheme VARCHAR(128) NOT NULL,
+    eligible_loan_inr NUMERIC(12, 2) NOT NULL,
+    concessional_rate_pct NUMERIC(4, 2) NOT NULL,
+    tenure_years INTEGER NOT NULL,
+    moratorium_months INTEGER NOT NULL,
+    quarterly_emi_inr NUMERIC(10, 2) NOT NULL,
+    nearest_channel_partner VARCHAR(255) NOT NULL,
+    partner_npa_health VARCHAR(64) NOT NULL,
+    partner_distance_km NUMERIC(5, 2) NOT NULL,
+    status VARCHAR(64) DEFAULT 'ROUTED_TO_SCA_BRANCH',
+    submitted_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26092_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26092_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS channel_partners_registry (
+    id SERIAL PRIMARY KEY,
+    partner_name VARCHAR(255) UNIQUE NOT NULL,
+    partner_type VARCHAR(64) NOT NULL,
+    npa_percentage NUMERIC(4, 2) NOT NULL,
+    liquidity_status VARCHAR(64) NOT NULL,
+    geographic_coverage TEXT NOT NULL,
+    audited_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26092_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26092_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26092_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26092_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26092_audit_logs FOR SELECT USING (true);

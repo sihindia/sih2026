@@ -1,0 +1,20 @@
+[
+  {
+    "head": "Cloudburst Probability Head",
+    "accuracy": "94.6%",
+    "lead_time": "2.5 - 4.0 Hours",
+    "status": "OPERATIONAL"
+  },
+  {
+    "head": "Flash Flood Inundation Head",
+    "accuracy": "96.1%",
+    "lead_time": "3.0 - 5.5 Hours",
+    "status": "OPERATIONAL"
+  },
+  {
+    "head": "Severe Thunderstorm & Lightning Head",
+    "accuracy": "92.8%",
+    "lead_time": "2.0 - 6.0 Hours",
+    "status": "OPERATIONAL"
+  }
+]

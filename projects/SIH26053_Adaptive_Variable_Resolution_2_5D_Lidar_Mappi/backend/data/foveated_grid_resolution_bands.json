@@ -1,0 +1,20 @@
+[
+  {
+    "band": "Foveal Core (0 - 10m)",
+    "cell_size": "5 cm",
+    "angular_resolution": "High Detail",
+    "priority": "Immediate Emergency Braking, Curbs, Potholes & Small Debris"
+  },
+  {
+    "band": "Transition Mid-Zone (10 - 40m)",
+    "cell_size": "20 cm",
+    "angular_resolution": "Medium Detail",
+    "priority": "Vehicle Lane Keeping, Ditches & Road Boundaries"
+  },
+  {
+    "band": "Far Horizon (40 - 100m)",
+    "cell_size": "50 cm",
+    "angular_resolution": "Sparse Detail",
+    "priority": "Long-Range Threat Tracking, Large Bunkers & Topography"
+  }
+]

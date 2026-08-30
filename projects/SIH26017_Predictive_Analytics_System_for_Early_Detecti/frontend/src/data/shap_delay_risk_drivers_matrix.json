@@ -1,0 +1,22 @@
+[
+  {
+    "feature": "Pending Court Injunctions",
+    "mean_abs_shap": 0.38,
+    "description": "High probability of stay orders filed in Sub-Divisional Magistrate or High Court"
+  },
+  {
+    "feature": "Compensation Circle Rate Gap",
+    "mean_abs_shap": 0.29,
+    "description": "Disparity between private market transaction values and registered circle rates"
+  },
+  {
+    "feature": "Displaced Family Relocation Resistance",
+    "mean_abs_shap": 0.22,
+    "description": "Lack of ready-to-move R&R pucca housing plots or livelihood replacement delays"
+  },
+  {
+    "feature": "Inter-Departmental Clearance Latency",
+    "mean_abs_shap": 0.11,
+    "description": "Pending forest, environmental, defense or railway right-of-way permissions"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "consumption_hub": "Delhi-NCR Mega Urban Region",
+    "commodity": "Onion (Rabi Red)",
+    "weekly_demand_mt": "4,200 MT/wk",
+    "current_local_deficit": "1,400 MT",
+    "optimal_farm_source": "Nashik / Lasalgaon Direct Reefer Fleet",
+    "ai_confidence": "98.2%"
+  },
+  {
+    "consumption_hub": "Mumbai Metropolitan Region (MMR)",
+    "commodity": "Sharbati Wheat",
+    "weekly_demand_mt": "3,100 MT/wk",
+    "current_local_deficit": "150 MT",
+    "optimal_farm_source": "Doaba Jalandhar Direct Railway Freight",
+    "ai_confidence": "97.5%"
+  },
+  {
+    "consumption_hub": "Bengaluru Tech Corridor",
+    "commodity": "Kinnaur Apples",
+    "weekly_demand_mt": "950 MT/wk",
+    "current_local_deficit": "530 MT",
+    "optimal_farm_source": "Kinnaur Reefer Cold Express",
+    "ai_confidence": "98.9%"
+  }
+]

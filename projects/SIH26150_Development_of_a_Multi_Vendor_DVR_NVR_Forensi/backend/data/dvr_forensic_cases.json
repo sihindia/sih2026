@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "DVR-CASE-2026-001",
+    "case_title": "Defense Enclave Perimeter Breach Investigation",
+    "dvr_oem_vendor": "Hikvision Digital Technology (16-Channel NVR)",
+    "file_system_type": "HikFS v2.0 Proprietary Stream Structure",
+    "source_media": "Seized 4TB Western Digital Purple Surveillance HDD",
+    "channels_extracted": 16,
+    "recovered_deleted_clips": 1420,
+    "recovered_footage_hours": "48.2 Hours",
+    "timestamp_normalization": "Synchronized (Zero Skew across 16 Channels)",
+    "ai_analytics_insight": "Person Re-ID Tracked Suspect: Gate-01 \u2794 Corridor-C \u2794 Server Room",
+    "sha256_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legal_compliance": "Indian Evidence Act Section 65B Certified",
+    "status": "FORENSIC_ACQUISITION_VERIFIED"
+  },
+  {
+    "case_id": "DVR-CASE-2026-042",
+    "case_title": "Coastal Port Container Terminal Heist",
+    "dvr_oem_vendor": "Dahua Technology (32-Channel NVR)",
+    "file_system_type": "DHFS 4.2 Stream Interleaving",
+    "source_media": "Seized Formatted 8TB Seagate SkyHawk HDD",
+    "channels_extracted": 32,
+    "recovered_deleted_clips": 2840,
+    "recovered_footage_hours": "96.4 Hours",
+    "timestamp_normalization": "Normalized +12.4s Clock Drift",
+    "ai_analytics_insight": "YOLOv11 ANPR Detected Getaway Container Truck (MH-04-AZ-8812)",
+    "sha256_evidence_hash": "912048ba819234bf9410b37c28841aef912048ba819234bf9410b37c28841aef",
+    "legal_compliance": "Indian Evidence Act Section 65B Certified",
+    "status": "FORENSIC_ACQUISITION_VERIFIED"
+  }
+]

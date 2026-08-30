@@ -1,0 +1,23 @@
+[
+  {
+    "time": "08:00 AM",
+    "type": "Medication",
+    "title": "Morning Memory Prescription",
+    "instruction": "Donepezil 10mg with warm water after light breakfast",
+    "voice_alert": "Active in Assamese/Khasi/Mizo"
+  },
+  {
+    "time": "11:30 AM",
+    "type": "Hydration",
+    "title": "Hydration Reminder",
+    "instruction": "Drink 1 glass of clean warm water or lemon tea",
+    "voice_alert": "Gentle Chime & Audio Prompt"
+  },
+  {
+    "time": "04:30 PM",
+    "type": "Activity",
+    "title": "Evening Garden Walk & Social Chat",
+    "instruction": "15-minute gentle stroll on veranda or family conversation",
+    "voice_alert": "Family Photo Prompt Displayed"
+  }
+]

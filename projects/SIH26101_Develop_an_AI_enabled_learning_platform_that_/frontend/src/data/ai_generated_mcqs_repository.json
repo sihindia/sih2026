@@ -1,0 +1,15 @@
+[
+  {
+    "quiz_id": "QZ-SNA-001",
+    "topic": "System of National Accounts (SNA 2008) Implementation",
+    "question": "Under SNA 2008, how should Financial Intermediation Services Indirectly Measured (FISIM) be allocated between final and intermediate consumption?",
+    "options": [
+      "A) Treated entirely as final consumption expenditure of households",
+      "B) Allocated among user sectors based on interest margin differentials",
+      "C) Deducted directly from Gross Operating Surplus",
+      "D) Omitted from GDP calculations"
+    ],
+    "correct_option": "B",
+    "explanation": "SNA 2008 requires FISIM to be partitioned and allocated among borrowing/depositing institutional sectors according to reference interest rate margins."
+  }
+]

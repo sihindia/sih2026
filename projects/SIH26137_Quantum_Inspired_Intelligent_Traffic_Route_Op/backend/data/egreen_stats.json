@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Transit Latency Saved",
+    "value": "38.1% Faster",
+    "trend": "Sub-100ms QPSO Graph Solvers"
+  },
+  {
+    "metric": "Monthly CO2 Avoided",
+    "value": "34.2 Tons",
+    "trend": "Fleet Route Fuel Minimization"
+  },
+  {
+    "metric": "Convergence Speed",
+    "value": "4.2x Faster",
+    "trend": "18 Iterations vs 94 Iterations"
+  }
+]

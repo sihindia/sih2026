@@ -1,0 +1,53 @@
+[
+  {
+    "survey_id": "SONAR-MAN-TUT01",
+    "survey_location": "Gulf of Mannar Marine Biosphere Reserve (Tuticorin Coast, Tamil Nadu)",
+    "sonar_instrument": "EdgeTech 4200 Dual-Frequency SSS (400/900 kHz Chirp)",
+    "seabed_depth_meters": 28.5,
+    "towfish_altitude_meters": 8.2,
+    "detected_anomaly_class": "Discarded Nylon Monofilament Ghost Net (ALDFG)",
+    "bounding_dimensions": "Length: 42.0m | Width: 18.5m | Height Relief: 1.8m",
+    "acoustic_signature": "High-intensity webbed highlight reflection followed by 6.2m trailing acoustic shadow",
+    "geotag_coordinates": {
+      "latitude": "8\u00b048'14.2\"N",
+      "longitude": "78\u00b012'36.8\"E"
+    },
+    "detection_confidence_pct": 98.4,
+    "recommended_mitigation": "Alert NIOT ORV Sagar Nidhi / Indian Coast Guard diver team for salvage retrieval",
+    "hazard_status": "HAZARD_GEOREFERENCED_FOR_RETRIEVAL"
+  },
+  {
+    "survey_id": "SONAR-MUM-ANCH03",
+    "survey_location": "Mumbai Port Offshore Anchorage & Subsea Pipeline Corridor (Arabian Sea)",
+    "sonar_instrument": "Klein 3000 High-Resolution Digital Side-Scan Sonar",
+    "seabed_depth_meters": 42.0,
+    "towfish_altitude_meters": 12.0,
+    "detected_anomaly_class": "Cluster of Corroded Chemical Drums & Lost Cargo Container",
+    "bounding_dimensions": "Length: 6.1m | Width: 2.4m | Height Relief: 2.6m",
+    "acoustic_signature": "Sharp specular metallic acoustic return with hard-edged 8.9m shadow on muddy seabed",
+    "geotag_coordinates": {
+      "latitude": "18\u00b054'22.6\"N",
+      "longitude": "72\u00b046'18.4\"E"
+    },
+    "detection_confidence_pct": 97.2,
+    "recommended_mitigation": "Mark hazardous navigation obstruction on National Hydrographic Office (NHO) chart",
+    "hazard_status": "SUBSEA_OBSTRUCTION_CHARTED"
+  },
+  {
+    "survey_id": "SONAR-AND-PBLR05",
+    "survey_location": "Port Blair Outer Channel & Coral Atoll (Andaman & Nicobar Islands)",
+    "sonar_instrument": "Kongsberg GeoPulse AUV Integrated High-Speed Sonar",
+    "seabed_depth_meters": 54.0,
+    "towfish_altitude_meters": 15.5,
+    "detected_anomaly_class": "Derelict Trawler Shipwreck encrusted with Abandoned Gill Nets",
+    "bounding_dimensions": "Length: 28.5m | Width: 7.2m | Height Relief: 4.8m",
+    "acoustic_signature": "Complete hull profile with ribs visible; dense shadow indicating intact superstructure",
+    "geotag_coordinates": {
+      "latitude": "11\u00b039'48.1\"N",
+      "longitude": "92\u00b044'05.9\"E"
+    },
+    "detection_confidence_pct": 99.1,
+    "recommended_mitigation": "Ecological monitoring station; net clearance to protect adjacent coral reef",
+    "hazard_status": "SHIPWRECK_NET_INTERVENTION_PLANNED"
+  }
+]

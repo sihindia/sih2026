@@ -1,0 +1,17 @@
+[
+  {
+    "model_name": "Geo-Spatial Asset Deduplication Engine",
+    "algorithm": "DBSCAN + GIS Buffer Radius Analysis (<500m overlap)",
+    "precision_pct": 99.1
+  },
+  {
+    "model_name": "CPWD / State SoR Cost Inflation Analyser",
+    "algorithm": "Random Forest Regressor against regional civil construction benchmarks",
+    "precision_pct": 96.8
+  },
+  {
+    "model_name": "Split-Tender Collusion Graph Neural Network",
+    "algorithm": "GraphSAGE over contractor PANs, GSTNs & rapid sub-50L sanctions",
+    "precision_pct": 98.4
+  }
+]

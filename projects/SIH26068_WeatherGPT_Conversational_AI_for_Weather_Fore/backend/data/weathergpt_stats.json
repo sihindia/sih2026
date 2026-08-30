@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Response Latency",
+    "value": "180 ms Latency",
+    "trend": "Real-Time NLP Inference Speed"
+  },
+  {
+    "metric": "NWP Model Accuracy",
+    "value": "98.4% Accuracy",
+    "trend": "Harmonized with GFS/WRF Grids"
+  },
+  {
+    "metric": "Language Diversity",
+    "value": "12+ Indian Languages",
+    "trend": "Voice-Enabled Rural Farm Access"
+  }
+]

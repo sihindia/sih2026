@@ -1,0 +1,20 @@
+[
+  {
+    "layer": "Spherical Icosahedral Mesh",
+    "purpose": "Eliminates polar distortions of flat 2D maps",
+    "mesh_nodes": "40,962 Vertices",
+    "resolution": "Level-7 Icosahedron"
+  },
+  {
+    "layer": "Extreme Forecast Index (EFI) Engine",
+    "purpose": "Standard deviation against 30-year ERA5 baseline",
+    "metrics_tracked": "Wind, 2m Temp, CAPE, Total Precip",
+    "statistical_threshold": "> 0.85 EFI"
+  },
+  {
+    "layer": "Dynamic 4D Bounding Box Generator",
+    "purpose": "Tracks temporal storm trajectories across 3-10 days",
+    "bounding_type": "Spatial-Temporal Polytope",
+    "update_frequency": "Every 6-hour EPS Run"
+  }
+]

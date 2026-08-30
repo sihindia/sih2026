@@ -1,30 +1,30 @@
--- Supabase / PostgreSQL Schema for SIH26043 (A digital platform to crowdsource societal challenges and facilitate collaborative problem solving through universities and industry partnerships)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- JHARKHAND SAHAYOGSETU 360 DATABASE SCHEMA (SIH26043)
+-- Government of Jharkhand - Department of Higher & Technical Education
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26043_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26043',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS crowdsourced_societal_challenges (
+    id SERIAL PRIMARY KEY,
+    challenge_id VARCHAR(64) UNIQUE NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    originator VARCHAR(255) NOT NULL,
+    thematic_domain VARCHAR(128) NOT NULL,
+    problem_summary TEXT NOT NULL,
+    assigned_university VARCHAR(255) NOT NULL,
+    faculty_mentor VARCHAR(128) NOT NULL,
+    industry_csr_sponsor VARCHAR(255) NOT NULL,
+    grant_awarded_inr NUMERIC(12, 2) NOT NULL,
+    solution_status TEXT NOT NULL,
+    stage VARCHAR(64) DEFAULT 'PILOT_DEPLOYMENT_ACTIVE',
+    submitted_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26043_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26043_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS student_nep_academic_credits (
+    id SERIAL PRIMARY KEY,
+    challenge_id VARCHAR(64) REFERENCES crowdsourced_societal_challenges(challenge_id),
+    student_name VARCHAR(128) NOT NULL,
+    roll_number VARCHAR(64) NOT NULL,
+    university_name VARCHAR(255) NOT NULL,
+    credits_awarded INTEGER DEFAULT 6,
+    certified_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26043_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26043_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26043_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26043_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26043_audit_logs FOR SELECT USING (true);

@@ -1,0 +1,32 @@
+[
+  {
+    "time_window": "08:00 AM \u2013 09:00 AM",
+    "available_capacity": 0,
+    "status": "Full"
+  },
+  {
+    "time_window": "09:00 AM \u2013 10:00 AM",
+    "available_capacity": 1,
+    "status": "Almost Full"
+  },
+  {
+    "time_window": "10:00 AM \u2013 11:00 AM",
+    "available_capacity": 6,
+    "status": "Available"
+  },
+  {
+    "time_window": "11:00 AM \u2013 12:00 PM",
+    "available_capacity": 7,
+    "status": "Available"
+  },
+  {
+    "time_window": "02:00 PM \u2013 03:00 PM",
+    "available_capacity": 11,
+    "status": "Available"
+  },
+  {
+    "time_window": "03:00 PM \u2013 04:00 PM",
+    "available_capacity": 15,
+    "status": "Available"
+  }
+]

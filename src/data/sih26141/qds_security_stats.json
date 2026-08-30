@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Forgery Probability",
+    "value": "< 10^-9",
+    "trend": "Information-Theoretic Security"
+  },
+  {
+    "metric": "False Rejection Rate",
+    "value": "0.00%",
+    "trend": "Deterministic Quantum Acceptance"
+  },
+  {
+    "metric": "Post-Quantum Immune",
+    "value": "100%",
+    "trend": "Unconditional Security (No Shor/Grover Risk)"
+  }
+]

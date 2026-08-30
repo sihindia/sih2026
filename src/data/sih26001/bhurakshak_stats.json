@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Prediction Horizon",
+    "value": "72 Hours Ahead",
+    "trend": "Physics-Guided Bishop Slope Stability"
+  },
+  {
+    "metric": "Spatial Highway Fit",
+    "value": "94.2% Accuracy",
+    "trend": "Monitored across NH-10, NH-29 & NH-6"
+  },
+  {
+    "metric": "Multilingual Coverage",
+    "value": "8 NER States",
+    "trend": "Real-time alerts in Assamese, Khasi, Mizo, Bengali"
+  }
+]

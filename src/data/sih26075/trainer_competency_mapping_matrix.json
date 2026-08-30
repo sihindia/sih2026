@@ -1,0 +1,26 @@
+[
+  {
+    "trainer_id": "TRN-084",
+    "name": "Dr. S. K. Roy",
+    "domain": "Radar Meteorology & Dual-Pol Remote Sensing",
+    "competency_rating": 4.9,
+    "courses_conducted": 24,
+    "status": "MASTER_TRAINER"
+  },
+  {
+    "trainer_id": "TRN-102",
+    "name": "Prof. Ananya Sharma",
+    "domain": "Numerical Weather Prediction & HPC Clustered Modeling",
+    "competency_rating": 4.95,
+    "courses_conducted": 18,
+    "status": "MASTER_TRAINER"
+  },
+  {
+    "trainer_id": "TRN-039",
+    "name": "Dr. Rameshwar V.",
+    "domain": "Satellite Agro-Meteorology & Crop Growth Models",
+    "competency_rating": 4.8,
+    "courses_conducted": 15,
+    "status": "SENIOR_FACULTY"
+  }
+]

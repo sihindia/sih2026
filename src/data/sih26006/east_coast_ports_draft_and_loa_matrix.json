@@ -1,0 +1,38 @@
+[
+  {
+    "port_name": "Paradip Port",
+    "state": "Odisha",
+    "max_permissible_draft_m": 17.5,
+    "max_loa_m": 300.0,
+    "max_beam_m": 48.0,
+    "handling_rate_mt_day": 45000,
+    "suitable_vessels": "Capesize, Post-Panamax, Kamsarmax"
+  },
+  {
+    "port_name": "Visakhapatnam (Vizag) Port",
+    "state": "Andhra Pradesh",
+    "max_permissible_draft_m": 16.1,
+    "max_loa_m": 290.0,
+    "max_beam_m": 45.0,
+    "handling_rate_mt_day": 35000,
+    "suitable_vessels": "Baby-Cape, Kamsarmax, Panamax"
+  },
+  {
+    "port_name": "Gangavaram Port",
+    "state": "Andhra Pradesh",
+    "max_permissible_draft_m": 18.5,
+    "max_loa_m": 320.0,
+    "max_beam_m": 50.0,
+    "handling_rate_mt_day": 50000,
+    "suitable_vessels": "Fully Laden Capesize, Newcastlemax"
+  },
+  {
+    "port_name": "Haldia Dock Complex",
+    "state": "West Bengal",
+    "max_permissible_draft_m": 8.5,
+    "max_loa_m": 190.0,
+    "max_beam_m": 28.0,
+    "handling_rate_mt_day": 18000,
+    "suitable_vessels": "Supramax, Handymax (Geared Only)"
+  }
+]

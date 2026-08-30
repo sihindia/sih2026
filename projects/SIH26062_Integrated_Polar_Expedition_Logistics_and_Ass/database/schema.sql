@@ -1,30 +1,31 @@
--- Supabase / PostgreSQL Schema for SIH26062 (Integrated Polar Expedition Logistics and Asset Management System)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOES SETUPOLAR 360 DATABASE SCHEMA (SIH26062)
+-- Ministry of Earth Sciences (MoES) - NCPOR Goa
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26062_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26062',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS polar_logistics_operations (
+    id SERIAL PRIMARY KEY,
+    operation_id VARCHAR(64) UNIQUE NOT NULL,
+    operation_title VARCHAR(255) NOT NULL,
+    theatre_location VARCHAR(255) NOT NULL,
+    cargo_manifest TEXT NOT NULL,
+    total_tonnage_mt NUMERIC(8, 2) NOT NULL,
+    transport_mode VARCHAR(128) NOT NULL,
+    route_distance_km NUMERIC(6, 1) NOT NULL,
+    crevasse_hazard_status TEXT NOT NULL,
+    subzero_rfid_tracking TEXT NOT NULL,
+    convoy_transit_time_hours NUMERIC(4, 1) NOT NULL,
+    delivery_status VARCHAR(64) DEFAULT 'CONVOY_DELIVERED_TO_MAITRI_STATION',
+    initiated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26062_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26062_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS polar_subzero_assets (
+    id SERIAL PRIMARY KEY,
+    asset_id VARCHAR(64) UNIQUE NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(64) NOT NULL,
+    temp_rating VARCHAR(64) NOT NULL,
+    tracking_tech VARCHAR(128) NOT NULL,
+    current_status VARCHAR(64) NOT NULL,
+    last_ping_timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26062_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26062_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26062_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26062_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26062_audit_logs FOR SELECT USING (true);

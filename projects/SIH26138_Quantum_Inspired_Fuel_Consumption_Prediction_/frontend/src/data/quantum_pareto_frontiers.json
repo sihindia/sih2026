@@ -1,0 +1,23 @@
+[
+  {
+    "speed_knots": 14.0,
+    "fuel_mt": 890,
+    "transit_days": 19.2,
+    "ghg_co2_mt": 980,
+    "cii_score": "Grade A"
+  },
+  {
+    "speed_knots": 16.2,
+    "fuel_mt": 1016,
+    "transit_days": 16.5,
+    "ghg_co2_mt": 1280,
+    "cii_score": "Grade A (Optimal Balance)"
+  },
+  {
+    "speed_knots": 19.5,
+    "fuel_mt": 1480,
+    "transit_days": 13.8,
+    "ghg_co2_mt": 1950,
+    "cii_score": "Grade C"
+  }
+]

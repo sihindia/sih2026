@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Sovereign Engine",
+    "value": "100% From Scratch",
+    "trend": "Built without foreign libraries (No Gurobi/CPLEX)"
+  },
+  {
+    "metric": "GPU Acceleration",
+    "value": "8.4x Speedup",
+    "trend": "NVIDIA CUDA cuSPARSE / cuSOLVER"
+  },
+  {
+    "metric": "License Savings",
+    "value": "\u20b94.5 Cr / Year",
+    "trend": "Zero Foreign Commercial License Dependency"
+  }
+]

@@ -1,30 +1,35 @@
--- Supabase / PostgreSQL Schema for SIH26046 (AIIA Clinical Trials Dashboard - a real-time, cloud-based, GCP-compliant Clinical Trial Management System (CTMS) for Ayurveda research, with CDISC/FHIR-interoperable data, role-based KPIs, and integrated ethics, regulatory (CTRI / NDCT Rules 2019) and pharma covigilance tracking.)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- AIIA CLINICAL TRIALS MANAGEMENT SYSTEM (CTMS) DATABASE SCHEMA (SIH26046)
+-- Ministry of Ayush - All India Institute of Ayurveda (AIIA)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26046_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26046',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS aiia_clinical_trials (
+    id SERIAL PRIMARY KEY,
+    trial_code VARCHAR(64) UNIQUE NOT NULL,
+    ctri_number VARCHAR(64) UNIQUE NOT NULL,
+    study_title TEXT NOT NULL,
+    lead_centre VARCHAR(255) NOT NULL,
+    principal_investigator VARCHAR(128) NOT NULL,
+    regulatory_framework VARCHAR(255) NOT NULL,
+    target_recruitment INTEGER NOT NULL,
+    current_enrolled INTEGER NOT NULL,
+    enrolment_rate_pct NUMERIC(4, 2) NOT NULL,
+    iec_approval_status VARCHAR(64) NOT NULL,
+    data_standard VARCHAR(128) NOT NULL,
+    safety_profile TEXT NOT NULL,
+    study_phase VARCHAR(64) NOT NULL,
+    status VARCHAR(64) DEFAULT 'RECRUITING_ON_SCHEDULE',
+    registered_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26046_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26046_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS pharmacovigilance_safety_reports (
+    id SERIAL PRIMARY KEY,
+    ae_id VARCHAR(64) UNIQUE NOT NULL,
+    trial_code VARCHAR(64) REFERENCES aiia_clinical_trials(trial_code),
+    meddra_term VARCHAR(128) NOT NULL,
+    severity VARCHAR(64) NOT NULL,
+    causality_assessment VARCHAR(64) NOT NULL,
+    action_taken TEXT NOT NULL,
+    reported_to_dcgi BOOLEAN DEFAULT FALSE,
+    logged_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26046_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26046_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26046_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26046_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26046_audit_logs FOR SELECT USING (true);

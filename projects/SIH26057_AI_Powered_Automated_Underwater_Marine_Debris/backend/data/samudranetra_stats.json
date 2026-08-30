@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Ghost Net Accuracy",
+    "value": "98.4% Precision",
+    "trend": "YOLOv10 / U-Net Acoustic Model"
+  },
+  {
+    "metric": "Relief Measurement",
+    "value": "0.4s Shadow Height",
+    "trend": "Accurate 3D Obstacle Elevation"
+  },
+  {
+    "metric": "Swachh Sagar Mission",
+    "value": "100% Geotagged",
+    "trend": "Automated GeoJSON Salvage Reports"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "detour_name": "NH-717A Lava-Pedong Bypass",
+    "terrain": "High Mountain Pass (Max Elev 2,100m)",
+    "max_vehicle_tonnage_mt": 24.0,
+    "hairpin_bends": 34,
+    "emergency_tow_station": "Pedong BRO Outpost"
+  },
+  {
+    "detour_name": "Niuland-Kohima Rural Mountain Route",
+    "terrain": "Disang Shale Ridge Track",
+    "max_vehicle_tonnage_mt": 18.0,
+    "hairpin_bends": 48,
+    "emergency_tow_station": "Medziphema Quick Response Unit"
+  },
+  {
+    "detour_name": "Bhairabi Multi-Modal Rail Bypass",
+    "terrain": "Valley River Basin Route",
+    "max_vehicle_tonnage_mt": 35.0,
+    "hairpin_bends": 12,
+    "emergency_tow_station": "Bhairabi Railway Yard Depot"
+  }
+]

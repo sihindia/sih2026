@@ -1,0 +1,16 @@
+[
+  {
+    "time_sec": "T+00s",
+    "ingress_rate_gbps": 9.84,
+    "flows_per_sec": 1420000,
+    "source_ip_entropy": 3.82,
+    "threats_flagged": 2
+  },
+  {
+    "time_sec": "T+05s",
+    "ingress_rate_gbps": 10.12,
+    "flows_per_sec": 1480000,
+    "source_ip_entropy": 4.15,
+    "threats_flagged": 3
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "regime_name": "Active Monsoon (Trough South of Normal)",
+    "features": "Widespread monsoon rainfall, strong low-level westerlies",
+    "correction_strategy": "Non-linear Quantile Mapping with orographic uplift weight"
+  },
+  {
+    "regime_name": "Break Monsoon (Trough Shifted to Foothills)",
+    "features": "Rainfall concentrated over Himalayas & NE India; dry elsewhere",
+    "correction_strategy": "Dry-slot suppression network to reduce model false rain alarms"
+  },
+  {
+    "regime_name": "Monsoon Lows & Depressions",
+    "features": "Vorticity maximum, intense spiral rain bands",
+    "correction_strategy": "Vortex-centric spatial redistribution with latent heat compensation"
+  },
+  {
+    "regime_name": "Western Ghats / Coastal Orographic",
+    "features": "Extreme windward slope rainfall, sharp leeward shadow",
+    "correction_strategy": "High-resolution DEM steepness-dependent amplitude amplification"
+  }
+]

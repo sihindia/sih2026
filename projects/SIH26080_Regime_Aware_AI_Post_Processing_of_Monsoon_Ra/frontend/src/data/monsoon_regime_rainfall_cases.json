@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "REG-2026-GHATS01",
+    "district_location": "Ratnagiri & Mahabaleshwar (Maharashtra)",
+    "classified_regime": "OROGRAPHIC_WESTERN_GHATS_COASTAL",
+    "raw_nwp_rainfall_mm": 82.0,
+    "ai_corrected_rainfall_mm": 214.5,
+    "ground_truth_obs_mm": 228.0,
+    "heavy_rain_prob_pct": 96.8,
+    "extreme_threshold_tag": "EXTREMELY_HEAVY_RAIN (>204.4mm)",
+    "verification_improvement": "Raw RMSE: 146.0 mm \u2794 Corrected RMSE: 13.5 mm | ETS improved from 0.21 to 0.78",
+    "status": "REGIME_CALIBRATED"
+  },
+  {
+    "case_id": "REG-2026-DEP04",
+    "district_location": "Puri & Jagatsinghpur (Odisha Coastal)",
+    "classified_regime": "MONSOON_DEPRESSION_LANDFALL",
+    "raw_nwp_rainfall_mm": 165.0,
+    "ai_corrected_rainfall_mm": 192.4,
+    "ground_truth_obs_mm": 198.5,
+    "heavy_rain_prob_pct": 94.2,
+    "extreme_threshold_tag": "VERY_HEAVY_RAIN (>115.5mm)",
+    "verification_improvement": "Raw RMSE: 33.5 mm \u2794 Corrected RMSE: 6.1 mm | POD increased to 0.94",
+    "status": "REGIME_CALIBRATED"
+  },
+  {
+    "case_id": "REG-2026-BREAK02",
+    "district_location": "Varanasi & Gorakhpur (Uttar Pradesh)",
+    "classified_regime": "BREAK_MONSOON_CONVECTIVE",
+    "raw_nwp_rainfall_mm": 48.0,
+    "ai_corrected_rainfall_mm": 12.4,
+    "ground_truth_obs_mm": 8.0,
+    "heavy_rain_prob_pct": 14.5,
+    "extreme_threshold_tag": "LIGHT_TO_MODERATE_RAIN",
+    "verification_improvement": "Eliminated false alarm light drizzles; FAR dropped from 0.62 to 0.14",
+    "status": "REGIME_CALIBRATED"
+  }
+]

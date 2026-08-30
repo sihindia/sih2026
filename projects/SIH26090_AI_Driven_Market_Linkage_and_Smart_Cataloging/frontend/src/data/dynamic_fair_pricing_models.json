@@ -1,0 +1,17 @@
+[
+  {
+    "cost_component": "Raw Material Inputs",
+    "weight": "35% to 45%",
+    "description": "Actual cost of certified mulberry silk, brass ingots, natural vegetable dyes"
+  },
+  {
+    "cost_component": "Artisan Labor Compensation",
+    "weight": "40% to 50%",
+    "description": "Guaranteed minimum skilled wage of \u20b935-\u20b950 per verified crafting hour"
+  },
+  {
+    "cost_component": "GI Heritage Premium",
+    "weight": "10% to 15%",
+    "description": "Value added for authenticated Geographical Indication tag provenance"
+  }
+]

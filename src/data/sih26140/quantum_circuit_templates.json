@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Bell State Maximally Entangled Pair (|\u03a6+\u27e9)",
+    "qubits": 2,
+    "gates": [
+      "H(q0)",
+      "CNOT(q0, q1)"
+    ],
+    "statevector": "0.707|00\u27e9 + 0.707|11\u27e9"
+  },
+  {
+    "name": "3-Qubit Quantum Fourier Transform (QFT)",
+    "qubits": 3,
+    "gates": [
+      "H(q0)",
+      "CP(q0,q1,\u03c0/2)",
+      "CP(q0,q2,\u03c0/4)",
+      "H(q1)",
+      "CP(q1,q2,\u03c0/2)",
+      "H(q2)",
+      "SWAP(q0,q2)"
+    ],
+    "statevector": "Uniform Phase Superposition"
+  }
+]

@@ -1,30 +1,32 @@
--- Supabase / PostgreSQL Schema for SIH26037 (Adaptive Path Planning and Collision Avoidance for Autonomous Vehicles on Unstructured Indian Roads)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MATHWORKS AUTOPATH 360 DATABASE SCHEMA (SIH26037)
+-- MathWorks Autonomous Driving & Navigation Simulation
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26037_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26037',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS autonomous_driving_scenarios (
+    id SERIAL PRIMARY KEY,
+    scenario_id VARCHAR(64) UNIQUE NOT NULL,
+    name VARCHAR(128) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    road_type VARCHAR(255) NOT NULL,
+    ego_speed_kmh NUMERIC(5, 2) NOT NULL,
+    primary_obstacle VARCHAR(255) NOT NULL,
+    sensor_detections TEXT NOT NULL,
+    planner_action TEXT NOT NULL,
+    replan_latency_ms NUMERIC(5, 2) NOT NULL,
+    path_smoothness NUMERIC(4, 2) NOT NULL,
+    safety_margin_m NUMERIC(4, 2) NOT NULL,
+    status VARCHAR(64) DEFAULT 'COLLISION_AVOIDED_SAFE_STOP',
+    simulated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26037_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26037_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS replanned_trajectory_logs (
+    id SERIAL PRIMARY KEY,
+    scenario_id VARCHAR(64) REFERENCES autonomous_driving_scenarios(scenario_id),
+    timestamp_ms INTEGER NOT NULL,
+    frenet_s NUMERIC(8, 2) NOT NULL,
+    frenet_d NUMERIC(5, 2) NOT NULL,
+    steering_angle_deg NUMERIC(5, 2) NOT NULL,
+    brake_pressure_bar NUMERIC(5, 2) NOT NULL,
+    collision_clearance_m NUMERIC(4, 2) NOT NULL
 );
-
-ALTER TABLE sih26037_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26037_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26037_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26037_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26037_audit_logs FOR SELECT USING (true);

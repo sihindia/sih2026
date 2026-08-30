@@ -1,0 +1,28 @@
+[
+  {
+    "event_id": "IMD-EVT-2026-001",
+    "location": "Mumbai (Hindmata & Kurla Junction, Maharashtra)",
+    "gps_coordinates": "19.0178\u00b0 N, 72.8478\u00b0 E",
+    "source_channel": "Social Media Crowdsource (#IMD #MumbaiRains + Citizen Video)",
+    "weather_category": "Severe Urban Waterlogging & Flash Torrential Rain (84 mm/hr)",
+    "ai_fake_news_status": "VERIFIED_AUTHENTIC_LIVE (Matched Mumbai Doppler Radar 52 dBZ)",
+    "duplicate_clusters_merged": 18,
+    "imd_warning_level": "RED_ALERT_FLASH_FLOOD",
+    "action_dispatched": "Automated Alert to BMC Disaster Management Cell & NDRF 5th Battalion",
+    "confidence_score": 98.4,
+    "status": "VERIFIED_DISASTER_ALERT"
+  },
+  {
+    "event_id": "IMD-EVT-2026-042",
+    "location": "Churu & Bikaner Belt (Rajasthan)",
+    "gps_coordinates": "28.2900\u00b0 N, 74.9600\u00b0 E",
+    "source_channel": "Citizen Mobile App + AWS Sensor Feed",
+    "weather_category": "Severe Heatwave & Scorching Loo Winds (Surface Temp 48.6\u00b0C)",
+    "ai_fake_news_status": "VERIFIED_AUTHENTIC_LIVE (Matched INSAT-3DR Land Surface Temp)",
+    "duplicate_clusters_merged": 12,
+    "imd_warning_level": "RED_ALERT_EXTREME_HEATWAVE",
+    "action_dispatched": "Heat Health Action Advisory to Rajasthan Disaster Authority & Hospitals",
+    "confidence_score": 99.1,
+    "status": "VERIFIED_DISASTER_ALERT"
+  }
+]

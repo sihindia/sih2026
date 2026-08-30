@@ -1,0 +1,20 @@
+[
+  {
+    "parameter": "Planetary Boundary Layer (PBL) Height",
+    "typical_summer": "1,500 - 2,500 m",
+    "winter_inversion": "80 - 150 m (Squashed Volume)",
+    "impact": "Pollutants confined to razor-thin surface layer"
+  },
+  {
+    "parameter": "Aerosol Radiative Solar Dimming",
+    "typical_summer": "-5 W/m\u00b2",
+    "winter_inversion": "-35 W/m\u00b2 (Severe Dimming)",
+    "impact": "Prevents solar surface warming, suppressing convective mixing"
+  },
+  {
+    "parameter": "Ventilation Index",
+    "typical_summer": "> 6,000 m\u00b2/s (Good)",
+    "winter_inversion": "< 1,800 m\u00b2/s (Critical Stagnation)",
+    "impact": "Near-zero horizontal & vertical dispersion capacity"
+  }
+]

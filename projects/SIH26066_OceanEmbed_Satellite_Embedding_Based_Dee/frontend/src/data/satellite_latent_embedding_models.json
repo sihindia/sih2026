@@ -1,0 +1,20 @@
+[
+  {
+    "architecture": "Vision Transformer (ViT) Spatial Encoder",
+    "latent_dimension": 256,
+    "reconstruction_rmse_c": 0.36,
+    "advantage": "Captures long-range teleconnections across North Indian Ocean basin"
+  },
+  {
+    "architecture": "Deep Convolutional Autoencoder (CNN)",
+    "latent_dimension": 128,
+    "reconstruction_rmse_c": 0.42,
+    "advantage": "Fast edge inference; excels at localized mesoscale eddy boundaries"
+  },
+  {
+    "architecture": "Spatio-Temporal Graph Neural Network (GNN)",
+    "latent_dimension": 256,
+    "reconstruction_rmse_c": 0.34,
+    "advantage": "Models non-Euclidean coastlines, islands, and irregular bathymetric ridges"
+  }
+]

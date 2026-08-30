@@ -1,0 +1,34 @@
+[
+  {
+    "case_id": "SOLV-CASE-2026-001",
+    "problem_name": "MRPL Multi-Crude Assay Blending Optimization (LP)",
+    "industry_sector": "Refining & Petrochemicals (Crude Distillation Unit)",
+    "math_class": "Linear Programming (LP)",
+    "variables_count": 14200,
+    "constraints_count": 9800,
+    "matrix_non_zeros": 84200,
+    "algorithm_used": "GPU-Accelerated Primal-Dual Interior Point (cuSOLVER)",
+    "gpu_solve_time_sec": 1.82,
+    "cpu_solve_time_sec": 14.8,
+    "speedup_factor": "8.13x GPU Acceleration",
+    "objective_value": "\u20b9142.8 Cr Net Monthly Margin (Global Optimal)",
+    "optimality_gap_pct": 0.0,
+    "status": "OPTIMAL_SOLUTION_FOUND"
+  },
+  {
+    "case_id": "SOLV-CASE-2026-042",
+    "problem_name": "Hydrocracker Multi-Period Maintenance Scheduling (MILP)",
+    "industry_sector": "Refinery Turnaround & Catalyst Replacement Planning",
+    "math_class": "Mixed-Integer Linear Programming (MILP)",
+    "variables_count": 48600,
+    "constraints_count": 32400,
+    "matrix_non_zeros": 218000,
+    "algorithm_used": "Parallel GPU Branch-and-Cut with Gomory Cuts",
+    "gpu_solve_time_sec": 4.15,
+    "cpu_solve_time_sec": 38.6,
+    "speedup_factor": "9.30x GPU Acceleration",
+    "objective_value": "\u20b928.4 Cr Shutdown Downtime Cost Minimized",
+    "optimality_gap_pct": 0.0002,
+    "status": "OPTIMAL_SOLUTION_FOUND"
+  }
+]

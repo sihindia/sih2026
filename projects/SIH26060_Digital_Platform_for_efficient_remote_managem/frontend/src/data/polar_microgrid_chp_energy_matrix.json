@@ -1,0 +1,30 @@
+[
+  {
+    "subsystem": "Diesel Generator 1 (DG-1)",
+    "output_kw": 88.0,
+    "fuel_burn_lph": 24.5,
+    "exhaust_temp_c": 440.0,
+    "thermal_recovered_kw": 46.2
+  },
+  {
+    "subsystem": "Diesel Generator 2 (DG-2)",
+    "output_kw": 82.0,
+    "fuel_burn_lph": 23.0,
+    "exhaust_temp_c": 425.0,
+    "thermal_recovered_kw": 39.0
+  },
+  {
+    "subsystem": "Micro-Wind Turbine Array",
+    "output_kw": 12.5,
+    "fuel_burn_lph": 0.0,
+    "exhaust_temp_c": 0.0,
+    "thermal_recovered_kw": 0.0
+  },
+  {
+    "subsystem": "Habitat Hydronic Heating Loop",
+    "output_kw": 0.0,
+    "fuel_burn_lph": 0.0,
+    "exhaust_temp_c": 0.0,
+    "thermal_recovered_kw": 85.2
+  }
+]

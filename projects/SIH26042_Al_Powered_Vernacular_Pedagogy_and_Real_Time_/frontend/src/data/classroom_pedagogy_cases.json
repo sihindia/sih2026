@@ -1,0 +1,44 @@
+[
+  {
+    "lesson_id": "FLN-HO-CHAI01",
+    "school_name": "Upgraded Primary School, Chaibasa (West Singhbhum)",
+    "grade_level": "Grade 2 Foundational Numeracy",
+    "teacher_name": "Suman Kumari (Hindi-Medium Trained)",
+    "target_language": "Ho (Warang Chiti Script)",
+    "nipun_competency": "NUM_G2_ADD01: Addition of Single-Digit Numbers (Up to 20)",
+    "teacher_hindi_prompt": "\u0905\u0917\u0930 \u0906\u092a\u0915\u0947 \u092a\u093e\u0938 5 \u0906\u092e \u0939\u0948\u0902 \u0914\u0930 3 \u0914\u0930 \u092e\u093f\u0932 \u0917\u090f, \u0924\u094b \u0915\u0941\u0932 \u0915\u093f\u0924\u0928\u0947 \u0939\u0941\u090f?",
+    "tribal_translated_text": "\u1c6e\u1c62\u1c5f \u1c5f\u1c62\u1c5f\u1c5c \u1c55 \u1c69\u1c5e \u1c62\u1c6e\u1c71\u1c5f\u1c5c\u1c7c\u1c5f, \u1c5f\u1c68 \u1c53 \u1c69\u1c5e \u1c67\u1c5f\u1c62 \u1c6e\u1c71\u1c5f, \u1c5b\u1c5a\u1c75\u1c6e \u1c61\u1c5a\u1c5b\u1c5a \u1c5b\u1c6e \u1c5b\u1c64\u1c71\u1c5f\u1c79\u1c5c \u1c69\u1c5e \u1c66\u1c69\u1c6d \u1c6e\u1c71\u1c5f?",
+    "audio_synthesis": "Native Ho Voice Synthesized (Male Child / Female Pedagogue)",
+    "measured_latency_sec": 2.1,
+    "classroom_response": "100% tribal student comprehension; 18/20 children answered '8 (\u1c64\u1c68\u1c5f\u1c79\u1c5e)' within 10 seconds",
+    "status": "LESSON_ACTIVE"
+  },
+  {
+    "lesson_id": "FLN-SAT-DUM03",
+    "school_name": "Government Primary School, Kathikund (Dumka)",
+    "grade_level": "Grade 1 Foundational Literacy",
+    "teacher_name": "Ramesh Chandra Jha (Hindi-Medium Trained)",
+    "target_language": "Santhali (\u1c5a\u1c5e \u1c6a\u1c64\u1c60\u1c64 / Ol Chiki Script)",
+    "nipun_competency": "LIT_G1_PHON02: Environmental Sound Discrimination & Body Parts",
+    "teacher_hindi_prompt": "\u0905\u092a\u0928\u0940 \u0906\u0902\u0916\u0947\u0902 \u0914\u0930 \u0915\u093e\u0928 \u0926\u093f\u0916\u093e\u0907\u090f \u0914\u0930 \u092c\u0924\u093e\u0907\u090f \u0915\u093f \u0935\u0947 \u0915\u094d\u092f\u093e \u0915\u093e\u092e \u0915\u0930\u0924\u0947 \u0939\u0948\u0902?",
+    "tribal_translated_text": "\u1c5f\u1c62\u1c5f\u1c5c \u1c62\u1c6e\u1c6b \u1c5f\u1c68 \u1c5e\u1c69\u1c5b\u1c69\u1c68 \u1c6b\u1c6e\u1c60\u1c77\u1c5f\u1c63 \u1c62\u1c6e \u1c5f\u1c68 \u1c5e\u1c5f\u1c79\u1c6d \u1c62\u1c6e \u1c71\u1c5a\u1c63\u1c5f \u1c6a\u1c6e\u1c6b \u1c60\u1c5f\u1c79\u1c62\u1c64 \u1c5e\u1c5f\u1c79\u1c5c\u1c64\u1c6b?",
+    "audio_synthesis": "Natural Santhali Voice Synthesis with Phonetic Ol Chiki Display",
+    "measured_latency_sec": 1.9,
+    "classroom_response": "Interactive pointing activity successfully completed; active peer repetition in mother tongue",
+    "status": "LESSON_ACTIVE"
+  },
+  {
+    "lesson_id": "FLN-MUN-KHU05",
+    "school_name": "Tribal Welfare Primary School, Torpa (Khunti)",
+    "grade_level": "Grade 3 Environmental Studies",
+    "teacher_name": "Anjali Shrivastava (Hindi-Medium Trained)",
+    "target_language": "Mundari (\u09ae\u09c1\u09a3\u09cd\u09a1\u09be\u09b0\u09c0 / Nagri Script)",
+    "nipun_competency": "EVS_G3_PLANT01: Local Plants, Sacred Groves & Forest Conservation",
+    "teacher_hindi_prompt": "\u0939\u092e\u093e\u0930\u0947 \u0917\u093e\u0902\u0935 \u0915\u0947 \u0938\u0930\u0928\u093e \u0938\u094d\u0925\u0932 \u092a\u0930 \u0915\u094c\u0928-\u0938\u0947 \u092a\u0935\u093f\u0924\u094d\u0930 \u092a\u0947\u0921\u093c \u092a\u093e\u090f \u091c\u093e\u0924\u0947 \u0939\u0948\u0902?",
+    "tribal_translated_text": "\u1c5f\u1c75\u1c69\u1c63\u1c5f\u1c5c \u1c66\u1c5f\u1c79\u1c5b\u1c69 \u1c68\u1c6e\u1c6d\u1c5f\u1c5c \u1c65\u1c5f\u1c68\u1c71\u1c5f \u1c74\u1c77\u1c5f\u1c76 \u1c68\u1c6e \u1c5a\u1c60\u1c5f \u1c65\u1c5f\u1c68\u1c71\u1c5f \u1c6b\u1c5f\u1c68\u1c6e \u1c60\u1c5a \u1c67\u1c5f\u1c62\u1c5a\u1c5c\u1c7c\u1c5f?",
+    "audio_synthesis": "Mundari Dialectal Voice Synthesis aligned with PALASH MLE guidelines",
+    "measured_latency_sec": 2.4,
+    "classroom_response": "Excited discussion identifying Sal (Sarjom) and Mahua trees; generated bilingual flashcard set",
+    "status": "LESSON_ACTIVE"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "scheme": "Micro Finance Scheme",
+    "max_cost": "Up to \u20b91.40 Lakh",
+    "max_loan": "90% (Max \u20b91.25 Lakh)",
+    "rate": "6.5% p.a.",
+    "tenure": "3 Years (3-Month Moratorium)",
+    "suitability": "Small micro-enterprises, street vendors, home crafts"
+  },
+  {
+    "scheme": "Term Loan Scheme",
+    "max_cost": "\u20b91.40 Lakh to \u20b950.00 Lakh",
+    "max_loan": "90% (Max \u20b945.00 Lakh)",
+    "rate": "8.0% p.a.",
+    "tenure": "7 Years (6-Month Moratorium)",
+    "suitability": "Manufacturing, agri-processing, commercial transport, machinery"
+  },
+  {
+    "scheme": "Educational Loan Scheme",
+    "max_cost": "Up to \u20b920.00 Lakh (India) / \u20b930.00 Lakh (Abroad)",
+    "max_loan": "90% Concessional Credit",
+    "rate": "4.0% - 6.5% p.a.",
+    "tenure": "5 Years (Course Duration + 1-Year Moratorium)",
+    "suitability": "Full-time technical, medical, engineering and higher degrees"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "layer_name": "Drone High-Resolution Orthophoto (ORI)",
+    "agency": "Survey of India / NAKSHA",
+    "format": "GeoTIFF (RGB + DSM)",
+    "spatial_accuracy": "Sub-3cm GSD",
+    "update_frequency": "Quarterly Drone Flights"
+  },
+  {
+    "layer_name": "Legacy Revenue Cadastral Maps (Khasra/RoR)",
+    "agency": "State Revenue Department",
+    "format": "Digitized Cadastral Shapefile",
+    "spatial_accuracy": "\u00b11.5m to 3.0m Distortion",
+    "update_frequency": "Annual Mutation Updates"
+  },
+  {
+    "layer_name": "Municipal Property Tax GIS Layer",
+    "agency": "Urban Local Body (ULB)",
+    "format": "PostGIS Vector Polygon",
+    "spatial_accuracy": "\u00b10.5m Building Footprints",
+    "update_frequency": "Real-time Assessment Sync"
+  },
+  {
+    "layer_name": "Sub-surface Underground Utilities",
+    "agency": "Gas, Water & Electricity Boards",
+    "format": "3D Pipe Polyline Vector",
+    "spatial_accuracy": "\u00b10.3m Depth & Alignment",
+    "update_frequency": "Project Commissioning Sync"
+  }
+]

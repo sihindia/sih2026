@@ -1,0 +1,14 @@
+[
+  {
+    "method": "Direct System Calls (SSN)",
+    "target": "Bypasses userland EDR API hooks by reading syscall numbers directly from fresh disk ntdll"
+  },
+  {
+    "method": "API Unhooking & Text Section Stomping",
+    "target": "Restores corrupted or hooked functions back to pristine native instructions"
+  },
+  {
+    "method": "BYOVD Kernel Subversion",
+    "target": "Disables PsSetCreateProcessNotifyRoutine kernel callbacks temporarily to audit rootkits"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "tier": "Priority 1: Life Support",
+    "loads": "Habitat HVAC heating, Lake trace-heating lines, Air circulation",
+    "shedding_policy": "NEVER SHED (Critical human survival load)"
+  },
+  {
+    "tier": "Priority 2: Communications & Safety",
+    "loads": "GSAT satellite transceiver, Emergency VHF radios, Weather radar",
+    "shedding_policy": "High-availability backup battery bus"
+  },
+  {
+    "tier": "Priority 3: Scientific Research",
+    "loads": "Magnetometer, Seismology array, Ionospheric sounding transmitter",
+    "shedding_policy": "Curtailed only in catastrophic generator failure"
+  },
+  {
+    "tier": "Priority 4: Discretionary Loads",
+    "loads": "Snowmelt water heaters, Laundry dryers, Workshop machine tools",
+    "shedding_policy": "Intelligently shifted to high-wind/high-solar generation hours"
+  }
+]

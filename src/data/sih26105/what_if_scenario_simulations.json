@@ -1,0 +1,14 @@
+[
+  {
+    "scenario_name": "Immediate FIDO2 MFA Deployment Across All Admins",
+    "budget_applied_lakhs": "\u20b920.0L",
+    "eal_impact": "-\u20b96.4 Cr Exposure (-43.2%)",
+    "p95_var_impact": "-\u20b914.0 Cr"
+  },
+  {
+    "scenario_name": "Delaying Legacy DB Patching by 45 Days",
+    "budget_applied_lakhs": "\u20b90.0L (Deferred)",
+    "eal_impact": "+\u20b94.8 Cr Exposure (+32.4%)",
+    "p95_var_impact": "+\u20b911.2 Cr"
+  }
+]

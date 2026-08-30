@@ -47,3 +47,4 @@ build_antariksh*.py
 build_depth*.py
 build_bel*.py
 fix_*.py
+*.py

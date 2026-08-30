@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "In-Flight Flameouts",
+    "value": "0 Flameouts",
+    "trend": "100% Mission Reliability Enhancement"
+  },
+  {
+    "metric": "Early Warning Lead",
+    "value": "2.8 Hours",
+    "trend": "Pre-Failure Predictive Warning vs Threshold"
+  },
+  {
+    "metric": "PINN Physics Fidelity",
+    "value": "99.4% Accuracy",
+    "trend": "Thermodynamic Otto Cycle Conformance"
+  }
+]

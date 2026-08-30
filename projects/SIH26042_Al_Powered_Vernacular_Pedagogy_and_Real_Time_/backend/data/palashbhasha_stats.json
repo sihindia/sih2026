@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Voice Translation Speed",
+    "value": "< 2.5s Latency",
+    "trend": "Sub-3-Second Real-Time Dialogue"
+  },
+  {
+    "metric": "Target Schools",
+    "value": "5,000+ Primary Schools",
+    "trend": "Across All Tribal Blocks of Jharkhand"
+  },
+  {
+    "metric": "Hardware Footprint",
+    "value": ">= 2GB RAM Tablets",
+    "trend": "100% Offline Edge AI Execution"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Buses as Mobile Sensors",
+    "value": "650 City Buses",
+    "trend": "BMTC, DTC & BEST Fleets"
+  },
+  {
+    "metric": "Daily Roads Mapped",
+    "value": "4,820 km / Day",
+    "trend": "Continuous Pothole & Defect Scan"
+  },
+  {
+    "metric": "Edge Bandwidth Saved",
+    "value": "99.2% Reduction",
+    "trend": "Zero Raw Video Upload to Cloud"
+  }
+]

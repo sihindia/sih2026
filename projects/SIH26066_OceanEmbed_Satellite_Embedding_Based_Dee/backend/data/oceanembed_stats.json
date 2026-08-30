@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "ARGO Float RMSE",
+    "value": "0.36\u00b0C Accuracy",
+    "trend": "Across 15 Standard Ocean Depth Levels"
+  },
+  {
+    "metric": "Correlation Skill (r)",
+    "value": "0.976 Pearson r",
+    "trend": "Validated with INCOIS Gridded ARGO"
+  },
+  {
+    "metric": "Domain Resolution",
+    "value": "0.25\u00b0 Daily Grid",
+    "trend": "North Indian Ocean (5\u00b0N-30\u00b0N, 45\u00b0E-105\u00b0E)"
+  }
+]

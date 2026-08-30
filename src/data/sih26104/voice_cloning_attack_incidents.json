@@ -1,0 +1,28 @@
+[
+  {
+    "incident_id": "VG-INC-2026-001",
+    "caller_id": "+91-98110-XXXXX (Spoofed Ministry Official)",
+    "target_personnel": "AICTE Senior Finance Officer (New Delhi HQ)",
+    "attack_vector": "Cloned Voice of Joint Secretary (MoE) demanding emergency \u20b94.2 Cr TEQIP fund clearance",
+    "synthesizer_detected": "VITS2 Neural TTS with 3s Zero-Shot Voice Clone",
+    "spectral_artifacts": "98.8% Phase Discontinuity in CQT Spectrogram \u2022 Lack of Natural Glottal Pulse",
+    "prosody_jitter_pct": 0.04,
+    "impersonation_risk_score": 96.4,
+    "risk_classification": "CRITICAL_DEEPFAKE_ATTACK",
+    "system_action": "Call Intercepted in Real-Time (210ms) \u2022 Push Notification Sent to True Official",
+    "status": "ATTACK_NEUTRALIZED"
+  },
+  {
+    "incident_id": "VG-INC-2026-042",
+    "caller_id": "+91-94331-XXXXX (Spoofed University VC)",
+    "target_personnel": "Registrar Examination & Accreditation Wing",
+    "attack_vector": "Synthetic Voice of State University VC requesting confidential exam center keys",
+    "synthesizer_detected": "Bark Multi-Lingual Generative Audio Model",
+    "spectral_artifacts": "94.2% Vocoder High-Frequency Cutoff (>7.8 kHz)",
+    "prosody_jitter_pct": 0.08,
+    "impersonation_risk_score": 92.1,
+    "risk_classification": "CRITICAL_DEEPFAKE_ATTACK",
+    "system_action": "Biometric Voice Step-Up Challenge Triggered \u2022 Caller Failed & Disconnected",
+    "status": "ATTACK_NEUTRALIZED"
+  }
+]

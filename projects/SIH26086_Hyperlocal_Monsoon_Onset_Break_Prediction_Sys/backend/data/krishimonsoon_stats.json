@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Forecast Horizon",
+    "value": "7 to 30 Days",
+    "trend": "Intra-Seasonal Medium-to-Extended Range"
+  },
+  {
+    "metric": "Granular Coverage",
+    "value": "6,600+ Blocks",
+    "trend": "Panchayat & Village Cluster Level"
+  },
+  {
+    "metric": "Break Accuracy",
+    "value": "88.4%",
+    "trend": "Teleconnections Downscaling Fidelity"
+  }
+]

@@ -1,30 +1,39 @@
--- Supabase / PostgreSQL Schema for SIH26086 (Hyperlocal Monsoon Onset & Break Prediction System (Block/Village Scale))
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- NCMRWF KRISHIMONSOON 360 DATABASE SCHEMA (SIH26086)
+-- Ministry of Earth Sciences (MoES) / NCMRWF
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26086_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26086',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS block_monsoon_predictions (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) UNIQUE NOT NULL,
+    target_block VARCHAR(255) NOT NULL,
+    primary_crop VARCHAR(128) NOT NULL,
+    forecast_horizon_days INTEGER NOT NULL,
+    lead_time_weeks VARCHAR(64) NOT NULL,
+    teleconnection_signals TEXT NOT NULL,
+    macro_imd_forecast TEXT NOT NULL,
+    hyperlocal_ai_prediction TEXT NOT NULL,
+    break_duration_days INTEGER NOT NULL,
+    financial_risk_without_ai TEXT NOT NULL,
+    crop_agronomic_advisory TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'ADVISORY_DISPATCHED',
+    evaluated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26086_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26086_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS teleconnection_indices_log (
+    id SERIAL PRIMARY KEY,
+    signal_name VARCHAR(128) NOT NULL,
+    observed_value VARCHAR(64) NOT NULL,
+    phase_state VARCHAR(128) NOT NULL,
+    downscaling_impact TEXT NOT NULL,
+    recorded_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE sih26086_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26086_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26086_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26086_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26086_audit_logs FOR SELECT USING (true);
+CREATE TABLE IF NOT EXISTS farmer_broadcast_logs (
+    id SERIAL PRIMARY KEY,
+    block_name VARCHAR(128) NOT NULL,
+    language_code VARCHAR(16) NOT NULL, -- mr, hi, te, ta, bn, en
+    farmers_messaged INTEGER NOT NULL,
+    advisory_summary TEXT NOT NULL,
+    dispatched_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

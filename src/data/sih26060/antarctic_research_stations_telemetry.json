@@ -1,0 +1,53 @@
+[
+  {
+    "station_id": "STATION-MAITRI-01",
+    "station_name": "Maitri Antarctic Research Station",
+    "geographic_location": "Schirmacher Oasis, Queen Maud Land (70\u00b045'58\"S, 11\u00b044'09\"E)",
+    "established_year": 1989,
+    "wintering_crew_size": 25,
+    "ambient_temperature_c": -42.8,
+    "katabatic_wind_speed_kmh": 84.0,
+    "indoor_habitat_temp_c": 21.4,
+    "chp_microgrid_status": "DG-1 (88 kW) & DG-2 (82 kW) Online; DG-3 in Standby Hot-Reserve",
+    "thermal_heat_recovery_kw": 85.2,
+    "freshwater_source": "Lake Priyadarshini Pump House (Trace-Heated Pipeline at +12\u00b0C)",
+    "fuel_reserve_litres": 184000,
+    "wintering_autonomy_days": 142,
+    "satellite_telemetry_link": "GSAT-7 Polar Transponder (128 kbps Low-Latency MQTT Synchronized to NCPOR Goa)",
+    "overall_life_support_status": "ALL_SYSTEMS_NOMINAL_SUBZERO_READY"
+  },
+  {
+    "station_id": "STATION-BHARATI-02",
+    "station_name": "Bharati Antarctic Research Station",
+    "geographic_location": "Larsemann Hills, East Antarctica (69\u00b024'28\"S, 76\u00b011'14\"E)",
+    "established_year": 2012,
+    "wintering_crew_size": 22,
+    "ambient_temperature_c": -36.5,
+    "katabatic_wind_speed_kmh": 62.0,
+    "indoor_habitat_temp_c": 22.0,
+    "chp_microgrid_status": "State-of-the-Art Containerized Modular CHP Microgrid (Triple DG + 15 kW Wind)",
+    "thermal_heat_recovery_kw": 94.6,
+    "freshwater_source": "Seawater Desalination + Coastal Glacial Melt Tank",
+    "fuel_reserve_litres": 210000,
+    "wintering_autonomy_days": 168,
+    "satellite_telemetry_link": "High-Availability Dual Inmarsat GX + GSAT Satellite Uplink",
+    "overall_life_support_status": "ALL_SYSTEMS_NOMINAL_SUBZERO_READY"
+  },
+  {
+    "station_id": "STATION-MAITRI2-03",
+    "station_name": "Maitri-II Next-Generation Master Polar Habitat (Design Twin)",
+    "geographic_location": "Schirmacher Oasis Elevated Moraine Site (70\u00b046'12\"S, 11\u00b043'50\"E)",
+    "established_year": 2027,
+    "wintering_crew_size": 35,
+    "ambient_temperature_c": -45.0,
+    "katabatic_wind_speed_kmh": 110.0,
+    "indoor_habitat_temp_c": 21.8,
+    "chp_microgrid_status": "Hybrid Microgrid: Green Hydrogen Fuel Cells + Solar PV + Arctic Diesel CHP",
+    "thermal_heat_recovery_kw": 128.0,
+    "freshwater_source": "Vacuum Sub-Surface Glacial Melt Extractor",
+    "fuel_reserve_litres": 280000,
+    "wintering_autonomy_days": 210,
+    "satellite_telemetry_link": "LEO Satellite Constellation Ground Station (50 Mbps High-Bandwidth)",
+    "overall_life_support_status": "DIGITAL_TWIN_COMMISSIONING_SIMULATED"
+  }
+]

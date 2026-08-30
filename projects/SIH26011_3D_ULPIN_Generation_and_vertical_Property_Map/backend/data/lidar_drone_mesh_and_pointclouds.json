@@ -1,0 +1,23 @@
+[
+  {
+    "source": "UAV / Drone Orthophoto (ORI)",
+    "gsd_cm_px": 2.8,
+    "sensor_model": "Sony RX1R II 42MP Camera",
+    "extracted_features": "Building Roof Outline, Balcony Facets & Parapet Walls",
+    "accuracy_hz_cm": 3.5
+  },
+  {
+    "source": "Airborne LiDAR Point Cloud",
+    "point_density_pts_m2": 45.0,
+    "sensor_model": "Riegl VUX-1LR Laser Scanner",
+    "extracted_features": "Vertical Floor Slices, Building Heights & Volumetric Meshes",
+    "accuracy_vt_cm": 4.2
+  },
+  {
+    "source": "CORS / GNSS Network",
+    "baseline_length_km": 12.0,
+    "datum": "WGS84 / UTM Zone 43N",
+    "extracted_features": "Millimeter-Precision Centroid Anchor for 3D ULPIN Geocodes",
+    "accuracy_hz_cm": 1.0
+  }
+]

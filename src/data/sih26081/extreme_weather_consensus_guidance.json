@@ -1,0 +1,20 @@
+[
+  {
+    "variable": "24h Accumulated Rainfall",
+    "consensus_spread": "\u00b16.4 mm Tight Spread",
+    "confidence": "High (88%)",
+    "operational_advice": "High certainty in heavy rainfall core; issue district red alert"
+  },
+  {
+    "variable": "Maximum 2m Temperature",
+    "consensus_spread": "\u00b10.6\u00b0C Micro Spread",
+    "confidence": "Very High (94%)",
+    "operational_advice": "Consistent multi-model consensus for heatwave threshold exceedance"
+  },
+  {
+    "variable": "10m Peak Sustained Wind",
+    "consensus_spread": "\u00b14.2 kts Moderate Spread",
+    "confidence": "High (86%)",
+    "operational_advice": "Safe marine advisory: advise small crafts to return to port"
+  }
+]

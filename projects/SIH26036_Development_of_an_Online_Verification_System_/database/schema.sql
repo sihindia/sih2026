@@ -1,30 +1,32 @@
--- Supabase / PostgreSQL Schema for SIH26036 (Development of an Online Verification System for Weighing and Measuring Instruments)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- DOCA E-MAAPTOL 360 DATABASE SCHEMA (SIH26036)
+-- Ministry of Consumer Affairs, Food & Public Distribution (DoCA)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26036_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26036',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS instrument_verification_applications (
+    id SERIAL PRIMARY KEY,
+    app_id VARCHAR(64) UNIQUE NOT NULL,
+    trader_name VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    instrument_type VARCHAR(128) NOT NULL,
+    make_and_model VARCHAR(128) NOT NULL,
+    inspecting_officer VARCHAR(128) NOT NULL,
+    calibration_test TEXT NOT NULL,
+    max_permissible_error VARCHAR(64) NOT NULL,
+    observed_error VARCHAR(64) NOT NULL,
+    security_seal_die VARCHAR(128) NOT NULL,
+    certificate_number VARCHAR(128) UNIQUE NOT NULL,
+    valid_till VARCHAR(64) NOT NULL,
+    qr_hash TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'VERIFIED_AND_STAMPED',
+    inspected_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26036_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26036_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS legal_metrology_officers (
+    id SERIAL PRIMARY KEY,
+    officer_name VARCHAR(128) NOT NULL,
+    circle_jurisdiction VARCHAR(128) NOT NULL,
+    stamp_die_id VARCHAR(64) UNIQUE NOT NULL,
+    authorized_classes TEXT NOT NULL,
+    is_active BOOLEAN DEFAULT TRUE
 );
-
-ALTER TABLE sih26036_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26036_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26036_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26036_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26036_audit_logs FOR SELECT USING (true);

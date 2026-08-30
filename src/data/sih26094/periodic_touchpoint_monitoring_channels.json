@@ -1,0 +1,17 @@
+[
+  {
+    "channel": "Automated IVRS Follow-Up Call",
+    "frequency": "Bi-Weekly",
+    "method": "Conversational speech stress analytics measuring longitudinal pitch variance and voice depression index"
+  },
+  {
+    "channel": "Integrated Portal & Chatbot",
+    "frequency": "On-Demand 24/7",
+    "method": "Textual sentiment tracking and automated keyword detection for intimidation or despair"
+  },
+  {
+    "channel": "Welfare Officer Field Visits",
+    "frequency": "Monthly",
+    "method": "In-person clinical checklist uploaded to district portal with biometric verification"
+  }
+]

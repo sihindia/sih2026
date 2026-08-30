@@ -1,30 +1,31 @@
--- Supabase / PostgreSQL Schema for SIH26038 (Explainable AI for Diabetic Retinopathy Screening in Rural India)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MATHWORKS NETRAAI 360 DATABASE SCHEMA (SIH26038)
+-- MathWorks Retinal Imaging & Telemedicine Architecture
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26038_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26038',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS rural_retinal_screenings (
+    id SERIAL PRIMARY KEY,
+    patient_id VARCHAR(64) UNIQUE NOT NULL,
+    patient_demographics VARCHAR(255) NOT NULL,
+    phc_location VARCHAR(255) NOT NULL,
+    fundus_camera VARCHAR(128) NOT NULL,
+    image_quality VARCHAR(64) NOT NULL,
+    lesions_detected TEXT NOT NULL,
+    icdr_grade VARCHAR(64) NOT NULL,
+    gradcam_attention TEXT NOT NULL,
+    ai_confidence_pct NUMERIC(4, 2) NOT NULL,
+    tele_ophthalmologist_time_sec INTEGER NOT NULL,
+    clinical_action TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'VALIDATED_BY_SPECIALIST',
+    screened_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26038_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26038_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS tele_ophthalmologist_reviews (
+    id SERIAL PRIMARY KEY,
+    screening_id VARCHAR(64) REFERENCES rural_retinal_screenings(patient_id),
+    doctor_name VARCHAR(128) NOT NULL,
+    hospital VARCHAR(128) NOT NULL,
+    concurrence_with_ai BOOLEAN DEFAULT TRUE,
+    review_latency_sec INTEGER NOT NULL,
+    reviewed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26038_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26038_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26038_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26038_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26038_audit_logs FOR SELECT USING (true);

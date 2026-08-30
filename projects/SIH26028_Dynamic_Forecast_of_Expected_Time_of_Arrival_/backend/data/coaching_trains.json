@@ -1,0 +1,82 @@
+[
+  {
+    "train_no": "22436",
+    "train_name": "Vande Bharat Express (New Delhi -> Varanasi)",
+    "loco_type": "Trainset-18 Distributed Power (16 Coaches)",
+    "current_speed_kmh": 128.5,
+    "max_permissible_speed_kmh": 130.0,
+    "gps_coords": {
+      "lat": 26.8467,
+      "lng": 80.9462
+    },
+    "current_section": "Tundla \u2013 Etawah (Km 1142/08)",
+    "preceding_train_gap_km": 4.8,
+    "active_tsr_caution": "None (Clear Automatic Block)",
+    "static_ntes_delay_mins": 8,
+    "ai_dynamic_eta_delay_mins": 2,
+    "ai_recovery_confidence_pct": 98.4,
+    "total_slack_margin_mins": 18,
+    "status": "RUNNING_ON_TIME_PREDICTED",
+    "driver_vigilance": "NORMAL_OPTIMAL"
+  },
+  {
+    "train_no": "12952",
+    "train_name": "Tejas Rajdhani Express (New Delhi -> Mumbai Central)",
+    "loco_type": "WAP-7 Twin-Co-Co (6000 HP)",
+    "current_speed_kmh": 118.2,
+    "max_permissible_speed_kmh": 130.0,
+    "gps_coords": {
+      "lat": 24.5854,
+      "lng": 73.7125
+    },
+    "current_section": "Kota \u2013 Ratlam Junction (Km 844/12)",
+    "preceding_train_gap_km": 6.2,
+    "active_tsr_caution": "30 km/h Caution on Bridge 114 (Km 844)",
+    "static_ntes_delay_mins": 18,
+    "ai_dynamic_eta_delay_mins": 11,
+    "ai_recovery_confidence_pct": 97.1,
+    "total_slack_margin_mins": 24,
+    "status": "SLACK_RECOVERY_IN_PROGRESS",
+    "driver_vigilance": "NORMAL_OPTIMAL"
+  },
+  {
+    "train_no": "12301",
+    "train_name": "Howrah Rajdhani Express (Howrah -> New Delhi)",
+    "loco_type": "WAP-7 Push-Pull Electric",
+    "current_speed_kmh": 112.0,
+    "max_permissible_speed_kmh": 130.0,
+    "gps_coords": {
+      "lat": 25.3176,
+      "lng": 82.9739
+    },
+    "current_section": "Gaya \u2013 Pt. Deen Dayal Upadhyaya (Km 592/14)",
+    "preceding_train_gap_km": 5.5,
+    "active_tsr_caution": "None (Green Corridor Aspect)",
+    "static_ntes_delay_mins": 5,
+    "ai_dynamic_eta_delay_mins": 0,
+    "ai_recovery_confidence_pct": 96.8,
+    "total_slack_margin_mins": 20,
+    "status": "FULL_SCHEDULE_RECOVERY",
+    "driver_vigilance": "NORMAL_OPTIMAL"
+  },
+  {
+    "train_no": "12004",
+    "train_name": "Lucknow Swarna Shatabdi Express (NDLS -> LKO)",
+    "loco_type": "WAP-5 High Speed Electric",
+    "current_speed_kmh": 122.0,
+    "max_permissible_speed_kmh": 130.0,
+    "gps_coords": {
+      "lat": 27.1767,
+      "lng": 78.0081
+    },
+    "current_section": "Ghaziabad \u2013 Aligarh Junction (Km 128/04)",
+    "preceding_train_gap_km": 7.1,
+    "active_tsr_caution": "None",
+    "static_ntes_delay_mins": 3,
+    "ai_dynamic_eta_delay_mins": 0,
+    "ai_recovery_confidence_pct": 99.1,
+    "total_slack_margin_mins": 14,
+    "status": "FULL_SCHEDULE_RECOVERY",
+    "driver_vigilance": "NORMAL_OPTIMAL"
+  }
+]

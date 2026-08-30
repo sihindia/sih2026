@@ -1,0 +1,26 @@
+[
+  {
+    "lab_id": "RRSL-FBD",
+    "lab_name": "Regional Reference Standards Laboratory (Faridabad)",
+    "director_head": "Dr. S. K. Rastogi",
+    "testing_bays_count": "6 Automated Testing Bays",
+    "metrological_specialization": "Class III & IIII Weighbridges & Commercial Counter Scales",
+    "accreditation": "NABL ISO/IEC 17025 Accredited Metrology Center"
+  },
+  {
+    "lab_id": "RRSL-BLR",
+    "lab_name": "Regional Reference Standards Laboratory (Bengaluru)",
+    "director_head": "Dr. K. N. Murthy",
+    "testing_bays_count": "4 Automated Testing Bays",
+    "metrological_specialization": "Class I & II High-Precision Micro-Balances & Pharmaceutical Scales",
+    "accreditation": "NABL ISO/IEC 17025 Accredited Metrology Center"
+  },
+  {
+    "lab_id": "RRSL-AHM",
+    "lab_name": "Regional Reference Standards Laboratory (Ahmedabad)",
+    "director_head": "Dr. P. V. Patel",
+    "testing_bays_count": "5 Automated Testing Bays",
+    "metrological_specialization": "Heavy Pitless Weighbridges & Industrial Flow Meters",
+    "accreditation": "NABL ISO/IEC 17025 Accredited Metrology Center"
+  }
+]

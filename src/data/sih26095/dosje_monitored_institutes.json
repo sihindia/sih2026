@@ -1,0 +1,30 @@
+[
+  {
+    "institute_id": "DOSJE-INST-2026-001",
+    "institute_name": "Navchetna De-Addiction & Rehab Centre (IRCA)",
+    "scheme_name": "NAPDDR (National Action Plan for Drug Demand Reduction)",
+    "location": "Patna Sector-4, Bihar (25.5941\u00b0 N, 85.1376\u00b0 E)",
+    "enrolled_beneficiaries": 50,
+    "verified_present": 48,
+    "cctv_channels_active": 4,
+    "assigned_inspector": "Dr. Ramesh Sharma (PMU Senior Officer)",
+    "surprise_vc_status": "COMPLETED (Verified with Centre In-Charge & 6 Inmates)",
+    "geo_fence_status": "PASSED (Within 12m Accuracy)",
+    "hygiene_compliance_score": 94.0,
+    "status": "INSPECTION_VERIFIED_COMPLIANT"
+  },
+  {
+    "institute_id": "DOSJE-INST-2026-042",
+    "institute_name": "Anand Ashram Senior Citizen Assisted Living",
+    "scheme_name": "SMILE & Rashtriya Vayoshri Yojana (RVY)",
+    "location": "Pune Cantonment, Maharashtra (18.5204\u00b0 N, 73.8567\u00b0 E)",
+    "enrolled_beneficiaries": 75,
+    "verified_present": 73,
+    "cctv_channels_active": 6,
+    "assigned_inspector": "Ms. Sunita Patil (District Social Welfare Officer)",
+    "surprise_vc_status": "COMPLETED (Live Medical Dispensary & Kitchen Audit)",
+    "geo_fence_status": "PASSED (Within 8m Accuracy)",
+    "hygiene_compliance_score": 98.0,
+    "status": "INSPECTION_VERIFIED_COMPLIANT"
+  }
+]

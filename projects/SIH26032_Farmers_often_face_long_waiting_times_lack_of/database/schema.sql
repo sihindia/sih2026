@@ -1,30 +1,34 @@
--- Supabase / PostgreSQL Schema for SIH26032 (Farmers often face long waiting times, lack of information regarding procurement schedules, and uncertainty about procurement status.)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- KISANSETU QUEUE 360 DATABASE SCHEMA (SIH26032)
+-- Ministry of Consumer Affairs - DoCA
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26032_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26032',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS mandi_centers (
+    id SERIAL PRIMARY KEY,
+    center_id VARCHAR(64) UNIQUE NOT NULL,
+    center_name VARCHAR(255) NOT NULL,
+    district_state VARCHAR(128) NOT NULL,
+    primary_crop VARCHAR(128) NOT NULL,
+    daily_intake_capacity VARCHAR(64) NOT NULL,
+    current_truck_queue INTEGER NOT NULL,
+    average_tat_mins VARCHAR(32) NOT NULL,
+    status VARCHAR(64) DEFAULT 'OPERATIONAL',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26032_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26032_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS farmer_queue_tokens (
+    id SERIAL PRIMARY KEY,
+    token_id VARCHAR(64) UNIQUE NOT NULL,
+    farmer_name VARCHAR(128) NOT NULL,
+    mobile_masked VARCHAR(32) NOT NULL,
+    vehicle_number VARCHAR(32) NOT NULL,
+    crop_name VARCHAR(128) NOT NULL,
+    quantity_quintals NUMERIC(8, 2) NOT NULL,
+    allotted_slot VARCHAR(64) NOT NULL,
+    assigned_bay VARCHAR(32) NOT NULL,
+    gate_entry_status VARCHAR(128) NOT NULL,
+    current_step INTEGER NOT NULL,
+    jform_number VARCHAR(64) UNIQUE NOT NULL,
+    qr_pass_code VARCHAR(64) UNIQUE NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26032_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26032_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26032_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26032_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26032_audit_logs FOR SELECT USING (true);

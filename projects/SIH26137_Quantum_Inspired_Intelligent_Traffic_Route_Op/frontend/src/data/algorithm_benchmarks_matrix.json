@@ -1,0 +1,30 @@
+[
+  {
+    "algorithm": "Quantum-Inspired PSO (QPSO)",
+    "convergence_time_ms": 82,
+    "iterations_needed": 18,
+    "solution_optimality_pct": 99.4,
+    "local_optima_trap_rate_pct": 1.2
+  },
+  {
+    "algorithm": "Classical Particle Swarm (PSO)",
+    "convergence_time_ms": 340,
+    "iterations_needed": 94,
+    "solution_optimality_pct": 86.5,
+    "local_optima_trap_rate_pct": 18.4
+  },
+  {
+    "algorithm": "Genetic Algorithm (GA)",
+    "convergence_time_ms": 480,
+    "iterations_needed": 120,
+    "solution_optimality_pct": 88.0,
+    "local_optima_trap_rate_pct": 14.5
+  },
+  {
+    "algorithm": "Simulated Annealing (SA)",
+    "convergence_time_ms": 290,
+    "iterations_needed": 85,
+    "solution_optimality_pct": 82.4,
+    "local_optima_trap_rate_pct": 22.0
+  }
+]

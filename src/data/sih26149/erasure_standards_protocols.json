@@ -1,0 +1,20 @@
+[
+  {
+    "standard_name": "NIST SP 800-88 Rev 1 Purge",
+    "target_media": "NVMe / SATA SSDs",
+    "passes": "Cryptographic Key Destruction + Verification",
+    "compliance": "US Federal & Indian National Standard"
+  },
+  {
+    "standard_name": "DoD 5220.22-M (7-Pass)",
+    "target_media": "Magnetic HDDs & Legacy Disks",
+    "passes": "7 Passes (Alternating 0x00, 0xFF, Random Bytes)",
+    "compliance": "Department of Defense Standard"
+  },
+  {
+    "standard_name": "Gutmann Algorithm (35-Pass)",
+    "target_media": "High-Sensitivity Magnetic Media",
+    "passes": "35 Passes Pseudo-Random Inversion",
+    "compliance": "Maximum Security Legacy Sanitization"
+  }
+]

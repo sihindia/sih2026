@@ -1,0 +1,38 @@
+[
+  {
+    "incident_id": "SPILL-ARB-2026-001",
+    "region_name": "Arabian Sea (Off Mumbai High Offshore 75 NM)",
+    "coordinates": "19.4281\u00b0 N, 71.3125\u00b0 E",
+    "sensor_used": "Copernicus Sentinel-1 C-Band SAR (VV/VH)",
+    "slick_area_sq_km": 48.5,
+    "estimated_spill_volume_mt": 120.0,
+    "oil_type": "Heavy Crude Oil & Engine Bilge Emulsion",
+    "hindcasted_spill_time": "2026-08-28T02:40:00Z",
+    "culprit_vessel_name": "MT Pacific Horizon",
+    "imo_number": "IMO-9481234",
+    "vessel_flag": "Panama",
+    "vessel_type": "VLCC Crude Oil Tanker (300k DWT)",
+    "ais_speed_drop_knots": "14.2 \u2794 6.1 (Midnight Speed Anomaly)",
+    "attribution_confidence_pct": 98.4,
+    "coast_guard_enforcement": "ICGS Samarth Dispatched \u2022 Detainment Warrant Issued",
+    "status": "LEGAL_INTERCEPTION_ENFORCED"
+  },
+  {
+    "incident_id": "SPILL-BOB-2026-008",
+    "region_name": "Bay of Bengal (Off Paradip Port 42 NM)",
+    "coordinates": "19.9820\u00b0 N, 87.2140\u00b0 E",
+    "sensor_used": "Sentinel-1 SAR + Sentinel-2 Optical",
+    "slick_area_sq_km": 28.0,
+    "estimated_spill_volume_mt": 65.0,
+    "oil_type": "Intermediate Fuel Oil (IFO 380)",
+    "hindcasted_spill_time": "2026-08-27T22:15:00Z",
+    "culprit_vessel_name": "MV Eastern Challenger",
+    "imo_number": "IMO-9284102",
+    "vessel_flag": "Liberia",
+    "vessel_type": "Capesize Bulk Carrier",
+    "ais_speed_drop_knots": "12.8 \u2794 5.4 (Illegal Bilge Dump)",
+    "attribution_confidence_pct": 96.2,
+    "coast_guard_enforcement": "Port State Control Notice Issued",
+    "status": "LEGAL_INTERCEPTION_ENFORCED"
+  }
+]

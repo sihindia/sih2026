@@ -1,0 +1,23 @@
+[
+  {
+    "control_id": "CTRL-ZT-01",
+    "name": "Zero-Trust Network Microsegmentation",
+    "cost_lakhs": 25.0,
+    "risk_reduction_pct": 42.0,
+    "framework": "NIST PR.AC-5"
+  },
+  {
+    "control_id": "CTRL-MFA-02",
+    "name": "FIDO2 Passwordless Hardware MFA",
+    "cost_lakhs": 20.0,
+    "risk_reduction_pct": 34.0,
+    "framework": "ISO 27001 A.9.4.2"
+  },
+  {
+    "control_id": "CTRL-CSPM-03",
+    "name": "Real-Time Cloud Security Posture Management",
+    "cost_lakhs": 35.0,
+    "risk_reduction_pct": 38.0,
+    "framework": "CIS Control 7"
+  }
+]

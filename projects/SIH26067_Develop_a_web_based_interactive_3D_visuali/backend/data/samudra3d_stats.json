@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Interactive 3D FPS",
+    "value": "60 FPS WebGL",
+    "trend": "Zero Client-Side Software Installation"
+  },
+  {
+    "metric": "In-Situ Model Fit",
+    "value": "\u00b10.14\u00b0C Low Bias",
+    "trend": "ROMS 3D vs ARGO WMO Observations"
+  },
+  {
+    "metric": "Open Standards",
+    "value": "100% Compliant",
+    "trend": "OGC WMS/WCS & NetCDF/OPeNDAP"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Probability of Intercept",
+    "value": "97.4% POI",
+    "trend": "Across Agile & Hopping Radars"
+  },
+  {
+    "metric": "Intercept Speedup",
+    "value": "79.4% Faster",
+    "trend": "1.4s vs 6.8s Open-Loop Baseline"
+  },
+  {
+    "metric": "False Alarm Rate",
+    "value": "1.2% Low FA",
+    "trend": "Preserves Chaff/Flare Countermeasures"
+  }
+]

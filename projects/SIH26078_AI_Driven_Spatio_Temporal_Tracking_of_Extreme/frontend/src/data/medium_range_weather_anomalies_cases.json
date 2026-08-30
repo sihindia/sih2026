@@ -1,0 +1,38 @@
+[
+  {
+    "anomaly_id": "ANOM-2026-CYC01",
+    "hazard_name": "Pre-Monsoon Bay of Bengal Super Cyclone (Amphan-Class)",
+    "forecast_horizon_days": 6,
+    "lead_time_hours": 144,
+    "coarse_12km_input": "185 km/h sustained wind | 932 hPa central pressure | 12km NEPS-G Ensemble Mean",
+    "stage1_gnn_mesh": "Icosahedral mesh 4D Bounding Box [18.2\u00b0N-22.4\u00b0N, 87.5\u00b0E-91.2\u00b0E] | EFI: 0.98 (+4.2\u03c3 above 30-year ERA5)",
+    "stage2_diffusion_5km": "Resolves violent eye wall landfall at Digha-Sundarbans with 224 km/h peak gust (Retains +39 km/h peak smoothed by CNNs)",
+    "pinpoint_5km_centroid": "Lat: 21.62\u00b0N, Lon: 88.24\u00b0E (Impact Radius: 5.0 km)",
+    "ndrf_targeted_alert": "DAY 6 TARGETED ACTION: Position 4 NDRF heavy rescue battalions at Contai & Kakdwip. Tidal surge of 4.8m pinpointed at 5km landfall sector.",
+    "status": "4D_ANOMALY_TRACKED"
+  },
+  {
+    "anomaly_id": "ANOM-2026-HEAT03",
+    "hazard_name": "North-West India Persistent Heat Dome & Severe Loo",
+    "forecast_horizon_days": 8,
+    "lead_time_hours": 192,
+    "coarse_12km_input": "46.5\u00b0C Max Temp | 500hPa Geopotential Ridge | 12km NEPS-G Forecast",
+    "stage1_gnn_mesh": "4D Bounding Box across Rajasthan-Haryana-Delhi corridor | EFI: 0.94 (+3.8\u03c3 anomalous duration)",
+    "stage2_diffusion_5km": "Resolves micro-urban thermal trap and desert boundary advection peaking at 49.2\u00b0C at Churu-Hisar 5km subgrid",
+    "pinpoint_5km_centroid": "Lat: 28.29\u00b0N, Lon: 74.96\u00b0E (Impact Radius: 5.0 km)",
+    "ndrf_targeted_alert": "DAY 8 FARMING & HEALTH ALERT: Issue harvest suspension advisory; pre-position water tankers and hospital heatstroke wards across 5km hotspot.",
+    "status": "4D_ANOMALY_TRACKED"
+  },
+  {
+    "anomaly_id": "ANOM-2026-BLIZ07",
+    "hazard_name": "Western Himalayan Severe Blizzard & Cold Wave",
+    "forecast_horizon_days": 5,
+    "lead_time_hours": 120,
+    "coarse_12km_input": "28mm liquid equivalent snow | -14\u00b0C Temp | Western Disturbance",
+    "stage1_gnn_mesh": "4D Bounding Box along Pir Panjal & Zanskar ranges | EFI: 0.96 (+4.0\u03c3 snowfall deviation)",
+    "stage2_diffusion_5km": "Resolves orographic windward blizzard peaking at 120cm fresh snow accumulation across Zojila Pass 5km sector",
+    "pinpoint_5km_centroid": "Lat: 34.28\u00b0N, Lon: 75.47\u00b0E (Impact Radius: 5.0 km)",
+    "ndrf_targeted_alert": "DAY 5 HIGHWAY CORRIDOR ALERT: Pre-emptively close Srinagar-Leh highway; position Border Roads Organisation snow-cutters at Sonamarg.",
+    "status": "4D_ANOMALY_TRACKED"
+  }
+]

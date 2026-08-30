@@ -1,0 +1,17 @@
+[
+  {
+    "simulation_type": "Direct Sun Hours & Solar Radiation",
+    "engine": "Autodesk Solar Ray-Tracer",
+    "resolution": "1m Grid Surface Analysis"
+  },
+  {
+    "simulation_type": "Pedestrian Wind Comfort (CFD)",
+    "engine": "Computational Fluid Dynamics Lattice Boltzmann",
+    "resolution": "3D Volumetric Airflow"
+  },
+  {
+    "simulation_type": "Embodied & Operational Carbon",
+    "engine": "EC3 & Forma Carbon Calculator",
+    "resolution": "Life-Cycle Assessment (LCA)"
+  }
+]

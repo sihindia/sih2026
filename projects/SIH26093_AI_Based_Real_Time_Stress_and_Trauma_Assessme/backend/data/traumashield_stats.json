@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Real-Time Assessment",
+    "value": "< 500 ms Latency",
+    "trend": "Acoustic Speech & NLP Emotion AI"
+  },
+  {
+    "metric": "SVI Precision Scale",
+    "value": "0 to 100 Index",
+    "trend": "4-Tier Clinical Risk Stratification"
+  },
+  {
+    "metric": "Emergency Escalations",
+    "value": "100% Zero Delay",
+    "trend": "Automated Police & Hospital SOS Triggers"
+  }
+]

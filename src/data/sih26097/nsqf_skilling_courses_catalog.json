@@ -1,0 +1,23 @@
+[
+  {
+    "course_name": "Footwear Production Specialist",
+    "nsqf_level": "Level 4",
+    "duration_hrs": 400,
+    "stipend": "\u20b91,500/month",
+    "sector": "Leather & Footwear Sector Skill Council"
+  },
+  {
+    "course_name": "Organic Grower & Agri-Entrepreneur",
+    "nsqf_level": "Level 3",
+    "duration_hrs": 300,
+    "stipend": "\u20b91,500/month",
+    "sector": "Agriculture Skill Council of India (ASCI)"
+  },
+  {
+    "course_name": "Solar PV Rooftop Technician",
+    "nsqf_level": "Level 4",
+    "duration_hrs": 350,
+    "stipend": "\u20b92,000/month",
+    "sector": "Skill Council for Green Jobs (SCGJ)"
+  }
+]

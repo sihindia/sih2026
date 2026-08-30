@@ -1,0 +1,14 @@
+[
+  {
+    "junction": "Marathahalli ORR Junction",
+    "hourly_volume": 2880,
+    "bus_lane_violations": 14,
+    "congestion_index": "88% Heavy"
+  },
+  {
+    "junction": "Defence Colony Ring Road",
+    "hourly_volume": 3720,
+    "bus_lane_violations": 22,
+    "congestion_index": "94% Gridlock"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "patient_id": "RETINA-2026-GAD01",
+    "patient_demographics": "56-Year-Old Farmer, 9-Year Type 2 Diabetes",
+    "phc_location": "PHC Bhamragad, Gadchiroli District (Maharashtra)",
+    "fundus_camera": "Remidio Non-Mydriatic Smartphone Fundus Camera (45\u00b0 FOV)",
+    "image_quality": "ADEQUATE (CLAHE Enhanced, Illumination Normalized)",
+    "lesions_detected": "14 Microaneurysms + 6 Hard Exudates near Macular Fovea",
+    "icdr_grade": "Level 2: Moderate NPDR (Referable DR)",
+    "gradcam_attention": "Focal heatmap activation on superior temporal vascular arcade and macular perifoveal capillaries",
+    "ai_confidence_pct": 94.2,
+    "tele_ophthalmologist_time_sec": 18,
+    "clinical_action": "REFERABLE: Urgent District Civil Hospital Ophthalmology Appointment (Anti-VEGF / Laser Photocoagulation Evaluation within 30 days)",
+    "status": "VALIDATED_BY_SPECIALIST"
+  },
+  {
+    "patient_id": "RETINA-2026-KAL03",
+    "patient_demographics": "62-Year-Old Rural Weaver, 14-Year Uncontrolled Glycemia",
+    "phc_location": "PHC Lanjigarh, Kalahandi District (Odisha)",
+    "fundus_camera": "Forus 3nethra Classic Portable Camera",
+    "image_quality": "ADEQUATE (CLAHE Enhanced)",
+    "lesions_detected": "Neovascularization of the Disc (NVD) + Preretinal Vitreous Hemorrhage",
+    "icdr_grade": "Level 4: Proliferative DR (PDR - Sight Threatening)",
+    "gradcam_attention": "Massive saliency cluster over optic disc margin and inferior temporal branch arcade",
+    "ai_confidence_pct": 98.7,
+    "tele_ophthalmologist_time_sec": 12,
+    "clinical_action": "EMERGENCY SIGHT-THREATENING: Emergency Vitreo-Retina Tertiary Hospital Referral (Intravitreal Injection within 7 days)",
+    "status": "EMERGENCY_REFERRED"
+  },
+  {
+    "patient_id": "RETINA-2026-CHAM05",
+    "patient_demographics": "48-Year-Old Tea Estate Worker, 3-Year Diabetes",
+    "phc_location": "PHC Gundlupet, Chamarajanagar District (Karnataka)",
+    "fundus_camera": "Volk VistaView Portable Ophthalmoscope",
+    "image_quality": "ADEQUATE (Minor illumination gradient normalized)",
+    "lesions_detected": "3 Isolated Microaneurysms in inferior retina; zero exudates",
+    "icdr_grade": "Level 1: Mild NPDR (Non-Referable DR)",
+    "gradcam_attention": "Discrete isolated micro-dots in inferior mid-periphery",
+    "ai_confidence_pct": 91.5,
+    "tele_ophthalmologist_time_sec": 14,
+    "clinical_action": "MONITORING: Non-referable early stage; advised glycemic/blood pressure control and annual repeat screening at PHC",
+    "status": "ANNUAL_FOLLOWUP_SCHEDULED"
+  }
+]

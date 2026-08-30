@@ -1,0 +1,30 @@
+[
+  {
+    "name": "MSBCDC (Maharashtra SCA)",
+    "type": "State Channelizing Agency",
+    "npa_pct": 3.2,
+    "status": "ACTIVE_LIQUID",
+    "coverage": "All 36 Districts of Maharashtra"
+  },
+  {
+    "name": "TAHDCO (Tamil Nadu SCA)",
+    "type": "State Channelizing Agency",
+    "npa_pct": 4.1,
+    "status": "ACTIVE_LIQUID",
+    "coverage": "Tamil Nadu State"
+  },
+  {
+    "name": "Canara Bank Lead Branch",
+    "type": "Public Sector Bank (PSB)",
+    "npa_pct": 2.8,
+    "status": "ACTIVE_LIQUID",
+    "coverage": "National Presence"
+  },
+  {
+    "name": "Grameena Koota MFI",
+    "type": "NBFC-MFI Partner",
+    "npa_pct": 14.5,
+    "status": "OVERDUE_RESTRICTED (Filtered Out)",
+    "coverage": "Restricted due to high NPA"
+  }
+]

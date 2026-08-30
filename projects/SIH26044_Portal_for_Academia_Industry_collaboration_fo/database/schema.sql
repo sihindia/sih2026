@@ -1,30 +1,31 @@
--- Supabase / PostgreSQL Schema for SIH26044 (Portal for Academia - Industry collaboration for Skill Mapping, Internships and Placement)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- AYUSH KAUSHALSETU 360 DATABASE SCHEMA (SIH26044)
+-- Ministry of Ayush - All India Institute of Ayurveda (AIIA)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26044_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26044',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS ayush_student_skill_profiles (
+    id SERIAL PRIMARY KEY,
+    student_id VARCHAR(64) UNIQUE NOT NULL,
+    student_name VARCHAR(128) NOT NULL,
+    institution VARCHAR(255) NOT NULL,
+    target_domain VARCHAR(128) NOT NULL,
+    verified_strengths TEXT NOT NULL,
+    identified_skill_gap TEXT NOT NULL,
+    recommended_upskilling TEXT NOT NULL,
+    matched_internship VARCHAR(255) NOT NULL,
+    stipend_offered VARCHAR(128) NOT NULL,
+    match_compatibility_pct NUMERIC(4, 2) NOT NULL,
+    status VARCHAR(64) DEFAULT 'INTERNSHIP_OFFER_ACCEPTED',
+    assessed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26044_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26044_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS ayush_industry_job_openings (
+    id SERIAL PRIMARY KEY,
+    company_name VARCHAR(128) NOT NULL,
+    job_role VARCHAR(128) NOT NULL,
+    stipend_inr VARCHAR(64) NOT NULL,
+    vacancies INTEGER NOT NULL,
+    required_skills TEXT NOT NULL,
+    gmp_certified BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26044_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26044_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26044_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26044_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26044_audit_logs FOR SELECT USING (true);

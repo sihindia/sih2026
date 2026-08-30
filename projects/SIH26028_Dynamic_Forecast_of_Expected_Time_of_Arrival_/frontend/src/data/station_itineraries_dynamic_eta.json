@@ -1,0 +1,70 @@
+{
+  "22436": [
+    {
+      "station_code": "NDLS",
+      "station_name": "New Delhi",
+      "scheduled_time": "06:00 AM",
+      "static_delay": "0 mins",
+      "dynamic_ai_eta": "06:00 AM",
+      "action_notes": "On-Time Dispatch"
+    },
+    {
+      "station_code": "CNB",
+      "station_name": "Kanpur Central",
+      "scheduled_time": "10:08 AM",
+      "static_delay": "+8 mins",
+      "dynamic_ai_eta": "10:10 AM (+2m)",
+      "action_notes": "Speed 128 km/h on HDN-1 Trunk"
+    },
+    {
+      "station_code": "PRYJ",
+      "station_name": "Prayagraj Junction",
+      "scheduled_time": "12:08 PM",
+      "static_delay": "+12 mins",
+      "dynamic_ai_eta": "12:09 PM (+1m)",
+      "action_notes": "Slack Absorption on Middle Third"
+    },
+    {
+      "station_code": "BSB",
+      "station_name": "Varanasi Junction",
+      "scheduled_time": "02:00 PM",
+      "static_delay": "+14 mins",
+      "dynamic_ai_eta": "02:00 PM (ON-TIME)",
+      "action_notes": "Full 14-min Delay Recovered"
+    }
+  ],
+  "12952": [
+    {
+      "station_code": "NDLS",
+      "station_name": "New Delhi",
+      "scheduled_time": "04:55 PM",
+      "static_delay": "0 mins",
+      "dynamic_ai_eta": "04:55 PM",
+      "action_notes": "On-Time Origin Dispatch"
+    },
+    {
+      "station_code": "KOTA",
+      "station_name": "Kota Junction",
+      "scheduled_time": "09:40 PM",
+      "static_delay": "+18 mins",
+      "dynamic_ai_eta": "09:51 PM (+11m)",
+      "action_notes": "TSR 30 km/h Deceleration Absorbed"
+    },
+    {
+      "station_code": "RTM",
+      "station_name": "Ratlam Junction",
+      "scheduled_time": "01:50 AM",
+      "static_delay": "+18 mins",
+      "dynamic_ai_eta": "01:55 AM (+5m)",
+      "action_notes": "Dynamic Slack Ingestion"
+    },
+    {
+      "station_code": "MMCT",
+      "station_name": "Mumbai Central",
+      "scheduled_time": "08:35 AM",
+      "static_delay": "+20 mins",
+      "dynamic_ai_eta": "08:37 AM (+2m)",
+      "action_notes": "Clear Berth on PF #1 Reserved"
+    }
+  ]
+}

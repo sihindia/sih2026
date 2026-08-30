@@ -1,0 +1,17 @@
+[
+  {
+    "name": "M1 Cast Iron Weights",
+    "range": "5 kg to 500 kg blocks",
+    "inspection_use": "Used by LMOs for heavy-duty commercial weighbridges and mandi scales"
+  },
+  {
+    "name": "F2 Stainless Steel Weights",
+    "range": "1 g to 10 kg sets",
+    "inspection_use": "Used for retail grocery, supermarket dual-display and counter scales"
+  },
+  {
+    "name": "Conical Volume Measures",
+    "range": "5L, 10L, 20L brass measures",
+    "inspection_use": "Used for petrol, diesel, and bulk flow meter dispenser verification"
+  }
+]

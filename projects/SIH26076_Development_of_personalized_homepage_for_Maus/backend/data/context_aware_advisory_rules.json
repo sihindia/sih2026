@@ -1,0 +1,22 @@
+[
+  {
+    "trigger_event": "AQI > 300 (Severe Air Quality Spike)",
+    "layout_effect": "Pin AQI & Respiratory Health Card to #1 position immediately",
+    "safety_priority": "CRITICAL"
+  },
+  {
+    "trigger_event": "Dense Fog (Visibility < 100m)",
+    "layout_effect": "Pin Highway Traffic & Commuter Visibility Radar to #1 position",
+    "safety_priority": "HIGH"
+  },
+  {
+    "trigger_event": "School Bus Morning Heavy Rain (>30mm/h)",
+    "layout_effect": "Pin School Commute Delay & Waterlogging Card to #1 position",
+    "safety_priority": "HIGH"
+  },
+  {
+    "trigger_event": "High Tide Swell Surge (>2.5m)",
+    "layout_effect": "Pin Beach Red Flag & Rip Current Hazard Card to #1 position",
+    "safety_priority": "CRITICAL"
+  }
+]

@@ -1,7 +1,7 @@
 """
-SIH26019: National Digital Platform for Research, Policy Innovation, and Evidence-Based Land Governance
-Organization: Ministry of Rural Development | Theme: Smart Automation
-FastAPI Microservice with JSON Data Loaders & Free-Tier AI Pipeline
+SIH26019: National Platform for Research and Policy Innovation in Land Governance (DoLR NeetiManthan 360)
+Ministry of Rural Development - Department of Land Resources (DoLR)
+FastAPI Production Microservice for Policy Simulation, Research Repository & State Governance Index
 """
 
 from fastapi import FastAPI, HTTPException, status
@@ -10,12 +10,13 @@ from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 import json
 import os
+import random
 from datetime import datetime
 
 app = FastAPI(
-    title="SIH26019 Operational Engine",
-    description="National Digital Platform for Research, Policy Innovation, and Evidence-Based Land Governance - Backend Service (Ministry of Rural Development)",
-    version="2.0.0"
+    title="DoLR NeetiManthan 360 Policy Hub (SIH26019) - DoLR / Ministry of Rural Development",
+    description="National Digital Platform for Research and Policy Innovation",
+    version="3.0.0"
 )
 
 app.add_middleware(
@@ -35,50 +36,49 @@ def load_json(name):
             return json.load(f)
     return []
 
-class AnalysisRequest(BaseModel):
-    station_node: str = Field(..., example="Node_01")
-    metric_value: float = Field(..., example=68.5)
-    location_label: Optional[str] = Field(None, example="Ministry of Rural Development")
-    metadata: Optional[Dict[str, Any]] = None
+class SimulateReformRequest(BaseModel):
+    coverage_pct: float = Field(95.0, example=95.0)
+    stamp_duty_pct: float = Field(4.0, example=4.0)
 
 @app.get("/")
 def read_root():
     return {
-        "service": "SIH26019 API Engine",
-        "title": "National Digital Platform for Research, Policy Innovation, and Evidence-Based Land Governance",
-        "organization": "Ministry of Rural Development",
-        "theme": "Smart Automation",
+        "service": "DoLR NeetiManthan 360 Hub (SIH26019)",
+        "ministry": "Ministry of Rural Development",
+        "department": "Department of Land Resources (DoLR)",
+        "research_papers_indexed": len(load_json("applied_research_papers_repository.json")),
         "status": "online",
         "cloud_cost": "$0.00 (Free Tier)",
         "docs": "/docs"
     }
 
-@app.get("/api/v1/health")
-def health_check():
+@app.get("/api/v1/papers")
+def get_papers():
+    return load_json("applied_research_papers_repository.json")
+
+@app.get("/api/v1/states")
+def get_states():
+    return load_json("state_land_governance_benchmark_index.json")
+
+@app.get("/api/v1/scenarios")
+def get_scenarios():
+    return load_json("policy_reform_simulation_scenarios.json")
+
+@app.get("/api/v1/stats")
+def get_stats():
+    return load_json("neetimanthan_stats.json")
+
+@app.post("/api/v1/simulate-land-reform")
+def simulate_reform(req: SimulateReformRequest):
+    litigation_drop = round((req.coverage_pct / 100) * 72, 1)
+    capital_unlocked_cr = round((6 - req.stamp_duty_pct) * 18500 + (req.coverage_pct * 420))
     return {
-        "status": "healthy",
-        "database": "Supabase PostgreSQL connected",
+        "cadastral_coverage_pct": req.coverage_pct,
+        "stamp_duty_rate_pct": req.stamp_duty_pct,
+        "projected_civil_litigation_drop_pct": litigation_drop,
+        "dormant_capital_unlocked_inr_cr": capital_unlocked_cr,
+        "policy_recommendation": "Enact State Conclusive Titling Bill with State Title Indemnity Fund pool",
         "timestamp": datetime.utcnow().isoformat()
-    }
-
-@app.get("/api/v1/records")
-def get_records():
-    return load_json("records.json")
-
-@app.post("/api/v1/analyze")
-def analyze_telemetry(payload: AnalysisRequest):
-    is_anomaly = payload.metric_value > 75.0
-    risk = round(payload.metric_value / 100.0, 3) if payload.metric_value <= 100 else 0.95
-
-    return {
-        "ps_id": "SIH26019",
-        "status": "CRITICAL THRESHOLD ALERT" if is_anomaly else "OPTIMAL SYSTEM STATUS",
-        "risk_score": risk,
-        "confidence": 0.978,
-        "is_anomaly": is_anomaly,
-        "input_node": payload.station_node,
-        "timestamp": datetime.utcnow().isoformat(),
-        "action_taken": "Automated alert webhook dispatched to Ministry of Rural Development SPOC" if is_anomaly else "Telemetry logged in Supabase database"
     }
 
 if __name__ == "__main__":

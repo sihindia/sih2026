@@ -1,0 +1,44 @@
+[
+  {
+    "block_id": "SHADOW-NCR-081",
+    "scheduled_window": "02:00 AM \u2013 04:30 AM (Night Lean Period)",
+    "duration_hours": 2.5,
+    "participating_departments": [
+      "Track Engineering (TMS)",
+      "Traction Distribution (TDMS/OHE)",
+      "Signal & Telecom (SMMS)"
+    ],
+    "allocated_machinery": [
+      "09-3X Tamping Machine #104",
+      "OHE Tower Wagon #8812",
+      "S&T Electronic Interlocking Rig"
+    ],
+    "track_section": "Aligarh \u2013 Hathras (Km 922 to 934 Down Line)",
+    "delay_minutes_saved": 140,
+    "passenger_detention_impact": "ZERO_DETENTION (Traffic Routed via Middle Loop)",
+    "freight_trains_diverted": 2,
+    "optimization_efficiency_score": "96.8%",
+    "cois_safety_token": "AUTH-NCR-COIS-08194"
+  },
+  {
+    "block_id": "SHADOW-ECR-042",
+    "scheduled_window": "01:30 AM \u2013 04:15 AM (Night Lean Period)",
+    "duration_hours": 2.75,
+    "participating_departments": [
+      "Track Engineering Deep Screening",
+      "OHE Catenary Wire Renewal",
+      "Digital Axle Counters Calibration"
+    ],
+    "allocated_machinery": [
+      "Ballast Cleaning Machine (BCM #301)",
+      "Rail Grinding Machine (RGM #40)",
+      "OHE Ladder Unit"
+    ],
+    "track_section": "Sasaram \u2013 Dehri-on-Sone (Up Line)",
+    "delay_minutes_saved": 180,
+    "passenger_detention_impact": "+21% Sectional Speed Retention Post-Block",
+    "freight_trains_diverted": 4,
+    "optimization_efficiency_score": "98.2%",
+    "cois_safety_token": "AUTH-ECR-COIS-04218"
+  }
+]

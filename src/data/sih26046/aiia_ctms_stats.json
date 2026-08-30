@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "GCP Compliance",
+    "value": "100% GCP-ASU",
+    "trend": "Compliant with NDCT Rules 2019"
+  },
+  {
+    "metric": "Reporting Integrity",
+    "value": "Zero Lags",
+    "trend": "24h SAE Escalation Clocks"
+  },
+  {
+    "metric": "Interoperability",
+    "value": "CDISC & FHIR R4",
+    "trend": "ABDM National Health Stack Ready"
+  }
+]

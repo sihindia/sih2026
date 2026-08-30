@@ -1,0 +1,24 @@
+[
+  {
+    "catchment_id": "INUND-MUM-001",
+    "city_catchment": "Mumbai Urban Basin (Mithi River & Milan Subway)",
+    "meteorological_inputs": "Doppler Radar QPE (68 mm/hr) + WRF 3km Model + Astronomical High Tide (4.8m)",
+    "predicted_inundation_hotspots": "Milan Subway (1.8m depth) & Kurla West LBS Road (1.2m depth)",
+    "predicted_inundation_time": "Peak Flood in 2.5 Hours (14:30 IST)",
+    "early_warning_lead_time_hrs": 4.5,
+    "inundation_depth_accuracy_pct": 94.8,
+    "municipal_emergency_action": "RED ALERT: Activate 12 De-watering Pumps (6000 GPM) & Divert Western Express Highway Traffic",
+    "status": "FLOOD_EARLY_WARNING_ACTIVE"
+  },
+  {
+    "catchment_id": "INUND-CHE-042",
+    "city_catchment": "Chennai Coastal Basin (Adyar River & Velachery)",
+    "meteorological_inputs": "INSAT-3DR Heavy Rain Cell + NCUM Forecast + High Tide (1.4m)",
+    "predicted_inundation_hotspots": "Velachery Main Road (1.1m depth) & Mudichur (1.4m depth)",
+    "predicted_inundation_time": "Peak Flood in 3.0 Hours (19:00 IST)",
+    "early_warning_lead_time_hrs": 5.0,
+    "inundation_depth_accuracy_pct": 95.2,
+    "municipal_emergency_action": "RED ALERT: Open Chembarambakkam Sluice Gates (1500 cusecs) & GCC Evacuation Alerts",
+    "status": "FLOOD_EARLY_WARNING_ACTIVE"
+  }
+]

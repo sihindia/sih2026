@@ -1,0 +1,22 @@
+[
+  {
+    "panchayat_id": "PANCH-RAJ-0941",
+    "panchayat_name": "Jasrasar Gram Panchayat (Bikaner Block, Rajasthan)",
+    "coarse_block_forecast_12km": "Temp: 42.0\u00b0C | RH: 15.0% | Rain: 0.0mm | Wind: 14 km/h",
+    "ai_downscaled_panchayat_1km": "Temp: 44.8\u00b0C | RH: 8.0% | Rain: 0.0mm | Wind: 38 km/h Loo | ET: 8.4 mm/day",
+    "crop_targeted": "Mustard (Brassica juncea - Pod Development Stage)",
+    "hyperlocal_agro_advisory": "URGENT: Initiate 4-hour early morning drip irrigation before 07:00 IST to prevent moisture stress. STRICTLY POSTPONE pesticide spraying due to 38 km/h dry loo winds.",
+    "downscaling_confidence_pct": 96.8,
+    "status": "ADVISORY_DISSEMINATED"
+  },
+  {
+    "panchayat_id": "PANCH-MAH-0192",
+    "panchayat_name": "Dapoli Valley Panchayat (Ratnagiri Block, Maharashtra)",
+    "coarse_block_forecast_12km": "Temp: 29.0\u00b0C | RH: 82.0% | Rain: 18.0mm / 24h",
+    "ai_downscaled_panchayat_1km": "Temp: 26.5\u00b0C | RH: 94.0% | Rain: 64.0mm Torrential Valley Runoff",
+    "crop_targeted": "Kharif Paddy (Oryza sativa - Tillering Stage)",
+    "hyperlocal_agro_advisory": "ALERT: Clear field drainage channels immediately to prevent root submergence. Spray Tricyclazole (0.6g/L) for Blast disease during brief rain intermission window.",
+    "downscaling_confidence_pct": 97.4,
+    "status": "ADVISORY_DISSEMINATED"
+  }
+]

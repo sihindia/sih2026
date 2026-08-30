@@ -1,0 +1,20 @@
+[
+  {
+    "defect_type": "Class-3 Deep Pothole",
+    "severity": "CRITICAL",
+    "avg_depth_cm": 8.5,
+    "priority_sla_hours": 24
+  },
+  {
+    "defect_type": "Missing / Damaged Divider",
+    "severity": "HIGH",
+    "avg_depth_cm": 0.0,
+    "priority_sla_hours": 48
+  },
+  {
+    "defect_type": "Monsoon Road Waterlogging",
+    "severity": "HIGH",
+    "avg_depth_cm": 14.0,
+    "priority_sla_hours": 12
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "model_name": "IMD Global Forecast System (GFS-T1534)",
+    "resolution": "12 km Global Grid",
+    "update_frequency": "Every 6 Hours (00, 06, 12, 18 UTC)",
+    "coverage": "Synoptic Pan-India Monsoon & Cyclones"
+  },
+  {
+    "model_name": "Weather Research & Forecasting (WRF-ARW)",
+    "resolution": "3 km Meso-Scale Grid",
+    "update_frequency": "Every 3 Hours",
+    "coverage": "Cloudbursts, Thunderstorms, Urban Flash Floods"
+  },
+  {
+    "model_name": "Doppler Weather Radar (DWR Network)",
+    "resolution": "250m Radar Polar Grid",
+    "update_frequency": "Every 10 Minutes Live Scan",
+    "coverage": "Severe Convective Storms & Hailstorms"
+  },
+  {
+    "model_name": "INSAT-3DR Geostationary Imager & Sounder",
+    "resolution": "1 km Visible / 4 km Infrared",
+    "update_frequency": "Every 15 Minutes Rapid Scan",
+    "coverage": "Cloud Top Temperatures & Atmospheric Motion Vectors"
+  }
+]

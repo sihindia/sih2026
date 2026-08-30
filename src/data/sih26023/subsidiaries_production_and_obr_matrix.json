@@ -1,0 +1,42 @@
+[
+  {
+    "subsidiary_code": "SECL",
+    "subsidiary_name": "South Eastern Coalfields Ltd",
+    "annual_target_mt": 195.0,
+    "actual_production_mt": 187.0,
+    "target_achievement_pct": 95.9,
+    "overburden_removal_mcum": 240.5,
+    "dispatch_to_power_plants_mt": 156.4,
+    "daily_rail_rakes_loaded": 88
+  },
+  {
+    "subsidiary_code": "MCL",
+    "subsidiary_name": "Mahanadi Coalfields Ltd",
+    "annual_target_mt": 210.0,
+    "actual_production_mt": 204.2,
+    "target_achievement_pct": 97.2,
+    "overburden_removal_mcum": 215.0,
+    "dispatch_to_power_plants_mt": 172.8,
+    "daily_rail_rakes_loaded": 102
+  },
+  {
+    "subsidiary_code": "NCL",
+    "subsidiary_name": "Northern Coalfields Ltd",
+    "annual_target_mt": 135.0,
+    "actual_production_mt": 133.5,
+    "target_achievement_pct": 98.9,
+    "overburden_removal_mcum": 465.0,
+    "dispatch_to_power_plants_mt": 128.0,
+    "daily_rail_rakes_loaded": 64
+  },
+  {
+    "subsidiary_code": "BCCL",
+    "subsidiary_name": "Bharat Coking Coal Ltd",
+    "annual_target_mt": 42.0,
+    "actual_production_mt": 41.2,
+    "target_achievement_pct": 98.1,
+    "overburden_removal_mcum": 142.0,
+    "dispatch_to_power_plants_mt": 28.5,
+    "daily_rail_rakes_loaded": 28
+  }
+]

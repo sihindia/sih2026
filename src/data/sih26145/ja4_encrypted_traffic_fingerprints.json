@@ -1,0 +1,14 @@
+[
+  {
+    "malware_family": "Cobalt Strike Malleable C2",
+    "ja4": "t13d1508h2_8daaf6152771_b74253194b15",
+    "ciphers": "TLS_AES_256_GCM_SHA384",
+    "risk": "CRITICAL_THREAT"
+  },
+  {
+    "malware_family": "Emotet / TrickBot Banking Trojan",
+    "ja4": "t12d190800_21b72a0f8b11_a9f143091012",
+    "ciphers": "ECDHE-RSA-AES256-GCM",
+    "risk": "CRITICAL_THREAT"
+  }
+]

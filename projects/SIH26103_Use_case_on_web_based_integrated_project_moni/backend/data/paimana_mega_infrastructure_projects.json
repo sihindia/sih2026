@@ -1,0 +1,32 @@
+[
+  {
+    "project_id": "PAIMANA-PRJ-2026-001",
+    "project_name": "Eastern Dedicated Freight Corridor (Sonnagar - Dankuni 538 km)",
+    "ministry": "Ministry of Railways (DFCCIL)",
+    "sector": "Transport & Logistics (Railways)",
+    "original_cost_cr": 12500.0,
+    "revised_cost_cr": 16840.0,
+    "cumulative_expenditure_cr": 9200.0,
+    "physical_progress_pct": 64.2,
+    "predicted_cost_overrun_cr": 4340.0,
+    "predicted_schedule_delay_months": 14,
+    "primary_delay_driver": "42.6 km Land Acquisition (RoW) & Forest Clearance in West Bengal",
+    "risk_score": 88.5,
+    "status": "ACTIVE_INTERVENTION_REQUIRED"
+  },
+  {
+    "project_id": "PAIMANA-PRJ-2026-042",
+    "project_name": "Mumbai - Ahmedabad High Speed Rail Corridor (508 km Bullet Train)",
+    "ministry": "Ministry of Railways (NHSRCL)",
+    "sector": "High-Speed Rail Infrastructure",
+    "original_cost_cr": 108000.0,
+    "revised_cost_cr": 108000.0,
+    "cumulative_expenditure_cr": 57000.0,
+    "physical_progress_pct": 52.8,
+    "predicted_cost_overrun_cr": 3200.0,
+    "predicted_schedule_delay_months": 8,
+    "primary_delay_driver": "Undersea Tunnel Boring & Geotechnical Terrain Variations",
+    "risk_score": 72.0,
+    "status": "INTENSIVE_MONITORING"
+  }
+]

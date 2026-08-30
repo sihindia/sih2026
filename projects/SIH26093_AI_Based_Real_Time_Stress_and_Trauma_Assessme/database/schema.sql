@@ -1,30 +1,31 @@
--- Supabase / PostgreSQL Schema for SIH26093 (AI-Based Real-Time Stress and Trauma Assessment Module for Victims/Complainants Accessing NHAA (14566) and Integrated Portal)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOSJE TRAUMASHIELD 360 DATABASE SCHEMA (SIH26093)
+-- Ministry of Social Justice and Empowerment (MoSJE)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26093_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26093',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS nhaa_distress_call_assessments (
+    id SERIAL PRIMARY KEY,
+    call_id VARCHAR(64) UNIQUE NOT NULL,
+    caller_category VARCHAR(128) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    helpline_channel VARCHAR(64) NOT NULL, -- NHAA 14566, Portal, Chatbot, App
+    caller_narrative TEXT NOT NULL,
+    pitch_instability_hz VARCHAR(64) NOT NULL,
+    speech_pause_ratio_pct NUMERIC(5, 2) NOT NULL,
+    speech_jitter_pct NUMERIC(4, 2) NOT NULL,
+    svi_score NUMERIC(5, 2) NOT NULL,
+    risk_category VARCHAR(64) NOT NULL, -- Low, Moderate, High, Critical
+    trauma_indicators TEXT NOT NULL,
+    automated_interventions TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'EMERGENCY_ESCALATION_ACTIVE',
+    logged_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26093_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26093_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS emergency_counselling_dispatches (
+    id SERIAL PRIMARY KEY,
+    call_id VARCHAR(64) REFERENCES nhaa_distress_call_assessments(call_id),
+    psychiatrist_name VARCHAR(128) NOT NULL,
+    institution VARCHAR(128) DEFAULT 'NIMHANS Tele-MANAS',
+    police_protection_alerted BOOLEAN DEFAULT TRUE,
+    dispatched_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26093_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26093_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26093_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26093_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26093_audit_logs FOR SELECT USING (true);

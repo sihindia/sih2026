@@ -1,0 +1,17 @@
+[
+  {
+    "dimension": "Gross Floor Area (GFA)",
+    "proposal_a": "1.42M m\u00b2 (High TOD Density)",
+    "proposal_b": "1.15M m\u00b2 (Eco-Balanced)"
+  },
+  {
+    "dimension": "Solar PV Generation",
+    "proposal_a": "14,200 MWh/Year",
+    "proposal_b": "16,800 MWh/Year (+18.3%)"
+  },
+  {
+    "dimension": "Embodied Carbon",
+    "proposal_a": "385 kg CO2e/m\u00b2",
+    "proposal_b": "310 kg CO2e/m\u00b2 (-19.5%)"
+  }
+]

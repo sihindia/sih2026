@@ -1,32 +1,33 @@
--- Supabase / PostgreSQL Schema for SIH26011 (3D ULPIN Generation and vertical Property Mapping SYstem)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "postgis";
+-- =========================================================================
+-- DOLR NAKSHA3D 360 DATABASE SCHEMA (SIH26011)
+-- Ministry of Rural Development - Department of Land Resources (DoLR)
+-- =========================================================================
 
--- 1. Cadastral Land Parcels
-CREATE TABLE IF NOT EXISTS sih26011_parcels (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ulpin_code VARCHAR(14) UNIQUE NOT NULL,
-    state_code VARCHAR(10) DEFAULT 'JH',
-    district_name VARCHAR(100) NOT NULL,
-    village_name VARCHAR(100) NOT NULL,
-    survey_area_sqm NUMERIC(12, 2) NOT NULL,
-    geometry GEOMETRY(Polygon, 4326),
-    land_type VARCHAR(50) DEFAULT 'Agricultural',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS vertical_parcels (
+    id SERIAL PRIMARY KEY,
+    parcel_id VARCHAR(64) UNIQUE NOT NULL,
+    project_name VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    property_type VARCHAR(128) NOT NULL,
+    surface_survey_number VARCHAR(128) NOT NULL,
+    floor_level VARCHAR(64) NOT NULL,
+    floor_area_sqm NUMERIC(8, 2) NOT NULL,
+    ceiling_height_m NUMERIC(4, 2) NOT NULL,
+    volumetric_space_m3 NUMERIC(10, 2) NOT NULL,
+    generated_3d_ulpin VARCHAR(64) UNIQUE NOT NULL,
+    air_rights_elevation_m VARCHAR(64) NOT NULL,
+    subsurface_depth_m VARCHAR(64) NOT NULL,
+    topology_collision_check VARCHAR(64) NOT NULL,
+    mortgage_registry_status VARCHAR(128) NOT NULL,
+    cadastral_status VARCHAR(64) DEFAULT '3D_ULPIN_ISSUED_ACTIVE',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Ownership Title Records
-CREATE TABLE IF NOT EXISTS sih26011_ownership (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    parcel_id UUID REFERENCES sih26011_parcels(id) ON DELETE CASCADE,
-    owner_name VARCHAR(200) NOT NULL,
-    aadhaar_hash VARCHAR(64) NOT NULL,
-    share_percentage NUMERIC(5, 2) DEFAULT 100.0,
-    encumbrance_status VARCHAR(50) DEFAULT 'CLEAR',
-    verified_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS lidar_drone_surveys (
+    id SERIAL PRIMARY KEY,
+    source VARCHAR(128) NOT NULL,
+    gsd_cm_px NUMERIC(4, 2),
+    point_density_pts_m2 NUMERIC(6, 2),
+    sensor_model VARCHAR(128) NOT NULL,
+    extracted_features TEXT NOT NULL
 );
-
-ALTER TABLE sih26011_parcels ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26011_ownership ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Parcels" ON sih26011_parcels FOR SELECT USING (true);
-CREATE POLICY "Public Read Ownership" ON sih26011_ownership FOR SELECT USING (true);

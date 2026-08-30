@@ -1,0 +1,44 @@
+[
+  {
+    "mission_id": "TWIN-TAPAS-ISR01",
+    "uav_platform": "Tapas-BH-201 MALE UAV (Callsign: GARUDA-01)",
+    "operational_theatre": "Chitradurga Aeronautical Test Range (ATR) Long-Endurance ISR Sortie",
+    "aero_piston_engine": "Turbocharged 4-Cylinder Horizontally Opposed Aero Engine (180 HP, Dry Sump)",
+    "telemetry_stream": "Flight Hour: 16.4 / 24.0 hrs | Altitude: 18,500 ft (5,638 m) | Airspeed: 135 knots",
+    "engine_state": "RPM: 5,420 | CHT Avg: 138.5\u00b0C | EGT Avg: 820\u00b0C | Oil Press: 3.8 bar | Fuel: 24.2 L/h",
+    "digital_twin_assessment": "Cylinder #3 Injector Spray Partial Clogging detected 2.8 hrs ahead of threshold alert",
+    "predicted_rul_hours": 42.5,
+    "pinn_anomaly_confidence": 98.6,
+    "maintenance_advisory": "Perform ultrasonic fuel injector nozzle descaling post-mission; safe to complete ISR sortie",
+    "mission_risk_level": "LOW_SAFE_OPERATING_ENVELOPE",
+    "twin_status": "TWIN_SYNCHRONIZED_HEALTH_OPTIMAL"
+  },
+  {
+    "mission_id": "TWIN-ARCH-STRIKE03",
+    "uav_platform": "Archer-NG Armed Tactical MALE UAV (Callsign: ARCHER-04)",
+    "operational_theatre": "High-Altitude Northern Border Surveillance (Leh / Ladakh Sector, 22,000 ft)",
+    "aero_piston_engine": "Supercharged Multi-Fuel Compression Ignition Aero Engine (200 HP Heavy Fuel)",
+    "telemetry_stream": "Flight Hour: 8.2 / 18.0 hrs | Altitude: 22,100 ft | Ambient Air Temp: -22.0\u00b0C",
+    "engine_state": "RPM: 5,680 | CHT Avg: 152.0\u00b0C | EGT Avg: 845\u00b0C | Oil Press: 4.1 bar | Fuel: 28.6 L/h",
+    "digital_twin_assessment": "Turbocharger Wastegate Actuator slight hysteresis under low ambient density",
+    "predicted_rul_hours": 68.0,
+    "pinn_anomaly_confidence": 96.2,
+    "maintenance_advisory": "Recalibrate pneumatic boost pressure controller during scheduled 50-hour check",
+    "mission_risk_level": "NOMINAL_STABLE_MISSION",
+    "twin_status": "TWIN_SYNCHRONIZED_HEALTH_OPTIMAL"
+  },
+  {
+    "mission_id": "TWIN-MARI-PATROL05",
+    "uav_platform": "Maritime Reconnaissance MALE UAV (Callsign: SAGAR-02)",
+    "operational_theatre": "Exclusive Economic Zone (EEZ) Extended Maritime Surveillance (Indian Ocean)",
+    "aero_piston_engine": "Dual-Ignition Redundant FADEC Aero Piston Engine (160 HP)",
+    "telemetry_stream": "Flight Hour: 21.6 / 26.0 hrs | Altitude: 12,000 ft | High Humidity Marine Air",
+    "engine_state": "RPM: 4,950 | CHT Avg: 126.0\u00b0C | EGT Avg: 785\u00b0C | Oil Press: 3.6 bar | Fuel: 21.4 L/h",
+    "digital_twin_assessment": "Secondary Alternator current ripple detected (+4.2% fluctuation, diode wear)",
+    "predicted_rul_hours": 31.0,
+    "pinn_anomaly_confidence": 99.1,
+    "maintenance_advisory": "Swap backup alternator regulator assembly upon base recovery",
+    "mission_risk_level": "MODERATE_ADVISORY_ISSUED",
+    "twin_status": "TWIN_SYNCHRONIZED_HEALTH_OPTIMAL"
+  }
+]

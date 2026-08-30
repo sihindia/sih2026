@@ -1,0 +1,17 @@
+[
+  {
+    "model_name": "NIR Chemometric Crude Protein Estimator",
+    "spectral_range": "900 - 1700 nm NIR",
+    "r2_score": 0.987
+  },
+  {
+    "model_name": "Urea Adulteration Raman/NIR Classifier",
+    "spectral_range": "1165 nm Specific Urea Peak",
+    "r2_score": 0.994
+  },
+  {
+    "model_name": "Silage pH & Organic Acid Spectrophotometer",
+    "spectral_range": "Visible-NIR 400-1000 nm",
+    "r2_score": 0.975
+  }
+]

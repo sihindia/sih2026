@@ -1,0 +1,44 @@
+[
+  {
+    "watershed_id": "WTR-BUND-01",
+    "name": "Bundelkhand Betwa Micro-Watershed",
+    "location": "Jhansi, Uttar Pradesh",
+    "basin": "Betwa River Basin (Semi-Arid Drought Prone)",
+    "area_hectares": 3450.0,
+    "ndvi_gain_pct": 28.5,
+    "soil_moisture_pct": 42.0,
+    "active_structures_count": 18,
+    "storage_capacity_cum": 145000.0,
+    "ecological_health_score": 86.4,
+    "siltation_level": "Low (12% Silt Bed)",
+    "monitoring_status": "POSITIVE_ECOLOGICAL_IMPACT"
+  },
+  {
+    "watershed_id": "WTR-RAYAL-02",
+    "name": "Rayalaseema Semi-Arid Basin",
+    "location": "Anantapur, Andhra Pradesh",
+    "basin": "Pennar River Tributary",
+    "area_hectares": 5200.0,
+    "ndvi_gain_pct": 14.2,
+    "soil_moisture_pct": 21.5,
+    "active_structures_count": 32,
+    "storage_capacity_cum": 280000.0,
+    "ecological_health_score": 64.0,
+    "siltation_level": "Moderate (28% Silt Bed)",
+    "monitoring_status": "DESILTATION_SCHEDULED"
+  },
+  {
+    "watershed_id": "WTR-MARATH-03",
+    "name": "Marathwada Godavari Sub-Basin",
+    "location": "Beed, Maharashtra",
+    "basin": "Godavari Sub-Catchment Area",
+    "area_hectares": 4100.0,
+    "ndvi_gain_pct": 34.0,
+    "soil_moisture_pct": 48.0,
+    "active_structures_count": 24,
+    "storage_capacity_cum": 195000.0,
+    "ecological_health_score": 91.2,
+    "siltation_level": "Stabilized Siltation (8%)",
+    "monitoring_status": "HIGH_GROUNDWATER_RECHARGE"
+  }
+]

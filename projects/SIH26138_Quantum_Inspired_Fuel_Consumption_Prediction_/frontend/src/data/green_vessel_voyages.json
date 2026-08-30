@@ -1,0 +1,32 @@
+[
+  {
+    "voyage_id": "VOY-QFL-2026-001",
+    "vessel_name": "MV Quanta Pioneer (14,000 TEU)",
+    "route_corridor": "JNPT Mumbai \u2794 Port of Rotterdam (via Suez Canal)",
+    "distance_nautical_miles": 6450,
+    "primary_fuel": "Dual-Fuel Green Methanol (CH3OH)",
+    "baseline_hfo_fuel_mt": 1420.0,
+    "quantum_optimized_fuel_mt": 1016.0,
+    "fuel_saved_pct": 28.4,
+    "optimal_cruising_speed_knots": 16.2,
+    "ghg_co2_abated_mt": 1280.0,
+    "imo_cii_rating": "GRADE_A_SUPERIOR",
+    "shore_power_cold_ironing": "Enabled (100% Zero Port Emissions)",
+    "status": "QUANTUM_VOYAGE_PLAN_APPROVED"
+  },
+  {
+    "voyage_id": "VOY-QFL-2026-018",
+    "vessel_name": "Liquid Green Hydrogen Carrier (75,000 cbm)",
+    "route_corridor": "Port of Singapore \u2794 Port of Jebel Ali (Dubai)",
+    "distance_nautical_miles": 3680,
+    "primary_fuel": "Liquid Hydrogen (LH2 Fuel Cell & Boil-Off)",
+    "baseline_hfo_fuel_mt": 820.0,
+    "quantum_optimized_fuel_mt": 492.0,
+    "fuel_saved_pct": 40.0,
+    "optimal_cruising_speed_knots": 17.5,
+    "ghg_co2_abated_mt": 2450.0,
+    "imo_cii_rating": "GRADE_A_SUPERIOR",
+    "shore_power_cold_ironing": "Enabled",
+    "status": "QUANTUM_VOYAGE_PLAN_APPROVED"
+  }
+]

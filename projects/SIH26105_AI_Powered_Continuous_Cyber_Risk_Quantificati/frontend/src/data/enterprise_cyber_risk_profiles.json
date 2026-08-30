@@ -1,0 +1,30 @@
+[
+  {
+    "asset_id": "CYBER-AST-2026-001",
+    "infrastructure_name": "Central University Digital Examination & ERP Tier",
+    "criticality": "TIER-1_MISSION_CRITICAL",
+    "current_eal_cr": 14.8,
+    "cyber_var_95_cr": 32.5,
+    "primary_risk_drivers": "Unpatched Legacy DB (Log4j CVE-2021-44228) + Non-MFA Bastion Hosts",
+    "recommended_control": "Zero-Trust Microsegmentation + FIDO2 Hardware MFA",
+    "required_investment_lakhs": 45.0,
+    "quantified_risk_reduction_cr": 11.2,
+    "rosi_pct": 410.0,
+    "compliance_alignment": "ISO/IEC 27001:2022 \u2022 NIST CSF 2.0 \u2022 CERT-In Mandatory Directions",
+    "status": "OPTIMIZATION_COMPLETE"
+  },
+  {
+    "asset_id": "CYBER-AST-2026-042",
+    "infrastructure_name": "AICTE National Institutional Portal & Cloud Tier",
+    "criticality": "TIER-1_MISSION_CRITICAL",
+    "current_eal_cr": 22.4,
+    "cyber_var_95_cr": 48.0,
+    "primary_risk_drivers": "Cloud IAM Privilege Sprawl & API Gateway Rate-Limit Bypasses",
+    "recommended_control": "Cloud Security Posture Management (CSPM) & Automated CIEM",
+    "required_investment_lakhs": 60.0,
+    "quantified_risk_reduction_cr": 17.5,
+    "rosi_pct": 365.0,
+    "compliance_alignment": "RBI Cybersecurity Framework \u2022 SEBI CSCRF \u2022 ISO 27001",
+    "status": "OPTIMIZATION_COMPLETE"
+  }
+]

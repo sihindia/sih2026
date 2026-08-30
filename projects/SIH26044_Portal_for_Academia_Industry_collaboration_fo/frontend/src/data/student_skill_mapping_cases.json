@@ -1,0 +1,41 @@
+[
+  {
+    "student_id": "AYUSH-SKILL-DEL01",
+    "student_name": "Dr. Sneha Sharma (B.A.M.S Final Year)",
+    "institution": "All India Institute of Ayurveda (AIIA, New Delhi)",
+    "target_domain": "Phytochemistry & Ayurvedic Drug Standardization",
+    "verified_strengths": "Nadi Pariksha, Classical Charaka Samhita Formulations, Rasa Shastra Lab Protocols",
+    "identified_skill_gap": "High-Performance Liquid Chromatography (HPLC) Fingerprinting & Schedule T GMP Audits",
+    "recommended_upskilling": "30-Day Phytochemical Fingerprinting & AYUSH Quality Control (QC) Certificate",
+    "matched_internship": "Phytochemistry & QC Intern @ Dabur Research & Development Centre (Ghaziabad)",
+    "stipend_offered": "\u20b925,000 / Month + Lab Allowance",
+    "match_compatibility_pct": 94.5,
+    "status": "INTERNSHIP_OFFER_ACCEPTED"
+  },
+  {
+    "student_id": "AYUSH-SKILL-JAM03",
+    "student_name": "Prof. Dr. Rajeshwar Bhatt (Associate Professor)",
+    "institution": "Institute of Teaching and Research in Ayurveda (ITRA, Jamnagar)",
+    "target_domain": "Faculty Industrial Sabbatical & Clinical Trials",
+    "verified_strengths": "Panchakarma Protocol Design, Ayurvedic Toxicology, Classical Pharmacology",
+    "identified_skill_gap": "DCGI Clinical Trial Registry (CTRI) Submissions & Pharmacovigilance Regulatory Dossiers",
+    "recommended_upskilling": "Senior Faculty Immersion in Industrial Herbal Drug Regulatory Affairs",
+    "matched_internship": "Visiting Scientist & Formulation Consultant @ Himalaya Wellness R&D (Bengaluru)",
+    "stipend_offered": "\u20b965,000 / Month + Collaborative Research Grant",
+    "match_compatibility_pct": 96.8,
+    "status": "FACULTY_SABBATICAL_APPROVED"
+  },
+  {
+    "student_id": "AYUSH-SKILL-KER05",
+    "student_name": "Kavitha Menon (M.D. Ayurveda - Dravyaguna)",
+    "institution": "Government Ayurveda College (Thiruvananthapuram, Kerala)",
+    "target_domain": "Ayurvedic Pharmacovigilance & Drug Safety",
+    "verified_strengths": "Botanical Herb Authentication, Classical Nighantu Taxonomy, Herbarium Archival",
+    "identified_skill_gap": "Adverse Drug Reaction (ADR) Causality Assessment using WHO-UMC Criteria in AYUSH",
+    "recommended_upskilling": "National Pharmacovigilance Programme for AYUSH (NPvA) Certification",
+    "matched_internship": "Drug Safety & Pharmacovigilance Officer @ Charak Pharma (Mumbai)",
+    "stipend_offered": "\u20b945,000 / Month (Full-Time Placement Track)",
+    "match_compatibility_pct": 92.0,
+    "status": "PLACEMENT_INTERVIEW_CLEARED"
+  }
+]

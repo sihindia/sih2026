@@ -1,0 +1,17 @@
+[
+  {
+    "crop": "BT Cotton",
+    "vulnerability": "Extremely vulnerable to root desiccation if dry spell occurs within 10 days of emergence",
+    "action_rule": "Sow only after soil receives >75 mm cumulative rainfall and 10-day break risk is <25%"
+  },
+  {
+    "crop": "Soybean",
+    "vulnerability": "Requires uniform topsoil moisture for hypocotyl elongation",
+    "action_rule": "Adopt seed treatment with Trichoderma; intercrop with pigeon pea to buffer erratic dry breaks"
+  },
+  {
+    "crop": "Paddy / Rice",
+    "vulnerability": "Nursery seedlings damaged by either acute moisture deficit or premature submergence",
+    "action_rule": "Align nursery sowing 21 days prior to predicted sustained monsoon surge date"
+  }
+]

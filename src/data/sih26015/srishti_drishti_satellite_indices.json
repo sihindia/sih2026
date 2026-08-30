@@ -1,0 +1,20 @@
+[
+  {
+    "index": "Normalized Difference Vegetation Index (NDVI)",
+    "satellite_platform": "SRISHTI-DRISHTI 30m Multi-Spectral",
+    "formula": "(NIR - Red) / (NIR + Red)",
+    "purpose": "Quantifies biomass recovery and crop canopy vigor post-monsoon"
+  },
+  {
+    "index": "Normalized Difference Water Index (NDWI)",
+    "satellite_platform": "SRISHTI-DRISHTI 30m Multi-Spectral",
+    "formula": "(Green - NIR) / (Green + NIR)",
+    "purpose": "Delineates open surface water extent in check dams and percolation ponds"
+  },
+  {
+    "index": "Soil Moisture Index (SMI)",
+    "satellite_platform": "Sentinel-1 C-band SAR + Optical Synergy",
+    "formula": "(LST_max - LST) / (LST_max - LST_min)",
+    "purpose": "Monitors root-zone moisture for rainfed dryland farming"
+  }
+]

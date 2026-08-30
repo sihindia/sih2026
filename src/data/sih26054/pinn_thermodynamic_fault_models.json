@@ -1,0 +1,17 @@
+[
+  {
+    "fault_type": "Physics-Informed Neural Network (PINN)",
+    "physics_grounding": "First Law Enthalpy Balance & Otto Cycle PV Indicator",
+    "warning_lead_time": "2.8 Hours Prior to Threshold Alarm"
+  },
+  {
+    "fault_type": "Cylinder Misfire Classifier",
+    "physics_grounding": "Instantaneous Angular Velocity (IAV) Crankshaft Fluctuations",
+    "warning_lead_time": "Immediate Real-Time Cycle Detection"
+  },
+  {
+    "fault_type": "Remaining Useful Life (RUL) Regressor",
+    "physics_grounding": "Arrhenius Thermal Degradation & Paris Law Mechanical Fatigue",
+    "warning_lead_time": "Predicts RUL within \u00b12.5 Flight Hours"
+  }
+]

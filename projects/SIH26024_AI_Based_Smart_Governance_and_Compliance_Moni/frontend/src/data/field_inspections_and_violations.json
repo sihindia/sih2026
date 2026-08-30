@@ -1,0 +1,22 @@
+[
+  {
+    "inspection_id": "INSP-SECL-2026-881",
+    "mine_name": "Kusmunda Mega Opencast Project",
+    "inspector_name": "Rajeshwar Sharma (Dy. DGMS Bilaspur)",
+    "geo_coordinates": "22.3384\u00b0 N, 82.6841\u00b0 E",
+    "inspection_domain": "Highwall Slope Stability & Dust Suppression",
+    "observations": "Continuous mist-fog cannons deployed across haul roads; ground vibration within DGMS 5 mm/s peak particle velocity limit.",
+    "corrective_action_required": "None - Maintain current water tanker dispatch frequency.",
+    "urgency": "ROUTINE_AUDIT_PASSED"
+  },
+  {
+    "inspection_id": "INSP-MCL-2026-402",
+    "mine_name": "Bhubaneswari Opencast Project",
+    "inspector_name": "Anil Kumar Jena (Safety Officer)",
+    "geo_coordinates": "20.9501\u00b0 N, 85.1832\u00b0 E",
+    "inspection_domain": "Overburden Dump Berm Height Check",
+    "observations": "Bench berm height at North Overburden dump requires 0.5m elevation to meet CMR 2017 Regulation 108.",
+    "corrective_action_required": "Dozer operator dispatched to raise safety berm before next tipping shift.",
+    "urgency": "RECTIFICATION_DISPATCHED"
+  }
+]

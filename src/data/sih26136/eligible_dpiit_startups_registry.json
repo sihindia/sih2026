@@ -1,0 +1,18 @@
+[
+  {
+    "startup_id": "ST-JAL-01",
+    "name": "JalDrishti AI Technologies",
+    "sector": "Smart Water & IoT",
+    "patents": 2,
+    "dpiit_verified": true,
+    "msins_sandbox_alumni": true
+  },
+  {
+    "startup_id": "ST-GAR-08",
+    "name": "GarudaVigyan AeroTech",
+    "sector": "Defense & Drone CleanTech",
+    "patents": 3,
+    "dpiit_verified": true,
+    "msins_sandbox_alumni": true
+  }
+]

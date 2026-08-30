@@ -1,46 +1,41 @@
--- Supabase / PostgreSQL Schema for SIH26078 (AI-Driven Spatio-Temporal Tracking of Extreme Weather Anomalies in Medium-Range Forecasts)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "postgis";
+-- =========================================================================
+-- NCMRWF ANOMALYTRACKER 360 DATABASE SCHEMA (SIH26078)
+-- Ministry of Earth Sciences (MoES) / NCMRWF
+-- =========================================================================
 
--- 1. Sensor Telemetry Nodes Table
-CREATE TABLE IF NOT EXISTS sih26078_sensors (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    station_code VARCHAR(50) UNIQUE NOT NULL,
-    location_name TEXT NOT NULL,
-    latitude NUMERIC(10, 6) NOT NULL,
-    longitude NUMERIC(10, 6) NOT NULL,
-    elevation_m NUMERIC(8, 2),
-    status VARCHAR(20) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS medium_range_anomalies (
+    id SERIAL PRIMARY KEY,
+    anomaly_id VARCHAR(64) UNIQUE NOT NULL,
+    hazard_name VARCHAR(255) NOT NULL,
+    forecast_horizon_days INTEGER NOT NULL,
+    lead_time_hours INTEGER NOT NULL,
+    coarse_12km_input TEXT NOT NULL,
+    stage1_gnn_mesh TEXT NOT NULL,
+    stage2_diffusion_5km TEXT NOT NULL,
+    pinpoint_5km_centroid TEXT NOT NULL,
+    ndrf_targeted_alert TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT '4D_ANOMALY_TRACKED',
+    detected_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Environmental Readings
-CREATE TABLE IF NOT EXISTS sih26078_readings (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    station_id UUID REFERENCES sih26078_sensors(id) ON DELETE CASCADE,
-    rainfall_intensity_mm_hr NUMERIC(6, 2) NOT NULL,
-    pore_water_pressure_kpa NUMERIC(6, 2) NOT NULL,
-    slope_tilt_deg NUMERIC(5, 2) NOT NULL,
-    factor_of_safety NUMERIC(4, 2) NOT NULL,
-    risk_level VARCHAR(20) DEFAULT 'NORMAL',
-    recorded_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS icosahedral_mesh_bounding_boxes (
+    id SERIAL PRIMARY KEY,
+    anomaly_id VARCHAR(64) REFERENCES medium_range_anomalies(anomaly_id),
+    min_lat NUMERIC(6, 3) NOT NULL,
+    max_lat NUMERIC(6, 3) NOT NULL,
+    min_lon NUMERIC(6, 3) NOT NULL,
+    max_lon NUMERIC(6, 3) NOT NULL,
+    extreme_forecast_index NUMERIC(4, 3) NOT NULL,
+    recorded_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 3. Incident Alert Broadcasts
-CREATE TABLE IF NOT EXISTS sih26078_alerts (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    reading_id UUID REFERENCES sih26078_readings(id),
-    severity VARCHAR(20) NOT NULL,
-    message TEXT NOT NULL,
-    dispatched_to VARCHAR(100) DEFAULT 'NDRF & District SDMA',
-    acknowledged BOOLEAN DEFAULT FALSE,
-    dispatched_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS pinpoint_5km_alerts (
+    id SERIAL PRIMARY KEY,
+    anomaly_id VARCHAR(64) REFERENCES medium_range_anomalies(anomaly_id),
+    centroid_lat NUMERIC(6, 3) NOT NULL,
+    centroid_lon NUMERIC(6, 3) NOT NULL,
+    impact_radius_km NUMERIC(4, 2) DEFAULT 5.00,
+    peak_amplitude VARCHAR(128) NOT NULL,
+    dispatched_to VARCHAR(128) NOT NULL, -- NDRF, SDMA, District Disaster Management
+    dispatched_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
--- Row Level Security (RLS)
-ALTER TABLE sih26078_sensors ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26078_readings ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26078_alerts ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Access" ON sih26078_sensors FOR SELECT USING (true);
-CREATE POLICY "Public Read Readings" ON sih26078_readings FOR SELECT USING (true);
-CREATE POLICY "Public Read Alerts" ON sih26078_alerts FOR SELECT USING (true);

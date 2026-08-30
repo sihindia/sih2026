@@ -1,0 +1,28 @@
+[
+  {
+    "course_id": "MOES-CRS-2026-001",
+    "course_title": "Advanced Doppler Weather Radar (DWR) Operational Forecasting & Dual-Pol Maintenance",
+    "target_roles": "Meteorologist Grade-I, Radar Maintenance Engineers & Aviation Forecasters",
+    "enrolled_trainees_count": 45,
+    "lead_trainer_assigned": "Dr. S. K. Roy (Chief Radar Scientist, IMD Pune)",
+    "course_modules_count": 8,
+    "core_syllabus": "DWR Polarimetry (ZDR, KDP, RhoHV), Mesocyclone Detection, Dual-Pol Attenuation Correction & S-Band Transmitter Tuning",
+    "assessment_format": "50-Question Proctored MCQ + Live Radar Diagnostic Lab",
+    "average_cohort_score_pct": 88.4,
+    "certification_issued": "ISO-9001:2015 MoES/IMD Certified DWR Radar Specialist Credential",
+    "status": "ACTIVE_CERTIFIED_COHORT"
+  },
+  {
+    "course_id": "MOES-CRS-2026-042",
+    "course_title": "High-Performance Numerical Weather Prediction (NWP) Ensemble Modeling with WRF-ARW",
+    "target_roles": "NWP Modelers, Computational Atmospheric Scientists & Disaster Analysts",
+    "enrolled_trainees_count": 38,
+    "lead_trainer_assigned": "Prof. Ananya Sharma (NCMRWF Supercomputing Lead)",
+    "course_modules_count": 10,
+    "core_syllabus": "Meso-Scale Domain Nesting, Microphysics Parameterizations (Thompson/Morrison), Data Assimilation (WRF-DA) & MPI Parallelization",
+    "assessment_format": "40-Question MCQ + High-Performance Cluster Workflow Project",
+    "average_cohort_score_pct": 91.2,
+    "certification_issued": "MoES Advanced NWP Computational Modeling Certification",
+    "status": "ACTIVE_CERTIFIED_COHORT"
+  }
+]

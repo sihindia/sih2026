@@ -1,0 +1,41 @@
+[
+  {
+    "scene_id": "SCENE-3D-AS-MON01",
+    "scene_title": "Southwest Monsoon Somali Current & Arabian Sea Mini-Warm Pool 3D Co-Visualization",
+    "theatre_domain": "Western Arabian Sea & Socotra Gyre (8\u00b0N - 16\u00b0N, 52\u00b0E - 68\u00b0E)",
+    "numerical_model_source": "INCOIS Regional Ocean Modeling System (ROMS 3D 1/12\u00b0 High-Resolution)",
+    "insitu_instruments_overlaid": "Active ARGO Float WMO #2902194 + Slocum Glider INCOIS-GL04 (1,000m Dive)",
+    "rendered_isosurfaces": "3D Isosurface D26 = 26.0\u00b0C (Thermocline Depth: 65m) + D20 = 20.0\u00b0C",
+    "vector_flow_streamlines": "3D Current Vector Particles displaying the Great Whirl (Surface velocity: 1.82 m/s)",
+    "vertical_exaggeration_factor": "25x (Optimal for Continental Shelf to Deep Abyssal Plain)",
+    "model_vs_insitu_bias_c": 0.14,
+    "rendering_fps": 60,
+    "webgl_engine_status": "3D_VOLUMETRIC_CO_VISUALIZATION_ACTIVE"
+  },
+  {
+    "scene_id": "SCENE-3D-BOB-CYC02",
+    "scene_title": "Bay of Bengal Post-Monsoon Cyclone Stratification & Freshwater Barrier Layer",
+    "theatre_domain": "Northern Bay of Bengal (16\u00b0N - 22\u00b0N, 84\u00b0E - 92\u00b0E - Odisha & Bengal Coast)",
+    "numerical_model_source": "Hybrid Coordinate Ocean Model (HYCOM 3D Multi-Layer Assimilated)",
+    "insitu_instruments_overlaid": "BGC-Argo Float WMO #2902230 (Chlorophyll-a & O2) + OMNI Mooring BD08",
+    "rendered_isosurfaces": "Salinity Halocline Barrier Layer (31.0 PSU Isosurface) + 28.5\u00b0C Cyclone Fuel Layer",
+    "vector_flow_streamlines": "East India Coastal Current (EICC) southward jet (0.95 m/s) with mesoscale cyclonic eddies",
+    "vertical_exaggeration_factor": "30x (Highlighting River Ganga-Brahmaputra Low-Salinity Cap)",
+    "model_vs_insitu_bias_c": 0.18,
+    "rendering_fps": 60,
+    "webgl_engine_status": "3D_VOLUMETRIC_CO_VISUALIZATION_ACTIVE"
+  },
+  {
+    "scene_id": "SCENE-3D-AND-INT03",
+    "scene_title": "Andaman Sea Internal Solitary Wave & Deep Submarine Ridge Thermocline Dynamics",
+    "theatre_domain": "Andaman Basin & Ten Degree Channel (6\u00b0N - 14\u00b0N, 91\u00b0E - 96\u00b0E)",
+    "numerical_model_source": "Modular Ocean Model 6 (MOM6) 3D Non-Boussinesq Bathymetric Grid",
+    "insitu_instruments_overlaid": "Deep Ocean Glider INCOIS-GL08 + High-Frequency Coastal ADCP Moorings",
+    "rendered_isosurfaces": "Internal Pycnocline Oscillation Isosurfaces displaced by up to 80m vertically",
+    "vector_flow_streamlines": "Tidal baroclinic bore generation over Alcock & Sewell Submarine Seamounts",
+    "vertical_exaggeration_factor": "40x (Resolving Steep Submarine Volcanic Topography)",
+    "model_vs_insitu_bias_c": 0.16,
+    "rendering_fps": 58,
+    "webgl_engine_status": "3D_VOLUMETRIC_CO_VISUALIZATION_ACTIVE"
+  }
+]

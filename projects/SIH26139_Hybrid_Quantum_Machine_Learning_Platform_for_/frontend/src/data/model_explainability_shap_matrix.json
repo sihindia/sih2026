@@ -1,0 +1,17 @@
+[
+  {
+    "biomarker": "BRCA1 Hypermethylation",
+    "quantum_gradient_importance": 0.942,
+    "clinical_significance": "Crucial DNA Repair Suppression"
+  },
+  {
+    "biomarker": "HER2 Copy Number Variation",
+    "quantum_gradient_importance": 0.885,
+    "clinical_significance": "Receptor Tyrosine Kinase Signal"
+  },
+  {
+    "biomarker": "ctDNA Methylation Index",
+    "quantum_gradient_importance": 0.812,
+    "clinical_significance": "Liquid Biopsy Tumor Shedding"
+  }
+]

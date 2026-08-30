@@ -1,0 +1,17 @@
+[
+  {
+    "metric_name": "AI Facial Attendance Verification",
+    "accuracy_pct": 99.4,
+    "anomaly_flag": "0 Proxy Records Detected"
+  },
+  {
+    "metric_name": "CCTV Motion & Occupancy Index",
+    "accuracy_pct": 98.2,
+    "anomaly_flag": "Normal Activity in Dining & Wards"
+  },
+  {
+    "metric_name": "Live VC Latency & Integrity",
+    "accuracy_pct": 100.0,
+    "anomaly_flag": "End-to-End Encrypted WebRTC Stream"
+  }
+]

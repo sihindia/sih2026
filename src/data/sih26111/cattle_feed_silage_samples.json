@@ -1,0 +1,32 @@
+[
+  {
+    "sample_id": "FEED-SMP-2026-001",
+    "farm_location": "Anand District Milk Cooperative Union (Amul Member, Gujarat)",
+    "sample_type": "Compound Cattle Feed Pellets (Type-II ISI 2052)",
+    "crude_protein_pct": 21.4,
+    "moisture_pct": 8.2,
+    "ndf_fiber_pct": 31.8,
+    "tdn_energy_pct": 72.5,
+    "urea_adulteration": "NEGATIVE (Clean \u2022 No Synthetic Urea)",
+    "sand_silica_pct": 1.2,
+    "aflatoxin_b1_ppb": 4.5,
+    "farmer_advisory": "High Quality: Feed 2.5 kg/day with 15 kg Green Fodder for Gir Cows producing 12+ L/day",
+    "quality_grade": "PREMIUM_GRADE_A",
+    "status": "TEST_COMPLETED_CERTIFIED"
+  },
+  {
+    "sample_id": "FEED-SMP-2026-042",
+    "farm_location": "Karnal Dairy Cluster, Haryana (NDRI Vicinity)",
+    "sample_type": "Whole-Plant Maize (Corn) Bunker Silage",
+    "crude_protein_pct": 8.8,
+    "moisture_pct": 66.5,
+    "ndf_fiber_pct": 42.0,
+    "tdn_energy_pct": 68.0,
+    "urea_adulteration": "N/A (Natural Fermented Fodder)",
+    "silage_ph": 3.85,
+    "flieg_fermentation_score": 92.0,
+    "farmer_advisory": "Optimal Fermentation (Lactic Acid 6.4%): Safe for immediate Murrah Buffalo feeding",
+    "quality_grade": "EXCELLENT_FERMENTATION",
+    "status": "TEST_COMPLETED_CERTIFIED"
+  }
+]

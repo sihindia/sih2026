@@ -1,0 +1,35 @@
+[
+  {
+    "record_id": "REC-VAR-081",
+    "khasra": "412/1",
+    "khata": "88",
+    "owner": "Ramprasad Shriram Tripathi",
+    "local_area": "2 Bigha 4 Biswa",
+    "metric_area_ha": 0.556,
+    "land_type": "Chahi (Irrigated Double Crop)",
+    "ocr_conf": "97.4%",
+    "ulpin": "09-182-0412-1001"
+  },
+  {
+    "record_id": "REC-VAR-082",
+    "khasra": "412/2",
+    "khata": "88",
+    "owner": "Ghanshyam Shriram Tripathi",
+    "local_area": "1 Bigha 18 Biswa",
+    "metric_area_ha": 0.481,
+    "land_type": "Chahi (Irrigated Double Crop)",
+    "ocr_conf": "96.8%",
+    "ulpin": "09-182-0412-1002"
+  },
+  {
+    "record_id": "REC-PAT-094",
+    "khasra": "104",
+    "khata": "19",
+    "owner": "Mohammad Aslam Sheikh",
+    "local_area": "3 Katha 12 Dhur",
+    "metric_area_ha": 0.045,
+    "land_type": "Abadi (Residential Homestead)",
+    "ocr_conf": "91.2%",
+    "ulpin": "10-214-0104-0019"
+  }
+]

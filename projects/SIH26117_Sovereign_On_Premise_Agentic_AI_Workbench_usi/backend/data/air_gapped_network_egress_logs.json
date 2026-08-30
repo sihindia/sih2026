@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2026-08-30T02:45:00Z",
+    "interface": "eth0 (On-Premise LAN)",
+    "direction": "OUTBOUND_EGRESS",
+    "packets_allowed": 0,
+    "packets_blocked": 14,
+    "status": "AIR_GAP_ENFORCED_ZERO_BYTES"
+  },
+  {
+    "timestamp": "2026-08-30T02:45:10Z",
+    "interface": "local_gpu_cluster",
+    "direction": "INTRA_NODE",
+    "packets_allowed": 48200,
+    "packets_blocked": 0,
+    "status": "LOCAL_COMPUTE_ACTIVE"
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "capture_id": "RF-CAP-2026-001",
+    "signal_title": "UHF Tactical Satellite Downlink (.IQ Stream)",
+    "file_name": "SAT_UHF_DOWNLINK_437M.iq",
+    "file_format": "Raw Complex Float32 (.IQ)",
+    "center_frequency_mhz": 437.5,
+    "sampling_rate_msps": 2.4,
+    "bandwidth_khz": 600.0,
+    "measured_snr_db": 22.4,
+    "detected_modulation": "16-QAM (Quadrature Amplitude Modulation)",
+    "symbol_rate_kbaud": 1200,
+    "deinterleaving_mode": "Convolutional Interleaver (I=16, J=8)",
+    "fec_scheme": "Viterbi R=1/2 (K=7) + Reed-Solomon RS(255,223)",
+    "sync_header": "0x1ACFFC1D (CCSDS Standard)",
+    "payload_extracted": "1024 Bytes Telemetry Frame Decoded (Nav State + Sensor Telemetry)",
+    "status": "SIGNAL_DEMODULATED_PAYLOAD_EXTRACTED"
+  },
+  {
+    "capture_id": "RF-CAP-2026-042",
+    "signal_title": "VHF Tactical Ground-to-Air Military Radio (.wav)",
+    "file_name": "VHF_TACTICAL_AIR_121M.wav",
+    "file_format": "PCM 24-bit Baseband (.wav)",
+    "center_frequency_mhz": 121.8,
+    "sampling_rate_msps": 0.48,
+    "bandwidth_khz": 50.0,
+    "measured_snr_db": 18.2,
+    "detected_modulation": "QPSK (Quadrature Phase Shift Keying)",
+    "symbol_rate_kbaud": 25,
+    "deinterleaving_mode": "Block De-Interleaver (32x16 Matrix)",
+    "fec_scheme": "Short-Constrained Viterbi Soft Decoding",
+    "sync_header": "0xEB90 (STANAG Standard)",
+    "payload_extracted": "Encrypted Tactical Airway Coordinate Waypoints",
+    "status": "SIGNAL_DEMODULATED_PAYLOAD_EXTRACTED"
+  }
+]

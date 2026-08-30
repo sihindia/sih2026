@@ -1,0 +1,38 @@
+[
+  {
+    "supply_chain_layer": "1. Farmer Direct Realization",
+    "traditional_channel_pct": "32.0%",
+    "direct_d2c_model_pct": "82.5%",
+    "net_impact": "+158% Farmer Take-Home Earnings"
+  },
+  {
+    "supply_chain_layer": "2. Village Trader / Aggregator",
+    "traditional_channel_pct": "12.0%",
+    "direct_d2c_model_pct": "0.0%",
+    "net_impact": "Middleman Fee Eliminated"
+  },
+  {
+    "supply_chain_layer": "3. APMC Commission Agent (Arhtiya)",
+    "traditional_channel_pct": "8.5%",
+    "direct_d2c_model_pct": "0.0%",
+    "net_impact": "Middleman Fee Eliminated"
+  },
+  {
+    "supply_chain_layer": "4. Secondary Inter-State Wholesaler",
+    "traditional_channel_pct": "18.0%",
+    "direct_d2c_model_pct": "0.0%",
+    "net_impact": "Middleman Fee Eliminated"
+  },
+  {
+    "supply_chain_layer": "5. Cold Chain Multi-Modal Logistics",
+    "traditional_channel_pct": "6.5%",
+    "direct_d2c_model_pct": "7.5%",
+    "net_impact": "Optimized Temperature-Controlled Reefer"
+  },
+  {
+    "supply_chain_layer": "6. Final Consumer Price Paid",
+    "traditional_channel_pct": "100.0%",
+    "direct_d2c_model_pct": "76.0%",
+    "net_impact": "24% Direct Consumer Living Cost Savings"
+  }
+]

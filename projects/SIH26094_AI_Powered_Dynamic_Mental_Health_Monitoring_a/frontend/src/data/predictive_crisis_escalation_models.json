@@ -1,0 +1,14 @@
+[
+  {
+    "metric": "Intimidation Pressure Score",
+    "factor": "Tracks frequency of third-party threats and accused proximity after bail"
+  },
+  {
+    "metric": "Judicial Delay Despair Index",
+    "factor": "Correlates court hearing postponements with sudden drops in victim compliance and hope"
+  },
+  {
+    "metric": "Social Isolation Quotient",
+    "factor": "Assesses community ostracism, denial of employment, and access to common property resources"
+  }
+]

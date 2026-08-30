@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "NIRMAN-CASE-001",
+    "project_name": "Duliajan Secondary Gas Gathering Station (SGGS-III Expansion)",
+    "discipline": "Mechanical & Piping",
+    "ingested_input_type": "Free-Text Site Diary / Voice Log",
+    "raw_field_log": "Fit-up & TIG welding completed for 8-inch high pressure condensate manifold line 12 at 4:30 PM with 12 welders",
+    "matched_wbs_activity_id": "SGGS3-PIP-L5-0482",
+    "matched_wbs_activity_name": "Erect & Weld 8\" High Pressure Condensate Header Line 12",
+    "semantic_matching_confidence": 98.4,
+    "actual_start_date": "2026-08-15",
+    "actual_finish_date": "2026-08-29",
+    "schedule_variance_days": -2,
+    "p6_update_status": "AUTO_LINKED_TO_P6",
+    "supervisor_signoff": "R. Saikia (Lead Piping Supervisor)"
+  },
+  {
+    "case_id": "NIRMAN-CASE-042",
+    "project_name": "Numaligarh-Siliguri Crude Pipeline Booster Station",
+    "discipline": "Civil & Structural",
+    "ingested_input_type": "Discipline Excel Spreadsheet (Civil_Progress_W34.xlsx)",
+    "raw_field_log": "Pump Foundation P-101A/B concrete pouring M35 completed (42 cu.m) and curing initiated",
+    "matched_wbs_activity_id": "NRL-CIV-L5-0194",
+    "matched_wbs_activity_name": "Cast In-Situ M35 Raft & Pedestal for Main Booster Pumps P-101A/B",
+    "semantic_matching_confidence": 99.1,
+    "actual_start_date": "2026-08-20",
+    "actual_finish_date": "2026-08-28",
+    "schedule_variance_days": 0,
+    "p6_update_status": "AUTO_LINKED_TO_P6",
+    "supervisor_signoff": "D. Baruah (Senior Civil Engineer)"
+  }
+]

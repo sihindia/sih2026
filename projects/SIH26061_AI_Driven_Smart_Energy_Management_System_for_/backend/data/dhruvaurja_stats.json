@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Fuel Consumption",
+    "value": "-38.8% Saved",
+    "trend": "Reduces Chartered Icebreaker Tanker Runs"
+  },
+  {
+    "metric": "Life Support Power",
+    "value": "100% Guaranteed",
+    "trend": "Zero Curtailment of Living Modules"
+  },
+  {
+    "metric": "Load Forecast Accuracy",
+    "value": "97.6% R\u00b2 Fit",
+    "trend": "Temporal Fusion Transformer 24h AI"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "train_number": "22436",
+    "train_name": "Vande Bharat Express (New Delhi -> Varanasi)",
+    "locomotive_type": "Trainset-18 Distributed Traction (16 Coaches)",
+    "current_speed_kmh": 128.5,
+    "max_permissible_speed_kmh": 130.0,
+    "current_block_section": "Tundla \u2013 Etawah (Km 1142/08 Down Line)",
+    "forward_headway_km": 4.8,
+    "temporary_speed_restrictions": "None (Green Corridor Ahead)",
+    "ntes_static_delay": "+8 mins static",
+    "dynamic_ai_eta": "+2 mins dynamic (On-Time Predicted)",
+    "prediction_confidence_pct": 98.4,
+    "schedule_recovery_slack_mins": 18,
+    "status": "RUNNING_ON_TIME_PREDICTED"
+  },
+  {
+    "train_number": "12952",
+    "train_name": "Tejas Rajdhani Express (New Delhi -> Mumbai Central)",
+    "locomotive_type": "WAP-7 Twin Co-Co (6000 HP)",
+    "current_speed_kmh": 118.2,
+    "max_permissible_speed_kmh": 130.0,
+    "current_block_section": "Kota \u2013 Ratlam (Km 844/12)",
+    "forward_headway_km": 6.2,
+    "temporary_speed_restrictions": "30 km/h Caution on Bridge 114 Rehabilitation",
+    "ntes_static_delay": "+18 mins static",
+    "dynamic_ai_eta": "+11 mins dynamic (Slack Absorption In-Progress)",
+    "prediction_confidence_pct": 97.1,
+    "schedule_recovery_slack_mins": 24,
+    "status": "SLACK_RECOVERY_IN_PROGRESS"
+  },
+  {
+    "train_number": "12301",
+    "train_name": "Howrah Rajdhani Express (Howrah -> New Delhi)",
+    "locomotive_type": "WAP-7 Push-Pull Configuration",
+    "current_speed_kmh": 112.0,
+    "max_permissible_speed_kmh": 130.0,
+    "current_block_section": "Gaya \u2013 Pt. Deen Dayal Upadhyaya Grand Chord",
+    "forward_headway_km": 5.5,
+    "temporary_speed_restrictions": "None (Automatic Signalling Green Wave)",
+    "ntes_static_delay": "+5 mins static",
+    "dynamic_ai_eta": "ON-TIME (10:04 AM arrival predicted)",
+    "prediction_confidence_pct": 96.8,
+    "schedule_recovery_slack_mins": 20,
+    "status": "FULL_SCHEDULE_RECOVERY"
+  }
+]

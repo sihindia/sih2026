@@ -80,8 +80,22 @@ import {
   Factory,
   Sprout,
   Bug,
-  LineChart
+  LineChart,
+  Bus
 } from 'lucide-react';
+
+import sih26028Trains from '../data/sih26028/coaching_trains_telemetry.json';
+import sih26028Itineraries from '../data/sih26028/station_itineraries_dynamic_eta.json';
+import sih26028Occupancy from '../data/sih26028/junction_platform_occupancy.json';
+import sih26028Multimodal from '../data/sih26028/multimodal_feeder_and_alerts.json';
+import sih26028Tsr from '../data/sih26028/tsr_and_weather_bottlenecks.json';
+
+import sih26009Mines from '../data/sih26009/manganese_mines.json';
+import sih26009Shortfalls from '../data/sih26009/manganese_mines_and_production_shortfalls.json';
+import sih26009Satellite from '../data/sih26009/satellite_spectral_exploration_indices.json';
+import sih26009Fleet from '../data/sih26009/hemm_machinery_and_dispatch_fleet.json';
+import sih26009Reserves from '../data/sih26009/borehole_krige_reserves_and_blending.json';
+import sih26009Blast from '../data/sih26009/blast_design_and_shortfall_remedies.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -365,6 +379,671 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
   }
 
         /* =========================================================================
+     MINISTRY OF STEEL / MOIL LIMITED / SIH26009 BHUDHATRI 360
+     Manganese Reserves Space Sensing, 3D Kriging & Shortfall Remediation
+     ========================================================================= */
+  if (psId === 'SIH26009') {
+    const mines = sih26009Mines;
+    const shortfalls = sih26009Shortfalls;
+    const satelliteData = sih26009Satellite;
+    const fleet = sih26009Fleet;
+    const reservesData = sih26009Reserves;
+    const blastData = sih26009Blast;
+
+    const [selectedMine, setSelectedMine] = React.useState(mines[0]);
+    const [tab, setTab] = React.useState<'space' | 'reserves' | 'blending' | 'fleet' | 'blast' | 'dispatch'>('space');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
+
+    // Blending Optimizer Interactive State
+    const [highGradePct, setHighGradePct] = React.useState(60);
+    const lowGradePct = 100 - highGradePct;
+    const blendedMn = Number(((highGradePct / 100) * 48.5 + (lowGradePct / 100) * 42.0).toFixed(2));
+    const blendedP = Number(((highGradePct / 100) * 0.08 + (lowGradePct / 100) * 0.14).toFixed(3));
+    const blendedSiO2 = Number(((highGradePct / 100) * 7.4 + (lowGradePct / 100) * 11.2).toFixed(2));
+    const isSmelterCompliant = blendedMn >= 45.0 && blendedP <= 0.12;
+
+    // Blast Designer Interactive State
+    const [blastBurden, setBlastBurden] = React.useState(3.2);
+    const [blastSpacing, setBlastSpacing] = React.useState(3.8);
+    const [blastCharge, setBlastCharge] = React.useState(0.54);
+    const [blastResult, setBlastResult] = React.useState<any>(null);
+
+    // Shortfall Remediation Interactive State
+    const [remediationActive, setRemediationActive] = React.useState(false);
+
+    const runBlastSim = () => {
+      const fragD80 = Math.round(180 + (blastBurden * blastSpacing * 15) - (blastCharge * 40));
+      const ppvVib = Number((3.2 + (blastCharge * 2.8) - (blastBurden * 0.4)).toFixed(2));
+      setBlastResult({
+        fragD80,
+        ppvVib,
+        verdict: fragD80 <= 250 && ppvVib <= 5.0 ? 'OPTIMAL (PRIMARY CRUSHER READY & SAFE PPV)' : 'SUB-OPTIMAL (HIGH OVERSIZE BOULDERS)',
+        flyrockRadius: Math.round(200 + blastCharge * 80)
+      });
+    };
+
+    const handleTriggerRemediation = () => {
+      setRemediationActive(true);
+      setTimeout(() => setRemediationActive(false), 5000);
+    };
+
+    const currentShortfall = shortfalls.find((s: any) => s.mine_id === selectedMine.mine_id) || shortfalls[0];
+    const currentUnfc = reservesData.unfc_reserves.find((u: any) => u.mine_id === selectedMine.mine_id) || reservesData.unfc_reserves[0];
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF STEEL • MOIL LIMITED (BHUDHATRI 360)",
+        desc: "Space Technology & Satellite Remote Sensing, 3D Geostatistical Kriging, Real-Time HEMM Telematics & Blast Furnace Supply Pacing",
+        tabSpace: "🛰️ Satellite Spectral & SAR Exploration",
+        tabReserves: "⛏️ 3D UNFC Reserves & Boreholes",
+        tabBlending: "🧪 Smelter Grade Blending Optimizer",
+        tabFleet: "🚜 HEMM Machinery & Telematics",
+        tabBlast: "💥 Blast Designer & Shortfall AI",
+        tabDispatch: "🏭 MOIL Command & Steel Pacing",
+      },
+      hi: {
+        tag: "इस्पात मंत्रालय • MOIL लिमिटेड (भू-धात्री 360)",
+        desc: "अंतरिक्ष प्रौद्योगिकी, उपग्रह स्पेक्ट्रल रिमोट सेंसिंग, 3D भू-सांख्यिकीय क्रिगिंग, HEMM टेलीमैटिक्स व उत्पादन क्षतिपूर्ति",
+        tabSpace: "🛰️ उपग्रह अन्वेषण व SAR स्थिरता",
+        tabReserves: "⛏️ 3D UNFC भंडार व बोरहोल",
+        tabBlending: "🧪 अयस्क ग्रेड सम्मिश्रण (ब्लास्ट फर्नेस)",
+        tabFleet: "🚜 भारी खनन मशीनरी (HEMM)",
+        tabBlast: "💥 ब्लास्ट डिजाइन व क्षतिपूर्ति AI",
+        tabDispatch: "🏭 MOIL कमान केंद्र व स्टील आपूर्ति",
+      },
+      mr: {
+        tag: "पोलाद मंत्रालय • मॉइल लिमिटेड (भू-धात्री 360)",
+        desc: "अंतराळ तंत्रज्ञान, सॅटेलाइट रिमोट सेन्सिंग, 3D खनिज साठा अंदाज, HEMM यंत्रसामग्री व्यवस्थापन आणि उत्पादन भरपाई",
+        tabSpace: "🛰️ उपग्रह अन्वेषण व SAR स्थैर्य",
+        tabReserves: "⛏️ 3D UNFC खनिज साठा व बोअरहोल",
+        tabBlending: "🧪 धातू मिश्रण ऑप्टिमायझर",
+        tabFleet: "🚜 खाणकाम यंत्रसामग्री (HEMM)",
+        tabBlast: "💥 ब्लास्ट डिझाइन व उत्पादन भरपाई",
+        tabDispatch: "🏭 मॉइल कमांड सेंटर व पुरवठा",
+      }
+    }[lang];
+
+    return (
+      <div className="space-y-6">
+        {/* Top Header */}
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
+          <div>
+            <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 font-bold mb-1">
+              <Pickaxe className="w-4 h-4 text-cyan-400" />
+              <span>{t.tag} • {psId}</span>
+            </div>
+            <h3 className="text-xl font-black">{ps.title}</h3>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
+          </div>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-cyan-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-cyan-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold">
+          {[
+            { id: 'space', label: t.tabSpace },
+            { id: 'reserves', label: t.tabReserves },
+            { id: 'blending', label: t.tabBlending },
+            { id: 'fleet', label: t.tabFleet },
+            { id: 'blast', label: t.tabBlast },
+            { id: 'dispatch', label: t.tabDispatch },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-cyan-500 text-slate-950 font-black shadow-lg shadow-cyan-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        {/* TAB 1: SATELLITE SPECTRAL & SAR EXPLORATION */}
+        {tab === 'space' && (
+          <div className="space-y-6">
+            {/* Mine Selector */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {mines.map((m) => (
+                <button
+                  key={m.mine_id}
+                  onClick={() => setSelectedMine(m)}
+                  className={`p-4 rounded-2xl border text-left transition-all ${
+                    selectedMine.mine_id === m.mine_id
+                      ? 'bg-cyan-950/60 border-cyan-500 text-white shadow-lg ring-1 ring-cyan-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-cyan-400">{m.mine_id}</span>
+                    <span className="text-emerald-400">{m.mn_grade_pct}% Mn</span>
+                  </div>
+                  <div className="text-xs font-bold text-white mt-1 line-clamp-1">{m.mine_name}</div>
+                  <div className="text-[11px] text-slate-400 font-mono mt-0.5">{m.district}, {m.state}</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-purple-400">Reserves: {m.proven_reserves_million_tonnes} MT</span>
+                    <span className={m.status.includes('SHORTFALL') ? 'text-amber-400 font-bold' : 'text-emerald-400'}>
+                      {m.current_production_mt} MT/mo
+                    </span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Earth Observation Remote Sensing Deep-Dive */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div>
+                    <h4 className="text-white font-bold text-sm flex items-center gap-2">
+                      <Satellite className="w-4 h-4 text-cyan-400" />
+                      <span>Multi-Spectral &amp; SAR Space Telemetry</span>
+                    </h4>
+                    <p className="text-slate-400 text-xs font-mono mt-0.5">{selectedMine.mine_name} • Sausar Orogenic Belt</p>
+                  </div>
+                  <span className="px-3 py-1 bg-cyan-950 text-cyan-300 border border-cyan-800 rounded-full text-xs font-mono font-bold">
+                    Anomaly Score: {selectedMine.satellite_swir_anomaly_score}
+                  </span>
+                </div>
+
+                {/* Simulated Hyperspectral False-Color Band View */}
+                <div className="relative h-56 bg-slate-950 rounded-2xl border-2 border-dashed border-cyan-900/60 p-4 overflow-hidden flex flex-col justify-between">
+                  <div className="flex justify-between text-[10px] font-mono text-slate-400 z-10">
+                    <span>SENSOR: Sentinel-2 MSI (B11/B12 SWIR) + Landsat-9 TIRS</span>
+                    <span className="text-emerald-400">Resolution: 20m Multi-Spectral</span>
+                  </div>
+
+                  {/* Spectral Anomaly Highlights */}
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <div className="w-48 h-32 rounded-3xl bg-gradient-to-r from-purple-900/40 via-cyan-900/50 to-emerald-900/40 border border-cyan-400/60 flex flex-col items-center justify-center p-3 text-center animate-pulse">
+                      <Sparkles className="w-6 h-6 text-cyan-300 mb-1" />
+                      <span className="text-xs font-mono font-bold text-white">MGAI Anomaly Detected</span>
+                      <span className="text-[10px] text-cyan-300 font-mono">Pyrolusite / Braunite Gossan Outcrop</span>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-between text-[10px] font-mono text-slate-400 border-t border-slate-900 pt-2 z-10">
+                    <span>Apparent Thermal Inertia (ATI): High Manganiferous Damping</span>
+                    <span className="text-purple-400 font-bold">D-InSAR Creep: &lt;1.2mm (Stable)</span>
+                  </div>
+                </div>
+
+                {/* Spectral Sensors Breakdown */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {satelliteData.map((sat: any) => (
+                    <div key={sat.sensor} className="p-3 bg-slate-950 rounded-2xl border border-slate-800/80 space-y-1 text-xs">
+                      <span className="text-cyan-400 font-mono text-[10px] font-bold block">{sat.sensor}</span>
+                      <div className="text-white font-bold text-[11px]">{sat.index_name}</div>
+                      <p className="text-slate-400 text-[10px] leading-relaxed line-clamp-2">{sat.spectral_response}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Hydro-Meteorology & Slope Stability */}
+              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs font-mono">
+                <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                  <Activity className="w-4 h-4 text-cyan-400" />
+                  <span>Sub-Surface &amp; Weather Infiltration</span>
+                </h4>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2.5">
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Pit Sump Saturated Water Level:</span>
+                    <strong className={selectedMine.pit_water_level_m > 3.0 ? 'text-rose-400 font-bold text-sm' : 'text-emerald-400'}>
+                      {selectedMine.pit_water_level_m} meters
+                    </strong>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">GPM Satellite Monsoon Rain Forecast:</span>
+                    <span className="text-cyan-300 font-bold">14.2 mm / 48 hrs</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">SMAP Soil Moisture Index:</span>
+                    <span className="text-purple-300 font-bold">0.42 m³/m³ (High Saturation)</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Sentinel-1 D-InSAR Pit Wall Slope:</span>
+                    <span className="text-emerald-400 font-bold">0.8mm/yr (Within Safe DGMS Limit)</span>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-cyan-950/40 rounded-2xl border border-cyan-900/60 text-cyan-200 text-[11px] leading-relaxed font-sans">
+                  💡 <strong>Early Inflow Interception</strong>: By pairing Sentinel-2 SWIR lineaments with GPM rain radar, MOIL dewatering engineers drain sumps 48 hours prior to storm crests, preventing bench washouts.
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: 3D UNFC RESERVES & BOREHOLE LOGS */}
+        {tab === 'reserves' && (
+          <div className="space-y-6 font-mono text-xs">
+            {/* UNFC Classification Summary Card */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="p-5 bg-slate-900 rounded-3xl border border-emerald-800/80 space-y-1">
+                <span className="text-slate-400 text-[10px] uppercase font-bold">PROVED RESERVES (UNFC 111)</span>
+                <span className="text-3xl font-black text-emerald-400 font-sans block">{currentUnfc.proved_111_mt} MT</span>
+                <span className="text-[10px] text-slate-400">Exploratory core drilling confirmed</span>
+              </div>
+              <div className="p-5 bg-slate-900 rounded-3xl border border-cyan-800/80 space-y-1">
+                <span className="text-slate-400 text-[10px] uppercase font-bold">PROBABLE RESERVES (UNFC 121)</span>
+                <span className="text-3xl font-black text-cyan-400 font-sans block">{currentUnfc.probable_121_mt} MT</span>
+                <span className="text-[10px] text-slate-400">Semi-detailed grid drilled</span>
+              </div>
+              <div className="p-5 bg-slate-900 rounded-3xl border border-purple-800/80 space-y-1">
+                <span className="text-slate-400 text-[10px] uppercase font-bold">INFERRED RESOURCES (UNFC 333)</span>
+                <span className="text-3xl font-black text-purple-400 font-sans block">{currentUnfc.inferred_333_mt} MT</span>
+                <span className="text-[10px] text-slate-400">Satellite SWIR &amp; geophysical anomaly</span>
+              </div>
+              <div className="p-5 bg-slate-900 rounded-3xl border border-amber-800/80 space-y-1">
+                <span className="text-slate-400 text-[10px] uppercase font-bold">KRIGING VARIANCE CONFIDENCE</span>
+                <span className="text-3xl font-black text-amber-400 font-sans block">{currentUnfc.krige_variance_confidence_pct}%</span>
+                <span className="text-[10px] text-slate-400">{currentUnfc.geological_formation}</span>
+              </div>
+            </div>
+
+            {/* Borehole Core Logs Table */}
+            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <FileText className="w-4 h-4 text-cyan-400" />
+                <span>Exploratory Diamond Core Drilling Assays (Indian Bureau of Mines Verified)</span>
+              </h4>
+
+              <div className="space-y-3">
+                {reservesData.boreholes.map((bh: any) => (
+                  <div key={bh.hole_id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                    <div className="flex flex-wrap justify-between items-center gap-2">
+                      <div>
+                        <span className="text-cyan-400 font-bold">{bh.hole_id}</span>
+                        <strong className="text-white ml-2 text-sm font-sans">{bh.mine}</strong>
+                        <span className="text-slate-500 text-xs ml-2">Total Depth: {bh.depth_m}m</span>
+                      </div>
+                      <div className="flex gap-4">
+                        <span className="text-emerald-400 font-bold">Mn: {bh.mn_pct}%</span>
+                        <span className="text-cyan-400 font-bold">Fe: {bh.fe_pct}%</span>
+                        <span className="text-amber-400 font-bold">SiO₂: {bh.sio2_pct}%</span>
+                        <span className="text-purple-400 font-bold">P: {bh.p_pct}%</span>
+                      </div>
+                    </div>
+                    <div className="text-[11px] text-slate-300 font-sans pt-1 border-t border-slate-900 flex justify-between items-center">
+                      <span>Lode Intercept: <strong>{bh.mn_intercept_start_m}m – {bh.mn_intercept_end_m}m (Thickness: {bh.thickness_m}m)</strong></span>
+                      <span className="text-slate-400 italic">{bh.lithology}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: SMELTER GRADE BLENDING OPTIMIZER */}
+        {tab === 'blending' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            {/* Blending Controls */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-5">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Sliders className="w-5 h-5 text-cyan-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">Linear Programming Ore Blending Solver</h4>
+                  <p className="text-slate-400 text-xs font-sans">Blend high-grade lodes with low-grade stockpiles to maximize yield</p>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-300">High-Grade Lode Ratio (Balaghat/Dongri Buzurg 48.5% Mn):</span>
+                  <span className="text-cyan-400 font-bold">{highGradePct}%</span>
+                </div>
+                <input
+                  type="range"
+                  min="20"
+                  max="90"
+                  value={highGradePct}
+                  onChange={(e) => setHighGradePct(Number(e.target.value))}
+                  className="w-full accent-cyan-500 cursor-pointer"
+                />
+                <div className="flex justify-between text-[10px] text-slate-500">
+                  <span>20% High-Grade (Max Stockpile Disposal)</span>
+                  <span>60% (Optimal Smelter Feed)</span>
+                  <span>90% (Premium Export Grade)</span>
+                </div>
+              </div>
+
+              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 font-sans text-xs">
+                <span className="text-[10px] text-slate-500 uppercase font-mono font-bold block">CURRENT STOCKPILE BLENDING RATIO:</span>
+                <div className="flex justify-between">
+                  <span>Premium High-Grade Ore:</span>
+                  <strong className="text-cyan-400 font-mono">{highGradePct}% (48.5% Mn, 0.08% P)</strong>
+                </div>
+                <div className="flex justify-between">
+                  <span>Low-Grade Siliceous Stockpile:</span>
+                  <strong className="text-amber-400 font-mono">{lowGradePct}% (42.0% Mn, 0.14% P)</strong>
+                </div>
+              </div>
+
+              <div className={`p-4 rounded-2xl border ${
+                isSmelterCompliant
+                  ? 'bg-emerald-950/40 border-emerald-800 text-emerald-200'
+                  : 'bg-rose-950/40 border-rose-800 text-rose-200'
+              }`}>
+                <div className="flex items-center gap-2 font-sans font-bold text-xs mb-1">
+                  {isSmelterCompliant ? '✅ BLAST FURNACE SPECIFICATION COMPLIANT' : '⚠️ GANGUE REJECTION RISK'}
+                </div>
+                <p className="text-[11px] leading-relaxed font-sans">
+                  {isSmelterCompliant
+                    ? `Achieves ${blendedMn}% Mn with ${blendedP}% Phosphorus and ${blendedSiO2}% Silica. Directly meets SAIL Bhilai and Tata Steel blast furnace feed standards.`
+                    : `Phosphorus (${blendedP}%) or Silica (${blendedSiO2}%) exceeds blast furnace threshold. Increase high-grade ratio to at least 55%.`}
+                </p>
+              </div>
+            </div>
+
+            {/* Blending Output Gauges */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <span>Simulated Smelter Feed Chemistry</span>
+              </h4>
+
+              <div className="grid grid-cols-3 gap-3 text-center">
+                <div className="p-4 bg-slate-950 rounded-2xl border border-cyan-950">
+                  <span className="text-slate-500 text-[9px] block">MANGANESE (Mn)</span>
+                  <span className="text-2xl font-black text-cyan-400 mt-1 block">{blendedMn}%</span>
+                  <span className="text-[9px] text-slate-400">Spec: &ge;45.0%</span>
+                </div>
+                <div className="p-4 bg-slate-950 rounded-2xl border border-emerald-950">
+                  <span className="text-slate-500 text-[9px] block">PHOSPHORUS (P)</span>
+                  <span className="text-2xl font-black text-emerald-400 mt-1 block">{blendedP}%</span>
+                  <span className="text-[9px] text-slate-400">Spec: &le;0.12%</span>
+                </div>
+                <div className="p-4 bg-slate-950 rounded-2xl border border-amber-950">
+                  <span className="text-slate-500 text-[9px] block">SILICA (SiO₂)</span>
+                  <span className="text-2xl font-black text-amber-400 mt-1 block">{blendedSiO2}%</span>
+                  <span className="text-[9px] text-slate-400">Spec: &le;8.0%</span>
+                </div>
+              </div>
+
+              {/* Economic Savings */}
+              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-xs font-sans">
+                <div className="text-white font-bold">MOIL Commercial Valuation Impact</div>
+                <div className="flex justify-between text-slate-300">
+                  <span>Stockpile Waste Monetization:</span>
+                  <strong className="text-emerald-400 font-mono">+₹4.85 Crore / Quarter</strong>
+                </div>
+                <div className="flex justify-between text-slate-300">
+                  <span>Slag Penalty Savings:</span>
+                  <strong className="text-cyan-400 font-mono">-₹1.20 Crore (Zero Rejections)</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: HEMM FLEET TELEMATICS */}
+        {tab === 'fleet' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {fleet.map((eq: any) => (
+                <div key={eq.equipment_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-cyan-400 font-bold">{eq.equipment_id}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{eq.type}</h4>
+                      <p className="text-[11px] text-slate-400">{eq.assigned_mine}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      {eq.operational_availability_pct}% Uptime
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Telemetry Status:</span>
+                      <strong className="text-emerald-400">{eq.status}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>CAN-Bus Vibration:</span>
+                      <span className="text-slate-300">0.038 g (Normal)</span>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Hydraulic Pressure:</span>
+                      <span className="text-cyan-400">320 Bar (Optimal)</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="p-4 bg-slate-900 rounded-3xl border border-slate-800 flex items-center justify-between">
+              <div>
+                <span className="text-cyan-400 font-bold block text-sm font-sans">Predictive HEMM Maintenance Dispatch</span>
+                <span className="text-slate-400 text-xs">AI forecasts hydraulic hose wear 36 hours prior to breakdown, eliminating sudden pit stops.</span>
+              </div>
+              <span className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-xl text-xs font-bold font-sans">
+                Fleet Availability: 92.4%
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: DIGITAL BLAST DESIGNER & SHORTFALL MITIGATION */}
+        {tab === 'blast' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            {/* Blast Pattern Controls */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-5">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Flame className="w-5 h-5 text-amber-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">Digital Blast Pattern Simulator</h4>
+                  <p className="text-slate-400 text-xs font-sans">Calculate optimal burden, spacing &amp; fragmentation for {selectedMine.mine_name}</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <div className="flex justify-between">
+                  <span className="text-slate-300">Burden (Distance to Free Face):</span>
+                  <span className="text-cyan-400 font-bold">{blastBurden} meters</span>
+                </div>
+                <input
+                  type="range"
+                  min="2.0"
+                  max="4.5"
+                  step="0.1"
+                  value={blastBurden}
+                  onChange={(e) => setBlastBurden(Number(e.target.value))}
+                  className="w-full accent-cyan-500"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <div className="flex justify-between">
+                  <span className="text-slate-300">Spacing (Distance Between Blast Holes):</span>
+                  <span className="text-emerald-400 font-bold">{blastSpacing} meters</span>
+                </div>
+                <input
+                  type="range"
+                  min="2.5"
+                  max="5.0"
+                  step="0.1"
+                  value={blastSpacing}
+                  onChange={(e) => setBlastSpacing(Number(e.target.value))}
+                  className="w-full accent-emerald-500"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <div className="flex justify-between">
+                  <span className="text-slate-300">Specific Charge (Powder Factor):</span>
+                  <span className="text-amber-400 font-bold">{blastCharge} kg/m³</span>
+                </div>
+                <input
+                  type="range"
+                  min="0.35"
+                  max="0.85"
+                  step="0.02"
+                  value={blastCharge}
+                  onChange={(e) => setBlastCharge(Number(e.target.value))}
+                  className="w-full accent-amber-500"
+                />
+              </div>
+
+              <button
+                onClick={runBlastSim}
+                className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-amber-500/20 transition-all"
+              >
+                Run AI Blast Fragmentation Simulation ➔
+              </button>
+            </div>
+
+            {/* Blast Results & Shortfall Recovery Action */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <h4 className="font-bold text-sm text-white font-sans flex items-center gap-2">
+                  <Activity className="w-4 h-4 text-cyan-400" />
+                  <span>Blast Outcome &amp; Safety Limits</span>
+                </h4>
+
+                {blastResult ? (
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-2 gap-3 text-center">
+                      <div className="p-3 bg-slate-950 rounded-2xl border border-cyan-950">
+                        <span className="text-slate-500 text-[9px] block">D80 FRAGMENTATION</span>
+                        <span className="text-2xl font-black text-cyan-400 mt-0.5 block">{blastResult.fragD80} mm</span>
+                        <span className="text-[9px] text-slate-400">Crusher Limit: &le;300mm</span>
+                      </div>
+                      <div className="p-3 bg-slate-950 rounded-2xl border border-emerald-950">
+                        <span className="text-slate-500 text-[9px] block">PPV GROUND VIBRATION</span>
+                        <span className="text-2xl font-black text-emerald-400 mt-0.5 block">{blastResult.ppvVib} mm/s</span>
+                        <span className="text-[9px] text-slate-400">DGMS Limit: &le;5.0 mm/s</span>
+                      </div>
+                    </div>
+                    <div className="p-3 bg-emerald-950/40 border border-emerald-800 rounded-2xl flex justify-between items-center text-xs font-sans">
+                      <strong className="text-emerald-300">{blastResult.verdict}</strong>
+                      <span className="text-slate-400 font-mono text-[10px]">Standoff: {blastResult.flyrockRadius}m</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="py-12 text-center text-slate-500 font-sans">
+                    Click "Run AI Blast Fragmentation Simulation" to evaluate blast parameters.
+                  </div>
+                )}
+              </div>
+
+              {/* Active Shortfall Remediation Panel */}
+              <div className="bg-slate-900 p-6 rounded-3xl border border-amber-800/80 space-y-3 font-sans">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-amber-400 text-[10px] uppercase font-bold font-mono">ACTIVE PRODUCTION SHORTFALL REMEDIATION</span>
+                    <h4 className="text-sm font-bold text-white mt-0.5">{currentShortfall.mine_name}</h4>
+                  </div>
+                  <span className="px-2.5 py-0.5 bg-rose-950 text-rose-300 border border-rose-800 rounded-full text-[10px] font-mono font-bold">
+                    Deficit: -1,400 MT
+                  </span>
+                </div>
+
+                <p className="text-xs text-slate-300 bg-slate-950 p-3 rounded-2xl border border-slate-800 leading-relaxed">
+                  <strong>Root Cause:</strong> {currentShortfall.active_bottleneck}
+                </p>
+
+                <div className="p-3 bg-cyan-950/40 rounded-2xl border border-cyan-900/60 text-xs text-cyan-200 space-y-1">
+                  <div className="font-bold">⚡ AI Corrective Strategy:</div>
+                  <div>{currentShortfall.ai_corrective_action}</div>
+                </div>
+
+                <button
+                  onClick={handleTriggerRemediation}
+                  disabled={remediationActive}
+                  className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs transition-all disabled:opacity-50"
+                >
+                  {remediationActive ? '✅ Fleet Re-Deployed & Sump Pump Activated!' : 'Execute Dynamic Fleet Re-Deployment'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: MOIL COMMAND & STEEL DISPATCH */}
+        {tab === 'dispatch' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h4 className="font-bold text-base text-white font-sans">SAIL Bhilai Steel Plant (BSP)</h4>
+                    <p className="text-slate-400 text-xs font-sans">Indian Railways BOXN Rake Dispatch Link</p>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold">
+                    Paced 100%
+                  </span>
+                </div>
+                <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                  <div className="flex justify-between"><span>Monthly Quota:</span><strong className="text-white">24,000 MT</strong></div>
+                  <div className="flex justify-between"><span>Dispatched to Date:</span><strong className="text-cyan-400">23,800 MT (99.2%)</strong></div>
+                  <div className="flex justify-between"><span>Current Transit:</span><span className="text-amber-400">2 Rakes in Transit via SECR</span></div>
+                </div>
+              </div>
+
+              <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h4 className="font-bold text-base text-white font-sans">Tata Steel Jamshedpur / Ferro-Alloys</h4>
+                    <p className="text-slate-400 text-xs font-sans">Premium High-Dioxide Battery Grade</p>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold">
+                    Paced 100%
+                  </span>
+                </div>
+                <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                  <div className="flex justify-between"><span>Monthly Quota:</span><strong className="text-white">16,500 MT</strong></div>
+                  <div className="flex justify-between"><span>Dispatched to Date:</span><strong className="text-cyan-400">16,500 MT (100%)</strong></div>
+                  <div className="flex justify-between"><span>Grade Purity:</span><span className="text-emerald-400">52.0% Mn (&lt;0.08% P)</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 bg-gradient-to-r from-cyan-950 via-slate-900 to-purple-950 rounded-3xl border border-cyan-800/60 flex flex-col md:flex-row items-center justify-between gap-4 font-sans">
+              <div>
+                <span className="text-cyan-400 font-bold text-xs uppercase block font-mono">NATIONAL STEEL SELF-RELIANCE IMPACT</span>
+                <h4 className="text-lg font-black text-white mt-0.5">Zero Blast Furnace Throttling Across Indian Steel Mills</h4>
+                <p className="text-xs text-slate-300 mt-1 max-w-2xl leading-relaxed">
+                  By pairing satellite exploration with real-time shortfall recovery, MOIL ensures zero manganese import reliance, saving valuable foreign exchange for India.
+                </p>
+              </div>
+              <div className="flex gap-4 text-center shrink-0 font-mono">
+                <div className="p-3 bg-slate-950 rounded-2xl border border-cyan-900">
+                  <span className="text-xl font-black text-cyan-400">100%</span>
+                  <span className="text-[9px] block text-slate-400">Steel Rake Pacing</span>
+                </div>
+                <div className="p-3 bg-slate-950 rounded-2xl border border-emerald-900">
+                  <span className="text-xl font-black text-emerald-400">+19.0 MT</span>
+                  <span className="text-[9px] block text-slate-400">UNFC Reserves Mapped</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
+    );
+  }
+
+  /* =========================================================================
      2. CADASTRAL GIS, 3D ULPIN, DRONE MAPPING & LAND STACK (SIH26011 - SIH26014)
      ========================================================================= */
   if (psId === 'SIH26012') {
@@ -14637,61 +15316,111 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
      INDIAN RAILWAYS / SIH26028 DYNAMIC TRAIN ETA FORECASTING ENGINE
      ========================================================================= */
   if (psId === 'SIH26028') {
-    const trains = [
-      { id: "22436", name: "Vande Bharat Express (NDLS -> BSB)", loco: "Trainset-18 Distributed Power", speed: "128.5 km/h", maxSpeed: "130 km/h", section: "Tundla – Etawah (Km 1142/08)", headway: "4.8 Km", tsr: "None (Clear Block)", ntes: "+8 mins static", aiEta: "+2 mins dynamic", conf: "98.4%", slack: "18 mins", status: "RUNNING_ON_TIME_PREDICTED" },
-      { id: "12952", name: "Tejas Rajdhani Express (NDLS -> MMCT)", loco: "WAP-7 Twin-Co-Co", speed: "118.2 km/h", maxSpeed: "130 km/h", section: "Kota – Ratlam (Km 844/12)", headway: "6.2 Km", tsr: "30 km/h on Bridge 114", ntes: "+18 mins static", aiEta: "+11 mins dynamic", conf: "97.1%", slack: "24 mins", status: "SLACK_RECOVERY_IN_PROGRESS" },
-      { id: "12301", name: "Howrah Rajdhani Express (HWH -> NDLS)", loco: "WAP-7 Push-Pull", speed: "112.0 km/h", maxSpeed: "130 km/h", section: "Gaya – DDU Grand Chord", headway: "5.5 Km", tsr: "None (Green Corridor)", ntes: "+5 mins static", aiEta: "ON-TIME", conf: "96.8%", slack: "20 mins", status: "FULL_SCHEDULE_RECOVERY" }
-    ];
-
-    const itineraries: any = {
-      "22436": [
-        { code: "NDLS", name: "New Delhi", sch: "06:00 AM", staticDelay: "0 mins", aiEta: "06:00 AM", action: "On-Time Dispatch" },
-        { code: "CNB", name: "Kanpur Central", sch: "10:08 AM", staticDelay: "+8 mins", aiEta: "10:10 AM (+2m)", action: "Speed 128 km/h on HDN-1" },
-        { code: "PRYJ", name: "Prayagraj Junction", sch: "12:08 PM", staticDelay: "+12 mins", aiEta: "12:09 PM (+1m)", action: "Slack Absorption on Middle Third" },
-        { code: "BSB", name: "Varanasi Junction", sch: "02:00 PM", staticDelay: "+14 mins", aiEta: "02:00 PM (ON-TIME)", action: "Full 14-min Delay Recovered" }
-      ],
-      "12952": [
-        { code: "NDLS", name: "New Delhi", sch: "04:55 PM", staticDelay: "0 mins", aiEta: "04:55 PM", action: "On-Time Origin" },
-        { code: "KOTA", name: "Kota Junction", sch: "09:40 PM", staticDelay: "+18 mins", aiEta: "09:51 PM (+11m)", action: "TSR 30 km/h Deceleration" },
-        { code: "RTM", name: "Ratlam Junction", sch: "01:50 AM", staticDelay: "+18 mins", aiEta: "01:55 AM (+5m)", action: "Dynamic Slack Ingestion" },
-        { code: "MMCT", name: "Mumbai Central", sch: "08:35 AM", staticDelay: "+20 mins", aiEta: "08:37 AM (+2m)", action: "Clear Berth on PF #1" }
-      ]
-    };
-
-    const occupancy = [
-      { junc: "Kanpur Central (CNB)", pf: "PF #1 (Mainline)", train: "22436 Vande Bharat", status: "LOCKED_CLEAR", eta: "12 mins" },
-      { junc: "Prayagraj Junction (PRYJ)", pf: "PF #4", train: "22436 Vande Bharat", status: "RESERVED_CLEAR", eta: "130 mins" },
-      { junc: "Kota Junction (KOTA)", pf: "PF #2", train: "12952 Tejas Rajdhani", status: "OCCUPIED_BY_LOCAL", eta: "45 mins" }
-    ];
-
-    const alerts = [
-      { id: "SMS-IR-081", train: "22436", dest: "Kanpur Central", msg: "Vande Bharat (22436) AI dynamic forecast indicates on-time arrival at CNB by 10:10 AM (Recovers 6 mins delay).", time: "09:30 AM" },
-      { id: "SMS-IR-082", train: "12952", dest: "Kota Junction", msg: "Tejas Rajdhani (12952) ETA revised to 09:51 PM. Delay reduced from 18m to 11m via dynamic speed recovery.", time: "08:45 PM" }
-    ];
+    const trains = sih26028Trains;
+    const itineraries: Record<string, any[]> = sih26028Itineraries;
+    const occupancy = sih26028Occupancy;
+    const multimodalData = sih26028Multimodal;
+    const tsrData = sih26028Tsr;
 
     const [selectedTrain, setSelectedTrain] = React.useState(trains[0]);
-    const [tab, setTab] = React.useState<'radar' | 'itinerary' | 'simulator' | 'junctions' | 'alerts'>('radar');
+    const [tab, setTab] = React.useState<'radar' | 'itinerary' | 'simulator' | 'junctions' | 'multimodal' | 'tsr'>('radar');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'bn' | 'mr' | 'ta'>('en');
 
-    // Simulator
+    // Simulator State
     const [simSpeed, setSimSpeed] = React.useState(128);
     const [simHeadway, setSimHeadway] = React.useState(5.5);
     const [simSlack, setSimSlack] = React.useState(85);
+    const [simFreightPrecedence, setSimFreightPrecedence] = React.useState(false);
     const [simResult, setSimResult] = React.useState<any>(null);
 
-    const currentItin = itineraries[selectedTrain.id] || itineraries["22436"];
+    // Platform Clash Resolution State
+    const [clashResolved, setClashResolved] = React.useState(false);
+
+    // PNR Push Alert State
+    const [pnrAlertSent, setPnrAlertSent] = React.useState(false);
 
     const runSim = () => {
-      const spd = Number(((simSpeed - 100) * 0.22).toFixed(1));
-      const hdw = simHeadway >= 5.0 ? 3.5 : -3.0;
-      const slk = Number(((simSlack / 100) * 12.0).toFixed(1));
-      const tot = Number((spd + hdw + slk).toFixed(1));
+      const spdGain = Number(((simSpeed - 100) * 0.22).toFixed(1));
+      const hdwFactor = simHeadway >= 5.0 ? 3.5 : -3.0;
+      const slkGain = Number(((simSlack / 100) * 12.0).toFixed(1));
+      const freightPenalty = simFreightPrecedence ? -4.5 : 0.0;
+      const totRecovered = Number((spdGain + hdwFactor + slkGain + freightPenalty).toFixed(1));
+      
       setSimResult({
-        tot,
-        verdict: tot >= 10.0 ? 'FULL SCHEDULE RECOVERY (ON-TIME)' : `REDUCED DELAY (+${Math.max(1, Math.round(14 - tot))} mins)`,
-        conf: "98.2%",
-        spd, hdw, slk
+        tot: totRecovered,
+        verdict: totRecovered >= 10.0 ? 'FULL SCHEDULE RECOVERY (ON-TIME ARRIVAL)' : `PARTIAL RECOVERY (+${Math.max(1, Math.round(14 - totRecovered))} mins delay remaining)`,
+        conf: "98.8% Physics-ML Confidence",
+        spd: spdGain,
+        hdw: hdwFactor,
+        slk: slkGain,
+        freight: freightPenalty
       });
     };
+
+    const handleResolveClash = () => {
+      setClashResolved(true);
+      setTimeout(() => setClashResolved(false), 5000);
+    };
+
+    const handleSendPnrAlert = () => {
+      setPnrAlertSent(true);
+      setTimeout(() => setPnrAlertSent(false), 4000);
+    };
+
+    const currentItin = itineraries[selectedTrain.train_number] || itineraries["22436"];
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF RAILWAYS (INDIAN RAILWAYS) • RTIS TELEMETRY CLUSTER",
+        desc: "ISRO NavIC Satellite GPS Tracking, Physics-Informed ML Kinematics, Smart Platform Berth Allocator & Multimodal Transit Sync",
+        tabRadar: "🚆 Flagship Fleet Radar & RTIS",
+        tabItinerary: "⏱️ Dynamic Station ETA Board",
+        tabSimulator: "🧪 What-If Digital Twin Simulator",
+        tabJunctions: "🚉 Junction Platform Conflict Resolver",
+        tabMultimodal: "🚌 Multimodal Feeder & PNR Alerts",
+        tabTsr: "⚠️ TSR & Fog Bottlenecks",
+      },
+      hi: {
+        tag: "रेल मंत्रालय (भारतीय रेल) • RTIS उपग्रह टेलीमेट्री क्लस्टर",
+        desc: "इसरो नाविक GPS ट्रैकिंग, भौतिकी आधारित ML गतिकी, प्लेटफॉर्म टकराव समाधान व मल्टीमॉडल ट्रांजिट समन्वय",
+        tabRadar: "🚆 फ्लीट रडार व RTIS लाइव फीड",
+        tabItinerary: "⏱️ गतिशील स्टेशन आगमन समय (ETA)",
+        tabSimulator: "🧪 डिजिटल ट्विन सिमुलेटर",
+        tabJunctions: "🚉 जंक्शन प्लेटफॉर्म टकराव निवारण",
+        tabMultimodal: "🚌 मल्टीमॉडल फीडर व PNR अलर्ट",
+        tabTsr: "⚠️ गति प्रतिबंध व कोहरा विश्लेषण",
+      },
+      bn: {
+        tag: "রেল মন্ত্রক (ভারতীয় রেল) • RTIS স্যাটেলাইট টেলিমেট্রি",
+        desc: "ইসরো নাভিক জিপিএস ট্র্যাকিং, গতিশীল ট্রেন আগমন সময় পূর্বাভাস এবং প্ল্যাটফর্ম বরাদ্দ ব্যবস্থাপনা",
+        tabRadar: "🚆 ট্রেন বহর রাডার ও RTIS",
+        tabItinerary: "⏱️ গতিশীল স্টেশন আগমন বোর্ড",
+        tabSimulator: "🧪 গতিশীল বিলম্ব পুনরুদ্ধার সিমুলেটর",
+        tabJunctions: "🚉 জংশন প্ল্যাটফর্ম বিরোধ সমাধান",
+        tabMultimodal: "🚌 মাল্টিমোডাল ট্রানজিট ও যাত্রী সতর্কতা",
+        tabTsr: "⚠️ গতি নিয়ন্ত্রণ ও কুয়াশা পূর্বাভাস",
+      },
+      mr: {
+        tag: "रेल्वे मंत्रालय (भारतीय रेल्वे) • RTIS उपग्रह टेलिमेट्री",
+        desc: "इस्रो नाविक GPS ट्रॅकिंग, भौतिकशास्त्र-आधारित ML अचूक आगमन वेळ आणि जंक्शन प्लॅटफॉर्म व्यवस्थापन",
+        tabRadar: "🚆 मुख्य गाड्यांचा रडार व RTIS",
+        tabItinerary: "⏱️ डायनॅमिक स्टेशन आगमन बोर्ड",
+        tabSimulator: "🧪 व्हॉट-इफ डिजिटल ट्विन सिम्युलेटर",
+        tabJunctions: "🚉 जंक्शन प्लॅटफॉर्म संघर्ष निवारण",
+        tabMultimodal: "🚌 मल्टीमॉडल फिडर व PNR सूचना",
+        tabTsr: "⚠️ वेग मर्यादा व धुके अडथळे",
+      },
+      ta: {
+        tag: "ரயில்வே அமைச்சகம் (இந்திய ரயில்வே) • RTIS செயற்கைக்கோள் டெலிமெட்ரி",
+        desc: "இஸ்ரோ நாவிக் ஜிபிஎஸ் டிராக்கிங், துல்லியமான ரயில் வருகை நேர கணிப்பு மற்றும் நடைமேடை மோதல் தவிர்ப்பு",
+        tabRadar: "🚆 முதன்மை ரயில் ரேடார் & RTIS",
+        tabItinerary: "⏱️ மாறும் நிலைய வருகை பலகை",
+        tabSimulator: "🧪 காலதாமத மீட்பு சிமுலேட்டர்",
+        tabJunctions: "🚉 சந்திப்பு நடைமேடை ஒதுக்கீடு",
+        tabMultimodal: "🚌 பலவழி இணைப்பு & PNR விழிப்பூட்டல்",
+        tabTsr: "⚠️ வேகக் கட்டுப்பாடு & பனி மூட்டம்",
+      }
+    }[lang];
 
     return (
       <div className="space-y-6">
@@ -14700,148 +15429,242 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 font-bold mb-1">
               <Activity className="w-4 h-4 text-cyan-400" />
-              <span>MINISTRY OF RAILWAYS (INDIAN RAILWAYS) • RTIS TELEMETRY CLUSTER • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">ISRO NavIC / RTIS Satellite GPS Telemetry, Physics-Informed ML & Dynamic Headway Recovery Forecaster</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-cyan-950 text-cyan-300 border border-cyan-800 rounded-2xl text-xs font-bold flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span>RTIS Feed: Synchronized</span>
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-cyan-400 ml-1.5" />
+            {(['en', 'hi', 'bn', 'mr', 'ta'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-2.5 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-cyan-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : l === 'bn' ? 'বাংলা' : l === 'mr' ? 'मराठी' : 'தமிழ்'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Global Tabs */}
-        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3">
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold">
           {[
-            { id: 'radar', label: '🚆 Flagship Fleet Radar & RTIS Feed' },
-            { id: 'itinerary', label: '⏱️ Station-by-Station Dynamic ETA Board' },
-            { id: 'simulator', label: '🧪 What-If Delay Recovery Simulator' },
-            { id: 'junctions', label: '🚉 Junction Platform & Berth Allocator' },
-            { id: 'alerts', label: '📱 Passenger Alert Broadcast Hub' }
-          ].map((t) => (
+            { id: 'radar', label: t.tabRadar },
+            { id: 'itinerary', label: t.tabItinerary },
+            { id: 'simulator', label: t.tabSimulator },
+            { id: 'junctions', label: t.tabJunctions },
+            { id: 'multimodal', label: t.tabMultimodal },
+            { id: 'tsr', label: t.tabTsr },
+          ].map((item) => (
             <button
-              key={t.id}
-              onClick={() => setTab(t.id as any)}
-              className={`px-3.5 py-2 rounded-2xl text-xs font-bold transition-all ${
-                tab === t.id
-                  ? 'bg-cyan-500 text-slate-950 font-black shadow-md'
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-cyan-500 text-slate-950 font-black shadow-lg shadow-cyan-500/20'
                   : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
               }`}
             >
-              {t.label}
+              {item.label}
             </button>
           ))}
         </div>
 
-        {/* VIEW 1: RADAR */}
+        {/* TAB 1: FLEET RADAR & RTIS TELEMETRY */}
         {tab === 'radar' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {trains.map((t) => (
+            {/* Train Selector Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {trains.map((tr) => (
                 <button
-                  key={t.id}
-                  onClick={() => setSelectedTrain(t)}
-                  className={`p-3.5 rounded-2xl border text-left transition-all ${
-                    selectedTrain.id === t.id
-                      ? 'bg-cyan-950/60 border-cyan-500 text-white shadow-md ring-1 ring-cyan-400'
+                  key={tr.train_number}
+                  onClick={() => setSelectedTrain(tr)}
+                  className={`p-4 rounded-2xl border text-left transition-all ${
+                    selectedTrain.train_number === tr.train_number
+                      ? 'bg-cyan-950/60 border-cyan-500 text-white shadow-lg ring-1 ring-cyan-400'
                       : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
                   }`}
                 >
-                  <div className="text-[10px] font-mono text-cyan-400 font-bold">#{t.id}</div>
-                  <div className="text-xs font-bold truncate text-white mt-0.5">{t.name.split('(')[0]}</div>
-                  <div className="text-[11px] text-slate-400 truncate mt-0.5">{t.section}</div>
-                  <div className="mt-2 text-[10px] flex justify-between font-mono pt-1 border-t border-slate-800">
-                    <span className="text-emerald-400 font-bold">{t.speed}</span>
-                    <span className="text-cyan-300">{t.aiEta}</span>
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-cyan-400">#{tr.train_number}</span>
+                    <span className="px-2 py-0.5 rounded-full bg-slate-950 text-cyan-300 border border-cyan-800/80">
+                      NavIC: {tr.navic_satellites_locked} Sats
+                    </span>
+                  </div>
+                  <div className="text-xs font-bold text-white mt-1 line-clamp-1">{tr.train_name}</div>
+                  <div className="text-[11px] text-slate-400 font-mono mt-0.5 truncate">{tr.current_section}</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-emerald-400 font-bold">{tr.current_speed_kmh} km/h</span>
+                    <span className="text-amber-300">{tr.ai_dynamic_eta_delay}</span>
                   </div>
                 </button>
               ))}
             </div>
 
+            {/* Radar Live Display */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs">
-                <div className="flex justify-between items-start border-b border-slate-800 pb-2">
-                  <div>
-                    <span className="font-mono text-xs font-bold text-cyan-400">TRAIN #{selectedTrain.id} • {selectedTrain.loco}</span>
-                    <h4 className="font-bold text-sm text-white mt-0.5">{selectedTrain.name}</h4>
-                  </div>
-                  <span className="font-mono text-[10px] text-emerald-400 bg-slate-950 px-2.5 py-1 rounded-xl border border-slate-800">
-                    {selectedTrain.conf} AI Confidence
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-3 gap-3 text-center font-mono">
-                  <div className="p-3 bg-slate-950 rounded-2xl border border-cyan-950">
-                    <span className="text-slate-500 block text-[9px]">SPEED</span>
-                    <span className="text-xl font-black text-cyan-400 mt-1 block">{selectedTrain.speed}</span>
-                    <span className="text-[9px] text-slate-400 block mt-0.5">Max: {selectedTrain.maxSpeed}</span>
-                  </div>
-                  <div className="p-3 bg-slate-950 rounded-2xl border border-emerald-950">
-                    <span className="text-slate-500 block text-[9px]">HEADWAY</span>
-                    <span className="text-xl font-black text-emerald-400 mt-1 block">{selectedTrain.headway}</span>
-                    <span className="text-[9px] text-slate-400 block mt-0.5">Fluid Corridor</span>
-                  </div>
-                  <div className="p-3 bg-slate-950 rounded-2xl border border-purple-950">
-                    <span className="text-slate-500 block text-[9px]">SLACK BUFFER</span>
-                    <span className="text-xl font-black text-purple-400 mt-1 block">{selectedTrain.slack}</span>
-                    <span className="text-[9px] text-slate-400 block mt-0.5">Recovery Margin</span>
-                  </div>
-                </div>
-
-                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 font-mono text-[11px]">
-                  <div className="flex justify-between text-slate-400"><span>Caution Order (TSR):</span><span className="text-amber-400 font-bold">{selectedTrain.tsr}</span></div>
-                  <div className="flex justify-between text-slate-400"><span>Static NTES Delay:</span><span className="text-rose-400 font-bold">{selectedTrain.ntes}</span></div>
-                  <div className="flex justify-between text-slate-400"><span>AI Dynamic Recovery ETA:</span><span className="text-emerald-400 font-bold">{selectedTrain.aiEta} ({selectedTrain.status})</span></div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs font-mono">
-                <h4 className="font-bold text-sm text-white font-sans flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-cyan-400" />
-                  <span>Static NTES vs Dynamic AI ETA</span>
-                </h4>
-                <div className="p-4 bg-slate-950 rounded-2xl border border-rose-950 space-y-1">
-                  <div className="flex justify-between text-rose-400 font-bold"><span>STATIC NTES DELAY</span><span>{selectedTrain.ntes}</span></div>
-                  <p className="text-[10px] text-slate-400 font-sans">Assumes static delay propagation with zero dynamic acceleration.</p>
-                </div>
-                <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-2xl space-y-1">
-                  <div className="flex justify-between text-emerald-400 font-bold"><span>AI DYNAMIC RECOVERY ETA</span><span>{selectedTrain.aiEta}</span></div>
-                  <p className="text-[10px] text-slate-300 font-sans">Physics-informed speed acceleration over clear tracks + dynamic slack absorption.</p>
-                </div>
-                <button onClick={() => setTab('itinerary')} className="w-full py-2.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-xl text-xs font-sans shadow-md">
-                  View Station-by-Station ETA Board ➔
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* VIEW 2: ITINERARY */}
-        {tab === 'itinerary' && (
-          <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 max-w-4xl mx-auto space-y-4 font-mono text-xs shadow-2xl">
-            <div className="flex justify-between items-center border-b border-cyan-500/40 pb-3">
-              <div>
-                <span className="text-cyan-400 font-bold text-[10px] uppercase">DYNAMIC STATION ARRIVAL BOARD</span>
-                <h4 className="text-lg font-black text-white font-sans mt-0.5">Train #{selectedTrain.id} — {selectedTrain.name}</h4>
-              </div>
-              <Compass className="w-8 h-8 text-cyan-400" />
-            </div>
-
-            <div className="space-y-2.5">
-              {currentItin.map((st: any) => (
-                <div key={st.code} className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 flex justify-between items-center">
+              <div className="lg:col-span-8 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-5 text-xs font-mono">
+                <div className="flex flex-wrap justify-between items-start border-b border-slate-800 pb-3 gap-2">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 font-bold text-xs">{st.code}</span>
-                      <span className="font-bold text-white font-sans text-xs">{st.name}</span>
+                      <span className="text-cyan-400 font-bold text-sm">TRAIN #{selectedTrain.train_number}</span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-sans font-bold">
+                        {selectedTrain.status}
+                      </span>
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-0.5 font-sans">Causal: {st.action}</div>
+                    <h4 className="font-bold text-base text-white mt-1 font-sans">{selectedTrain.train_name}</h4>
+                    <p className="text-[11px] text-slate-400 font-sans">{selectedTrain.route} • {selectedTrain.current_section}</p>
                   </div>
-                  <div className="flex items-center gap-3 text-right">
-                    <div><span className="text-slate-500 text-[9px] block">SCHED</span><span className="text-white">{st.sch}</span></div>
-                    <div><span className="text-slate-500 text-[9px] block">NTES</span><span className="text-rose-400">{st.staticDelay}</span></div>
-                    <div className="p-1.5 bg-emerald-950 border border-emerald-800 rounded-lg"><span className="text-emerald-400 text-[9px] block font-bold">AI ETA</span><span className="text-emerald-300 font-bold">{st.aiEta}</span></div>
+                  <div className="text-right">
+                    <span className="text-slate-500 text-[10px] block">ROLLING STOCK DYNAMICS</span>
+                    <span className="text-cyan-400 font-bold text-xs">{selectedTrain.rake_weight_tonnes} tonnes • {selectedTrain.rake_composition}</span>
+                  </div>
+                </div>
+
+                {/* Speedometer & Kinematics Gauges */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-cyan-950">
+                    <span className="text-slate-500 text-[9px] block">LIVE KINEMATIC SPEED</span>
+                    <span className="text-2xl font-black text-cyan-400 mt-0.5 block">{selectedTrain.current_speed_kmh}</span>
+                    <span className="text-[9px] text-slate-400">MPS: {selectedTrain.mps_kmh} km/h</span>
+                  </div>
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-emerald-950">
+                    <span className="text-slate-500 text-[9px] block">MOVING HEADWAY</span>
+                    <span className="text-2xl font-black text-emerald-400 mt-0.5 block">{selectedTrain.headway_distance_km} km</span>
+                    <span className="text-[9px] text-slate-400">Green Wave Ahead</span>
+                  </div>
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-purple-950">
+                    <span className="text-slate-500 text-[9px] block">SLACK ABSORPTION</span>
+                    <span className="text-2xl font-black text-purple-400 mt-0.5 block">{selectedTrain.timetable_slack_mins}m</span>
+                    <span className="text-[9px] text-slate-400">In-Built Recovery Margin</span>
+                  </div>
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-amber-950">
+                    <span className="text-slate-500 text-[9px] block">AI CONFIDENCE BAND</span>
+                    <span className="text-2xl font-black text-amber-400 mt-0.5 block">{selectedTrain.confidence_pct}%</span>
+                    <span className="text-[9px] text-slate-400">{selectedTrain.confidence_interval}</span>
+                  </div>
+                </div>
+
+                {/* Physics & Telemetry Details */}
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-slate-300 font-sans">
+                  <div className="flex justify-between items-center">
+                    <span className="text-[11px] text-slate-400 font-mono">Traction Power Architecture:</span>
+                    <strong className="text-cyan-300 font-mono text-xs">{selectedTrain.locomotive_type}</strong>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-[11px] text-slate-400 font-mono">Satellite Constellation Sync:</span>
+                    <span className="text-emerald-400 font-mono text-xs">ISRO NavIC L5/S-Band • {selectedTrain.navic_satellites_locked} satellites locked</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-[11px] text-slate-400 font-mono">GPS Ground Telemetry:</span>
+                    <span className="text-amber-400 font-mono text-xs">{selectedTrain.gps_coordinates}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-[11px] text-slate-400 font-mono">Loco Pilot Running Room Rule:</span>
+                    <span className="text-slate-300 text-xs">{selectedTrain.crew_duty_hours_elapsed}</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-2 border-t border-slate-900 font-mono text-xs">
+                    <span className="text-rose-400">Legacy NTES Delay: <strong>{selectedTrain.ntes_static_delay}</strong></span>
+                    <span className="text-emerald-400 font-bold">Dynamic AI Prediction: {selectedTrain.ai_dynamic_eta_delay} ({selectedTrain.dynamic_time_gain})</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between p-3 bg-cyan-950/30 rounded-2xl border border-cyan-900/40 text-cyan-200">
+                  <span className="text-xs">Dynamic ETA vs Static Schedule: <strong>{selectedTrain.dynamic_time_gain}</strong> on downstream approach</span>
+                  <button
+                    onClick={() => setTab('itinerary')}
+                    className="px-4 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl text-xs font-sans transition-colors"
+                  >
+                    View Station Timings ➔
+                  </button>
+                </div>
+              </div>
+
+              {/* NTES vs AI Breakdown */}
+              <div className="lg:col-span-4 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center gap-2 text-white font-bold text-sm">
+                  <Clock className="w-5 h-5 text-cyan-400" />
+                  <span>Why Static NTES Fails vs AI</span>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-rose-950/80 space-y-1.5">
+                  <div className="flex justify-between text-rose-400 font-bold text-xs font-mono">
+                    <span>LEGACY NTES SYSTEM</span>
+                    <span>{selectedTrain.ntes_static_delay}</span>
+                  </div>
+                  <p className="text-[11px] text-slate-400 leading-relaxed font-sans">
+                    Blindly propagates current delay across all future stations. Assumes train cannot accelerate or recover lost time via timetable slack.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-emerald-950/80 space-y-1.5">
+                  <div className="flex justify-between text-emerald-400 font-bold text-xs font-mono">
+                    <span>RAILETA DYNAMIC AI</span>
+                    <span>{selectedTrain.ai_dynamic_eta_delay}</span>
+                  </div>
+                  <p className="text-[11px] text-slate-300 leading-relaxed font-sans">
+                    Considers 130 km/h cruising on green block aspects, gradient kinematics, and in-built timetable slack to predict real arrival times.
+                  </p>
+                </div>
+
+                <div className="p-3.5 bg-cyan-950/40 rounded-2xl border border-cyan-900/60 text-[11px] text-cyan-200 leading-relaxed">
+                  🎯 <strong>Passenger Impact</strong>: Eliminates premature anxiety. Platform berths and connecting cabs arrive precisely when the train docks.
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: STATION-BY-STATION DYNAMIC ETA BOARD */}
+        {tab === 'itinerary' && (
+          <div className="bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-800 max-w-4xl mx-auto space-y-5 font-mono text-xs shadow-2xl">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-cyan-500/40 pb-4 gap-2">
+              <div>
+                <span className="text-cyan-400 font-bold text-[10px] uppercase">DYNAMIC STATION ARRIVAL BOARD (ISRO NavIC FEED)</span>
+                <h4 className="text-lg font-black text-white font-sans mt-0.5">Train #{selectedTrain.train_number} — {selectedTrain.train_name}</h4>
+              </div>
+              <span className="px-3 py-1 bg-cyan-950 text-cyan-300 border border-cyan-800 rounded-xl text-xs">
+                {selectedTrain.confidence_interval}
+              </span>
+            </div>
+
+            <div className="space-y-3">
+              {currentItin.map((st: any, idx: number) => (
+                <div key={st.code} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                  <div className="flex flex-wrap justify-between items-center gap-2">
+                    <div className="flex items-center gap-3">
+                      <span className="w-7 h-7 rounded-xl bg-cyan-950 text-cyan-400 font-bold flex items-center justify-center text-xs border border-cyan-800">
+                        {idx + 1}
+                      </span>
+                      <div>
+                        <div className="font-bold text-white text-sm font-sans">{st.name} ({st.code})</div>
+                        <div className="text-[10px] text-cyan-400 font-mono">Assigned Berth: <strong>{st.platform}</strong></div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 text-right">
+                      <div>
+                        <span className="text-[9px] text-slate-500 block">SCHEDULED</span>
+                        <span className="text-slate-300 font-bold">{st.sch_arr !== 'ORIGIN' ? st.sch_arr : st.sch_dep}</span>
+                      </div>
+                      <div>
+                        <span className="text-[9px] text-rose-500 block">NTES DELAY</span>
+                        <span className="text-rose-400 font-bold">{st.static_ntes}</span>
+                      </div>
+                      <div className="p-2 bg-emerald-950/60 rounded-xl border border-emerald-800/80">
+                        <span className="text-[9px] text-emerald-400 block">DYNAMIC AI ETA</span>
+                        <span className="text-emerald-300 font-black">{st.ai_dynamic_eta}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="text-[11px] text-slate-400 font-sans pt-2 border-t border-slate-900 flex justify-between items-center">
+                    <span>Kinematics &amp; Block Action: <strong>{st.action}</strong></span>
+                    <span className="text-cyan-400 text-[10px]">Verified via Block Relay</span>
                   </div>
                 </div>
               ))}
@@ -14849,86 +15672,342 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
           </div>
         )}
 
-        {/* VIEW 3: SIMULATOR */}
+        {/* TAB 3: WHAT-IF DIGITAL TWIN SIMULATOR */}
         {tab === 'simulator' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 text-xs">
-            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-              <h4 className="font-bold text-sm text-white flex items-center gap-2 font-sans">
-                <Sliders className="w-4 h-4 text-cyan-400" />
-                <span>What-If Delay Recovery Simulator</span>
-              </h4>
-              <div className="space-y-3">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* Input Controls */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-5">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Sliders className="w-5 h-5 text-cyan-400" />
                 <div>
-                  <div className="flex justify-between font-bold mb-1"><span className="text-slate-300">Locomotive Speed:</span><span className="font-mono text-cyan-400">{simSpeed} km/h</span></div>
-                  <input type="range" min="80" max="130" step="2" value={simSpeed} onChange={(e) => setSimSpeed(Number(e.target.value))} className="w-full accent-cyan-500" />
+                  <h4 className="text-white font-bold text-sm font-sans">Section Controller Dispatcher Console</h4>
+                  <p className="text-slate-400 text-xs font-sans">Simulate dynamic delay recovery scenarios along the corridor</p>
                 </div>
+              </div>
+
+              {/* Speed Slider */}
+              <div className="space-y-1.5 text-xs font-mono">
+                <div className="flex justify-between">
+                  <span className="text-slate-300">Cruising Speed on Clear Section:</span>
+                  <span className="text-cyan-400 font-bold">{simSpeed} km/h</span>
+                </div>
+                <input
+                  type="range"
+                  min="100"
+                  max="160"
+                  value={simSpeed}
+                  onChange={(e) => setSimSpeed(Number(e.target.value))}
+                  className="w-full accent-cyan-500 cursor-pointer"
+                />
+                <div className="flex justify-between text-[10px] text-slate-500">
+                  <span>100 km/h (Caution)</span>
+                  <span>130 km/h (Current MPS)</span>
+                  <span>160 km/h (Mission Raftaar)</span>
+                </div>
+              </div>
+
+              {/* Headway Separation */}
+              <div className="space-y-1.5 text-xs font-mono">
+                <div className="flex justify-between">
+                  <span className="text-slate-300">Preceding Train Headway Separation:</span>
+                  <span className="text-emerald-400 font-bold">{simHeadway} km</span>
+                </div>
+                <input
+                  type="range"
+                  min="2.0"
+                  max="10.0"
+                  step="0.5"
+                  value={simHeadway}
+                  onChange={(e) => setSimHeadway(Number(e.target.value))}
+                  className="w-full accent-emerald-500 cursor-pointer"
+                />
+                <div className="flex justify-between text-[10px] text-slate-500">
+                  <span>2.0 km (Yellow Aspect Slowdown)</span>
+                  <span>5.0 km (Green Wave Free Flow)</span>
+                  <span>10.0 km (Clear Section)</span>
+                </div>
+              </div>
+
+              {/* Timetable Slack Exploitation */}
+              <div className="space-y-1.5 text-xs font-mono">
+                <div className="flex justify-between">
+                  <span className="text-slate-300">Timetable In-Built Slack Ingestion:</span>
+                  <span className="text-purple-400 font-bold">{simSlack}%</span>
+                </div>
+                <input
+                  type="range"
+                  min="40"
+                  max="100"
+                  value={simSlack}
+                  onChange={(e) => setSimSlack(Number(e.target.value))}
+                  className="w-full accent-purple-500 cursor-pointer"
+                />
+                <div className="flex justify-between text-[10px] text-slate-500">
+                  <span>40% (Conservative)</span>
+                  <span>80% (Standard Operational Target)</span>
+                  <span>100% (Full Delay Absorption)</span>
+                </div>
+              </div>
+
+              {/* Freight Loop Precedence Toggle */}
+              <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between text-xs">
                 <div>
-                  <div className="flex justify-between font-bold mb-1"><span className="text-slate-300">Headway Separation:</span><span className="font-mono text-emerald-400">{simHeadway} Km</span></div>
-                  <input type="range" min="2.0" max="12.0" step="0.5" value={simHeadway} onChange={(e) => setSimHeadway(Number(e.target.value))} className="w-full accent-emerald-500" />
+                  <div className="text-white font-bold font-sans">Loop Preceding Goods Train into Siding</div>
+                  <div className="text-slate-400 text-[10px] font-sans">Gives uninterrupted through line at Aligarh Junction</div>
                 </div>
-                <div>
-                  <div className="flex justify-between font-bold mb-1"><span className="text-slate-300">Slack Utilization:</span><span className="font-mono text-purple-400">{simSlack}%</span></div>
-                  <input type="range" min="0" max="100" step="5" value={simSlack} onChange={(e) => setSimSlack(Number(e.target.value))} className="w-full accent-purple-500" />
-                </div>
-                <button onClick={runSim} className="w-full py-3 bg-cyan-500 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg">
-                  Execute Dynamic ETA Forecast
+                <button
+                  onClick={() => setSimFreightPrecedence(!simFreightPrecedence)}
+                  className={`px-3 py-1 rounded-xl font-bold transition-colors ${
+                    simFreightPrecedence ? 'bg-cyan-500 text-slate-950 font-black' : 'bg-slate-800 text-slate-400'
+                  }`}
+                >
+                  {simFreightPrecedence ? 'Enabled' : 'Disabled'}
                 </button>
               </div>
+
+              <button
+                onClick={runSim}
+                className="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-cyan-500/20 transition-all active:scale-95"
+              >
+                Execute Dynamic What-If Forecast Simulation ➔
+              </button>
             </div>
 
-            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-mono">
-              <h4 className="font-bold text-sm text-white font-sans">Simulated Forecast Outcome</h4>
+            {/* Simulation Results Output */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-mono text-xs">
+              <h4 className="font-bold text-sm text-white font-sans flex items-center gap-2">
+                <Compass className="w-4 h-4 text-cyan-400" />
+                <span>Simulated Forecast Outcome</span>
+              </h4>
+
               {simResult ? (
-                <div className="space-y-3">
-                  <div className="grid grid-cols-2 gap-2 text-center">
-                    <div className="p-3 bg-slate-950 rounded-2xl border border-cyan-950"><span className="text-slate-500 block text-[9px]">TOTAL RECOVERED</span><span className="text-xl font-bold text-cyan-400">-{simResult.tot} mins</span></div>
-                    <div className="p-3 bg-slate-950 rounded-2xl border border-emerald-950"><span className="text-slate-500 block text-[9px]">CONFIDENCE</span><span className="text-xl font-bold text-emerald-400">{simResult.conf}</span></div>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-2 gap-3 text-center">
+                    <div className="p-4 bg-slate-950 rounded-2xl border border-cyan-950">
+                      <span className="text-slate-500 text-[9px] block">TOTAL RECOVERED TIME</span>
+                      <span className="text-2xl font-black text-cyan-400 mt-1 block">+{simResult.tot} mins</span>
+                      <span className="text-[9px] text-slate-400">Dynamic Velocity + Slack</span>
+                    </div>
+                    <div className="p-4 bg-slate-950 rounded-2xl border border-emerald-950">
+                      <span className="text-slate-500 text-[9px] block">MODEL CONFIDENCE</span>
+                      <span className="text-2xl font-black text-emerald-400 mt-1 block">98.8%</span>
+                      <span className="text-[9px] text-slate-400">Physics Kinematics Validated</span>
+                    </div>
                   </div>
-                  <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-2xl flex justify-between items-center">
-                    <span className="text-xs text-white font-bold font-sans">{simResult.verdict}</span>
-                    <span className="px-2 py-0.5 bg-emerald-500 text-slate-950 font-bold rounded text-[10px] font-sans">Optimal</span>
+
+                  <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-2xl space-y-2">
+                    <div className="flex justify-between items-center font-sans">
+                      <strong className="text-white text-xs">{simResult.verdict}</strong>
+                      <span className="px-2.5 py-0.5 bg-emerald-500 text-slate-950 font-bold rounded-lg text-[10px]">VERIFIED</span>
+                    </div>
+                    <div className="text-[11px] text-slate-300 font-sans leading-relaxed">
+                      By holding speed at {simSpeed} km/h with {simHeadway} km headway clearance, Train #{selectedTrain.train_number} recovers <strong>{simResult.tot} minutes</strong> of cumulative delay before reaching Kanpur Central.
+                    </div>
+                  </div>
+
+                  {/* Factor Contribution Breakdown */}
+                  <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                    <span className="text-[10px] text-slate-500 uppercase font-bold block">CONTRIBUTING KINEMATIC FACTORS:</span>
+                    <div className="flex justify-between"><span>Speed Elevation Effect:</span><strong className="text-cyan-400">+{simResult.spd} mins</strong></div>
+                    <div className="flex justify-between"><span>Moving Headway Aspect Effect:</span><strong className="text-emerald-400">+{simResult.hdw} mins</strong></div>
+                    <div className="flex justify-between"><span>Timetable Slack Absorption:</span><strong className="text-purple-400">+{simResult.slk} mins</strong></div>
+                    {simFreightPrecedence && (
+                      <div className="flex justify-between text-amber-400"><span>Goods Loop Overhaul:</span><strong>+4.5 mins saved</strong></div>
+                    )}
                   </div>
                 </div>
               ) : (
-                <div className="py-12 text-center text-slate-500 font-sans">Click "Execute Dynamic ETA Forecast" to evaluate.</div>
+                <div className="py-20 text-center text-slate-500 font-sans space-y-2">
+                  <Sliders className="w-8 h-8 mx-auto opacity-40" />
+                  <p>Adjust parameters and click "Execute Dynamic What-If Forecast Simulation".</p>
+                </div>
               )}
             </div>
           </div>
         )}
 
-        {/* VIEW 4: JUNCTIONS */}
+        {/* TAB 4: JUNCTION PLATFORM CLASH RESOLVER */}
         {tab === 'junctions' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-            {occupancy.map((j) => (
-              <div key={j.junc} className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-3">
-                <div className="flex justify-between items-start border-b border-slate-800 pb-2">
-                  <div>
-                    <h4 className="font-bold text-sm text-white font-sans">{j.junc}</h4>
-                    <div className="text-slate-400 text-[11px]">{j.pf}</div>
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {occupancy.map((j) => (
+                <div
+                  key={j.junction_code}
+                  className={`p-5 rounded-3xl border space-y-3 font-mono text-xs ${
+                    j.conflict_detected
+                      ? 'bg-rose-950/20 border-rose-800/80 shadow-lg'
+                      : 'bg-slate-900 border-slate-800'
+                  }`}
+                >
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h4 className="font-bold text-sm text-white font-sans">{j.junction_name} ({j.junction_code})</h4>
+                      <div className="text-slate-400 text-[11px] mt-0.5">{j.platform_number}</div>
+                    </div>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                      j.conflict_detected
+                        ? 'bg-rose-950 text-rose-300 border border-rose-800 animate-pulse'
+                        : 'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                    }`}>
+                      {j.conflict_detected ? '⚠️ CLASH DETECTED' : '✅ CLEAR BERTH'}
+                    </span>
                   </div>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">{j.status}</span>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800/80 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Occupant:</span>
+                      <strong className="text-white text-[11px]">{j.current_occupant}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Inbound Train:</span>
+                      <strong className="text-cyan-400">{j.inbound_train}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Dynamic ETA:</span>
+                      <strong className="text-amber-400">{j.inbound_eta}</strong>
+                    </div>
+                  </div>
+
+                  {j.conflict_detected ? (
+                    <div className="p-3 bg-rose-950/40 rounded-2xl border border-rose-900/60 text-[11px] font-sans text-rose-200 space-y-2">
+                      <div>🚨 <strong>Early Arrival Conflict</strong>: Inbound train recovered 6 mins delay. If routed to {j.platform_number}, it will hit outer home signal!</div>
+                      <div className="text-cyan-300 font-mono font-bold text-[10px]">
+                        AI Action: {j.ai_resolution_action} ➔ {j.recommended_platform}
+                      </div>
+                      <button
+                        onClick={handleResolveClash}
+                        disabled={clashResolved}
+                        className="w-full py-1.5 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-xl text-[11px] transition-all disabled:opacity-50"
+                      >
+                        {clashResolved ? '✅ Re-Allocated to PF #3!' : 'Execute Dynamic Platform Re-Allocation'}
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="p-2.5 bg-emerald-950/30 rounded-2xl border border-emerald-900/40 text-[11px] font-sans text-emerald-300">
+                      Route locked green. Direct through berth with quick-watering scheduled.
+                    </div>
+                  )}
+
+                  <div className="pt-2 border-t border-slate-800/80 flex justify-between text-[10px] text-slate-400">
+                    <span>Quick Watering: {j.quick_watering_scheduled.split(' ')[0]}</span>
+                    <span>Turnaround: {j.turnaround_countdown_mins}m</span>
+                  </div>
                 </div>
-                <div className="p-3 bg-slate-950 rounded-xl space-y-1 text-slate-300">
-                  <div className="flex justify-between"><span>Train:</span><span className="text-cyan-400 font-bold">{j.train}</span></div>
-                  <div className="flex justify-between"><span>Arrival In:</span><span className="text-emerald-400 font-bold">{j.eta}</span></div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
 
-        {/* VIEW 5: ALERTS */}
-        {tab === 'alerts' && (
-          <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs font-mono">
-            <h4 className="font-bold text-sm text-white font-sans flex items-center gap-2">
-              <Radio className="w-4 h-4 text-cyan-400" />
-              <span>Automated Dynamic Passenger Broadcast Alerts</span>
-            </h4>
-            <div className="space-y-3">
-              {alerts.map((a) => (
-                <div key={a.id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
-                  <div className="flex justify-between"><span className="text-cyan-400 font-bold">{a.id} • Train #{a.train}</span><span className="text-slate-500">{a.time}</span></div>
-                  <p className="text-slate-200 font-sans text-xs pt-1 border-t border-slate-900">{a.msg}</p>
+        {/* TAB 5: MULTIMODAL FEEDER & PASSENGER ALERTS */}
+        {tab === 'multimodal' && (
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              {/* Multimodal City Transit Sync */}
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-mono text-xs">
+                <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                  <Bus className="w-5 h-5 text-cyan-400" />
+                  <div>
+                    <h4 className="text-white font-bold text-sm font-sans">Multimodal Connecting Feeder Transit</h4>
+                    <p className="text-slate-400 text-xs font-sans">City Metro &amp; Cab synchronizations based on live dynamic train arrival</p>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  {multimodalData.feeder_integrations.map((feed: any) => (
+                    <div key={feed.station} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2.5">
+                      <div className="flex justify-between items-center font-sans">
+                        <span className="font-bold text-white text-sm">{feed.station}</span>
+                        <span className="text-cyan-400 font-mono text-xs font-bold">Dynamic ETA: {feed.dynamic_eta}</span>
+                      </div>
+                      <div className="space-y-1.5 text-[11px] font-sans">
+                        {feed.connecting_transit.map((tr: any) => (
+                          <div key={tr.service} className="p-2.5 bg-slate-900 rounded-xl flex items-center justify-between">
+                            <div>
+                              <span className="px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 font-mono text-[9px] mr-1.5">{tr.mode}</span>
+                              <strong className="text-slate-200">{tr.service}</strong>
+                            </div>
+                            <span className="text-emerald-400 font-mono text-[10px]">{tr.next_departure || `Wait: ${tr.avg_wait_mins}m`}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* PNR WhatsApp & SMS Push Broadcasts */}
+              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs font-mono">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div className="flex items-center gap-2">
+                    <MessageSquare className="w-4 h-4 text-emerald-400" />
+                    <span className="text-white font-bold font-sans">PNR Proactive Alert Hub</span>
+                  </div>
+                  <button
+                    onClick={handleSendPnrAlert}
+                    disabled={pnrAlertSent}
+                    className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-[10px] font-sans transition-all disabled:opacity-50"
+                  >
+                    {pnrAlertSent ? '✅ Alert Pushed!' : 'Simulate PNR Alert'}
+                  </button>
+                </div>
+
+                <div className="space-y-3">
+                  {multimodalData.passenger_alerts.map((al: any) => (
+                    <div key={al.alert_id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                      <div className="flex justify-between items-center text-[10px]">
+                        <span className="text-cyan-400 font-bold">{al.alert_id} • PNR: {al.pnr}</span>
+                        <span className="text-slate-500">{al.timestamp}</span>
+                      </div>
+                      <div className="text-[11px] text-slate-300 font-sans font-bold">{al.passenger} ➔ {al.destination}</div>
+                      <p className="text-slate-300 font-sans text-xs p-2.5 bg-slate-900 rounded-xl leading-relaxed">
+                        {al.message}
+                      </p>
+                      <div className="flex justify-between text-[10px] text-emerald-400 pt-1">
+                        <span>Channel: {al.channel}</span>
+                        <span>{al.delivery_status}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: TSR CAUTION ORDERS & FOG BOTTLENECK PREDICTOR */}
+        {tab === 'tsr' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {tsrData.map((tsr: any) => (
+                <div key={tsr.bottleneck_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 text-xs font-bold">{tsr.bottleneck_id}</span>
+                      <h4 className="text-sm font-bold text-white font-sans mt-0.5">{tsr.corridor}</h4>
+                      <p className="text-[10px] text-slate-400">{tsr.km_location}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-amber-950 text-amber-300 border border-amber-800 text-[10px] font-bold">
+                      {tsr.active_status}
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="text-slate-300 font-sans">
+                      <strong>Restriction:</strong> {tsr.restriction_type}
+                    </div>
+                    <div className="flex justify-between pt-1 border-t border-slate-900">
+                      <span className="text-slate-500">Imposed Speed:</span>
+                      <span className="text-rose-400 font-bold">{tsr.imposed_speed_kmh} km/h (Normally {tsr.normal_sectional_mps_kmh})</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-500">Time Penalty:</span>
+                      <span className="text-amber-400 font-bold">+{tsr.time_penalty_mins} mins</span>
+                    </div>
+                  </div>
+
+                  <div className="p-2.5 bg-cyan-950/30 rounded-xl text-cyan-300 text-[11px] font-sans">
+                    🔄 <strong>Recovery Plan:</strong> {tsr.slack_recovery_zone}
+                  </div>
                 </div>
               ))}
             </div>
@@ -14936,8 +16015,8 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
         )}
 
       </div>
-  );
-}
+    );
+  }
 
   /* =========================================================================
      INDIAN RAILWAYS / SIH26027 AUTOMATIC BLOCK PLANNING

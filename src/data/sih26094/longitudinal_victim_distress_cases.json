@@ -1,0 +1,44 @@
+[
+  {
+    "case_id": "LONG-2026-JHUN01",
+    "victim_identifier": "Survivor Case #RJ/POA/2025/1104 (Protected Identity)",
+    "location": "Jhunjhunu District (Rajasthan)",
+    "legal_stage": "Special Court Trial Stage (Accused on Interim Bail)",
+    "initial_dds_score": 48.0,
+    "month3_dds_score": 62.0,
+    "current_month5_dds": 89.5,
+    "longitudinal_trend": "RAPID_CRISIS_ESCALATION (+41.5 points over 4 months)",
+    "distress_root_cause": "Intimidation by relatives of accused; 4 repeated court adjournments; local social isolation",
+    "ai_crisis_prediction": "CRITICAL RISK: High probability of witness turning hostile under duress or severe self-harm crisis (91.2% Escalation Confidence)",
+    "district_interventions": "MANDATORY PROTECTION: Safe house witness relocation; SPP petition to cancel accused bail; weekly psychiatric home visits authorized by District Magistrate.",
+    "status": "CRISIS_INTERVENTION_DISPATCHED"
+  },
+  {
+    "case_id": "LONG-2026-MIRZ03",
+    "victim_identifier": "Arson Survivor Family #UP/POA/2025/0892",
+    "location": "Mirzapur District (Uttar Pradesh)",
+    "legal_stage": "Post-Charge Sheet & Compensation Sanction Phase",
+    "initial_dds_score": 75.0,
+    "month3_dds_score": 58.0,
+    "current_month5_dds": 41.0,
+    "longitudinal_trend": "STEADY_RECOVERY (-34.0 points improvement)",
+    "distress_root_cause": "Financial distress during initial displacement; easing following release of \u20b94.12 Lakh statutory relief installment",
+    "ai_crisis_prediction": "LOW RISK OF RELAPSE: Victim family stabilised; ongoing livelihood micro-enterprise assistance provided",
+    "district_interventions": "ROUTINE MONITORING: Monthly welfare phone follow-up; coordination with District Lead Bank for retail kiosk loan.",
+    "status": "RECOVERY_ON_TRACK"
+  },
+  {
+    "case_id": "LONG-2026-KAND05",
+    "victim_identifier": "ST Complainant #OD/POA/2026/0145",
+    "location": "Kandhamal District (Odisha)",
+    "legal_stage": "Police Investigation & Forensic Verification",
+    "initial_dds_score": 52.0,
+    "month3_dds_score": 69.0,
+    "current_month5_dds": 74.0,
+    "longitudinal_trend": "PERSISTENT_HIGH_DISTRESS (+22.0 points elevated plateau)",
+    "distress_root_cause": "Continuous village social boycott; denial of access to community water sources",
+    "ai_crisis_prediction": "ELEVATED RISK: Depressive despair and economic starvation if boycott continues unaddressed",
+    "district_interventions": "CIVIC INTERVENTION: Sub-Divisional Magistrate order enforcing village water access; deployment of police mobile patrol.",
+    "status": "ADMINISTRATIVE_ACTION_ACTIVE"
+  }
+]

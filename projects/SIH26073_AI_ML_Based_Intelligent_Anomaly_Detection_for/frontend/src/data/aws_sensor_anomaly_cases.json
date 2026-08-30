@@ -1,0 +1,24 @@
+[
+  {
+    "station_id": "AWS-RAJ-0841",
+    "station_name": "Churu Desert AWS Station (Rajasthan)",
+    "reported_telemetry": "Temp: 55.0\u00b0C | RH: 92.0% | Pressure: 1008.2 hPa",
+    "spatial_neighbor_comparison": "Neighbor Stations: Temp 44.5\u00b0C | RH 18.0% | Pressure 1007.8 hPa",
+    "ai_anomaly_verdict": "SENSOR_FAULT_ISOLATED (High Confidence 99.4%)",
+    "shap_explainability_reasoning": "SHAP +0.84 RH Inconsistency (Extreme RH incompatible with desert surface temp)",
+    "self_healing_imputed_value": "Imputed RH: 17.5% (Spatial Kriging Reconstruction)",
+    "hardware_maintenance_action": "Work Order #AWS-7102 Dispatched: Replace Capacitive Hygrometer Probe",
+    "status": "ANOMALY_ISOLATED_AND_IMPUTED"
+  },
+  {
+    "station_id": "AWS-MAH-0192",
+    "station_name": "Ratnagiri Coastal AWS Station (Maharashtra)",
+    "reported_telemetry": "Temp: 28.4\u00b0C (Frozen for 48 hrs) | RH: 88.0% | Pressure: 1012.0 hPa",
+    "spatial_neighbor_comparison": "Neighbor Stations: Temp dynamic diurnal cycle (24.2\u00b0C to 31.8\u00b0C)",
+    "ai_anomaly_verdict": "FROZEN_SENSOR_VALUE (High Confidence 99.1%)",
+    "shap_explainability_reasoning": "SHAP Zero-Variance Temporal Autocorrelation Anomaly",
+    "self_healing_imputed_value": "Imputed Temp: 29.1\u00b0C (Temporal LSTM Reconstructed)",
+    "hardware_maintenance_action": "Work Order #AWS-4921: Reset RTD Temperature Sensor Interface Board",
+    "status": "ANOMALY_ISOLATED_AND_IMPUTED"
+  }
+]

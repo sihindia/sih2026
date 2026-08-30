@@ -1,0 +1,47 @@
+[
+  {
+    "project_id": "PRED-EXP-088",
+    "project_name": "Delhi-Mumbai Expressway Spur Phase 3",
+    "state": "Rajasthan",
+    "district": "Alwar & Dausa",
+    "requiring_agency": "NHAI",
+    "notified_area_ha": 480.0,
+    "delay_risk_pct": 78.4,
+    "predicted_slip_months": 7.4,
+    "primary_bottleneck": "Civil court injunction over circle rates in Alwar",
+    "shap_litigation_impact": 0.42,
+    "shap_compensation_impact": 0.26,
+    "recommended_mitigation": "Fast-track dispute via Special Land Lok Adalat + 15% consent solatium bonus",
+    "alert_level": "CRITICAL_EARLY_WARNING"
+  },
+  {
+    "project_id": "PRED-DFC-104",
+    "project_name": "Eastern Dedicated Freight Corridor Coal Link",
+    "state": "Jharkhand",
+    "district": "Dhanbad & Bokaro",
+    "requiring_agency": "Ministry of Railways",
+    "notified_area_ha": 340.0,
+    "delay_risk_pct": 42.1,
+    "predicted_slip_months": 2.8,
+    "primary_bottleneck": "Forest clearance divergence and tribal tenancy land verification",
+    "shap_litigation_impact": 0.18,
+    "shap_compensation_impact": 0.35,
+    "recommended_mitigation": "Deploy joint Forest-Revenue GPS boundary verification team",
+    "alert_level": "MODERATE_WATCHLIST"
+  },
+  {
+    "project_id": "PRED-HSR-210",
+    "project_name": "Mumbai-Ahmedabad High-Speed Rail Palghar Section",
+    "state": "Maharashtra",
+    "district": "Palghar & Thane",
+    "requiring_agency": "NHSRCL",
+    "notified_area_ha": 195.0,
+    "delay_risk_pct": 86.2,
+    "predicted_slip_months": 9.2,
+    "primary_bottleneck": "Gram Sabha consent deadlock and disputed orchards valuation",
+    "shap_litigation_impact": 0.54,
+    "shap_compensation_impact": 0.31,
+    "recommended_mitigation": "Direct collectorate community outreach with PESA committee tripartite dialogue",
+    "alert_level": "CRITICAL_EARLY_WARNING"
+  }
+]

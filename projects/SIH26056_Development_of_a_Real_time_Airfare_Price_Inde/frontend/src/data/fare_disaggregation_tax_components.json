@@ -1,0 +1,26 @@
+[
+  {
+    "component": "Base Airfare",
+    "pricing_model": "Revenue Management System (Dynamic Bucket)",
+    "share_pct": "60% - 66%",
+    "cpi_classification": "Core Transport Utility Value"
+  },
+  {
+    "component": "Aviation Turbine Fuel (ATF) Surcharge",
+    "pricing_model": "Crude Oil & Jet Fuel Indexed (YQ/YR)",
+    "share_pct": "18% - 25%",
+    "cpi_classification": "Energy/Fuel Cost Pass-Through"
+  },
+  {
+    "component": "User Development Fee (UDF)",
+    "pricing_model": "AERA Regulated Airport Tariff",
+    "share_pct": "6% - 8%",
+    "cpi_classification": "Regulated Infrastructure Levy"
+  },
+  {
+    "component": "Aviation Security Fee (ASF) & GST",
+    "pricing_model": "Statutory MoCA & Ministry of Finance Levy",
+    "share_pct": "5% - 7%",
+    "cpi_classification": "Government Taxes & Security"
+  }
+]

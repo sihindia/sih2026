@@ -1,0 +1,34 @@
+[
+  {
+    "bidder_id": "GEM-BID-2026-001",
+    "bidder_name": "Precision Engineering Valves Ltd",
+    "tender_id": "CPCL-GEM-2026-8819",
+    "tender_title": "Procurement of Cryogenic Stainless Steel Valves",
+    "udyam_msme": "UDYAM-TN-02-00441 (Verified Medium Enterprise)",
+    "gstn_status": "Active \u2022 33AAACP1948Q1Z4 (GSTR-3B & 1 Regular)",
+    "cbdt_pan_itr": "Clean \u2022 3 Years Audited Turnover \u20b948.2 Cr Matched",
+    "make_in_india": "68.5% Local Content (Class-I Local Supplier)",
+    "epfo_esic": "Active (148 Compliant Insured Employees)",
+    "blacklist_check": "0 Debarments (Clean across GeM, CPPP & State Portals)",
+    "ai_compliance_score": 98.5,
+    "risk_level": "LOW_RISK_COMPLIANT",
+    "recommendation": "QUALIFIED_FOR_TECHNICAL_AWARD",
+    "status": "VERIFICATION_COMPLETED"
+  },
+  {
+    "bidder_id": "GEM-BID-2026-042",
+    "bidder_name": "Apex Petrochem Spares Corp",
+    "tender_id": "CPCL-GEM-2026-8819",
+    "tender_title": "Procurement of Cryogenic Stainless Steel Valves",
+    "udyam_msme": "UDYAM-MH-01-99120 (Verified Micro Enterprise)",
+    "gstn_status": "SUSPENDED (3 Months Lapsed GSTR-3B Filings)",
+    "cbdt_pan_itr": "Discrepancy (Turnover Mismatch between ITR & Balance Sheet)",
+    "make_in_india": "24.0% Local Content (Non-Compliant for Class-I)",
+    "epfo_esic": "Default Notice Pending",
+    "blacklist_check": "1 Warning Flag on State Procurement Portal",
+    "ai_compliance_score": 34.0,
+    "risk_level": "HIGH_RISK_NON_COMPLIANT",
+    "recommendation": "DISQUALIFIED_STATUTORY_DEFAULT",
+    "status": "VERIFICATION_COMPLETED"
+  }
+]

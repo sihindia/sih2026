@@ -1,0 +1,20 @@
+[
+  {
+    "life_support_element": "Lake Priyadarshini Water Extraction",
+    "operational_spec": "350m insulated pipe with electric trace-heating at +12\u00b0C",
+    "flow_rate_lpm": 45.0,
+    "status": "ICE_FREE_FLOWING"
+  },
+  {
+    "life_support_element": "MBBR Wastewater Treatment Plant",
+    "operational_spec": "Aerobic biological biofilm reactor complying with Madrid Protocol",
+    "flow_rate_lpm": 28.0,
+    "status": "ZERO_DISCHARGE_COMPLIANT"
+  },
+  {
+    "life_support_element": "Living Module HVAC & Air Quality",
+    "operational_spec": "CO2 levels < 650 ppm; Positive pressure to prevent katabatic draft",
+    "flow_rate_lpm": 850.0,
+    "status": "OPTIMAL_INDOOR_AIR"
+  }
+]

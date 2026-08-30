@@ -1,0 +1,50 @@
+[
+  {
+    "case_id": "NOW-2026-KAL01",
+    "target_corridor": "Kolkata & NSCBI Dum Dum Airport Corridor (WB)",
+    "hazard_phenomena": "Severe Pre-Monsoon Nor'wester (Kalbaishakhi) Supercell & Giant Hail",
+    "lead_time_hours": "2.5 Hours",
+    "countdown_minutes": 150,
+    "dwr_reflectivity_dbz": 62.5,
+    "satellite_ctt_drop": "-22.5\u00b0C/h (Cloud-Top Glaciation to -74\u00b0C)",
+    "lightning_jump_rate": "64 strikes/min (Positive CG Jump)",
+    "hail_probability_pct": 94.2,
+    "hail_size_cm": "3.5 to 5.0 cm Giant Stones",
+    "downburst_wind_kmh": 104.0,
+    "cloudburst_risk": "HIGH (120 mm/h instantaneous rain core)",
+    "sector_impact_action": "AVIATION TAF ALERT: Divert 6 inbound flights; issue microburst runway wind shear warning 75 minutes in advance. Halt outdoor airport apron operations.",
+    "status": "NOWCAST_ACTIVE"
+  },
+  {
+    "case_id": "NOW-2026-HIM03",
+    "target_corridor": "Uttarkashi & Bhagirathi Gorge Valley (Uttarakhand)",
+    "hazard_phenomena": "Orographic Convective Cloudburst & Flash Flood Surge",
+    "lead_time_hours": "3.2 Hours",
+    "countdown_minutes": 192,
+    "dwr_reflectivity_dbz": 58.0,
+    "satellite_ctt_drop": "-26.0\u00b0C/h (Rapid Orographic Deep Convection)",
+    "lightning_jump_rate": "48 strikes/min",
+    "hail_probability_pct": 72.0,
+    "hail_size_cm": "1.5 to 2.5 cm Moderate Hail",
+    "downburst_wind_kmh": 78.0,
+    "cloudburst_risk": "CRITICAL (145 mm/h torrential downpour)",
+    "sector_impact_action": "DISASTER EVACUATION: Trigger automated river siren network along Bhagirathi; order immediate halt to Char Dham pilgrim transit across Bhatwari.",
+    "status": "NOWCAST_ACTIVE"
+  },
+  {
+    "case_id": "NOW-2026-DEC05",
+    "target_corridor": "Hyderabad & Begumpet Airport Area (Telangana)",
+    "hazard_phenomena": "Multi-Cell Severe Thunderstorm & Wet Microburst Squall",
+    "lead_time_hours": "1.8 Hours",
+    "countdown_minutes": 108,
+    "dwr_reflectivity_dbz": 59.2,
+    "satellite_ctt_drop": "-19.0\u00b0C/h",
+    "lightning_jump_rate": "56 strikes/min",
+    "hail_probability_pct": 82.5,
+    "hail_size_cm": "2.0 to 3.5 cm Severe Hail",
+    "downburst_wind_kmh": 92.0,
+    "cloudburst_risk": "MODERATE_TO_HIGH (95 mm/h rain core)",
+    "sector_impact_action": "AGRITECH & CIVIC ALERT: Advise horticulture farmers in Shamshabad to deploy anti-hail nets; activate GHMC urban emergency dewatering teams.",
+    "status": "NOWCAST_ACTIVE"
+  }
+]

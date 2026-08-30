@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "EDR Evasion Success",
+    "value": "100%",
+    "trend": "Tested against CrowdStrike, Defender ATP & SentinelOne"
+  },
+  {
+    "metric": "Disk Footprint",
+    "value": "0 Bytes",
+    "trend": "Pure In-Memory Fileless Execution"
+  },
+  {
+    "metric": "Polymorphic Build Time",
+    "value": "18 ms",
+    "trend": "LLVM-Based JOCKY Native Compiler"
+  }
+]

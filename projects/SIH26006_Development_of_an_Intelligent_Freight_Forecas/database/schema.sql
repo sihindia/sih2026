@@ -1,30 +1,33 @@
--- Supabase / PostgreSQL Schema for SIH26006 (Development of an Intelligent Freight Forecasting Model for Optimized Vessel Chartering and Bulk Cargo Procurement from overseas to East Coast of India)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- SAIL SAMUDRASETU 360 DATABASE SCHEMA (SIH26006)
+-- Ministry of Steel - Steel Authority of India Limited (SAIL)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26006_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26006',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS bulk_cargo_trade_lanes (
+    id SERIAL PRIMARY KEY,
+    lane_id VARCHAR(64) UNIQUE NOT NULL,
+    lane_title VARCHAR(255) NOT NULL,
+    origin_port VARCHAR(128) NOT NULL,
+    destination_port VARCHAR(128) NOT NULL,
+    cargo_type VARCHAR(128) NOT NULL,
+    parcel_size_mt NUMERIC(10, 2) NOT NULL,
+    recommended_vessel VARCHAR(64) NOT NULL,
+    spot_freight_usd_mt NUMERIC(6, 2) NOT NULL,
+    forecast_60d_usd_mt NUMERIC(6, 2) NOT NULL,
+    charter_recommendation TEXT NOT NULL,
+    draft_status TEXT NOT NULL,
+    estimated_savings_usd NUMERIC(12, 2) NOT NULL,
+    charter_status VARCHAR(64) DEFAULT 'TIME_CHARTER_LOCKED_OPTIMAL',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26006_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26006_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS east_coast_ports (
+    id SERIAL PRIMARY KEY,
+    port_name VARCHAR(128) UNIQUE NOT NULL,
+    state VARCHAR(64) NOT NULL,
+    max_draft_m NUMERIC(4, 1) NOT NULL,
+    max_loa_m NUMERIC(5, 1) NOT NULL,
+    max_beam_m NUMERIC(4, 1) NOT NULL,
+    handling_rate_mt_day INTEGER NOT NULL,
+    suitable_vessels TEXT NOT NULL
 );
-
-ALTER TABLE sih26006_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26006_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26006_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26006_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26006_audit_logs FOR SELECT USING (true);

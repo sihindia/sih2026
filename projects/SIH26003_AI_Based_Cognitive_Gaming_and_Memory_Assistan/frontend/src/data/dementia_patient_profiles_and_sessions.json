@@ -1,0 +1,56 @@
+[
+  {
+    "patient_id": "PAT-NER-ASM01",
+    "name": "Bhaben Hazarika (Age 74)",
+    "location": "Guwahati, Kamrup Metropolitan, Assam",
+    "diagnosis": "Early-Stage Alzheimer's Disease (CDR-1)",
+    "preferred_language": "Assamese / \u0985\u09b8\u09ae\u09c0\u09af\u09bc\u09be",
+    "active_cognitive_module": "Traditional Gamosa Floral Motif Pattern Matcher",
+    "session_performance": {
+      "tap_accuracy_pct": 92.4,
+      "reaction_latency_sec": 1.4,
+      "cognitive_fatigue_score_pct": 14.0,
+      "current_difficulty_level": "Level 3 (Intermediate)",
+      "recommended_next_level": "Level 4 (Advanced Reminiscence)"
+    },
+    "medication_compliance": "100% (Donepezil 10mg taken at 08:00 AM)",
+    "caregiver_contact": "Dr. Pranjal Hazarika (Son) - +91 94350 XXXXX",
+    "session_status": "COGNITIVE_SESSION_COMPLETED_SUCCESSFULLY"
+  },
+  {
+    "patient_id": "PAT-NER-MIZ02",
+    "name": "Lalthansangi Ralte (Age 79)",
+    "location": "Hunthar Veng, Aizawl, Mizoram",
+    "diagnosis": "Mild Vascular Dementia (Post-Stroke)",
+    "preferred_language": "Mizo / Mizo \u1e6dawng",
+    "active_cognitive_module": "Mizo Puan Traditional Weaving Color Recall",
+    "session_performance": {
+      "tap_accuracy_pct": 86.0,
+      "reaction_latency_sec": 1.8,
+      "cognitive_fatigue_score_pct": 22.0,
+      "current_difficulty_level": "Level 2 (Gentle)",
+      "recommended_next_level": "Level 2 (Retain for Confidence)"
+    },
+    "medication_compliance": "95% (Amlodipine & Memantine taken on schedule)",
+    "caregiver_contact": "Lalrinawma Ralte (Granddaughter) - +91 98620 XXXXX",
+    "session_status": "COGNITIVE_SESSION_COMPLETED_SUCCESSFULLY"
+  },
+  {
+    "patient_id": "PAT-NER-MEG03",
+    "name": "Dapbiang Khongwir (Age 82)",
+    "location": "Mawkhar, Shillong, East Khasi Hills, Meghalaya",
+    "diagnosis": "Amnestic Mild Cognitive Impairment (aMCI)",
+    "preferred_language": "Khasi / Ka Ktien Khasi",
+    "active_cognitive_module": "Khasi Traditional Folk Flute & Sacred Grove Audio Recall",
+    "session_performance": {
+      "tap_accuracy_pct": 94.8,
+      "reaction_latency_sec": 1.2,
+      "cognitive_fatigue_score_pct": 10.0,
+      "current_difficulty_level": "Level 4 (Complex Auditory)",
+      "recommended_next_level": "Level 5 (Master Reminiscence)"
+    },
+    "medication_compliance": "100% (Ginkgo Biloba & Vitamin B12 taken)",
+    "caregiver_contact": "Ibadashisha Khongwir (Daughter) - +91 97740 XXXXX",
+    "session_status": "COGNITIVE_SESSION_COMPLETED_SUCCESSFULLY"
+  }
+]

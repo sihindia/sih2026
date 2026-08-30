@@ -1,0 +1,30 @@
+[
+  {
+    "signature_id": "QDS-TX-2026-001",
+    "document_title": "Sovereign Inter-Bank Settlement (\u20b9150 Cr RTGS)",
+    "signer_alice": "Reserve Bank of India (Node-01)",
+    "verifier_bob": "State Bank of India Corporate (Node-08)",
+    "arbitrator_charlie": "National Payments Corp of India (Node-99)",
+    "entangled_bell_pairs_used": 1024,
+    "pauli_correction_applied": "\u03c3z \u00b7 \u03c3x (Classical 2-bit Teleportation)",
+    "measured_qber_pct": 0.84,
+    "qber_security_threshold_pct": 3.2,
+    "forgery_probability": "< 10^-12",
+    "threat_status": "NO_EAVESDROPPING_DETECTED",
+    "verification_verdict": "AUTHENTIC_QDS_DETERMINISTICALLY_ACCEPTED"
+  },
+  {
+    "signature_id": "QDS-TX-2026-042",
+    "document_title": "Forged Defense Procurement Electronic Wire",
+    "signer_alice": "Spoofed Impersonation Node (Eve)",
+    "verifier_bob": "Ministry of Defense Financial Portal",
+    "arbitrator_charlie": "Certifying Authority CCA",
+    "entangled_bell_pairs_used": 1024,
+    "pauli_correction_applied": "State Collapse Anomaly",
+    "measured_qber_pct": 28.6,
+    "qber_security_threshold_pct": 3.2,
+    "forgery_probability": "99.999% Attack Confirmed",
+    "threat_status": "INTERCEPT_AND_RESEND_ATTACK_DETECTED",
+    "verification_verdict": "FORGERY_DETECTED_TRANSACTION_BLOCKED"
+  }
+]

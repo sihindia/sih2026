@@ -1,0 +1,41 @@
+[
+  {
+    "dataset_id": "DATA-ANT-ICE-01",
+    "dataset_title": "Central Dronning Maud Land (CDML) 200m Ice-Core Paleoclimate Proxy Record",
+    "theatre_domain": "Antarctic Cryosphere & Paleoclimate (Maitri Outpost)",
+    "sampling_depth_m": 200.0,
+    "chronological_span": "800 Years (1220 AD to Present Day)",
+    "measured_proxies": "Oxygen Isotope Ratio (\u03b418O), Deuterium Excess (d-excess), Major Ion Chemistry (SO4, Na, Cl), Volcanic Ash Markers",
+    "doi_identifier": "doi:10.5061/ncpor.polar.cdml2026",
+    "fair_compliance_rating": "FAIR-Gold Certified (Open NetCDF & CSV Formats)",
+    "file_size_mb": 48.5,
+    "citation_count": 128,
+    "access_status": "OPEN_RESEARCH_ACCESSIBLE"
+  },
+  {
+    "dataset_id": "DATA-SO-BIO-02",
+    "dataset_title": "Southern Ocean Krill & Benthic Marine Biodiversity Barcoding Registry",
+    "theatre_domain": "Prydz Bay & Southern Ocean Marine Biology (Bharati Transect)",
+    "sampling_depth_m": 1250.0,
+    "chronological_span": "Multi-Year Austral Summer Transects (2018 - 2026)",
+    "measured_proxies": "Cytochrome c Oxidase Subunit I (COI) DNA Barcodes, Oceanographic CTD Hydrography (Salinity, Temp, DO)",
+    "doi_identifier": "doi:10.5061/ncpor.polar.sobio2026",
+    "fair_compliance_rating": "FAIR-Gold Certified (NCBI Linked GenBank & Darwin Core)",
+    "file_size_mb": 124.0,
+    "citation_count": 94,
+    "access_status": "OPEN_RESEARCH_ACCESSIBLE"
+  },
+  {
+    "dataset_id": "DATA-HIM-GLAC-03",
+    "dataset_title": "Chhota Shigri Glacier Mass Balance & Albedo Dynamics (Himansh Observatory)",
+    "theatre_domain": "Himalayan Cryosphere (Chandra-Bhaga Basin, Spiti Valley)",
+    "sampling_depth_m": 45.0,
+    "chronological_span": "Continuous Decadal In-Situ Glaciological Staking (2014 - 2026)",
+    "measured_proxies": "Annual Net Mass Balance (m w.e.), Surface Velocity (DGPS), Debris Thickness, Spectroradiometer Albedo",
+    "doi_identifier": "doi:10.5061/ncpor.polar.himglac2026",
+    "fair_compliance_rating": "FAIR-Gold Certified (World Glacier Monitoring Service WGMS Compliant)",
+    "file_size_mb": 36.2,
+    "citation_count": 142,
+    "access_status": "OPEN_RESEARCH_ACCESSIBLE"
+  }
+]

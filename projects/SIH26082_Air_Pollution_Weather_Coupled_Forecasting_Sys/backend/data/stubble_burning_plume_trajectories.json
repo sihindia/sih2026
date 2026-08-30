@@ -1,0 +1,14 @@
+[
+  {
+    "region": "Punjab Majha & Malwa Belt",
+    "active_fire_count": "2,840 VIIRS Detections",
+    "wind_corridor": "North-Westerly @ 2.5 m/s",
+    "delhi_impact": "Primary Upstream Smoke Source"
+  },
+  {
+    "region": "Haryana Karnal & Kaithal",
+    "active_fire_count": "615 VIIRS Detections",
+    "wind_corridor": "North-Westerly @ 2.1 m/s",
+    "delhi_impact": "Secondary Immediate Smoke Contribution"
+  }
+]

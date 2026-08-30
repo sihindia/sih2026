@@ -1,22 +1,31 @@
--- Supabase / PostgreSQL Schema for SIH26034 (Software System to check compliance of Packaged Commodities under Legal Metrology(Packaged Commodities) Rules, 2011 by scanning products, images and labels.)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- NAAPTOL AI 360 DATABASE SCHEMA (SIH26034)
+-- Ministry of Consumer Affairs - DoCA
+-- =========================================================================
 
--- 1. Commodity Audit Batches
-CREATE TABLE IF NOT EXISTS sih26034_audits (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    product_name VARCHAR(200) NOT NULL,
-    manufacturer_name VARCHAR(200) NOT NULL,
-    mrp_declared NUMERIC(10, 2) NOT NULL,
-    mrp_tax_inclusive BOOLEAN NOT NULL DEFAULT TRUE,
-    net_quantity VARCHAR(50) NOT NULL,
-    is_standard_unit BOOLEAN NOT NULL DEFAULT TRUE,
-    mfg_date DATE NOT NULL,
-    consumer_care_declared BOOLEAN NOT NULL DEFAULT TRUE,
-    is_compliant BOOLEAN NOT NULL,
-    violations_json JSONB DEFAULT '[]'::jsonb,
-    audited_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS packaged_commodities (
+    id SERIAL PRIMARY KEY,
+    product_id VARCHAR(64) UNIQUE NOT NULL,
+    product_name VARCHAR(255) NOT NULL,
+    manufacturer_details TEXT NOT NULL,
+    category VARCHAR(128) NOT NULL,
+    pdp_area_cm2 VARCHAR(32) NOT NULL,
+    declared_net_quantity VARCHAR(64) NOT NULL,
+    mrp_declaration VARCHAR(128) NOT NULL,
+    unit_sale_price VARCHAR(64) NOT NULL,
+    measured_font_size VARCHAR(32) NOT NULL,
+    status VARCHAR(64) DEFAULT 'FULLY_COMPLIANT',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE sih26034_audits ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Audits" ON sih26034_audits FOR SELECT USING (true);
-CREATE POLICY "Public Insert Audits" ON sih26034_audits FOR INSERT WITH CHECK (true);
+CREATE TABLE IF NOT EXISTS statutory_show_cause_notices (
+    id SERIAL PRIMARY KEY,
+    notice_id VARCHAR(64) UNIQUE NOT NULL,
+    company_name VARCHAR(255) NOT NULL,
+    product_name VARCHAR(255) NOT NULL,
+    violation_sections TEXT NOT NULL,
+    issuing_authority VARCHAR(255) NOT NULL,
+    penalty_compounded VARCHAR(64) NOT NULL,
+    status VARCHAR(64) DEFAULT 'NOTICE_SERVED',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

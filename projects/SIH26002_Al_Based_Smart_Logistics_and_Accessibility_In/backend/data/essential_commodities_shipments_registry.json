@@ -1,0 +1,29 @@
+[
+  {
+    "shipment_id": "CARGO-OXY-01",
+    "name": "Cryogenic Liquid Medical Oxygen (20,000L)",
+    "category": "Medical Emergency",
+    "origin": "Guwahati Refinery",
+    "destination": "STNM Multi-Specialty Hospital, Gangtok",
+    "temp_monitored": "-183\u00b0C Cryo Monitored",
+    "status": "DELIVERED_IN_TIME"
+  },
+  {
+    "shipment_id": "CARGO-VAC-02",
+    "name": "Cold-Chain Universal Immunization Vaccines",
+    "category": "Pharmaceuticals",
+    "origin": "Central Vaccine Depot, Dimapur",
+    "destination": "RIMS Hospital, Imphal",
+    "temp_monitored": "+2\u00b0C to +8\u00b0C Active Logger",
+    "status": "EN_ROUTE_CLEAR_DETOUR"
+  },
+  {
+    "shipment_id": "CARGO-PDS-03",
+    "name": "Food Corporation of India (FCI) Wheat Rations",
+    "category": "Food Security",
+    "origin": "Silchar Depot",
+    "destination": "Civil Supplies Godown, Aizawl",
+    "temp_monitored": "Moisture Shield Verified",
+    "status": "TRANSSHIPPED_VIA_BHAIRABI"
+  }
+]

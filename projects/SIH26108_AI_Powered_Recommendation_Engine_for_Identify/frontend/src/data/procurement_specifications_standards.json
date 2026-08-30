@@ -1,0 +1,26 @@
+[
+  {
+    "spec_id": "PROC-SPEC-2026-001",
+    "tender_authority": "Central Public Works Department (CPWD)",
+    "procurement_title": "Supply of Hollow Structural Steel Sections for Airport Canopy",
+    "raw_input_spec": "Cold-formed welded rectangular and square steel hollow sections for structural framework (Grade YSt 310)",
+    "primary_standard": "IS 4923:2017 (Hollow Steel Sections for Structural Use)",
+    "latest_version": "IS 4923:2017 (Incorporating Amendment No. 1 & 2)",
+    "normative_allied_standards": "IS 1608 (Part 1):2022 (Tensile Test), IS 1599:2019 (Bend Test), IS 8910:2020 (Technical Delivery)",
+    "mandatory_qco": "MANDATORY: Steel & Steel Products (Quality Control) Order, 2024 (ISI Mark Mandatory)",
+    "semantic_score": 98.4,
+    "status": "SPECIFICATION_STANDARDIZED"
+  },
+  {
+    "spec_id": "PROC-SPEC-2026-042",
+    "tender_authority": "Indian Railways (CORE / RDSO)",
+    "procurement_title": "Procurement of Fire-Retardant Low Smoke PVC Power Cables (1.1kV)",
+    "raw_input_spec": "1100V grade heavy duty copper conductor FRLS PVC insulated and sheathed underground power cable",
+    "primary_standard": "IS 1554 (Part 1):1988 (PVC Insulated Heavy Duty Electric Cables)",
+    "latest_version": "IS 1554 (Part 1):1988 (Reaffirmed 2020 with Amendment 1-6)",
+    "normative_allied_standards": "IS 8130:2013 (Conductors for Insulated Cables), IS 5831:1984 (PVC Insulation), IS 10810 (Flammability Tests)",
+    "mandatory_qco": "MANDATORY: Electrical Wires & Cables QCO 2023 (ISI Mark Mandatory)",
+    "semantic_score": 96.8,
+    "status": "SPECIFICATION_STANDARDIZED"
+  }
+]

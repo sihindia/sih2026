@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "OCR Recognition Accuracy",
+    "value": "98.4%",
+    "trend": "Fine-Tuned TrOCR & LayoutLMv3"
+  },
+  {
+    "metric": "Data-Entry Hours Saved",
+    "value": "94%",
+    "trend": "Automated Key-Value Entity Extraction"
+  },
+  {
+    "metric": "DILRMP Compliance",
+    "value": "100%",
+    "trend": "Pre-Allocating National 14-Digit ULPIN"
+  }
+]

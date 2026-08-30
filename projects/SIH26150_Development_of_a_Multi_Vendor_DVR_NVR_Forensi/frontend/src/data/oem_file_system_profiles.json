@@ -1,0 +1,20 @@
+[
+  {
+    "vendor": "Hikvision",
+    "fs_name": "HikFS v1.0 / v2.0 / HIK_RAW",
+    "encoding": "H.264 / H.265 / PS Stream",
+    "market_share_pct": 34.5
+  },
+  {
+    "vendor": "Dahua Technology",
+    "fs_name": "DHFS 4.1 / 4.2 / .dav Raw",
+    "encoding": "Smart H.265+ / Dahua DAV",
+    "market_share_pct": 28.2
+  },
+  {
+    "vendor": "CP Plus",
+    "fs_name": "CPFS / WFS Linux Hybrid",
+    "encoding": "H.264 / H.265 UniStream",
+    "market_share_pct": 16.4
+  }
+]

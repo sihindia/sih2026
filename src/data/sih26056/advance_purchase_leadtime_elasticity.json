@@ -1,0 +1,32 @@
+[
+  {
+    "horizon": "T + 1 Day (Last Minute)",
+    "consumer_type": "Corporate / Emergency",
+    "avg_multiplier": "2.8x of Base",
+    "price_elasticity": "Highly Inelastic (-0.32)"
+  },
+  {
+    "horizon": "T + 7 Days (Short Notice)",
+    "consumer_type": "Business / Semi-Urgent",
+    "avg_multiplier": "1.7x of Base",
+    "price_elasticity": "Moderately Inelastic (-0.65)"
+  },
+  {
+    "horizon": "T + 15 Days (Planned)",
+    "consumer_type": "Leisure / VFR",
+    "avg_multiplier": "1.2x of Base",
+    "price_elasticity": "Unitary Elastic (-1.02)"
+  },
+  {
+    "horizon": "T + 30 Days (Advance)",
+    "consumer_type": "Vacation / Holiday",
+    "avg_multiplier": "1.0x (Baseline)",
+    "price_elasticity": "Elastic (-1.45)"
+  },
+  {
+    "horizon": "T + 45 Days (Super Saver)",
+    "consumer_type": "Festival / Seasonal Planners",
+    "avg_multiplier": "0.92x of Base",
+    "price_elasticity": "Highly Elastic (-1.88)"
+  }
+]

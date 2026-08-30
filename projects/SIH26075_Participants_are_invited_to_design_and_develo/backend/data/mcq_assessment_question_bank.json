@@ -1,0 +1,24 @@
+[
+  {
+    "subject": "Radar Meteorology",
+    "question": "Which dual-polarization variable is most sensitive to heavy rain vs hail differentiation?",
+    "options": [
+      "Differential Reflectivity (ZDR)",
+      "Copolar Correlation Coefficient (RhoHV)",
+      "Specific Differential Phase (KDP)",
+      "Radial Velocity"
+    ],
+    "correct": "Specific Differential Phase (KDP)"
+  },
+  {
+    "subject": "Numerical Modeling",
+    "question": "What is the primary benefit of 3D-Var / 4D-Var Data Assimilation in NWP?",
+    "options": [
+      "Reducing grid resolution",
+      "Minimizing initial condition error using real-time observations",
+      "Eliminating hydrostatic balance",
+      "Speeding up post-processing"
+    ],
+    "correct": "Minimizing initial condition error using real-time observations"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "call_id": "NHAA-2026-HAT01",
+    "caller_category": "SC Atrocity Victim & Family Complainant",
+    "location": "Hathras District (Uttar Pradesh)",
+    "helpline_channel": "NHAA 14566 Inbound Toll-Free Call",
+    "caller_narrative": "\u0939\u092e\u093e\u0930\u0947 \u0918\u0930 \u0915\u094b \u0918\u0947\u0930 \u0932\u093f\u092f\u093e \u0939\u0948, \u0935\u0947 \u091c\u093e\u0928 \u0938\u0947 \u092e\u093e\u0930\u0928\u0947 \u0915\u0940 \u0927\u092e\u0915\u0940 \u0926\u0947 \u0930\u0939\u0947 \u0939\u0948\u0902\u0964 \u092c\u091a\u094d\u091a\u0947 \u092c\u0939\u0941\u0924 \u0921\u0930\u0947 \u0939\u0941\u090f \u0939\u0948\u0902, \u0939\u092e\u0947\u0902 \u092c\u091a\u093e \u0932\u0940\u091c\u093f\u090f\u0964",
+    "pitch_instability_hz": "+14.8 Hz (High Micro-Tremor)",
+    "speech_pause_ratio_pct": 48.2,
+    "speech_jitter_pct": 2.4,
+    "svi_score": 94.5,
+    "risk_category": "CRITICAL_RISK (Score 76-100)",
+    "trauma_indicators": "Acute Panic, Imminent Threat to Life, Severe Intimidation, Auditory Sobbing",
+    "automated_interventions": "CRITICAL DISPATCH: Auto-patched to NIMHANS Trauma Psychiatrist in 15 seconds; Priority Red Alert dispatched to District SP & DM for armed witness protection under SC/ST (PoA) Act.",
+    "status": "EMERGENCY_ESCALATION_ACTIVE"
+  },
+  {
+    "call_id": "NHAA-2026-BEL03",
+    "caller_category": "Atrocity Survivor (Caste Discrimination & Ostracism)",
+    "location": "Belagavi District (Karnataka)",
+    "helpline_channel": "NHAA Integrated Portal Chatbot",
+    "caller_narrative": "\u0915\u094b\u0930\u094d\u091f \u092e\u0947\u0902 \u0917\u0935\u093e\u0939\u0940 \u0926\u0947\u0928\u0947 \u0915\u0947 \u092c\u093e\u0926 \u0938\u0947 \u092e\u0941\u091d\u0947 \u0915\u093e\u092e \u092a\u0930 \u0928\u0939\u0940\u0902 \u0906\u0928\u0947 \u0926\u0947 \u0930\u0939\u0947 \u0939\u0948\u0902\u0964 \u0918\u0930 \u0915\u093e \u0930\u093e\u0936\u0928 \u0916\u0924\u094d\u092e \u0939\u094b \u0917\u092f\u093e \u0939\u0948, \u092e\u0948\u0902 \u092c\u0939\u0941\u0924 \u0939\u0924\u093e\u0936 \u0939\u0942\u0902\u0964",
+    "pitch_instability_hz": "+6.4 Hz (Moderate Tremor)",
+    "speech_pause_ratio_pct": 34.5,
+    "speech_jitter_pct": 1.6,
+    "svi_score": 68.0,
+    "risk_category": "HIGH_RISK (Score 51-75)",
+    "trauma_indicators": "Depression, Economic Boycott, Social Isolation, Chronic Anxiety",
+    "automated_interventions": "HIGH PRIORITY: Assigned dedicated legal aid counsel; alerted District Social Welfare Officer for immediate food ration and witness protection financial relief.",
+    "status": "COUNSELLING_ASSIGNED"
+  },
+  {
+    "call_id": "NHAA-2026-NAG05",
+    "caller_category": "Village Community Representative",
+    "location": "Nagaur District (Rajasthan)",
+    "helpline_channel": "NHAA Mobile App Voice Note",
+    "caller_narrative": "\u0938\u093e\u0930\u094d\u0935\u091c\u0928\u093f\u0915 \u0915\u0941\u090f\u0902 \u0938\u0947 \u092a\u093e\u0928\u0940 \u092d\u0930\u0928\u0947 \u0915\u094b \u0932\u0947\u0915\u0930 \u0935\u093f\u0935\u093e\u0926 \u0939\u0941\u0906 \u0925\u093e\u0964 \u092a\u0941\u0932\u093f\u0938 \u092e\u0947\u0902 \u0936\u093f\u0915\u093e\u092f\u0924 \u0915\u0940 \u0939\u0948 \u0932\u0947\u0915\u093f\u0928 \u091c\u093e\u0902\u091a \u0927\u0940\u092e\u0940 \u091a\u0932 \u0930\u0939\u0940 \u0939\u0948\u0964",
+    "pitch_instability_hz": "+3.1 Hz (Low Variance)",
+    "speech_pause_ratio_pct": 22.0,
+    "speech_jitter_pct": 0.9,
+    "svi_score": 42.0,
+    "risk_category": "MODERATE_RISK (Score 26-50)",
+    "trauma_indicators": "Procedural Frustration, Caste Discrimination Anxiety",
+    "automated_interventions": "MODERATE DISPATCH: Escalated grievance ticket to Sub-Divisional Magistrate (SDM); scheduled follow-up welfare call within 48 hours.",
+    "status": "INVESTIGATION_TRACKED"
+  }
+]

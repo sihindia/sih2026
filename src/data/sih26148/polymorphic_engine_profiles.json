@@ -1,0 +1,14 @@
+[
+  {
+    "technique": "Control-Flow Graph (CFG) Flattening",
+    "description": "Converts nested loops and conditionals into randomized state-machine switch blocks"
+  },
+  {
+    "technique": "Dynamic In-Memory Variable Encryption",
+    "description": "Encrypts string literals with ephemeral XOR/ChaCha20 keys unpacked only at instruction execution"
+  },
+  {
+    "technique": "Randomized Import Table & Hash Mutator",
+    "description": "Changes binary hash, entry point offsets, and token headers on every continuous delivery build"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "concept": "Quantum Superposition",
+    "rule": "A qubit exists in a linear combination of basis states |0\u27e9 and |1\u27e9 until projective measurement collapses it.",
+    "code_snippet": "qc.h(0) # Creates (|0\u27e9+|1\u27e9)/\u221a2"
+  },
+  {
+    "concept": "Circuit Optimization (Gate Cancellation)",
+    "rule": "Adjacent identical self-inverse gates cancel out automatically: H\u00b7H = I and X\u00b7X = I.",
+    "code_snippet": "ai_debugger.remove_identity_pairs(circuit)"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "term_en": "Methane Gas Alarm",
+    "term_hi": "\u092e\u0940\u0925\u0947\u0928 \u0917\u0948\u0938 \u091a\u0947\u0924\u093e\u0935\u0928\u0940",
+    "term_santali": "\u1c62\u1c64\u1c5b\u1c77\u1c6e\u1c71 \u1c66\u1c5a\u1c6d \u1c66\u1c69\u1c65\u1c64\u1c6d\u1c5f\u1c79\u1c68",
+    "audio_cue": "Danger! Retreat immediately into fresh air intake"
+  },
+  {
+    "term_en": "Self-Rescuer Breathing Apparatus",
+    "term_hi": "\u0938\u094d\u0935\u092f\u0902-\u092c\u091a\u093e\u0935 \u0936\u094d\u0935\u093e\u0938 \u0909\u092a\u0915\u0930\u0923",
+    "term_santali": "\u1c5f\u1c6f\u1c71\u1c5f\u1c68 \u1c75\u1c5f\u1c67\u1c6a\u1c5f\u1c63 \u1c65\u1c5f\u1c66\u1c6e\u1c6b \u1c65\u1c5f\u1c62\u1c5f\u1c71",
+    "audio_cue": "Unclip clamp, insert mouthpiece, pinch nose clamp"
+  },
+  {
+    "term_en": "Emergency Evacuation Route",
+    "term_hi": "\u0906\u092a\u093e\u0924\u0915\u093e\u0932\u0940\u0928 \u0928\u093f\u0915\u093e\u0938\u0940 \u092e\u093e\u0930\u094d\u0917",
+    "term_santali": "\u1c5e\u1c5f\u1c79\u1c60\u1c5b\u1c64\u1c6d\u1c5f\u1c71 \u1c5a\u1c70\u1c5a\u1c60\u1c5a\u1c5c \u1c70\u1c5f\u1c66\u1c5f\u1c68",
+    "audio_cue": "Follow illuminated floor markings to refuge chamber"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "sector_name": "Railways & Dedicated Freight",
+    "ongoing_projects": 412,
+    "portfolio_cost_cr": "\u20b98.42 Lakh Cr",
+    "avg_delay_months": 11.2
+  },
+  {
+    "sector_name": "Road Transport & Highways (MoRTH)",
+    "ongoing_projects": 820,
+    "portfolio_cost_cr": "\u20b912.65 Lakh Cr",
+    "avg_delay_months": 7.4
+  },
+  {
+    "sector_name": "Petroleum & Natural Gas",
+    "ongoing_projects": 210,
+    "portfolio_cost_cr": "\u20b96.18 Lakh Cr",
+    "avg_delay_months": 5.8
+  }
+]

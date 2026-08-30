@@ -1,30 +1,33 @@
--- Supabase / PostgreSQL Schema for SIH26035 (Development of a Software Program/Application for Generation of Test Reports for Non-Automatic Weighing Instruments (NAWI) as per OIML Recommendation R- 76)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- OIML METROLOGYLAB 360 DATABASE SCHEMA (SIH26035)
+-- Ministry of Consumer Affairs - DoCA
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26035_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26035',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS nawi_instruments (
+    id SERIAL PRIMARY KEY,
+    instrument_id VARCHAR(64) UNIQUE NOT NULL,
+    instrument_name VARCHAR(255) NOT NULL,
+    manufacturer_name VARCHAR(255) NOT NULL,
+    accuracy_class VARCHAR(64) NOT NULL,
+    max_capacity VARCHAR(64) NOT NULL,
+    min_capacity VARCHAR(64) NOT NULL,
+    verification_scale_interval_e VARCHAR(32) NOT NULL,
+    scale_interval_d VARCHAR(32) NOT NULL,
+    number_of_intervals_n VARCHAR(32) NOT NULL,
+    testing_laboratory VARCHAR(255) NOT NULL,
+    approval_status VARCHAR(64) DEFAULT 'APPROVED_OIML_R76',
+    model_approval_certificate VARCHAR(64) UNIQUE NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26035_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26035_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS oiml_test_observations (
+    id SERIAL PRIMARY KEY,
+    instrument_id VARCHAR(64) NOT NULL,
+    step_number INTEGER NOT NULL,
+    applied_load VARCHAR(32) NOT NULL,
+    indicated_reading VARCHAR(32) NOT NULL,
+    intrinsic_error VARCHAR(32) NOT NULL,
+    maximum_permissible_error VARCHAR(32) NOT NULL,
+    test_verdict VARCHAR(16) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26035_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26035_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26035_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26035_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26035_audit_logs FOR SELECT USING (true);

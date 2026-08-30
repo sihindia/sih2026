@@ -1,0 +1,23 @@
+[
+  {
+    "sensor": "Sentinel-2 Multi-Spectral (MSI)",
+    "bands_used": "Band 11 (SWIR 1) & Band 12 (SWIR 2)",
+    "index_name": "Manganese Gossan Alteration Index (MGAI)",
+    "spectral_response": "High absorption at 2.20 \u00b5m indicating pyrolusite / cryptomelane mineralization",
+    "spatial_resolution": "20m Ground Resolution"
+  },
+  {
+    "sensor": "Landsat-9 TIRS",
+    "bands_used": "Band 10 (Thermal Infrared)",
+    "index_name": "Apparent Thermal Inertia (ATI)",
+    "spectral_response": "Distinct surface emissivity differentiation between quartzite host rock and dense manganiferous lenses",
+    "spatial_resolution": "100m Thermal Resolution"
+  },
+  {
+    "sensor": "Sentinel-1 C-Band SAR",
+    "bands_used": "VV / VH Polarimetric Backscatter",
+    "index_name": "Differential InSAR (D-InSAR) Stability Index",
+    "spectral_response": "Sub-millimeter slope creep detection along open-cast pit benches",
+    "spatial_resolution": "10m SAR Resolution"
+  }
+]

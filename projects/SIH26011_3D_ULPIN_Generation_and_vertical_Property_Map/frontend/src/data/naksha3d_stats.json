@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Volumetric Accuracy",
+    "value": "100% Collision-Free",
+    "trend": "Zero Overlap between Multi-Storey Units"
+  },
+  {
+    "metric": "LADM Standard",
+    "value": "ISO 19152 Compliant",
+    "trend": "Standardized 14-Digit 3D ULPIN Syntax"
+  },
+  {
+    "metric": "Air-Rights & Subsurface",
+    "value": "Full 3D Stratification",
+    "trend": "From -50m Basements to +300m Towers"
+  }
+]

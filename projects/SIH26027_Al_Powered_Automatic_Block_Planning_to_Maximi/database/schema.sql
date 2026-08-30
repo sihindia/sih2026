@@ -1,30 +1,33 @@
--- Supabase / PostgreSQL Schema for SIH26027 (Al-Powered Automatic Block Planning to Maximize Asset Availability for Train Operations on Indian Railways)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- RAILBLOCK AI 360 DATABASE SCHEMA (SIH26027)
+-- Ministry of Railways - CRIS / COIS Architecture
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26027_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26027',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS rail_corridors (
+    id SERIAL PRIMARY KEY,
+    corridor_id VARCHAR(64) UNIQUE NOT NULL,
+    corridor_name VARCHAR(255) NOT NULL,
+    railway_zone VARCHAR(64) NOT NULL,
+    section_length_km NUMERIC(8, 2) NOT NULL,
+    line_capacity_utilization_pct NUMERIC(5, 2) NOT NULL,
+    daily_train_density INTEGER NOT NULL,
+    active_shadow_blocks_count INTEGER NOT NULL,
+    punctuality_gain_pct NUMERIC(5, 2) NOT NULL,
+    freight_throughput_gain_pct NUMERIC(5, 2) NOT NULL,
+    delay_mins_saved_daily INTEGER NOT NULL,
+    critical_bottleneck VARCHAR(255) NOT NULL,
+    status VARCHAR(64) DEFAULT 'AI_BLOCK_PLANNING_ACTIVE',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26027_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26027_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS shadow_blocks (
+    id SERIAL PRIMARY KEY,
+    block_id VARCHAR(64) UNIQUE NOT NULL,
+    corridor_id VARCHAR(64) NOT NULL,
+    scheduled_window VARCHAR(128) NOT NULL,
+    duration_hours NUMERIC(4, 2) NOT NULL,
+    participating_departments TEXT[] NOT NULL,
+    delay_minutes_saved INTEGER NOT NULL,
+    cois_safety_token VARCHAR(64) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26027_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26027_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26027_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26027_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26027_audit_logs FOR SELECT USING (true);

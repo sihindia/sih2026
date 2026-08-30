@@ -1,0 +1,20 @@
+[
+  {
+    "widget_id": "WID-AQI",
+    "name": "Real-Time AQI & Pollen Radar",
+    "update_frequency": "Hourly",
+    "target_persona": "Health-Conscious"
+  },
+  {
+    "widget_id": "WID-RUN",
+    "name": "Dynamic Best Running Hours Clock",
+    "update_frequency": "30 Mins",
+    "target_persona": "Fitness Enthusiast"
+  },
+  {
+    "widget_id": "WID-TIDE",
+    "name": "INCOIS Coastal Tide & Swell Gauge",
+    "update_frequency": "15 Mins",
+    "target_persona": "Beachgoers & Surfers"
+  }
+]

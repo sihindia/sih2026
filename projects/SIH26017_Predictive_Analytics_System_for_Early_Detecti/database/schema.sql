@@ -1,32 +1,22 @@
--- Supabase / PostgreSQL Schema for SIH26017 (Predictive Analytics System for Early Detection of Land Acquisition Delays)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "postgis";
+-- =========================================================================
+-- DOLR DRISHTIPREDICT 360 DATABASE SCHEMA (SIH26017)
+-- Ministry of Rural Development - Department of Land Resources (DoLR)
+-- =========================================================================
 
--- 1. Cadastral Land Parcels
-CREATE TABLE IF NOT EXISTS sih26017_parcels (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ulpin_code VARCHAR(14) UNIQUE NOT NULL,
-    state_code VARCHAR(10) DEFAULT 'JH',
-    district_name VARCHAR(100) NOT NULL,
-    village_name VARCHAR(100) NOT NULL,
-    survey_area_sqm NUMERIC(12, 2) NOT NULL,
-    geometry GEOMETRY(Polygon, 4326),
-    land_type VARCHAR(50) DEFAULT 'Agricultural',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS land_delay_predictions (
+    id SERIAL PRIMARY KEY,
+    project_id VARCHAR(64) UNIQUE NOT NULL,
+    project_name VARCHAR(255) NOT NULL,
+    state VARCHAR(64) NOT NULL,
+    district VARCHAR(128) NOT NULL,
+    requiring_agency VARCHAR(128) NOT NULL,
+    notified_area_ha NUMERIC(10, 2) NOT NULL,
+    delay_risk_pct NUMERIC(5, 2) NOT NULL,
+    predicted_slip_months NUMERIC(4, 2) NOT NULL,
+    primary_bottleneck TEXT NOT NULL,
+    shap_litigation_impact NUMERIC(4, 2) NOT NULL,
+    shap_compensation_impact NUMERIC(4, 2) NOT NULL,
+    recommended_mitigation TEXT NOT NULL,
+    alert_level VARCHAR(64) DEFAULT 'CRITICAL_EARLY_WARNING',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
--- 2. Ownership Title Records
-CREATE TABLE IF NOT EXISTS sih26017_ownership (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    parcel_id UUID REFERENCES sih26017_parcels(id) ON DELETE CASCADE,
-    owner_name VARCHAR(200) NOT NULL,
-    aadhaar_hash VARCHAR(64) NOT NULL,
-    share_percentage NUMERIC(5, 2) DEFAULT 100.0,
-    encumbrance_status VARCHAR(50) DEFAULT 'CLEAR',
-    verified_at TIMESTAMPTZ DEFAULT NOW()
-);
-
-ALTER TABLE sih26017_parcels ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26017_ownership ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Parcels" ON sih26017_parcels FOR SELECT USING (true);
-CREATE POLICY "Public Read Ownership" ON sih26017_ownership FOR SELECT USING (true);

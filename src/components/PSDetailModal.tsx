@@ -24,7 +24,7 @@ import {
   Code
 } from 'lucide-react';
 import { ProblemStatement } from '../types';
-import { copyToClipboard, generateMarkdownPS, downloadMarkdown } from '../utils/export';
+import { copyToClipboard, downloadMarkdown } from '../utils/export';
 import { generateSolutionBlueprint, generateStarterProjectFiles } from '../utils/solutionGenerator';
 import { InteractiveSimulator } from './InteractiveSimulator';
 
@@ -54,7 +54,6 @@ export const PSDetailModal: React.FC<PSDetailModalProps> = ({
   const [localNote, setLocalNote] = React.useState(note || '');
   const [noteSaved, setNoteSaved] = React.useState(false);
   const [copiedId, setCopiedId] = React.useState(false);
-  const [copiedMd, setCopiedMd] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState<'overview' | 'solution' | 'simulator' | 'starter' | 'notes'>('overview');
 
   React.useEffect(() => {
@@ -76,18 +75,6 @@ export const PSDetailModal: React.FC<PSDetailModalProps> = ({
     copyToClipboard(ps.ps_number || ps.id);
     setCopiedId(true);
     setTimeout(() => setCopiedId(false), 2000);
-  };
-
-  const handleCopyMarkdown = () => {
-    const md = generateMarkdownPS(ps, localNote);
-    copyToClipboard(md);
-    setCopiedMd(true);
-    setTimeout(() => setCopiedMd(false), 2000);
-  };
-
-  const handleDownloadMarkdown = () => {
-    const md = generateMarkdownPS(ps, localNote);
-    downloadMarkdown(md, `SIH2026_${ps.ps_number || ps.id}.md`);
   };
 
   const handleDownloadStarterReadme = () => {
@@ -421,25 +408,7 @@ export const PSDetailModal: React.FC<PSDetailModalProps> = ({
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 sm:p-5 border-t border-slate-100 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/80 flex items-center justify-between flex-wrap gap-3 shrink-0">
-          <div className="flex items-center gap-2">
-            <button
-              onClick={handleCopyMarkdown}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 transition-colors"
-            >
-              {copiedMd ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
-              <span>{copiedMd ? 'Copied Markdown!' : 'Copy as Markdown'}</span>
-            </button>
-
-            <button
-              onClick={handleDownloadMarkdown}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 transition-colors"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Download (.md)</span>
-            </button>
-          </div>
-
+        <div className="p-4 sm:p-5 border-t border-slate-100 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/80 flex items-center justify-end flex-wrap gap-3 shrink-0">
           <div className="flex items-center gap-2">
             {onLaunchApp && (
               <button

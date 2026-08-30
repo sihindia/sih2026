@@ -1,0 +1,44 @@
+[
+  {
+    "case_id": "BUST-2026-MONS01",
+    "synoptic_system": "Central India Monsoon Depression Track & Heavy Rain Core",
+    "forecast_lead_day": 5,
+    "lead_time_hours": 120,
+    "nwp_model": "NCUM Global 12km Deterministic",
+    "predicted_scenario": "Heavy rainfall core (>140 mm/day) focused over Vidarbha & South MP",
+    "bust_probability_pct": 87.4,
+    "confidence_score_pct": 28.0,
+    "historical_analog_match": "July 2018 Monsoon Depression (NCUM Track Error > 220 km)",
+    "xai_root_cause": "Dry continental air intrusion from Northwest India eroding the southern quadrant moisture pocket; model convection parameterization failed to decouple mid-level dry slot",
+    "forecaster_guidance": "SHIFT CORRIDOR: Correct forecast heavy rain swath 180 km southwards over North Telangana & South Chhattisgarh. Downscale local flood warnings accordingly.",
+    "status": "BUST_WARNING_ISSUED"
+  },
+  {
+    "case_id": "BUST-2026-WD04",
+    "synoptic_system": "North-West India Western Disturbance Timing & Snow-Line Elevation",
+    "forecast_lead_day": 7,
+    "lead_time_hours": 168,
+    "nwp_model": "NEPS-G 12km Global Ensemble",
+    "predicted_scenario": "Early arrival of intense precipitation across Punjab plains with snow down to 1800m in Shimla",
+    "bust_probability_pct": 81.2,
+    "confidence_score_pct": 34.5,
+    "historical_analog_match": "January 2021 Trough Stalling Event (Phase Speed Error: -36h)",
+    "xai_root_cause": "Subtropical Jet stream meandering miscalculation; upper-tropospheric jet streak velocity overestimated by 18 kts causing premature frontogenesis",
+    "forecaster_guidance": "DELAY ONSET: Retard rain onset by 24 hours. Elevate freezing level to 2400m; downgrade plain snowfall alert to cold rain.",
+    "status": "BUST_WARNING_ISSUED"
+  },
+  {
+    "case_id": "BUST-2026-CYC02",
+    "synoptic_system": "Arabian Sea Cyclogenesis & Recurvature Track Divergence",
+    "forecast_lead_day": 6,
+    "lead_time_hours": 144,
+    "nwp_model": "NCUM-R 4km Regional Model",
+    "predicted_scenario": "Direct Gujarat Saurashtra landfall as Very Severe Cyclonic Storm (VSCS)",
+    "bust_probability_pct": 89.8,
+    "confidence_score_pct": 22.4,
+    "historical_analog_match": "June 2019 Cyclone Vayu Stalling / Recurvature Bust",
+    "xai_root_cause": "Steering ridge breakdown failure; model under-predicted strength of middle-latitude westerly trough, missing eastward recurvature trigger",
+    "forecaster_guidance": "TRACK DIVERGENCE: High probability of offshore stalling or Oman recurvature. Avoid premature mass evacuation in coastal Saurashtra.",
+    "status": "BUST_WARNING_ISSUED"
+  }
+]

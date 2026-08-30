@@ -1,0 +1,24 @@
+[
+  {
+    "nowcast_id": "VAJRA-WB-001",
+    "region_district": "Kolkata & North/South 24 Parganas (West Bengal)",
+    "atmospheric_sensor_inputs": "Kolkata DWR (55 dBZ Core at 12km) + INSAT-3DR (-68\u00b0C Cloud Top) + IITM LLN (74 CG Flashes/min) + CAPE (3200 J/kg)",
+    "predicted_severe_event": "Severe Kalbaishakhi Nor'wester Squall (95 km/h) & Intense Cloud-to-Ground Lightning",
+    "strike_propagation_time": "Strike Peak in 35 Minutes (16:45 IST)",
+    "nowcast_lead_time_mins": 45,
+    "nowcast_accuracy_pct": 95.6,
+    "disaster_mitigation_action": "RED ALERT: Trigger 42 Gram Panchayat Sirens & Damini App Push Broadcast to 350,000 Farmers",
+    "status": "SEVERE_LIGHTNING_NOWCAST_ACTIVE"
+  },
+  {
+    "nowcast_id": "VAJRA-BIH-042",
+    "region_district": "Patna, Vaishali & Samastipur Belt (Bihar)",
+    "atmospheric_sensor_inputs": "Patna DWR (52 dBZ Core) + IITM Lightning Sensor (62 Flashes/min) + CAPE (2900 J/kg)",
+    "predicted_severe_event": "Severe Lightning Flash Cluster & Moderate Hail (2.5cm Diameter)",
+    "strike_propagation_time": "Strike Peak in 40 Minutes (18:15 IST)",
+    "nowcast_lead_time_mins": 50,
+    "nowcast_accuracy_pct": 96.2,
+    "disaster_mitigation_action": "RED ALERT: Broadcast CAP SMS Evacuation Advisory to Rural Agricultural Blocks",
+    "status": "SEVERE_LIGHTNING_NOWCAST_ACTIVE"
+  }
+]

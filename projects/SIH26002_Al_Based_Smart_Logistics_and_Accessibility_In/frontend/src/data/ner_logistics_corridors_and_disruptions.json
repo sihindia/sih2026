@@ -1,0 +1,44 @@
+[
+  {
+    "corridor_id": "CORR-NER-SIK01",
+    "corridor_name": "Guwahati \u2794 Siliguri \u2794 Gangtok Arterial Corridor (NH-27 / NH-10)",
+    "states_spanned": "Assam, West Bengal, Sikkim",
+    "primary_highway": "NH-10 (Sevoke - Teesta - Gangtok)",
+    "distance_km": 542.0,
+    "current_disruption": "Active Rockfall & Slump at 29th Mile (Setijhora, Kalimpong)",
+    "disruption_severity": "HIGHWAY_BLOCKED_TRAFFIC_HALTED",
+    "ai_recommended_detour": "NH-717A via Damdim \u2794 Lava \u2794 Algarah \u2794 Pedong \u2794 Reshi Border \u2794 Rhenock \u2794 Gangtok",
+    "detour_bridge_capacity": "Bailey Bridge 24 MT Verified (Safe for 18-wheeler supply trucks)",
+    "estimated_delay_hours": 2.5,
+    "essential_cargo_priority": "Cryogenic Liquid Medical Oxygen + Fresh Milk Supplies",
+    "logistics_status": "ESSENTIAL_SUPPLY_DELIVERED_VIA_DETOUR"
+  },
+  {
+    "corridor_id": "CORR-NER-NAG02",
+    "corridor_name": "Dimapur \u2794 Kohima \u2794 Imphal Lifeline (NH-29)",
+    "states_spanned": "Nagaland, Manipur",
+    "primary_highway": "NH-29 (Dimapur - Phesama - Mao - Imphal)",
+    "distance_km": 215.0,
+    "current_disruption": "Paglapahar Sinking Zone & Mudflow Disruption",
+    "disruption_severity": "SINGLE_LANE_CONVOY_ESCORT_ACTIVE",
+    "ai_recommended_detour": "Niuland \u2794 Kohima Bypass Corridor (Heavy trucks restricted to Night Convoy)",
+    "detour_bridge_capacity": "Reinforced Concrete Culverts (32 MT Capacity)",
+    "estimated_delay_hours": 3.8,
+    "essential_cargo_priority": "Emergency Blood Plasma, Vaccines & Dialysis Fluids",
+    "logistics_status": "CONVOY_TRANSIT_IN_PROGRESS"
+  },
+  {
+    "corridor_id": "CORR-NER-MIZ03",
+    "corridor_name": "Silchar \u2794 Kolasib \u2794 Aizawl Supply Corridor (NH-54 / NH-306)",
+    "states_spanned": "Assam, Mizoram",
+    "primary_highway": "NH-306 / NH-54 (Vairengte - Kolasib - Sairang - Aizawl)",
+    "distance_km": 178.0,
+    "current_disruption": "Flash Flood Scouring at Dholai Bridge Approach",
+    "disruption_severity": "WEIGHT_RESTRICTION_POSTED_16MT",
+    "ai_recommended_detour": "Bhairabi Railhead Cargo Transshipment Point to Light Commercial Vehicles (LCVs)",
+    "detour_bridge_capacity": "Multi-Modal Rail-to-Road Transshipment Hub",
+    "estimated_delay_hours": 1.5,
+    "essential_cargo_priority": "LPG Bottled Cylinders & PDS Rice Consignments",
+    "logistics_status": "TRANSSHIPMENT_COMPLETED"
+  }
+]

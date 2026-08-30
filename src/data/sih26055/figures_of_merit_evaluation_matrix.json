@@ -1,0 +1,26 @@
+[
+  {
+    "metric": "Probability of Intercept (POI)",
+    "target_benchmark": "> 95.0%",
+    "drdo_achievement": "97.4%",
+    "tactical_impact": "Prevents hostile radar lock-on without tactical warning"
+  },
+  {
+    "metric": "Average Intercept Time",
+    "target_benchmark": "< 3.0 seconds",
+    "drdo_achievement": "1.4 seconds",
+    "tactical_impact": "79.4% faster response enabling immediate countermeasures"
+  },
+  {
+    "metric": "Probability of False Alarm",
+    "target_benchmark": "< 2.0%",
+    "drdo_achievement": "1.2%",
+    "tactical_impact": "Eliminates countermeasure exhaustion on harmless clutter"
+  },
+  {
+    "metric": "Reward / Cost Ratio",
+    "target_benchmark": "> 3.0",
+    "drdo_achievement": "4.82",
+    "tactical_impact": "Maximizes dwell time on critical fire control emitters"
+  }
+]

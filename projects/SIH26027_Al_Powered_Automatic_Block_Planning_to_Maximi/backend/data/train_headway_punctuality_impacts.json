@@ -1,0 +1,26 @@
+[
+  {
+    "train_number": "22436",
+    "train_name": "Vande Bharat Express (New Delhi -> Varanasi)",
+    "scheduled_arrival": "06:00 AM",
+    "predicted_arrival": "06:00 AM (ON-TIME)",
+    "delay_prevented_mins": 35,
+    "dispatch_routing": "Clear Track Priority on Down Main Line"
+  },
+  {
+    "train_number": "12302",
+    "train_name": "Howrah Rajdhani Express",
+    "scheduled_arrival": "09:55 AM",
+    "predicted_arrival": "09:55 AM (ON-TIME)",
+    "delay_prevented_mins": 45,
+    "dispatch_routing": "Bi-Directional Automatic Signaling Bypass"
+  },
+  {
+    "train_number": "BOXN-COAL",
+    "train_name": "Heavy Freight Coal Rake (Dhanbad -> Dadri NTPC)",
+    "scheduled_arrival": "04:15 AM",
+    "predicted_arrival": "04:35 AM (+20m Green Wave)",
+    "delay_prevented_mins": 85,
+    "dispatch_routing": "Temporary Loop Holding with Priority Restart"
+  }
+]

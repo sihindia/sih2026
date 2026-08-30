@@ -1,0 +1,82 @@
+[
+  {
+    "challenge_id": "MSINS-CH-2026-001",
+    "title": "AI Acoustic Water Leakage & Pressure Surge Detection",
+    "title_mr": "\u090f\u0906\u092f \u0927\u094d\u0935\u0928\u0940 \u0906\u0927\u093e\u0930\u093f\u0924 \u092a\u093e\u0923\u0940 \u0917\u0933\u0924\u0940 \u0935 \u0926\u093e\u092c \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923 \u092a\u094d\u0930\u0923\u093e\u0932\u0940",
+    "department": "Pune Municipal Corporation (Water Supply Dept)",
+    "problem_statement": "Pinpoint subterranean pipe bursts and distribution losses (<15% non-revenue water) across 850 km network.",
+    "startup_awarded": "JalDrishti AI Technologies Pvt Ltd",
+    "dpiit_cert": "DIPP-MH-2024-99412",
+    "pilot_grant_inr_lakhs": 25.0,
+    "pilot_duration_days": 90,
+    "exemptions_granted": [
+      "Prior Turnover Waived",
+      "Past Experience Waived",
+      "EMD Security Deposit Waived"
+    ],
+    "milestones": [
+      {
+        "phase": "M1 (Day 15)",
+        "deliverable": "Sensor Hardware & IoT Gateway Installation in Kothrud Zone",
+        "payout_lakhs": 7.5,
+        "status": "RELEASED_ESCROW"
+      },
+      {
+        "phase": "M2 (Day 45)",
+        "deliverable": "Acoustic ML Model 95% Leak Localization Accuracy",
+        "payout_lakhs": 7.5,
+        "status": "RELEASED_ESCROW"
+      },
+      {
+        "phase": "M3 (Day 90)",
+        "deliverable": "Final COEP Third-Party Validation & Water Loss Reduction",
+        "payout_lakhs": 10.0,
+        "status": "APPROVED_FOR_RELEASE"
+      }
+    ],
+    "evaluating_body": "COEP Technological University, Pune",
+    "pilot_score_pct": 96.4,
+    "scale_up_contract_cr": 4.8,
+    "status": "PILOT_SUCCESS_SCALE_UP_SANCTIONED"
+  },
+  {
+    "challenge_id": "MSINS-CH-2026-012",
+    "title": "Autonomous Thermal Drone Night Patrol for Forest Fire Detection",
+    "title_mr": "\u0930\u093e\u0924\u094d\u0930\u0940\u091a\u094d\u092f\u093e \u0935\u0947\u0933\u0940 \u0935\u0923\u0935\u093e \u0936\u094b\u0927\u0923\u094d\u092f\u093e\u0938\u093e\u0920\u0940 \u0938\u094d\u0935\u093e\u092f\u0924\u094d\u0924 \u0925\u0930\u094d\u092e\u0932 \u0921\u094d\u0930\u094b\u0928 \u0917\u0938\u094d\u0924",
+    "department": "Maharashtra Forest Dept (Melghat Tiger Reserve)",
+    "problem_statement": "Early detection of canopy wildfire sparks within 5 minutes across 1,600 sq km dense terrain.",
+    "startup_awarded": "GarudaVigyan AeroTech Ltd",
+    "dpiit_cert": "DIPP-MH-2023-44109",
+    "pilot_grant_inr_lakhs": 30.0,
+    "pilot_duration_days": 90,
+    "exemptions_granted": [
+      "Prior Turnover Waived",
+      "Past Experience Waived",
+      "EMD Waived"
+    ],
+    "milestones": [
+      {
+        "phase": "M1 (Day 15)",
+        "deliverable": "Tethered Base Station & AI Edge Fleet Setup",
+        "payout_lakhs": 9.0,
+        "status": "RELEASED_ESCROW"
+      },
+      {
+        "phase": "M2 (Day 45)",
+        "deliverable": "Autonomous 120km Night Patrol Verification",
+        "payout_lakhs": 9.0,
+        "status": "RELEASED_ESCROW"
+      },
+      {
+        "phase": "M3 (Day 90)",
+        "deliverable": "VNIT Nagpur Field Validation Audit",
+        "payout_lakhs": 12.0,
+        "status": "APPROVED_FOR_RELEASE"
+      }
+    ],
+    "evaluating_body": "VNIT Nagpur Aero-Lab",
+    "pilot_score_pct": 98.2,
+    "scale_up_contract_cr": 6.2,
+    "status": "PILOT_SUCCESS_SCALE_UP_SANCTIONED"
+  }
+]

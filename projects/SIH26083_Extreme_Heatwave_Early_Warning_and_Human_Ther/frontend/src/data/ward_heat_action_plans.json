@@ -1,0 +1,17 @@
+[
+  {
+    "tier": "Yellow Alert (Awareness)",
+    "trigger": "Heat Index 40 - 45\u00b0C",
+    "actions": "Issue public health advisories, check water tanker readiness"
+  },
+  {
+    "tier": "Orange Alert (Preparedness)",
+    "trigger": "Heat Index 46 - 52\u00b0C",
+    "actions": "Shift outdoor work to before 11am, activate ORS booths, equip ambulances with ice packs"
+  },
+  {
+    "tier": "Red Alert (Civic Emergency)",
+    "trigger": "Heat Index > 52\u00b0C or WBGT > 32\u00b0C",
+    "actions": "Mandatory outdoor work ban, open 24/7 cooling centres, prevent grid load shedding"
+  }
+]

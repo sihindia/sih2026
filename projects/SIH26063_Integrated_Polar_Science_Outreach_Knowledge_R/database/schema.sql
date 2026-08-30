@@ -1,30 +1,31 @@
--- Supabase / PostgreSQL Schema for SIH26063 (Integrated Polar Science Outreach, Knowledge Repository and Media Dissemination Portal)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOES DHRUVAGYAN 360 DATABASE SCHEMA (SIH26063)
+-- Ministry of Earth Sciences (MoES) - NCPOR Goa
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26063_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26063',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS polar_science_datasets (
+    id SERIAL PRIMARY KEY,
+    dataset_id VARCHAR(64) UNIQUE NOT NULL,
+    dataset_title VARCHAR(255) NOT NULL,
+    theatre_domain VARCHAR(128) NOT NULL,
+    sampling_depth_m NUMERIC(6, 2) NOT NULL,
+    chronological_span VARCHAR(128) NOT NULL,
+    measured_proxies TEXT NOT NULL,
+    doi_identifier VARCHAR(128) NOT NULL,
+    fair_compliance_rating VARCHAR(64) NOT NULL,
+    file_size_mb NUMERIC(6, 1) NOT NULL,
+    citation_count INTEGER DEFAULT 0,
+    access_status VARCHAR(64) DEFAULT 'OPEN_RESEARCH_ACCESSIBLE',
+    published_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26063_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26063_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS science_outreach_articles (
+    id SERIAL PRIMARY KEY,
+    dataset_id VARCHAR(64) REFERENCES polar_science_datasets(dataset_id),
+    language_code VARCHAR(8) NOT NULL,
+    article_title VARCHAR(255) NOT NULL,
+    educational_summary TEXT NOT NULL,
+    target_audience VARCHAR(64) NOT NULL,
+    views_count INTEGER DEFAULT 0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26063_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26063_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26063_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26063_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26063_audit_logs FOR SELECT USING (true);

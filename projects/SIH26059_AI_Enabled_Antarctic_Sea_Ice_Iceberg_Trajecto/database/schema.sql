@@ -1,30 +1,32 @@
--- Supabase / PostgreSQL Schema for SIH26059 (AI-Enabled Antarctic Sea-Ice, Iceberg Trajectory, and Navigation Decision Support System)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOES HIMNAV 360 DATABASE SCHEMA (SIH26059)
+-- Ministry of Earth Sciences (MoES) - NCPOR Goa
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26059_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26059',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS antarctic_navigation_voyages (
+    id SERIAL PRIMARY KEY,
+    voyage_id VARCHAR(64) UNIQUE NOT NULL,
+    expedition_name VARCHAR(255) NOT NULL,
+    vessel_name VARCHAR(255) NOT NULL,
+    transit_corridor TEXT NOT NULL,
+    current_sea_ice_concentration_pct NUMERIC(4, 1) NOT NULL,
+    prevailing_ice_thickness_m NUMERIC(4, 2) NOT NULL,
+    tracked_iceberg TEXT NOT NULL,
+    ai_recommended_waypoint_path TEXT NOT NULL,
+    route_divergence_nm NUMERIC(6, 1) NOT NULL,
+    transit_time_saved_hours NUMERIC(5, 1) NOT NULL,
+    fuel_saved_metric_tons NUMERIC(6, 1) NOT NULL,
+    besetment_risk_index VARCHAR(64) DEFAULT 'ZERO_BESETMENT_RISK',
+    navigation_verdict VARCHAR(64) DEFAULT 'OPTIMAL_POLAR_ROUTE_RECOMMENDED',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26059_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26059_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS iceberg_drift_trajectories (
+    id SERIAL PRIMARY KEY,
+    iceberg_id VARCHAR(64) UNIQUE NOT NULL,
+    dimensions VARCHAR(128) NOT NULL,
+    drift_speed_knots NUMERIC(4, 2) NOT NULL,
+    drift_direction VARCHAR(64) NOT NULL,
+    collision_hazard TEXT NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26059_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26059_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26059_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26059_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26059_audit_logs FOR SELECT USING (true);

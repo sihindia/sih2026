@@ -1,0 +1,17 @@
+[
+  {
+    "stream_name": "Doppler Weather Radar (DWR)",
+    "refresh_rate": "Every 10 Minutes",
+    "parameters": "Reflectivity (Z), Radial Velocity (V), Spectrum Width (W), Vertically Integrated Liquid (VIL)"
+  },
+  {
+    "stream_name": "INSAT-3DR Geostationary Imager",
+    "refresh_rate": "Every 15 Minutes",
+    "parameters": "10.8\u00b5m Thermal IR CTT Drop Rate, 6.7\u00b5m Water Vapor Flux, Visible Channel Cloud Albedo"
+  },
+  {
+    "stream_name": "Ground Lightning Detection (LDN)",
+    "refresh_rate": "Real-Time Sub-Second",
+    "parameters": "Intra-Cloud (IC) & Cloud-to-Ground (CG) Strike Density, Total Lightning Jump Rate (>45/min)"
+  }
+]

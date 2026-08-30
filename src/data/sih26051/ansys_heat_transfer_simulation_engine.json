@@ -1,0 +1,22 @@
+[
+  {
+    "governing_physics": "Fourier Transient Conduction",
+    "formula": "\u03c1 Cp (\u2202T/\u2202t) = \u2207 \u00b7 (k \u2207T) + Q_pcm",
+    "ansys_module": "ANSYS Fluent / Thermal Transient Solver"
+  },
+  {
+    "governing_physics": "Solar Radiation Direct Gain",
+    "formula": "Q_solar = A_window \u00d7 I_solar \u00d7 SHGC \u00d7 cos(\u03b8)",
+    "ansys_module": "Monte Carlo Solar Ray Tracing & Surface-to-Surface Radiation"
+  },
+  {
+    "governing_physics": "Enthalpy-Porosity PCM Phase Change",
+    "formula": "H = h_ref + \u222b Cp dT + \u03b2 L_f (\u03b2 = liquid fraction)",
+    "ansys_module": "Solidification & Melting Model"
+  },
+  {
+    "governing_physics": "Infiltration Air Exchange Loss",
+    "formula": "Q_inf = 0.33 \u00d7 ACH \u00d7 Volume \u00d7 (T_in - T_out)",
+    "ansys_module": "Species Transport & Thermal Buoyancy Convection"
+  }
+]

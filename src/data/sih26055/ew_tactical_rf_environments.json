@@ -1,0 +1,47 @@
+[
+  {
+    "environment_id": "EW-WEST-BAR01",
+    "theatre_name": "Tactical Western Border Air Defence Corridor (Barmer Sector)",
+    "rf_spectrum_span": "0.5 GHz to 18.0 GHz (Divided into 36 Instantaneous Dwell Bands)",
+    "hostile_emitters": "Target Emitter: X-Band Agile Fire Control Radar (9.2 - 9.6 GHz, Pulse Jittered) + S-Band 3D Search Radar",
+    "receiver_architecture": "Wideband Superheterodyne ESM Tuner with 500 MHz Instantaneous Bandwidth",
+    "scan_strategy": "Deep Q-Network (DQN) Closed-Loop Cognitive Scheduler with Hit/Miss Reward Updates",
+    "open_loop_intercept_sec": 6.8,
+    "smart_scan_intercept_sec": 1.4,
+    "time_reduction_pct": 79.4,
+    "probability_of_intercept_pct": 97.4,
+    "false_alarm_rate_pct": 1.2,
+    "reward_cost_ratio": 4.82,
+    "intercept_verdict": "HOSTILE_EMITTER_LOCKED_SUB_2S"
+  },
+  {
+    "environment_id": "EW-COAST-ARA03",
+    "theatre_name": "Coastal Electronic Intelligence (ELINT) Corridor - Arabian Sea Taskforce",
+    "rf_spectrum_span": "2.0 GHz to 12.0 GHz (Maritime Surveillance & Anti-Ship Seeker Frequencies)",
+    "hostile_emitters": "Ku-Band Active Radar Seeker (14.2 GHz) + Airborne Early Warning (AEW) Rotary S-Band Radar",
+    "receiver_architecture": "Digital Radio Frequency Memory (DRFM) Assisted ESM Wideband Intercept",
+    "scan_strategy": "Contextual Multi-Armed Bandit (MAB) with Thompson Sampling Dwell Allocation",
+    "open_loop_intercept_sec": 8.4,
+    "smart_scan_intercept_sec": 1.8,
+    "time_reduction_pct": 78.6,
+    "probability_of_intercept_pct": 96.8,
+    "false_alarm_rate_pct": 1.4,
+    "reward_cost_ratio": 4.45,
+    "intercept_verdict": "SEEKER_SIGNATURE_INTERCEPTED"
+  },
+  {
+    "environment_id": "EW-NORTH-LAD05",
+    "theatre_name": "Dense Electronic Counter-Measures (ECM) & Jamming Sector - Northern Borders",
+    "rf_spectrum_span": "0.8 GHz to 16.0 GHz (Active Noise Jamming & Frequency Agile Chirp Radars)",
+    "hostile_emitters": "L-Band Long Range Early Warning Radar (1.2 GHz) + High-Power Barrage Noise Jammer",
+    "receiver_architecture": "Cognitive EW Receiver with Adaptive Notch Filtering & Fast FFT Channelizer",
+    "scan_strategy": "Double DQN with Prioritized Experience Replay (PER) for Jammed Bands",
+    "open_loop_intercept_sec": 11.2,
+    "smart_scan_intercept_sec": 2.1,
+    "time_reduction_pct": 81.3,
+    "probability_of_intercept_pct": 95.9,
+    "false_alarm_rate_pct": 1.8,
+    "reward_cost_ratio": 4.15,
+    "intercept_verdict": "JAMMING_SURVIVED_RADAR_RESOLVED"
+  }
+]

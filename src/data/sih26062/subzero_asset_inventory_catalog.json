@@ -1,0 +1,34 @@
+[
+  {
+    "asset_id": "ASSET-CRYO-01",
+    "name": "Sub-Surface Glaciology Ice-Core Freezer",
+    "category": "Scientific Samples",
+    "temp_rating": "-20\u00b0C Monitored",
+    "tracking_tech": "Sub-Zero Rugged BLE Beacon",
+    "status": "NOMINAL_TEMPERATURE_INTACT"
+  },
+  {
+    "asset_id": "ASSET-GEN-02",
+    "name": "Cummins 125 kVA Polar CHP Diesel Generator",
+    "category": "Station Infrastructure",
+    "temp_rating": "-50\u00b0C Rated",
+    "tracking_tech": "Active GPS/Iridium Sensor",
+    "status": "INSTALLED_AND_COMMISSIONED"
+  },
+  {
+    "asset_id": "ASSET-TRK-03",
+    "name": "PistenBully 300 Heavy Hydraulic Drive Tracks",
+    "category": "Vehicle Spares",
+    "temp_rating": "-40\u00b0C Rated",
+    "tracking_tech": "UHF Heavy RFID Tag",
+    "status": "STAGED_AT_MAITRI_WORKSHOP"
+  },
+  {
+    "asset_id": "ASSET-MED-04",
+    "name": "Emergency High-Altitude Blood Plasma Crate",
+    "category": "Medical Supplies",
+    "temp_rating": "-25\u00b0C Controlled",
+    "tracking_tech": "Real-Time Temp Datalogger",
+    "status": "SECURED_IN_STATION_CLINIC"
+  }
+]

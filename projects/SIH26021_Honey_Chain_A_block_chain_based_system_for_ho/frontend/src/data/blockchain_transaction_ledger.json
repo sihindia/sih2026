@@ -1,0 +1,23 @@
+[
+  {
+    "block_no": 1840291,
+    "tx_hash": "0x9a8f...3d12",
+    "event": "Hive Batch Sealed & Digitally Signed",
+    "gas_used": "21,000 Gwei",
+    "validator": "KVIC-Node-01 (New Delhi)"
+  },
+  {
+    "block_no": 1840315,
+    "tx_hash": "0x4b7c...0123",
+    "event": "NABL Lab NMR Purity Certificate Appended",
+    "gas_used": "45,000 Gwei",
+    "validator": "FSSAI-Node-03 (Ghaziabad)"
+  },
+  {
+    "block_no": 1840348,
+    "tx_hash": "0x7890...ef01",
+    "event": "Consumer QR Code Smart Contract Minted",
+    "gas_used": "32,000 Gwei",
+    "validator": "Polygon-PoS-Node-08"
+  }
+]

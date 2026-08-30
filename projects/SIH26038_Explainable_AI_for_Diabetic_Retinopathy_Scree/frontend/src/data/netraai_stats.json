@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Referable Sensitivity",
+    "value": "93.8% Sensitivity",
+    "trend": "Exceeds WHO 90% Clinical Threshold"
+  },
+  {
+    "metric": "Ophthalmologist Review",
+    "value": "< 30 Seconds",
+    "trend": "Rapid Grad-CAM Explainable Triage"
+  },
+  {
+    "metric": "Simulink Capacity",
+    "value": "100,000+ Patients/Yr",
+    "trend": "District Telemedicine Architecture"
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "case_id": "QMED-DX-2026-001",
+    "patient_name": "Sunita Patil (Age 42)",
+    "disease_category": "Oncology: Early Triple-Negative Breast Cancer (TNBC)",
+    "biomarkers_analyzed": "20,412 RNA-Seq Profiles + ctDNA Liquid Biopsy",
+    "classical_ml_prediction": "Inconclusive / Benign (61.4% Confidence)",
+    "hybrid_qml_prediction": "Malignant Subtype TNBC (99.2% Confidence)",
+    "early_detection_horizon_months": 14,
+    "quantum_circuit_used": "16-Qubit ZZFeatureMap + RealAmplitudes VQC",
+    "top_quantum_biomarkers": [
+      "BRCA1_Hypermethylation",
+      "HER2_CopyGain",
+      "TP53_SpliceMutation"
+    ],
+    "clinical_action": "Early Targeted PARP Inhibitor Therapy (100% Curative Prognosis)",
+    "status": "EARLY_CURATIVE_TREATMENT_LOCKED"
+  },
+  {
+    "case_id": "QMED-DX-2026-015",
+    "patient_name": "Rajendra Deshmukh (Age 56)",
+    "disease_category": "Cardiology: Sub-Clinical Ischemic Micro-Vascular Disease",
+    "biomarkers_analyzed": "High-Sensitivity Cardiac Troponin-I + 64-Lead Micro-ECG",
+    "classical_ml_prediction": "False Negative (48.0% Risk Score)",
+    "hybrid_qml_prediction": "High Risk Micro-Vascular Ischemia (97.8% Score)",
+    "early_detection_horizon_months": 11,
+    "quantum_circuit_used": "12-Qubit PauliFeatureMap + Quantum SVM",
+    "top_quantum_biomarkers": [
+      "Microvascular_Resistance_Index",
+      "hs_cTnI_Spike",
+      "ST_Segment_MicroJitter"
+    ],
+    "clinical_action": "Preventative Microvascular Stenting & Anti-Thrombotic Regimen",
+    "status": "EARLY_CURATIVE_TREATMENT_LOCKED"
+  }
+]

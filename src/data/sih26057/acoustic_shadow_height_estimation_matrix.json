@@ -1,0 +1,23 @@
+[
+  {
+    "towfish_altitude_m": 8.0,
+    "slant_range_m": 25.0,
+    "shadow_length_m": 5.0,
+    "calculated_height_m": 1.6,
+    "formula": "Height = (Shadow_Length * Towfish_Altitude) / Slant_Range"
+  },
+  {
+    "towfish_altitude_m": 12.0,
+    "slant_range_m": 35.0,
+    "shadow_length_m": 8.0,
+    "calculated_height_m": 2.74,
+    "formula": "Height = (Shadow_Length * Towfish_Altitude) / Slant_Range"
+  },
+  {
+    "towfish_altitude_m": 15.0,
+    "slant_range_m": 50.0,
+    "shadow_length_m": 16.0,
+    "calculated_height_m": 4.8,
+    "formula": "Height = (Shadow_Length * Towfish_Altitude) / Slant_Range"
+  }
+]

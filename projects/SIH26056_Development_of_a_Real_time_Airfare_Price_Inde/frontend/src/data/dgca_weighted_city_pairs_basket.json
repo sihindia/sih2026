@@ -1,0 +1,68 @@
+[
+  {
+    "route_code": "DEL-BOM",
+    "sector_name": "Delhi (IGI) \u21cb Mumbai (CSMIA) Golden Trunk Corridor",
+    "dgca_traffic_weight_pct": 14.2,
+    "carriers_monitored": "IndiGo (6E), Air India (AI), Akasa Air (QP), SpiceJet (SG)",
+    "current_route_apix": 118.4,
+    "mom_inflation_pct": 4.2,
+    "fares_by_lead_time": {
+      "T_plus_1": 11480,
+      "T_plus_7": 6850,
+      "T_plus_15": 4920,
+      "T_plus_30": 4150,
+      "T_plus_45": 3890
+    },
+    "fare_split": {
+      "base_fare_pct": 62.4,
+      "fuel_surcharge_yq_pct": 23.1,
+      "udf_asf_fees_pct": 9.5,
+      "gst_tax_pct": 5.0
+    },
+    "cpi_contribution_status": "AUGMENTED_LIVE_NSO_CPI"
+  },
+  {
+    "route_code": "BLR-HYD",
+    "sector_name": "Bengaluru (KIA) \u21cb Hyderabad (RGIA) Tech Corridor",
+    "dgca_traffic_weight_pct": 5.1,
+    "carriers_monitored": "IndiGo (6E), Air India Express (IX), Star Air (S5)",
+    "current_route_apix": 112.6,
+    "mom_inflation_pct": 2.1,
+    "fares_by_lead_time": {
+      "T_plus_1": 6920,
+      "T_plus_7": 4150,
+      "T_plus_15": 3100,
+      "T_plus_30": 2650,
+      "T_plus_45": 2400
+    },
+    "fare_split": {
+      "base_fare_pct": 66.8,
+      "fuel_surcharge_yq_pct": 18.2,
+      "udf_asf_fees_pct": 10.0,
+      "gst_tax_pct": 5.0
+    },
+    "cpi_contribution_status": "AUGMENTED_LIVE_NSO_CPI"
+  },
+  {
+    "route_code": "DEL-CCU",
+    "sector_name": "Delhi (IGI) \u21cb Kolkata (NSCBIA) Eastern Trunk",
+    "dgca_traffic_weight_pct": 6.2,
+    "carriers_monitored": "IndiGo (6E), Air India (AI), SpiceJet (SG)",
+    "current_route_apix": 121.8,
+    "mom_inflation_pct": 5.6,
+    "fares_by_lead_time": {
+      "T_plus_1": 12600,
+      "T_plus_7": 7400,
+      "T_plus_15": 5600,
+      "T_plus_30": 4650,
+      "T_plus_45": 4200
+    },
+    "fare_split": {
+      "base_fare_pct": 60.5,
+      "fuel_surcharge_yq_pct": 24.5,
+      "udf_asf_fees_pct": 10.0,
+      "gst_tax_pct": 5.0
+    },
+    "cpi_contribution_status": "AUGMENTED_LIVE_NSO_CPI"
+  }
+]

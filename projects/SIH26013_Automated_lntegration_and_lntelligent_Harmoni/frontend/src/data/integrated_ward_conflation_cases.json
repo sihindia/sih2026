@@ -1,0 +1,29 @@
+[
+  {
+    "ward_id": "WARD-PUN-12",
+    "ward_name": "Shivajinagar Urban Ward 12",
+    "city": "Pune",
+    "parcels_harmonized": 320,
+    "conflicts_resolved": 14,
+    "tax_base_gain_pct": 14.5,
+    "conflation_score_pct": 98.2
+  },
+  {
+    "ward_id": "WARD-LKO-04",
+    "ward_name": "Gomti Nagar Extension Sector 4",
+    "city": "Lucknow",
+    "parcels_harmonized": 450,
+    "conflicts_resolved": 22,
+    "tax_base_gain_pct": 11.8,
+    "conflation_score_pct": 97.4
+  },
+  {
+    "ward_id": "WARD-AMD-14",
+    "ward_name": "Sabarmati TP Scheme 14",
+    "city": "Ahmedabad",
+    "parcels_harmonized": 285,
+    "conflicts_resolved": 9,
+    "tax_base_gain_pct": 16.2,
+    "conflation_score_pct": 99.1
+  }
+]

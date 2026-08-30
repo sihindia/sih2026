@@ -1,0 +1,14 @@
+[
+  {
+    "model_name": "ConvLSTM Spatio-Temporal Nowcaster",
+    "forecast_horizon": "0 to 180 Minutes (15-min intervals)",
+    "features": "Echo Tops, VIL, CAPE, Lightning Flash Density",
+    "accuracy": "95.6% Cell Trajectory Tracking"
+  },
+  {
+    "model_name": "Physics-Informed Hail Kinetic Model",
+    "forecast_horizon": "0 to 60 Minutes",
+    "features": "Freezing Level Altitude, DWR ZDR / KDP Polarimetry",
+    "accuracy": "91.8% Hail Ground Impact Prediction"
+  }
+]

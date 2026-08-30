@@ -1,0 +1,50 @@
+[
+  {
+    "widget_id": "WID-AQI",
+    "name": "Real-Time AQI & Pollen Radar",
+    "update_frequency": "Hourly",
+    "target_persona": "Health-Conscious"
+  },
+  {
+    "widget_id": "WID-RUN",
+    "name": "Dynamic Best Running Hours Clock",
+    "update_frequency": "30 Mins",
+    "target_persona": "Fitness Enthusiast"
+  },
+  {
+    "widget_id": "WID-TIDE",
+    "name": "INCOIS Coastal Tide & Swell Gauge",
+    "update_frequency": "15 Mins",
+    "target_persona": "Beachgoers & Surfers"
+  },
+  {
+    "widget_id": "WID-PACK",
+    "name": "Smart Destination Packing Suggestion",
+    "update_frequency": "Real-Time",
+    "target_persona": "Travelers"
+  },
+  {
+    "widget_id": "WID-SCHOOL",
+    "name": "School Commute Rain & Storm Radar",
+    "update_frequency": "10 Mins",
+    "target_persona": "Parents & Families"
+  },
+  {
+    "widget_id": "WID-SOIL",
+    "name": "Soil Moisture & Spraying Window",
+    "update_frequency": "Daily",
+    "target_persona": "Agriculture & Gardeners"
+  },
+  {
+    "widget_id": "WID-FOG",
+    "name": "Expressway Dense Fog Visibility Radar",
+    "update_frequency": "5 Mins",
+    "target_persona": "Daily Commuters"
+  },
+  {
+    "widget_id": "WID-EVENT",
+    "name": "14-Day Outdoor Comfort & Rain Risk",
+    "update_frequency": "3 Hours",
+    "target_persona": "Event Planners"
+  }
+]

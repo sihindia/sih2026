@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Predictive Lead Time",
+    "value": "0 to 6 Hours",
+    "trend": "Convective Mesoscale Window"
+  },
+  {
+    "metric": "Spatial Resolution",
+    "value": "1 to 3 km Grid",
+    "trend": "Hyper-Local Threat Interception"
+  },
+  {
+    "metric": "Detection Accuracy",
+    "value": "93.8%",
+    "trend": "Multi-Sensor Heterogeneous Fusion"
+  }
+]

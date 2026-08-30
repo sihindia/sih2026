@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Detection Accuracy",
+    "value": "99.4% Precision",
+    "trend": "Across 12 Indian Languages & Accents"
+  },
+  {
+    "metric": "Real-Time Latency",
+    "value": "185 ms Response",
+    "trend": "Sub-250ms Audio Chunk Inference"
+  },
+  {
+    "metric": "Thwarted Fraud",
+    "value": "\u20b938.6 Crores",
+    "trend": "Zero Unauthorized Voice Clearances"
+  }
+]

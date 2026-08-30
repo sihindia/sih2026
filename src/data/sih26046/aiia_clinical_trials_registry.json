@@ -1,0 +1,50 @@
+[
+  {
+    "trial_code": "CT-AIIA-2026-DM01",
+    "ctri_number": "CTRI/2026/04/068214",
+    "study_title": "Phase III Multicentre RCT of Guduchi-Pippali Formulation in Type 2 Diabetes",
+    "lead_centre": "All India Institute of Ayurveda (AIIA Apex Centre, New Delhi)",
+    "principal_investigator": "Prof. Dr. Anand K. Chaudhary (Head, Dept of Kayachikitsa)",
+    "regulatory_framework": "GCP-ASU Guidelines & New Drugs and Clinical Trials (NDCT) Rules 2019",
+    "target_recruitment": 450,
+    "current_enrolled": 382,
+    "enrolment_rate_pct": 84.9,
+    "iec_approval_status": "IEC_APPROVED_CURRENT",
+    "data_standard": "CDISC SDTM v3.3 & HL7 FHIR R4 Connected",
+    "safety_profile": "Zero SAEs; 4 Mild Non-Serious AEs (MedDRA: Nausea [10028813], Dyspepsia [10013946]); Resolved without treatment cessation",
+    "study_phase": "Phase III Confirmatory",
+    "status": "RECRUITING_ON_SCHEDULE"
+  },
+  {
+    "trial_code": "CT-AIIA-2026-COG03",
+    "ctri_number": "CTRI/2026/02/064910",
+    "study_title": "Double-Blind Placebo-Controlled Trial of Standardized Ashwagandha in Mild Cognitive Impairment",
+    "lead_centre": "Institute of Teaching and Research in Ayurveda (ITRA Jamnagar Site)",
+    "principal_investigator": "Dr. Meenakshi Sundaram (Dept of Dravyaguna)",
+    "regulatory_framework": "GCP-ASU & ICMR National Ethical Guidelines for Biomedical Research",
+    "target_recruitment": 180,
+    "current_enrolled": 174,
+    "enrolment_rate_pct": 96.7,
+    "iec_approval_status": "IEC_ANNUAL_REVIEW_CLEARED",
+    "data_standard": "CDISC CDASH & ADaM v1.1",
+    "safety_profile": "Zero SAEs; 1 Mild Somnolence; Baseline vs Week 12 MoCA cognitive score trending +3.2 points",
+    "study_phase": "Phase IIb Proof-of-Concept",
+    "status": "ENROLMENT_NEAR_COMPLETION"
+  },
+  {
+    "trial_code": "CT-AIIA-2026-SUR05",
+    "ctri_number": "CTRI/2026/01/061482",
+    "study_title": "National Prospective Pharmacovigilance Cohort of Herbo-Mineral Bhasmas in Chronic Conditions",
+    "lead_centre": "National Pharmacovigilance Coordination Centre (NPvCC @ AIIA)",
+    "principal_investigator": "Dr. Galib R. (National Pharmacovigilance Coordinator)",
+    "regulatory_framework": "Drugs & Cosmetics Act 1940 & NPvCC National Pharmacovigilance Protocol",
+    "target_recruitment": 1500,
+    "current_enrolled": 1390,
+    "enrolment_rate_pct": 92.7,
+    "iec_approval_status": "CENTRAL_ETHICS_COMMITTEE_APPROVED",
+    "data_standard": "WHODrug & MedDRA v27.0 with E2B(R3) Electronic Transmission",
+    "safety_profile": "Comprehensive hepatic & renal panels monitored; zero heavy metal accumulation at therapeutic doses",
+    "study_phase": "Phase IV Post-Marketing Safety Surveillance",
+    "status": "ACTIVE_SURVEILLANCE"
+  }
+]

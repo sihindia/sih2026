@@ -1,0 +1,14 @@
+[
+  {
+    "hazard": "Giant Hail Formation",
+    "physical_basis": "Strong convective updraft velocity (>35 m/s) suspending supercooled water droplets above freezing level"
+  },
+  {
+    "hazard": "Severe Downburst Wind Gusts",
+    "physical_basis": "Intense evaporative cooling inside precipitation downdraft impacting ground surface and spreading horizontally"
+  },
+  {
+    "hazard": "Hyper-Local Cloudburst Core",
+    "physical_basis": "Moisture convergence exceeding 5.5x10\u207b\u2074 s\u207b\u00b9 with orographic anchoring dumping >100 mm rain in under 1 hour"
+  }
+]

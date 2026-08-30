@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Active Quantum Learners",
+    "value": "18,500+",
+    "trend": "Across 140+ Universities"
+  },
+  {
+    "metric": "Interactive Coding Labs",
+    "value": "45+ Labs",
+    "trend": "From Fundamentals to VQE"
+  },
+  {
+    "metric": "Simulation Fidelity",
+    "value": "99.8%",
+    "trend": "Real-Time Qiskit & Cirq Backends"
+  }
+]

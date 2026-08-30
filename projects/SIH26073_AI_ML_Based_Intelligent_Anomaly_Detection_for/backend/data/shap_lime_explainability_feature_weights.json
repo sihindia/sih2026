@@ -1,0 +1,17 @@
+[
+  {
+    "feature": "Spatial Neighbor Delta (RH %)",
+    "shap_importance": 0.84,
+    "interpretation": "Massive divergence from surrounding regional stations"
+  },
+  {
+    "feature": "Temporal Variance Derivative",
+    "shap_importance": 0.62,
+    "interpretation": "Unphysical instantaneous step spike without weather front"
+  },
+  {
+    "feature": "Multivariate Physical Law Consistency",
+    "shap_importance": 0.78,
+    "interpretation": "Clausius-Clapeyron relation violated at 55\u00b0C / 92% RH"
+  }
+]

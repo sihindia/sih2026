@@ -22,6 +22,7 @@ import {
   Play
 } from 'lucide-react';
 import { copyToClipboard, downloadMarkdown } from '../utils/export';
+import { getSeoFriendlyAppUrl } from '../utils/seo';
 import { DynamicDomainApp } from './DynamicDomainApp';
 import { generateProjectFileStructure, ProjectFile } from '../utils/projectFileTree';
 
@@ -33,7 +34,7 @@ interface FullAppRunnerProps {
 export const FullAppRunner: React.FC<FullAppRunnerProps> = ({ ps, onClose }) => {
   const [activeTab, setActiveTab] = React.useState<'app' | 'tutorial' | 'codebase'>('app');
   const psId = ps.ps_number || `SIH${ps.id}`;
-  const directAppUrl = `${window.location.origin}/?app=${psId}`;
+  const directAppUrl = getSeoFriendlyAppUrl(psId);
   const [copiedDirectUrl, setCopiedDirectUrl] = React.useState(false);
 
   const handleCopyDirectUrl = () => {

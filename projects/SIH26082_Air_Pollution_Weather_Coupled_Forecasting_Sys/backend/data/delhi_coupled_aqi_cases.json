@@ -1,0 +1,50 @@
+[
+  {
+    "case_id": "AERO-2026-WIN01",
+    "delhi_hotspot": "Anand Vihar & Trans-Yamuna (East Delhi)",
+    "episode_type": "Peak Winter Stubble Trap & Radiation Inversion",
+    "forecast_horizon_hours": 72,
+    "pbl_height_m": 95,
+    "inversion_strength": "+5.8\u00b0C over 200m (Severe Inversion Cap)",
+    "uncoupled_model_pm25": 290.0,
+    "coupled_aero_pm25": 468.5,
+    "air_quality_index": 482,
+    "aqi_category": "SEVERE_PLUS_EMERGENCY",
+    "stubble_smoke_share_pct": 46.2,
+    "two_way_feedback": "Aerosol solar dimming cools surface by -2.1\u00b0C, squashing PBL height from 350m to 95m, trapping pollutants in vicious feedback loop",
+    "grap_action": "GRAP STAGE IV: Ban non-BS VI diesel commercial vehicles, halt construction, mandate work-from-home across Delhi NCR 36h in advance",
+    "status": "COUPLED_SIMULATION_ACTIVE"
+  },
+  {
+    "case_id": "AERO-2026-FOG04",
+    "delhi_hotspot": "Jahangirpuri & Rohini (North-West Delhi)",
+    "episode_type": "Post-Diwali Particulate Smog & Cold Fog Condensation",
+    "forecast_horizon_hours": 48,
+    "pbl_height_m": 120,
+    "inversion_strength": "+4.2\u00b0C surface temperature inversion",
+    "uncoupled_model_pm25": 260.0,
+    "coupled_aero_pm25": 412.0,
+    "air_quality_index": 448,
+    "aqi_category": "SEVERE",
+    "stubble_smoke_share_pct": 28.5,
+    "two_way_feedback": "Hygroscopic aerosol swelling triggers radiation fog persistence, blocking diurnal solar heating and delaying ventilation till 15:00 IST",
+    "grap_action": "GRAP STAGE III: Suspend physical classes for primary schools, intensify mechanized road sweeping and smog guns",
+    "status": "COUPLED_SIMULATION_ACTIVE"
+  },
+  {
+    "case_id": "AERO-2026-SUM07",
+    "delhi_hotspot": "Gurugram Cyber City & South Delhi Corridor",
+    "episode_type": "Summer Thar Desert Dust Storm & Ground-Level Ozone (O3) Peak",
+    "forecast_horizon_hours": 24,
+    "pbl_height_m": 1850,
+    "inversion_strength": "No Inversion (High Solar Insolation)",
+    "uncoupled_model_pm25": 140.0,
+    "coupled_aero_pm25": 225.0,
+    "air_quality_index": 340,
+    "aqi_category": "VERY_POOR",
+    "stubble_smoke_share_pct": 0.0,
+    "two_way_feedback": "Coarse dust aerosols catalyze heterogeneous NOx/VOC photolysis, generating peak 8-hour ground ozone of 195 \u00b5g/m\u00b3",
+    "grap_action": "OZONE & DUST ADVISORY: Regulate industrial boiler emissions during afternoon hours; issue respiratory health alerts",
+    "status": "COUPLED_SIMULATION_ACTIVE"
+  }
+]

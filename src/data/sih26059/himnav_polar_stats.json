@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Zero Besetment",
+    "value": "100% Safety Record",
+    "trend": "Zero Trapping Incidents in Pack Ice"
+  },
+  {
+    "metric": "Fuel Saved / Voyage",
+    "value": "42.6 Metric Tons",
+    "trend": "Reduces Polar Carbon Emissions"
+  },
+  {
+    "metric": "Spatiotemporal Forecast",
+    "value": "14-Day Horizon",
+    "trend": "ConvLSTM Sea-Ice Concentration"
+  }
+]

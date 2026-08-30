@@ -1,0 +1,20 @@
+[
+  {
+    "notice_id": "SCN-DOCA-042",
+    "company_name": "Global Sweets India Pvt Ltd",
+    "product_name": "Swiss ChocoDelight Cookies (250g)",
+    "violation_sections": "Section 18 & 36(1) of Legal Metrology Act, 2009",
+    "issuing_authority": "Dy. Controller Legal Metrology, Maharashtra Division",
+    "penalty_compounded": "\u20b950,000",
+    "status": "NOTICE_SERVED"
+  },
+  {
+    "notice_id": "SCN-DOCA-054",
+    "company_name": "Pulse Gadgets India Ltd",
+    "product_name": "Pulse Pro Smart Fitness Watch",
+    "violation_sections": "Rule 6(1)(e) of LMR 2011",
+    "issuing_authority": "Asst. Controller Legal Metrology, Delhi HQ",
+    "penalty_compounded": "\u20b925,000",
+    "status": "COMPOUNDING_PAID"
+  }
+]

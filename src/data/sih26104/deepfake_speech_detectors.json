@@ -1,0 +1,17 @@
+[
+  {
+    "detector_name": "RawNet3 End-to-End Raw Audio Neural Network",
+    "target": "Detects vocoder synthesis artifacts directly from uncompressed waveforms",
+    "eer_pct": 0.82
+  },
+  {
+    "detector_name": "CQT Spectrogram Phase Discontinuity Model",
+    "target": "Flags phase inconsistencies in high-frequency harmonic overtones",
+    "eer_pct": 1.15
+  },
+  {
+    "detector_name": "Biometric Micro-Pitch Jitter & Shimmer Engine",
+    "target": "Differentiates physiological human vocal cord tremor from flat neural TTS",
+    "eer_pct": 0.94
+  }
+]

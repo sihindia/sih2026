@@ -1,0 +1,47 @@
+[
+  {
+    "instrument_id": "NAWI-ER30",
+    "instrument_name": "Eagle Digital Retail Computing Counter Scale (ER-30P)",
+    "manufacturer_name": "Eagle Scales India Pvt Ltd, Pune, MH",
+    "accuracy_class": "Class III (Medium)",
+    "max_capacity": "30.0 kg",
+    "min_capacity": "100.0 g",
+    "verification_scale_interval_e": "5.0 g",
+    "scale_interval_d": "5.0 g",
+    "number_of_intervals_n": "6,000",
+    "testing_laboratory": "RRSL Faridabad (DoCA)",
+    "evaluation_standard": "OIML R 76-1:2006 / OIML R 76-2:2007",
+    "approval_status": "APPROVED_OIML_R76",
+    "model_approval_certificate": "IND-DOCA-OIML-2026-081"
+  },
+  {
+    "instrument_id": "NAWI-AB220",
+    "instrument_name": "Precision Analytical Micro-Balance (AB-220)",
+    "manufacturer_name": "Bharat Metrology Instruments, Bengaluru, KA",
+    "accuracy_class": "Class I (Special)",
+    "max_capacity": "0.220 kg (220 g)",
+    "min_capacity": "0.010 g (10 mg)",
+    "verification_scale_interval_e": "0.001 g (1 mg)",
+    "scale_interval_d": "0.0001 g (0.1 mg)",
+    "number_of_intervals_n": "220,000",
+    "testing_laboratory": "RRSL Bengaluru (DoCA)",
+    "evaluation_standard": "OIML R 76-1:2006",
+    "approval_status": "APPROVED_OIML_R76",
+    "model_approval_certificate": "IND-DOCA-OIML-2026-042"
+  },
+  {
+    "instrument_id": "NAWI-WB60T",
+    "instrument_name": "Avery Heavy Duty Pitless Weighbridge (WB-60T)",
+    "manufacturer_name": "Avery Weigh-Tronix India Ltd, Ballabgarh, HR",
+    "accuracy_class": "Class IIII (Ordinary)",
+    "max_capacity": "60,000 kg (60 Tonnes)",
+    "min_capacity": "400 kg",
+    "verification_scale_interval_e": "20.0 kg",
+    "scale_interval_d": "20.0 kg",
+    "number_of_intervals_n": "3,000",
+    "testing_laboratory": "RRSL Ahmedabad (DoCA)",
+    "evaluation_standard": "OIML R 76-1:2006",
+    "approval_status": "APPROVED_OIML_R76",
+    "model_approval_certificate": "IND-DOCA-OIML-2026-109"
+  }
+]

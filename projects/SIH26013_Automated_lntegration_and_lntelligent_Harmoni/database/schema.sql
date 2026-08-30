@@ -1,32 +1,27 @@
--- Supabase / PostgreSQL Schema for SIH26013 (Automated lntegration and lntelligent Harmonization of Multi-source Geospatial Data for urban Land Record Management.)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "postgis";
+-- =========================================================================
+-- DOLR SAMANVAY3D 360 DATABASE SCHEMA (SIH26013)
+-- Ministry of Rural Development - Department of Land Resources (DoLR)
+-- =========================================================================
 
--- 1. Cadastral Land Parcels
-CREATE TABLE IF NOT EXISTS sih26013_parcels (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ulpin_code VARCHAR(14) UNIQUE NOT NULL,
-    state_code VARCHAR(10) DEFAULT 'JH',
-    district_name VARCHAR(100) NOT NULL,
-    village_name VARCHAR(100) NOT NULL,
-    survey_area_sqm NUMERIC(12, 2) NOT NULL,
-    geometry GEOMETRY(Polygon, 4326),
-    land_type VARCHAR(50) DEFAULT 'Agricultural',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS multi_source_conflicts (
+    id SERIAL PRIMARY KEY,
+    conflict_id VARCHAR(64) UNIQUE NOT NULL,
+    ulpin VARCHAR(64) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    conflict_type VARCHAR(128) NOT NULL,
+    spatial_shift_m NUMERIC(5, 2) NOT NULL,
+    root_cause TEXT NOT NULL,
+    ai_resolution_applied TEXT NOT NULL,
+    inter_agency_stakeholders VARCHAR(255) NOT NULL,
+    status VARCHAR(64) DEFAULT 'AUTO_RESOLVED_SYNCHRONIZED',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Ownership Title Records
-CREATE TABLE IF NOT EXISTS sih26013_ownership (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    parcel_id UUID REFERENCES sih26013_parcels(id) ON DELETE CASCADE,
-    owner_name VARCHAR(200) NOT NULL,
-    aadhaar_hash VARCHAR(64) NOT NULL,
-    share_percentage NUMERIC(5, 2) DEFAULT 100.0,
-    encumbrance_status VARCHAR(50) DEFAULT 'CLEAR',
-    verified_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS geospatial_layers (
+    id SERIAL PRIMARY KEY,
+    layer_name VARCHAR(128) NOT NULL,
+    agency VARCHAR(128) NOT NULL,
+    format VARCHAR(64) NOT NULL,
+    spatial_accuracy VARCHAR(64) NOT NULL,
+    update_frequency VARCHAR(64) NOT NULL
 );
-
-ALTER TABLE sih26013_parcels ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26013_ownership ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Parcels" ON sih26013_parcels FOR SELECT USING (true);
-CREATE POLICY "Public Read Ownership" ON sih26013_ownership FOR SELECT USING (true);

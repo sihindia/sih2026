@@ -1,0 +1,30 @@
+[
+  {
+    "case_id": "URBAN-CASE-001",
+    "transit_agency": "BMTC (Bangalore Metropolitan Transport Corp)",
+    "bus_vehicle_no": "KA-57-F-1892",
+    "route_no": "Route 500D (Silk Board to Hebbal Outer Ring Road)",
+    "gps_coordinates": "12.9591\u00b0 N, 77.6974\u00b0 E (Marathahalli Junction)",
+    "road_defect_detected": "Severe Class-3 Pothole Cluster (1.8m x 0.6m, 8cm depth) & Missing Zebra Crossing",
+    "vehicle_density_flow": "48 Vehicles/Min (Level-of-Service E \u2022 High Congestion)",
+    "anpr_infraction_event": "Rash Driving & Bus Lane Encroachment (Vehicle: KA-04-NB-9210)",
+    "anpr_ocr_confidence": 99.2,
+    "municipal_action_ticket": "BBMP Pothole Repair Work Order #8491 Auto-Created",
+    "edge_bandwidth_saved_pct": 99.2,
+    "status": "ALERT_DISPATCHED"
+  },
+  {
+    "case_id": "URBAN-CASE-042",
+    "transit_agency": "DTC (Delhi Transport Corporation)",
+    "bus_vehicle_no": "DL-1P-D-6104",
+    "route_no": "Route 429 (Lajpat Nagar to Connaught Place)",
+    "gps_coordinates": "28.5823\u00b0 N, 77.2341\u00b0 E (Ring Road / Defence Colony)",
+    "road_defect_detected": "Damaged Steel Divider / Missing Caution Signboard & Waterlogging (12cm water)",
+    "vehicle_density_flow": "62 Vehicles/Min (Level-of-Service F \u2022 Bottleneck)",
+    "anpr_infraction_event": "Hit-and-Run Kerb Collision (Vehicle: DL-3C-AZ-4419)",
+    "anpr_ocr_confidence": 98.6,
+    "municipal_action_ticket": "PWD Delhi Divider Repair #3104 & Delhi Traffic Police Alert Dispatched",
+    "edge_bandwidth_saved_pct": 99.4,
+    "status": "ALERT_DISPATCHED"
+  }
+]

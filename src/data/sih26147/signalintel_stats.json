@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Modulation Classification",
+    "value": "99.6%",
+    "trend": "Deep CNN Constellation Classifier"
+  },
+  {
+    "metric": "Demodulation Latency",
+    "value": "12 ms",
+    "trend": "Vectorized SIMD / C++ DSP Pipeline"
+  },
+  {
+    "metric": "Header Sync Precision",
+    "value": "100%",
+    "trend": "CCSDS / STANAG Correlator"
+  }
+]

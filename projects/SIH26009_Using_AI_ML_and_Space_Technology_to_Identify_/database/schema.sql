@@ -1,30 +1,31 @@
--- Supabase / PostgreSQL Schema for SIH26009 (Using AI/ML and Space Technology to Identify Manganese Reserves and Overcome Production Shortfalls.)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOIL BHUDHATRI 360 DATABASE SCHEMA (SIH26009)
+-- Ministry of Steel - MOIL Limited
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26009_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26009',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS manganese_mines (
+    id SERIAL PRIMARY KEY,
+    mine_id VARCHAR(64) UNIQUE NOT NULL,
+    mine_name VARCHAR(255) NOT NULL,
+    state VARCHAR(64) NOT NULL,
+    district VARCHAR(64) NOT NULL,
+    mine_type VARCHAR(128) NOT NULL,
+    ore_grade_mn_pct NUMERIC(4, 2) NOT NULL,
+    weekly_target_mt NUMERIC(10, 2) NOT NULL,
+    satellite_spectral_anomaly TEXT NOT NULL,
+    active_bottleneck TEXT NOT NULL,
+    ai_corrective_action TEXT NOT NULL,
+    recovered_production_mt NUMERIC(10, 2) NOT NULL,
+    target_recovery_pct NUMERIC(5, 2) NOT NULL,
+    shortfall_status VARCHAR(64) DEFAULT 'PRODUCTION_RECOVERED_TARGET_MET',
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26009_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26009_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS satellite_spectral_indices (
+    id SERIAL PRIMARY KEY,
+    sensor VARCHAR(128) NOT NULL,
+    bands_used VARCHAR(128) NOT NULL,
+    index_name VARCHAR(128) NOT NULL,
+    spectral_response TEXT NOT NULL,
+    spatial_resolution VARCHAR(64) NOT NULL
 );
-
-ALTER TABLE sih26009_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26009_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26009_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26009_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26009_audit_logs FOR SELECT USING (true);

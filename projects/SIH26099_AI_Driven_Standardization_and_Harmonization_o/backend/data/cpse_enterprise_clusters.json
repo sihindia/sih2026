@@ -1,0 +1,20 @@
+[
+  {
+    "cpse": "CPCL (Chennai Petroleum)",
+    "sap_version": "S/4HANA Enterprise",
+    "codes_mapped": 4200,
+    "status": "INTEGRATED"
+  },
+  {
+    "cpse": "IOCL (Indian Oil)",
+    "sap_version": "SAP ECC 6.0 EHP8",
+    "codes_mapped": 5800,
+    "status": "INTEGRATED"
+  },
+  {
+    "cpse": "ONGC (Oil & Natural Gas)",
+    "sap_version": "SAP ERP on HANA",
+    "codes_mapped": 4200,
+    "status": "INTEGRATED"
+  }
+]

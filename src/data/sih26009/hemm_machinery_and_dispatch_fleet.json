@@ -1,0 +1,23 @@
+[
+  {
+    "equipment_id": "EXC-301",
+    "type": "Hydraulic Shovel (3.2 m\u00b3 Bucket)",
+    "assigned_mine": "Dongri Buzurg Pit Bench 2",
+    "operational_availability_pct": 94.2,
+    "status": "ACTIVE_EXCAVATING"
+  },
+  {
+    "equipment_id": "DMP-408",
+    "type": "35-Tonne Rigid Rear Dumper",
+    "assigned_mine": "Dongri Buzurg Haul Road",
+    "operational_availability_pct": 98.0,
+    "status": "CYCLE_IN_TRANSIT"
+  },
+  {
+    "equipment_id": "JMB-102",
+    "type": "Electric Hydraulic Twin-Boom Jumbo Drill",
+    "assigned_mine": "Balaghat Western Stope",
+    "operational_availability_pct": 96.5,
+    "status": "BLASTHOLE_DRILLING"
+  }
+]

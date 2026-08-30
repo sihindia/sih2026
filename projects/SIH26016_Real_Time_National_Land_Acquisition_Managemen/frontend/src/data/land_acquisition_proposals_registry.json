@@ -1,0 +1,50 @@
+[
+  {
+    "project_id": "NLAMS-2026-041",
+    "title": "Bharatmala Economic Corridor (NH-754 Spur)",
+    "state": "Rajasthan",
+    "district": "Bikaner & Jodhpur",
+    "requiring_body": "National Highways Authority of India (NHAI)",
+    "notified_area_ha": 620.0,
+    "acquired_area_ha": 580.0,
+    "assessed_compensation_cr": 450.0,
+    "disbursed_compensation_cr": 428.5,
+    "disbursed_pct": 95.2,
+    "affected_families_count": 1820,
+    "randr_completion_pct": 92.0,
+    "current_stage": "Section 38 Physical Possession Granted",
+    "lifecycle_status": "POSSESSION_COMPLETED_HANDED_OVER"
+  },
+  {
+    "project_id": "NLAMS-2026-088",
+    "title": "Ken-Betwa Inter-State River Basin Link Phase 2",
+    "state": "Madhya Pradesh",
+    "district": "Chhatarpur & Panna",
+    "requiring_body": "National Water Development Agency (NWDA)",
+    "notified_area_ha": 1450.0,
+    "acquired_area_ha": 890.0,
+    "assessed_compensation_cr": 1120.0,
+    "disbursed_compensation_cr": 680.0,
+    "disbursed_pct": 60.7,
+    "affected_families_count": 4200,
+    "randr_completion_pct": 58.0,
+    "current_stage": "Section 23 Compensation Award Declaration",
+    "lifecycle_status": "PARTIAL_POSSESSION_IN_PROGRESS"
+  },
+  {
+    "project_id": "NLAMS-2026-112",
+    "title": "Western Dedicated Freight Corridor (DFC) Multi-Modal Logistics Hub",
+    "state": "Gujarat",
+    "district": "Vadodara & Bharuch",
+    "requiring_body": "Dedicated Freight Corridor Corporation (DFCCIL)",
+    "notified_area_ha": 380.0,
+    "acquired_area_ha": 380.0,
+    "assessed_compensation_cr": 310.0,
+    "disbursed_compensation_cr": 308.0,
+    "disbursed_pct": 99.3,
+    "affected_families_count": 940,
+    "randr_completion_pct": 98.0,
+    "current_stage": "Final Commissioning & Railway RoW Enclosed",
+    "lifecycle_status": "POSSESSION_COMPLETED_HANDED_OVER"
+  }
+]

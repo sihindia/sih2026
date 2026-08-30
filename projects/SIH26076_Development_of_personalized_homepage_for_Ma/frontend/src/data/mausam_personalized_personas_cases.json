@@ -1,0 +1,114 @@
+[
+  {
+    "persona_id": "PERS-HEALTH",
+    "persona_name": "Health-Conscious & Sensitive Users",
+    "location": "Anand Vihar, New Delhi",
+    "primary_metrics": "AQI: 384 (Severe) | PM2.5: 240 \u00b5g/m\u00b3 | Pollen: High (Grass/Weed) | UV: 8.5 | RH: 72%",
+    "dynamic_widget_order": [
+      "Air Quality & Asthma Alert",
+      "Pollen Allergy Meter",
+      "UV Sunscreen Advisory",
+      "Hydration Clock"
+    ],
+    "actionable_bulletin": "ALERT: PM2.5 hazardous. Wear N95 respirator outdoors; keep HEPA purifiers running; avoid outdoor cardio.",
+    "status": "PERSONA_ACTIVE"
+  },
+  {
+    "persona_id": "PERS-FITNESS",
+    "persona_name": "Outdoor Fitness Enthusiasts & Runners",
+    "location": "Marine Drive, Mumbai",
+    "primary_metrics": "Temp: 28.5\u00b0C | RH: 78% | Wind: 18 km/h Onshore | Heat Index: 33.2\u00b0C",
+    "dynamic_widget_order": [
+      "Best Running Hours Window",
+      "Sunrise & Golden Hour Clock",
+      "Electrolyte & Heat Index",
+      "Wind Resistance Meter"
+    ],
+    "actionable_bulletin": "OPTIMAL RUNNING WINDOW: 05:30 AM - 07:15 AM before temperature & UV peak. Hydrate with electrolytes.",
+    "status": "PERSONA_ACTIVE"
+  },
+  {
+    "persona_id": "PERS-SURF",
+    "persona_name": "Beachgoers, Coastal Tourists & Surfers",
+    "location": "Calangute Beach, Goa",
+    "primary_metrics": "Wave Height: 1.8m Swell | Water Temp: 28.2\u00b0C | High Tide: 14:15 IST (2.1m) | Low Tide: 08:30 IST (0.4m)",
+    "dynamic_widget_order": [
+      "Tide Timing & Swell Radar",
+      "Sea State & Rip Current Warning",
+      "Beach UV & Sun Safety",
+      "Coastal Water Temp"
+    ],
+    "actionable_bulletin": "SURF CONDITION: Clean 1.8m swells. Caution: Strong rip currents during outgoing tide after 15:00 IST.",
+    "status": "PERSONA_ACTIVE"
+  },
+  {
+    "persona_id": "PERS-TRAVEL",
+    "persona_name": "Frequent Travelers & Aviation Passengers",
+    "location": "Delhi IGI Airport \u2794 London Heathrow",
+    "primary_metrics": "Destination London: 14\u00b0C, Intermittent Drizzle (80% prob) | Delhi Departure: Clear",
+    "dynamic_widget_order": [
+      "Saved Destinations Multi-Clock",
+      "Flight Severe Weather Delay Radar",
+      "Smart Packing Advisory",
+      "Jetlag Sun Planner"
+    ],
+    "actionable_bulletin": "PACKING SUGGESTION: Carry a compact raincoat and light woolen jacket for London arrival tomorrow morning.",
+    "status": "PERSONA_ACTIVE"
+  },
+  {
+    "persona_id": "PERS-FAMILY",
+    "persona_name": "Parents & School Commute Families",
+    "location": "Whitefield, Bengaluru",
+    "primary_metrics": "Rain Radar: Heavy Shower Expected 07:45 AM | Temp: 22\u00b0C | Lightning Risk: Low",
+    "dynamic_widget_order": [
+      "School Commute Rain Radar",
+      "Severe Weather Warning Banner",
+      "Kids UV & Dressing Guide",
+      "Air Quality Index"
+    ],
+    "actionable_bulletin": "COMMUTE NOTICE: Rain showers coinciding with morning school bus route between 07:30 - 08:15 AM. Keep umbrellas handy.",
+    "status": "PERSONA_ACTIVE"
+  },
+  {
+    "persona_id": "PERS-AGRI",
+    "persona_name": "Agriculture & Vineyard Gardeners",
+    "location": "Nashik Valley, Maharashtra",
+    "primary_metrics": "Soil Moisture: 28% (Optimal) | 7-Day Rainfall: 42mm | Frost Alert: None (Min 16\u00b0C)",
+    "dynamic_widget_order": [
+      "Soil Moisture & Irrigation Schedule",
+      "Rainfall Probability 7-Day Trend",
+      "Downy Mildew Disease Risk",
+      "Fertilizer Spray Window"
+    ],
+    "actionable_bulletin": "AGRO ADVISORY: Ideal 48-hour window for micronutrient spray before rains resume on Thursday evening.",
+    "status": "PERSONA_ACTIVE"
+  },
+  {
+    "persona_id": "PERS-COMMUTE",
+    "persona_name": "Daily Highway Commuters & Drivers",
+    "location": "Noida-Greater Noida Expressway",
+    "primary_metrics": "Visibility: 45 Meters (Dense Fog) | Speed Advisory: 40 km/h | Road Surface: Wet",
+    "dynamic_widget_order": [
+      "Fog Visibility Radar",
+      "Expressway Traffic & Delay Meter",
+      "Hazard Light & Caution Alert",
+      "Wind Gust Warning"
+    ],
+    "actionable_bulletin": "HIGHWAY ALERT: Dense radiation fog reducing visibility below 50m. Use low-beam fog lights; avoid lane switching.",
+    "status": "PERSONA_ACTIVE"
+  },
+  {
+    "persona_id": "PERS-EVENTS",
+    "persona_name": "Outdoor Event Planners & Weddings",
+    "location": "Udaipur Lake Palace, Rajasthan",
+    "primary_metrics": "14-Day Outlook: Clear Skies | Rain Probability: 5% | Evening Comfort Index: 74/100",
+    "dynamic_widget_order": [
+      "14-Day Event Weather Outlook",
+      "Hourly Rain Probability Curve",
+      "Outdoor Comfort Index",
+      "Sunset Photography Lighting"
+    ],
+    "actionable_bulletin": "EVENT WEATHER: Excellent conditions for outdoor lawn banquet. Pleasant night breeze at 12 km/h; 0% chance of showers.",
+    "status": "PERSONA_ACTIVE"
+  }
+]

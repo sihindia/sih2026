@@ -1,0 +1,29 @@
+[
+  {
+    "structure_id": "STRUCT-BUND-01",
+    "type": "Check Dam (Masonry Core)",
+    "coordinates": "25.4484\u00b0N, 78.5685\u00b0E",
+    "water_holding_pct": 88.0,
+    "silt_status": "Low (12% silt bed)",
+    "inspected_by": "DoLR Field Engineer Jhansi",
+    "impact": "+1.8m local aquifer recharge"
+  },
+  {
+    "structure_id": "STRUCT-BUND-02",
+    "type": "Percolation Tank with Silt Trap",
+    "coordinates": "25.4312\u00b0N, 78.5810\u00b0E",
+    "water_holding_pct": 94.0,
+    "silt_status": "Optimal (Desilted May 2026)",
+    "inspected_by": "WDC-PMKSY Technical Officer",
+    "impact": "+2.4m community tubewell lift"
+  },
+  {
+    "structure_id": "STRUCT-BUND-03",
+    "type": "Continuous Contour Trench (CCT)",
+    "coordinates": "25.4520\u00b0N, 78.5940\u00b0E",
+    "water_holding_pct": 72.0,
+    "silt_status": "Low (Erosion stabilized)",
+    "inspected_by": "Gram Panchayat Watershed Committee",
+    "impact": "Prevents topsoil runoff on ridge"
+  }
+]

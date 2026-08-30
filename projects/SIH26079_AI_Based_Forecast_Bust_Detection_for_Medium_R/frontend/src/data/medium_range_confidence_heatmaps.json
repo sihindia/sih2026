@@ -1,0 +1,20 @@
+[
+  {
+    "day_range": "Day 1 to Day 3",
+    "average_confidence": "91.8%",
+    "bust_frequency": "3.2% Low",
+    "reliability_tier": "HIGH_CONFIDENCE"
+  },
+  {
+    "day_range": "Day 4 to Day 6",
+    "average_confidence": "68.4%",
+    "bust_frequency": "18.6% Moderate",
+    "reliability_tier": "WATCH_ZONE"
+  },
+  {
+    "day_range": "Day 7 to Day 10",
+    "average_confidence": "41.2%",
+    "bust_frequency": "44.8% High",
+    "reliability_tier": "HIGH_BUST_RISK"
+  }
+]

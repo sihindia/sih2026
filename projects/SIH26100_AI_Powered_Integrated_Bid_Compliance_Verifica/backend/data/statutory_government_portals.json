@@ -1,0 +1,17 @@
+[
+  {
+    "portal_name": "Udyam MSME Registry",
+    "api_endpoint": "https://udyamregistration.gov.in/api/v1/verify",
+    "validation_field": "Enterprise Category & Turnover"
+  },
+  {
+    "portal_name": "GSTN Common Portal",
+    "api_endpoint": "https://api.gst.gov.in/taxpayerapi/v1.0/returns",
+    "validation_field": "Active Status & GSTR-3B Compliance"
+  },
+  {
+    "portal_name": "DPIIT Make in India",
+    "api_endpoint": "https://dpiit.gov.in/api/local-content-verify",
+    "validation_field": "Class-I / Class-II Supplier Certification"
+  }
+]

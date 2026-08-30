@@ -1,0 +1,41 @@
+[
+  {
+    "case_id": "BLEND-2026-RAIN01",
+    "hazard_scenario": "Heavy Monsoon Downpour & Ghats Orographic Flooding",
+    "region_district": "Mangaluru & Udupi (Coastal Karnataka / Ghats)",
+    "forecast_lead_day": 4,
+    "lead_time_hours": 96,
+    "candidate_models": "NCUM 12km (142mm) | ECMWF IFS (118mm) | GFS (86mm) | GraphCast AI (164mm)",
+    "ai_adaptive_weights": "NCUM: 35% | GraphCast AI: 32% | ECMWF: 24% | GFS: 9%",
+    "dynamically_blended_consensus": "138.4 mm/day (Very Heavy Rainfall Alert)",
+    "observed_ground_truth": "141.0 mm/day (IMD AWS Observed)",
+    "skill_improvement_vs_best": "Blended RMSE: 2.6 mm vs NCUM: 4.8 mm (+45.8% Error Reduction over Best Single Model)",
+    "status": "BLENDED_OPTIMAL"
+  },
+  {
+    "case_id": "BLEND-2026-HEAT03",
+    "hazard_scenario": "Severe Pre-Monsoon Heatwave & Loo Advection",
+    "region_district": "Nagpur & Titlagarh (Vidarbha & Western Odisha)",
+    "forecast_lead_day": 6,
+    "lead_time_hours": 144,
+    "candidate_models": "NCUM 12km (45.2\u00b0C) | ECMWF (46.1\u00b0C) | GFS (44.0\u00b0C) | ClimaX AI (46.8\u00b0C)",
+    "ai_adaptive_weights": "ClimaX AI: 38% | ECMWF: 31% | NCUM: 22% | GFS: 9%",
+    "dynamically_blended_consensus": "46.4\u00b0C Max Temp (Severe Heatwave Red Alert)",
+    "observed_ground_truth": "46.6\u00b0C (Observed Max Temp)",
+    "skill_improvement_vs_best": "Blended Bias: -0.2\u00b0C vs ECMWF: -0.5\u00b0C (+60% Temperature Fidelity)",
+    "status": "BLENDED_OPTIMAL"
+  },
+  {
+    "case_id": "BLEND-2026-WIND07",
+    "hazard_scenario": "Bay of Bengal Deep Depression Gale Wind Swath",
+    "region_district": "Paradip & Sagar Island (Odisha-WB Coastal Belt)",
+    "forecast_lead_day": 3,
+    "lead_time_hours": 72,
+    "candidate_models": "NCUM (78 km/h) | ECMWF (82 km/h) | GFS (68 km/h) | GraphCast AI (84 km/h)",
+    "ai_adaptive_weights": "GraphCast AI: 34% | ECMWF: 33% | NCUM: 25% | GFS: 8%",
+    "dynamically_blended_consensus": "81.2 km/h Sustained Gale (Squall Warning)",
+    "observed_ground_truth": "82.5 km/h (Doppler & Buoy Verified)",
+    "skill_improvement_vs_best": "Blended Error: 1.3 km/h vs ECMWF: 2.2 km/h (+40.9% Wind Accuracy)",
+    "status": "BLENDED_OPTIMAL"
+  }
+]

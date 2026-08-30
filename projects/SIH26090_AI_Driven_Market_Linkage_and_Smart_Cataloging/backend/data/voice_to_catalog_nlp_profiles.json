@@ -1,0 +1,17 @@
+[
+  {
+    "language": "Hindi / Awadhi",
+    "source_audio": "Voice input capturing rustic terminology (\u0916\u0921\u094d\u0921\u0940, \u091c\u093c\u0930\u0940, \u092a\u0932\u094d\u0932\u0942, \u0915\u0924\u093e\u0928)",
+    "extracted_tags": "Pure Silk, Banarasi, Zari, Handloom, Kadwa Weave"
+  },
+  {
+    "language": "Gondi / Chhattisgarhi",
+    "source_audio": "Lost-wax terminology (\u092e\u094b\u092e \u0938\u093e\u0902\u091a\u093e, \u0922\u094b\u0915\u0930\u093e, \u092a\u0940\u0924\u0932, \u091d\u0930\u093e)",
+    "extracted_tags": "Dokra, Bastar Craft, Brass Sculpture, Tribal Art"
+  },
+  {
+    "language": "Bundeli / Hindi",
+    "source_audio": "Natural dye textile descriptors (\u091a\u0902\u0926\u0947\u0930\u0940, \u0920\u092a\u094d\u092a\u093e, \u0939\u0930\u0926\u093e, \u0915\u0924\u094d\u0925\u093e)",
+    "extracted_tags": "Chanderi, Silk Cotton, Block Print, Natural Dyes"
+  }
+]

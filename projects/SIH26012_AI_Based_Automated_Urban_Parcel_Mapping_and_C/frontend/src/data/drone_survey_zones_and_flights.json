@@ -1,0 +1,44 @@
+[
+  {
+    "zone_id": "DRONE-PUN-W04",
+    "name": "Kothrud Urban Sector 4",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "gsd_cm_px": 2.8,
+    "flight_altitude_m": 110,
+    "surveyed_area_sqm": 84500.0,
+    "total_parcels_extracted": 142,
+    "building_footprints_delineated": 186,
+    "geoai_confidence_pct": 96.8,
+    "drone_sensor": "Hasselblad L2D-20c 20MP RGB",
+    "survey_status": "CADASTRAL_FINALIZED_ACTIVE"
+  },
+  {
+    "zone_id": "DRONE-LKO-W12",
+    "name": "Gomti Nagar Extension B",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "gsd_cm_px": 2.5,
+    "flight_altitude_m": 95,
+    "surveyed_area_sqm": 112000.0,
+    "total_parcels_extracted": 218,
+    "building_footprints_delineated": 294,
+    "geoai_confidence_pct": 95.4,
+    "drone_sensor": "Sony RX1R II 42MP Full-Frame",
+    "survey_status": "FIELD_GROUND_TRUTHING_GT"
+  },
+  {
+    "zone_id": "DRONE-AMD-W09",
+    "name": "Sabarmati Riverfront Ward 9",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "gsd_cm_px": 3.0,
+    "flight_altitude_m": 120,
+    "surveyed_area_sqm": 95000.0,
+    "total_parcels_extracted": 175,
+    "building_footprints_delineated": 240,
+    "geoai_confidence_pct": 97.2,
+    "drone_sensor": "Phase One iXM-100 Medium Format",
+    "survey_status": "CADASTRAL_FINALIZED_ACTIVE"
+  }
+]

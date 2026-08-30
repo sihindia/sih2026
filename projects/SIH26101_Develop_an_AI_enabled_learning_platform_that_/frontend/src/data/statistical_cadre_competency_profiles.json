@@ -1,0 +1,40 @@
+[
+  {
+    "officer_id": "MOSPI-ISS-2026-001",
+    "name": "Dr. Priya Nair",
+    "designation": "Deputy Director",
+    "department": "National Accounts Division (NAD), MoSPI",
+    "cadre": "Indian Statistical Service (ISS - 2016 Batch)",
+    "current_assignment": "GDP Base Revision & Digital Economy Satellite Accounting",
+    "competency_scores": {
+      "macro_economics": 92.0,
+      "survey_sampling": 88.0,
+      "python_big_data": 44.0,
+      "gis_spatial_stats": 40.0,
+      "sdg_indicators": 85.0
+    },
+    "identified_skill_gaps": "Python for High-Frequency Econometrics & Satellite GIS Statistics",
+    "recommended_igot_pathway": "Advanced Python for Official Statistics (iGOT-CRS-8812) & NSSTA Spatial Analytics",
+    "competency_credits_earned": 140,
+    "status": "ACTIVE_TRAINING_ENROLLED"
+  },
+  {
+    "officer_id": "MOSPI-SSS-2026-042",
+    "name": "Anand Kulkarni",
+    "designation": "Senior Statistical Officer (SSO)",
+    "department": "NSSO Field Operations Division (FOD), Pune",
+    "cadre": "Subordinate Statistical Service (SSS)",
+    "current_assignment": "Periodic Labour Force Survey (PLFS) & CAPI Data Auditing",
+    "competency_scores": {
+      "macro_economics": 70.0,
+      "survey_sampling": 94.0,
+      "python_big_data": 35.0,
+      "gis_spatial_stats": 78.0,
+      "sdg_indicators": 65.0
+    },
+    "identified_skill_gaps": "Automated CAPI Validation Scripts & Machine Learning Data Quality",
+    "recommended_igot_pathway": "CAPI Data Quality Assurance & R Analytics (iGOT-CRS-4401)",
+    "competency_credits_earned": 95,
+    "status": "ACTIVE_TRAINING_ENROLLED"
+  }
+]

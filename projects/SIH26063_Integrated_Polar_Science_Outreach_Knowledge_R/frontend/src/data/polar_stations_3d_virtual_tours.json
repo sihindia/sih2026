@@ -1,0 +1,26 @@
+[
+  {
+    "facility": "Maitri Antarctic Station",
+    "location": "Schirmacher Oasis",
+    "panoramas": "Main Living Habitat, Lake Priyadarshini Pump House, Earth Sciences Lab",
+    "virtual_reality_url": "vr://ncpor.gov.in/maitri-360"
+  },
+  {
+    "facility": "Bharati Antarctic Station",
+    "location": "Larsemann Hills",
+    "panoramas": "Containerized 3-Tier Living Module, Rooftop Lidar Deck, Weather Radar",
+    "virtual_reality_url": "vr://ncpor.gov.in/bharati-360"
+  },
+  {
+    "facility": "Himadri Arctic Research Station",
+    "location": "Ny-\u00c5lesund, Svalbard",
+    "panoramas": "Atmospheric Chemistry Lab, Fjord Marine Biology Facility",
+    "virtual_reality_url": "vr://ncpor.gov.in/himadri-360"
+  },
+  {
+    "facility": "National Polar Ice-Core Repository",
+    "location": "NCPOR Headquarters, Goa",
+    "panoramas": "-20\u00b0C Deep Ice-Core Storage Vault, Microtome Clean Rooms",
+    "virtual_reality_url": "vr://ncpor.gov.in/goa-vault-360"
+  }
+]

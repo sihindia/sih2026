@@ -1,0 +1,20 @@
+[
+  {
+    "metric": "Spectral Angle Mapper (SAM)",
+    "target": "< 2.5\u00b0",
+    "achieved": "1.84\u00b0",
+    "status": "EXCELLENT_SPECTRAL_PRESERVATION"
+  },
+  {
+    "metric": "Relative Dimensionless Error (ERGAS)",
+    "target": "< 2.00",
+    "achieved": "1.62",
+    "status": "MINIMAL_SYNTHESIS_ERROR"
+  },
+  {
+    "metric": "NDVI Radiometric Drift",
+    "target": "< \u00b10.02",
+    "achieved": "+0.006",
+    "status": "ACCURATE_VEGETATION_INDEX"
+  }
+]

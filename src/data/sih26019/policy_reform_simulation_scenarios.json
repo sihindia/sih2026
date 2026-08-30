@@ -1,0 +1,23 @@
+[
+  {
+    "scenario_id": "SCEN-01",
+    "reform": "Conclusive Titling with State Title Guarantee",
+    "litigation_reduction": "68%",
+    "capital_unlocked": "\u20b914.2 Lakh Cr",
+    "timeframe": "3 to 5 Years"
+  },
+  {
+    "scenario_id": "SCEN-02",
+    "reform": "Stamp Duty Rationalization to Uniform 3.0%",
+    "litigation_reduction": "32%",
+    "capital_unlocked": "\u20b98.5 Lakh Cr",
+    "timeframe": "1 to 2 Years"
+  },
+  {
+    "scenario_id": "SCEN-03",
+    "reform": "100% 3D ULPIN High-Rise Cadastre Mandate",
+    "litigation_reduction": "54%",
+    "capital_unlocked": "\u20b96.1 Lakh Cr",
+    "timeframe": "2 to 3 Years"
+  }
+]

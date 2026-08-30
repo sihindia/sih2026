@@ -1,0 +1,18 @@
+[
+  {
+    "assignment_id": "DUTY-2026-881",
+    "officer": "Dr. Ramesh Sharma",
+    "target_ngo": "Navchetna IRCA Centre",
+    "window_hours": "2 Hours (Surprise Trigger)",
+    "geo_target": "25.5941\u00b0 N, 85.1376\u00b0 E",
+    "status": "MISSION_DISPATCHED"
+  },
+  {
+    "assignment_id": "DUTY-2026-894",
+    "officer": "Ms. Sunita Patil",
+    "target_ngo": "Anand Ashram Senior Home",
+    "window_hours": "2 Hours (Surprise Trigger)",
+    "geo_target": "18.5204\u00b0 N, 73.8567\u00b0 E",
+    "status": "MISSION_DISPATCHED"
+  }
+]

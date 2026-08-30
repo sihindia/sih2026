@@ -1,0 +1,20 @@
+[
+  {
+    "component": "Capacitive Thin-Film Hygrometer",
+    "degradation_pct": 82.0,
+    "status": "REPLACE_IMMEDIATELY",
+    "predicted_failure_days": 2
+  },
+  {
+    "component": "Platinum RTD Temp Sensor",
+    "degradation_pct": 14.0,
+    "status": "HEALTHY",
+    "predicted_failure_days": 180
+  },
+  {
+    "component": "Piezoresistive Barometric Sensor",
+    "degradation_pct": 28.0,
+    "status": "HEALTHY",
+    "predicted_failure_days": 120
+  }
+]

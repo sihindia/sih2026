@@ -25,10 +25,12 @@ import { CompareModal } from './components/CompareModal';
 import { GuidelinesModal } from './components/GuidelinesModal';
 import { FreeStackGuideModal } from './components/FreeStackGuideModal';
 import { AboutAndTutorialModal } from './components/AboutAndTutorialModal';
+import { ContactModal } from './components/ContactModal';
 import { FavoritesDrawer } from './components/FavoritesDrawer';
 import { FullAppRunner } from './components/FullAppRunner';
 import { StandaloneAppView } from './components/StandaloneAppView';
 import { Pagination } from './components/Pagination';
+import { updateSeoMeta, getSeoFriendlyAppUrl } from './utils/seo';
 import { Sparkles, Layers, RefreshCw, ShieldAlert, Heart, ExternalLink, Zap, BookOpen } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -55,13 +57,23 @@ export const App: React.FC = () => {
   const [showGuidelinesModal, setShowGuidelinesModal] = React.useState(false);
   const [showFreeStackModal, setShowFreeStackModal] = React.useState(false);
   const [showAboutTutorialModal, setShowAboutTutorialModal] = React.useState(false);
+  const [showContactModal, setShowContactModal] = React.useState(false);
   const [showFavoritesDrawer, setShowFavoritesDrawer] = React.useState(false);
 
-  // Check URL parameters for direct live app launch e.g. /?app=SIH26001 or /?app=26002
+  // Check URL parameters for direct live app launch e.g. /?app=SIH26001 or /app/SIH26001
   React.useEffect(() => {
     const checkUrl = () => {
       const params = new URLSearchParams(window.location.search);
-      const appId = params.get('app') || params.get('ps');
+      let appId = params.get('app') || params.get('ps');
+      
+      // Also support SEO friendly pathnames: /app/SIH26031 or /ps/SIH26031
+      if (!appId && typeof window !== 'undefined') {
+        const pathMatch = window.location.pathname.match(/\/(?:app|ps|problem-statement)\/([a-zA-Z0-9]+)/i);
+        if (pathMatch) {
+          appId = pathMatch[1];
+        }
+      }
+
       if (appId) {
         const raw = appId.toLowerCase().trim();
         const cleanNumber = raw.replace(/^sih/, '');
@@ -78,9 +90,16 @@ export const App: React.FC = () => {
 
         if (match) {
           setStandalonePS(match);
+          const psCode = match.ps_number || `SIH${match.id}`;
+          updateSeoMeta({
+            title: `${psCode}: ${match.title}`,
+            description: `${match.organization} • ${match.category} • ${match.theme}: ${match.description.slice(0, 160)}...`,
+            url: getSeoFriendlyAppUrl(psCode)
+          });
         }
       } else {
         setStandalonePS(null);
+        updateSeoMeta({});
       }
     };
 
@@ -261,16 +280,23 @@ export const App: React.FC = () => {
     const psId = ps.ps_number || `SIH${ps.id}`;
     window.history.pushState(null, '', `?app=${psId}`);
     setRunningAppPS(ps);
+    updateSeoMeta({
+      title: `${psId}: ${ps.title}`,
+      description: `${ps.organization} • ${ps.category} • ${ps.theme}: ${ps.description.slice(0, 160)}...`,
+      url: getSeoFriendlyAppUrl(psId)
+    });
   };
 
   const handleCloseApp = () => {
     window.history.pushState(null, '', window.location.pathname);
     setRunningAppPS(null);
+    updateSeoMeta({});
   };
 
   const handleExitStandalone = () => {
     window.history.pushState(null, '', window.location.pathname);
     setStandalonePS(null);
+    updateSeoMeta({});
   };
 
   const comparedItems = React.useMemo(() => {
@@ -307,6 +333,7 @@ export const App: React.FC = () => {
         onOpenGuidelines={() => setShowGuidelinesModal(true)}
         onOpenFreeStackGuide={() => setShowFreeStackModal(true)}
         onOpenAboutTutorial={() => setShowAboutTutorialModal(true)}
+        onOpenContact={() => setShowContactModal(true)}
         filteredItems={filteredItems}
         totalSoftwareCount={softwareData.length}
         totalAllCount={allData.length}
@@ -584,8 +611,15 @@ export const App: React.FC = () => {
         <AboutAndTutorialModal
           onClose={() => setShowAboutTutorialModal(false)}
           onOpenGuidelines={() => setShowGuidelinesModal(true)}
+          onOpenContact={() => setShowContactModal(true)}
         />
       )}
+
+      {/* Contact Support & Workshop Request Modal */}
+      <ContactModal
+        isOpen={showContactModal}
+        onClose={() => setShowContactModal(false)}
+      />
 
       {/* Favorites Drawer */}
       <FavoritesDrawer

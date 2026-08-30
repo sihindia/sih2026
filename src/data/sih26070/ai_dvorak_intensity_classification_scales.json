@@ -1,0 +1,20 @@
+[
+  {
+    "t_number": "T4.5",
+    "cyclone_category": "Very Severe Cyclonic Storm (VSCS)",
+    "wind_knots": "65 - 77 kts (120-142 km/h)",
+    "central_pressure_drop": "16 hPa Drop"
+  },
+  {
+    "t_number": "T5.5",
+    "cyclone_category": "Extremely Severe Cyclonic Storm (ESCS)",
+    "wind_knots": "90 - 105 kts (166-194 km/h)",
+    "central_pressure_drop": "32 hPa Drop"
+  },
+  {
+    "t_number": "T6.5",
+    "cyclone_category": "Super Cyclonic Storm (SuCS)",
+    "wind_knots": "120+ kts (222+ km/h)",
+    "central_pressure_drop": "60+ hPa Drop"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "module": "Cross-Camera Person Re-ID",
+    "precision_pct": 99.2,
+    "description": "Tracks suspect across non-overlapping camera fields of view based on deep visual embeddings"
+  },
+  {
+    "module": "Automatic Number Plate Recognition (ANPR)",
+    "precision_pct": 98.6,
+    "description": "Extracts vehicle license plates in low-light infrared night surveillance footage"
+  },
+  {
+    "module": "Timestamp Drift Auto-Normalization",
+    "precision_pct": 100.0,
+    "description": "Corrects asynchronous hardware RTC clock drifts across multi-channel DVR inputs"
+  }
+]

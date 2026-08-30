@@ -1,0 +1,44 @@
+[
+  {
+    "simulation_id": "SHELTER-LAD-NYO01",
+    "deployment_location": "Nyoma Forward Airbase Sector, Eastern Ladakh (13,700 ft / 4,175 m)",
+    "ambient_climate": "Extreme High Altitude Cold Desert; Night Temp: -28.5\u00b0C; Day Peak Solar: 940 W/m\u00b2 (7.9 hrs sunshine)",
+    "shelter_geometry": "Modular Passive Trapezoidal Hut (12m x 6m x 3.2m; Capacity: 16 Jawans)",
+    "envelope_materials": "100mm Aerogel Composite Blanket + 80mm High-Density PUF Core (U = 0.11 W/m\u00b2\u00b7K)",
+    "thermal_storage_system": "Bio-Based Paraffin PCM Wall Tiles (Phase Change: 22.0\u00b0C; Latent Heat: 210 kJ/kg) + South Trombe Wall",
+    "openings_and_glazing": "Triple Low-E Argon Glazed Solarium (SHGC = 0.64; U = 0.85 W/m\u00b2\u00b7K) oriented South-Southwest (195\u00b0)",
+    "daytime_indoor_peak": 19.4,
+    "nighttime_indoor_minimum": 15.2,
+    "kerosene_fuel_saved_liters_yr": 9800.0,
+    "ansys_mesh_elements": "1,450,000 Hexahedral Finite Elements",
+    "comfort_status": "COMFORT_MAINTAINED_ZERO_FOSSIL_FUEL"
+  },
+  {
+    "simulation_id": "SHELTER-LAD-SIA03",
+    "deployment_location": "Siachen Glacier Staging Camp, Nubra Sector (12,100 ft / 3,688 m)",
+    "ambient_climate": "Glacial Sub-Zero Blizzard; Night Temp: -34.0\u00b0C; Day Solar Irradiance: 890 W/m\u00b2",
+    "shelter_geometry": "Aerodynamic Insulated Geodesic Dome (Diameter: 8.5m; Wind Resistance: 140 km/h)",
+    "envelope_materials": "Vacuum Insulation Panels (VIP) sandwiched with Kevlar Outer Shell (U = 0.08 W/m\u00b2\u00b7K)",
+    "thermal_storage_system": "Micro-encapsulated PCM Floor Sub-Structure (Transition: 21\u00b0C) + Recovered Ventilation Heat Exchanger",
+    "openings_and_glazing": "Aerogel Translucent Skylight with Motorized Night Insulating Shutter (R-12)",
+    "daytime_indoor_peak": 18.1,
+    "nighttime_indoor_minimum": 14.0,
+    "kerosene_fuel_saved_liters_yr": 12400.0,
+    "ansys_mesh_elements": "1,820,000 Polyhedral Elements",
+    "comfort_status": "COMFORT_MAINTAINED_ZERO_FOSSIL_FUEL"
+  },
+  {
+    "simulation_id": "SHELTER-LAD-KHA05",
+    "deployment_location": "Khardung La Top Military Transit Post (17,582 ft / 5,359 m)",
+    "ambient_climate": "Ultra-High Altitude Severe Hypoxia/Freeze; Night Temp: -38.5\u00b0C; Solar Irradiance: 1,020 W/m\u00b2",
+    "shelter_geometry": "Buried Sub-Grade Earth-Sheltered Bunker (Rock Trench Cut)",
+    "envelope_materials": "200mm Heavy Basalt Rock Mass + 120mm Aerogel Vacuum Cladding (U = 0.09 W/m\u00b2\u00b7K)",
+    "thermal_storage_system": "High Latent Heat Salt Hydrate PCM Battery Banks with Passive Heat Pipes",
+    "openings_and_glazing": "South-Facing Angled Sunspace Glazing with Polycarbonate Air Gap",
+    "daytime_indoor_peak": 17.5,
+    "nighttime_indoor_minimum": 13.8,
+    "kerosene_fuel_saved_liters_yr": 14100.0,
+    "ansys_mesh_elements": "2,100,000 Multizone Hybrid Elements",
+    "comfort_status": "COMFORT_MAINTAINED_ZERO_FOSSIL_FUEL"
+  }
+]

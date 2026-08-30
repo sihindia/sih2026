@@ -1,0 +1,20 @@
+[
+  {
+    "index_name": "Wet-Bulb Globe Temperature (WBGT)",
+    "formula": "0.7 Tw + 0.2 Tg + 0.1 Td",
+    "safe_threshold": "< 28.0\u00b0C",
+    "danger_threshold": "> 32.0\u00b0C (Lethal Limit for Heavy Work)"
+  },
+  {
+    "index_name": "Universal Thermal Climate Index (UTCI)",
+    "formula": "Multi-Node Human Heat Budget Equation",
+    "safe_threshold": "9\u00b0C to 26\u00b0C",
+    "danger_threshold": "> 38.0\u00b0C (Very Strong to Extreme Stress)"
+  },
+  {
+    "index_name": "IMD RealFeel Heat Index (HI)",
+    "formula": "Rothfusz Polynomial Regression",
+    "safe_threshold": "< 40.0\u00b0C",
+    "danger_threshold": "> 54.0\u00b0C (Extreme Danger / Heatstroke Imminent)"
+  }
+]

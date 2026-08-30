@@ -1,0 +1,14 @@
+[
+  {
+    "cluster_id": "CAMPAIGN-BEC-08",
+    "threat_actor": "Storm-0491 Phishing Syndicate",
+    "target_sectors": "Government Higher Education & Research Councils",
+    "linked_domains": 18
+  },
+  {
+    "cluster_id": "CAMPAIGN-CRED-12",
+    "threat_actor": "EvilProxy Reverse-Proxy Network",
+    "target_sectors": "Scholarship & Banking Portals",
+    "linked_domains": 34
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "pump_component": "Sucker Rod String (Grade D + Heavy Sinker Bars)",
+    "rod_floating_mitigation": "Dynamic Downstroke VFD Deceleration",
+    "efficiency_pct": 91.5
+  },
+  {
+    "pump_component": "Surface Pumping Unit (Mark II 456-305-144)",
+    "rod_floating_mitigation": "Electronic Fluid Pound Shock Damper",
+    "efficiency_pct": 94.0
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "sensor_system": "IMD Doppler Weather Radar (Kolkata)",
+    "measurement": "Reflectivity (dBZ) & Radial Velocity (m/s)",
+    "update_interval": "10 Minutes Volume Scan",
+    "purpose": "Deep convective storm core tracking"
+  },
+  {
+    "sensor_system": "IITM Lightning Location Network (LLN)",
+    "measurement": "VLF/LF Magnetic Antenna Ground Strike Coordinates",
+    "update_interval": "Real-Time (<5 Seconds)",
+    "purpose": "Cloud-to-Ground & Intracloud strike detection"
+  },
+  {
+    "sensor_system": "INSAT-3DR Rapid Scan Sounder",
+    "measurement": "Brightness Temp & Cloud Top Cooling Rate",
+    "update_interval": "15 Minutes Swath",
+    "purpose": "Convective initiation early detection"
+  }
+]

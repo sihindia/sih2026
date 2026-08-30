@@ -1,30 +1,42 @@
--- Supabase / PostgreSQL Schema for SIH26090 (AI-Driven Market Linkage and Smart Cataloging Mobile Application for Marginalized Artisans)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOSJE SHILPSETU 360 DATABASE SCHEMA (SIH26090)
+-- Ministry of Social Justice and Empowerment (MoSJE)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26090_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26090',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS artisan_product_catalogs (
+    id SERIAL PRIMARY KEY,
+    product_id VARCHAR(64) UNIQUE NOT NULL,
+    craft_title VARCHAR(255) NOT NULL,
+    artisan_name VARCHAR(128) NOT NULL,
+    cluster_location VARCHAR(255) NOT NULL,
+    craft_domain VARCHAR(128) NOT NULL,
+    gi_tag_status VARCHAR(64) NOT NULL,
+    artisan_voice_input TEXT NOT NULL,
+    ai_generated_catalog_title VARCHAR(255) NOT NULL,
+    ai_studio_enhancement TEXT NOT NULL,
+    labor_hours INTEGER NOT NULL,
+    raw_material_cost_inr NUMERIC(10, 2) NOT NULL,
+    labor_fair_compensation_inr NUMERIC(10, 2) NOT NULL,
+    suggested_fair_price_inr NUMERIC(10, 2) NOT NULL,
+    traditional_middleman_cut TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'CATALOG_PUBLISHED_LIVE',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26090_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26090_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS voice_catalog_translations (
+    id SERIAL PRIMARY KEY,
+    source_language VARCHAR(32) NOT NULL,
+    audio_transcript TEXT NOT NULL,
+    seo_english_description TEXT NOT NULL,
+    seo_hindi_description TEXT NOT NULL,
+    processed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE sih26090_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26090_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26090_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26090_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26090_audit_logs FOR SELECT USING (true);
+CREATE TABLE IF NOT EXISTS b2b_gem_dispatches (
+    id SERIAL PRIMARY KEY,
+    product_id VARCHAR(64) REFERENCES artisan_product_catalogs(product_id),
+    buyer_type VARCHAR(64) NOT NULL, -- GeM, Corporate Gifting, Export
+    order_quantity INTEGER NOT NULL,
+    total_artisan_payout NUMERIC(12, 2) NOT NULL,
+    dispatched_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

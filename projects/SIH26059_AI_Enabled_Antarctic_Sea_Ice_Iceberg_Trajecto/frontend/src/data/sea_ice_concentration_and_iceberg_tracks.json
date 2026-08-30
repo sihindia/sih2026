@@ -1,0 +1,23 @@
+[
+  {
+    "iceberg_id": "IB-LAZ-04",
+    "dimensions": "14.8 km x 6.2 km",
+    "drift_speed_knots": 0.82,
+    "drift_direction": "NNW (335\u00b0)",
+    "collision_hazard": "Cleared by 6.4 nm"
+  },
+  {
+    "iceberg_id": "A-74B Fragment",
+    "dimensions": "22.1 km x 9.5 km",
+    "drift_speed_knots": 0.54,
+    "drift_direction": "W (270\u00b0)",
+    "collision_hazard": "Cleared by 8.5 nm"
+  },
+  {
+    "iceberg_id": "A-23a Megaberg",
+    "dimensions": "38.0 km x 16.0 km",
+    "drift_speed_knots": 1.1,
+    "drift_direction": "N (010\u00b0)",
+    "collision_hazard": "Cleared by 14.2 nm"
+  }
+]

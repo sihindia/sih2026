@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Forecast Horizon",
+    "value": "72 Hours Ahead",
+    "trend": "Coupled Meteorology & Chemical Transport"
+  },
+  {
+    "metric": "Error Reduction",
+    "value": "41.5% Better",
+    "trend": "Compared to Uncoupled Linear AQI Models"
+  },
+  {
+    "metric": "Inversion Accuracy",
+    "value": "94.2%",
+    "trend": "PBL Height & Radiation Inversion Fidelity"
+  }
+]

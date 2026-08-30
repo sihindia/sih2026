@@ -1,0 +1,32 @@
+[
+  {
+    "well_id": "OIL-NHK-640",
+    "field_name": "Nahorkatiya Field (Upper Assam Basin)",
+    "current_depth_m": 3240,
+    "target_formation": "Kopili Shale \u2794 Barail Main Sandstone",
+    "offset_wells_count": 4,
+    "closest_offset_well": "NHK-#512 (1.2 km away \u2022 Drilled 2021)",
+    "historical_offset_incident": "Differential Stuck Pipe at 3,285m (Lost 96 Hours NPT \u2022 Pore Pressure 14.2 ppg)",
+    "proactive_ai_alert": "HIGH RISK: Stuck Pipe & Overpressure Ramp in next 45 meters",
+    "recommended_mitigation": "Increase Mud Weight from 11.4 to 12.8 ppg; Spot 15 bbl lubricant pill; Reduce WOB to 12 klbs",
+    "npt_hours_prevented": 96.0,
+    "cost_savings_inr": "\u20b948.0 Lakhs",
+    "confidence_pct": 94.6,
+    "status": "PROACTIVE_ADVISORY_ACTIVE"
+  },
+  {
+    "well_id": "OIL-BGJ-028",
+    "field_name": "Baghjan Gas Field (Tinsukia, Assam)",
+    "current_depth_m": 3890,
+    "target_formation": "Langpar Formation (High Pressure Gas Sand)",
+    "offset_wells_count": 6,
+    "closest_offset_well": "BGJ-#05 (1.8 km away \u2022 Drilled 2020)",
+    "historical_offset_incident": "Gas Kick & High Torque Fluctuations at 3,920m (Gas Chromatograph Spike 24%)",
+    "proactive_ai_alert": "CRITICAL RISK: High Pressure Gas Influx Zone Approaching (30m Ahead)",
+    "recommended_mitigation": "Prepare Weighted Mud (13.5 ppg); Stage BOP Kill Line; Limit ROP to 4 m/hr",
+    "npt_hours_prevented": 140.0,
+    "cost_savings_inr": "\u20b972.5 Lakhs",
+    "confidence_pct": 96.2,
+    "status": "PROACTIVE_ADVISORY_ACTIVE"
+  }
+]

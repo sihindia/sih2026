@@ -1,0 +1,44 @@
+[
+  {
+    "case_id": "FLD-2026-MUM01",
+    "metro_city": "Mumbai (Kurla-Sion & LBS Marg Corridor)",
+    "drainage_basin": "Mithi River Catchment & Mahim Creek Outfall",
+    "lead_time_hours": "1.5 Hours (90m Lead)",
+    "rainfall_rate_mmh": 92.0,
+    "drainage_node_status": "Outfall Gate #4 Locked by 4.4m Spring Tide Surge",
+    "hydraulic_surcharge": "Backflow surcharging through 14 manholes along LBS Marg",
+    "projected_water_depth_cm": 88.5,
+    "flood_severity": "CRITICAL_INUNDATION (>60cm Submersion)",
+    "navigation_reroute": "CLOSE SUBWAY: Auto-barricade Kurla and Sion rail-road subways. Reroute emergency ambulances and city buses via Eastern Freeway elevated corridor.",
+    "pumping_action": "Activate BMC 500 HP heavy dewatering pumps at Gandhi Market & Hindmata",
+    "status": "INUNDATION_ALERT_ACTIVE"
+  },
+  {
+    "case_id": "FLD-2026-DEL03",
+    "metro_city": "Delhi (Minto Bridge & ITO Underpass Corridor)",
+    "drainage_basin": "Barapullah Nullah & Najafgarh Drain Ingress",
+    "lead_time_hours": "1.0 Hours (60m Lead)",
+    "rainfall_rate_mmh": 78.0,
+    "drainage_node_status": "Trunk Drain #12 Silt Accumulation chokes 45% hydraulic capacity",
+    "hydraulic_surcharge": "Gravity drainage stalled; stormwater welling at railway underpass depression",
+    "projected_water_depth_cm": 115.0,
+    "flood_severity": "EXTREME_SUBWAY_DROWN_RISK (>100cm)",
+    "navigation_reroute": "AUTOMATED BOOM BARRIER: Lower automated gate at Minto Bridge; divert Connaught Place traffic through Deen Dayal Upadhyaya Marg.",
+    "pumping_action": "Start 4 high-head diesel booster pumps to evacuate 12,000 L/min into Yamuna",
+    "status": "INUNDATION_ALERT_ACTIVE"
+  },
+  {
+    "case_id": "FLD-2026-CHE05",
+    "metro_city": "Chennai (Velachery & Madipakkam Residential Basin)",
+    "drainage_basin": "Pallikaranai Marshland & Buckingham Canal Confluence",
+    "lead_time_hours": "2.5 Hours (150m Lead)",
+    "rainfall_rate_mmh": 84.0,
+    "drainage_node_status": "South Buckingham Canal cresting at 1.8m above storm inlet lips",
+    "hydraulic_surcharge": "Surcharge backwash spreading across low-lying interior colonies",
+    "projected_water_depth_cm": 65.0,
+    "flood_severity": "SEVERE_STREET_FLOODING (50-75cm)",
+    "navigation_reroute": "REROUTE TRANSIT: Restrict small vehicular access along 100 Feet Bypass Road; route traffic via OMR Radial Corridor.",
+    "pumping_action": "Deploy Greater Chennai Corporation mobile tractor pumps along residential cul-de-sacs",
+    "status": "INUNDATION_ALERT_ACTIVE"
+  }
+]

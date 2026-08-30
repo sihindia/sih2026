@@ -1,30 +1,30 @@
--- Supabase / PostgreSQL Schema for SIH26041 (AR-Based Vocational Training Simulator for Industrial Safety in Jharkhand's Mining & Manufacturing Sector)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- JHARKHAND SURAKSHAAR 360 DATABASE SCHEMA (SIH26041)
+-- Government of Jharkhand - Department of Higher & Technical Education
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26041_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26041',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS ar_vocational_safety_trials (
+    id SERIAL PRIMARY KEY,
+    trial_id VARCHAR(64) UNIQUE NOT NULL,
+    trainee_name VARCHAR(128) NOT NULL,
+    workplace VARCHAR(255) NOT NULL,
+    safety_module VARCHAR(128) NOT NULL,
+    language VARCHAR(64) NOT NULL,
+    ar_scenario TEXT NOT NULL,
+    drill_actions TEXT NOT NULL,
+    completion_score NUMERIC(5, 2) NOT NULL,
+    dgms_rating VARCHAR(64) NOT NULL,
+    qr_certificate VARCHAR(128) UNIQUE NOT NULL,
+    status VARCHAR(64) DEFAULT 'CERTIFIED_COMPLIANT',
+    evaluated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26041_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26041_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS dgms_safety_certificates (
+    id SERIAL PRIMARY KEY,
+    certificate_number VARCHAR(128) UNIQUE NOT NULL,
+    trial_id VARCHAR(64) REFERENCES ar_vocational_safety_trials(trial_id),
+    worker_adhaar_hash VARCHAR(64) NOT NULL,
+    mines_act_section VARCHAR(64) DEFAULT 'Mines Act 1952 Sec 38',
+    valid_years INTEGER DEFAULT 2,
+    issued_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26041_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26041_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26041_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26041_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26041_audit_logs FOR SELECT USING (true);

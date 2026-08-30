@@ -1,0 +1,20 @@
+[
+  {
+    "element": "Columns (C1 - C16)",
+    "dimensions": "600 mm \u00d7 600 mm",
+    "rebar_spec": "12-T25 Fe550D Main + T10@100 c/c Lateral Ties",
+    "standard": "IS 13920 Ductile Detailing"
+  },
+  {
+    "element": "Main Girders & Beams (B1 - B24)",
+    "dimensions": "450 mm \u00d7 750 mm",
+    "rebar_spec": "6-T25 Bottom + 4-T20 Top + 2-Legged T10 Stirrups",
+    "standard": "IS 456:2000 Plain & Reinforced Concrete"
+  },
+  {
+    "element": "Post-Tensioned Slabs (S1 - S8)",
+    "dimensions": "200 mm Flat Slab with Drops",
+    "rebar_spec": "T12@150 Top & Bottom Mesh + PT Tendons",
+    "standard": "IS 1343 Prestressed Concrete"
+  }
+]

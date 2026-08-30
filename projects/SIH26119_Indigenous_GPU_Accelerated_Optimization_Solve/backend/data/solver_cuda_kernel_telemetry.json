@@ -1,0 +1,17 @@
+[
+  {
+    "kernel_name": "cuSPARSE SpMV Sparse Matrix Multiply",
+    "throughput_gflops": 1420.0,
+    "vram_allocated_mb": 420.0
+  },
+  {
+    "kernel_name": "cuSOLVER Cholesky Sparse Factorization",
+    "throughput_gflops": 2180.0,
+    "vram_allocated_mb": 850.0
+  },
+  {
+    "kernel_name": "Parallel GPU Gomory Cut Separator",
+    "throughput_gflops": 980.0,
+    "vram_allocated_mb": 210.0
+  }
+]

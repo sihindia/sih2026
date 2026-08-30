@@ -1,0 +1,35 @@
+[
+  {
+    "paper_id": "DoLR-RES-01",
+    "title": "Transitioning from Presumptive to Conclusive Land Titling in India",
+    "lead_author": "Dr. Arvind Sharma (NITI Aayog Land Reforms Group)",
+    "category": "Titling Law & Economic Growth",
+    "publication_year": 2026,
+    "citations_count": 142,
+    "empirical_finding": "Guaranteed state land titles backed by a Title Indemnity Fund reduce civil property litigations by 68% and unlock \u20b914.2 Lakh Cr in dormant economic capital.",
+    "policy_recommendation": "Enact State Conclusive Titling Bill with mandatory digital Cadastral Registry & Title Insurance Pool.",
+    "status": "POLICY_REFORM_SIMULATED"
+  },
+  {
+    "paper_id": "DoLR-RES-04",
+    "title": "Socio-Economic Impact of Drone SVAMITVA & NAKSHA Surveys in Rural Habitats",
+    "lead_author": "National Institute of Rural Development and Panchayati Raj (NIRDPR)",
+    "category": "Rural Economics & Financial Inclusion",
+    "publication_year": 2025,
+    "citations_count": 89,
+    "empirical_finding": "Issuance of formal drone-delineated property cards increased rural formal bank agricultural collateral loans by 44% within 18 months.",
+    "policy_recommendation": "Expand drone cadastral mapping to peri-urban abadi areas with automated e-Gram Swaraj linkage.",
+    "status": "IMPLEMENTED_IN_FIELD"
+  },
+  {
+    "paper_id": "DoLR-RES-09",
+    "title": "Land Value Capture (LVC) Mechanisms for Mass Urban Transit Corridors",
+    "lead_author": "School of Planning and Architecture (SPA Delhi) & MoHUA",
+    "category": "Municipal Finance & Infrastructure",
+    "publication_year": 2026,
+    "citations_count": 64,
+    "empirical_finding": "Betterment levies and transferable development rights (TDR) around 3D ULPIN mapped transit stations can fund 35% of capital expenditure for metro lines.",
+    "policy_recommendation": "Standardize Transit-Oriented Development (TOD) zoning with dynamic GIS betterment charges.",
+    "status": "PILOT_UNDER_EVALUATION"
+  }
+]

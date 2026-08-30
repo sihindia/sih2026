@@ -1,30 +1,32 @@
--- Supabase / PostgreSQL Schema for SIH26055 (Smart Scan strategy for Electronic Warfare)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- DRDO ASTRASCAN 360 DATABASE SCHEMA (SIH26055)
+-- DRDO - Department of Defence Production / iDEX
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26055_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26055',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS ew_tactical_environments (
+    id SERIAL PRIMARY KEY,
+    environment_id VARCHAR(64) UNIQUE NOT NULL,
+    theatre_name VARCHAR(255) NOT NULL,
+    rf_spectrum_span VARCHAR(128) NOT NULL,
+    hostile_emitters TEXT NOT NULL,
+    receiver_architecture TEXT NOT NULL,
+    scan_strategy VARCHAR(128) NOT NULL,
+    open_loop_intercept_sec NUMERIC(5, 2) NOT NULL,
+    smart_scan_intercept_sec NUMERIC(5, 2) NOT NULL,
+    time_reduction_pct NUMERIC(4, 1) NOT NULL,
+    probability_of_intercept_pct NUMERIC(4, 1) NOT NULL,
+    false_alarm_rate_pct NUMERIC(4, 2) NOT NULL,
+    reward_cost_ratio NUMERIC(5, 2) NOT NULL,
+    intercept_verdict VARCHAR(64) DEFAULT 'HOSTILE_EMITTER_LOCKED_SUB_2S',
+    simulated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26055_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26055_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS esm_receiver_time_frequency_dwells (
+    id SERIAL PRIMARY KEY,
+    environment_id VARCHAR(64) REFERENCES ew_tactical_environments(environment_id),
+    frequency_band_ghz NUMERIC(6, 3) NOT NULL,
+    dwell_duration_microseconds INTEGER NOT NULL,
+    hit_or_miss BOOLEAN NOT NULL,
+    reward_score NUMERIC(5, 2) NOT NULL,
+    logged_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26055_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26055_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26055_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26055_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26055_audit_logs FOR SELECT USING (true);

@@ -1,0 +1,50 @@
+[
+  {
+    "algorithm_id": "QALGO-001",
+    "name": "Grover's Quantum Search Algorithm",
+    "speedup": "Quadratic Speedup O(\u221aN) vs Classical O(N)",
+    "category": "Quantum Search & Amplitude Amplification",
+    "qubits_required": 3,
+    "circuit_depth": 9,
+    "oracle_type": "Phase Inversion Oracle for Target |111\u27e9",
+    "simulation_histogram": {
+      "|000\u27e9": 1.8,
+      "|001\u27e9": 1.8,
+      "|010\u27e9": 1.8,
+      "|011\u27e9": 1.8,
+      "|100\u27e9": 1.8,
+      "|101\u27e9": 1.8,
+      "|110\u27e9": 1.8,
+      "|111\u27e9": 87.4
+    },
+    "ai_explanation": "Applies Hadamard superposition, marks target state with phase inversion (-1), then reflects all amplitudes about the mean via Grover diffusion operator.",
+    "supported_backends": [
+      "Qiskit Aer (IBM)",
+      "PennyLane (Xanadu)",
+      "Cirq (Google Quantum)"
+    ],
+    "status": "INTERACTIVE_SIMULATION_READY"
+  },
+  {
+    "algorithm_id": "QALGO-002",
+    "name": "Quantum Teleportation Protocol",
+    "speedup": "Exact Quantum State Transfer via Bell Entanglement",
+    "category": "Quantum Communications & Entanglement",
+    "qubits_required": 3,
+    "circuit_depth": 6,
+    "oracle_type": "Bell Pair Creation (|00\u27e9+|11\u27e9)/\u221a2 + CNOT Measurement",
+    "simulation_histogram": {
+      "|000\u27e9": 25.0,
+      "|010\u27e9": 25.0,
+      "|100\u27e9": 25.0,
+      "|111\u27e9": 25.0
+    },
+    "ai_explanation": "Teleports an unknown quantum state |\u03c8\u27e9 from Alice to Bob using a shared EPR entangled pair, Bell-basis measurement, and 2 classical bits.",
+    "supported_backends": [
+      "Qiskit Aer",
+      "Cirq",
+      "Amazon Braket"
+    ],
+    "status": "INTERACTIVE_SIMULATION_READY"
+  }
+]

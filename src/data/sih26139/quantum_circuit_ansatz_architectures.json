@@ -1,0 +1,16 @@
+[
+  {
+    "name": "16-Qubit ZZFeatureMap (Angle Embedding)",
+    "depth": 8,
+    "entanglement_gates": "Full CNOT Mesh",
+    "expressibility_score": 0.984,
+    "kernel_separation": "Hilbert Space (2^16 Dimensions)"
+  },
+  {
+    "name": "RealAmplitudes Variational Ansatz (VQC)",
+    "depth": 12,
+    "entanglement_gates": "Linear Ring CNOT",
+    "expressibility_score": 0.991,
+    "kernel_separation": "Quantum Gradient Descent"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "fuel_name": "Heavy Fuel Oil (HFO - Baseline)",
+    "emission_factor_tco2_per_ton": 3.114,
+    "relative_cost_index": 1.0,
+    "imo_cii_compliance": "High Risk (Grade D/E)"
+  },
+  {
+    "fuel_name": "Liquefied Natural Gas (LNG)",
+    "emission_factor_tco2_per_ton": 2.75,
+    "relative_cost_index": 1.25,
+    "imo_cii_compliance": "Compliant (Grade B)"
+  },
+  {
+    "fuel_name": "Green E-Methanol",
+    "emission_factor_tco2_per_ton": 0.42,
+    "relative_cost_index": 1.85,
+    "imo_cii_compliance": "Superior (Grade A)"
+  },
+  {
+    "fuel_name": "Green Liquid Hydrogen",
+    "emission_factor_tco2_per_ton": 0.05,
+    "relative_cost_index": 2.4,
+    "imo_cii_compliance": "Zero Carbon (Grade A+)"
+  }
+]

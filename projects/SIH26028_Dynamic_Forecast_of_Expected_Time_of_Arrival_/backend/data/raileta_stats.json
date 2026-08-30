@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "ETA Prediction Accuracy",
+    "value": "94.6%",
+    "trend": "Within \u00b15 Mins of Actual Arrival"
+  },
+  {
+    "metric": "Delay Cascade Prevented",
+    "value": "38 Mins",
+    "trend": "Average per Long-Distance Train"
+  },
+  {
+    "metric": "RTIS Satellite Coverage",
+    "value": "100%",
+    "trend": "ISRO NavIC Continuous Telemetry"
+  }
+]

@@ -1,30 +1,31 @@
--- Supabase / PostgreSQL Schema for SIH26042 (Al-Powered Vernacular Pedagogy and Real-Time Translation Tool for Mother Tongue-Based Primary Education)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- JHARKHAND PALASHBHASHA 360 DATABASE SCHEMA (SIH26042)
+-- Government of Jharkhand - Department of Higher & Technical Education
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26042_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26042',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS classroom_vernacular_lessons (
+    id SERIAL PRIMARY KEY,
+    lesson_id VARCHAR(64) UNIQUE NOT NULL,
+    school_name VARCHAR(255) NOT NULL,
+    grade_level VARCHAR(64) NOT NULL,
+    teacher_name VARCHAR(128) NOT NULL,
+    target_language VARCHAR(64) NOT NULL,
+    nipun_competency VARCHAR(128) NOT NULL,
+    teacher_hindi_prompt TEXT NOT NULL,
+    tribal_translated_text TEXT NOT NULL,
+    audio_synthesis TEXT NOT NULL,
+    measured_latency_sec NUMERIC(4, 2) NOT NULL,
+    classroom_response TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'LESSON_ACTIVE',
+    delivered_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26042_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26042_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS bilingual_worksheets (
+    id SERIAL PRIMARY KEY,
+    worksheet_code VARCHAR(64) UNIQUE NOT NULL,
+    lesson_id VARCHAR(64) REFERENCES classroom_vernacular_lessons(lesson_id),
+    language_pair VARCHAR(64) NOT NULL, -- Hindi-Ho, Hindi-Santhali, Hindi-Mundari
+    printable_pdf_url TEXT NOT NULL,
+    downloads_count INTEGER DEFAULT 0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26042_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26042_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26042_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26042_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26042_audit_logs FOR SELECT USING (true);

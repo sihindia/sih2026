@@ -1,0 +1,133 @@
+{
+  "unfc_reserves": [
+    {
+      "mine_id": "MOIL-BLG-01",
+      "mine_name": "Balaghat Deep Underground Mine",
+      "proved_111_mt": 9.45,
+      "probable_121_mt": 5.35,
+      "inferred_333_mt": 4.20,
+      "total_reserves_mt": 19.0,
+      "avg_mn_grade_pct": 48.5,
+      "avg_fe_pct": 6.8,
+      "avg_sio2_pct": 7.4,
+      "avg_p_pct": 0.08,
+      "geological_formation": "Mansar Formation (Sausar Group)",
+      "krige_variance_confidence_pct": 96.8
+    },
+    {
+      "mine_id": "MOIL-DGB-02",
+      "mine_name": "Dongri Buzurg Open-Cast Pit",
+      "proved_111_mt": 5.20,
+      "probable_121_mt": 3.20,
+      "inferred_333_mt": 2.80,
+      "total_reserves_mt": 11.2,
+      "avg_mn_grade_pct": 52.0,
+      "avg_fe_pct": 4.5,
+      "avg_sio2_pct": 5.2,
+      "avg_p_pct": 0.06,
+      "geological_formation": "Chorbaoli Quartzite & Schist Contact",
+      "krige_variance_confidence_pct": 98.2
+    },
+    {
+      "mine_id": "MOIL-MNS-03",
+      "mine_name": "Mansar Surface & Underground",
+      "proved_111_mt": 3.80,
+      "probable_121_mt": 2.40,
+      "inferred_333_mt": 1.90,
+      "total_reserves_mt": 8.1,
+      "avg_mn_grade_pct": 42.0,
+      "avg_fe_pct": 7.9,
+      "avg_sio2_pct": 11.2,
+      "avg_p_pct": 0.14,
+      "geological_formation": "Mansar Schistose Manganese Bed",
+      "krige_variance_confidence_pct": 94.5
+    },
+    {
+      "mine_id": "MOIL-CHK-04",
+      "mine_name": "Chikla Underground Mine",
+      "proved_111_mt": 3.10,
+      "probable_121_mt": 2.00,
+      "inferred_333_mt": 1.50,
+      "total_reserves_mt": 6.6,
+      "avg_mn_grade_pct": 45.0,
+      "avg_fe_pct": 6.2,
+      "avg_sio2_pct": 8.5,
+      "avg_p_pct": 0.11,
+      "geological_formation": "Sitasaongi Quartz-Muscovite Schist",
+      "krige_variance_confidence_pct": 95.6
+    }
+  ],
+  "boreholes": [
+    {
+      "hole_id": "BH-BLG-2026-08",
+      "mine": "Balaghat Mine",
+      "depth_m": 420.5,
+      "collar_elevation_m": 312.0,
+      "mn_intercept_start_m": 385.0,
+      "mn_intercept_end_m": 402.5,
+      "thickness_m": 17.5,
+      "mn_pct": 49.2,
+      "fe_pct": 6.1,
+      "sio2_pct": 6.8,
+      "p_pct": 0.075,
+      "lithology": "Massive Braunite-Pyrolusite Lode in Quartzite",
+      "magnetic_susceptibility_si": 0.042
+    },
+    {
+      "hole_id": "BH-DGB-2026-14",
+      "mine": "Dongri Buzurg Mine",
+      "depth_m": 185.0,
+      "collar_elevation_m": 298.5,
+      "mn_intercept_start_m": 120.0,
+      "mn_intercept_end_m": 142.0,
+      "thickness_m": 22.0,
+      "mn_pct": 53.5,
+      "fe_pct": 4.1,
+      "sio2_pct": 4.6,
+      "p_pct": 0.052,
+      "lithology": "High-Dioxide Cryptomelane Battery Ore",
+      "magnetic_susceptibility_si": 0.028
+    },
+    {
+      "hole_id": "BH-MNS-2026-03",
+      "mine": "Mansar Mine",
+      "depth_m": 240.0,
+      "collar_elevation_m": 305.0,
+      "mn_intercept_start_m": 190.0,
+      "mn_intercept_end_m": 204.0,
+      "thickness_m": 14.0,
+      "mn_pct": 41.8,
+      "fe_pct": 8.2,
+      "sio2_pct": 11.5,
+      "p_pct": 0.138,
+      "lithology": "Banded Gondite & Rhodonite Siliceous Ore",
+      "magnetic_susceptibility_si": 0.056
+    }
+  ],
+  "blending_models": [
+    {
+      "client": "SAIL Bhilai Steel Plant (Blast Furnace Grade)",
+      "target_mn_pct": 46.0,
+      "max_p_pct": 0.12,
+      "max_sio2_pct": 8.0,
+      "recommended_ratio": "60% Balaghat High Grade (48.5% Mn) + 40% Mansar Medium Grade (42.0% Mn)",
+      "achieved_mn_pct": 45.9,
+      "achieved_p_pct": 0.104,
+      "achieved_sio2_pct": 7.92,
+      "commercial_savings_inr_crore": 4.85,
+      "status": "PERFECT_BLAST_FURNACE_COMPLIANCE"
+    },
+    {
+      "client": "Tata Steel Ferro-Alloys Division (High-Carbon FeMn)",
+      "target_mn_pct": 48.0,
+      "max_p_pct": 0.09,
+      "max_sio2_pct": 6.5,
+      "recommended_ratio": "75% Dongri Buzurg Dioxide (52.0% Mn) + 25% Mansar Siliceous (42.0% Mn)",
+      "achieved_mn_pct": 49.5,
+      "achieved_p_pct": 0.074,
+      "achieved_sio2_pct": 6.20,
+      "commercial_savings_inr_crore": 6.20,
+      "status": "PREMIUM_EXPORT_COMPLIANT"
+    }
+  ]
+}

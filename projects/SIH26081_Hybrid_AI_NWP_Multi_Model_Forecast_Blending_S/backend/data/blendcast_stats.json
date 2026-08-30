@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Models Ingested",
+    "value": "6 Core Models",
+    "trend": "Physical NWP + Deep Learning AI"
+  },
+  {
+    "metric": "Skill Improvement",
+    "value": "34.8% Better",
+    "trend": "Over Best Single Deterministic Model"
+  },
+  {
+    "metric": "Operational Lead",
+    "value": "Day 1 to 10",
+    "trend": "Routine Automated Blending Engine"
+  }
+]

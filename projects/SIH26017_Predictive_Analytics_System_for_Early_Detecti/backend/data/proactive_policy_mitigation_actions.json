@@ -1,0 +1,20 @@
+[
+  {
+    "action_id": "ACT-01",
+    "name": "Special Land Lok Adalat",
+    "avg_time_saved": "4.5 Months",
+    "cost_effectiveness": "High (Zero Judicial Fees)"
+  },
+  {
+    "action_id": "ACT-02",
+    "name": "Enhanced Consent Solatium Incentive",
+    "avg_time_saved": "6.0 Months",
+    "cost_effectiveness": "Very High (Avoids Idle Contractor Penalties)"
+  },
+  {
+    "action_id": "ACT-03",
+    "name": "Joint Drone-GNSS Boundary Demarcation",
+    "avg_time_saved": "2.2 Months",
+    "cost_effectiveness": "High (Immediate Encroachment Clarification)"
+  }
+]

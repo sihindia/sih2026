@@ -1,46 +1,38 @@
--- Supabase / PostgreSQL Schema for SIH26079 (AI-Based Forecast Bust Detection for Medium-Range Weather Forecasts)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "postgis";
+-- =========================================================================
+-- NCMRWF BUSTGUARD 360 DATABASE SCHEMA (SIH26079)
+-- Ministry of Earth Sciences (MoES) / NCMRWF
+-- =========================================================================
 
--- 1. Sensor Telemetry Nodes Table
-CREATE TABLE IF NOT EXISTS sih26079_sensors (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    station_code VARCHAR(50) UNIQUE NOT NULL,
-    location_name TEXT NOT NULL,
-    latitude NUMERIC(10, 6) NOT NULL,
-    longitude NUMERIC(10, 6) NOT NULL,
-    elevation_m NUMERIC(8, 2),
-    status VARCHAR(20) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS forecast_bust_cases (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) UNIQUE NOT NULL,
+    synoptic_system VARCHAR(255) NOT NULL,
+    forecast_lead_day INTEGER NOT NULL,
+    lead_time_hours INTEGER NOT NULL,
+    nwp_model VARCHAR(128) NOT NULL,
+    predicted_scenario TEXT NOT NULL,
+    bust_probability_pct NUMERIC(5, 2) NOT NULL,
+    confidence_score_pct NUMERIC(5, 2) NOT NULL,
+    historical_analog_match VARCHAR(255) NOT NULL,
+    xai_root_cause TEXT NOT NULL,
+    forecaster_guidance TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'BUST_WARNING_ISSUED',
+    evaluated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Environmental Readings
-CREATE TABLE IF NOT EXISTS sih26079_readings (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    station_id UUID REFERENCES sih26079_sensors(id) ON DELETE CASCADE,
-    rainfall_intensity_mm_hr NUMERIC(6, 2) NOT NULL,
-    pore_water_pressure_kpa NUMERIC(6, 2) NOT NULL,
-    slope_tilt_deg NUMERIC(5, 2) NOT NULL,
-    factor_of_safety NUMERIC(4, 2) NOT NULL,
-    risk_level VARCHAR(20) DEFAULT 'NORMAL',
-    recorded_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS medium_range_confidence_indices (
+    id SERIAL PRIMARY KEY,
+    day_range VARCHAR(64) NOT NULL,
+    average_confidence VARCHAR(32) NOT NULL,
+    bust_frequency VARCHAR(32) NOT NULL,
+    reliability_tier VARCHAR(64) NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 3. Incident Alert Broadcasts
-CREATE TABLE IF NOT EXISTS sih26079_alerts (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    reading_id UUID REFERENCES sih26079_readings(id),
-    severity VARCHAR(20) NOT NULL,
-    message TEXT NOT NULL,
-    dispatched_to VARCHAR(100) DEFAULT 'NDRF & District SDMA',
-    acknowledged BOOLEAN DEFAULT FALSE,
-    dispatched_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS operational_model_modifications (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) REFERENCES forecast_bust_cases(case_id),
+    recommended_shift TEXT NOT NULL,
+    meteorologist_approved BOOLEAN DEFAULT TRUE,
+    timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
--- Row Level Security (RLS)
-ALTER TABLE sih26079_sensors ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26079_readings ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26079_alerts ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Access" ON sih26079_sensors FOR SELECT USING (true);
-CREATE POLICY "Public Read Readings" ON sih26079_readings FOR SELECT USING (true);
-CREATE POLICY "Public Read Alerts" ON sih26079_alerts FOR SELECT USING (true);

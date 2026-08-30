@@ -1,30 +1,34 @@
--- Supabase / PostgreSQL Schema for SIH26054 (AI-Enabled Real-Time Digital Twin System for Health Monitoring, Fault Prediction and Mission Reliability Enhancement of Aero Piston Engines used in MALE UAVs.)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- DRDO GARUDATWIN 360 DATABASE SCHEMA (SIH26054)
+-- DRDO - Department of Defence Production / iDEX
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26054_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26054',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS uav_engine_digital_twin_missions (
+    id SERIAL PRIMARY KEY,
+    mission_id VARCHAR(64) UNIQUE NOT NULL,
+    uav_platform VARCHAR(255) NOT NULL,
+    operational_theatre TEXT NOT NULL,
+    aero_piston_engine VARCHAR(255) NOT NULL,
+    telemetry_stream TEXT NOT NULL,
+    engine_state TEXT NOT NULL,
+    digital_twin_assessment TEXT NOT NULL,
+    predicted_rul_hours NUMERIC(6, 2) NOT NULL,
+    pinn_anomaly_confidence NUMERIC(4, 1) NOT NULL,
+    maintenance_advisory TEXT NOT NULL,
+    mission_risk_level VARCHAR(64) DEFAULT 'LOW_SAFE_OPERATING_ENVELOPE',
+    twin_status VARCHAR(64) DEFAULT 'TWIN_SYNCHRONIZED_HEALTH_OPTIMAL',
+    logged_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26054_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26054_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS engine_realtime_telemetry_frames (
+    id SERIAL PRIMARY KEY,
+    mission_id VARCHAR(64) REFERENCES uav_engine_digital_twin_missions(mission_id),
+    engine_rpm INTEGER NOT NULL,
+    avg_cht_c NUMERIC(5, 2) NOT NULL,
+    avg_egt_c NUMERIC(5, 2) NOT NULL,
+    oil_pressure_bar NUMERIC(4, 2) NOT NULL,
+    oil_temperature_c NUMERIC(5, 2) NOT NULL,
+    vibration_rms_g NUMERIC(4, 2) NOT NULL,
+    fuel_flow_l_h NUMERIC(5, 2) NOT NULL,
+    recorded_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26054_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26054_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26054_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26054_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26054_audit_logs FOR SELECT USING (true);

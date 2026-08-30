@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Automated Portals",
+    "value": "12 Sources",
+    "trend": "Airlines (6E, AI, QP) & OTAs (MMT, Yatra)"
+  },
+  {
+    "metric": "National APIx Index",
+    "value": "116.8 pts",
+    "trend": "Base: 100 (Jan 2026); +3.8% MoM"
+  },
+  {
+    "metric": "DGCA 30-Day Fit",
+    "value": "98.9% R\u00b2 Fit",
+    "trend": "Backtested against DGCA Monthly Averages"
+  }
+]

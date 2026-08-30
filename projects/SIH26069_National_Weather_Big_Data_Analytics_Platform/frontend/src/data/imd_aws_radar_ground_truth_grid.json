@@ -1,0 +1,14 @@
+[
+  {
+    "station_name": "Mumbai Doppler Weather Radar (Colaba)",
+    "band": "S-Band 2.8 GHz",
+    "peak_reflectivity_dbz": 52.0,
+    "status": "GROUND_TRUTH_ACTIVE"
+  },
+  {
+    "station_name": "Jaipur Doppler Weather Radar",
+    "band": "C-Band 5.6 GHz",
+    "peak_reflectivity_dbz": 18.5,
+    "status": "GROUND_TRUTH_ACTIVE"
+  }
+]

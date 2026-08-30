@@ -1,0 +1,30 @@
+[
+  {
+    "alert_id": "ALERT-DIO-2026-881",
+    "threat_class": "Botnet C2 Beaconing (Cobalt Strike)",
+    "src_ip": "10.142.18.42 (SCADA Enclave Node)",
+    "dst_ip": "185.220.101.4 (Known Rogue Fast-Flux C2)",
+    "protocol": "TLS 1.3 / Port 443 (Zero Decryption)",
+    "ja3_fingerprint": "e7d705a3283e513332d3f29e0303",
+    "ja4_fingerprint": "t13d1508h2_8daaf6152771_b74253194b15",
+    "periodicity_seconds": "45.0s (\u00b110% Jitter)",
+    "confidence_score_pct": 99.4,
+    "diode_status": "PASSIVE_MONITOR_NO_RETURN_PATH",
+    "forensic_evidence": "Strict inter-arrival timing correlation + known adversary JA4 TLS signature",
+    "status": "THREAT_CLASSIFIED_ACTIVE"
+  },
+  {
+    "alert_id": "ALERT-DIO-2026-894",
+    "threat_class": "DGA DNS Tunneling Data Exfiltration",
+    "src_ip": "10.142.12.105 (Core Database Gateway)",
+    "dst_ip": "198.51.100.88 (Rogue Authoritative NS)",
+    "protocol": "DNS UDP / Port 53 (Unidirectional Mirror)",
+    "ja3_fingerprint": "N/A (DNS Query Stream)",
+    "ja4_fingerprint": "N/A",
+    "periodicity_seconds": "Continuous Burst (340 QPS)",
+    "confidence_score_pct": 98.8,
+    "diode_status": "PASSIVE_MONITOR_NO_RETURN_PATH",
+    "forensic_evidence": "Subdomain Shannon entropy 4.85 bits/char + 85 MB base64 encoded TXT records",
+    "status": "THREAT_CLASSIFIED_ACTIVE"
+  }
+]

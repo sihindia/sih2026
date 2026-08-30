@@ -1,0 +1,12 @@
+[
+  {
+    "algorithm_name": "Distributed Space-Time Conflict-Based Search (CBS)",
+    "edge_footprint": "120 MB RAM / 8% CPU",
+    "deadlock_avoidance": "100% Guaranteed"
+  },
+  {
+    "algorithm_name": "Dynamic Priority-Token Passing",
+    "edge_footprint": "45 MB RAM / 4% CPU",
+    "deadlock_avoidance": "100% Guaranteed"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "post_id": "SOC-FAKE-9182",
+    "claim": "Old 2019 cyclone video claimed as live Mumbai storm",
+    "detection_method": "Temporal Video Reverse Frame Hashing",
+    "verdict": "RECYCLED_OLD_FOOTAGE_FLAGGED"
+  },
+  {
+    "post_id": "SOC-FAKE-3019",
+    "claim": "AI-generated image of giant tornado over Delhi Red Fort",
+    "detection_method": "Diffusion Artifact & EXIF Metadata Analysis",
+    "verdict": "AI_SYNTHETIC_IMAGE_REJECTED"
+  }
+]

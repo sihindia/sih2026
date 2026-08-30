@@ -1,0 +1,34 @@
+[
+  {
+    "project_id": "REVIT-BLD-2026-001",
+    "project_name": "The Helix SkyCourt (B+G+9 Urban Mixed-Use)",
+    "location": "Barakhamba Road / CP CBD, New Delhi",
+    "building_typology": "1 Level Basement + Ground + 1st Podium + 8 Residential Floors (B+G+9)",
+    "plot_dimensions_mm": "60,000 mm \u00d7 45,000 mm (2,700 m\u00b2)",
+    "total_built_up_area_sq_m": 18400,
+    "basement_features": "64 Automated Parking Bays + 16 High-Speed 60kW DC EV Chargers",
+    "commercial_podium_sq_m": "3,950 m\u00b2 (Retail, Caf\u00e9s & Co-Working Atrium)",
+    "residential_units": "64 Units (2BHK / 3BHK with Green Sky Balconies)",
+    "courtyard_stack_flow_ms": 2.4,
+    "hvac_energy_reduction_pct": 34.5,
+    "structural_concrete_grade": "M40 Grade Concrete & Fe550D TMT Reinforcement",
+    "bim_lod": "LOD 350 (Full Architectural & Structural Detailing)",
+    "status": "REVIT_BIM_MODEL_APPROVED"
+  },
+  {
+    "project_id": "REVIT-BLD-2026-042",
+    "project_name": "Marina Green Podium (Coastal Climate-Responsive)",
+    "location": "Marine Drive Coastal Corridor, Mumbai",
+    "building_typology": "1 Level Basement + Ground + 1st Podium + 8 Residential Floors (B+G+9)",
+    "plot_dimensions_mm": "55,000 mm \u00d7 40,000 mm (2,200 m\u00b2)",
+    "total_built_up_area_sq_m": 15800,
+    "basement_features": "52 Parking Bays + 12 EV Chargers + Stormwater Sump",
+    "commercial_podium_sq_m": "3,200 m\u00b2 (Boutiques & Sea-Facing Cafes)",
+    "residential_units": "56 Units (Luxury Sea-Facing Apartments)",
+    "courtyard_stack_flow_ms": 3.1,
+    "hvac_energy_reduction_pct": 38.0,
+    "structural_concrete_grade": "M45 Marine Concrete & Epoxy Coated Rebar",
+    "bim_lod": "LOD 350 (Full Structural Drawings)",
+    "status": "APPROVED_FOR_CONSTRUCTION"
+  }
+]

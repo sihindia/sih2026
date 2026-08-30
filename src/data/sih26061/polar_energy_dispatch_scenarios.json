@@ -1,0 +1,53 @@
+[
+  {
+    "scenario_id": "ENERGY-MAITRI-WIN01",
+    "station_name": "Maitri Antarctic Station - Polar Winter Blizzard Dispatch",
+    "ambient_temperature_c": -44.2,
+    "katabatic_wind_speed_kmh": 92.0,
+    "solar_irradiance_wm2": 0.0,
+    "total_electric_demand_kw": 118.5,
+    "total_thermal_demand_kw": 145.0,
+    "wind_turbine_generation_kw": 34.0,
+    "solar_pv_generation_kw": 0.0,
+    "chp_heat_recovery_kw": 48.0,
+    "diesel_burn_rate_lph": 31.8,
+    "unoptimized_baseline_lph": 52.0,
+    "fuel_savings_pct": 38.8,
+    "life_support_curtailment_pct": 0.0,
+    "dispatch_verdict": "MICROGRID_OPTIMAL_DISPATCH"
+  },
+  {
+    "scenario_id": "ENERGY-BHARATI-SUM02",
+    "station_name": "Bharati Antarctic Station - Polar Summer 24-Hour Solar Peak",
+    "ambient_temperature_c": -12.4,
+    "katabatic_wind_speed_kmh": 32.0,
+    "solar_irradiance_wm2": 780.0,
+    "total_electric_demand_kw": 95.0,
+    "total_thermal_demand_kw": 82.0,
+    "wind_turbine_generation_kw": 18.5,
+    "solar_pv_generation_kw": 66.2,
+    "chp_heat_recovery_kw": 32.0,
+    "diesel_burn_rate_lph": 11.2,
+    "unoptimized_baseline_lph": 41.5,
+    "fuel_savings_pct": 73.0,
+    "life_support_curtailment_pct": 0.0,
+    "dispatch_verdict": "RENEWABLE_DOMINATED_SURPLUS"
+  },
+  {
+    "scenario_id": "ENERGY-HIMADRI-ARC03",
+    "station_name": "Himadri Arctic Station - Ny-\u00c5lesund High Arctic Winter",
+    "ambient_temperature_c": -28.0,
+    "katabatic_wind_speed_kmh": 45.0,
+    "solar_irradiance_wm2": 0.0,
+    "total_electric_demand_kw": 45.0,
+    "total_thermal_demand_kw": 58.0,
+    "wind_turbine_generation_kw": 16.0,
+    "solar_pv_generation_kw": 0.0,
+    "chp_heat_recovery_kw": 22.5,
+    "diesel_burn_rate_lph": 9.8,
+    "unoptimized_baseline_lph": 16.5,
+    "fuel_savings_pct": 40.6,
+    "life_support_curtailment_pct": 0.0,
+    "dispatch_verdict": "ARCTIC_CLEAN_ENERGY_OPTIMIZED"
+  }
+]

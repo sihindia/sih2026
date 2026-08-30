@@ -1,0 +1,62 @@
+[
+  {
+    "listing_id": "LIST-SAHYADRI",
+    "fpo_name": "Sahyadri Farmers Producer Co. Ltd",
+    "origin_location": "Nashik, Maharashtra",
+    "member_farmers_count": 8200,
+    "crop_commodity": "Nashik Red Garva Onion (Grade-A Export)",
+    "available_stock_mt": 350.0,
+    "farm_gate_price_per_qtl": "\u20b92,550",
+    "direct_consumer_price_per_qtl": "\u20b92,850",
+    "traditional_mandi_retail_price": "\u20b93,800",
+    "farmer_value_share_pct": "89.4%",
+    "consumer_savings_pct": "25.0%",
+    "fpo_contact_person": "Vilas Shinde (+91 98220 XXXXX)",
+    "verification_status": "FPO_VERIFIED_DIRECT_ACTIVE"
+  },
+  {
+    "listing_id": "LIST-DOABA",
+    "fpo_name": "Doaba Organic Wheat & Grain FPO",
+    "origin_location": "Jalandhar, Punjab",
+    "member_farmers_count": 3400,
+    "crop_commodity": "Sharbati Premium Gold Wheat",
+    "available_stock_mt": 500.0,
+    "farm_gate_price_per_qtl": "\u20b93,200",
+    "direct_consumer_price_per_qtl": "\u20b93,550",
+    "traditional_mandi_retail_price": "\u20b94,600",
+    "farmer_value_share_pct": "90.1%",
+    "consumer_savings_pct": "22.8%",
+    "fpo_contact_person": "Manjit Singh (+91 98140 XXXXX)",
+    "verification_status": "FPO_VERIFIED_DIRECT_ACTIVE"
+  },
+  {
+    "listing_id": "LIST-KINNAUR",
+    "fpo_name": "Kinnaur Apple Growers Collective",
+    "origin_location": "Kinnaur, Himachal Pradesh",
+    "member_farmers_count": 1850,
+    "crop_commodity": "Kinnaur Royal Delicious Apples (100% Tree Ripe)",
+    "available_stock_mt": 180.0,
+    "farm_gate_price_per_qtl": "\u20b98,400",
+    "direct_consumer_price_per_qtl": "\u20b99,800",
+    "traditional_mandi_retail_price": "\u20b914,500",
+    "farmer_value_share_pct": "85.7%",
+    "consumer_savings_pct": "32.4%",
+    "fpo_contact_person": "Tenzin Negi (+91 94180 XXXXX)",
+    "verification_status": "FPO_VERIFIED_DIRECT_ACTIVE"
+  },
+  {
+    "listing_id": "LIST-KUKNOOL",
+    "fpo_name": "Rayalaseema Pulses & Chana FPO",
+    "origin_location": "Kurnool, Andhra Pradesh",
+    "member_farmers_count": 4100,
+    "crop_commodity": "Desi Bengal Gram / Organic Chana",
+    "available_stock_mt": 240.0,
+    "farm_gate_price_per_qtl": "\u20b95,800",
+    "direct_consumer_price_per_qtl": "\u20b96,350",
+    "traditional_mandi_retail_price": "\u20b98,200",
+    "farmer_value_share_pct": "91.3%",
+    "consumer_savings_pct": "22.5%",
+    "fpo_contact_person": "B. Ramaiah (+91 98480 XXXXX)",
+    "verification_status": "FPO_VERIFIED_DIRECT_ACTIVE"
+  }
+]

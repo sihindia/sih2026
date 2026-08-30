@@ -1,0 +1,20 @@
+[
+  {
+    "cycle_stage": "Steam Injection Phase",
+    "steam_quality": "80% Dry Saturated",
+    "injection_pressure_bar": 125.0,
+    "avg_duration_days": 14
+  },
+  {
+    "cycle_stage": "Soak / Thermal Diffusion",
+    "steam_quality": "N/A (Closed Wellhead)",
+    "injection_pressure_bar": 95.0,
+    "avg_duration_days": 10
+  },
+  {
+    "cycle_stage": "Thermal Production Phase",
+    "steam_quality": "N/A (Flowing/SRP)",
+    "injection_pressure_bar": 18.0,
+    "avg_duration_days": 180
+  }
+]

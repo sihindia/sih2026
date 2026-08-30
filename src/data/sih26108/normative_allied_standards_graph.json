@@ -1,0 +1,14 @@
+[
+  {
+    "primary_code": "IS 4923:2017",
+    "normative_code": "IS 1608 (Part 1):2022",
+    "relation_type": "MANDATORY_TEST_METHOD",
+    "description": "Metallic materials \u2014 Tensile testing at room temperature"
+  },
+  {
+    "primary_code": "IS 1554 (Part 1):1988",
+    "normative_code": "IS 8130:2013",
+    "relation_type": "RAW_MATERIAL_CONFORMITY",
+    "description": "Conductors for insulated electric cables and flexible cords"
+  }
+]

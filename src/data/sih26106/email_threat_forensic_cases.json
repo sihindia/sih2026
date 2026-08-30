@@ -1,0 +1,30 @@
+[
+  {
+    "case_id": "MF-CASE-2026-001",
+    "subject": "URGENT: Emergency TEQIP Fund Authorization Directive",
+    "sender": "chairman-office@aicte-gov.co.in (Spoofed Cousin Domain)",
+    "recipient": "all-regional-directors@aicte-india.org",
+    "originating_ip": "185.220.101.42 (TOR Exit Node)",
+    "geolocation": "Frankfurt, Hesse, Germany (AS200651)",
+    "auth_status": "SPF: FAIL \u2022 DKIM: NONE \u2022 DMARC: REJECT_VIOLATION",
+    "nlp_threat_indicators": "High Urgency Cues + Payment Diversion Language + Obfuscated QR Link",
+    "threat_score": 97.8,
+    "risk_level": "CRITICAL_BEC_PHISHING",
+    "system_action": "Quarantined in Real-Time \u2022 Section 65B Forensic Dossier Generated for I4C",
+    "status": "THREAT_NEUTRALIZED"
+  },
+  {
+    "case_id": "MF-CASE-2026-042",
+    "subject": "AICTE PG Scholarship Renewal: Verify Credentials",
+    "sender": "noreply-support@aicte-scholarship-portal.net",
+    "recipient": "pg-scholars-batch26@institutes.ac.in",
+    "originating_ip": "103.145.22.18 (Bulletproof VPS)",
+    "geolocation": "Bucharest, Romania (AS59729)",
+    "auth_status": "SPF: PASS (Own Domain) \u2022 DMARC: UNALIGNED",
+    "nlp_threat_indicators": "Credential Harvesting Login Form + Reverse Proxy Phishlet",
+    "threat_score": 94.2,
+    "risk_level": "CRITICAL_CREDENTIAL_THEFT",
+    "system_action": "Domain Blocked at DNS Gateway \u2022 Phishing Kit Takedown Request Sent",
+    "status": "THREAT_NEUTRALIZED"
+  }
+]

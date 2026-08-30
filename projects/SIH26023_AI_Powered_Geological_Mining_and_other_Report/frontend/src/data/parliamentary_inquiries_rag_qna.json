@@ -1,0 +1,28 @@
+[
+  {
+    "inquiry_id": "LS-UNSTARRED-2026-4412",
+    "house": "Lok Sabha",
+    "session": "Monsoon Session 2026",
+    "subject": "Domestic Coking Coal Exploration and Blast Furnace Import Substitution",
+    "question": "Whether CIL/CMPDI has identified new deep-seated coking coal horizons to substitute expensive metallurgical coal imports?",
+    "ai_generated_response": "CMPDI has completed multi-channel seismic surveys across Jharia Deep Horizon (Seams IX/X, XIV) delineating 680 MT of proved Prime Coking Coal reserves. BCCL washeries are being modernized with micro-bubble flotation to reduce ash from 28% to 17.5%, substituting 12 MT of Australian coking coal imports annually.",
+    "citations": [
+      "CMPDI Regional Institute II Report No. 412/2026",
+      "National Coal Index Gazette Vol 44"
+    ],
+    "status": "MINISTERIAL_DRAFT_APPROVED"
+  },
+  {
+    "inquiry_id": "RS-STARRED-2026-1094",
+    "house": "Rajya Sabha",
+    "session": "Monsoon Session 2026",
+    "subject": "Real-Time Overburden Backfilling and Mine Closure Verification",
+    "question": "The steps taken by Coal India subsidiaries to verify technical and biological reclamation of opencast voids using satellite telemetry?",
+    "ai_generated_response": "Under CMPDI's 3D Land Reclamation Monitoring Protocol, all 78 major opencast mines producing >5 M.CuM/year are monitored quarterly via Cartosat-3 and Sentinel-2 satellite imagery. In FY25-26, 74.2% of void areas have achieved biological green cover, exceeding DGMS statutory norms.",
+    "citations": [
+      "CMPDI Remote Sensing Cell Annual Audit 2026",
+      "DGMS Circular No. 04/2025"
+    ],
+    "status": "MINISTERIAL_DRAFT_APPROVED"
+  }
+]

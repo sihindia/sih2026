@@ -1,0 +1,26 @@
+[
+  {
+    "debris_type": "Ghost Fishing Nets (ALDFG)",
+    "acoustic_highlight": "Diffuse web-like high scattering texture",
+    "shadow_behavior": "Irregular jagged shadow undulating with ocean currents",
+    "ecological_threat": "Continuous lethal entangling of sea turtles, dugongs & reef fish"
+  },
+  {
+    "debris_type": "Submerged Shipwrecks",
+    "acoustic_highlight": "High-intensity specular hull reflection",
+    "shadow_behavior": "Broad geometric shadow reflecting mast and deck relief",
+    "ecological_threat": "Potential bunker fuel leaks, navigation obstruction"
+  },
+  {
+    "debris_type": "Industrial Chemical Drums",
+    "acoustic_highlight": "Bright point return from curved metallic surface",
+    "shadow_behavior": "Sharp cylindrical shadow matching drum diameter",
+    "ecological_threat": "Heavy metal and toxic chemical contamination of marine fauna"
+  },
+  {
+    "debris_type": "Subsea Pipelines & Cables",
+    "acoustic_highlight": "Continuous linear acoustic specular highlight",
+    "shadow_behavior": "Long uniform trench shadow if suspended or scouring",
+    "ecological_threat": "Anchor snagging risk, petroleum spill danger"
+  }
+]

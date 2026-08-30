@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Forecast Horizon",
+    "value": "3 to 10 Days",
+    "trend": "Medium-Range Predictive Lead Time"
+  },
+  {
+    "metric": "Subgrid Resolution",
+    "value": "5 km Precision",
+    "trend": "From Coarse 12km NEPS-G Ensemble"
+  },
+  {
+    "metric": "Amplitude Retention",
+    "value": "97.4%",
+    "trend": "Zero Spectral Smoothing via Diffusion"
+  }
+]

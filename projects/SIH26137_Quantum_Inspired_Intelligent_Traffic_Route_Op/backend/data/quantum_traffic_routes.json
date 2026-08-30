@@ -1,0 +1,34 @@
+[
+  {
+    "route_id": "Q-ROUTE-BLR-001",
+    "corridor_name": "Bengaluru ORR Peak Corridor (Hebbal \u2794 Silk Board \u2794 Electronic City)",
+    "city": "Bengaluru, Karnataka",
+    "graph_nodes_count": 48,
+    "distance_km": 24.8,
+    "classical_dijkstra_time_mins": 84,
+    "qpso_optimized_time_mins": 52,
+    "time_saved_mins": 32,
+    "time_saved_pct": 38.1,
+    "quantum_tunneling_bypass_used": "Wind Tunnel Road \u2794 Sarjapur Bypass \u2794 NICE Corridor",
+    "fuel_saved_liters": 3.2,
+    "co2_avoided_kg": 7.4,
+    "convergence_iterations": 18,
+    "status": "QUANTUM_OPTIMAL_PATH_LOCKED"
+  },
+  {
+    "route_id": "Q-ROUTE-MUM-014",
+    "corridor_name": "Mumbai Western Express Highway (Borivali \u2794 BKC \u2794 Colaba)",
+    "city": "Mumbai, Maharashtra",
+    "graph_nodes_count": 62,
+    "distance_km": 36.2,
+    "classical_dijkstra_time_mins": 115,
+    "qpso_optimized_time_mins": 74,
+    "time_saved_mins": 41,
+    "time_saved_pct": 35.6,
+    "quantum_tunneling_bypass_used": "Coastal Road Extension \u2794 Bandra-Worli Sea Link \u2794 FreeWay",
+    "fuel_saved_liters": 4.8,
+    "co2_avoided_kg": 11.2,
+    "convergence_iterations": 21,
+    "status": "QUANTUM_OPTIMAL_PATH_LOCKED"
+  }
+]

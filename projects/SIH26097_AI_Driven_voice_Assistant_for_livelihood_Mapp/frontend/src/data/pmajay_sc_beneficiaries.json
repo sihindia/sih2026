@@ -1,0 +1,30 @@
+[
+  {
+    "beneficiary_id": "PMAJAY-BEN-2026-001",
+    "name": "Rameshwar Paswan",
+    "age": 26,
+    "location": "Gaya District, Bihar (Aspirational District)",
+    "education": "10th Standard (Matriculate)",
+    "voice_dialect": "Bhojpuri / Rural Magahi",
+    "family_trade": "Traditional Leather & Cobbling",
+    "aspiration": "Modern Footwear Production & Self-Employed Workshop",
+    "recommended_nsqf_pathway": "Footwear Production & CAD Pattern Design (NSQF Level 4)",
+    "pmajay_gia_grant": "\u20b950,000 Tool Kit & Modern Machinery Subsidy",
+    "local_skill_centre": "Gaya SC Vocational Training Hub (6.2 km away)",
+    "status": "ENROLLED_IN_TRAINING"
+  },
+  {
+    "beneficiary_id": "PMAJAY-BEN-2026-084",
+    "name": "Savita Devi",
+    "age": 32,
+    "location": "Vidisha, Madhya Pradesh",
+    "education": "8th Standard",
+    "voice_dialect": "Bundelkhandi Hindi",
+    "family_trade": "Marginal Agricultural Labor",
+    "aspiration": "Organic Mushroom Cultivation & Vermicompost Enterprise",
+    "recommended_nsqf_pathway": "Organic Grower & Agri-Entrepreneur (NSQF Level 3)",
+    "pmajay_gia_grant": "\u20b935,000 Micro-Enterprise SHG Grant",
+    "local_skill_centre": "Vidisha Rural PMKK Skill Institute (4.5 km away)",
+    "status": "ENROLLED_IN_TRAINING"
+  }
+]

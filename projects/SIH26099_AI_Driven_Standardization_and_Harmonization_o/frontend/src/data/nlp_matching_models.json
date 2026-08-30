@@ -1,0 +1,17 @@
+[
+  {
+    "model": "Domain-Adapted Industrial BERT",
+    "task": "Technical specification semantic parsing and token embeddings",
+    "f1_score": 99.4
+  },
+  {
+    "model": "UoM & Metallurgy Dimension Normalizer",
+    "task": "Converts Inches/MM, Class/Lbs, and ASTM/DIN material grades",
+    "f1_score": 100.0
+  },
+  {
+    "model": "Common National Material Code (CNMC) Classifier",
+    "task": "Hierarchical taxonomy assignment based on UNSPSC & ISO 22745",
+    "f1_score": 98.9
+  }
+]

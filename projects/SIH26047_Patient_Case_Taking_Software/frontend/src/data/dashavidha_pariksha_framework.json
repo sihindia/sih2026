@@ -1,0 +1,22 @@
+[
+  {
+    "dimension": "1. Prakriti",
+    "clinical_utility": "Inborn psychosomatic constitution (Vata, Pitta, Kapha or Dwandwaja)",
+    "kiosk_assessment": "12-question lifestyle, thermal preference, and physical build questionnaire"
+  },
+  {
+    "dimension": "2. Vikriti",
+    "clinical_utility": "Pathological imbalance of Doshas responsible for current presenting illness",
+    "kiosk_assessment": "Adaptive symptom elicitation mapped to Classical Nidana-Samprapti rules"
+  },
+  {
+    "dimension": "3. Agni",
+    "clinical_utility": "Digestive metabolic capacity (Samagni, Vishamagni, Tikshnagni, Mandagni)",
+    "kiosk_assessment": "Appetite, digestion timing, belching, bloating, and postprandial lethargy assessment"
+  },
+  {
+    "dimension": "4. Koshtha",
+    "clinical_utility": "Gastrointestinal bowel habit sensitivity (Mridu, Madhyama, Krura)",
+    "kiosk_assessment": "Bowel frequency, consistency (Bristol Stool Scale), and laxative response"
+  }
+]

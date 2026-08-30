@@ -1,0 +1,47 @@
+[
+  {
+    "mission_id": "LIDAR-POK-AIFV01",
+    "vehicle_platform": "Autonomous Infantry Combat Vehicle (AIFV) - Pokhran Desert Sector",
+    "operational_environment": "Extreme Off-Road Sand Dunes, Trenches, and Anti-Tank Craters",
+    "lidar_sensor_spec": "64-Beam Multi-Channel High-Precision 3D Lidar (1.3M points/sec)",
+    "grid_structure": "Variable Resolution 2.5D Foveated Grid: 5cm (0-10m) | 20cm (10-40m) | 50cm (40-100m)",
+    "deep_learning_backbone": "Sparse Residual 3D CNN + Cylinder3D Voxel Segmentation",
+    "raw_pointcloud_ram_mb": 440.0,
+    "foveated_grid_ram_mb": 94.2,
+    "memory_reduction_pct": 78.6,
+    "inference_fps": 48.2,
+    "latency_ms": 18.6,
+    "critical_detections": "Anti-Tank Ditch (Depth: 1.8m) at 14m range; Moving Recon Patrol detected at 68m",
+    "perception_status": "REAL_TIME_AUTONOMOUS_PERCEPTION"
+  },
+  {
+    "mission_id": "LIDAR-DEL-UGV03",
+    "vehicle_platform": "Tactical Micro-UGV Scout - Close-Quarters Battle (CQB) Complex",
+    "operational_environment": "Dense Urban Ruins, Narrow Doorways, Concrete Rubble, Low Ceilings",
+    "lidar_sensor_spec": "Solid-State Flash Lidar with 120\u00b0 x 90\u00b0 FOV (850k points/sec)",
+    "grid_structure": "Ultra-Fine Foveated Grid: 2.5cm (0-5m) | 10cm (5-20m) | 30cm (20-50m)",
+    "deep_learning_backbone": "PointNet++ with Multiscale Grouping (MSG) for Rubble Traversal",
+    "raw_pointcloud_ram_mb": 290.0,
+    "foveated_grid_ram_mb": 62.8,
+    "memory_reduction_pct": 78.3,
+    "inference_fps": 52.4,
+    "latency_ms": 15.2,
+    "critical_detections": "Exposed Rebar Curb Obstacle (Height: 18cm); Drivable rubble ramp cleared",
+    "perception_status": "REAL_TIME_AUTONOMOUS_PERCEPTION"
+  },
+  {
+    "mission_id": "LIDAR-ZOJ-CONV05",
+    "vehicle_platform": "High-Altitude Autonomous Convoy Lead Truck - Zojila Pass Route",
+    "operational_environment": "Steep Mountainous Precipice, Snow Drifts, Rockfall Debris, 12,000 ft",
+    "lidar_sensor_spec": "Dual Long-Range 128-Beam Automotive Lidar (2.2M points/sec)",
+    "grid_structure": "Extended Horizon Foveated Grid: 5cm (0-15m) | 25cm (15-60m) | 60cm (60-150m)",
+    "deep_learning_backbone": "Minkowski Engine Sparse Tensor ResNet-50",
+    "raw_pointcloud_ram_mb": 720.0,
+    "foveated_grid_ram_mb": 148.5,
+    "memory_reduction_pct": 79.4,
+    "inference_fps": 44.0,
+    "latency_ms": 21.4,
+    "critical_detections": "Precipice Edge Drop-off (Fall: 400m) detected at 12m; Roadway width 3.8m validated",
+    "perception_status": "REAL_TIME_AUTONOMOUS_PERCEPTION"
+  }
+]

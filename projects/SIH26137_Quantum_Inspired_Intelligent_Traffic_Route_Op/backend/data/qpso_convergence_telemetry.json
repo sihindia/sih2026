@@ -1,0 +1,30 @@
+[
+  {
+    "iteration": 1,
+    "qpso_fitness": 92.4,
+    "classical_pso_fitness": 118.6,
+    "quantum_state_alpha": 0.88,
+    "quantum_state_beta": 0.47
+  },
+  {
+    "iteration": 5,
+    "qpso_fitness": 68.2,
+    "classical_pso_fitness": 98.4,
+    "quantum_state_alpha": 0.74,
+    "quantum_state_beta": 0.67
+  },
+  {
+    "iteration": 10,
+    "qpso_fitness": 56.4,
+    "classical_pso_fitness": 88.2,
+    "quantum_state_alpha": 0.62,
+    "quantum_state_beta": 0.78
+  },
+  {
+    "iteration": 18,
+    "qpso_fitness": 52.0,
+    "classical_pso_fitness": 84.0,
+    "quantum_state_alpha": 0.5,
+    "quantum_state_beta": 0.86
+  }
+]

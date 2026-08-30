@@ -1,0 +1,14 @@
+[
+  {
+    "discipline": "Piping & Welding",
+    "historical_delay_cause": "Monsoon rain shielding & argon purge delays",
+    "avg_duration_drift_pct": "+8.5%",
+    "recommendation": "Allocate mobile weather canopies in baseline plan."
+  },
+  {
+    "discipline": "Civil Foundations",
+    "historical_delay_cause": "Rebar inspection clearance lag",
+    "avg_duration_drift_pct": "+4.2%",
+    "recommendation": "Schedule simultaneous QA/QC inspector sign-offs."
+  }
+]

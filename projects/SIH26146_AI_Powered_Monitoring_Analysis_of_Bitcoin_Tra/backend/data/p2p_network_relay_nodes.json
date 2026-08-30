@@ -1,0 +1,16 @@
+[
+  {
+    "node_ip": "194.26.29.112",
+    "asn": "AS48712 (HostSailor Bulgaria)",
+    "peer_count": 48,
+    "first_tx_broadcast_ms": "+14ms Origin Lead",
+    "status": "FIRST_SEEN_BROADCASTER"
+  },
+  {
+    "node_ip": "91.240.118.24",
+    "asn": "AS39351 (31173 Services NL)",
+    "peer_count": 64,
+    "first_tx_broadcast_ms": "+22ms Relay",
+    "status": "KNOWN_TOR_RELAY"
+  }
+]

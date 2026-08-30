@@ -1,0 +1,20 @@
+[
+  {
+    "signal": "Madden-Julian Oscillation (MJO)",
+    "role": "Intra-Seasonal Eastward Convective Wave",
+    "favorable_phases": "Phase 3 (Equatorial Indian Ocean) & Phase 4 (Maritime Continent)",
+    "suppressed_phases": "Phase 7 & Phase 8 (Western Pacific / Western Hemisphere)"
+  },
+  {
+    "signal": "Indian Ocean Dipole (IOD)",
+    "role": "Cross-Equatorial Sea Surface Temperature Gradient",
+    "favorable_phases": "Positive IOD (> +0.4\u00b0C): Fuels Arabian Sea & Bay of Bengal moisture transport",
+    "suppressed_phases": "Negative IOD (< -0.4\u00b0C): Induces prolonged dry breaks over Central India"
+  },
+  {
+    "signal": "ENSO (Ni\u00f1o 3.4 SST Anomaly)",
+    "role": "Walker Circulation & Planetary Hadley Cell",
+    "favorable_phases": "La Ni\u00f1a (Cooler SST < -0.5\u00b0C): Stronger monsoon westerlies",
+    "suppressed_phases": "El Ni\u00f1o (Warmer SST > +0.5\u00b0C): Frequent monsoon breaks and deficient Kharif rains"
+  }
+]

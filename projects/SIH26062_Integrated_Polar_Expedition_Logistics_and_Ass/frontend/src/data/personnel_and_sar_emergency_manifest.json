@@ -1,0 +1,23 @@
+[
+  {
+    "member_id": "POLAR-CREW-01",
+    "name": "Expedition Leader (NCPOR Scientist)",
+    "role": "Station Commander",
+    "safety_beacon_id": "BEACON-IRIDIUM-01",
+    "medevac_status": "FIT_FOR_WINTERING"
+  },
+  {
+    "member_id": "POLAR-CREW-02",
+    "name": "Chief Mechanical Engineer (Indian Army EME)",
+    "role": "Convoy Master",
+    "safety_beacon_id": "BEACON-IRIDIUM-02",
+    "medevac_status": "FIT_FOR_WINTERING"
+  },
+  {
+    "member_id": "POLAR-CREW-03",
+    "name": "Senior Medical Officer (Armed Forces Medical)",
+    "role": "Station Physician",
+    "safety_beacon_id": "BEACON-IRIDIUM-03",
+    "medevac_status": "FIT_FOR_WINTERING"
+  }
+]

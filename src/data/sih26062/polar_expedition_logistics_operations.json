@@ -1,0 +1,41 @@
+[
+  {
+    "operation_id": "LOG-ISEA45-MAITRI01",
+    "operation_title": "45th ISEA Heavy Cargo Offloading & Maitri Station Blue-Ice Convoy",
+    "theatre_location": "Indian Barrier / Fast-Ice Anchorage \u2794 Maitri Station (Queen Maud Land)",
+    "cargo_manifest": "18 TEU Heavy Containers: 125 kVA CHP Generator, PistenBully 300 Track Spares, -20\u00b0C Ice-Core Freezers",
+    "total_tonnage_mt": 142.5,
+    "transport_mode": "4x PistenBully Tracked Snow Tractors with Heavy Cargo Sledges",
+    "route_distance_km": 95.0,
+    "crevasse_hazard_status": "Ground Penetrating Radar (GPR) Route Survey Cleared (Zero Open Crevasses)",
+    "subzero_rfid_tracking": "100% of 18 Containers and 480 Internal Items Verified with -50\u00b0C Rugged BLE",
+    "convoy_transit_time_hours": 14.0,
+    "delivery_status": "CONVOY_DELIVERED_TO_MAITRI_STATION"
+  },
+  {
+    "operation_id": "LOG-ISEA45-BHARATI02",
+    "operation_title": "Bharati Station Helicopter Sling-Load Critical Spares & Medical Supply",
+    "theatre_location": "Vessel Anchorage at Thala Fjord \u2794 Bharati Station Helipad (Larsemann Hills)",
+    "cargo_manifest": "Precision Scientific Spectrometers, Cold-Chain Vaccines, Blood Plasma, Emergency Jet A-1 Bladders",
+    "total_tonnage_mt": 18.2,
+    "transport_mode": "Kamov Ka-32 & Bell 407 Polar Heavy-Lift Helicopters",
+    "route_distance_km": 12.5,
+    "crevasse_hazard_status": "Aerial Transit - Zero Surface Crevasse Risk; Wind Window < 45 km/h",
+    "subzero_rfid_tracking": "Cryogenic Temperature Loggers Active (-20\u00b0C Sample Integrity Intact)",
+    "convoy_transit_time_hours": 3.5,
+    "delivery_status": "AIRLIFT_COMPLETED_SAFELY"
+  },
+  {
+    "operation_id": "LOG-CPT-HUB03",
+    "operation_title": "Cape Town Polar Transit Warehouse Staging & Southern Ocean Manifesting",
+    "theatre_location": "NCPOR Polar Staging Depot (Port of Cape Town, South Africa)",
+    "cargo_manifest": "Annual Arctic Diesel Bunkering (450,000 Litres), Food Rations (18 Months), Station Expansion Modules",
+    "total_tonnage_mt": 680.0,
+    "transport_mode": "Chartered Ice-Class Cargo Expedition Vessel (Vasiliy Golovnin)",
+    "route_distance_km": 4200.0,
+    "crevasse_hazard_status": "Maritime Southern Ocean Transit via Roaring Forties & Screaming Sixties",
+    "subzero_rfid_tracking": "Global Satellite GPS Asset Transponders Synchronized with NCPOR Goa HQ",
+    "convoy_transit_time_hours": 240.0,
+    "delivery_status": "VESSEL_DEPARTED_FOR_ANTARCTICA"
+  }
+]

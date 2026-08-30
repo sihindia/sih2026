@@ -1,0 +1,53 @@
+[
+  {
+    "case_id": "HEAT-2026-GUJ01",
+    "city_zone": "Ahmedabad & Surat Urban Basin (Gujarat)",
+    "hazard_type": "Compound Humid Heatwave & Dangerous Wet-Bulb Spike",
+    "forecast_lead_day": 4,
+    "lead_time_hours": 96,
+    "dry_bulb_temp_c": 43.2,
+    "relative_humidity_pct": 58,
+    "heat_index_c": 54.6,
+    "wbgt_index_c": 33.8,
+    "utci_stress_c": 44.2,
+    "stress_category": "EXTREME_PHYSIOLOGICAL_DANGER",
+    "vulnerable_demographics": "68,000 outdoor laborers | 42,000 low-income elderly in metal-roof dwellings",
+    "projected_hospital_spike": "+285 admissions/day (Heat Exhaustion & Hyperthermia)",
+    "municipal_hap_action": "MANDATORY LABOR CESSATION: Halt outdoor work between 11:30 and 16:00; activate 85 air-cooled civic transit shelters and deploy 140 ORS water kiosks",
+    "status": "RED_HEAT_EMERGENCY"
+  },
+  {
+    "case_id": "HEAT-2026-VID03",
+    "city_zone": "Nagpur & Chandrapur Industrial Belt (Vidarbha)",
+    "hazard_type": "Dry Continental Super-Heatwave & Sunstroke Cluster",
+    "forecast_lead_day": 5,
+    "lead_time_hours": 120,
+    "dry_bulb_temp_c": 47.8,
+    "relative_humidity_pct": 18,
+    "heat_index_c": 49.5,
+    "wbgt_index_c": 31.5,
+    "utci_stress_c": 46.8,
+    "stress_category": "VERY_STRONG_HEAT_STRESS",
+    "vulnerable_demographics": "Coal mine & steel factory open-cast workers, traffic police personnel",
+    "projected_hospital_spike": "+190 admissions/day (Dehydration & Renal Strain)",
+    "municipal_hap_action": "INDUSTRIAL WORK SHIFT: Reschedule factory shifts to nocturnal/dawn hours; reserve 150 hospital beds with ice packs and electrolyte IVs",
+    "status": "RED_HEAT_EMERGENCY"
+  },
+  {
+    "case_id": "HEAT-2026-KOL05",
+    "city_zone": "Kolkata & Howrah River Basin (West Bengal)",
+    "hazard_type": "Coastal Mugginess & Nighttime Minimum Temp Stagnation",
+    "forecast_lead_day": 3,
+    "lead_time_hours": 72,
+    "dry_bulb_temp_c": 38.5,
+    "relative_humidity_pct": 74,
+    "heat_index_c": 52.8,
+    "wbgt_index_c": 33.2,
+    "utci_stress_c": 42.5,
+    "stress_category": "STRONG_HEAT_STRESS_NO_NIGHT_COOLING",
+    "vulnerable_demographics": "High-density tenement dwellers; min night temp stays above 31.0\u00b0C preventing body cooling",
+    "projected_hospital_spike": "+220 admissions/day (Cardiovascular Strain)",
+    "municipal_hap_action": "COMMUNITY NIGHT COOLING: Keep public parks and municipal air-conditioned libraries open 24/7; intensify water tanker supplies",
+    "status": "RED_HEAT_EMERGENCY"
+  }
+]

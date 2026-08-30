@@ -1,0 +1,22 @@
+[
+  {
+    "parameter": "Annual Patient Cohort",
+    "specification": "100,000+ Rural Diabetic Screenings",
+    "optimization": "Simulink batch queue modeling across 150 District PHCs"
+  },
+  {
+    "parameter": "Field Image Uplink Bandwidth",
+    "specification": "Adaptive 2G/3G/4G Compressed Pipeline",
+    "optimization": "Progressive JPEG-2000 encoding reduces payload from 15MB to 850KB without diagnostic loss"
+  },
+  {
+    "parameter": "Edge AI Inference Latency",
+    "specification": "< 1.8 seconds on embedded NPU",
+    "optimization": "Quantized MobileNetV3 + Attention UNet running on portable camera processor"
+  },
+  {
+    "parameter": "Tele-Ophthalmologist Review",
+    "specification": "< 30 seconds per case with Grad-CAM",
+    "optimization": "Single central retina specialist reviews 250+ cases daily with AI triage filtering"
+  }
+]

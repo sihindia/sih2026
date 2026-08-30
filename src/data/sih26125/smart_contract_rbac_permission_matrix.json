@@ -1,0 +1,17 @@
+[
+  {
+    "role_name": "ROLE_MASTER_ADMIN",
+    "permissions": "Mint New NFTs, Assign DIDs, Revoke Access",
+    "smart_contract_modifier": "onlyAdmin"
+  },
+  {
+    "role_name": "ROLE_DEFENCE_AUDITOR",
+    "permissions": "Verify Provenance, Audit Firmware Hashes, View Ledger",
+    "smart_contract_modifier": "onlyAuditor"
+  },
+  {
+    "role_name": "ROLE_ASSET_CUSTODIAN",
+    "permissions": "Receive Asset NFT, Report Maintenance, Execute Transfers",
+    "smart_contract_modifier": "onlyCustodian"
+  }
+]

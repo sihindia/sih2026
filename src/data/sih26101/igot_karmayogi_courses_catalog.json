@@ -1,0 +1,23 @@
+[
+  {
+    "course_id": "iGOT-CRS-8812",
+    "course_name": "Python for Time-Series Econometrics in Official Statistics",
+    "credits": 40,
+    "duration_hrs": 30,
+    "provider": "NSSTA & iGOT Karmayogi"
+  },
+  {
+    "course_id": "iGOT-CRS-4401",
+    "course_name": "CAPI Field Quality Assurance & Automated Validation",
+    "credits": 25,
+    "duration_hrs": 20,
+    "provider": "NSSO & DIID MoSPI"
+  },
+  {
+    "course_id": "NSSTA-TPAC-04",
+    "course_name": "GIS Spatial Statistics for Sustainable Development Goals",
+    "credits": 35,
+    "duration_hrs": 25,
+    "provider": "NSSTA Greater Noida"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Predictive Lead Time",
+    "value": "0 to 3 Hours",
+    "trend": "Street-by-Street Inundation Foresight"
+  },
+  {
+    "metric": "Water Depth Precision",
+    "value": "Centimeter Scale",
+    "trend": "Coupled 2D Overland + 1D Pipe Flow"
+  },
+  {
+    "metric": "Drainage Nodes Mapped",
+    "value": "14,800 Nodes",
+    "trend": "Across Mumbai, Delhi & Chennai Metros"
+  }
+]

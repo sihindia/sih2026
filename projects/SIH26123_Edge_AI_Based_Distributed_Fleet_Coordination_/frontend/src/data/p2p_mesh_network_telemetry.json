@@ -1,0 +1,23 @@
+[
+  {
+    "link_pair": "AMR-01 \u2794 AMR-02",
+    "protocol": "Ad-Hoc Wi-Fi 6 / UWB Mesh",
+    "latency_ms": 1.4,
+    "packet_loss_pct": 0.0,
+    "status": "OPTIMAL"
+  },
+  {
+    "link_pair": "AMR-02 \u2794 AMR-03",
+    "protocol": "Ad-Hoc Wi-Fi 6 / UWB Mesh",
+    "latency_ms": 1.6,
+    "packet_loss_pct": 0.0,
+    "status": "OPTIMAL"
+  },
+  {
+    "link_pair": "AMR-03 \u2794 AMR-04",
+    "protocol": "Ad-Hoc Wi-Fi 6 / UWB Mesh",
+    "latency_ms": 1.5,
+    "packet_loss_pct": 0.0,
+    "status": "OPTIMAL"
+  }
+]

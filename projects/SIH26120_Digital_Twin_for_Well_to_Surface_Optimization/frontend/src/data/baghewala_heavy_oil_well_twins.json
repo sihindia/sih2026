@@ -1,0 +1,34 @@
+[
+  {
+    "well_id": "BGH-WELL-014",
+    "formation": "Jodhpur Sandstone (Baghewala Field, Rajasthan)",
+    "crude_api_gravity": 18.2,
+    "reservoir_depth_m": 1140,
+    "bottom_hole_temp_c": 118.0,
+    "crude_viscosity_cp": 185.0,
+    "css_cycle_number": 4,
+    "optimal_steam_volume_mt": 1850,
+    "srp_stroke_length_inch": 120,
+    "srp_vfd_spm": 4.8,
+    "rod_floating_risk_index": 0.02,
+    "steam_oil_ratio_sor": 2.4,
+    "oil_production_bopd": 142.0,
+    "status": "PEAK_THERMAL_PRODUCTION"
+  },
+  {
+    "well_id": "BGH-WELL-009",
+    "formation": "Jodhpur Sandstone (Baghewala Field, Rajasthan)",
+    "crude_api_gravity": 17.6,
+    "reservoir_depth_m": 1180,
+    "bottom_hole_temp_c": 62.0,
+    "crude_viscosity_cp": 2840.0,
+    "css_cycle_number": 3,
+    "optimal_steam_volume_mt": 2100,
+    "srp_stroke_length_inch": 100,
+    "srp_vfd_spm": 3.2,
+    "rod_floating_risk_index": 0.14,
+    "steam_oil_ratio_sor": 3.1,
+    "oil_production_bopd": 68.0,
+    "status": "THERMAL_COOLING_PHASE"
+  }
+]

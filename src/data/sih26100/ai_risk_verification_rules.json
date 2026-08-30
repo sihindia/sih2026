@@ -1,0 +1,17 @@
+[
+  {
+    "rule_name": "Cross-Database Turnover Mismatch Rule",
+    "trigger": "Variance > 5% between ITR, GSTN Turnover and CA Audit Sheet",
+    "severity": "HIGH_SEVERITY"
+  },
+  {
+    "rule_name": "Statutory Default & Debarment Rule",
+    "trigger": "Active debarment on GeM Central Debarment Portal or CPPP",
+    "severity": "CRITICAL_REJECTION"
+  },
+  {
+    "rule_name": "Make in India Local Content Validation",
+    "trigger": "Local content percentage below tender threshold requirements",
+    "severity": "CONDITIONAL_REJECTION"
+  }
+]

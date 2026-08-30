@@ -1,46 +1,38 @@
--- Supabase / PostgreSQL Schema for SIH26085 (Urban Flood Nowcasting System (Drainage and Rainfall Coupling))
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "postgis";
+-- =========================================================================
+-- NCMRWF URBANHYDRO 360 DATABASE SCHEMA (SIH26085)
+-- Ministry of Earth Sciences (MoES) / NCMRWF
+-- =========================================================================
 
--- 1. Sensor Telemetry Nodes Table
-CREATE TABLE IF NOT EXISTS sih26085_sensors (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    station_code VARCHAR(50) UNIQUE NOT NULL,
-    location_name TEXT NOT NULL,
-    latitude NUMERIC(10, 6) NOT NULL,
-    longitude NUMERIC(10, 6) NOT NULL,
-    elevation_m NUMERIC(8, 2),
-    status VARCHAR(20) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS street_flood_nowcast_episodes (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) UNIQUE NOT NULL,
+    metro_city VARCHAR(255) NOT NULL,
+    drainage_basin VARCHAR(255) NOT NULL,
+    lead_time_hours VARCHAR(64) NOT NULL,
+    rainfall_rate_mmh NUMERIC(5, 1) NOT NULL,
+    drainage_node_status TEXT NOT NULL,
+    hydraulic_surcharge TEXT NOT NULL,
+    projected_water_depth_cm NUMERIC(5, 1) NOT NULL,
+    flood_severity VARCHAR(64) NOT NULL,
+    navigation_reroute TEXT NOT NULL,
+    pumping_action TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'INUNDATION_ALERT_ACTIVE',
+    evaluated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Environmental Readings
-CREATE TABLE IF NOT EXISTS sih26085_readings (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    station_id UUID REFERENCES sih26085_sensors(id) ON DELETE CASCADE,
-    rainfall_intensity_mm_hr NUMERIC(6, 2) NOT NULL,
-    pore_water_pressure_kpa NUMERIC(6, 2) NOT NULL,
-    slope_tilt_deg NUMERIC(5, 2) NOT NULL,
-    factor_of_safety NUMERIC(4, 2) NOT NULL,
-    risk_level VARCHAR(20) DEFAULT 'NORMAL',
-    recorded_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS drainage_network_topology (
+    id SERIAL PRIMARY KEY,
+    element_type VARCHAR(64) NOT NULL,
+    count_mapped VARCHAR(64) NOT NULL,
+    hydraulic_function TEXT NOT NULL,
+    failure_mode TEXT NOT NULL,
+    recorded_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 3. Incident Alert Broadcasts
-CREATE TABLE IF NOT EXISTS sih26085_alerts (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    reading_id UUID REFERENCES sih26085_readings(id),
-    severity VARCHAR(20) NOT NULL,
-    message TEXT NOT NULL,
-    dispatched_to VARCHAR(100) DEFAULT 'NDRF & District SDMA',
-    acknowledged BOOLEAN DEFAULT FALSE,
-    dispatched_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS flood_safe_routing_dispatches (
+    id SERIAL PRIMARY KEY,
+    vehicle_type VARCHAR(64) NOT NULL,
+    depth_threshold_cm INTEGER NOT NULL,
+    alternative_route_dispatched TEXT NOT NULL,
+    dispatched_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
--- Row Level Security (RLS)
-ALTER TABLE sih26085_sensors ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26085_readings ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26085_alerts ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Access" ON sih26085_sensors FOR SELECT USING (true);
-CREATE POLICY "Public Read Readings" ON sih26085_readings FOR SELECT USING (true);
-CREATE POLICY "Public Read Alerts" ON sih26085_alerts FOR SELECT USING (true);

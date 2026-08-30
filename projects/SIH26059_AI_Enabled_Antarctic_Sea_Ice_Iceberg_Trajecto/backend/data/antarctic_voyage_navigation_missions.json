@@ -1,0 +1,47 @@
+[
+  {
+    "voyage_id": "VOYAGE-ISEA45-MAI01",
+    "expedition_name": "45th Indian Scientific Expedition to Antarctica (ISEA) - Maitri Resupply",
+    "vessel_name": "Chartered Polar Ice-Class Vessel (PC-4 Certified)",
+    "transit_corridor": "Cape Town (South Africa) \u2794 Lazarev Sea / Indian Barrier (Maitri Station)",
+    "current_sea_ice_concentration_pct": 74.2,
+    "prevailing_ice_thickness_m": 1.45,
+    "tracked_iceberg": "Tabular Iceberg IB-LAZ-04 (Length: 14.8 km, Drift: 0.82 kts NNW)",
+    "ai_recommended_waypoint_path": "Enter coastal flaw polynya at 69\u00b012'S, 11\u00b045'E; skirt around southern perimeter of IB-LAZ-04",
+    "route_divergence_nm": -180.0,
+    "transit_time_saved_hours": 34.0,
+    "fuel_saved_metric_tons": 42.6,
+    "besetment_risk_index": "ZERO_BESETMENT_RISK",
+    "navigation_verdict": "OPTIMAL_POLAR_ROUTE_RECOMMENDED"
+  },
+  {
+    "voyage_id": "VOYAGE-ISEA45-BHA03",
+    "expedition_name": "45th ISEA Bharati Scientific Station Resupply & Wintering Team Turnover",
+    "vessel_name": "Chartered Research Vessel (Ice-Strengthened 1A Super)",
+    "transit_corridor": "Fremantle (Australia) / Port Louis \u2794 Prydz Bay / Larsemann Hills (Bharati)",
+    "current_sea_ice_concentration_pct": 68.5,
+    "prevailing_ice_thickness_m": 1.15,
+    "tracked_iceberg": "Giant Calved Iceberg Frag A-74B (Length: 22.1 km, Drift: 0.54 kts West)",
+    "ai_recommended_waypoint_path": "Utilize thermal lead east of Amery Ice Shelf tongue; safe clearance 8.5 nm from A-74B",
+    "route_divergence_nm": -145.0,
+    "transit_time_saved_hours": 28.5,
+    "fuel_saved_metric_tons": 36.2,
+    "besetment_risk_index": "SAFE_MARGIN_MAINTAINED",
+    "navigation_verdict": "OPTIMAL_POLAR_ROUTE_RECOMMENDED"
+  },
+  {
+    "voyage_id": "VOYAGE-WEDDELL-TRAN05",
+    "expedition_name": "Southern Ocean Oceanographic Transect & Paleoclimate Core Drilling",
+    "vessel_name": "Deep-Ocean Polar Research Vessel (ORV Sagar Kanya Class)",
+    "transit_corridor": "Punta Arenas \u2794 Weddell Sea Gyre & Ronne Ice Shelf Front",
+    "current_sea_ice_concentration_pct": 86.4,
+    "prevailing_ice_thickness_m": 2.2,
+    "tracked_iceberg": "A-23a Megaberg Remnant (Length: 38.0 km, Drift: 1.10 kts Northwards)",
+    "ai_recommended_waypoint_path": "Abort direct westward transect; navigate along outer marginal ice zone (MIZ) <40% SIC",
+    "route_divergence_nm": 85.0,
+    "transit_time_saved_hours": 46.0,
+    "fuel_saved_metric_tons": 51.4,
+    "besetment_risk_index": "AVOIDED_PACK_ICE_COMPRESSION_TRAP",
+    "navigation_verdict": "OPTIMAL_POLAR_ROUTE_RECOMMENDED"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "22436": [
+    { "code": "NDLS", "name": "New Delhi", "sch_arr": "ORIGIN", "sch_dep": "06:00 AM", "static_ntes": "ON-TIME", "ai_dynamic_eta": "06:00 AM (ON-TIME)", "platform": "PF #16", "action": "Punctual Origin Departure" },
+    { "code": "CNB", "name": "Kanpur Central", "sch_arr": "10:08 AM", "sch_dep": "10:10 AM", "static_ntes": "10:16 AM (+8m delay)", "ai_dynamic_eta": "10:10 AM (+2m)", "platform": "PF #1 (Mainline)", "action": "Speed 128.5 km/h on HDN-1 recovers 6 mins" },
+    { "code": "PRYJ", "name": "Prayagraj Junction", "sch_arr": "12:08 PM", "sch_dep": "12:10 PM", "static_ntes": "12:20 PM (+12m delay)", "ai_dynamic_eta": "12:09 PM (+1m)", "platform": "PF #4", "action": "Slack absorption on Mirzapur middle-third" },
+    { "code": "BSB", "name": "Varanasi Junction", "sch_arr": "02:00 PM", "sch_dep": "TERMINUS", "static_ntes": "02:14 PM (+14m delay)", "ai_dynamic_eta": "02:00 PM (ON-TIME)", "platform": "PF #1", "action": "Full 14-min static delay completely neutralized" }
+  ],
+  "12952": [
+    { "code": "NDLS", "name": "New Delhi", "sch_arr": "ORIGIN", "sch_dep": "04:55 PM", "static_ntes": "ON-TIME", "ai_dynamic_eta": "04:55 PM (ON-TIME)", "platform": "PF #3", "action": "On-Time Dispatch" },
+    { "code": "KOTA", "name": "Kota Junction", "sch_arr": "09:40 PM", "sch_dep": "09:48 PM", "static_ntes": "09:58 PM (+18m delay)", "ai_dynamic_eta": "09:51 PM (+11m)", "platform": "PF #2", "action": "TSR 30 km/h deceleration recovered via 130 km/h run" },
+    { "code": "RTM", "name": "Ratlam Junction", "sch_arr": "01:50 AM", "sch_dep": "01:53 AM", "static_ntes": "02:08 AM (+18m delay)", "ai_dynamic_eta": "01:55 AM (+5m)", "platform": "PF #4", "action": "Dynamic slack ingestion & crew handover" },
+    { "code": "BRC", "name": "Vadodara Junction", "sch_arr": "04:58 AM", "sch_dep": "05:08 AM", "static_ntes": "05:18 AM (+20m delay)", "ai_dynamic_eta": "05:00 AM (+2m)", "platform": "PF #2", "action": "Green wave automatic signaling clearance" },
+    { "code": "MMCT", "name": "Mumbai Central", "sch_arr": "08:35 AM", "sch_dep": "TERMINUS", "static_ntes": "08:55 AM (+20m delay)", "ai_dynamic_eta": "08:37 AM (+2m)", "platform": "PF #1", "action": "Terminal berth locked clear with 2-min variance" }
+  ],
+  "12301": [
+    { "code": "HWH", "name": "Howrah Junction", "sch_arr": "ORIGIN", "sch_dep": "04:50 PM", "static_ntes": "ON-TIME", "ai_dynamic_eta": "04:50 PM (ON-TIME)", "platform": "PF #9", "action": "On-Time Origin" },
+    { "code": "DHN", "name": "Dhanbad Junction", "sch_arr": "07:55 PM", "sch_dep": "08:00 PM", "static_ntes": "08:05 PM (+5m delay)", "ai_dynamic_eta": "08:00 PM (ON-TIME)", "platform": "PF #3", "action": "Fast clearing on coal freight bypass line" },
+    { "code": "GAYA", "name": "Gaya Junction", "sch_arr": "10:30 PM", "sch_dep": "10:33 PM", "static_ntes": "10:38 PM (+5m delay)", "ai_dynamic_eta": "10:32 PM (ON-TIME)", "platform": "PF #1", "action": "Push-pull twin locomotive high acceleration" },
+    { "code": "DDU", "name": "Pt. Deen Dayal Upadhyaya", "sch_arr": "12:45 AM", "sch_dep": "12:55 AM", "static_ntes": "01:00 AM (+5m delay)", "ai_dynamic_eta": "12:46 AM (+1m)", "platform": "PF #2", "action": "Precedence over Naini goods rake" },
+    { "code": "CNB", "name": "Kanpur Central", "sch_arr": "04:50 AM", "sch_dep": "04:55 AM", "static_ntes": "04:58 AM (+3m delay)", "ai_dynamic_eta": "04:50 AM (ON-TIME)", "platform": "PF #1", "action": "Punctual arrival on dedicated high-speed loop" },
+    { "code": "NDLS", "name": "New Delhi", "sch_arr": "09:55 AM", "sch_dep": "TERMINUS", "static_ntes": "10:05 AM (+10m delay)", "ai_dynamic_eta": "09:55 AM (ON-TIME)", "platform": "PF #16", "action": "Zero delay achieved on final stretch" }
+  ],
+  "12626": [
+    { "code": "NDLS", "name": "New Delhi", "sch_arr": "ORIGIN", "sch_dep": "08:10 PM", "static_ntes": "ON-TIME", "ai_dynamic_eta": "08:10 PM (ON-TIME)", "platform": "PF #2", "action": "Origin Departure" },
+    { "code": "AGC", "name": "Agra Cantt", "sch_arr": "10:10 PM", "sch_dep": "10:15 PM", "static_ntes": "10:25 PM (+10m delay)", "ai_dynamic_eta": "10:12 PM (+2m)", "platform": "PF #1", "action": "TSR cleared between Mathura & Agra" },
+    { "code": "BPL", "name": "Bhopal Junction", "sch_arr": "05:20 AM", "sch_dep": "05:25 AM", "static_ntes": "05:48 AM (+23m delay)", "ai_dynamic_eta": "05:32 AM (+12m)", "platform": "PF #1", "action": "Bina junction overtaking of local shuttle" },
+    { "code": "NGP", "name": "Nagpur Junction", "sch_arr": "11:45 AM", "sch_dep": "11:50 AM", "static_ntes": "12:17 PM (+32m delay)", "ai_dynamic_eta": "12:07 PM (+22m)", "platform": "PF #3", "action": "Ghat section speed restriction absorbed" }
+  ]
+}

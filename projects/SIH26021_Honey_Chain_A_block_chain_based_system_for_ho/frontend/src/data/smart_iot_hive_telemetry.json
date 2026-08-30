@@ -1,0 +1,26 @@
+[
+  {
+    "hive_id": "HIVE-KSH-04",
+    "internal_temp_c": 34.8,
+    "humidity_pct": 58.2,
+    "acoustic_frequency_hz": 240,
+    "colony_health": "OPTIMAL_QUEEN_ACTIVE",
+    "harvest_readiness": "READY_FOR_EXTRACTION"
+  },
+  {
+    "hive_id": "HIVE-SND-12",
+    "internal_temp_c": 35.2,
+    "humidity_pct": 62.0,
+    "acoustic_frequency_hz": 235,
+    "colony_health": "OPTIMAL_HIGH_FORAGING",
+    "harvest_readiness": "COMB_75_PERCENT_CAPPED"
+  },
+  {
+    "hive_id": "HIVE-CRG-07",
+    "internal_temp_c": 33.9,
+    "humidity_pct": 55.4,
+    "acoustic_frequency_hz": 245,
+    "colony_health": "OPTIMAL_BROOD_EXPANDING",
+    "harvest_readiness": "READY_FOR_EXTRACTION"
+  }
+]

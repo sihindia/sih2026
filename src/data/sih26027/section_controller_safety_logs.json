@@ -1,0 +1,18 @@
+[
+  {
+    "log_id": "LOG-NCR-081",
+    "station": "Aligarh Central (ALJN)",
+    "controller_officer": "Er. R. K. Meena (Dy. Chief Controller)",
+    "action_taken": "BLOCK_GRANTED",
+    "log_timestamp": "02:01 AM",
+    "log_notes": "Power block isolated on 25kV Feeder 3. Tamping machine 09-3X & OHE Tower Wagon admitted."
+  },
+  {
+    "log_id": "LOG-NCR-082",
+    "station": "Aligarh Central (ALJN)",
+    "controller_officer": "Er. R. K. Meena (Dy. Chief Controller)",
+    "action_taken": "BLOCK_CANCELLED_FIT_ISSUED",
+    "log_timestamp": "04:28 AM",
+    "log_notes": "All machines cleared to siding. Track fit certificate issued. Vande Bharat cleared on green."
+  }
+]

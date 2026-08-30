@@ -1,0 +1,17 @@
+[
+  {
+    "feature_name": "Multi-Input Common Spending",
+    "importance_score": 0.38,
+    "description": "Co-spending multiple UTXOs in single transaction establishes joint entity ownership"
+  },
+  {
+    "feature_name": "Peeling Chain Heuristic",
+    "importance_score": 0.29,
+    "description": "Sequential transfer of small amounts while peeling remainder to fresh addresses"
+  },
+  {
+    "feature_name": "CoinJoin Equal-Output Entropy",
+    "importance_score": 0.22,
+    "description": "Detection of 0.1 BTC / 0.05 BTC uniform output values in mixing transactions"
+  }
+]

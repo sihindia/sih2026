@@ -1,32 +1,34 @@
--- Supabase / PostgreSQL Schema for SIH26012 (AI-Based Automated Urban Parcel Mapping and Cadastral Feature Extraction System using Drone lmagery)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "postgis";
+-- =========================================================================
+-- DOLR NAKSHADRONE 360 DATABASE SCHEMA (SIH26012)
+-- Ministry of Rural Development - Department of Land Resources (DoLR)
+-- =========================================================================
 
--- 1. Cadastral Land Parcels
-CREATE TABLE IF NOT EXISTS sih26012_parcels (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ulpin_code VARCHAR(14) UNIQUE NOT NULL,
-    state_code VARCHAR(10) DEFAULT 'JH',
-    district_name VARCHAR(100) NOT NULL,
-    village_name VARCHAR(100) NOT NULL,
-    survey_area_sqm NUMERIC(12, 2) NOT NULL,
-    geometry GEOMETRY(Polygon, 4326),
-    land_type VARCHAR(50) DEFAULT 'Agricultural',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS drone_survey_zones (
+    id SERIAL PRIMARY KEY,
+    zone_id VARCHAR(64) UNIQUE NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    city VARCHAR(128) NOT NULL,
+    state VARCHAR(64) NOT NULL,
+    gsd_cm_px NUMERIC(4, 2) NOT NULL,
+    flight_altitude_m INTEGER NOT NULL,
+    surveyed_area_sqm NUMERIC(10, 2) NOT NULL,
+    total_parcels_extracted INTEGER NOT NULL,
+    building_footprints_delineated INTEGER NOT NULL,
+    geoai_confidence_pct NUMERIC(5, 2) NOT NULL,
+    drone_sensor VARCHAR(128) NOT NULL,
+    survey_status VARCHAR(64) DEFAULT 'CADASTRAL_FINALIZED_ACTIVE',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Ownership Title Records
-CREATE TABLE IF NOT EXISTS sih26012_ownership (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    parcel_id UUID REFERENCES sih26012_parcels(id) ON DELETE CASCADE,
-    owner_name VARCHAR(200) NOT NULL,
-    aadhaar_hash VARCHAR(64) NOT NULL,
-    share_percentage NUMERIC(5, 2) DEFAULT 100.0,
-    encumbrance_status VARCHAR(50) DEFAULT 'CLEAR',
-    verified_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS extracted_cadastral_parcels (
+    id SERIAL PRIMARY KEY,
+    parcel_id VARCHAR(64) UNIQUE NOT NULL,
+    ulpin VARCHAR(64) UNIQUE NOT NULL,
+    land_use VARCHAR(128) NOT NULL,
+    parcel_area_sqm NUMERIC(8, 2) NOT NULL,
+    building_footprint_sqm NUMERIC(8, 2) NOT NULL,
+    road_access_width_m VARCHAR(128) NOT NULL,
+    extraction_confidence_pct NUMERIC(5, 2) NOT NULL,
+    boundary_type VARCHAR(128) NOT NULL,
+    topology_status VARCHAR(64) DEFAULT 'SLIVER_FREE_CLEAN'
 );
-
-ALTER TABLE sih26012_parcels ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26012_ownership ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Parcels" ON sih26012_parcels FOR SELECT USING (true);
-CREATE POLICY "Public Read Ownership" ON sih26012_ownership FOR SELECT USING (true);

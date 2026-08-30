@@ -1,0 +1,20 @@
+[
+  {
+    "name": "16-QAM",
+    "bits_per_symbol": 4,
+    "constellation_points": 16,
+    "description": "High spectral efficiency quadrature modulation for satellite downlinks"
+  },
+  {
+    "name": "QPSK",
+    "bits_per_symbol": 2,
+    "constellation_points": 4,
+    "description": "Robust phase modulation for noisy tactical airborne channels"
+  },
+  {
+    "name": "4FSK",
+    "bits_per_symbol": 2,
+    "constellation_points": 4,
+    "description": "Constant envelope frequency shift keying for low-power HF transceivers"
+  }
+]

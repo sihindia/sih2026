@@ -1,0 +1,22 @@
+[
+  {
+    "source": "Bifacial Vertical Solar PV",
+    "installed_capacity_kw": 80.0,
+    "polar_adaptation": "Captures high albedo reflection from ice/snow; sheds snow automatically"
+  },
+  {
+    "source": "Polar-Rugged Vertical Axis Wind Turbines",
+    "installed_capacity_kw": 45.0,
+    "polar_adaptation": "Omnidirectional Darrieus blades operational up to 180 km/h blizzards without icing"
+  },
+  {
+    "source": "Thermally Insulated BESS Storage",
+    "installed_capacity_kw": 120.0,
+    "polar_adaptation": "LiFePO4 heated enclosure maintaining +18\u00b0C internally in -50\u00b0C cold"
+  },
+  {
+    "source": "Combined Heat & Power (CHP) Diesel",
+    "installed_capacity_kw": 150.0,
+    "polar_adaptation": "Primary baseline with 85%+ thermal exhaust heat recovery for habitat radiators"
+  }
+]

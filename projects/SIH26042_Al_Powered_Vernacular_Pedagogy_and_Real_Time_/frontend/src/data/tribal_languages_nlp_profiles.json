@@ -1,0 +1,20 @@
+[
+  {
+    "language": "Santhali",
+    "script": "Ol Chiki (\u1c5a\u1c5e \u1c6a\u1c64\u1c60\u1c64)",
+    "speakers": "7.6 Million+",
+    "features": "Austroasiatic Munda family, 30-letter phonetic alphabet, agglutinative morphology"
+  },
+  {
+    "language": "Ho",
+    "script": "Warang Chiti (\ud806\udcb9\ud806\udcc9\ud806\udcc9 \ud806\udcce\ud806\udccb\ud806\udcdc)",
+    "speakers": "1.4 Million+",
+    "features": "Predominantly West Singhbhum & Kolhan division; rich oral folk tradition"
+  },
+  {
+    "language": "Mundari",
+    "script": "Devanagari / Roman / Bengali",
+    "speakers": "1.1 Million+",
+    "features": "Extensive presence in Khunti, Ranchi, and Gumla; distinct vowel glottalization"
+  }
+]

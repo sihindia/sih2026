@@ -1,0 +1,41 @@
+[
+  {
+    "challenge_id": "SOC-2026-DHN01",
+    "title": "Acid Mine Drainage Remediation for Paddy Irrigation",
+    "originator": "Tisra Gram Panchayat (Jharia, Dhanbad)",
+    "thematic_domain": "Water Resources & Environmental Rehabilitation",
+    "problem_summary": "Highly acidic runoff (pH 3.2, heavy sulfates & iron) from abandoned open-pit coal mines polluting local water table and destroying 120 acres of paddy cultivation.",
+    "assigned_university": "IIT (ISM) Dhanbad (Dept of Environmental Engineering)",
+    "faculty_mentor": "Prof. Dr. A. K. Pal (Chair, Mine Water Research Lab)",
+    "industry_csr_sponsor": "Bharat Coking Coal Limited (BCCL / Coal India CSR)",
+    "grant_awarded_inr": 1850000.0,
+    "solution_status": "Constructed multi-stage limestone neutralization & bio-wetland pilot treating 50,000 L/day; pH restored to 7.1; 4 B.Tech/M.Tech students awarded 6 NEP Academic Credits",
+    "stage": "PILOT_DEPLOYMENT_ACTIVE"
+  },
+  {
+    "challenge_id": "SOC-2026-GUM03",
+    "title": "Solar Hybrid Micro-Cold Storage for Mahua & Lac Crops",
+    "originator": "Bishunpur Tribal Women Self-Help Federation (Gumla)",
+    "thematic_domain": "Agriculture & Rural Forest Livelihoods",
+    "problem_summary": "Tribal gatherers lose up to 42% of collected raw Mahua flowers and high-value Lac crop due to heat fermentation and lack of rural grid electricity.",
+    "assigned_university": "Birsa Agricultural University (BAU, Ranchi)",
+    "faculty_mentor": "Dr. Shanti Kispotta (Centre for Tribal Livelihoods)",
+    "industry_csr_sponsor": "Tata Steel Foundation (Thousand Schools Livelihood Wing)",
+    "grant_awarded_inr": 1200000.0,
+    "solution_status": "5-MT decentralized phase-change material (PCM) solar cold room deployed; seasonal spoilage dropped from 42% to 4%; farmer realization increased by \u20b935/kg",
+    "stage": "FIELD_PROTOTYPE_COMMISSIONED"
+  },
+  {
+    "challenge_id": "SOC-2026-BOK05",
+    "title": "AI Drone Multi-Spectral Soil Salinity & Erosion Mapping",
+    "originator": "Chandankiyari Block Farmers Collective (Bokaro)",
+    "thematic_domain": "Soil Health & Precision Agriculture",
+    "problem_summary": "Severe topsoil loss and industrial fly-ash accumulation along Damodar River Basin causing barren patches across 2,000 hectares.",
+    "assigned_university": "Birla Institute of Technology (BIT Mesra, Ranchi)",
+    "faculty_mentor": "Dr. Rajiv Ranjan (Remote Sensing & Drone Lab)",
+    "industry_csr_sponsor": "SAIL Bokaro Steel Plant CSR Initiative",
+    "grant_awarded_inr": 1500000.0,
+    "solution_status": "Custom multi-spectral drone autonomous flight missions mapping 2,000 hectares; soil amendment recommendations delivered to 480 farmers via mobile app",
+    "stage": "RESEARCH_AND_TESTING"
+  }
+]

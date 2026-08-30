@@ -1,0 +1,62 @@
+[
+  {
+    "junction_code": "CNB",
+    "junction_name": "Kanpur Central",
+    "platform_number": "PF #1 (Mainline)",
+    "current_occupant": "12419 Gomti Express (Decoupling Shunter)",
+    "inbound_train": "22436 Vande Bharat Express",
+    "inbound_eta": "10:10 AM (In 14 mins)",
+    "conflict_detected": true,
+    "conflict_severity": "HIGH_BERTH_CLASH",
+    "ai_resolution_action": "REALLOCATE_TO_PF_3",
+    "recommended_platform": "PF #3 (High Speed Loop)",
+    "quick_watering_scheduled": "Yes (10-minute pressurized quick watering)",
+    "turnaround_countdown_mins": 12,
+    "crew_change_status": "CREW_ON_PLATFORM"
+  },
+  {
+    "junction_code": "PRYJ",
+    "junction_name": "Prayagraj Junction",
+    "platform_number": "PF #4",
+    "current_occupant": "None (Track Empty)",
+    "inbound_train": "22436 Vande Bharat Express",
+    "inbound_eta": "12:09 PM (In 132 mins)",
+    "conflict_detected": false,
+    "conflict_severity": "CLEAR_ROUTE",
+    "ai_resolution_action": "LOCKED_AUTHORIZED",
+    "recommended_platform": "PF #4",
+    "quick_watering_scheduled": "No (Terminal cleaning at BSB)",
+    "turnaround_countdown_mins": 130,
+    "crew_change_status": "NO_CREW_CHANGE"
+  },
+  {
+    "junction_code": "KOTA",
+    "junction_name": "Kota Junction",
+    "platform_number": "PF #2",
+    "current_occupant": "09801 Kota-Bina Passenger Special",
+    "inbound_train": "12952 Tejas Rajdhani Express",
+    "inbound_eta": "09:51 PM (In 66 mins)",
+    "conflict_detected": true,
+    "conflict_severity": "PASSENGER_CLEARANCE_CLASH",
+    "ai_resolution_action": "PREEMPT_SHUTTLE_TO_SIDING",
+    "recommended_platform": "PF #2 (Dispatch shuttle to Yard Siding #4 by 09:35 PM)",
+    "quick_watering_scheduled": "Yes (Brake pad temperature thermal scan)",
+    "turnaround_countdown_mins": 60,
+    "crew_change_status": "RELIEF_CREW_ALERTED"
+  },
+  {
+    "junction_code": "DDU",
+    "junction_name": "Pt. Deen Dayal Upadhyaya Junction",
+    "platform_number": "PF #2",
+    "current_occupant": "None (Route Set)",
+    "inbound_train": "12301 Howrah Rajdhani Express",
+    "inbound_eta": "12:46 AM",
+    "conflict_detected": false,
+    "conflict_severity": "CLEAR_ROUTE",
+    "ai_resolution_action": "GREEN_SIGNAL_PRELOCKED",
+    "recommended_platform": "PF #2",
+    "quick_watering_scheduled": "Yes (Quick watering & linen top-up)",
+    "turnaround_countdown_mins": 90,
+    "crew_change_status": "CREW_HANDOVER_MANDATORY_10H_RULE"
+  }
+]

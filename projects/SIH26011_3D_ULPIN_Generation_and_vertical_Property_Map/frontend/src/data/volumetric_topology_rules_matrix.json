@@ -1,0 +1,20 @@
+[
+  {
+    "rule_id": "LADM-RULE-01",
+    "name": "Volumetric Non-Overlapping Invariance",
+    "standard": "ISO 19152 LADM 3D Section 6.2",
+    "enforcement": "Intersection of any two 3D spatial unit polyhedrons must be null (A \u2229 B = \u2205)"
+  },
+  {
+    "rule_id": "LADM-RULE-02",
+    "name": "Vertical Air-Rights Ceiling Constraint",
+    "standard": "Directorate General of Civil Aviation (DGCA) Obstacle Limitation",
+    "enforcement": "Maximum building height elevation must not breach flight funnel buffer"
+  },
+  {
+    "rule_id": "LADM-RULE-03",
+    "name": "Subsurface Utility Separation Buffer",
+    "standard": "National Urban Utility Mapping Policy",
+    "enforcement": "Minimum 3.0-meter clearance envelope around high-pressure gas/water pipelines"
+  }
+]

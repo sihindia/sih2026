@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "BTC-INVEST-2026-001",
+    "threat_title": "BlackCat / ALPHV Healthcare Ransomware Extortion Payout",
+    "txid": "8b19f04d8c72e41a998c11e3b729402a48dfb391746241f92e85038bca871032",
+    "amount_btc": 42.5,
+    "fiat_value_inr": "\u20b924.80 Crore",
+    "p2p_ingress_ip": "194.26.29.112 (Sofia, Bulgaria AS48712)",
+    "peeling_chain_hops": 14,
+    "mixer_used": "Wasabi CoinJoin 100-Party Tumbler",
+    "exit_vasp": "8 High-Risk Offshore KYC Exchanges",
+    "entity_cluster": "ALPHV Ransomware Extortion Syndicate",
+    "gnn_confidence_pct": 98.7,
+    "enforcement_action": "FIU-IND Red Notice & Exchange Wallet Freeze Warrant",
+    "status": "ILLICIT_WALLET_LOCKED"
+  },
+  {
+    "case_id": "BTC-INVEST-2026-042",
+    "threat_title": "Darknet Narcotics Marketplace Vendor Consolidation",
+    "txid": "3c847a119e0b82f664a78120d58e390c9182371902834bfa8921048a192837bc",
+    "amount_btc": 18.2,
+    "fiat_value_inr": "\u20b910.62 Crore",
+    "p2p_ingress_ip": "91.240.118.24 (Amsterdam, NL AS39351)",
+    "peeling_chain_hops": 8,
+    "mixer_used": "Whirlpool Samourai CoinJoin",
+    "exit_vasp": "Peer-to-Peer OTC Cash Desks",
+    "entity_cluster": "Hydra Darknet Vendor Affiliate Network",
+    "gnn_confidence_pct": 97.4,
+    "enforcement_action": "Narcotics Control Bureau (NCB) Joint Interception",
+    "status": "ILLICIT_WALLET_LOCKED"
+  }
+]

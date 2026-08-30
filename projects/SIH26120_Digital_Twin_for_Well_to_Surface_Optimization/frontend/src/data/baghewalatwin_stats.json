@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Wells on Digital Twin",
+    "value": "18 Heavy Oil Wells",
+    "trend": "Baghewala Jodhpur Sandstone"
+  },
+  {
+    "metric": "Steam-Oil Ratio (SOR)",
+    "value": "2.4 MT/bbl (-38.5%)",
+    "trend": "Coupled Thermal-Lift Optimization"
+  },
+  {
+    "metric": "Rod Floating Failure",
+    "value": "92% Reduction",
+    "trend": "Dynamic VFD Downstroke Control"
+  }
+]

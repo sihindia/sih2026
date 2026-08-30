@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Activities Auto-Linked",
+    "value": "4,280 L5/L6 Nodes",
+    "trend": "Primavera P6 & MS Project Sync"
+  },
+  {
+    "metric": "Semantic Matching",
+    "value": "98.4% Confidence",
+    "trend": "Fuzzy LLM Field Jargon Bridge"
+  },
+  {
+    "metric": "Reconciliation Lag",
+    "value": "Real-Time (<5 mins)",
+    "trend": "Down from 14 Days Manual Delay"
+  }
+]

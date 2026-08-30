@@ -1,0 +1,32 @@
+[
+  {
+    "proposal_id": "FORMA-PROP-2026-001",
+    "project_name": "Dholera SIR Innovation Hub (Transit-Oriented Smart City)",
+    "site_area_sq_km": 1.2,
+    "gross_floor_area_sq_m": "1.42 Million m\u00b2",
+    "green_landscape_pct": 38.5,
+    "sun_hours_daily_avg": 6.8,
+    "daylight_potential_pct": 78.5,
+    "wind_comfort_lawson_pct": 96.2,
+    "embodied_carbon_kg_co2_m2": 385.0,
+    "solar_energy_potential_mwh": 14200,
+    "noise_mitigation_db": "-14.5 dB Buffer",
+    "revit_sync_status": "SYNCHRONIZED (Direct .rvt Block & IFC4 Export)",
+    "status": "OPTIMAL_PROPOSAL_SELECTED"
+  },
+  {
+    "proposal_id": "FORMA-PROP-2026-042",
+    "project_name": "GIFT City Phase-3 Low-Carbon Eco-District",
+    "site_area_sq_km": 1.0,
+    "gross_floor_area_sq_m": "1.15 Million m\u00b2",
+    "green_landscape_pct": 46.0,
+    "sun_hours_daily_avg": 7.2,
+    "daylight_potential_pct": 84.0,
+    "wind_comfort_lawson_pct": 94.0,
+    "embodied_carbon_kg_co2_m2": 310.0,
+    "solar_energy_potential_mwh": 16800,
+    "noise_mitigation_db": "-18.0 dB Buffer",
+    "revit_sync_status": "SYNCHRONIZED (Direct .rvt Block & IFC4 Export)",
+    "status": "ALTERNATIVE_ECO_PROPOSAL"
+  }
+]

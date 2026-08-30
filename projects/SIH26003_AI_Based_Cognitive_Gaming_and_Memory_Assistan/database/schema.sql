@@ -1,30 +1,32 @@
--- Supabase / PostgreSQL Schema for SIH26003 (AI-Based Cognitive Gaming and Memory Assistance Platform for Elderly Dementia Patients in North Eastern Region (NER))
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MDONER SMRITINER 360 DATABASE SCHEMA (SIH26003)
+-- Ministry of Development of North Eastern Region (MDoNER)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26003_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26003',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS dementia_patient_profiles (
+    id SERIAL PRIMARY KEY,
+    patient_id VARCHAR(64) UNIQUE NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    age INTEGER NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    diagnosis VARCHAR(128) NOT NULL,
+    preferred_language VARCHAR(64) NOT NULL,
+    active_module VARCHAR(128) NOT NULL,
+    tap_accuracy_pct NUMERIC(5, 2) NOT NULL,
+    reaction_latency_sec NUMERIC(4, 2) NOT NULL,
+    fatigue_score_pct NUMERIC(5, 2) NOT NULL,
+    difficulty_level VARCHAR(64) NOT NULL,
+    medication_compliance VARCHAR(128) NOT NULL,
+    caregiver_contact VARCHAR(128) NOT NULL,
+    session_status VARCHAR(64) DEFAULT 'COGNITIVE_SESSION_COMPLETED_SUCCESSFULLY',
+    last_session_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26003_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26003_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS caregiver_medication_logs (
+    id SERIAL PRIMARY KEY,
+    patient_id VARCHAR(64) REFERENCES dementia_patient_profiles(patient_id),
+    pill_name VARCHAR(128) NOT NULL,
+    scheduled_time VARCHAR(32) NOT NULL,
+    taken_status BOOLEAN DEFAULT TRUE,
+    logged_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26003_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26003_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26003_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26003_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26003_audit_logs FOR SELECT USING (true);

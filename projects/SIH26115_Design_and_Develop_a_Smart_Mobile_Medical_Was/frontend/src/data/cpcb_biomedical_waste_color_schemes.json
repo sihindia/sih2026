@@ -1,0 +1,22 @@
+[
+  {
+    "color": "Yellow Bin",
+    "waste_type": "Anatomical waste, soiled dressings, expired medicines",
+    "treatment": "Incineration / Plasma Pyrolysis (>1050\u00b0C)"
+  },
+  {
+    "color": "Red Bin",
+    "waste_type": "Contaminated plastics, IV bottles, tubing, catheters",
+    "treatment": "Autoclaving / Microwaving + Shredding / Recycling"
+  },
+  {
+    "color": "White Translucent",
+    "waste_type": "Needles, scalpels, surgical blades, contaminated sharps",
+    "treatment": "Dry Heat Sterilization / Encapsulation"
+  },
+  {
+    "color": "Blue Bin",
+    "waste_type": "Glassware, vials, ampoules, metallic implants",
+    "treatment": "1% Sodium Hypochlorite Disinfection"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "app_id": "DOCA-2026-PB8812",
+    "trader_name": "Golden Grain APMC Logistics Terminal",
+    "location": "Khanna APMC Mandi, Ludhiana (Punjab)",
+    "instrument_type": "Electronic Pitless Truck Weighbridge (60-Tonne Capacity)",
+    "make_and_model": "Avery Weigh-Tronix / Model WB-60T (Class III Medium)",
+    "inspecting_officer": "Rajeshwar Singh (LMO Ludhiana West Circle)",
+    "calibration_test": "20-Tonne Calibrated M1 Cast Iron Weights; Eccentricity Corner Test & 5-Step Linearity Load Test",
+    "max_permissible_error": "\u00b120 kg at full load",
+    "observed_error": "+5 kg (Well within statutory limits)",
+    "security_seal_die": "Lead Wire Security Seal Die #PB-LDH-2026-9081 (Tamper Evident)",
+    "certificate_number": "CERT-LM-2026-PB-09412",
+    "valid_till": "28 August 2027 (12 Months Statutory Validity)",
+    "qr_hash": "sha256:7f8a9b2c...doca-legal-metrology-verified",
+    "status": "VERIFIED_AND_STAMPED"
+  },
+  {
+    "app_id": "DOCA-2026-MH4102",
+    "trader_name": "Fresh Greens Supermarket (Dual Display Counter)",
+    "location": "Bandra West, Mumbai (Maharashtra)",
+    "instrument_type": "Non-Automatic Counter Weighing Scale (30 kg Max)",
+    "make_and_model": "Essae-Teraoka / Model DS-215 (Class III Commercial)",
+    "inspecting_officer": "Pooja V. Sawant (LMO Mumbai Suburban Circle 2)",
+    "calibration_test": "10 kg & 20 kg F2 Standard Stainless Steel Test Weights",
+    "max_permissible_error": "\u00b15 grams",
+    "observed_error": "+1.2 grams (Zero Deviation Pass)",
+    "security_seal_die": "Hologram Seal Die #MH-MUM-2026-4419",
+    "certificate_number": "CERT-LM-2026-MH-33810",
+    "valid_till": "15 July 2027 (12 Months Statutory Validity)",
+    "qr_hash": "sha256:1a2b3c4d...doca-retail-scale-verified",
+    "status": "VERIFIED_AND_STAMPED"
+  },
+  {
+    "app_id": "DOCA-2026-TG9921",
+    "trader_name": "Highways Fuel Station (Multi-Product Dispenser)",
+    "location": "Banjara Hills, Hyderabad (Telangana)",
+    "instrument_type": "Petrol Dispensing Flow Meter (50 L/min Flow Rate)",
+    "make_and_model": "Gilbarco Veeder-Root Horizon MPD",
+    "inspecting_officer": "K. Venkat Rao (LMO Hyderabad Central)",
+    "calibration_test": "5-Litre & 20-Litre Government Calibrated Standard Measures at 28\u00b0C",
+    "max_permissible_error": "\u00b10.5% (\u00b125 ml per 5 Litres)",
+    "observed_error": "-8 ml per 5 Litres (Compliant Delivery)",
+    "security_seal_die": "Totalizer Lead Seal #TG-HYD-2026-1082",
+    "certificate_number": "CERT-LM-2026-TG-77219",
+    "valid_till": "30 September 2027 (12 Months Statutory Validity)",
+    "qr_hash": "sha256:4d5e6f7a...doca-fuel-dispenser-verified",
+    "status": "VERIFIED_AND_STAMPED"
+  }
+]

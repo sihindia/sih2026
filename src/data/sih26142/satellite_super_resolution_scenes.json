@@ -1,0 +1,40 @@
+[
+  {
+    "scene_id": "NTRO-SCENE-2026-001",
+    "location_name": "Northern Himalayan Forward Airbase (Leh Sector)",
+    "coordinates": "34.1359\u00b0 N, 77.5465\u00b0 E",
+    "input_sensor": "Copernicus Sentinel-2 (10m Multispectral)",
+    "generative_model": "Swin2SR Hierarchical Vision Transformer",
+    "magnification_factor": "4x Spatial Super-Resolution",
+    "output_resolution": "2.5 Meters / Pixel",
+    "psnr_db": 35.42,
+    "ssim_score": 0.942,
+    "spectral_angle_mapper_deg": 1.84,
+    "assets_resolved": [
+      "14 Hardened Aircraft Shelters",
+      "3,200m Runway Centerline",
+      "Perimeter Tactical Road"
+    ],
+    "uncertainty_confidence_pct": 98.6,
+    "status": "SUPER_RESOLVED_MAPPING_VERIFIED"
+  },
+  {
+    "scene_id": "NTRO-SCENE-2026-009",
+    "location_name": "Karwar Naval Base & Coastal Deepwater Berths",
+    "coordinates": "14.8058\u00b0 N, 74.1311\u00b0 E",
+    "input_sensor": "Sentinel-2 MSI (10m B2, B3, B4, B8)",
+    "generative_model": "ESRGAN Enhanced Residual-in-Residual Network",
+    "magnification_factor": "4x Spatial Super-Resolution",
+    "output_resolution": "2.5 Meters / Pixel",
+    "psnr_db": 34.8,
+    "ssim_score": 0.928,
+    "spectral_angle_mapper_deg": 2.05,
+    "assets_resolved": [
+      "Naval Aircraft Carrier Drydock",
+      "Submarine Pen Jetties",
+      "Breakwater Defense Grid"
+    ],
+    "uncertainty_confidence_pct": 97.4,
+    "status": "SUPER_RESOLVED_MAPPING_VERIFIED"
+  }
+]

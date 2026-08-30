@@ -1,0 +1,23 @@
+[
+  {
+    "model_name": "Sparse 3D CNN (Cylinder3D)",
+    "miou_score": 84.6,
+    "ground_accuracy": 98.2,
+    "latency": "14 ms",
+    "role": "Fast cylindrical voxel segmentation of LiDAR point clouds"
+  },
+  {
+    "model_name": "PointNet++ (MSG Architecture)",
+    "miou_score": 82.1,
+    "ground_accuracy": 96.8,
+    "latency": "18 ms",
+    "role": "Hierarchical feature learning on non-uniform spatial point clusters"
+  },
+  {
+    "model_name": "Minkowski Sparse Tensor ResNet",
+    "miou_score": 86.4,
+    "ground_accuracy": 98.9,
+    "latency": "16 ms",
+    "role": "High-dimensional spatial convolutions for autonomous vehicle perception"
+  }
+]

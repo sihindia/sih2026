@@ -1,0 +1,53 @@
+[
+  {
+    "parcel_id": "3D-PUN-0941-F14",
+    "project_name": "Kothrud SkyHeights Tower (28-Storey High-Rise)",
+    "location": "Kothrud Urban Ward 4, Pune, Maharashtra",
+    "property_type": "Vertical Multi-Storey Residential Condominium",
+    "surface_survey_number": "Survey Parcel 941 (Area 3,450 m\u00b2)",
+    "floor_level": "Floor 14 (Unit 1402)",
+    "floor_area_sqm": 165.0,
+    "ceiling_height_m": 3.1,
+    "volumetric_space_m3": 511.5,
+    "generated_3d_ulpin": "27-584-0941-F14-U02",
+    "air_rights_elevation_m": "+46.5m Above Mean Sea Level (Datum)",
+    "subsurface_depth_m": "0.0m (Above Ground)",
+    "topology_collision_check": "ZERO_COLLISION_CLEAR",
+    "mortgage_registry_status": "Encumbrance-Free Smart Title Deed Verified",
+    "cadastral_status": "3D_ULPIN_ISSUED_ACTIVE"
+  },
+  {
+    "parcel_id": "3D-DEL-METRO-B02",
+    "project_name": "Rajiv Chowk Subsurface Transit Interchange & Concourse",
+    "location": "Connaught Place Radial Sector, New Delhi",
+    "property_type": "Subsurface Underground Mass Transit & Commercial Hub",
+    "surface_survey_number": "Surface Central Park Parcel CP-01",
+    "floor_level": "Basement Level 2 (Concourse & Yellow/Blue Line Platform)",
+    "floor_area_sqm": 4200.0,
+    "ceiling_height_m": 5.8,
+    "volumetric_space_m3": 24360.0,
+    "generated_3d_ulpin": "07-002-CP01-B02-M01",
+    "air_rights_elevation_m": "N/A (Subsurface Domain)",
+    "subsurface_depth_m": "-16.4m Below Ground Surface",
+    "topology_collision_check": "UTILITY_BUFFER_MAINTAINED_4M",
+    "mortgage_registry_status": "Government Public Infrastructure Asset",
+    "cadastral_status": "3D_ULPIN_ISSUED_ACTIVE"
+  },
+  {
+    "parcel_id": "3D-BLR-ELEV-AIR01",
+    "project_name": "Electronic City Elevated Highway Air-Rights Flyover",
+    "location": "Hosur Road Arterial Highway, Bengaluru, Karnataka",
+    "property_type": "Elevated Air-Rights Transportation Corridor",
+    "surface_survey_number": "Surface Right-of-Way (RoW) NH-44 Parcel 120",
+    "floor_level": "Elevated Deck Level (+1)",
+    "floor_area_sqm": 8800.0,
+    "ceiling_height_m": 6.5,
+    "volumetric_space_m3": 57200.0,
+    "generated_3d_ulpin": "29-572-NH44-E01-R01",
+    "air_rights_elevation_m": "+14.2m Flyover Deck Level",
+    "subsurface_depth_m": "Pier Foundations at -12.0m",
+    "topology_collision_check": "VERTICAL_RIGHT_OF_WAY_CLEARED",
+    "mortgage_registry_status": "NHAI State Concessionaire Toll Asset",
+    "cadastral_status": "3D_ULPIN_ISSUED_ACTIVE"
+  }
+]

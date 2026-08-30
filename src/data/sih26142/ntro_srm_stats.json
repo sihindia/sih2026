@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Spatial Magnification",
+    "value": "4x Boost (10m \u2794 2.5m)",
+    "trend": "Sub-Pixel Transformer SRM"
+  },
+  {
+    "metric": "Reconstruction Fidelity",
+    "value": "35.4 dB PSNR",
+    "trend": "0.942 SSIM Perceptual Quality"
+  },
+  {
+    "metric": "Spectral Preservation",
+    "value": "1.84\u00b0 SAM",
+    "trend": "Zero Scientific Radiometric Drift"
+  }
+]

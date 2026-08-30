@@ -1,30 +1,36 @@
--- Supabase / PostgreSQL Schema for SIH26080 (Regime-Aware AI Post-Processing of Monsoon Rainfall Forecasts)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- NCMRWF REGIMECORRECT 360 DATABASE SCHEMA (SIH26080)
+-- Ministry of Earth Sciences (MoES) / NCMRWF
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26080_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26080',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS district_rainfall_calibrations (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) UNIQUE NOT NULL,
+    district_location VARCHAR(255) NOT NULL,
+    classified_regime VARCHAR(128) NOT NULL,
+    raw_nwp_rainfall_mm NUMERIC(6, 2) NOT NULL,
+    ai_corrected_rainfall_mm NUMERIC(6, 2) NOT NULL,
+    ground_truth_obs_mm NUMERIC(6, 2) NOT NULL,
+    heavy_rain_prob_pct NUMERIC(5, 2) NOT NULL,
+    extreme_threshold_tag VARCHAR(128) NOT NULL,
+    verification_improvement TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'REGIME_CALIBRATED',
+    calibrated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26080_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26080_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS synoptic_weather_regimes (
+    id SERIAL PRIMARY KEY,
+    regime_name VARCHAR(128) UNIQUE NOT NULL,
+    features TEXT NOT NULL,
+    correction_strategy TEXT NOT NULL,
+    active_season VARCHAR(64) DEFAULT 'Southwest Monsoon'
 );
 
-ALTER TABLE sih26080_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26080_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26080_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26080_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26080_audit_logs FOR SELECT USING (true);
+CREATE TABLE IF NOT EXISTS verification_skill_scores (
+    id SERIAL PRIMARY KEY,
+    metric_name VARCHAR(128) NOT NULL,
+    raw_score VARCHAR(64) NOT NULL,
+    ai_corrected_score VARCHAR(64) NOT NULL,
+    improvement_pct VARCHAR(64) NOT NULL,
+    recorded_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

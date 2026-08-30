@@ -1,0 +1,41 @@
+[
+  {
+    "booking_id": "COOP-2026-MUM01",
+    "service_category": "Master Electrician & Emergency Circuit Rewiring",
+    "cooperative_society": "Dharavi Labour Cooperative Federation Ltd. (Reg. No: COOP/MH/2018/412)",
+    "worker_name": "Santosh V. More (NCCT Certified Master Electrician)",
+    "customer_locality": "Dadar West, Mumbai (Distance: 2.8 km)",
+    "eta_minutes": 25,
+    "customer_paid_inr": 650.0,
+    "worker_received_inr": 615.0,
+    "welfare_fund_inr": 35.0,
+    "private_platform_comparison": "Private platform charges \u20b9950, pays worker only \u20b9420 (Takes 55% cut). SahakarGig pays worker 95% + 5% welfare!",
+    "status": "COOP_SERVICE_COMPLETED"
+  },
+  {
+    "case_id": "COOP-2026-DEL03",
+    "service_category": "Elderly Caregiving & Post-Operative Nursing Support",
+    "cooperative_society": "Delhi Shramik Sahakari Seva Samiti (Reg. No: COOP/DL/2021/88)",
+    "worker_name": "Sunita Devi (Govt. Certified Geriatric Caregiver)",
+    "customer_locality": "Lajpat Nagar, New Delhi (Distance: 3.4 km)",
+    "eta_minutes": 40,
+    "customer_paid_inr": 1200.0,
+    "worker_received_inr": 1140.0,
+    "welfare_fund_inr": 60.0,
+    "private_platform_comparison": "Private agency charges \u20b91,800/day, gives worker \u20b9750. SahakarGig ensures living wage with insurance coverage.",
+    "status": "COOP_SERVICE_COMPLETED"
+  },
+  {
+    "case_id": "COOP-2026-BLR05",
+    "service_category": "High-Pressure Monsoon Plumbing & Sewerage Jetting",
+    "cooperative_society": "Bengaluru Urban Karmi Sahakara Sangha (Reg. No: COOP/KA/2019/304)",
+    "worker_name": "R. Kumaraswamy (Certified Plumbing Technician)",
+    "customer_locality": "Koramangala 4th Block, Bengaluru (Distance: 1.9 km)",
+    "eta_minutes": 20,
+    "customer_paid_inr": 850.0,
+    "worker_received_inr": 805.0,
+    "welfare_fund_inr": 45.0,
+    "private_platform_comparison": "Zero corporate aggregator commissions. Workers receive annual cooperative dividend share.",
+    "status": "COOP_SERVICE_COMPLETED"
+  }
+]

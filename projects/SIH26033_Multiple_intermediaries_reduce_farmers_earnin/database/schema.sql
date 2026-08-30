@@ -1,30 +1,33 @@
--- Supabase / PostgreSQL Schema for SIH26033 (Multiple intermediaries reduce farmers earnings and increase consumer prices.)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- KISANDIRECT D2C 360 DATABASE SCHEMA (SIH26033)
+-- Ministry of Consumer Affairs - DoCA
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26033_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26033',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS fpo_produce_listings (
+    id SERIAL PRIMARY KEY,
+    listing_id VARCHAR(64) UNIQUE NOT NULL,
+    fpo_name VARCHAR(255) NOT NULL,
+    origin_location VARCHAR(128) NOT NULL,
+    member_farmers_count INTEGER NOT NULL,
+    crop_commodity VARCHAR(255) NOT NULL,
+    available_stock_mt NUMERIC(8, 2) NOT NULL,
+    farm_gate_price_per_qtl VARCHAR(32) NOT NULL,
+    direct_consumer_price_per_qtl VARCHAR(32) NOT NULL,
+    traditional_mandi_retail_price VARCHAR(32) NOT NULL,
+    farmer_value_share_pct VARCHAR(16) NOT NULL,
+    fpo_contact_person VARCHAR(128) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26033_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26033_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS direct_escrow_orders (
+    id SERIAL PRIMARY KEY,
+    order_id VARCHAR(64) UNIQUE NOT NULL,
+    listing_id VARCHAR(64) NOT NULL,
+    buyer_name VARCHAR(128) NOT NULL,
+    quantity_quintals NUMERIC(8, 2) NOT NULL,
+    total_consumer_payment VARCHAR(32) NOT NULL,
+    direct_farmer_payout VARCHAR(32) NOT NULL,
+    escrow_status VARCHAR(64) DEFAULT 'ESCROW_LOCKED_100_PCT',
+    proof_of_delivery_token VARCHAR(64) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26033_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26033_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26033_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26033_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26033_audit_logs FOR SELECT USING (true);

@@ -1,0 +1,26 @@
+[
+  {
+    "unit_name": "Bigha (UP / Standard)",
+    "conversion_to_hectare": 0.2529,
+    "sq_meters": 2529.0,
+    "states_used": "Uttar Pradesh, Uttarakhand, MP"
+  },
+  {
+    "unit_name": "Bigha (Bihar)",
+    "conversion_to_hectare": 0.2508,
+    "sq_meters": 2508.0,
+    "states_used": "Bihar, Jharkhand"
+  },
+  {
+    "unit_name": "Guntha (Maharashtra)",
+    "conversion_to_hectare": 0.0101,
+    "sq_meters": 101.17,
+    "states_used": "Maharashtra, Gujarat, Karnataka"
+  },
+  {
+    "unit_name": "Kanal (Punjab)",
+    "conversion_to_hectare": 0.0505,
+    "sq_meters": 505.85,
+    "states_used": "Punjab, Haryana, HP"
+  }
+]

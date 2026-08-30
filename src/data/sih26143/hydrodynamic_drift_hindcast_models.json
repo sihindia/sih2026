@@ -1,0 +1,16 @@
+[
+  {
+    "model_name": "OpenDrift Lagrangian Particle Tracker",
+    "particles_simulated": 10000,
+    "surface_current_vector": "0.45 m/s Eastward (CMEMS)",
+    "wind_drift_factor": "12 Knots NW (ECMWF)",
+    "hindcast_accuracy_km": "\u00b10.6 km"
+  },
+  {
+    "model_name": "Forward Forecast Dispersion Grid",
+    "particles_simulated": 10000,
+    "coastal_impact_eta": "48 Hours (Alibaug Coast)",
+    "weathering_evaporation_pct": "34.5% in 72h",
+    "hindcast_accuracy_km": "\u00b10.8 km"
+  }
+]

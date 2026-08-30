@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Memory Reduction",
+    "value": "78.6% Lower RAM",
+    "trend": "94 MB vs 440 MB Raw Point Cloud"
+  },
+  {
+    "metric": "Inference Throughput",
+    "value": "48.2 FPS",
+    "trend": "Sub-20ms Real-Time Edge Processing"
+  },
+  {
+    "metric": "Negative Obstacle Catch",
+    "value": "100% Detection",
+    "trend": "Craters, Trenches & Curbs"
+  }
+]

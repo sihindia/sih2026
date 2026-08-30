@@ -1,30 +1,38 @@
--- Supabase / PostgreSQL Schema for SIH26081 (Hybrid AI–NWP Multi-Model Forecast Blending System)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- NCMRWF BLENDCAST 360 DATABASE SCHEMA (SIH26081)
+-- Ministry of Earth Sciences (MoES) / NCMRWF
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26081_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26081',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS multimodel_blended_cases (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) UNIQUE NOT NULL,
+    hazard_scenario VARCHAR(255) NOT NULL,
+    region_district VARCHAR(255) NOT NULL,
+    forecast_lead_day INTEGER NOT NULL,
+    lead_time_hours INTEGER NOT NULL,
+    candidate_models TEXT NOT NULL,
+    ai_adaptive_weights TEXT NOT NULL,
+    dynamically_blended_consensus VARCHAR(128) NOT NULL,
+    observed_ground_truth VARCHAR(128) NOT NULL,
+    skill_improvement_vs_best TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'BLENDED_OPTIMAL',
+    blended_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26081_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26081_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS model_weight_allocations (
+    id SERIAL PRIMARY KEY,
+    model_name VARCHAR(128) UNIQUE NOT NULL,
+    model_type VARCHAR(64) NOT NULL,
+    dominant_regimes TEXT NOT NULL,
+    avg_weight VARCHAR(32) NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE sih26081_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26081_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26081_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26081_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26081_audit_logs FOR SELECT USING (true);
+CREATE TABLE IF NOT EXISTS extreme_consensus_alerts (
+    id SERIAL PRIMARY KEY,
+    variable VARCHAR(128) NOT NULL,
+    consensus_spread VARCHAR(64) NOT NULL,
+    confidence VARCHAR(64) NOT NULL,
+    operational_advice TEXT NOT NULL,
+    alerted_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

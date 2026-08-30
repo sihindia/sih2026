@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "AMRs Coordinated",
+    "value": "24 AMRs",
+    "trend": "100% Decentralized Edge Mesh"
+  },
+  {
+    "metric": "Inter-Robot Collisions",
+    "value": "0 Collisions",
+    "trend": "Real-Time Deadlock-Free CBS"
+  },
+  {
+    "metric": "Throughput Gain",
+    "value": "+28.4% Faster",
+    "trend": "vs Traditional Stop-and-Wait"
+  }
+]

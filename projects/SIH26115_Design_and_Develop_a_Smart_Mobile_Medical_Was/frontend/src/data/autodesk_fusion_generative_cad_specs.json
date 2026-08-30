@@ -1,0 +1,20 @@
+[
+  {
+    "component": "Generative Chassis Frame",
+    "software": "Autodesk Fusion 360",
+    "material": "Aluminum 6061-T6 (28% Mass Reduction)",
+    "fea_safety_factor": 2.85
+  },
+  {
+    "component": "4-Compartment Smart Segregator",
+    "software": "Autodesk Fusion Sheet Metal",
+    "material": "Antimicrobial Polypropylene & Stainless Steel",
+    "fea_safety_factor": 3.2
+  },
+  {
+    "component": "LiDAR & Depth Camera Mount",
+    "software": "Autodesk Fusion Generative",
+    "material": "Carbon Fiber Infused PETG",
+    "fea_safety_factor": 4.1
+  }
+]

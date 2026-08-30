@@ -1,0 +1,20 @@
+[
+  {
+    "scheme_id": "SCHEME-I",
+    "name": "Product Certification Scheme (ISI Mark)",
+    "type": "Mandatory & Voluntary",
+    "target": "Industrial, Electrical, Food, Steel, Cement products"
+  },
+  {
+    "scheme_id": "SCHEME-II",
+    "name": "Compulsory Registration Scheme (CRS)",
+    "type": "Self-Declaration of Conformity",
+    "target": "Electronics, IT goods, Solar inverters, LED lights"
+  },
+  {
+    "scheme_id": "SCHEME-HALLMARK",
+    "name": "Hallmarking of Gold & Silver Articles",
+    "type": "Mandatory for 288+ Districts",
+    "target": "Gold jewelry (14K, 18K, 20K, 22K, 23K, 24K) with 6-digit HUID"
+  }
+]

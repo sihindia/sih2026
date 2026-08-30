@@ -1,30 +1,34 @@
--- Supabase / PostgreSQL Schema for SIH26053 (Adaptive Variable Resolution 2.5D Lidar Mapping for Dynamic Environment Perception)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- DRDO NETRALIDAR 360 DATABASE SCHEMA (SIH26053)
+-- DRDO - Department of Defence Production / iDEX
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26053_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26053',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS lidar_perception_missions (
+    id SERIAL PRIMARY KEY,
+    mission_id VARCHAR(64) UNIQUE NOT NULL,
+    vehicle_platform VARCHAR(255) NOT NULL,
+    operational_environment TEXT NOT NULL,
+    lidar_sensor_spec VARCHAR(255) NOT NULL,
+    grid_structure TEXT NOT NULL,
+    deep_learning_backbone VARCHAR(128) NOT NULL,
+    raw_pointcloud_ram_mb NUMERIC(8, 1) NOT NULL,
+    foveated_grid_ram_mb NUMERIC(8, 1) NOT NULL,
+    memory_reduction_pct NUMERIC(4, 1) NOT NULL,
+    inference_fps NUMERIC(5, 2) NOT NULL,
+    latency_ms NUMERIC(5, 2) NOT NULL,
+    critical_detections TEXT NOT NULL,
+    perception_status VARCHAR(64) DEFAULT 'REAL_TIME_AUTONOMOUS_PERCEPTION',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26053_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26053_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS foveated_elevation_cells (
+    id SERIAL PRIMARY KEY,
+    mission_id VARCHAR(64) REFERENCES lidar_perception_missions(mission_id),
+    radial_distance_m NUMERIC(6, 2) NOT NULL,
+    cell_resolution_m NUMERIC(4, 2) NOT NULL,
+    z_max_elevation NUMERIC(6, 3) NOT NULL,
+    z_min_elevation NUMERIC(6, 3) NOT NULL,
+    elevation_variance NUMERIC(6, 4) NOT NULL,
+    semantic_class VARCHAR(64) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26053_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26053_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26053_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26053_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26053_audit_logs FOR SELECT USING (true);

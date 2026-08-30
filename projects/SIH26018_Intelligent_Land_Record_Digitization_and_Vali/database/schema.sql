@@ -1,32 +1,18 @@
--- Supabase / PostgreSQL Schema for SIH26018 (Intelligent Land Record Digitization and Validation System)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "postgis";
+-- =========================================================================
+-- DOLR ABHILEKHAI 360 DATABASE SCHEMA (SIH26018)
+-- Ministry of Rural Development - Department of Land Resources (DoLR)
+-- =========================================================================
 
--- 1. Cadastral Land Parcels
-CREATE TABLE IF NOT EXISTS sih26018_parcels (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ulpin_code VARCHAR(14) UNIQUE NOT NULL,
-    state_code VARCHAR(10) DEFAULT 'JH',
-    district_name VARCHAR(100) NOT NULL,
-    village_name VARCHAR(100) NOT NULL,
-    survey_area_sqm NUMERIC(12, 2) NOT NULL,
-    geometry GEOMETRY(Polygon, 4326),
-    land_type VARCHAR(50) DEFAULT 'Agricultural',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS digitized_land_records (
+    id SERIAL PRIMARY KEY,
+    record_id VARCHAR(64) UNIQUE NOT NULL,
+    khasra VARCHAR(64) NOT NULL,
+    khata VARCHAR(64) NOT NULL,
+    owner_name VARCHAR(255) NOT NULL,
+    local_area VARCHAR(128) NOT NULL,
+    metric_area_ha NUMERIC(8, 3) NOT NULL,
+    land_type VARCHAR(128) NOT NULL,
+    ocr_conf VARCHAR(32) NOT NULL,
+    ulpin VARCHAR(64) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
--- 2. Ownership Title Records
-CREATE TABLE IF NOT EXISTS sih26018_ownership (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    parcel_id UUID REFERENCES sih26018_parcels(id) ON DELETE CASCADE,
-    owner_name VARCHAR(200) NOT NULL,
-    aadhaar_hash VARCHAR(64) NOT NULL,
-    share_percentage NUMERIC(5, 2) DEFAULT 100.0,
-    encumbrance_status VARCHAR(50) DEFAULT 'CLEAR',
-    verified_at TIMESTAMPTZ DEFAULT NOW()
-);
-
-ALTER TABLE sih26018_parcels ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26018_ownership ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Parcels" ON sih26018_parcels FOR SELECT USING (true);
-CREATE POLICY "Public Read Ownership" ON sih26018_ownership FOR SELECT USING (true);

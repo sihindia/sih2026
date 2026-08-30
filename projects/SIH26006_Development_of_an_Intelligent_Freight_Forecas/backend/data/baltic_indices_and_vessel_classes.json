@@ -1,0 +1,23 @@
+[
+  {
+    "vessel_class": "Capesize Bulk Carrier",
+    "deadweight_dwt": 180000,
+    "typical_cargo_mt": 165000,
+    "baltic_index_benchmark": "BCI (Baltic Capesize Index)",
+    "optimal_corridor": "Australia / South Africa \u2794 Paradip / Gangavaram"
+  },
+  {
+    "vessel_class": "Kamsarmax Bulk Carrier",
+    "deadweight_dwt": 82000,
+    "typical_cargo_mt": 78000,
+    "baltic_index_benchmark": "BPI (Baltic Panamax Index)",
+    "optimal_corridor": "Mozambique / Indonesia \u2794 Vizag / Dhamra"
+  },
+  {
+    "vessel_class": "Supramax Bulk Carrier",
+    "deadweight_dwt": 58000,
+    "typical_cargo_mt": 54000,
+    "baltic_index_benchmark": "BSI (Baltic Supramax Index)",
+    "optimal_corridor": "Indonesia / Southeast Asia \u2794 Haldia Dock Complex"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "mine_id": "MINE-MOIL-BAL01",
+    "mine_name": "Balaghat Deep Underground Manganese Mine",
+    "state": "Madhya Pradesh",
+    "district": "Balaghat",
+    "mine_type": "Deep Underground Shaft Mine (435m Depth)",
+    "ore_grade_mn_pct": 46.5,
+    "weekly_target_mt": 8200.0,
+    "satellite_spectral_anomaly": "Sentinel-2 SWIR Fault Lineament intersecting East Lode at Level 7",
+    "active_bottleneck": "14% Blasting delay due to perched aquifer water seepage in Eastern Stope",
+    "ai_corrective_action": "Re-deploy 2 electric hydraulic jumbo drills to Western Stope; accelerate submersible pumps by 48h",
+    "recovered_production_mt": 8200.0,
+    "target_recovery_pct": 100.0,
+    "shortfall_status": "PRODUCTION_RECOVERED_TARGET_MET"
+  },
+  {
+    "mine_id": "MINE-MOIL-DON02",
+    "mine_name": "Dongri Buzurg Open-Cast Manganese Mine",
+    "state": "Maharashtra",
+    "district": "Bhandara",
+    "mine_type": "Mechanized Open-Cast Pit Mine",
+    "ore_grade_mn_pct": 42.0,
+    "weekly_target_mt": 12500.0,
+    "satellite_spectral_anomaly": "Landsat-9 TIRS Thermal Anomaly over Unmapped Pyrolusite Outcrop (Bench 4)",
+    "active_bottleneck": "Shovel 104 hydraulic hose burst; heavy monsoon muck slippage",
+    "ai_corrective_action": "Divert 4x 35T Dumpers to Bench 2; activate mobile sump drainage tractor",
+    "recovered_production_mt": 12200.0,
+    "target_recovery_pct": 97.6,
+    "shortfall_status": "FLEET_REDEPLOYED_OPTIMAL"
+  },
+  {
+    "mine_id": "MINE-MOIL-GUM03",
+    "mine_name": "Gumgaon Underground Manganese Mine",
+    "state": "Maharashtra",
+    "district": "Nagpur",
+    "mine_type": "Sub-Level Stoping Underground Mine",
+    "ore_grade_mn_pct": 44.8,
+    "weekly_target_mt": 5400.0,
+    "satellite_spectral_anomaly": "Sentinel-1 SAR Subsidence Interferometry (0.8mm Stable Bedrock)",
+    "active_bottleneck": "Winding skip rope routine calibration delay (2.5 shifts lost)",
+    "ai_corrective_action": "Schedule night-shift bulk haulage convoy; optimize conveyor feeder belt rate",
+    "recovered_production_mt": 5400.0,
+    "target_recovery_pct": 100.0,
+    "shortfall_status": "PRODUCTION_RECOVERED_TARGET_MET"
+  }
+]

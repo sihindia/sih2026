@@ -1,0 +1,22 @@
+[
+  {
+    "rank": 1,
+    "vessel_name": "MT Pacific Horizon",
+    "imo": "9481234",
+    "distance_to_origin_km": 0.4,
+    "time_delta_mins": 8,
+    "speed_anomaly": "Shed 8.1 Knots",
+    "attribution_score": 98.4,
+    "status": "CONFIRMED_POLLUTER"
+  },
+  {
+    "rank": 2,
+    "vessel_name": "MV Coral Sea",
+    "imo": "9182390",
+    "distance_to_origin_km": 14.8,
+    "time_delta_mins": 65,
+    "speed_anomaly": "Normal Cruising (15 kt)",
+    "attribution_score": 12.0,
+    "status": "CLEARED_INNOCENT"
+  }
+]

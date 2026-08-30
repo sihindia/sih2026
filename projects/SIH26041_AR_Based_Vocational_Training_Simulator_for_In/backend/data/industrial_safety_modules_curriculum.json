@@ -1,0 +1,27 @@
+[
+  {
+    "module_id": "MOD-01",
+    "name": "Fire & Explosion Response",
+    "focus": "Exit route identification, PASS fire extinguisher sequencing, secondary explosion prevention"
+  },
+  {
+    "module_id": "MOD-02",
+    "name": "Toxic Gas & Confined Space",
+    "focus": "Methane (CH4), Carbon Monoxide (CO), H2S recognition, Filter Self-Rescuer donning, fresh air airway escape"
+  },
+  {
+    "module_id": "MOD-03",
+    "name": "Machinery Lockout/Tagout (LOTO)",
+    "focus": "Zero-energy isolation, conveyor nip point protection, haul truck blind spot proximity"
+  },
+  {
+    "module_id": "MOD-04",
+    "name": "Roof Fall & Strata Ground Control",
+    "focus": "Sounding test for loose rock, hydraulic roof prop placement, geological fault spotting"
+  },
+  {
+    "module_id": "MOD-05",
+    "name": "Electrical Arc Flash & PPE Selection",
+    "focus": "High-voltage switchgear isolation, dielectric gloves inspection, flame-retardant suit rating"
+  }
+]

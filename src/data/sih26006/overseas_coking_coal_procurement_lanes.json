@@ -1,0 +1,47 @@
+[
+  {
+    "lane_id": "LANE-AUS-PAR01",
+    "lane_title": "Hay Point (Queensland, Australia) \u2794 Paradip Port (India)",
+    "origin_port": "Hay Point Coal Terminal (DBCT / HPCT)",
+    "destination_port": "Paradip Deep-Draft Coking Coal Berth",
+    "cargo_type": "Premium Hard Coking Coal (Peak Downs / Saraji)",
+    "parcel_size_mt": 165000.0,
+    "recommended_vessel_class": "Capesize (180,000 DWT Gearless)",
+    "current_spot_freight_usd_mt": 28.5,
+    "ai_forecast_60d_freight_usd_mt": 21.8,
+    "charter_strategy_recommendation": "Lock 6-Month Period Time Charter at $19.40/MT (Save 31.9% vs Spot)",
+    "draft_clearance_status": "Paradip 17.5m Deep-Draft Verified (Zero Lighterage Needed)",
+    "total_estimated_savings_usd": 1460000.0,
+    "charter_status": "TIME_CHARTER_LOCKED_OPTIMAL"
+  },
+  {
+    "lane_id": "LANE-IDN-HAL02",
+    "lane_title": "Tanjung Bara (East Kalimantan, Indonesia) \u2794 Haldia Dock Complex",
+    "origin_port": "Tanjung Bara Coal Terminal (TBCT)",
+    "destination_port": "Haldia Dock Complex (Berth 4A/4B)",
+    "cargo_type": "PCI Coal & High-Volatile Coking Blend",
+    "parcel_size_mt": 55000.0,
+    "recommended_vessel_class": "Supramax (58,000 DWT Geared with Grabs)",
+    "current_spot_freight_usd_mt": 16.8,
+    "ai_forecast_60d_freight_usd_mt": 14.2,
+    "charter_strategy_recommendation": "Execute Consecutive Voyage Charter (CVC) for 4 Coastal Rotations",
+    "draft_clearance_status": "Haldia Tidal Draught 8.5m Monitored; Direct Discharge (Zero Demurrage)",
+    "total_estimated_savings_usd": 380000.0,
+    "charter_status": "CVC_CONSECUTIVE_VOYAGE_CONFIRMED"
+  },
+  {
+    "lane_id": "LANE-MOZ-VIZ03",
+    "lane_title": "Maputo (Mozambique) \u2794 Visakhapatnam Port (EQ-1 Berth)",
+    "origin_port": "Maputo Coal Terminal (TCM Matola)",
+    "destination_port": "Visakhapatnam Port Outer Harbour (EQ-1)",
+    "cargo_type": "Moatize Semi-Hard Coking Coal",
+    "parcel_size_mt": 82000.0,
+    "recommended_vessel_class": "Kamsarmax (82,000 DWT LOA 229m)",
+    "current_spot_freight_usd_mt": 24.1,
+    "ai_forecast_60d_freight_usd_mt": 19.5,
+    "charter_strategy_recommendation": "Enter 3-Month Short-Term Time Charter during Q3 Seasonal Dip",
+    "draft_clearance_status": "Vizag Outer Harbour 16.1m Permissible Draft Fully Cleared",
+    "total_estimated_savings_usd": 620000.0,
+    "charter_status": "SHORT_TERM_PERIOD_CHARTER_APPROVED"
+  }
+]

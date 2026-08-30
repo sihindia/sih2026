@@ -1,0 +1,20 @@
+[
+  {
+    "satellite_sensor": "INSAT-3DR TIR1 & TIR2",
+    "spatial_res": "4 km Nadir",
+    "frequency_cadence": "15 Mins Rapid Scan",
+    "purpose": "Eye Temperature & Cloud Top Radiance"
+  },
+  {
+    "satellite_sensor": "Oceansat-3 OSCAT Scatterometer",
+    "spatial_res": "12.5 km Grid",
+    "frequency_cadence": "12 Hours Orbit",
+    "purpose": "Ocean Surface Wind Vectors (Knots)"
+  },
+  {
+    "satellite_sensor": "GPM Microwave Imager (GMI)",
+    "spatial_res": "5 km Footprint",
+    "frequency_cadence": "3 Hours Swath",
+    "purpose": "Eyewall Convective Rain Core Dynamics"
+  }
+]

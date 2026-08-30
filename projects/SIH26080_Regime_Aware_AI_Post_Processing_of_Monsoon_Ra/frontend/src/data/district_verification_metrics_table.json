@@ -1,0 +1,38 @@
+[
+  {
+    "metric": "Root Mean Square Error (RMSE)",
+    "raw_nwp": "48.6 mm",
+    "ai_corrected": "29.9 mm",
+    "improvement": "38.4% Reduction"
+  },
+  {
+    "metric": "Equitable Threat Score (ETS >64.5mm)",
+    "raw_nwp": "0.28",
+    "ai_corrected": "0.64",
+    "improvement": "+128% Skill Boost"
+  },
+  {
+    "metric": "Critical Success Index (CSI)",
+    "raw_nwp": "0.34",
+    "ai_corrected": "0.72",
+    "improvement": "+111% Skill Boost"
+  },
+  {
+    "metric": "Probability of Detection (POD)",
+    "raw_nwp": "0.62",
+    "ai_corrected": "0.91",
+    "improvement": "+46.7% Detection"
+  },
+  {
+    "metric": "False Alarm Ratio (FAR)",
+    "raw_nwp": "0.45",
+    "ai_corrected": "0.16",
+    "improvement": "64.4% Reduction"
+  },
+  {
+    "metric": "Fractions Skill Score (FSS @ 10km)",
+    "raw_nwp": "0.49",
+    "ai_corrected": "0.82",
+    "improvement": "+67.3% Spatial Coherence"
+  }
+]

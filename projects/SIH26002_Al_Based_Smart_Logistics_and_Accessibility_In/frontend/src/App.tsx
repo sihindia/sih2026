@@ -1,271 +1,279 @@
 import React, { useState } from 'react';
 import { 
   Truck, 
-  MapPin, 
-  Navigation, 
-  AlertTriangle, 
+  Search, 
+  Sparkles, 
   CheckCircle2, 
-  Thermometer, 
-  Activity, 
-  Layers, 
-  RefreshCw, 
-  ShieldCheck, 
-  TrendingUp, 
+  AlertTriangle, 
   Package, 
-  Zap,
-  Clock,
-  ArrowRight
+  Navigation, 
+  RefreshCw, 
+  MapPin, 
+  Layers, 
+  Activity, 
+  Globe 
 } from 'lucide-react';
-import corridorsData from './data/corridors.json';
-import consignmentsData from './data/consignments.json';
-import districtData from './data/district_accessibility.json';
+
+import corridorsData from './data/ner_logistics_corridors_and_disruptions.json';
+import shipmentsData from './data/essential_commodities_shipments_registry.json';
+import detoursData from './data/alternate_detour_routes_and_bridges.json';
+import statsData from './data/gatiner_stats.json';
 
 export default function App() {
+  const [lang, setLang] = useState<'en' | 'as' | 'bn' | 'hi' | 'kha' | 'miz'>('en');
   const [corridors, setCorridors] = useState(corridorsData);
-  const [consignments, setConsignments] = useState(consignmentsData);
-  const [selectedConsignment, setSelectedConsignment] = useState(consignmentsData[0]);
+  const [selectedCorridor, setSelectedCorridor] = useState(corridorsData[0]);
+  const [shipments, setShipments] = useState(shipmentsData);
+  const [detours, setDetours] = useState(detoursData);
+  const [stats, setStats] = useState(statsData);
+  const [activeTab, setActiveTab] = useState<'corridors' | 'shipments' | 'optimizer' | 'bridges' | 'stats'>('corridors');
 
-  // Route Optimizer Form
-  const [origin, setOrigin] = useState('Guwahati Medical Depot');
-  const [destination, setDestination] = useState('Civil Hospital, Aizawl');
-  const [commodity, setCommodity] = useState('Critical Medical Vaccines');
-  const [optimizationResult, setOptimizationResult] = useState<any>(null);
+  // Interactive AI Route Detour Optimizer Simulator
   const [isOptimizing, setIsOptimizing] = useState(false);
+  const [optResult, setOptResult] = useState<any>({
+    primaryStatus: "Primary NH-10 Corridor Blocked at 29th Mile Setijhora (Landslide)",
+    recommendedBypass: "Diverted via NH-717A: Lava ➔ Algarah ➔ Pedong ➔ Reshi ➔ Rhenock",
+    bridgeCapacity: "Bailey Bridge Structural Rating: 24 Metric Tons (Clear for 22.5 MT Tanker)",
+    delayHours: "+2.5 Hours Detour Latency (100% On-Time Delivery Guarantee)",
+    deliveryStatus: "Liquid Medical Oxygen Delivered Intact to STNM Hospital Gangtok"
+  });
 
-  const handleOptimizeRoute = () => {
+  const handleOptimize = (e: React.FormEvent) => {
+    e.preventDefault();
     setIsOptimizing(true);
     setTimeout(() => {
-      setIsOptimizing(false);
-      setOptimizationResult({
-        recommendedRoute: 'NH-27 Lumding - Haflong Bypass Route (Avoids NH-06 Sonapur mudslide)',
-        distanceKm: 395,
-        estimatedTimeHours: 8.5,
-        accessibilityScore: 88,
-        disruptionBypassed: 'Avoided 4.5h Sonapur Tunnel blockage',
-        coldChainCheckpoints: 4,
-        carbonFootprintKg: 142
+      setOptResult({
+        primaryStatus: "Primary NH-10 Corridor Blocked at 29th Mile Setijhora (Landslide)",
+        recommendedBypass: "Diverted via NH-717A: Lava ➔ Algarah ➔ Pedong ➔ Reshi ➔ Rhenock",
+        bridgeCapacity: "Bailey Bridge Structural Rating: 24 Metric Tons (Clear for 22.5 MT Tanker)",
+        delayHours: "+2.5 Hours Detour Latency (100% On-Time Delivery Guarantee)",
+        deliveryStatus: "Liquid Medical Oxygen Delivered Intact to STNM Hospital Gangtok"
       });
-    }, 700);
+      setIsOptimizing(false);
+    }, 450);
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans p-3 sm:p-6 lg:p-8 selection:bg-emerald-500 selection:text-black">
       <div className="max-w-7xl mx-auto space-y-6">
         
-        {/* Header */}
-        <header className="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
-          <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold mb-1">
-              <Truck className="w-4 h-4" />
-              <span>MINISTRY OF DEVELOPMENT OF NORTH EASTERN REGION (MDoNER) • SIH26002</span>
+        {/* Top Header */}
+        <header className="bg-slate-900/90 border border-slate-800 p-6 rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-2xl backdrop-blur-md">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold tracking-wider">
+              <Truck className="w-4 h-4 text-emerald-400 animate-pulse" />
+              <span>MDONER • GATINER 360 SMART LOGISTICS &amp; ACCESSIBILITY • SIH26002</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-black text-white">
-              AI-Based Smart Logistics & Accessibility Intelligence Platform for NER
+            <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              MDoNER GatiNER: AI-Based Smart Logistics &amp; Accessibility Platform for NER
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Real-Time Corridor Disruptions, Critical Consignment Cold-Chain Telemetry & AI Re-Routing Engine
+            <p className="text-xs text-slate-400 max-w-3xl">
+              Ministry of Development of North Eastern Region (MDoNER) Real-Time Mountain Corridor Monitoring, Landslide Disruption Forecasts, Dynamic Bailey Bridge Detours &amp; Essential Cold-Chain Cargo Tracking
             </p>
           </div>
 
-          <span className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-2xl text-xs font-bold flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Active Logistics Fleet: 4 Consignments Tracking</span>
-          </span>
+          {/* Language Switcher */}
+          <div className="flex items-center gap-2 bg-slate-950 p-1.5 rounded-2xl border border-slate-800">
+            <Globe className="w-4 h-4 text-emerald-400 ml-1.5" />
+            <button onClick={() => setLang('en')} className={`px-2.5 py-1 rounded-xl text-xs font-bold ${lang === 'en' ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400'}`}>English</button>
+            <button onClick={() => setLang('as')} className={`px-2.5 py-1 rounded-xl text-xs font-bold ${lang === 'as' ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400'}`}>অসমীয়া</button>
+            <button onClick={() => setLang('bn')} className={`px-2.5 py-1 rounded-xl text-xs font-bold ${lang === 'bn' ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400'}`}>বাংলা</button>
+            <button onClick={() => setLang('hi')} className={`px-2.5 py-1 rounded-xl text-xs font-bold ${lang === 'hi' ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400'}`}>हिंदी</button>
+            <button onClick={() => setLang('kha')} className={`px-2.5 py-1 rounded-xl text-xs font-bold ${lang === 'kha' ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400'}`}>Khasi</button>
+            <button onClick={() => setLang('miz')} className={`px-2.5 py-1 rounded-xl text-xs font-bold ${lang === 'miz' ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400'}`}>Mizo</button>
+          </div>
         </header>
 
-        {/* Top 3 Metric Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="bg-slate-900 p-5 rounded-2xl border border-slate-800 space-y-1">
-            <span className="text-xs font-bold text-slate-400 uppercase">Monitored Highway Corridors</span>
-            <div className="text-2xl font-black text-white font-mono">{corridors.length} Arteries</div>
-            <div className="text-[11px] text-amber-400">1 Blocked • 2 Restricted • 2 Normal</div>
-          </div>
-          <div className="bg-slate-900 p-5 rounded-2xl border border-slate-800 space-y-1">
-            <span className="text-xs font-bold text-slate-400 uppercase">Average Regional Accessibility Index</span>
-            <div className="text-2xl font-black text-emerald-400 font-mono">65.4 / 100</div>
-            <div className="text-[11px] text-slate-400">Weighted across 8 NER States</div>
-          </div>
-          <div className="bg-slate-900 p-5 rounded-2xl border border-slate-800 space-y-1">
-            <span className="text-xs font-bold text-slate-400 uppercase">Life-Saving Supplies In Transit</span>
-            <div className="text-2xl font-black text-blue-400 font-mono">100% Monitored</div>
-            <div className="text-[11px] text-emerald-400">Zero Spoilage Breaches Recorded</div>
-          </div>
+        {/* Global Navigation Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3">
+          {[
+            { id: 'corridors', label: '🚚 Arterial Corridors', count: corridors.length },
+            { id: 'shipments', label: '📦 Essential Cold-Chain', count: shipments.length },
+            { id: 'optimizer', label: '🔄 AI Detour Optimizer' },
+            { id: 'bridges', label: '🌉 Mountain Bridges & Bypasses', count: detours.length },
+            { id: 'stats', label: '📊 GatiNER Telemetry' }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as any)}
+              className={`px-4 py-2.5 rounded-2xl font-bold text-xs transition-all flex items-center gap-2 ${
+                activeTab === tab.id
+                  ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20 font-black'
+                  : 'bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800'
+              }`}
+            >
+              <span>{tab.label}</span>
+              {tab.count !== undefined && (
+                <span className={`px-2 py-0.5 rounded-full text-[10px] ${
+                  activeTab === tab.id ? 'bg-slate-950 text-emerald-400' : 'bg-slate-800 text-slate-300'
+                }`}>
+                  {tab.count}
+                </span>
+              )}
+            </button>
+          ))}
         </div>
 
-        {/* Interactive Highway Corridor Status Board (JSON Data) */}
-        <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-          <div className="flex justify-between items-center">
-            <h3 className="font-bold text-sm text-white flex items-center gap-2">
-              <Navigation className="w-4 h-4 text-emerald-400" />
-              <span>Real-Time NER Highway Corridor Accessibility Status</span>
-            </h3>
-            <span className="text-xs font-mono text-slate-400">Live JSON Feed</span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {corridors.map((c) => {
-              const isBlocked = c.current_status === 'BLOCKED';
-              const isRestricted = c.current_status === 'PARTIALLY_RESTRICTED' || c.current_status === 'WEATHER_WARNING';
-              return (
-                <div
-                  key={c.id}
-                  className={`p-4 rounded-2xl border flex flex-col justify-between space-y-3 ${
-                    isBlocked 
-                      ? 'bg-red-950/40 border-red-800 text-red-200'
-                      : isRestricted
-                      ? 'bg-amber-950/40 border-amber-800 text-amber-200'
-                      : 'bg-slate-950 border-slate-800 text-slate-200'
+        {/* =========================================================================
+            VIEW 1: CORRIDORS
+           ========================================================================= */}
+        {activeTab === 'corridors' && (
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {corridors.map((c) => (
+                <button
+                  key={c.corridor_id}
+                  onClick={() => setSelectedCorridor(c)}
+                  className={`p-4 rounded-2xl border text-left transition-all space-y-2 ${
+                    selectedCorridor.corridor_id === c.corridor_id
+                      ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-lg ring-2 ring-emerald-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
                   }`}
                 >
-                  <div>
-                    <div className="flex justify-between items-start gap-2">
-                      <span className="font-bold text-xs text-white">{c.highway}</span>
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${
-                        isBlocked ? 'bg-red-600 text-white' : isRestricted ? 'bg-amber-600 text-white' : 'bg-emerald-600 text-white'
-                      }`}>
-                        {c.current_status.replace('_', ' ')}
-                      </span>
-                    </div>
-                    <div className="text-[11px] text-slate-400 mt-1">{c.states.join(', ')} • {c.length_km} km</div>
-                    <p className="text-xs text-slate-300 mt-2 font-medium leading-relaxed">{c.bottleneck_cause}</p>
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-emerald-400">{c.corridor_id}</span>
+                    <span className="text-amber-400">{c.distance_km} km</span>
                   </div>
-
-                  <div className="pt-2 border-t border-slate-800/80 text-[11px] flex justify-between items-center text-slate-400 font-mono">
-                    <span>Delay: +{c.avg_delay_hours}h</span>
-                    <span>Index: {c.accessibility_score}/100</span>
+                  <div className="text-xs font-bold text-white leading-tight">
+                    {c.corridor_name.split('(')[0]}
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Split Grid: Live Consignment Telemetry & AI Re-Routing Engine */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          
-          {/* Left 6: Live Consignments Cold-Chain Telemetry */}
-          <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-            <h3 className="font-bold text-sm text-white flex items-center gap-2">
-              <Package className="w-4 h-4 text-blue-400" />
-              <span>Tracked Consignments & Cold-Chain Telemetry</span>
-            </h3>
-
-            <div className="space-y-3">
-              {consignments.map((item) => (
-                <div
-                  key={item.consignment_id}
-                  onClick={() => setSelectedConsignment(item)}
-                  className={`p-4 rounded-2xl border cursor-pointer transition-all ${
-                    selectedConsignment.consignment_id === item.consignment_id
-                      ? 'bg-blue-950/60 border-blue-500 ring-1 ring-blue-400'
-                      : 'bg-slate-950 border-slate-800 hover:bg-slate-800/60'
-                  }`}
-                >
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="text-[10px] font-mono font-bold text-blue-400">{item.consignment_id}</span>
-                      <h4 className="text-xs font-bold text-white mt-0.5">{item.commodity}</h4>
-                      <div className="text-[11px] text-slate-400 mt-0.5">{item.origin} → {item.destination}</div>
-                    </div>
-                    <span className="font-mono text-xs font-bold px-2 py-1 rounded bg-slate-900 text-emerald-400 border border-slate-700">
-                      {item.current_temp_c}°C
-                    </span>
+                  <div className="text-[11px] text-slate-400 font-mono truncate">{c.primary_highway}</div>
+                  <div className="text-[10px] text-emerald-300 pt-1 border-t border-slate-800 flex justify-between font-bold">
+                    <span>Delay: +{c.estimated_delay_hours}h</span>
+                    <span className="text-rose-400">{c.disruption_severity.split('_')[0]}</span>
                   </div>
-
-                  <div className="flex justify-between items-center text-[11px] text-slate-400 mt-3 pt-2 border-t border-slate-800">
-                    <span>Vehicle: {item.vehicle_no}</span>
-                    <span className="font-mono text-amber-400 font-bold">{item.estimated_eta}</span>
-                  </div>
-                </div>
+                </button>
               ))}
             </div>
-          </div>
 
-          {/* Right 6: AI Dynamic Route Optimization Simulator */}
-          <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-            <h3 className="font-bold text-sm text-white flex items-center gap-2">
-              <Zap className="w-4 h-4 text-amber-400" />
-              <span>AI Dynamic Re-Routing & Bypass Simulator</span>
-            </h3>
-
-            <div className="space-y-3 text-xs">
-              <div>
-                <label className="text-slate-400 font-bold block mb-1">Origin Terminal</label>
-                <input
-                  type="text" value={origin} onChange={(e) => setOrigin(e.target.value)}
-                  className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-slate-100"
-                />
-              </div>
-
-              <div>
-                <label className="text-slate-400 font-bold block mb-1">Destination Location</label>
-                <input
-                  type="text" value={destination} onChange={(e) => setDestination(e.target.value)}
-                  className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-slate-100"
-                />
-              </div>
-
-              <div>
-                <label className="text-slate-400 font-bold block mb-1">Commodity Sensitivity</label>
-                <select
-                  value={commodity} onChange={(e) => setCommodity(e.target.value)}
-                  className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-slate-100"
-                >
-                  <option>Critical Medical Vaccines (Cold Storage 2-8°C)</option>
-                  <option>Perishable Agricultural Fruits (Queen Pineapple)</option>
-                  <option>Cryogenic Liquid Medical Oxygen (LMO)</option>
-                  <option>PDS Essential Foodgrains</option>
-                </select>
-              </div>
-
-              <button
-                onClick={handleOptimizeRoute}
-                disabled={isOptimizing}
-                className="w-full py-3 bg-brand-600 hover:bg-brand-700 font-bold text-white rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20"
-              >
-                {isOptimizing ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Navigation className="w-4 h-4" />}
-                <span>Compute AI Safe Alternate Route</span>
-              </button>
-
-              {optimizationResult && (
-                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-3 animate-fadeIn">
-                  <div className="flex justify-between items-center border-b border-slate-800 pb-2">
-                    <span className="font-bold text-emerald-400">✅ Optimal Safe Route Generated</span>
-                    <span className="font-mono text-[11px] text-slate-400">Score: {optimizationResult.accessibilityScore}/100</span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-mono text-xs">
+                <div className="flex justify-between items-start border-b border-slate-800 pb-3">
+                  <div>
+                    <span className="text-emerald-400 font-bold">{selectedCorridor.corridor_id} • {selectedCorridor.states_spanned}</span>
+                    <h3 className="font-bold text-base text-white font-sans mt-0.5">{selectedCorridor.corridor_name}</h3>
                   </div>
-                  <div className="text-xs text-white font-medium">{optimizationResult.recommendedRoute}</div>
-                  <div className="grid grid-cols-2 gap-2 text-[11px] font-mono text-slate-300">
-                    <div className="p-2 bg-slate-900 rounded-lg">Distance: {optimizationResult.distanceKm} km</div>
-                    <div className="p-2 bg-slate-900 rounded-lg">Est. Duration: {optimizationResult.estimatedTimeHours} hrs</div>
-                  </div>
-                  <div className="text-[11px] text-emerald-400 font-semibold">{optimizationResult.disruptionBypassed}</div>
+                  <span className="px-3 py-1 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-xl text-xs font-bold font-mono">
+                    {selectedCorridor.logistics_status}
+                  </span>
                 </div>
-              )}
+
+                <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                  <span className="text-emerald-400 block text-[9px] font-bold uppercase">HAZARD DISRUPTION &amp; DYNAMIC REROUTING:</span>
+                  <div className="text-white font-sans text-xs">
+                    Current Disruption: <strong className="text-rose-400">{selectedCorridor.current_disruption}</strong>
+                  </div>
+                  <div className="text-cyan-300 font-sans text-xs pt-1 border-t border-slate-900 font-bold">
+                    Recommended Detour: {selectedCorridor.ai_recommended_detour}
+                  </div>
+                  <div className="text-amber-300 font-sans text-xs pt-1 border-t border-slate-900">
+                    Bridge Clearance: {selectedCorridor.detour_bridge_capacity}
+                  </div>
+                  <div className="text-emerald-300 font-sans text-[11px] pt-1 border-t border-slate-900">
+                    Priority Cargo: {selectedCorridor.essential_cargo_priority}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 text-center">
+                  <div className="p-2 bg-slate-950 rounded-xl"><span className="text-slate-500 block text-[8px]">TOTAL CORRIDOR DISTANCE</span><span className="text-emerald-400 font-bold">{selectedCorridor.distance_km} Kilometers</span></div>
+                  <div className="p-2 bg-slate-950 rounded-xl"><span className="text-slate-500 block text-[8px]">MINIMIZED DETOUR LATENCY</span><span className="text-cyan-400 font-bold">+{selectedCorridor.estimated_delay_hours} Hours Delay</span></div>
+                </div>
+
+                <button
+                  onClick={() => setActiveTab('shipments')}
+                  className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-2xl text-xs flex items-center justify-center gap-2 transition-all shadow-xl font-sans"
+                >
+                  <span>Track Essential Cold-Chain Supplies &amp; Medicines ➔</span>
+                </button>
+              </div>
+
+              <div className="lg:col-span-5 space-y-6 font-mono text-xs">
+                <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                  <h4 className="font-bold text-sm text-white font-sans flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-emerald-400" />
+                    <span>Instant Mountain Detour Predictor</span>
+                  </h4>
+                  <form onSubmit={handleOptimize} className="space-y-3 font-sans text-xs">
+                    <div>
+                      <label className="text-slate-400 text-[10px] uppercase font-bold block mb-1 font-mono">Disrupted Highway Corridor</label>
+                      <input type="text" readOnly value={`${selectedCorridor.primary_highway} (${selectedCorridor.states_spanned})`} className="w-full p-2 bg-slate-950 border border-slate-800 rounded-xl text-white text-xs font-mono font-bold text-emerald-400" />
+                    </div>
+                    <button type="submit" disabled={isOptimizing} className="w-full py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs flex items-center justify-center gap-2 font-sans shadow-md">
+                      <RefreshCw className={`w-4 h-4 ${isOptimizing ? 'animate-spin' : ''}`} />
+                      <span>{isOptimizing ? 'Evaluating Bailey Bridge Limits...' : 'Calculate Optimal Alternate Mountain Detour'}</span>
+                    </button>
+                  </form>
+                  {optResult && (
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1 text-slate-300 font-sans text-xs">
+                      <div>Status: <span className="text-rose-300 text-xs">{optResult.primaryStatus}</span></div>
+                      <div>Detour: <strong className="text-emerald-400 font-mono text-xs">{optResult.recommendedBypass}</strong></div>
+                      <div>Bridge: <strong className="text-amber-300 font-mono text-xs">{optResult.bridgeCapacity}</strong></div>
+                      <div>ETA Impact: <strong className="text-cyan-300 font-mono text-xs">{optResult.delayHours}</strong></div>
+                      <div>Delivery: <strong className="text-white font-mono text-xs block mt-0.5">{optResult.deliveryStatus}</strong></div>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
+        )}
 
-        </div>
-
-        {/* District-Wise Accessibility Vulnerability Heatmap (JSON Data) */}
-        <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-          <h3 className="font-bold text-sm text-white flex items-center gap-2">
-            <Activity className="w-4 h-4 text-purple-400" />
-            <span>District-Wise Connectivity & Logistics Vulnerability Index</span>
-          </h3>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-xs">
-            {districtData.map((d) => (
-              <div key={d.district} className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
-                <div className="text-slate-400 text-[10px] uppercase font-bold">{d.state}</div>
-                <div className="font-bold text-white">{d.district}</div>
-                <div className="flex justify-between items-center pt-1 font-mono">
-                  <span className="text-emerald-400 font-bold">{d.index}/100</span>
-                  <span className="text-[10px] text-slate-500">{d.active_trucks} Trucks</span>
+        {/* VIEW 2: SHIPMENTS */}
+        {tab === 'shipments' && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+            {shipments.map((s, idx) => (
+              <div key={idx} className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-emerald-400 font-bold">{s.category}</span>
+                  <span className="text-cyan-400 font-bold">{s.temp_monitored}</span>
                 </div>
+                <h4 className="font-bold text-sm text-white font-sans">{s.name}</h4>
+                <p className="text-slate-300 text-xs font-sans p-3 bg-slate-950 rounded-xl">{s.origin} ➔ {s.destination}</p>
+                <div className="p-2 bg-slate-950 rounded-xl text-amber-300 font-mono text-[10px]">Status: {s.status}</div>
               </div>
             ))}
           </div>
-        </div>
+        )}
+
+        {/* VIEW 3: OPTIMIZER */}
+        {tab === 'optimizer' && (
+          <div className="bg-slate-900 p-8 rounded-3xl border border-emerald-800/80 max-w-4xl mx-auto space-y-4 text-center font-mono text-xs shadow-2xl">
+            <div className="w-16 h-16 mx-auto rounded-2xl bg-emerald-950 border border-emerald-500 flex items-center justify-center text-emerald-400">
+              <Navigation className="w-8 h-8 animate-pulse" />
+            </div>
+            <h4 className="text-lg font-black text-white font-sans">Multi-Modal AI Mountain Route Optimization</h4>
+            <p className="text-slate-400 text-xs font-sans max-w-md mx-auto">
+              Real-time graph routing engine assessing vehicle gross vehicle weight (GVW), hairpin turn turning radius, and bailey bridge limits to guarantee supply delivery to high-altitude hospitals and food godowns.
+            </p>
+          </div>
+        )}
+
+        {/* VIEW 4: BRIDGES */}
+        {tab === 'bridges' && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+            {detours.map((d, idx) => (
+              <div key={idx} className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-2">
+                <span className="text-amber-400 font-bold">Max: {d.max_vehicle_tonnage_mt} MT</span>
+                <h4 className="font-bold text-sm text-white font-sans">{d.detour_name}</h4>
+                <p className="text-slate-300 text-xs font-sans p-3 bg-slate-950 rounded-xl">{d.terrain} ({d.hairpin_bends} Hairpins)</p>
+                <div className="p-2 bg-slate-950 rounded-xl text-emerald-300 font-mono text-[10px]">Rescue: {d.emergency_tow_station}</div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* VIEW 5: STATS */}
+        {tab === 'stats' && (
+          <div className="grid grid-cols-3 gap-3 text-center font-mono text-xs">
+            {stats.map((s, idx) => (
+              <div key={idx} className="p-4 bg-slate-900 rounded-2xl border border-slate-800">
+                <span className="text-slate-500 block text-[9px] uppercase">{s.metric}</span>
+                <span className="text-2xl font-black text-emerald-400 mt-1 block">{s.value}</span>
+                <span className="text-slate-400 text-[10px] block mt-0.5">{s.trend}</span>
+              </div>
+            ))}
+          </div>
+        )}
 
       </div>
     </div>

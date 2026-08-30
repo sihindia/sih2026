@@ -1,0 +1,20 @@
+[
+  {
+    "file_type": "PDF Document",
+    "header_hex": "25 50 44 46 (%PDF)",
+    "footer_hex": "25 25 45 4F 46 (%%EOF)",
+    "structure_aware": true
+  },
+  {
+    "file_type": "JPEG Image",
+    "header_hex": "FF D8 FF E0 / E1",
+    "footer_hex": "FF D9",
+    "structure_aware": true
+  },
+  {
+    "file_type": "SQLite Database",
+    "header_hex": "53 51 4C 69 74 65 20 66 6F 72 6D 61 74 20 33",
+    "footer_hex": "Page Allocation Free List",
+    "structure_aware": true
+  }
+]

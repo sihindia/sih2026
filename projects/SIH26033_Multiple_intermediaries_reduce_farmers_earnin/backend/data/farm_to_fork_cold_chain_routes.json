@@ -1,0 +1,20 @@
+[
+  {
+    "route_id": "ROUTE-NSK-DEL",
+    "route_name": "Nashik \u2794 Delhi-NCR Central Hub",
+    "distance_km": "1,340 Km",
+    "assigned_fleet": "16-Ton Reefer (MH-15-EG-8812)",
+    "temperature_celsius": "4.2\u00b0C",
+    "transit_spoilage_pct": "1.1%",
+    "freight_cost_per_qtl": "\u20b9220/Qtl"
+  },
+  {
+    "route_id": "ROUTE-JAL-DEL",
+    "route_name": "Jalandhar \u2794 Delhi Okhla Terminal",
+    "distance_km": "375 Km",
+    "assigned_fleet": "24-Ton Heavy Container",
+    "temperature_celsius": "22.0\u00b0C",
+    "transit_spoilage_pct": "0.3%",
+    "freight_cost_per_qtl": "\u20b985/Qtl"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "stream": "PFMS Central Treasury Gateway",
+    "status": "LIVE_STREAMING",
+    "latency_ms": 120,
+    "daily_tx_volume_cr": "\u20b94.8 Cr"
+  },
+  {
+    "stream": "e-SAKSHI DigiGov Portal Sync",
+    "status": "CONNECTED",
+    "latency_ms": 95,
+    "daily_tx_volume_cr": "184 Sanctions/Day"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "crop": "Mustard / Rapeseed",
+    "stage": "Pod Filling",
+    "critical_weather_factor": "Heat stress (>42\u00b0C) & High VPD",
+    "action_rule": "Irrigate immediately; suspend chemical dusting"
+  },
+  {
+    "crop": "Kharif Paddy",
+    "stage": "Tillering / Flowering",
+    "critical_weather_factor": "Standing water >15cm & High RH (>90%)",
+    "action_rule": "Maintain 5cm water level; scout for bacterial leaf blight"
+  },
+  {
+    "crop": "Rabi Wheat",
+    "stage": "Grain Formation",
+    "critical_weather_factor": "Sudden terminal heatwave (>35\u00b0C)",
+    "action_rule": "Apply light micro-sprinkler irrigation to lower canopy temperature"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "gateway_name": "Enterprise WebRTC / SIP Trunk Interceptor",
+    "throughput": "2,400 Concurrent Streams",
+    "avg_latency_ms": 185
+  },
+  {
+    "gateway_name": "Core Banking VoIP Gateway",
+    "throughput": "5,000 Concurrent Streams",
+    "avg_latency_ms": 172
+  }
+]

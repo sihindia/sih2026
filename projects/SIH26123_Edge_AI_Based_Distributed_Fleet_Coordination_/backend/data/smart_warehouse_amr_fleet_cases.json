@@ -1,0 +1,28 @@
+[
+  {
+    "case_id": "BEL-AMR-CASE-001",
+    "warehouse_location": "BEL Defence Depot #4 (Bangalore Main Warehouse)",
+    "active_amr_count": 4,
+    "conflict_scenario": "Narrow Aisle Alpha-Bravo 4-Way Choke Intersection (X: 18.4m, Y: 12.0m)",
+    "edge_hardware": "NVIDIA Jetson Orin Nano (Onboard Each AMR)",
+    "decentralized_protocol": "P2P Token-Passing & Space-Time CBS",
+    "path_recalculation_ms": 14.2,
+    "collisions_recorded": 0,
+    "throughput_improvement_pct": 28.4,
+    "energy_savings_pct": 19.2,
+    "status": "ZERO_COLLISION_COORDINATED"
+  },
+  {
+    "case_id": "BEL-AMR-CASE-042",
+    "warehouse_location": "BEL Radar Electronics Sub-Assembly Warehouse (Ghaziabad)",
+    "active_amr_count": 6,
+    "conflict_scenario": "Forklift Pallet Blockage in Aisle 07 (Dynamic Obstacle)",
+    "edge_hardware": "Raspberry Pi 5 + Hailo-8 AI Accelerator",
+    "decentralized_protocol": "Distributed Multi-Agent A* Detour Planner",
+    "path_recalculation_ms": 18.6,
+    "collisions_recorded": 0,
+    "throughput_improvement_pct": 32.1,
+    "energy_savings_pct": 21.5,
+    "status": "ZERO_COLLISION_COORDINATED"
+  }
+]

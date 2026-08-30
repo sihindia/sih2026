@@ -1,0 +1,12 @@
+[
+  {
+    "doc_source": "WCR-NHK-512 (Well Completion Report)",
+    "category": "Mud Hydraulics & Lubrication",
+    "insight": "Adding 4% bio-lubricant reduced torque by 35% across Kopili interval."
+  },
+  {
+    "doc_source": "DDR-BGJ-005 (Daily Drilling Report)",
+    "category": "Bit Selection & Hydraulics",
+    "insight": "PDC Bit with 16mm cutters experienced 40% less vibration compared to roller-cone."
+  }
+]

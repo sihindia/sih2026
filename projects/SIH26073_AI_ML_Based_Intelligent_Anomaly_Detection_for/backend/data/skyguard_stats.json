@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Active AWS Stations",
+    "value": "3,850 Stations",
+    "trend": "Nationwide IMD Observation Mesh"
+  },
+  {
+    "metric": "Anomaly Precision",
+    "value": "99.4% Accuracy",
+    "trend": "Multivariate SHAP/LIME Explainable AI"
+  },
+  {
+    "metric": "Edge Latency",
+    "value": "<50 ms",
+    "trend": "ESP32 & MicroPython Ready"
+  }
+]

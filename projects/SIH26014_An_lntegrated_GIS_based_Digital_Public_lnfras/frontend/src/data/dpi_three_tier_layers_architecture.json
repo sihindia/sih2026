@@ -1,0 +1,17 @@
+[
+  {
+    "tier": "Tier 1: Foundational Base Layer",
+    "components": "Georeferenced Cadastral Boundaries, 14-Digit ULPIN (Bhu-Aadhaar), CORS Geodetic Framework",
+    "governance_role": "Immutable spatial anchor for all administrative, fiscal and citizen services"
+  },
+  {
+    "tier": "Tier 2: Essential Governance Layer",
+    "components": "Record of Rights (RoR), Sub-Registrar Deeds, Master Plan Zoning, Building Permissions, Mortgages",
+    "governance_role": "Defines legal ownership, permissible land use, statutory liabilities and encumbrances"
+  },
+  {
+    "tier": "Tier 3: Use-Case & Citizen Service Layer",
+    "components": "Property Taxation, Utility Networks (Gas/Water/Power), Environmental Protection Buffers, Citizen e-Services",
+    "governance_role": "Enables instant public service delivery, tax collection, infrastructure planning and dispute resolution"
+  }
+]

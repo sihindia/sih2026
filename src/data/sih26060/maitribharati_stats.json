@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Life Support Uptime",
+    "value": "100% Nominal",
+    "trend": "Zero Power/Heat Failure in Polar Winter"
+  },
+  {
+    "metric": "Thermal Heat Recovery",
+    "value": "88.4% Efficiency",
+    "trend": "Waste Exhaust Recycled to Habitat"
+  },
+  {
+    "metric": "Wintering Autonomy",
+    "value": "142+ Days Fuel",
+    "trend": "Sustains 25 Wintering Polar Scientists"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "company": "Dabur Research Foundation",
+    "role": "Phytochemistry & QC Intern",
+    "stipend": "\u20b925,000 / Mo",
+    "openings": 12,
+    "skills": "HPLC, HPTLC, TLC Fingerprinting, Schedule T GMP"
+  },
+  {
+    "company": "Himalaya Wellness Company",
+    "role": "Ayurvedic Clinical Research Fellow",
+    "stipend": "\u20b935,000 / Mo",
+    "openings": 8,
+    "skills": "GCP Guidelines, CTRI Filings, Double-Blind Protocol Design"
+  },
+  {
+    "company": "Baidyanath Ayurveda Group",
+    "role": "Formulation Development Chemist",
+    "stipend": "\u20b928,000 / Mo",
+    "openings": 15,
+    "skills": "Asava-Arishta Fermentation, Bhasma Particle Sizing, QA"
+  },
+  {
+    "company": "Charak Pharma R&D",
+    "role": "Pharmacovigilance & Safety Associate",
+    "stipend": "\u20b945,000 / Mo",
+    "openings": 6,
+    "skills": "WHO-UMC Causality, MedDRA Coding, Periodic Safety Reports"
+  }
+]

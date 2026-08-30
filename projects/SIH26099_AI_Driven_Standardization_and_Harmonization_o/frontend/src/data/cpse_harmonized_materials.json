@@ -1,0 +1,28 @@
+[
+  {
+    "material_id": "MAT-2026-001",
+    "common_national_code": "CNMC-ENG-VLV-50-150-SS316",
+    "standardized_name": "Stainless Steel Ball Valve (2 Inch Class 150 Flanged Full Bore ASTM A351 CF8M)",
+    "category": "Piping & Valves (Mechanical Spares)",
+    "nlp_similarity_score_pct": 99.4,
+    "cpcl_code": "CPCL-M-44102 (VALVE BALL 2\" 150# SS316)",
+    "iocl_code": "IOCL-MTR-88192 (BALL VLV 50MM 150LBS CF8M)",
+    "ongc_code": "ONGC-MECH-3321 (2 IN FLANGED BALL VALVE ASTM A351)",
+    "aggregated_annual_demand": 1450,
+    "collective_savings_inr": "\u20b91.84 Crores (22.4% Bulk Volume Discount)",
+    "status": "HARMONIZED_AND_APPROVED"
+  },
+  {
+    "material_id": "MAT-2026-042",
+    "common_national_code": "CNMC-PIP-CS-150-SCH40-A106B",
+    "standardized_name": "Seamless Carbon Steel Pipe (6 Inch Sch 40 ASTM A106 Gr B Plain Ends)",
+    "category": "High-Pressure Process Piping",
+    "nlp_similarity_score_pct": 98.8,
+    "cpcl_code": "CPCL-P-11048 (PIPE CS 6\" SCH40 A106B)",
+    "iocl_code": "IOCL-PIP-90214 (SEAMLESS CS PIPE 150NB SCH40)",
+    "ongc_code": "ONGC-DRL-5512 (6IN CS SEAMLESS LINE PIPE)",
+    "aggregated_annual_demand": 3200,
+    "collective_savings_inr": "\u20b93.42 Crores (19.8% Bulk Volume Discount)",
+    "status": "HARMONIZED_AND_APPROVED"
+  }
+]

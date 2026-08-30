@@ -1,30 +1,40 @@
--- Supabase / PostgreSQL Schema for SIH26094 (AI-Powered Dynamic Mental Health Monitoring and Distress Prediction System for Victims of Atrocities)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOSJE MANASRAKSHAK 360 DATABASE SCHEMA (SIH26094)
+-- Ministry of Social Justice and Empowerment (MoSJE)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26094_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26094',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS longitudinal_victim_distress_profiles (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) UNIQUE NOT NULL,
+    victim_identifier VARCHAR(128) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    legal_stage VARCHAR(128) NOT NULL,
+    initial_dds_score NUMERIC(5, 2) NOT NULL,
+    month3_dds_score NUMERIC(5, 2) NOT NULL,
+    current_month5_dds NUMERIC(5, 2) NOT NULL,
+    longitudinal_trend VARCHAR(64) NOT NULL,
+    distress_root_cause TEXT NOT NULL,
+    ai_crisis_prediction TEXT NOT NULL,
+    district_interventions TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'CRISIS_INTERVENTION_DISPATCHED',
+    last_evaluated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26094_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26094_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS touchpoint_interaction_logs (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) REFERENCES longitudinal_victim_distress_profiles(case_id),
+    channel_type VARCHAR(64) NOT NULL, -- IVRS, Chatbot, Portal, Field Visit
+    recorded_dds NUMERIC(5, 2) NOT NULL,
+    voice_tremor_detected BOOLEAN DEFAULT FALSE,
+    interaction_summary TEXT NOT NULL,
+    interacted_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE sih26094_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26094_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26094_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26094_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26094_audit_logs FOR SELECT USING (true);
+CREATE TABLE IF NOT EXISTS district_magistrate_alerts (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) REFERENCES longitudinal_victim_distress_profiles(case_id),
+    alert_level VARCHAR(32) NOT NULL, -- Amber, Red, Critical
+    witness_protection_action TEXT NOT NULL,
+    dm_acknowledged BOOLEAN DEFAULT FALSE,
+    dispatched_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

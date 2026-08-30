@@ -1,0 +1,17 @@
+[
+  {
+    "rule": "Zero Sliver Gaps",
+    "tolerance": "< 0.05 m\u00b2 threshold",
+    "description": "Auto-snaps micro-gaps between adjacent parcel polygons into dominant boundary node"
+  },
+  {
+    "rule": "Overlap Resolution",
+    "tolerance": "0 mm spatial tolerance",
+    "description": "Splits overlapping boundary conflicts and routes to field Ground Truthing (GT) surveyor"
+  },
+  {
+    "rule": "Dangle & Undershoot Elimination",
+    "tolerance": "< 10 cm search radius",
+    "description": "Closes open cadastral boundary line strings into topologically valid 2D planar polygons"
+  }
+]

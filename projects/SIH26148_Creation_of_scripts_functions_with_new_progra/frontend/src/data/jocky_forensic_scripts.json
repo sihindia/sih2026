@@ -1,0 +1,26 @@
+[
+  {
+    "script_id": "JKY-SCR-2026-001",
+    "script_name": "mem_artifact_scan.jky",
+    "target_platform": "Windows 11 / Server 2022 (x86_64)",
+    "execution_vector": "In-Memory Direct Syscalls + Process Hollowing (spoolsv.exe)",
+    "polymorphic_build_hash": "f9410b37c28841aef912048ba819234b",
+    "edr_evasion_score_pct": 100.0,
+    "forensic_yield": "18 Injected Shellcode Blocks + In-Memory C2 Beacons Extracted",
+    "runtime_ms": 84,
+    "code_snippet": "func inspect_ram() -> Result<Forensics> { direct_syscall(NtQuerySystemInformation); unhook_ntdll(); return dump_process_tree(); }",
+    "status": "FORENSIC_TRIAGE_COMPLETED"
+  },
+  {
+    "script_id": "JKY-SCR-2026-015",
+    "script_name": "network_socks5_probe.jky",
+    "target_platform": "Ubuntu Linux 24.04 LTS (Kernel 6.8)",
+    "execution_vector": "eBPF Ring Buffer / Zero-Socket SOCKS5 Tunneling",
+    "polymorphic_build_hash": "8812cba9182371902834bfa8921048a1",
+    "edr_evasion_score_pct": 100.0,
+    "forensic_yield": "Hidden Reverse Shell Connections + Cryptographic Keys in Kernel",
+    "runtime_ms": 42,
+    "code_snippet": "func trace_sockets() { load_ephemeral_bpf(); capture_unidirectional_flows(); stream_to_cdn_front(); }",
+    "status": "FORENSIC_TRIAGE_COMPLETED"
+  }
+]

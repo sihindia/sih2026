@@ -1,0 +1,26 @@
+[
+  {
+    "instrument_id": "ARGO-WMO-2902194",
+    "type": "Core Argo Profiling Float",
+    "coordinates": "12.4\u00b0N, 62.1\u00b0E",
+    "max_depth_m": 2000,
+    "sensors": "CTD (Sea-Bird SBE 41CP)",
+    "status": "SURFACING_AND_TRANSMITTING"
+  },
+  {
+    "instrument_id": "GLIDER-INCOIS-GL04",
+    "type": "Slocum Autonomous Underwater Glider",
+    "coordinates": "10.8\u00b0N, 64.5\u00b0E",
+    "max_depth_m": 1000,
+    "sensors": "CTD + Optical Backscatter + Dissolved Oxygen",
+    "status": "YOYO_DIVING_CYCLE_ACTIVE"
+  },
+  {
+    "instrument_id": "MOORING-OMNI-BD08",
+    "type": "Deep-Sea Moored Buoy with Telemetry",
+    "coordinates": "18.2\u00b0N, 89.7\u00b0E",
+    "max_depth_m": 500,
+    "sensors": "Surface Met-Ocean + Subsurface Inductive Thermistor Chain",
+    "status": "HOURLY_INSAT_TELEMETRY_ONLINE"
+  }
+]

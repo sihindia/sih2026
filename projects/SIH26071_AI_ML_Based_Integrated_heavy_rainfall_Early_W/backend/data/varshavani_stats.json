@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Catchments Modeled",
+    "value": "120 Urban Basins",
+    "trend": "Mumbai, Chennai, Bengaluru, Delhi"
+  },
+  {
+    "metric": "Flood Depth Precision",
+    "value": "94.8% Accuracy",
+    "trend": "2D Saint-Venant DEM Hydrodynamics"
+  },
+  {
+    "metric": "Early Warning Lead Time",
+    "value": "4.5 Hours",
+    "trend": "Proactive Municipal Evacuation"
+  }
+]

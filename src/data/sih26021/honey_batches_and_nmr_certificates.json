@@ -1,0 +1,44 @@
+[
+  {
+    "batch_id": "BATCH-KVIC-KSH-081",
+    "apiary_name": "Kashmir Highland Acacia & Multiflora Apiary",
+    "region": "Anantnag, Jammu & Kashmir",
+    "beekeeper_name": "Ghulam Nabi Mir",
+    "botanical_origin": "Robinia Pseudoacacia (White Acacia)",
+    "pollen_purity_pct": 92.4,
+    "moisture_pct": 17.2,
+    "hmf_mg_kg": 9.4,
+    "nmr_isotope_test": "PASSED_ZERO_SYNTHETIC_SUGARS",
+    "blockchain_tx_hash": "0x9a8f4c2e1b7890a234f012de67bc45ef89012345",
+    "retail_pack_price": "\u20b9950 / 500g Jar",
+    "traceability_status": "BLOCKCHAIN_VERIFIED_AUTHENTIC"
+  },
+  {
+    "batch_id": "BATCH-KVIC-SND-114",
+    "apiary_name": "Sundarbans Mangrove Wild Forest Apiary",
+    "region": "South 24 Parganas, West Bengal",
+    "beekeeper_name": "Subhash Mondal",
+    "botanical_origin": "Avicennia Marina (Wild Khalsi & Goran)",
+    "pollen_purity_pct": 88.5,
+    "moisture_pct": 18.1,
+    "hmf_mg_kg": 14.2,
+    "nmr_isotope_test": "PASSED_ZERO_C4_CORN_SYRUP",
+    "blockchain_tx_hash": "0x4b7c12de8901234567ef89012345bcde67890123",
+    "retail_pack_price": "\u20b9850 / 500g Jar",
+    "traceability_status": "BLOCKCHAIN_VERIFIED_AUTHENTIC"
+  },
+  {
+    "batch_id": "BATCH-KVIC-CRG-209",
+    "apiary_name": "Coorg Western Ghats Coffee Blossom Apiary",
+    "region": "Kodagu (Coorg), Karnataka",
+    "beekeeper_name": "Appachu Biddappa",
+    "botanical_origin": "Coffea Arabica Blossom & Wild Spices",
+    "pollen_purity_pct": 95.1,
+    "moisture_pct": 16.8,
+    "hmf_mg_kg": 11.5,
+    "nmr_isotope_test": "PASSED_ZERO_INVERT_SUGAR",
+    "blockchain_tx_hash": "0x7890abcdef0123456789012345678901abcdef01",
+    "retail_pack_price": "\u20b9880 / 500g Jar",
+    "traceability_status": "BLOCKCHAIN_VERIFIED_AUTHENTIC"
+  }
+]

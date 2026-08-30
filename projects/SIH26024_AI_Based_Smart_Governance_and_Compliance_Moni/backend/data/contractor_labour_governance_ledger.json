@@ -1,0 +1,22 @@
+[
+  {
+    "contractor_id": "CONT-HEMM-014",
+    "firm_name": "Bhilai Heavy Earthmovers Logistics",
+    "mine_site": "Kusmunda Mega OCP",
+    "active_workers_count": 1420,
+    "biometric_attendance_pct": 99.2,
+    "vtc_safety_training_pct": 100.0,
+    "ppe_adherence_status": "100% COMPLIANT (Smart Helmets Active)",
+    "wage_dbt_status": "PFMS Direct Bank Credit Cleared"
+  },
+  {
+    "contractor_id": "CONT-EXPL-009",
+    "firm_name": "Deccan Drilling & Blasting Consortium",
+    "mine_site": "Bhubaneswari OCP",
+    "active_workers_count": 480,
+    "biometric_attendance_pct": 97.5,
+    "vtc_safety_training_pct": 98.2,
+    "ppe_adherence_status": "98% COMPLIANT",
+    "wage_dbt_status": "PFMS Direct Bank Credit Cleared"
+  }
+]

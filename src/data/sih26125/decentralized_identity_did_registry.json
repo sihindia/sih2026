@@ -1,0 +1,20 @@
+[
+  {
+    "did_uri": "did:bel:unit-blr-tech-841",
+    "controller_entity": "BEL Radar Manufacturing Division (Bangalore)",
+    "public_key_type": "Ed25519VerificationKey2020",
+    "role": "DEFENCE_PRODUCER"
+  },
+  {
+    "did_uri": "did:bel:iaf-airbase-sulur-402",
+    "controller_entity": "Indian Air Force Base Sulur (Fighter Wing)",
+    "public_key_type": "Ed25519VerificationKey2020",
+    "role": "AUTHORIZED_CUSTODIAN"
+  },
+  {
+    "did_uri": "did:bel:hq-sec-ops-001",
+    "controller_entity": "BEL Cyber Security & Cryptography HQ",
+    "public_key_type": "Ed25519VerificationKey2020",
+    "role": "MASTER_ADMIN"
+  }
+]

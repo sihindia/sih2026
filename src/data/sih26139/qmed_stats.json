@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Clinical Sensitivity",
+    "value": "98.7%",
+    "trend": "vs 74.2% Classical Models"
+  },
+  {
+    "metric": "Early Detection Window",
+    "value": "14 Months Ahead",
+    "trend": "Pre-Symptomatic Molecular Screen"
+  },
+  {
+    "metric": "Diagnostic Specificity",
+    "value": "99.1%",
+    "trend": "Sub-1% False Positive Rate"
+  }
+]

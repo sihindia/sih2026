@@ -1,0 +1,26 @@
+[
+  {
+    "ice_regime": "Open Water (< 10% SIC)",
+    "vessel_speed_knots": 14.5,
+    "fuel_burn_tons_day": 18.0,
+    "besetment_probability": 0.0
+  },
+  {
+    "ice_regime": "Marginal Ice Zone (10% - 40% SIC)",
+    "vessel_speed_knots": 10.2,
+    "fuel_burn_tons_day": 24.5,
+    "besetment_probability": 0.02
+  },
+  {
+    "ice_regime": "Close Pack Ice (40% - 70% SIC)",
+    "vessel_speed_knots": 6.5,
+    "fuel_burn_tons_day": 34.0,
+    "besetment_probability": 0.12
+  },
+  {
+    "ice_regime": "High Compression Pack (> 70% SIC)",
+    "vessel_speed_knots": 2.8,
+    "fuel_burn_tons_day": 52.0,
+    "besetment_probability": 0.65
+  }
+]

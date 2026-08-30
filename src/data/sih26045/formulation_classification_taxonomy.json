@@ -1,0 +1,22 @@
+[
+  {
+    "tier": "Classical / Generic Medicine",
+    "basis": "Formulation drawn verbatim from 54 First Schedule authoritative texts (Charaka, Sushruta)",
+    "patent_status": "Non-Patentable (Barred by Sec 3(p)); Defended by TKDL"
+  },
+  {
+    "tier": "Patent & Proprietary (P&P)",
+    "basis": "Contains classical herbs with innovative delivery, adjuvant, or dosage form",
+    "patent_status": "Patentable for novel carrier/synergistic matrix; requires ABS clearance"
+  },
+  {
+    "tier": "Phytopharmaceutical Drug",
+    "basis": "Purified fraction of medicinal plant with quantified active markers; preclinical & clinical trials",
+    "patent_status": "Highly Patentable; Central Drugs Standard Control Organisation (CDSCO) approval"
+  },
+  {
+    "tier": "Ayurveda Aahar (FSSAI 2022)",
+    "basis": "Dietary food supplements prepared in accordance with Ayurvedic texts",
+    "patent_status": "Food licensing regime; trademark and trade secret protection"
+  }
+]

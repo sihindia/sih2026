@@ -1,0 +1,59 @@
+[
+  {
+    "block_id": "CMPDI-GEO-SECL-041",
+    "block_name": "Gevra Deep Open Cast Expansion Block",
+    "subsidiary": "South Eastern Coalfields Limited (SECL)",
+    "coalfield": "Korba Coalfield",
+    "state": "Chhattisgarh",
+    "drilling_boreholes_count": 84,
+    "max_drilled_depth_m": 420.5,
+    "proved_geological_reserves_mt": 1250.0,
+    "indicated_reserves_mt": 340.0,
+    "average_gcv_grade": "G11 (3700 - 4000 kcal/kg)",
+    "stripping_ratio_cum_per_tonne": 1.45,
+    "major_coal_seams": [
+      "Upper Kusmunda",
+      "Lower Kusmunda",
+      "Gevra Seam"
+    ],
+    "extraction_status": "HIGH_PRIORITY_EXPANSION"
+  },
+  {
+    "block_id": "CMPDI-GEO-MCL-088",
+    "block_name": "Talcher Western Sector Coal Basin",
+    "subsidiary": "Mahanadi Coalfields Limited (MCL)",
+    "coalfield": "Talcher Coalfield",
+    "state": "Odisha",
+    "drilling_boreholes_count": 112,
+    "max_drilled_depth_m": 380.0,
+    "proved_geological_reserves_mt": 1820.0,
+    "indicated_reserves_mt": 510.0,
+    "average_gcv_grade": "G12 (3400 - 3700 kcal/kg)",
+    "stripping_ratio_cum_per_tonne": 1.2,
+    "major_coal_seams": [
+      "Seam II (Bottom)",
+      "Seam III (Middle)",
+      "Seam IV"
+    ],
+    "extraction_status": "ACTIVE_MEGA_MINING"
+  },
+  {
+    "block_id": "CMPDI-GEO-BCCL-114",
+    "block_name": "Jharia Deep Prime Coking Coal Horizon",
+    "subsidiary": "Bharat Coking Coal Limited (BCCL)",
+    "coalfield": "Jharia Coalfield",
+    "state": "Jharkhand",
+    "drilling_boreholes_count": 65,
+    "max_drilled_depth_m": 610.0,
+    "proved_geological_reserves_mt": 680.0,
+    "indicated_reserves_mt": 210.0,
+    "average_gcv_grade": "Prime Coking (Steel Grade I & II)",
+    "stripping_ratio_cum_per_tonne": 3.85,
+    "major_coal_seams": [
+      "Seam IX/X",
+      "Seam XIV",
+      "Seam XVI"
+    ],
+    "extraction_status": "IMPORT_SUBSTITUTION_STRATEGIC"
+  }
+]

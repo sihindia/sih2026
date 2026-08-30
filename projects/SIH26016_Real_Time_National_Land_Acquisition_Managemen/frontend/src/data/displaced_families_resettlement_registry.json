@@ -1,0 +1,29 @@
+[
+  {
+    "family_id": "FAM-RAJ-104",
+    "head_of_household": "Ramratan Bishnoi",
+    "village": "Nokha, Bikaner",
+    "land_acquired_bigha": 4.5,
+    "compensation_paid": "\u20b928,50,000 via DBT",
+    "resettlement_plot": "Plot B-14 nokha Smart Settlement",
+    "subsistence_grant": "\u20b93,000/mo for 12 months disbursed"
+  },
+  {
+    "family_id": "FAM-MP-289",
+    "head_of_household": "Kamal Singh Gond",
+    "village": "Bijawar, Chhatarpur",
+    "land_acquired_bigha": 6.2,
+    "compensation_paid": "\u20b941,20,000 via DBT",
+    "resettlement_plot": "Pucca 2BHK House Allotted under PMAY-G",
+    "subsistence_grant": "Skill Training Certificate in Solar Pumping"
+  },
+  {
+    "family_id": "FAM-GUJ-077",
+    "head_of_household": "Pravinbhai Patel",
+    "village": "Karjan, Vadodara",
+    "land_acquired_bigha": 3.1,
+    "compensation_paid": "\u20b954,000,000 Industrial Rate",
+    "resettlement_plot": "Commercial Shop Space Allotted",
+    "subsistence_grant": "One Family Member Railway Apprentice"
+  }
+]

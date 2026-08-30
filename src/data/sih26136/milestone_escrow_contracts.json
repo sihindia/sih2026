@@ -1,0 +1,16 @@
+[
+  {
+    "contract_id": "POC-MH-2026-881",
+    "challenge": "AI Acoustic Water Leakage",
+    "escrow_bank": "State Bank of India (MSInS Escrow)",
+    "total_disbursed_lakhs": 25.0,
+    "third_party_audit": "PASSED_COEP"
+  },
+  {
+    "contract_id": "POC-MH-2026-882",
+    "challenge": "Thermal Drone Forest Fire",
+    "escrow_bank": "State Bank of India (MSInS Escrow)",
+    "total_disbursed_lakhs": 30.0,
+    "third_party_audit": "PASSED_VNIT"
+  }
+]

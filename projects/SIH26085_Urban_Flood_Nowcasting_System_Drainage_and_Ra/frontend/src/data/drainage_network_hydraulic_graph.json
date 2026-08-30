@@ -1,0 +1,20 @@
+[
+  {
+    "element": "Stormwater Manhole Inlets (Nodes)",
+    "count": "14,800 Mapped Nodes",
+    "function": "Surface runoff capture into underground conduits",
+    "failure_mode": "Surcharge geysers when pipe hydraulic gradient exceeds ground level"
+  },
+  {
+    "element": "Subsurface Concrete Canals (Edges)",
+    "count": "2,450 km Network",
+    "function": "Gravity conduit routing governed by 1D Saint-Venant equations",
+    "failure_mode": "Sedimentation and unapproved utility cable choke points"
+  },
+  {
+    "element": "Tidal Flap Gates & Outfalls",
+    "count": "68 Coastal Gates",
+    "function": "One-way discharge into Arabian Sea / Bay of Bengal",
+    "failure_mode": "Inability to open during high astronomical tide coinciding with downpours"
+  }
+]

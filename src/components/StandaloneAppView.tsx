@@ -16,6 +16,7 @@ import {
   FileCode
 } from 'lucide-react';
 import { copyToClipboard } from '../utils/export';
+import { getSeoFriendlyAppUrl } from '../utils/seo';
 import { DynamicDomainApp } from './DynamicDomainApp';
 import { generateProjectFileStructure } from '../utils/projectFileTree';
 
@@ -34,7 +35,7 @@ export const StandaloneAppView: React.FC<StandaloneAppViewProps> = ({
 }) => {
   const [copiedUrl, setCopiedUrl] = React.useState(false);
   const psId = ps.ps_number || `SIH${ps.id}`;
-  const directAppUrl = `${window.location.origin}/?app=${psId}`;
+  const directAppUrl = getSeoFriendlyAppUrl(psId);
 
   const handleCopyDirectUrl = () => {
     copyToClipboard(directAppUrl);

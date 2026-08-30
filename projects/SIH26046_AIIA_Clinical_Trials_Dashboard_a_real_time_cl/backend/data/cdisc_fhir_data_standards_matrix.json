@@ -1,0 +1,22 @@
+[
+  {
+    "standard": "CDISC CDASH / SDTM",
+    "scope": "Clinical Data Acquisition & Tabulation",
+    "benefit": "FDA/EMA/DCGI submission ready data structures with Define-XML 2.1"
+  },
+  {
+    "standard": "HL7 FHIR R4",
+    "scope": "Hospital Information System (HIS) Integration",
+    "benefit": "Interoperable with Ayushman Bharat Digital Mission (ABDM) Personal Health Records"
+  },
+  {
+    "standard": "MedDRA / WHODrug",
+    "scope": "Standardized Pharmacovigilance Coding",
+    "benefit": "Seamless electronic safety signal exchange with WHO-UMC Vigibase"
+  },
+  {
+    "standard": "ALCOA+ Audit Integrity",
+    "scope": "Data Governance & Compliance",
+    "benefit": "Cryptographic timestamping, 21 CFR Part 11 electronic signatures & DPDP 2023 compliance"
+  }
+]

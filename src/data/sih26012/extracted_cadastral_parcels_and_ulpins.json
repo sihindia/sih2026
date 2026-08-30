@@ -1,0 +1,35 @@
+[
+  {
+    "parcel_id": "PARCEL-PUN-101",
+    "ulpin": "27-584-0941-1001",
+    "land_use": "Residential Multi-Family Apartment",
+    "parcel_area_sqm": 420.5,
+    "building_footprint_sqm": 290.0,
+    "road_access_width_m": "9.0m Paved Municipal Road",
+    "extraction_confidence_pct": 98.4,
+    "boundary_type": "Masonry Compound Wall & Concrete Curb",
+    "topology_status": "SLIVER_FREE_CLEAN"
+  },
+  {
+    "parcel_id": "PARCEL-PUN-102",
+    "ulpin": "27-584-0941-1002",
+    "land_use": "Commercial Retail & Office Mixed-Use",
+    "parcel_area_sqm": 615.0,
+    "building_footprint_sqm": 480.0,
+    "road_access_width_m": "12.0m Arterial Avenue",
+    "extraction_confidence_pct": 96.9,
+    "boundary_type": "Fenced Property Edge & Curbline",
+    "topology_status": "SLIVER_FREE_CLEAN"
+  },
+  {
+    "parcel_id": "PARCEL-PUN-103",
+    "ulpin": "27-584-0941-1003",
+    "land_use": "Independent Residential Bungalow",
+    "parcel_area_sqm": 280.0,
+    "building_footprint_sqm": 165.0,
+    "road_access_width_m": "7.5m Colony Access Way",
+    "extraction_confidence_pct": 99.1,
+    "boundary_type": "Brick Boundary Wall with Gate",
+    "topology_status": "SLIVER_FREE_CLEAN"
+  }
+]

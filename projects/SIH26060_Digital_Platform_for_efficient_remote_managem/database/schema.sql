@@ -1,30 +1,33 @@
--- Supabase / PostgreSQL Schema for SIH26060 (Digital Platform for efficient remote management of Indian Antarctic Research Stations)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOES MAITRIBHARATI 360 DATABASE SCHEMA (SIH26060)
+-- Ministry of Earth Sciences (MoES) - NCPOR Goa
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26060_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26060',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS antarctic_station_twins (
+    id SERIAL PRIMARY KEY,
+    station_id VARCHAR(64) UNIQUE NOT NULL,
+    station_name VARCHAR(255) NOT NULL,
+    geographic_location VARCHAR(255) NOT NULL,
+    wintering_crew_size INTEGER NOT NULL,
+    ambient_temperature_c NUMERIC(5, 2) NOT NULL,
+    katabatic_wind_speed_kmh NUMERIC(5, 1) NOT NULL,
+    indoor_habitat_temp_c NUMERIC(4, 1) NOT NULL,
+    chp_microgrid_status TEXT NOT NULL,
+    thermal_heat_recovery_kw NUMERIC(6, 1) NOT NULL,
+    freshwater_source TEXT NOT NULL,
+    fuel_reserve_litres NUMERIC(10, 2) NOT NULL,
+    wintering_autonomy_days INTEGER NOT NULL,
+    overall_life_support_status VARCHAR(64) DEFAULT 'ALL_SYSTEMS_NOMINAL_SUBZERO_READY',
+    last_satellite_sync TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26060_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26060_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS polar_subsystem_telemetry_logs (
+    id SERIAL PRIMARY KEY,
+    station_id VARCHAR(64) REFERENCES antarctic_station_twins(station_id),
+    subsystem_type VARCHAR(64) NOT NULL,
+    active_power_kw NUMERIC(6, 2) NOT NULL,
+    fuel_flow_lph NUMERIC(5, 2) NOT NULL,
+    water_flow_lpm NUMERIC(5, 2) NOT NULL,
+    trace_heating_active BOOLEAN DEFAULT TRUE,
+    recorded_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26060_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26060_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26060_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26060_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26060_audit_logs FOR SELECT USING (true);

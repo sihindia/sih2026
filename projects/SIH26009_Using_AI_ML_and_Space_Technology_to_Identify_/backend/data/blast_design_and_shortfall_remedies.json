@@ -1,0 +1,70 @@
+{
+  "blast_designs": [
+    {
+      "pattern_id": "BLAST-DGB-P04",
+      "mine": "Dongri Buzurg Bench 4 (Open Cast)",
+      "rock_mass_rating_rmr": 68,
+      "rock_hardness": "Very Hard Braunite Quartzite",
+      "burden_m": 3.2,
+      "spacing_m": 3.8,
+      "hole_depth_m": 8.5,
+      "subgrade_drilling_m": 0.8,
+      "explosive_type": "Site-Mixed Emulsion (SME) + Nonel Shocktube",
+      "specific_charge_kg_m3": 0.54,
+      "electronic_delay_ms": 25,
+      "predicted_fragmentation_d80_mm": 210,
+      "ppv_vibration_mm_s": 4.8,
+      "safe_standoff_radius_m": 250,
+      "status": "APPROVED_OPTIMAL_FRAGMENTATION"
+    },
+    {
+      "pattern_id": "BLAST-BLG-ST7",
+      "mine": "Balaghat Underground Level 7 Stope",
+      "rock_mass_rating_rmr": 54,
+      "rock_hardness": "Medium Hard Schistose Manganiferous Lode",
+      "burden_m": 1.8,
+      "spacing_m": 2.2,
+      "hole_depth_m": 3.2,
+      "subgrade_drilling_m": 0.0,
+      "explosive_type": "Permitted Slurry Explosives + Short-Delay Detonators",
+      "specific_charge_kg_m3": 0.72,
+      "electronic_delay_ms": 17,
+      "predicted_fragmentation_d80_mm": 160,
+      "ppv_vibration_mm_s": 2.1,
+      "safe_standoff_radius_m": 80,
+      "status": "ZERO_WALL_OVERBREAK_CONFIRMED"
+    }
+  ],
+  "shortfall_remediation_scenarios": [
+    {
+      "mine_id": "MOIL-DGB-02",
+      "mine_name": "Dongri Buzurg Open Cast",
+      "weekly_deficit_mt": -1400.0,
+      "root_cause_category": "HEMM Mechanical Failure & Monsoon Haul Muck",
+      "detailed_bottleneck": "Primary Shovel-104 hydraulic hose burst; monsoon pit waterlogging in Bench 4 cut off haul road access",
+      "corrective_actions": [
+        "Deploy mobile high-volume sump drainage pump (1,200 GPM) to lower water level by 3.2m within 24h",
+        "Reroute 4x 35T rear dumpers to dry Bench 2 to continue high-grade extraction",
+        "Implement temporary night-shift haulage convoy (22:00 to 06:00) with LED floodlight towers"
+      ],
+      "projected_production_recovery_mt": 1380.0,
+      "recovery_days": 4,
+      "outcome": "98.5% TARGET RECOVERED WITHOUT STEEL SUPPLY DISRUPTION"
+    },
+    {
+      "mine_id": "MOIL-BLG-01",
+      "mine_name": "Balaghat Deep Underground",
+      "weekly_deficit_mt": -950.0,
+      "root_cause_category": "Perched Aquifer Inrush & Blasting Delay",
+      "detailed_bottleneck": "Fractured aquifer fissure at Level 7 Eastern Stope halted jumbo drilling rounds by 3 shifts",
+      "corrective_actions": [
+        "Activate high-pressure chemical grouting to seal fractured fissure within 12h",
+        "Divert two twin-boom electric hydraulic jumbo drills to Western Stope for immediate production compensation",
+        "Double the hoist skip payload cycles from 45 to 65 skips per shift"
+      ],
+      "projected_production_recovery_mt": 950.0,
+      "recovery_days": 3,
+      "outcome": "100.0% FULL DEFICIT RECOVERED WITH ZERO ACCIDENT FREQUENCY"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "cyclone_id": "RSMC-CYC-2026-001",
+    "cyclone_name": "Very Severe Cyclonic Storm 'DANA' (Bay of Bengal)",
+    "ocean_basin": "North Bay of Bengal / Odisha-West Bengal Coast",
+    "primary_satellite_sources": "INSAT-3DR TIR1 (10.8 \u00b5m) + Oceansat-3 Scatterometer",
+    "ai_dvorak_t_number": 4.5,
+    "max_sustained_winds_kmh": 120.0,
+    "central_pressure_hpa": 984.0,
+    "current_eye_coords": "18.2\u00b0 N, 89.4\u00b0 E",
+    "predicted_landfall_location": "Dhamra Port / Bhitarkanika (Odisha Coast)",
+    "predicted_landfall_time": "2026-10-25 00:00 UTC (72h Forecast)",
+    "storm_surge_height_m": 2.4,
+    "72h_track_error_km": 24.2,
+    "evacuation_advisory": "Red Alert: Coastal Evacuation for Kendrapara, Bhadrak & Balasore Districts",
+    "status": "SEVERE_CYCLONE_WARNING_ACTIVE"
+  },
+  {
+    "cyclone_id": "RSMC-CYC-2026-042",
+    "cyclone_name": "Extremely Severe Cyclonic Storm 'BIPARJOY' (Arabian Sea)",
+    "ocean_basin": "East Central Arabian Sea / Gujarat Coast",
+    "primary_satellite_sources": "INSAT-3D WV (6.8 \u00b5m) + GPM Microwave Rain Imager",
+    "ai_dvorak_t_number": 5.5,
+    "max_sustained_winds_kmh": 165.0,
+    "central_pressure_hpa": 966.0,
+    "current_eye_coords": "20.8\u00b0 N, 67.2\u00b0 E",
+    "predicted_landfall_location": "Jakhau Port (Kutch District, Gujarat)",
+    "predicted_landfall_time": "2026-06-15 12:00 UTC",
+    "storm_surge_height_m": 3.8,
+    "72h_track_error_km": 28.5,
+    "evacuation_advisory": "Red Alert: Mass Evacuation of 100,000 People across Kutch & Saurashtra",
+    "status": "SEVERE_CYCLONE_WARNING_ACTIVE"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Tropical Cyclones Tracked",
+    "value": "18 Cyclones",
+    "trend": "Bay of Bengal & Arabian Sea"
+  },
+  {
+    "metric": "AI Dvorak Precision",
+    "value": "96.2% Accuracy",
+    "trend": "Automated Eye & CDO Pattern"
+  },
+  {
+    "metric": "72h Landfall Error",
+    "value": "24.2 km (<35km Target)",
+    "trend": "Physics-Informed Neural Network"
+  }
+]

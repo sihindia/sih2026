@@ -1,0 +1,41 @@
+[
+  {
+    "trial_id": "AR-TRIAL-DHN01",
+    "trainee_name": "Birsa Soren (Tribal Contract Miner)",
+    "workplace": "BCCL Underground Coal Mine #4, Jharia (Dhanbad)",
+    "safety_module": "Module 2: Toxic Gas Leak & Confined Space Protocol",
+    "language": "Santali (\u1c5a\u1c5e \u1c6a\u1c64\u1c60\u1c64) & Hindi",
+    "ar_scenario": "Invisible Methane (CH4 > 1.25%) Cloud & Carbon Monoxide Spurt Inrush",
+    "drill_actions": "Detected gas plume with virtual multi-gas detector; donned Filter Self-Rescuer (FSR) in 22 seconds (Target <30s); followed AR green floor lasers to intake fresh-air airway",
+    "completion_score": 96.0,
+    "dgms_rating": "GRADE_A (DGMS Dhanbad Certified)",
+    "qr_certificate": "CERT-JH-SAFE-2026-DHN091",
+    "status": "CERTIFIED_COMPLIANT"
+  },
+  {
+    "trial_id": "AR-TRIAL-JAM03",
+    "trainee_name": "Sunil Mahato (Blast Furnace Operator)",
+    "workplace": "Steel Melting Shop 2, Jamshedpur (East Singhbhum)",
+    "safety_module": "Module 1: Fire & Molten Metal Slag Explosion Response",
+    "language": "Hindi & Bengali",
+    "ar_scenario": "Slag Launders Leakage with Secondary Water Contact Steam Explosion",
+    "drill_actions": "Executed PASS fire extinguisher protocol (Pull, Aim, Squeeze, Sweep) with AR virtual nozzle tracking; triggered emergency evacuation alarm within 14 seconds",
+    "completion_score": 92.5,
+    "dgms_rating": "GRADE_A (Factories Act 1948 Certified)",
+    "qr_certificate": "CERT-JH-SAFE-2026-JAM412",
+    "status": "CERTIFIED_COMPLIANT"
+  },
+  {
+    "trial_id": "AR-TRIAL-KAR05",
+    "trainee_name": "Mangal Munda (Heavy Dumper Driver)",
+    "workplace": "CCL North Karanpura Open-Cast Mine (Chatra)",
+    "safety_module": "Module 3: Heavy Earthmoving Machinery (HEMM) Blindspots",
+    "language": "Santali (\u1c5a\u1c5e \u1c6a\u1c64\u1c60\u1c64) & Hindi",
+    "ar_scenario": "100-Tonne Dump Truck Reversing Blindspot Proximity to Light Utility Vehicle",
+    "drill_actions": "Checked 360\u00b0 AR blindspot zones; engaged audio horn reverse warning sequence; maintained 15-meter safety perimeter",
+    "completion_score": 89.0,
+    "dgms_rating": "GRADE_B+ (Mines Act 1952 Certified)",
+    "qr_certificate": "CERT-JH-SAFE-2026-KAR881",
+    "status": "CERTIFIED_COMPLIANT"
+  }
+]

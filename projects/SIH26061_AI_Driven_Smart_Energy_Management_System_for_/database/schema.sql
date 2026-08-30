@@ -1,30 +1,32 @@
--- Supabase / PostgreSQL Schema for SIH26061 (AI-Driven Smart Energy Management System for Polar Research Stations)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOES DHRUVAURJA 360 DATABASE SCHEMA (SIH26061)
+-- Ministry of Earth Sciences (MoES) - NCPOR Goa
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26061_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26061',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS polar_energy_dispatch_logs (
+    id SERIAL PRIMARY KEY,
+    scenario_id VARCHAR(64) UNIQUE NOT NULL,
+    station_name VARCHAR(255) NOT NULL,
+    ambient_temperature_c NUMERIC(5, 2) NOT NULL,
+    katabatic_wind_speed_kmh NUMERIC(5, 1) NOT NULL,
+    solar_irradiance_wm2 NUMERIC(6, 1) NOT NULL,
+    total_electric_demand_kw NUMERIC(6, 1) NOT NULL,
+    total_thermal_demand_kw NUMERIC(6, 1) NOT NULL,
+    wind_turbine_generation_kw NUMERIC(6, 1) NOT NULL,
+    solar_pv_generation_kw NUMERIC(6, 1) NOT NULL,
+    chp_heat_recovery_kw NUMERIC(6, 1) NOT NULL,
+    diesel_burn_rate_lph NUMERIC(5, 2) NOT NULL,
+    fuel_savings_pct NUMERIC(4, 1) NOT NULL,
+    life_support_curtailment_pct NUMERIC(4, 1) DEFAULT 0.0,
+    dispatch_verdict VARCHAR(64) DEFAULT 'MICROGRID_OPTIMAL_DISPATCH',
+    recorded_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26061_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26061_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS renewable_source_telemetry (
+    id SERIAL PRIMARY KEY,
+    scenario_id VARCHAR(64) REFERENCES polar_energy_dispatch_logs(scenario_id),
+    source_name VARCHAR(64) NOT NULL,
+    active_power_kw NUMERIC(6, 2) NOT NULL,
+    state_of_charge_pct NUMERIC(4, 1) DEFAULT 100.0,
+    logged_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26061_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26061_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26061_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26061_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26061_audit_logs FOR SELECT USING (true);

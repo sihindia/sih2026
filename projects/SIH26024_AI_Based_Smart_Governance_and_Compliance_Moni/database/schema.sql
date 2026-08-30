@@ -1,22 +1,35 @@
--- Supabase / PostgreSQL Schema for SIH26024 (AI-Based Smart Governance and Compliance Monitoring System for Coal Mines)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- KOILGOVERNANCE AI 360 DATABASE SCHEMA (SIH26024)
+-- Ministry of Coal - Coal India Limited (CIL)
+-- =========================================================================
 
--- 1. Commodity Audit Batches
-CREATE TABLE IF NOT EXISTS sih26024_audits (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    product_name VARCHAR(200) NOT NULL,
-    manufacturer_name VARCHAR(200) NOT NULL,
-    mrp_declared NUMERIC(10, 2) NOT NULL,
-    mrp_tax_inclusive BOOLEAN NOT NULL DEFAULT TRUE,
-    net_quantity VARCHAR(50) NOT NULL,
-    is_standard_unit BOOLEAN NOT NULL DEFAULT TRUE,
-    mfg_date DATE NOT NULL,
-    consumer_care_declared BOOLEAN NOT NULL DEFAULT TRUE,
-    is_compliant BOOLEAN NOT NULL,
-    violations_json JSONB DEFAULT '[]'::jsonb,
-    audited_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS coal_mines_compliance (
+    id SERIAL PRIMARY KEY,
+    mine_id VARCHAR(64) UNIQUE NOT NULL,
+    mine_name VARCHAR(255) NOT NULL,
+    subsidiary VARCHAR(128) NOT NULL,
+    area_coalfield VARCHAR(128) NOT NULL,
+    state VARCHAR(64) NOT NULL,
+    daily_production_tonnes INTEGER NOT NULL,
+    dgms_safety_rating VARCHAR(64) NOT NULL,
+    slope_stability_radar_status VARCHAR(128) NOT NULL,
+    ambient_pm10_ug_m3 NUMERIC(6, 2) NOT NULL,
+    spcb_cto_status VARCHAR(64) NOT NULL,
+    forest_clearance_stage VARCHAR(64) NOT NULL,
+    compliance_index_pct NUMERIC(5, 2) NOT NULL,
+    governance_status VARCHAR(64) DEFAULT 'FULLY_COMPLIANT',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE sih26024_audits ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Audits" ON sih26024_audits FOR SELECT USING (true);
-CREATE POLICY "Public Insert Audits" ON sih26024_audits FOR INSERT WITH CHECK (true);
+CREATE TABLE IF NOT EXISTS field_safety_inspections (
+    id SERIAL PRIMARY KEY,
+    inspection_id VARCHAR(64) UNIQUE NOT NULL,
+    mine_name VARCHAR(255) NOT NULL,
+    inspector_name VARCHAR(128) NOT NULL,
+    geo_coordinates VARCHAR(64) NOT NULL,
+    inspection_domain VARCHAR(128) NOT NULL,
+    observations TEXT NOT NULL,
+    corrective_action_required TEXT NOT NULL,
+    urgency VARCHAR(64) NOT NULL,
+    inspected_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

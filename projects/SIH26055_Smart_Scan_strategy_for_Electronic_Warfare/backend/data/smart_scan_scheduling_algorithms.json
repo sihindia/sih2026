@@ -1,0 +1,20 @@
+[
+  {
+    "algorithm": "Deep Q-Network (DQN) Scheduler",
+    "complexity": "Medium (Embedded FPGA/GPU)",
+    "poi": "97.4%",
+    "features": "Learns temporal emitter agility; avoids wasted dwell on silent bands"
+  },
+  {
+    "algorithm": "Contextual Multi-Armed Bandit (MAB)",
+    "complexity": "Low (Microsecond Latency)",
+    "poi": "96.8%",
+    "features": "Thompson sampling balances exploration of new frequencies with exploitation"
+  },
+  {
+    "algorithm": "Conventional Open-Loop Sweep",
+    "complexity": "Zero (Rigid Stepped Sweeping)",
+    "poi": "64.2%",
+    "features": "Legacy fixed schedule; misses agile radars by dwelling on empty spectrum"
+  }
+]

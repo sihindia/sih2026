@@ -1,0 +1,44 @@
+[
+  {
+    "depth_m": 0,
+    "layer_type": "Surface Mixed Layer",
+    "mean_temp_c": 29.8,
+    "argo_rmse_c": 0.22,
+    "physical_mechanism": "Direct satellite thermal skin ingestion"
+  },
+  {
+    "depth_m": 50,
+    "layer_type": "Sub-Surface Mixed Layer Base",
+    "mean_temp_c": 27.5,
+    "argo_rmse_c": 0.31,
+    "physical_mechanism": "Barrier layer salinity modulation"
+  },
+  {
+    "depth_m": 100,
+    "layer_type": "Main Thermocline Transition",
+    "mean_temp_c": 22.8,
+    "argo_rmse_c": 0.41,
+    "physical_mechanism": "SSH/SLA baroclinic eddy displacement"
+  },
+  {
+    "depth_m": 200,
+    "layer_type": "Permanent Thermocline",
+    "mean_temp_c": 15.8,
+    "argo_rmse_c": 0.38,
+    "physical_mechanism": "Rossby wave propagation and geostrophic shear"
+  },
+  {
+    "depth_m": 500,
+    "layer_type": "Intermediate Water Mass",
+    "mean_temp_c": 9.8,
+    "argo_rmse_c": 0.28,
+    "physical_mechanism": "Red Sea / Persian Gulf outflow mixing"
+  },
+  {
+    "depth_m": 1000,
+    "layer_type": "Deep Ocean Water",
+    "mean_temp_c": 6.4,
+    "argo_rmse_c": 0.19,
+    "physical_mechanism": "Antarctic intermediate water circulation"
+  }
+]

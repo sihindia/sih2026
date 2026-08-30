@@ -1,0 +1,17 @@
+[
+  {
+    "channel": "Low-Cost IVR Telephony",
+    "target": "Feature phone users with no internet connectivity",
+    "dialects": "Hindi, Bhojpuri, Tamil, Telugu, Marathi"
+  },
+  {
+    "channel": "WhatsApp Voice Note Bot",
+    "target": "Smartphones with voice messaging preference",
+    "dialects": "12 Scheduled Languages"
+  },
+  {
+    "channel": "Kiosk & Mobile App Assistant",
+    "target": "Village CSC & Anganwadi centres",
+    "dialects": "Full Conversational Voice AI"
+  }
+]

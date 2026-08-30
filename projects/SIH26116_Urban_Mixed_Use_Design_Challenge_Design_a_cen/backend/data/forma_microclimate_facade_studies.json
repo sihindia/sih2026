@@ -1,0 +1,14 @@
+[
+  {
+    "orientation": "South-West Facade",
+    "shading_type": "Motorized Parametric Vertical Terracotta Louvers",
+    "shgc": 0.26,
+    "daylight_lux": "450 Lux Average"
+  },
+  {
+    "orientation": "Central Courtyard",
+    "shading_type": "Biophilic Trellis with Open Thermal Stack Chimney",
+    "shgc": 0.32,
+    "daylight_lux": "650 Lux Natural Light"
+  }
+]

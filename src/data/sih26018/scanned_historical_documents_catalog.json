@@ -1,0 +1,35 @@
+[
+  {
+    "doc_id": "DOC-JAMABANDI-1974",
+    "document_type": "Historical Jamabandi Revenue Register (Year 1974)",
+    "location": "Varanasi, Uttar Pradesh",
+    "script_language": "Devanagari Hindi & Urdu Revenue Terminology",
+    "scan_resolution_dpi": 300,
+    "ocr_confidence_pct": 96.2,
+    "parcels_extracted_count": 12,
+    "dilrmp_validation": "PASSED_CROSS_DATABASE_MATCH",
+    "status": "DIGITIZED_AND_VALIDATED"
+  },
+  {
+    "doc_id": "DOC-KHATIYAN-1962",
+    "document_type": "Cadastral Khatiyan Record (Year 1962)",
+    "location": "Patna, Bihar",
+    "script_language": "Kaithi & Devanagari Cursive Script",
+    "scan_resolution_dpi": 200,
+    "ocr_confidence_pct": 88.5,
+    "parcels_extracted_count": 8,
+    "dilrmp_validation": "HUMAN_ASSISTED_VERIFICATION_CLEARED",
+    "status": "DIGITIZED_AND_VALIDATED"
+  },
+  {
+    "doc_id": "DOC-7-12-EXTRACT",
+    "document_type": "Village Form 7/12 (Saat-Baara Extract 1982)",
+    "location": "Satara, Maharashtra",
+    "script_language": "Marathi (Modi / Devanagari Cursive)",
+    "scan_resolution_dpi": 400,
+    "ocr_confidence_pct": 98.8,
+    "parcels_extracted_count": 6,
+    "dilrmp_validation": "PASSED_MUTATION_CONSISTENCY",
+    "status": "DIGITIZED_AND_VALIDATED"
+  }
+]

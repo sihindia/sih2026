@@ -1,0 +1,23 @@
+[
+  {
+    "instance": "MIPLIB: neos-847302 (Ill-Conditioned)",
+    "bharat_solver_sec": "3.42 s (GPU)",
+    "gurobi_11_sec": "3.18 s",
+    "cplex_22_sec": "3.65 s",
+    "status": "NUMERICALLY_STABLE"
+  },
+  {
+    "instance": "Netlib: FIT2D (Dense Linear)",
+    "bharat_solver_sec": "0.48 s (GPU)",
+    "gurobi_11_sec": "0.52 s",
+    "cplex_22_sec": "0.59 s",
+    "status": "CONVERGED_FAST"
+  },
+  {
+    "instance": "MIPLIB: splice1 (Combinatorial)",
+    "bharat_solver_sec": "6.10 s (GPU)",
+    "gurobi_11_sec": "5.90 s",
+    "cplex_22_sec": "6.40 s",
+    "status": "NUMERICALLY_STABLE"
+  }
+]

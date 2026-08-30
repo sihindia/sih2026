@@ -1,0 +1,23 @@
+[
+  {
+    "wbs_level": "L5 Activity Node",
+    "wbs_code": "SGGS3-PIP-L5-0482",
+    "discipline": "Piping",
+    "planned_duration_days": 16,
+    "status": "COMPLETED_ON_SCHEDULE"
+  },
+  {
+    "wbs_level": "L5 Activity Node",
+    "wbs_code": "NRL-CIV-L5-0194",
+    "discipline": "Civil",
+    "planned_duration_days": 8,
+    "status": "COMPLETED_ON_SCHEDULE"
+  },
+  {
+    "wbs_level": "L6 Activity Node",
+    "wbs_code": "DGB-ELE-L6-0812",
+    "discipline": "Electrical",
+    "planned_duration_days": 5,
+    "status": "IN_PROGRESS"
+  }
+]

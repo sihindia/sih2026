@@ -1,0 +1,20 @@
+[
+  {
+    "model_name": "Swin2SR Vision Transformer",
+    "params_m": 42.5,
+    "inference_fps": 18.2,
+    "strengths": "Superior long-range spatial attention, excellent building edge crispness"
+  },
+  {
+    "model_name": "ESRGAN (Residual Dense Net)",
+    "params_m": 16.7,
+    "inference_fps": 34.0,
+    "strengths": "Fast perceptual loss optimization, fine texture reconstruction"
+  },
+  {
+    "model_name": "Latent Diffusion SRM (LDSRM)",
+    "params_m": 88.0,
+    "inference_fps": 6.5,
+    "strengths": "Uncertainty heatmap generation, high fidelity sub-pixel details"
+  }
+]

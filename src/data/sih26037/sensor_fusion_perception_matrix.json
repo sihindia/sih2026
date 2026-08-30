@@ -1,0 +1,26 @@
+[
+  {
+    "sensor": "128-Beam 3D LiDAR",
+    "range": "200 meters",
+    "frequency": "20 Hz",
+    "role": "Precise point cloud spatial geometry, curb detection & 3D bounding boxes for cattle and vehicles"
+  },
+  {
+    "sensor": "4D Imaging Radar (77 GHz)",
+    "range": "250 meters",
+    "frequency": "50 Hz",
+    "role": "Doppler relative velocity tracking of oncoming two-wheelers and tractors in all weather/dust conditions"
+  },
+  {
+    "sensor": "Front High-Res Stereo Camera",
+    "range": "150 meters",
+    "frequency": "60 FPS",
+    "role": "Semantic segmentation of unpaved road boundaries, pothole depth mapping & animal classification"
+  },
+  {
+    "sensor": "Surround Ultrasonic Array",
+    "range": "5 meters",
+    "frequency": "100 Hz",
+    "role": "Proximity fail-safe buffer during tight bazaar market weaving and pedestrian creep maneuvers"
+  }
+]

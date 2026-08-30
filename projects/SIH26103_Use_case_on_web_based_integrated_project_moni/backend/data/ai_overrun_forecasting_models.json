@@ -1,0 +1,17 @@
+[
+  {
+    "model_name": "Gradient Boosting Cost Overrun Regressor",
+    "target": "Predicts final project cost escalation in \u20b9 Crores",
+    "r2_score": 0.934
+  },
+  {
+    "model_name": "LSTM Temporal Schedule Delay Forecaster",
+    "target": "Forecasts milestone slippage in months based on monthly CUF trajectory",
+    "r2_score": 0.912
+  },
+  {
+    "model_name": "SHAP Explainable Bottleneck Decomposer",
+    "target": "Quantifies percentage contribution of land, contractor, clearances & inflation",
+    "r2_score": 0.985
+  }
+]

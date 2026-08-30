@@ -1,0 +1,20 @@
+[
+  {
+    "doc_type": "Handwritten Prescription",
+    "extracted_entities": "Rx Tab Pantoprazole 40mg OD, Tab Metformin 500mg BD",
+    "accuracy_score": 96.2,
+    "flag": "NORMAL_THERAPEUTIC"
+  },
+  {
+    "doc_type": "Biochemistry Lab Report",
+    "extracted_entities": "HbA1c: 7.8% (Ref: <5.7%), Fasting Glucose: 168 mg/dL",
+    "accuracy_score": 99.4,
+    "flag": "ABNORMAL_HIGH_GLYCEMIA"
+  },
+  {
+    "doc_type": "Bilateral Knee X-Ray Report",
+    "extracted_entities": "Kellgren-Lawrence Grade III OA, Subchondral sclerosis, osteophytes",
+    "accuracy_score": 98.1,
+    "flag": "DEGENERATIVE_JOINT_SPACE_NARROWING"
+  }
+]

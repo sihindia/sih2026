@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Replanning Latency",
+    "value": "< 35 ms",
+    "trend": "Real-Time Frenet Spline Generation"
+  },
+  {
+    "metric": "Collision Avoidance",
+    "value": "100% Closed Loop",
+    "trend": "Zero Accidents across 5 Indian Scenarios"
+  },
+  {
+    "metric": "MathWorks Toolchain",
+    "value": "Simulink & RoadRunner",
+    "trend": "Automated Driving & Navigation Toolbox"
+  }
+]

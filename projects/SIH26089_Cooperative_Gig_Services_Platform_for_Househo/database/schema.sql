@@ -1,30 +1,39 @@
--- Supabase / PostgreSQL Schema for SIH26089 (Cooperative Gig Services Platform for Household & Community Services)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- SAHAKARGIG 360 DATABASE SCHEMA (SIH26089)
+-- Ministry of Cooperation / NCCT
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26089_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26089',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS cooperative_gig_bookings (
+    id SERIAL PRIMARY KEY,
+    booking_id VARCHAR(64) UNIQUE NOT NULL,
+    service_category VARCHAR(255) NOT NULL,
+    cooperative_society VARCHAR(255) NOT NULL,
+    worker_name VARCHAR(128) NOT NULL,
+    customer_locality VARCHAR(255) NOT NULL,
+    eta_minutes INTEGER NOT NULL,
+    customer_paid_inr NUMERIC(8, 2) NOT NULL,
+    worker_received_inr NUMERIC(8, 2) NOT NULL,
+    welfare_fund_inr NUMERIC(8, 2) NOT NULL,
+    private_platform_comparison TEXT NOT NULL,
+    status VARCHAR(64) DEFAULT 'COOP_SERVICE_COMPLETED',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26089_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26089_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS labour_cooperative_societies (
+    id SERIAL PRIMARY KEY,
+    society_name VARCHAR(255) UNIQUE NOT NULL,
+    location VARCHAR(128) NOT NULL,
+    members_count INTEGER NOT NULL,
+    skills_provided TEXT NOT NULL,
+    certifying_authority VARCHAR(128) NOT NULL,
+    registered_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE sih26089_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26089_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26089_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26089_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26089_audit_logs FOR SELECT USING (true);
+CREATE TABLE IF NOT EXISTS worker_welfare_contributions (
+    id SERIAL PRIMARY KEY,
+    worker_id VARCHAR(64) NOT NULL,
+    booking_id VARCHAR(64) REFERENCES cooperative_gig_bookings(booking_id),
+    amount_inr NUMERIC(8, 2) NOT NULL,
+    fund_purpose VARCHAR(128) NOT NULL, -- Health, Accident, Pension, Equipment Loan
+    credited_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

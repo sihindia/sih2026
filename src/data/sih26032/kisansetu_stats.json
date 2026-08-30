@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Mandi Waiting Time",
+    "value": "32 Mins",
+    "trend": "Reduced from 14-Hour Overnight Queues"
+  },
+  {
+    "metric": "Farmer Notification Rate",
+    "value": "100%",
+    "trend": "Automated SMS, WhatsApp & App Alerts"
+  },
+  {
+    "metric": "Perishable Spoilage in Queue",
+    "value": "0.0%",
+    "trend": "Predictive Time-Slot Booking System"
+  }
+]

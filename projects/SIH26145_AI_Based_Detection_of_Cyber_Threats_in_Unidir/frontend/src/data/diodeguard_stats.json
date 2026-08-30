@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Sustained Stream Throughput",
+    "value": "10.0 Gbps (1.4M Flows/s)",
+    "trend": "Vectorized eBPF / DPDK Pipeline"
+  },
+  {
+    "metric": "Zero-Return Enforcement",
+    "value": "0 Bytes Transmitted",
+    "trend": "Strict Hardware Data Diode Optical RX"
+  },
+  {
+    "metric": "Encrypted Threat Precision",
+    "value": "99.4% Precision",
+    "trend": "Pure JA4 & SPLT Timing Analysis"
+  }
+]

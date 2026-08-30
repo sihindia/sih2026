@@ -1,0 +1,12 @@
+[
+  {
+    "dispute_id": "DSP-2026-041",
+    "mandi": "Lasalgaon APMC",
+    "farmer": "Ganesh Kadam",
+    "lot_id": "LOT-LAS-099",
+    "disputed_metric": "Sprout % vs Sound Grade A",
+    "manual_grader_claim": "12% Sprouted (Rejected)",
+    "ai_cv_audit_result": "2.1% Sprouted (Grade A Accepted)",
+    "resolution": "AI Evidence Upheld; Full MSP Disbursed"
+  }
+]

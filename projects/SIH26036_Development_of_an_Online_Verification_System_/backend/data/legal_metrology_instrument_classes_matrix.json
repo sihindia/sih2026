@@ -1,0 +1,22 @@
+[
+  {
+    "class_code": "Class I (Special)",
+    "application": "Precision bullion, gold, diamonds & chemical laboratories",
+    "tolerance": "Microgram to milligram sensitivity with E2/F1 weights"
+  },
+  {
+    "class_code": "Class II (High)",
+    "application": "Commercial jewelry showrooms, pharmaceutical compounding",
+    "tolerance": "Milligram sensitivity with F1/F2 certified standards"
+  },
+  {
+    "class_code": "Class III (Medium)",
+    "application": "Grocery stores, supermarkets, APMC mandis, 60T truck weighbridges",
+    "tolerance": "Gram to kilogram sensitivity with M1 test weights"
+  },
+  {
+    "class_code": "Class IV (Ordinary)",
+    "application": "Rough scrap metal weighing, bulk earthmoving weighings",
+    "tolerance": "Broader tolerance limits governed under Schedule VII"
+  }
+]

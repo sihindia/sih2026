@@ -1,30 +1,33 @@
--- Supabase / PostgreSQL Schema for SIH26002 (Al-Based Smart Logistics and Accessibility Intelligence Platform for North Eastern Region (NER))
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MDONER GATINER 360 DATABASE SCHEMA (SIH26002)
+-- Ministry of Development of North Eastern Region (MDoNER)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26002_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26002',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS ner_logistics_corridors (
+    id SERIAL PRIMARY KEY,
+    corridor_id VARCHAR(64) UNIQUE NOT NULL,
+    corridor_name VARCHAR(255) NOT NULL,
+    states_spanned VARCHAR(255) NOT NULL,
+    primary_highway VARCHAR(128) NOT NULL,
+    distance_km NUMERIC(6, 1) NOT NULL,
+    current_disruption TEXT NOT NULL,
+    disruption_severity VARCHAR(64) NOT NULL,
+    ai_recommended_detour TEXT NOT NULL,
+    detour_bridge_capacity VARCHAR(128) NOT NULL,
+    estimated_delay_hours NUMERIC(4, 1) NOT NULL,
+    essential_cargo_priority TEXT NOT NULL,
+    logistics_status VARCHAR(64) DEFAULT 'ESSENTIAL_SUPPLY_DELIVERED_VIA_DETOUR',
+    last_updated TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26002_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26002_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS essential_cargo_shipments (
+    id SERIAL PRIMARY KEY,
+    shipment_id VARCHAR(64) UNIQUE NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(64) NOT NULL,
+    origin VARCHAR(128) NOT NULL,
+    destination VARCHAR(128) NOT NULL,
+    temp_monitored VARCHAR(128) NOT NULL,
+    status VARCHAR(64) NOT NULL,
+    last_gps_ping TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26002_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26002_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26002_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26002_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26002_audit_logs FOR SELECT USING (true);

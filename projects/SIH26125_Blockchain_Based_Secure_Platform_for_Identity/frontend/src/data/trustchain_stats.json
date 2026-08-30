@@ -1,0 +1,17 @@
+[
+  {
+    "metric": "Verified DIDs",
+    "value": "18,400 DIDs",
+    "trend": "W3C Self-Sovereign Identity"
+  },
+  {
+    "metric": "Tokenized Defence Assets",
+    "value": "42,500 NFTs",
+    "trend": "ERC-721/1155 Provenance"
+  },
+  {
+    "metric": "Smart Contract Security",
+    "value": "100% Tamper-Proof",
+    "trend": "Zero Centralized SPoF Vulnerability"
+  }
+]

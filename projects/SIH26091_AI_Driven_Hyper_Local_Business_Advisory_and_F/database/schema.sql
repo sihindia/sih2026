@@ -1,30 +1,47 @@
--- Supabase / PostgreSQL Schema for SIH26091 (AI-Driven Hyper-Local Business Advisory and Financial Structuring Assistant for Rural Micro-Entrepreneurs)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOSJE UDYAMSAATHI 360 DATABASE SCHEMA (SIH26091)
+-- Ministry of Social Justice and Empowerment (MoSJE)
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26091_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26091',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS rural_micro_enterprise_proposals (
+    id SERIAL PRIMARY KEY,
+    case_id VARCHAR(64) UNIQUE NOT NULL,
+    entrepreneur_name VARCHAR(128) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    proposed_business VARCHAR(255) NOT NULL,
+    available_margin_inr NUMERIC(10, 2) NOT NULL,
+    calculated_project_cost_inr NUMERIC(12, 2) NOT NULL,
+    scheme_selected VARCHAR(128) NOT NULL,
+    eligible_loan_amount_inr NUMERIC(12, 2) NOT NULL,
+    interest_rate_pct NUMERIC(4, 2) NOT NULL,
+    tenure_years INTEGER NOT NULL,
+    moratorium_months INTEGER NOT NULL,
+    quarterly_emi_inr NUMERIC(10, 2) NOT NULL,
+    market_radius_km VARCHAR(64) NOT NULL,
+    underserved_demand TEXT NOT NULL,
+    competitor_density VARCHAR(128) NOT NULL,
+    feasibility_status VARCHAR(64) DEFAULT 'FEASIBILITY_APPROVED',
+    assessed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26091_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26091_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS concessional_credit_schemes (
+    id SERIAL PRIMARY KEY,
+    scheme_name VARCHAR(128) UNIQUE NOT NULL,
+    cost_ceiling VARCHAR(128) NOT NULL,
+    loan_percentage VARCHAR(64) NOT NULL,
+    concessional_interest VARCHAR(64) NOT NULL,
+    repayment_tenure VARCHAR(64) NOT NULL,
+    moratorium_period VARCHAR(64) NOT NULL,
+    target_beneficiaries TEXT NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE sih26091_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26091_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26091_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26091_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26091_audit_logs FOR SELECT USING (true);
+CREATE TABLE IF NOT EXISTS rural_market_swot_records (
+    id SERIAL PRIMARY KEY,
+    business_category VARCHAR(128) NOT NULL,
+    strengths TEXT NOT NULL,
+    weaknesses TEXT NOT NULL,
+    opportunities TEXT NOT NULL,
+    threats TEXT NOT NULL,
+    logged_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

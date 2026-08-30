@@ -1,0 +1,17 @@
+[
+  {
+    "feature": "Conditional Denoising Diffusion",
+    "benefit": "Preserves sharp extreme amplitudes without spectral smoothing",
+    "loss_function": "MSE + Conservation Penalty"
+  },
+  {
+    "feature": "Navier-Stokes Fluid Penalty",
+    "benefit": "Penalizes unphysical mass or momentum divergence",
+    "constraint": "\u2207 \u00b7 u = 0 (Incompressibility / Continuity)"
+  },
+  {
+    "feature": "Thermodynamic Moisture Balance",
+    "benefit": "Ensures rainfall peaks match integrated moisture convergence",
+    "constraint": "\u2202q/\u2202t + \u2207 \u00b7 (uq) = E - P"
+  }
+]

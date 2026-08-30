@@ -1,30 +1,32 @@
--- Supabase / PostgreSQL Schema for SIH26057 (AI-Powered Automated Underwater Marine Debris and Anomaly Detection System using Side-Scan Sonar Imagery)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- =========================================================================
+-- MOES SAMUDRANETRA 360 DATABASE SCHEMA (SIH26057)
+-- Ministry of Earth Sciences (MoES) - National Institute of Ocean Technology
+-- =========================================================================
 
--- 1. Operational Telemetry & Record Table
-CREATE TABLE IF NOT EXISTS sih26057_records (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    ps_number VARCHAR(20) DEFAULT 'SIH26057',
-    entity_code VARCHAR(100) NOT NULL,
-    metric_score NUMERIC(10, 3) NOT NULL,
-    risk_category VARCHAR(30) DEFAULT 'NORMAL',
-    metadata JSONB DEFAULT '{}'::jsonb,
-    status VARCHAR(30) DEFAULT 'ACTIVE',
-    created_at TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS sonar_acoustic_surveys (
+    id SERIAL PRIMARY KEY,
+    survey_id VARCHAR(64) UNIQUE NOT NULL,
+    survey_location VARCHAR(255) NOT NULL,
+    sonar_instrument VARCHAR(128) NOT NULL,
+    seabed_depth_meters NUMERIC(6, 2) NOT NULL,
+    towfish_altitude_meters NUMERIC(6, 2) NOT NULL,
+    detected_anomaly_class VARCHAR(128) NOT NULL,
+    bounding_dimensions VARCHAR(128) NOT NULL,
+    acoustic_signature TEXT NOT NULL,
+    latitude VARCHAR(32) NOT NULL,
+    longitude VARCHAR(32) NOT NULL,
+    detection_confidence_pct NUMERIC(4, 1) NOT NULL,
+    recommended_mitigation TEXT NOT NULL,
+    hazard_status VARCHAR(64) DEFAULT 'HAZARD_GEOREFERENCED_FOR_RETRIEVAL',
+    recorded_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- 2. Audit & Verification Trail
-CREATE TABLE IF NOT EXISTS sih26057_audit_logs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    record_id UUID REFERENCES sih26057_records(id) ON DELETE CASCADE,
-    action_taken VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) DEFAULT 'System Automated AI Engine',
-    confidence NUMERIC(5, 3) DEFAULT 0.965,
-    timestamp TIMESTAMPTZ DEFAULT NOW()
+CREATE TABLE IF NOT EXISTS marine_debris_salvage_logs (
+    id SERIAL PRIMARY KEY,
+    survey_id VARCHAR(64) REFERENCES sonar_acoustic_surveys(survey_id),
+    debris_type VARCHAR(64) NOT NULL,
+    estimated_weight_kg NUMERIC(8, 2) DEFAULT 0.0,
+    salvage_vessel VARCHAR(128) NOT NULL,
+    retrieval_status VARCHAR(64) DEFAULT 'DIVER_RETRIEVAL_PENDING',
+    logged_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE sih26057_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sih26057_audit_logs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read Records" ON sih26057_records FOR SELECT USING (true);
-CREATE POLICY "Public Insert Records" ON sih26057_records FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Read Audits" ON sih26057_audit_logs FOR SELECT USING (true);

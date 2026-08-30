@@ -1,0 +1,17 @@
+[
+  {
+    "model_source": "IMD Doppler Weather Radar QPE",
+    "resolution": "1 km x 1 km (10-min update)",
+    "purpose": "Real-time ground rain rate estimation"
+  },
+  {
+    "model_source": "NCMRWF Unified Model (NCUM)",
+    "resolution": "4 km High Resolution",
+    "purpose": "24-to-72 hour convective storm forecasting"
+  },
+  {
+    "model_source": "WRF-Hydro Meso-Scale Model",
+    "resolution": "100-meter Urban Channel Mesh",
+    "purpose": "Catchment runoff & overland flow hydrodynamics"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "bottleneck_id": "TSR-NCR-114",
+    "corridor": "Ghaziabad – Kanpur HDN-1",
+    "km_location": "Km 1142/08 – 1144/14",
+    "restriction_type": "Track Renewal Ballast Cleaning (BCM Machine)",
+    "imposed_speed_kmh": 30,
+    "normal_sectional_mps_kmh": 130,
+    "time_penalty_mins": 4.2,
+    "slack_recovery_zone": "Etawah – Panki Section (18 mins available slack absorbs penalty)",
+    "active_status": "ACTIVE_UNTIL_1600_HRS"
+  },
+  {
+    "bottleneck_id": "CONG-HDN1-GZB-CNB",
+    "corridor": "Ghaziabad – Tundla Quadruple Line",
+    "km_location": "Km 1020 – 1150",
+    "restriction_type": "High Density Line Congestion (LC-Index: 148%)",
+    "imposed_speed_kmh": 110,
+    "normal_sectional_mps_kmh": 130,
+    "time_penalty_mins": 6.5,
+    "slack_recovery_zone": "Automatic Green Wave Signaling cleared ahead of Vande Bharat",
+    "active_status": "HIGH_TRAFFIC_PEAK"
+  },
+  {
+    "bottleneck_id": "WEATHER-FOG-DELHI-AGRA",
+    "corridor": "Palwal – Mathura Semi-High Speed Belt",
+    "km_location": "Km 60 – 140",
+    "restriction_type": "Dense Winter Fog Visibility <50m (Fog-PASS Active)",
+    "imposed_speed_kmh": 60,
+    "normal_sectional_mps_kmh": 130,
+    "time_penalty_mins": 14.0,
+    "slack_recovery_zone": "Agra – Jhansi high speed corridor with twin-locomotive acceleration",
+    "active_status": "WEATHER_FOG_PILOT_MODE"
+  }
+]
