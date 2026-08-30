@@ -1,0 +1,24 @@
+[
+  {
+    "bill_code": "BILL-CONCL-TITLE",
+    "bill_title": "State Conclusive Land Titling & Title Indemnity Fund Act, 2026",
+    "key_statutory_clauses": [
+      "Section 4: Establishment of the Land Titling Authority (LTA) under an officer not below the rank of Principal Secretary.",
+      "Section 9: Creation of the Statutory Title Indemnity Fund to compensate bona fide owners against administrative errors.",
+      "Section 14: Final Record of Title shall be conclusive evidence of ownership with statutory state guarantee."
+    ],
+    "cabinet_summary": "Replaces presumptive colonial title deeds with state-guaranteed conclusive ownership, eliminating 68% of civil court boundary litigations.",
+    "drafting_stage": "READY_FOR_STATE_ASSEMBLY_TABLING"
+  },
+  {
+    "bill_code": "BILL-AGRI-LEASE",
+    "bill_title": "Model Agricultural Land Leasing & Digital Tenancy Protection Act",
+    "key_statutory_clauses": [
+      "Section 3: Legalization of land leasing without loss of ownership rights for cultivating or absentee landholders.",
+      "Section 7: Automatic inclusion of tenant farmers for institutional Kisan Credit Card (KCC) loans and crop insurance (PMFBY).",
+      "Section 11: Summary eviction procedures through Revenue Courts within 60 days upon lease term expiry."
+    ],
+    "cabinet_summary": "Unlocks 25 million hectares of fallow land by protecting landholder ownership while guaranteeing institutional credit to tenant cultivators.",
+    "drafting_stage": "INTER-MINISTERIAL_CONSULTATION_CLEARED"
+  }
+]

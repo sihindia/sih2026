@@ -1,0 +1,29 @@
+[
+  {
+    "grant_id": "GRANT-DoLR-2026-08",
+    "project_title": "Multi-Tier 3D Cadastral Unit Legal Rights in High-Density Metros",
+    "lead_institution": "School of Planning and Architecture (SPA), New Delhi",
+    "funding_allocated_inr_lakhs": 65.0,
+    "pilot_sandbox_city": "Pune, Maharashtra (Hinjawadi IT Corridor)",
+    "milestone_progress_pct": 82,
+    "status": "PILOT_SANDBOX_ACTIVE"
+  },
+  {
+    "grant_id": "GRANT-DoLR-2026-14",
+    "project_title": "Legal Framework for Blockchain Smart Title Deeds & Instant Settlement",
+    "lead_institution": "National Law School of India University (NLSIU), Bengaluru",
+    "funding_allocated_inr_lakhs": 48.0,
+    "pilot_sandbox_city": "Hyderabad, Telangana",
+    "milestone_progress_pct": 95,
+    "status": "DRAFT_STATUTE_SUBMITTED"
+  },
+  {
+    "grant_id": "GRANT-DoLR-2026-21",
+    "project_title": "Socio-Economic Micro-Credit Multiplier of Drone SVAMITVA Property Cards",
+    "lead_institution": "National Institute of Rural Development & Panchayati Raj (NIRDPR), Hyderabad",
+    "funding_allocated_inr_lakhs": 52.0,
+    "pilot_sandbox_city": "Karnal & Sonipat, Haryana",
+    "milestone_progress_pct": 74,
+    "status": "FIELD_DATA_COLLECTION_ONGOING"
+  }
+]

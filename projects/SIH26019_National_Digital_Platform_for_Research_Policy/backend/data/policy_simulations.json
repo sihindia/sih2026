@@ -1,0 +1,18 @@
+[
+  {
+    "reform_code": "REFORM-TITLING",
+    "reform_name": "State-Guaranteed Conclusive Land Titling Act",
+    "dispute_reduction_pct": 68.0,
+    "transaction_speed_multiplier": "4.2x Faster",
+    "credit_flow_boost_inr_cr": 142000,
+    "recommended_timeline": "Phased 36-Month State Pilot Rollout"
+  },
+  {
+    "reform_code": "REFORM-TENANCY",
+    "reform_name": "Model Agricultural Land Leasing & Digital Tenancy System",
+    "dispute_reduction_pct": 45.0,
+    "transaction_speed_multiplier": "2.8x Faster",
+    "credit_flow_boost_inr_cr": 58000,
+    "recommended_timeline": "Immediate Kharif Season Adoption"
+  }
+]

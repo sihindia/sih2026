@@ -136,6 +136,11 @@ import sih26018Records from '../data/sih26018/digitized_land_records_entities.js
 import sih26018Units from '../data/sih26018/regional_area_conversion_units_matrix.json';
 import sih26018Conflicts from '../data/sih26018/cross_database_mutation_conflicts.json';
 import sih26018Exports from '../data/sih26018/dilrmp_xml_export_formats.json';
+import sih26019Papers from '../data/sih26019/applied_research_papers_repository.json';
+import sih26019Scenarios from '../data/sih26019/policy_reform_simulation_scenarios.json';
+import sih26019States from '../data/sih26019/state_land_governance_benchmark_index.json';
+import sih26019Bills from '../data/sih26019/legislative_draft_templates_and_cabinet_notes.json';
+import sih26019Grants from '../data/sih26019/academic_research_grants_and_sandboxes.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -3475,86 +3480,480 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
     /* =========================================================================
      2. CADASTRAL GIS / SIH26019 NATIONAL LAND POLICY & RESEARCH INNOVATION
      ========================================================================= */
+  /* =========================================================================
+     MINISTRY OF RURAL DEVELOPMENT / DoLR / SIH26019 BHOOMINEETI 360
+     National Platform for Research, Policy Innovation & Evidence-Based Governance
+     ========================================================================= */
   if (psId === 'SIH26019') {
-    const papers = [
-      { id: "DoLR-RES-01", title: "Transitioning from Presumptive to Conclusive Land Titling", authors: "Dr. Arvind Sharma (NITI Aayog)", cat: "Titling Law", year: 2026, cite: 142, finding: "Guaranteed state land titles reduce civil property court litigations by 68% and unlock ₹14.2 Lakh Cr in dormant capital." },
-      { id: "DoLR-RES-04", title: "Socio-Economic Impact of Drone SVAMITVA & NAKSHA Surveys", authors: "NIRDPR", cat: "Rural Economics", year: 2025, cite: 89, finding: "Formal property cards issued via drone surveys increased formal bank agricultural collateral loans by 44%." },
-      { id: "DoLR-RES-09", title: "Land Value Capture Mechanisms for Urban Transit Corridors", authors: "SPA Delhi / MoHUA", cat: "Urban Finance", year: 2026, cite: 64, finding: "Betterment levies around 3D ULPIN mapped transit stations fund 35% of capital expenditure for metro lines." }
-    ];
+    const researchPapers = sih26019Papers;
+    const policyScenarios = sih26019Scenarios;
+    const stateRankings = sih26019States;
+    const draftBills = sih26019Bills;
+    const academicGrants = sih26019Grants;
 
-    const [selectedPaper, setSelectedPaper] = React.useState(papers[0]);
-    const [coverage, setCoverage] = React.useState(95);
-    const [duty, setDuty] = React.useState(4.0);
+    const [selectedPaper, setSelectedPaper] = React.useState(researchPapers[0]);
+    const [tab, setTab] = React.useState<'papers' | 'simulator' | 'states' | 'drafter' | 'grants' | 'commons'>('papers');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
 
-    const disputeDrop = ((coverage / 100) * 72).toFixed(1);
-    const unlockCr = Math.round((6 - duty) * 18500 + (coverage * 420)).toLocaleString();
+    // Econometric Simulator Interactive State
+    const [simCoverage, setSimCoverage] = React.useState(95);
+    const [simStampDuty, setSimStampDuty] = React.useState(4.0);
+    const [indemnityPoolActive, setIndemnityPoolActive] = React.useState(true);
+
+    // Calculated Macro-Economic Impact
+    const disputeReductionPct = Number(((simCoverage / 100) * 72).toFixed(1));
+    const capitalUnlockedLakhCr = Number(((6.5 - simStampDuty) * 2.2 + (simCoverage * 0.08) + (indemnityPoolActive ? 4.5 : 0.0)).toFixed(1));
+    const creditExpansionPct = Number((simCoverage * 0.46).toFixed(0));
+
+    // Cabinet Note Generator State
+    const [selectedBill, setSelectedBill] = React.useState(draftBills[0]);
+    const [cabinetNoteGenerated, setCabinetNoteGenerated] = React.useState(false);
+
+    // Commons Export Feedback State
+    const [exportedData, setExportedData] = React.useState<string | null>(null);
+
+    const handleGenerateCabinetNote = () => {
+      setCabinetNoteGenerated(true);
+      setTimeout(() => setCabinetNoteGenerated(false), 4000);
+    };
+
+    const handleTriggerDataExport = (name: string) => {
+      setExportedData(name);
+      setTimeout(() => setExportedData(null), 3500);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF RURAL DEVELOPMENT • DoLR (BHOOMINEETI 360)",
+        desc: "National Digital Platform for Applied Research, Econometric Policy Simulation, State Governance Benchmarking & Legislative Drafting",
+        tabPapers: "📚 Policy Research Repository",
+        tabSimulator: "🎛️ Reform Econometric Simulator",
+        tabStates: "🏆 State Governance Index",
+        tabDrafter: "📝 AI Legislative Drafter",
+        tabGrants: "🔬 Academic Grants & Sandboxes",
+        tabCommons: "🌐 Open Geospatial Commons",
+      },
+      hi: {
+        tag: "ग्रामीण विकास मंत्रालय • भूमि संसाधन विभाग (भूमि-नीति 360)",
+        desc: "व्यावहारिक अनुसंधान, अर्थमितीय नीति सिमुलेशन, राज्य शासन सूचकांक व वैधानिक विधेयक मसौदा राष्ट्रीय मंच",
+        tabPapers: "📚 नीति अनुसंधान भंडार",
+        tabSimulator: "🎛️ सुधार प्रभाव सिमुलेटर",
+        tabStates: "🏆 राज्य शासन सूचकांक",
+        tabDrafter: "📝 AI वैधानिक मसौदा",
+        tabGrants: "🔬 अकादमिक अनुदान व सैंडबॉक्स",
+        tabCommons: "🌐 खुला भू-स्थानिक डेटा",
+      },
+      mr: {
+        tag: "ग्रामीण विकास मंत्रालय • भू-संसाधन विभाग (भूमी-नीती 360)",
+        desc: "उपयोजित संशोधन, धोरण सुधारणा सिम्युलेटर, राज्य भू-प्रशासन क्रमवारी व कायदा मसुदा राष्ट्रीय पोर्टल",
+        tabPapers: "📚 धोरण संशोधन ग्रंथालय",
+        tabSimulator: "🎛️ सुधारणा प्रभाव सिम्युलेटर",
+        tabStates: "🏆 राज्य भू-प्रशासन क्रमवारी",
+        tabDrafter: "📝 AI कायदेशीर मसुदा",
+        tabGrants: "🔬 संशोधन अनुदान व सँडबॉक्स",
+        tabCommons: "🌐 खुली भू-स्थानिक माहिती",
+      }
+    }[lang];
 
     return (
-      <div className="space-y-6">
-        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="space-y-6 font-sans">
+        {/* Header */}
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold mb-1">
               <GraduationCap className="w-4 h-4 text-emerald-400" />
-              <span>DEPARTMENT OF LAND RESOURCES (DoLR) • POLICY INNOVATION • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">Centralized Land Policy Repository, Reform Impact Simulator & State Governance Benchmarking</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-2xl text-xs font-bold">
-            Policy Hub: Live
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-emerald-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {papers.map((p) => (
-            <button key={p.id} onClick={() => setSelectedPaper(p)} className={`p-4 rounded-2xl border text-left transition-all ${
-              selectedPaper.id === p.id ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-md ring-1 ring-emerald-400' : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
-            }`}>
-              <div className="text-[10px] font-mono text-emerald-400 font-bold">{p.id}</div>
-              <div className="text-xs font-bold truncate text-white mt-0.5">{p.title}</div>
-              <div className="text-[11px] text-slate-400 mt-1">{p.authors}</div>
-              <div className="mt-2 text-[10px] flex justify-between font-mono text-slate-400">
-                <span>{p.cat}</span>
-                <span className="text-emerald-400 font-bold">{p.cite} Cites</span>
-              </div>
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
+          {[
+            { id: 'papers', label: t.tabPapers },
+            { id: 'simulator', label: t.tabSimulator },
+            { id: 'states', label: t.tabStates },
+            { id: 'drafter', label: t.tabDrafter },
+            { id: 'grants', label: t.tabGrants },
+            { id: 'commons', label: t.tabCommons },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-emerald-500 text-slate-950 font-black shadow-lg shadow-emerald-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-            <h4 className="font-bold text-sm text-white">{selectedPaper.title}</h4>
-            <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 text-xs text-slate-300">
-              <span className="text-[10px] font-bold text-emerald-400 block uppercase mb-1">Key Empirical Finding:</span>
-              <p>{selectedPaper.finding}</p>
+        {/* TAB 1: POLICY RESEARCH REPOSITORY */}
+        {tab === 'papers' && (
+          <div className="space-y-6">
+            {/* Paper Selector Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {researchPapers.map((p: any) => (
+                <button
+                  key={p.paper_id}
+                  onClick={() => setSelectedPaper(p)}
+                  className={`p-5 rounded-2xl border text-left transition-all ${
+                    selectedPaper.paper_id === p.paper_id
+                      ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-lg ring-1 ring-emerald-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-emerald-400">{p.paper_id}</span>
+                    <span className="text-cyan-400">{p.publication_year}</span>
+                  </div>
+                  <div className="text-sm font-bold text-white mt-1 line-clamp-1">{p.title}</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">{p.lead_author}</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-purple-400">{p.category.split('&')[0]}</span>
+                    <span className="text-emerald-400 font-bold">{p.citations_count} Cites</span>
+                  </div>
+                </button>
+              ))}
             </div>
-            <div className="space-y-2 pt-2 border-t border-slate-800 text-xs">
-              <div className="flex justify-between font-bold"><span className="text-slate-300">🗺️ Cadastral Digitization Coverage</span><span className="font-mono text-emerald-400">{coverage}%</span></div>
-              <input type="range" min="50" max="100" value={coverage} onChange={(e) => setCoverage(Number(e.target.value))} className="w-full accent-emerald-500" />
-            </div>
-          </div>
 
-          <div className="lg:col-span-5 bg-slate-950 p-6 rounded-3xl border border-slate-800 space-y-4 font-mono text-xs">
-            <div className="flex justify-between items-center border-b border-slate-800 pb-2 text-slate-400">
-              <span>🤖 DoLR REFORM PROJECTION</span>
-              <span className="text-emerald-400">Simulated AI Result</span>
-            </div>
-            <div className="grid grid-cols-2 gap-3 text-center">
-              <div className="bg-slate-900 p-4 rounded-2xl border border-slate-800">
-                <div className="text-[10px] text-slate-400 uppercase">Litigation Drop</div>
-                <div className="text-2xl font-black mt-1 text-emerald-400">-{disputeDrop}%</div>
+            {/* Selected Paper Deep-Dive Card */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div>
+                    <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                      <FileText className="w-4 h-4 text-emerald-400" />
+                      <span>{selectedPaper.title}</span>
+                    </h4>
+                    <p className="text-slate-400 text-xs mt-0.5">{selectedPaper.lead_author}</p>
+                  </div>
+                  <span className="px-3 py-1 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full text-[10px] font-bold">
+                    {selectedPaper.status}
+                  </span>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-xs font-sans">
+                  <span className="text-emerald-400 font-bold uppercase text-[10px] font-mono block">EMPIRICAL RESEARCH FINDING:</span>
+                  <p className="text-slate-200 leading-relaxed">
+                    {selectedPaper.empirical_finding}
+                  </p>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-xs font-sans">
+                  <span className="text-cyan-400 font-bold uppercase text-[10px] font-mono block">ACTIONABLE POLICY RECOMMENDATION:</span>
+                  <p className="text-slate-300 leading-relaxed">
+                    {selectedPaper.policy_recommendation}
+                  </p>
+                </div>
               </div>
-              <div className="bg-slate-900 p-4 rounded-2xl border border-slate-800">
-                <div className="text-[10px] text-slate-400 uppercase">Capital Unlocked</div>
-                <div className="text-lg font-black mt-1 text-cyan-400">₹{unlockCr} Cr</div>
+
+              {/* Research Metrics Box */}
+              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                  <Activity className="w-4 h-4 text-emerald-400" />
+                  <span>Academic Citations &amp; Policy Reach</span>
+                </h4>
+
+                <div className="grid grid-cols-2 gap-3 text-center">
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">SCHOLAR CITATIONS</span>
+                    <strong className="text-emerald-400 text-xl block mt-0.5">{selectedPaper.citations_count}</strong>
+                    <span className="text-[9px] text-slate-500">Peer-Reviewed Journals</span>
+                  </div>
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">PUBLISHED YEAR</span>
+                    <strong className="text-cyan-400 text-xl block mt-0.5">{selectedPaper.publication_year}</strong>
+                    <span className="text-[9px] text-slate-500">DoLR Benchmark</span>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 text-[11px] font-sans text-slate-300">
+                  🏛️ <strong>Policy Utilization</strong>: This study serves as the foundational empirical framework for the Model Conclusive Land Titling Bill drafted by NITI Aayog and Department of Land Resources.
+                </div>
               </div>
-            </div>
-            <div className="p-3 bg-slate-900 rounded-xl text-slate-300 text-[11px] font-sans">
-              <span className="font-bold text-emerald-400 block mb-0.5">Policy Recommendation:</span>
-              Enact State Conclusive Titling Bill with Title Indemnity Guarantee Fund.
             </div>
           </div>
-        </div>
+        )}
+
+        {/* TAB 2: REFORM ECONOMETRIC SIMULATOR */}
+        {tab === 'simulator' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            {/* Input Sliders */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Sliders className="w-5 h-5 text-emerald-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">Econometric Policy Reform Sandbox</h4>
+                  <p className="text-slate-400 text-xs font-sans">Simulate the macroeconomic impact of legislative reforms prior to assembly tabling</p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-slate-300 font-sans">Cadastral Digitization &amp; ULPIN Coverage:</span>
+                    <strong className="text-emerald-400">{simCoverage}%</strong>
+                  </div>
+                  <input
+                    type="range"
+                    min="50"
+                    max="100"
+                    value={simCoverage}
+                    onChange={(e) => setSimCoverage(Number(e.target.value))}
+                    className="w-full accent-emerald-500 cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[10px] text-slate-500">
+                    <span>50% (Fragmented)</span>
+                    <span>80% (Substantial)</span>
+                    <span>100% (Full Bhu-Aadhaar)</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-slate-300 font-sans">State Stamp Duty Rate:</span>
+                    <strong className="text-cyan-400">{simStampDuty}%</strong>
+                  </div>
+                  <input
+                    type="range"
+                    min="2.0"
+                    max="7.0"
+                    step="0.5"
+                    value={simStampDuty}
+                    onChange={(e) => setSimStampDuty(Number(e.target.value))}
+                    className="w-full accent-cyan-500 cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[10px] text-slate-500">
+                    <span>2.0% (Incentivized)</span>
+                    <span>4.0% (Balanced)</span>
+                    <span>7.0% (High Friction)</span>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between">
+                  <div>
+                    <span className="text-white font-bold block font-sans">Enact Statutory Title Indemnity Guarantee Fund:</span>
+                    <span className="text-slate-500 text-[10px]">State indemnity backed by 0.25% transaction cess</span>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={indemnityPoolActive}
+                    onChange={(e) => setIndemnityPoolActive(e.target.checked)}
+                    className="w-5 h-5 accent-emerald-500 cursor-pointer"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Recalculated Macroeconomic Outcomes */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-emerald-400" />
+                <span>Simulated Macroeconomic Transformation</span>
+              </h4>
+
+              <div className="p-5 bg-slate-950 rounded-2xl border border-emerald-800/80 space-y-3">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Civil Land Litigation Reduction:</span>
+                  <strong className="text-emerald-400 text-lg">-{disputeReductionPct}%</strong>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Formal Bank Collateral Credit Boost:</span>
+                  <strong className="text-cyan-300 text-lg">+{creditExpansionPct}%</strong>
+                </div>
+                <div className="pt-3 border-t border-slate-900 flex justify-between items-baseline">
+                  <span className="text-xs text-white font-bold uppercase font-sans">Dormant Capital Unlocked:</span>
+                  <span className="text-2xl font-black text-emerald-400 font-sans">₹{capitalUnlockedLakhCr} Lakh Cr</span>
+                </div>
+                <div className="text-slate-500 text-[10px] font-sans text-right">
+                  Liquidity released into rural &amp; peri-urban development
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: STATE GOVERNANCE INDEX */}
+        {tab === 'states' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {stateRankings.map((st: any) => (
+                <div key={st.state} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-emerald-400 font-bold">RANK #{st.rank}</span>
+                      <h4 className="font-bold text-white font-sans text-base mt-0.5">{st.state}</h4>
+                    </div>
+                    <span className="px-3 py-1 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full font-bold text-xs">
+                      {st.score} / 100
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Cadastre Digitized:</span>
+                      <strong className="text-emerald-400">{st.cadastre_digitized_pct}%</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Dispute Resolution Speed:</span>
+                      <strong className="text-cyan-400">{st.dispute_resolution_speed}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Bhu-Aadhaar Seeding:</span>
+                      <strong className="text-purple-400">{st.bhu_aadhaar_seeding_pct}%</strong>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: AI LEGISLATIVE DRAFTER */}
+        {tab === 'drafter' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <FileText className="w-4 h-4 text-emerald-400" />
+                <span>Statutory Bill Drafts Catalog</span>
+              </h4>
+
+              <div className="space-y-3">
+                {draftBills.map((b: any) => (
+                  <div
+                    key={b.bill_code}
+                    onClick={() => setSelectedBill(b)}
+                    className={`p-4 rounded-2xl border transition-all cursor-pointer space-y-2 ${
+                      selectedBill.bill_code === b.bill_code ? 'border-emerald-500 bg-emerald-950/40' : 'border-slate-800 bg-slate-950 hover:bg-slate-900'
+                    }`}
+                  >
+                    <div className="flex justify-between items-center">
+                      <span className="text-emerald-400 font-bold">{b.bill_code}</span>
+                      <span className="px-2 py-0.5 bg-slate-900 text-cyan-300 border border-slate-800 rounded text-[9px]">
+                        {b.drafting_stage.replace(/_/g, ' ')}
+                      </span>
+                    </div>
+                    <h5 className="font-bold text-white font-sans text-xs">{b.bill_title}</h5>
+                    <p className="text-slate-400 font-sans text-[11px]">{b.cabinet_summary}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Generated Cabinet Note Dossier */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <span>Cabinet Note Synthesizer</span>
+                </h4>
+                <button
+                  onClick={handleGenerateCabinetNote}
+                  disabled={cabinetNoteGenerated}
+                  className="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs font-sans shadow-md transition-all active:scale-95 disabled:opacity-50"
+                >
+                  {cabinetNoteGenerated ? '✅ Cabinet Note Dispatched!' : 'Generate Cabinet Note'}
+                </button>
+              </div>
+
+              <div className="p-5 bg-slate-950 rounded-2xl border border-slate-800 space-y-3 font-sans text-xs">
+                <div className="text-white font-bold text-sm">{selectedBill.bill_title}</div>
+                <div className="text-[10px] text-slate-500 uppercase font-mono font-bold">KEY STATUTORY CLAUSES:</div>
+                <div className="space-y-2">
+                  {selectedBill.key_statutory_clauses.map((clause: string, idx: number) => (
+                    <div key={idx} className="p-3 bg-slate-900 rounded-xl text-slate-300 text-[11px] border border-slate-800/80">
+                      {clause}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: ACADEMIC GRANTS & SANDBOXES */}
+        {tab === 'grants' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {academicGrants.map((g: any) => (
+                <div key={g.grant_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <span className="text-emerald-400 font-bold">{g.grant_id}</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      {g.status.replace(/_/g, ' ')}
+                    </span>
+                  </div>
+
+                  <h4 className="font-bold text-white font-sans text-sm mt-0.5">{g.project_title}</h4>
+                  <p className="text-[11px] text-slate-400 font-sans">{g.lead_institution}</p>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Funding Allocated:</span>
+                      <strong className="text-white">₹{g.funding_allocated_inr_lakhs} Lakhs</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Pilot Sandbox City:</span>
+                      <strong className="text-cyan-400">{g.pilot_sandbox_city}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Milestone Progress:</span>
+                      <strong className="text-emerald-400">{g.milestone_progress_pct}%</strong>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: OPEN GEOSPATIAL COMMONS */}
+        {tab === 'commons' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { name: "National Cadastral Boundary Layer (GeoJSON)", size: "480 MB", format: "OGC GeoJSON", records: "650,000 Villages" },
+                { name: "Decadal Land-Use Sprawl Matrix (2015-2025)", size: "1.2 GB", format: "Cloud Optimized GeoTIFF", records: "30m Resolution" },
+                { name: "State Conclusive Titling Pilot Data Dump", size: "140 MB", format: "PostgreSQL SQL Dump", records: "12 Pilot Districts" },
+              ].map((item) => (
+                <div key={item.name} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col justify-between space-y-4">
+                  <div>
+                    <span className="text-emerald-400 font-bold block text-sm font-sans">{item.name}</span>
+                    <div className="mt-2 text-slate-400 text-[11px] font-sans">Contains {item.records} ({item.size})</div>
+                    <div className="mt-1 text-slate-500 text-[10px]">Format: {item.format}</div>
+                  </div>
+                  <button
+                    onClick={() => handleTriggerDataExport(item.name)}
+                    className="w-full py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs font-sans shadow-md transition-all active:scale-95"
+                  >
+                    {exportedData === item.name ? '✅ Downloaded!' : 'Download Open Dataset'}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     );
   }

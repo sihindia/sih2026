@@ -1,7 +1,8 @@
 """
 SIH26019: National Platform for Research and Policy Innovation in Land Governance (DoLR NeetiManthan 360)
 Ministry of Rural Development - Department of Land Resources (DoLR)
-FastAPI Production Microservice for Policy Simulation, Research Repository & State Governance Index
+FastAPI Production Microservice for Policy Simulation, Research Repository,
+Legislative Drafter, Academic Grants & State Governance Index API
 """
 
 from fastapi import FastAPI, HTTPException, status
@@ -16,7 +17,7 @@ from datetime import datetime
 app = FastAPI(
     title="DoLR NeetiManthan 360 Policy Hub (SIH26019) - DoLR / Ministry of Rural Development",
     description="National Digital Platform for Research and Policy Innovation",
-    version="3.0.0"
+    version="4.0.0"
 )
 
 app.add_middleware(
@@ -39,6 +40,10 @@ def load_json(name):
 class SimulateReformRequest(BaseModel):
     coverage_pct: float = Field(95.0, example=95.0)
     stamp_duty_pct: float = Field(4.0, example=4.0)
+
+class CabinetNoteRequest(BaseModel):
+    bill_code: str = Field("BILL-CONCL-TITLE", example="BILL-CONCL-TITLE")
+    sponsoring_department: str = Field("Department of Land Resources (DoLR)", example="Department of Land Resources (DoLR)")
 
 @app.get("/")
 def read_root():
@@ -64,9 +69,35 @@ def get_states():
 def get_scenarios():
     return load_json("policy_reform_simulation_scenarios.json")
 
+@app.get("/api/v1/bills")
+def get_bills():
+    return load_json("legislative_draft_templates_and_cabinet_notes.json")
+
+@app.get("/api/v1/grants")
+def get_grants():
+    return load_json("academic_research_grants_and_sandboxes.json")
+
 @app.get("/api/v1/stats")
 def get_stats():
     return load_json("neetimanthan_stats.json")
+
+@app.post("/api/v1/generate-cabinet-note")
+def generate_cabinet_note(req: CabinetNoteRequest):
+    bills = load_json("legislative_draft_templates_and_cabinet_notes.json")
+    match = next((b for b in bills if b["bill_code"].lower() == req.bill_code.lower()), bills[0])
+    return {
+        "bill_code": match["bill_code"],
+        "bill_title": match["bill_title"],
+        "cabinet_note_dossier": {
+            "title": f"Cabinet Note: Introduction of {match['bill_title']}",
+            "sponsoring_department": req.sponsoring_department,
+            "statutory_clauses_drafted": len(match["key_statutory_clauses"]),
+            "clauses": match["key_statutory_clauses"],
+            "financial_memorandum": "Establishment of statutory Title Indemnity Pool funded by 0.25% stamp duty cess",
+            "cabinet_verdict": "APPROVED_FOR_STATE_ASSEMBLY_INTRODUCTION"
+        },
+        "timestamp": datetime.utcnow().isoformat()
+    }
 
 @app.post("/api/v1/simulate-land-reform")
 def simulate_reform(req: SimulateReformRequest):
