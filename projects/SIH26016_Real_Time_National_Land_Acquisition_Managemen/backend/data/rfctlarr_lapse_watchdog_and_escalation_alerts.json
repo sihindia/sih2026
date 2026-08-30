@@ -1,0 +1,47 @@
+[
+  {
+    "alert_id": "ALERT-SEC25-088",
+    "project_id": "NLAMS-2026-088",
+    "title": "Ken-Betwa River Basin Link Phase 2",
+    "requiring_body": "National Water Development Agency (NWDA)",
+    "section_19_declaration_date": "2025-10-14",
+    "section_25_lapse_deadline": "2026-10-14",
+    "days_remaining": 45,
+    "statutory_risk_level": "AMBER_HIGH_RISK_OF_EXPIRATION",
+    "pending_bottleneck": "Valuation reconciliation for 12 Forest Village Parcels in Chhatarpur",
+    "missing_consents_count": 48,
+    "active_court_stays": 1,
+    "escalated_authority": "District Collector Chhatarpur & Principal Secretary (Revenue) MP",
+    "recommended_remedy": "Convene Special CALA Lok Adalat on Sept 05 to settle 12 disputed orchards."
+  },
+  {
+    "alert_id": "ALERT-SEC25-112",
+    "project_id": "NLAMS-2026-112",
+    "title": "Western DFC Multi-Modal Freight Park",
+    "requiring_body": "Dedicated Freight Corridor Corporation (DFCCIL)",
+    "section_19_declaration_date": "2025-06-20",
+    "section_25_lapse_deadline": "2026-06-20",
+    "days_remaining": 0,
+    "statutory_risk_level": "GREEN_AWARD_DECLARED_IN_TIME",
+    "pending_bottleneck": "Nil - Possession 99% finalized",
+    "missing_consents_count": 0,
+    "active_court_stays": 0,
+    "escalated_authority": "CALA Vadodara",
+    "recommended_remedy": "Proceed with final mutation in Gujarat AnyRoR system."
+  },
+  {
+    "alert_id": "ALERT-SEC25-041",
+    "project_id": "NLAMS-2026-041",
+    "title": "Bharatmala Economic Corridor (NH-754)",
+    "requiring_body": "National Highways Authority of India (NHAI)",
+    "section_19_declaration_date": "2025-08-10",
+    "section_25_lapse_deadline": "2026-08-10",
+    "days_remaining": 0,
+    "statutory_risk_level": "GREEN_AWARD_DECLARED_IN_TIME",
+    "pending_bottleneck": "Completed 100% Section 38 handover",
+    "missing_consents_count": 0,
+    "active_court_stays": 0,
+    "escalated_authority": "NHAI Project Director Jodhpur",
+    "recommended_remedy": "Issue Completion Certificate on PM GatiShakti Portal."
+  }
+]

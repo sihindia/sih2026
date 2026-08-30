@@ -116,6 +116,11 @@ import sih26021Hives from '../data/sih26021/smart_iot_hive_telemetry.json';
 import sih26021Comb from '../data/sih26021/ai_comb_disease_diagnostics.json';
 import sih26021Flora from '../data/sih26021/floral_migration_calendar.json';
 import sih26021Subsidies from '../data/sih26021/kvic_honey_mission_subsidies.json';
+import sih26016Proposals from '../data/sih26016/land_acquisition_proposals_registry.json';
+import sih26016Stages from '../data/sih26016/rfctlarr_act_stages_workflow.json';
+import sih26016Families from '../data/sih26016/displaced_families_resettlement_registry.json';
+import sih26016Compensation from '../data/sih26016/compensation_calculator_and_solatium_benchmarks.json';
+import sih26016Watchdog from '../data/sih26016/rfctlarr_lapse_watchdog_and_escalation_alerts.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -2460,48 +2465,526 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
     );
   }
 
+  /* =========================================================================
+     MINISTRY OF RURAL DEVELOPMENT / DoLR / SIH26016 NLAMS BHOOMIACQUIRE 360
+     National Land Acquisition & Management System (RFCTLARR 2013, DBT, Watchdog & R&R)
+     ========================================================================= */
   if (psId === 'SIH26016') {
-    const proposals = [
-      { id: "NLAMS-2026-041", title: "Bharatmala Economic Corridor (NH-754)", state: "Rajasthan", notified: 620.0, acquired: 580.0, assessed: "₹450 Cr", disbursed: "₹428.5 Cr (95%)", families: 1820, randr: "92% Done", status: "Possession Completed" },
-      { id: "NLAMS-2026-088", title: "Inter-State River Basin Link (Ken-Betwa 2)", state: "Madhya Pradesh", notified: 1450.0, acquired: 890.0, assessed: "₹1,120 Cr", disbursed: "₹680 Cr (61%)", families: 4200, randr: "58% In Progress", status: "Partial Possession" },
-      { id: "NLAMS-2026-112", title: "Western DFC Multi-Modal Freight Park", state: "Gujarat", notified: 380.0, acquired: 380.0, assessed: "₹310 Cr", disbursed: "₹308 Cr (99%)", families: 940, randr: "98% Done", status: "Possession Completed" }
-    ];
+    const proposals = sih26016Proposals;
+    const statutoryStages = sih26016Stages;
+    const displacedFamilies = sih26016Families;
+    const compensationData = sih26016Compensation;
+    const watchdogAlerts = sih26016Watchdog;
+
+    const [selectedProposal, setSelectedProposal] = React.useState(proposals[0]);
+    const [tab, setTab] = React.useState<'stages' | 'watchdog' | 'calculator' | 'dbt' | 'randr' | 'gatishakti'>('stages');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
+
+    // Calculator Interactive State
+    const [calcHectares, setCalcHectares] = React.useState(2.5);
+    const [calcCircleRate, setCalcCircleRate] = React.useState(850);
+    const [calcMultiplier, setCalcMultiplier] = React.useState(1.75);
+    const [calcAssetsVal, setCalcAssetsVal] = React.useState(450000);
+
+    // Calculated Statutory Values
+    const baseLandVal = Math.round(calcHectares * 10000 * calcCircleRate);
+    const multipliedLandVal = Math.round(baseLandVal * calcMultiplier);
+    const landAndAssets = multipliedLandVal + calcAssetsVal;
+    const solatium100 = landAndAssets; // 100% Solatium under Section 30
+    const interest12 = Math.round(landAndAssets * 0.12); // 12% per annum under Section 30(3)
+    const totalAwardCompensation = landAndAssets + solatium100 + interest12;
+
+    // Watchdog Escalation Action State
+    const [escalationSent, setEscalationSent] = React.useState(false);
+
+    // DBT Disbursal Simulation State
+    const [dbtDisbursed, setDbtDisbursed] = React.useState(false);
+
+    const handleTriggerEscalation = () => {
+      setEscalationSent(true);
+      setTimeout(() => setEscalationSent(false), 4500);
+    };
+
+    const handleTriggerDbt = () => {
+      setDbtDisbursed(true);
+      setTimeout(() => setDbtDisbursed(false), 4000);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF RURAL DEVELOPMENT • DoLR (BHOOMIACQUIRE 360)",
+        desc: "RFCTLARR Act 2013 Statutory Lifecycle, Section 25 Lapse Watchdog, Solatium Calculator, DBT Escrow & R&R Resettlement",
+        tabStages: "📜 RFCTLARR Statutory Stages",
+        tabWatchdog: "⏳ 12-Month Lapse Watchdog",
+        tabCalculator: "💰 Solatium & Award Solver",
+        tabDbt: "💳 PFMS Aadhaar DBT Disbursal",
+        tabRandr: "🏡 R&R Resettlement Matrix",
+        tabGatishakti: "🗺️ PM GatiShakti GIS Alignment",
+      },
+      hi: {
+        tag: "ग्रामीण विकास मंत्रालय • भूमि संसाधन विभाग (भूमि-अधिग्रहण 360)",
+        desc: "RFCTLARR अधिनियम 2013 चरण, धारा 25 समाप्ति निगरानी, सोलेशियम कैलकुलेटर, DBT एस्क्रो व पुनर्वास",
+        tabStages: "📜 RFCTLARR वैधानिक चरण",
+        tabWatchdog: "⏳ 12-माह समाप्ति निगरानी",
+        tabCalculator: "💰 सोलेशियम व अवॉर्ड सॉल्वर",
+        tabDbt: "💳 PFMS आधार DBT वितरण",
+        tabRandr: "🏡 पुनर्वास व व्यवस्थापन",
+        tabGatishakti: "🗺️ पीएम गतिशक्ति GIS संरेखण",
+      },
+      mr: {
+        tag: "ग्रामीण विकास मंत्रालय • भू-संसाधन विभाग (भूमी-अधिग्रहण 360)",
+        desc: "भूसंपादन कायदा २०१३, कलम २५ मुदत देखरेख, मोबदला व सोलेशियम गणक, थेट बँक खात्यात वाटप आणि पुनर्वसन",
+        tabStages: "📜 भूसंपादन वैधानिक टप्पे",
+        tabWatchdog: "⏳ १२-महिने मुदत वॉचडॉग",
+        tabCalculator: "💰 सोलेशियम व भरपाई गणक",
+        tabDbt: "💳 थेट बँक खात्यात DBT वितरण",
+        tabRandr: "🏡 पुनर्वसन व स्थलांतर तक्ता",
+        tabGatishakti: "🗺️ पीएम गतिशक्ती GIS नकाशा",
+      }
+    }[lang];
 
     return (
-      <div className="space-y-6">
-        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="space-y-6 font-sans">
+        {/* Header */}
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold mb-1">
               <Building2 className="w-4 h-4 text-emerald-400" />
-              <span>DEPARTMENT OF LAND RESOURCES (DoLR) • NATIONAL PORTAL • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">End-to-End Digital Monitoring: Proposals, Section 11/19, Direct Benefit Transfer (DBT) & R&R Handover</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-2xl text-xs font-bold">
-            NLAMS Portal: Live
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-emerald-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {proposals.map((p) => (
-            <div key={p.id} className="bg-slate-900 p-5 rounded-3xl border border-slate-800 space-y-3 text-xs">
-              <div className="flex justify-between items-start border-b border-slate-800 pb-2">
-                <div>
-                  <span className="font-mono text-[10px] text-emerald-400 font-bold">{p.id}</span>
-                  <div className="font-bold text-sm text-white mt-0.5">{p.title}</div>
-                  <div className="text-[11px] text-slate-400">{p.state}</div>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-2 font-mono text-[11px]">
-                <div className="p-2.5 bg-slate-950 rounded-xl"><span className="text-slate-500 block text-[9px]">Acquired Land</span><span className="text-white font-bold">{p.acquired}/{p.notified} Ha</span></div>
-                <div className="p-2.5 bg-slate-950 rounded-xl"><span className="text-slate-500 block text-[9px]">Compensation</span><span className="text-emerald-400 font-bold">{p.disbursed}</span></div>
-                <div className="p-2.5 bg-slate-950 rounded-xl"><span className="text-slate-500 block text-[9px]">Families</span><span className="text-slate-300">{p.families}</span></div>
-                <div className="p-2.5 bg-slate-950 rounded-xl"><span className="text-slate-500 block text-[9px]">R&R Progress</span><span className="text-cyan-400 font-bold">{p.randr}</span></div>
-              </div>
-            </div>
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
+          {[
+            { id: 'stages', label: t.tabStages },
+            { id: 'watchdog', label: t.tabWatchdog },
+            { id: 'calculator', label: t.tabCalculator },
+            { id: 'dbt', label: t.tabDbt },
+            { id: 'randr', label: t.tabRandr },
+            { id: 'gatishakti', label: t.tabGatishakti },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-emerald-500 text-slate-950 font-black shadow-lg shadow-emerald-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
+            </button>
           ))}
         </div>
+
+        {/* TAB 1: RFCTLARR 2013 STATUTORY STAGES */}
+        {tab === 'stages' && (
+          <div className="space-y-6">
+            {/* Project Selector Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {proposals.map((p: any) => (
+                <button
+                  key={p.project_id}
+                  onClick={() => setSelectedProposal(p)}
+                  className={`p-5 rounded-2xl border text-left transition-all ${
+                    selectedProposal.project_id === p.project_id
+                      ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-lg ring-1 ring-emerald-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-emerald-400">{p.project_id}</span>
+                    <span className="text-cyan-400">{p.state}</span>
+                  </div>
+                  <div className="text-sm font-bold text-white mt-1 line-clamp-1">{p.title}</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">{p.requiring_body}</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-amber-400">Notified: {p.notified_area_ha} Ha</span>
+                    <span className="text-emerald-400 font-bold">{p.disbursed_pct}% Disbursed</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Statutory Milestones Stepper */}
+            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-mono text-xs">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>RFCTLARR Act 2013 Statutory Lifecycle Progression</span>
+                  </h4>
+                  <p className="text-slate-400 text-xs mt-0.5">{selectedProposal.title} • Current: {selectedProposal.current_stage}</p>
+                </div>
+                <span className="px-3 py-1 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full text-[10px] font-bold">
+                  {selectedProposal.lifecycle_status}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {statutoryStages.map((st: any, idx: number) => (
+                  <div key={st.stage_name} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-emerald-400 font-bold text-[10px]">STAGE 0{idx + 1}</span>
+                      <span className="text-slate-500 text-[9px]">{st.statute}</span>
+                    </div>
+                    <h5 className="font-bold text-white font-sans text-xs">{st.stage_name}</h5>
+                    <p className="text-slate-400 font-sans text-[11px] leading-relaxed">
+                      {st.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: AI 12-MONTH SECTION 25 LAPSE WATCHDOG */}
+        {tab === 'watchdog' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {watchdogAlerts.map((w: any) => (
+                <div key={w.alert_id} className={`p-5 bg-slate-900 rounded-3xl border space-y-3 ${
+                  w.statutory_risk_level.includes('AMBER') ? 'border-amber-500/80 shadow-lg shadow-amber-500/10' : 'border-slate-800'
+                }`}>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-emerald-400 font-bold">{w.alert_id}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{w.title}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{w.requiring_body}</p>
+                    </div>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                      w.days_remaining > 0 ? 'bg-amber-950 text-amber-300 border border-amber-800' : 'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                    }`}>
+                      {w.days_remaining > 0 ? `⚠️ ${w.days_remaining} Days Left` : '✅ Award Finalized'}
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Sec 19 Declaration:</span>
+                      <strong className="text-white">{w.section_19_declaration_date}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Sec 25 Statutory Deadline:</span>
+                      <strong className="text-amber-400">{w.section_25_lapse_deadline}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Missing Consents:</span>
+                      <span className="text-rose-400 font-bold">{w.missing_consents_count} Parcels</span>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Active Court Stays:</span>
+                      <span className="text-purple-400 font-bold">{w.active_court_stays} Petitions</span>
+                    </div>
+                  </div>
+
+                  <div className="p-2.5 bg-slate-950 rounded-xl text-slate-300 font-sans text-[11px]">
+                    <strong>Remedy</strong>: {w.recommended_remedy}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Escalation Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-emerald-400 font-bold block text-sm font-sans">Automated Section 25 Collector Escalation Gateway</span>
+                <span className="text-slate-400 text-xs font-sans">Dispatches high-priority statutory warning to District Collector &amp; Principal Secretary (Revenue) to avoid proceedings lapsing.</span>
+              </div>
+              <button
+                onClick={handleTriggerEscalation}
+                disabled={escalationSent}
+                className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-amber-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {escalationSent ? '🚨 High-Priority Escalation Dispatched to Collector!' : 'Trigger Section 25 Escalation Alert'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: SECTION 26 COMPENSATION & SOLATIUM CALCULATOR */}
+        {tab === 'calculator' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            {/* Input Controls */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Sliders className="w-5 h-5 text-emerald-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">Section 26 &amp; 30 Statutory Compensation Solver</h4>
+                  <p className="text-slate-400 text-xs font-sans">Multiplied Base Market Value + 100% Solatium + 12% Interest</p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-slate-300">Acquired Land Area:</span>
+                    <strong className="text-emerald-400">{calcHectares} Hectares ({(calcHectares * 10000).toLocaleString()} m²)</strong>
+                  </div>
+                  <input
+                    type="range"
+                    min="0.5"
+                    max="10.0"
+                    step="0.5"
+                    value={calcHectares}
+                    onChange={(e) => setCalcHectares(Number(e.target.value))}
+                    className="w-full accent-emerald-500 cursor-pointer"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-slate-300">Circle Rate / Market Price per m²:</span>
+                    <strong className="text-cyan-400">₹{calcCircleRate.toLocaleString()} / m²</strong>
+                  </div>
+                  <input
+                    type="range"
+                    min="200"
+                    max="3000"
+                    step="50"
+                    value={calcCircleRate}
+                    onChange={(e) => setCalcCircleRate(Number(e.target.value))}
+                    className="w-full accent-cyan-500 cursor-pointer"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-slate-300">Rural Distance Multiplier (1.0x to 2.0x):</span>
+                    <strong className="text-amber-400">{calcMultiplier}x Factor</strong>
+                  </div>
+                  <input
+                    type="range"
+                    min="1.0"
+                    max="2.0"
+                    step="0.05"
+                    value={calcMultiplier}
+                    onChange={(e) => setCalcMultiplier(Number(e.target.value))}
+                    className="w-full accent-amber-500 cursor-pointer"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-slate-300">Attached Assets (Structures, Tube-Wells, Fruit Trees):</span>
+                    <strong className="text-purple-400">₹{calcAssetsVal.toLocaleString()}</strong>
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="2000000"
+                    step="50000"
+                    value={calcAssetsVal}
+                    onChange={(e) => setCalcAssetsVal(Number(e.target.value))}
+                    className="w-full accent-purple-500 cursor-pointer"
+                  />
+                </div>
+              </div>
+
+              <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-[11px] font-sans text-slate-400">
+                ⚖️ <strong>Legal Statutory Mandate</strong>: Under Section 30 of RFCTLARR 2013, the Collector MUST award 100% Solatium over the total market value of land and attached immovable assets.
+              </div>
+            </div>
+
+            {/* Calculated Breakdown Card */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <DollarSign className="w-4 h-4 text-emerald-400" />
+                <span>Statutory Land Award Compensation Breakdown</span>
+              </h4>
+
+              <div className="p-5 bg-slate-950 rounded-2xl border border-emerald-800/80 space-y-3">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Base Land Value (Circle Rate):</span>
+                  <span className="text-white">₹{baseLandVal.toLocaleString()}</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Multiplied Value ({calcMultiplier}x):</span>
+                  <strong className="text-cyan-400">₹{multipliedLandVal.toLocaleString()}</strong>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Attached Assets &amp; Trees:</span>
+                  <span className="text-purple-400">₹{calcAssetsVal.toLocaleString()}</span>
+                </div>
+                <div className="flex justify-between text-xs pt-2 border-t border-slate-900">
+                  <span className="text-slate-400">100% Solatium (Sec 30):</span>
+                  <strong className="text-amber-400">+₹{solatium100.toLocaleString()}</strong>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">12% Additional Interest (Sec 30(3)):</span>
+                  <strong className="text-cyan-300">+₹{interest12.toLocaleString()}</strong>
+                </div>
+
+                <div className="pt-3 border-t border-slate-800 flex justify-between items-baseline">
+                  <span className="text-xs text-white font-bold uppercase font-sans">Total Disbursable Award:</span>
+                  <span className="text-2xl font-black text-emerald-400 font-sans">₹{totalAwardCompensation.toLocaleString()}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: PFMS DIRECT BENEFIT TRANSFER (DBT) & ESCROW */}
+        {tab === 'dbt' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {compensationData.sample_awards_calculated.map((aw: any) => (
+                <div key={aw.award_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-emerald-400 font-bold">{aw.award_id} • {aw.project_id}</span>
+                      <h4 className="font-bold text-white font-sans text-base mt-0.5">{aw.land_owner}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">Parcel ULPIN: {aw.parcel_ulpin} ({aw.area_hectares} Ha)</p>
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      {aw.pfms_dbt_status.split('_')[0]}
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">MULTIPLIED LAND</span>
+                      <strong className="text-cyan-400 text-xs block mt-0.5">₹{(aw.multiplied_land_value_inr / 100000).toFixed(1)} L</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">100% SOLATIUM</span>
+                      <strong className="text-amber-400 text-xs block mt-0.5">₹{(aw.solatium_100_pct_inr / 100000).toFixed(1)} L</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">TOTAL AWARD</span>
+                      <strong className="text-emerald-400 text-sm block mt-0.5">₹{(aw.total_award_compensation_inr / 100000).toFixed(2)} L</strong>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-800 flex justify-between items-center text-slate-400 text-[11px]">
+                    <span>Bank Payout: <strong className="text-white">{aw.bank_account_hash}</strong></span>
+                    <span className="text-emerald-400 font-bold">PFMS UTR Verified</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Instant DBT Trigger Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-emerald-400 font-bold block text-sm font-sans">PFMS / e-Kuber Direct Benefit Transfer Escrow Disbursal</span>
+                <span className="text-slate-400 text-xs font-sans">Disburses verified land award directly into farmer bank accounts with simultaneous encumbrance clearance in land records.</span>
+              </div>
+              <button
+                onClick={handleTriggerDbt}
+                disabled={dbtDisbursed}
+                className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-emerald-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {dbtDisbursed ? '✅ ₹67.24 Lakh Disbursed via PFMS DBT!' : 'Authorize PFMS Compensation DBT'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: REHABILITATION & RESETTLEMENT (R&R) MATRIX */}
+        {tab === 'randr' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {displacedFamilies.map((fam: any) => (
+                <div key={fam.family_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-emerald-400 font-bold">{fam.family_id}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{fam.head_of_household}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{fam.village}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      REHABILITATED
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Acquired Land:</span>
+                      <strong className="text-white">{fam.land_acquired_bigha} Bigha</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Compensation:</span>
+                      <strong className="text-emerald-400">{fam.compensation_paid}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Allotted Housing:</span>
+                      <span className="text-cyan-400 font-bold">{fam.resettlement_plot.split(' ')[0]} {fam.resettlement_plot.split(' ')[1]}</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-800 text-[10px] text-amber-300 font-sans">
+                    Grant: {fam.subsistence_grant}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: PM GATISHAKTI GIS ALIGNMENT */}
+        {tab === 'gatishakti' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {proposals.map((prop: any) => (
+                <div key={prop.project_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-emerald-400 font-bold">{prop.project_id}</span>
+                      <h4 className="font-bold text-base text-white font-sans mt-0.5">{prop.title}</h4>
+                      <p className="text-slate-400 text-[11px] font-sans">{prop.requiring_body}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-slate-950 text-cyan-300 border border-slate-800 text-[10px] font-bold">
+                      {prop.state}
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">ACQUIRED / NOTIFIED</span>
+                      <strong className="text-white text-sm block mt-0.5">{prop.acquired_area_ha} / {prop.notified_area_ha} Ha</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">DISBURSED FUNDS</span>
+                      <strong className="text-emerald-400 text-sm block mt-0.5">₹{prop.disbursed_compensation_cr} Cr ({prop.disbursed_pct}%)</strong>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5 font-sans">
+                    <div className="flex justify-between text-slate-300">
+                      <span>R&amp;R Resettlement Progress:</span>
+                      <strong className="text-cyan-400 font-mono">{prop.randr_completion_pct}% Complete</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span>Current Milestone:</span>
+                      <strong className="text-amber-400 font-mono text-[10px]">{prop.current_stage}</strong>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     );
   }

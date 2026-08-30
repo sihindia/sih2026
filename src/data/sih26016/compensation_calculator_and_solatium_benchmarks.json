@@ -1,0 +1,43 @@
+{
+  "state_multipliers": [
+    { "state": "Rajasthan", "rural_multiplier": 1.75, "urban_multiplier": 1.0, "avg_circle_rate_inr_sqm": 850.0 },
+    { "state": "Madhya Pradesh", "rural_multiplier": 2.0, "urban_multiplier": 1.0, "avg_circle_rate_inr_sqm": 720.0 },
+    { "state": "Gujarat", "rural_multiplier": 1.5, "urban_multiplier": 1.0, "avg_circle_rate_inr_sqm": 1450.0 },
+    { "state": "Uttar Pradesh", "rural_multiplier": 2.0, "urban_multiplier": 1.0, "avg_circle_rate_inr_sqm": 980.0 },
+    { "state": "Maharashtra", "rural_multiplier": 1.6, "urban_multiplier": 1.0, "avg_circle_rate_inr_sqm": 1250.0 }
+  ],
+  "sample_awards_calculated": [
+    {
+      "award_id": "AWD-2026-RAJ-4819",
+      "project_id": "NLAMS-2026-041",
+      "parcel_ulpin": "27-584-0129-4819",
+      "land_owner": "Ramratan Bishnoi",
+      "area_hectares": 1.85,
+      "base_market_value_inr": 1572500,
+      "rural_multiplier_factor": 1.75,
+      "multiplied_land_value_inr": 2751875,
+      "assets_structures_trees_inr": 420000,
+      "solatium_100_pct_inr": 3171875,
+      "additional_interest_12_pct_inr": 380625,
+      "total_award_compensation_inr": 6724375,
+      "pfms_dbt_status": "DISBURSED_ZERO_LEAKAGE",
+      "bank_account_hash": "A/C: *******9142 (SBI Nokha)"
+    },
+    {
+      "award_id": "AWD-2026-MP-9021",
+      "project_id": "NLAMS-2026-088",
+      "parcel_ulpin": "07-110-8402-9021",
+      "land_owner": "Kamal Singh Gond",
+      "area_hectares": 2.40,
+      "base_market_value_inr": 1728000,
+      "rural_multiplier_factor": 2.0,
+      "multiplied_land_value_inr": 3456000,
+      "assets_structures_trees_inr": 680000,
+      "solatium_100_pct_inr": 4136000,
+      "additional_interest_12_pct_inr": 496320,
+      "total_award_compensation_inr": 8768320,
+      "pfms_dbt_status": "DISBURSED_ZERO_LEAKAGE",
+      "bank_account_hash": "A/C: *******2819 (CBI Chhatarpur)"
+    }
+  ]
+}
