@@ -96,6 +96,8 @@ import sih26009Satellite from '../data/sih26009/satellite_spectral_exploration_i
 import sih26009Fleet from '../data/sih26009/hemm_machinery_and_dispatch_fleet.json';
 import sih26009Reserves from '../data/sih26009/borehole_krige_reserves_and_blending.json';
 import sih26009Blast from '../data/sih26009/blast_design_and_shortfall_remedies.json';
+import sih26009CoreDrone from '../data/sih26009/corebox_photogrammetry_and_drone_volumetrics.json';
+import sih26009StrataGreen from '../data/sih26009/microseismic_strata_and_green_carbon.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -380,7 +382,7 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
 
         /* =========================================================================
      MINISTRY OF STEEL / MOIL LIMITED / SIH26009 BHUDHATRI 360
-     Manganese Reserves Space Sensing, 3D Kriging & Shortfall Remediation
+     Manganese Reserves Space Sensing, 3D Kriging, Corebox CV, Drone RTK & CBAM Green Steel
      ========================================================================= */
   if (psId === 'SIH26009') {
     const mines = sih26009Mines;
@@ -389,9 +391,11 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
     const fleet = sih26009Fleet;
     const reservesData = sih26009Reserves;
     const blastData = sih26009Blast;
+    const coreDroneData = sih26009CoreDrone;
+    const strataGreenData = sih26009StrataGreen;
 
     const [selectedMine, setSelectedMine] = React.useState(mines[0]);
-    const [tab, setTab] = React.useState<'space' | 'reserves' | 'blending' | 'fleet' | 'blast' | 'dispatch'>('space');
+    const [tab, setTab] = React.useState<'space' | 'reserves' | 'corebox' | 'drone' | 'blending' | 'fleet' | 'strata' | 'green'>('space');
     const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
 
     // Blending Optimizer Interactive State
@@ -411,6 +415,9 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
     // Shortfall Remediation Interactive State
     const [remediationActive, setRemediationActive] = React.useState(false);
 
+    // Dynamic MILP Dispatch State
+    const [milpSimulated, setMilpSimulated] = React.useState(false);
+
     const runBlastSim = () => {
       const fragD80 = Math.round(180 + (blastBurden * blastSpacing * 15) - (blastCharge * 40));
       const ppvVib = Number((3.2 + (blastCharge * 2.8) - (blastBurden * 0.4)).toFixed(2));
@@ -427,39 +434,51 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
       setTimeout(() => setRemediationActive(false), 5000);
     };
 
+    const handleTriggerMilp = () => {
+      setMilpSimulated(true);
+      setTimeout(() => setMilpSimulated(false), 4500);
+    };
+
     const currentShortfall = shortfalls.find((s: any) => s.mine_id === selectedMine.mine_id) || shortfalls[0];
     const currentUnfc = reservesData.unfc_reserves.find((u: any) => u.mine_id === selectedMine.mine_id) || reservesData.unfc_reserves[0];
+    const currentCbam = strataGreenData.cbam_green_passports.find((c: any) => c.mine_id === selectedMine.mine_id) || strataGreenData.cbam_green_passports[0];
 
     const t = {
       en: {
-        tag: "MINISTRY OF STEEL • MOIL LIMITED (BHUDHATRI 360)",
-        desc: "Space Technology & Satellite Remote Sensing, 3D Geostatistical Kriging, Real-Time HEMM Telematics & Blast Furnace Supply Pacing",
-        tabSpace: "🛰️ Satellite Spectral & SAR Exploration",
-        tabReserves: "⛏️ 3D UNFC Reserves & Boreholes",
-        tabBlending: "🧪 Smelter Grade Blending Optimizer",
-        tabFleet: "🚜 HEMM Machinery & Telematics",
-        tabBlast: "💥 Blast Designer & Shortfall AI",
-        tabDispatch: "🏭 MOIL Command & Steel Pacing",
+        tag: "MINISTRY OF STEEL • MOIL LIMITED (BHUDHATRI 360 ADVANCED)",
+        desc: "Satellite Remote Sensing, 3D Kriging, Corebox CV Scanner, Drone RTK Volumetrics, Microseismic Rockburst AI & CBAM Green Steel",
+        tabSpace: "🛰️ Satellite Spectral & SAR",
+        tabReserves: "⛏️ 3D UNFC Reserves",
+        tabCorebox: "🔬 Core Box Photogrammetry AI",
+        tabDrone: "🛸 Drone RTK Volumetrics",
+        tabBlending: "🧪 Smelter Blending Solver",
+        tabFleet: "🚜 HEMM & MILP Dispatch",
+        tabStrata: "🪨 Microseismic & VOD Safety",
+        tabGreen: "🌿 CBAM Green Steel Passport",
       },
       hi: {
-        tag: "इस्पात मंत्रालय • MOIL लिमिटेड (भू-धात्री 360)",
-        desc: "अंतरिक्ष प्रौद्योगिकी, उपग्रह स्पेक्ट्रल रिमोट सेंसिंग, 3D भू-सांख्यिकीय क्रिगिंग, HEMM टेलीमैटिक्स व उत्पादन क्षतिपूर्ति",
-        tabSpace: "🛰️ उपग्रह अन्वेषण व SAR स्थिरता",
-        tabReserves: "⛏️ 3D UNFC भंडार व बोरहोल",
-        tabBlending: "🧪 अयस्क ग्रेड सम्मिश्रण (ब्लास्ट फर्नेस)",
-        tabFleet: "🚜 भारी खनन मशीनरी (HEMM)",
-        tabBlast: "💥 ब्लास्ट डिजाइन व क्षतिपूर्ति AI",
-        tabDispatch: "🏭 MOIL कमान केंद्र व स्टील आपूर्ति",
+        tag: "इस्पात मंत्रालय • MOIL लिमिटेड (भू-धात्री 360 उन्नत)",
+        desc: "उपग्रह रिमोट सेंसिंग, 3D क्रिगिंग, कोरबॉक्स कंप्यूटर विजन, ड्रोन वॉल्यूमेट्रिक्स, माइक्रोसीस्मिक रॉकबर्स्ट AI व CBAM ग्रीन स्टील",
+        tabSpace: "🛰️ उपग्रह अन्वेषण व SAR",
+        tabReserves: "⛏️ 3D UNFC खनिज भंडार",
+        tabCorebox: "🔬 कोरबॉक्स इमेजिंग AI",
+        tabDrone: "🛸 ड्रोन RTK स्टॉकपाइल",
+        tabBlending: "🧪 अयस्क सम्मिश्रण सॉल्वर",
+        tabFleet: "🚜 HEMM व MILP प्रेषण",
+        tabStrata: "🪨 माइक्रोसीस्मिक व VOD सुरक्षा",
+        tabGreen: "🌿 CBAM ग्रीन मैंगनीज पासपोर्ट",
       },
       mr: {
-        tag: "पोलाद मंत्रालय • मॉइल लिमिटेड (भू-धात्री 360)",
-        desc: "अंतराळ तंत्रज्ञान, सॅटेलाइट रिमोट सेन्सिंग, 3D खनिज साठा अंदाज, HEMM यंत्रसामग्री व्यवस्थापन आणि उत्पादन भरपाई",
-        tabSpace: "🛰️ उपग्रह अन्वेषण व SAR स्थैर्य",
-        tabReserves: "⛏️ 3D UNFC खनिज साठा व बोअरहोल",
-        tabBlending: "🧪 धातू मिश्रण ऑप्टिमायझर",
-        tabFleet: "🚜 खाणकाम यंत्रसामग्री (HEMM)",
-        tabBlast: "💥 ब्लास्ट डिझाइन व उत्पादन भरपाई",
-        tabDispatch: "🏭 मॉइल कमांड सेंटर व पुरवठा",
+        tag: "पोलाद मंत्रालय • मॉइल लिमिटेड (भू-धात्री 360 प्रगत)",
+        desc: "अंतराळ रिमोट सेन्सिंग, 3D खनिज साठा, कोअरबॉक्स स्कॅनर, ड्रोन वॉल्यूमेट्रिक्स, रॉकबर्स्ट सुरक्षा आणि CBAM ग्रीन स्टील",
+        tabSpace: "🛰️ उपग्रह अन्वेषण व SAR",
+        tabReserves: "⛏️ 3D UNFC खनिज साठा",
+        tabCorebox: "🔬 कोअर बॉक्स इमेजिंग AI",
+        tabDrone: "🛸 ड्रोन RTK साठा मोजमाप",
+        tabBlending: "🧪 धातू मिश्रण सॉल्व्हर",
+        tabFleet: "🚜 HEMM व MILP डिस्पॅच",
+        tabStrata: "🪨 रॉकबर्स्ट व व्हेंटिलेशन सुरक्षा",
+        tabGreen: "🌿 CBAM ग्रीन पोलाद पासपोर्ट",
       }
     }[lang];
 
@@ -491,15 +510,17 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
           </div>
         </div>
 
-        {/* 6 Tabs */}
+        {/* 8 Tabs */}
         <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold">
           {[
             { id: 'space', label: t.tabSpace },
             { id: 'reserves', label: t.tabReserves },
+            { id: 'corebox', label: t.tabCorebox },
+            { id: 'drone', label: t.tabDrone },
             { id: 'blending', label: t.tabBlending },
             { id: 'fleet', label: t.tabFleet },
-            { id: 'blast', label: t.tabBlast },
-            { id: 'dispatch', label: t.tabDispatch },
+            { id: 'strata', label: t.tabStrata },
+            { id: 'green', label: t.tabGreen },
           ].map((item) => (
             <button
               key={item.id}
@@ -632,7 +653,7 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
           </div>
         )}
 
-        {/* TAB 2: 3D UNFC RESERVES & BOREHOLE LOGS */}
+        {/* TAB 2: 3D UNFC RESERVES & BOREHOLES */}
         {tab === 'reserves' && (
           <div className="space-y-6 font-mono text-xs">
             {/* UNFC Classification Summary Card */}
@@ -693,7 +714,120 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
           </div>
         )}
 
-        {/* TAB 3: SMELTER GRADE BLENDING OPTIMIZER */}
+        {/* TAB 3: CORE BOX PHOTOGRAMMETRY AI (NEW) */}
+        {tab === 'corebox' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-4 bg-cyan-950/40 rounded-3xl border border-cyan-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-cyan-200 font-sans">
+              <div>
+                <strong className="text-white text-sm block">🔬 AI Drill Core Box CV Photogrammetry Scanner</strong>
+                <span>Convolutional neural networks segment physical core trays, predicting mineral species &amp; Rock Quality Designation (RQD) in milliseconds.</span>
+              </div>
+              <span className="px-3 py-1 bg-cyan-500 text-slate-950 font-black rounded-xl text-xs font-mono shrink-0">
+                ResNet-50 HSI Segmenter
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {coreDroneData.core_box_scans.map((scan: any) => (
+                <div key={scan.tray_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-cyan-400 font-bold">{scan.tray_id}</span>
+                      <h4 className="text-sm font-bold text-white font-sans mt-0.5">{scan.mine}</h4>
+                      <p className="text-[10px] text-slate-400">Depth: {scan.depth_interval_m}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      {scan.estimated_mn_grade_pct}% Mn
+                    </span>
+                  </div>
+
+                  {/* Tray Image Simulation Box */}
+                  <div className="h-28 bg-slate-950 rounded-2xl border border-dashed border-slate-800 p-3 flex flex-col justify-between">
+                    <div className="flex justify-between text-[9px] text-slate-500">
+                      <span>RQD: {scan.rqd_pct}%</span>
+                      <span>Recovery: {scan.core_recovery_pct}%</span>
+                    </div>
+                    <div className="flex gap-1 items-center h-8">
+                      <div style={{ width: `${scan.predicted_minerals.braunite_pct || scan.predicted_minerals.cryptomelane_dioxide_pct}%` }} className="h-full bg-cyan-600 rounded-l" title="Manganese Lode" />
+                      <div style={{ width: `${scan.predicted_minerals.pyrolusite_pct}%` }} className="h-full bg-purple-600" title="Pyrolusite" />
+                      <div style={{ width: '15%' }} className="h-full bg-amber-600 rounded-r" title="Gangue" />
+                    </div>
+                    <div className="text-[10px] text-cyan-300 font-sans font-bold truncate">
+                      {scan.ai_classification}
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800/80 space-y-1.5">
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">Braunite / Dioxide:</span>
+                      <strong className="text-cyan-400">{scan.predicted_minerals.braunite_pct || scan.predicted_minerals.cryptomelane_dioxide_pct}%</strong>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">Pyrolusite:</span>
+                      <strong className="text-purple-400">{scan.predicted_minerals.pyrolusite_pct}%</strong>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">AI Confidence:</span>
+                      <span className="text-emerald-400 font-bold">{scan.spectral_confidence_pct}%</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: DRONE RTK VOLUMETRICS (NEW) */}
+        {tab === 'drone' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {coreDroneData.drone_stockpile_surveys.map((stk: any) => (
+                <div key={stk.stockpile_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-cyan-400 font-bold">{stk.stockpile_id} • {stk.drone_flight_id}</span>
+                      <h4 className="font-bold text-base text-white font-sans mt-0.5">{stk.mine}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{stk.ore_grade_type}</p>
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold">
+                      {stk.cut_fill_stability.split(' ')[0]}
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">SURVEYED VOLUME</span>
+                      <strong className="text-cyan-400 text-sm block mt-0.5">{stk.surveyed_volume_m3.toLocaleString()} m³</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">BULK DENSITY</span>
+                      <strong className="text-emerald-400 text-sm block mt-0.5">{stk.bulk_density_t_m3} t/m³</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">COMPUTED TONNAGE</span>
+                      <strong className="text-purple-400 text-sm block mt-0.5">{stk.computed_tonnage_mt.toLocaleString()} MT</strong>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5 font-sans">
+                    <div className="flex justify-between text-slate-300">
+                      <span>Planned vs Drone Survey Variance:</span>
+                      <strong className={stk.volumetric_variance_pct >= 0 ? 'text-emerald-400 font-mono' : 'text-amber-400 font-mono'}>
+                        {stk.volumetric_variance_pct > 0 ? `+${stk.volumetric_variance_pct}%` : `${stk.volumetric_variance_pct}%`}
+                      </strong>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span>Current Stripping Ratio:</span>
+                      <strong className="text-cyan-400 font-mono">{stk.stripping_ratio_current}</strong>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: SMELTER GRADE BLENDING OPTIMIZER */}
         {tab === 'blending' && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
             {/* Blending Controls */}
@@ -795,7 +929,7 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
           </div>
         )}
 
-        {/* TAB 4: HEMM FLEET TELEMATICS */}
+        {/* TAB 6: HEMM & DYNAMIC MILP FLEET DISPATCH */}
         {tab === 'fleet' && (
           <div className="space-y-6 font-mono text-xs">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -830,211 +964,128 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
               ))}
             </div>
 
-            <div className="p-4 bg-slate-900 rounded-3xl border border-slate-800 flex items-center justify-between">
+            {/* MILP Dispatch Optimization Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div>
-                <span className="text-cyan-400 font-bold block text-sm font-sans">Predictive HEMM Maintenance Dispatch</span>
-                <span className="text-slate-400 text-xs">AI forecasts hydraulic hose wear 36 hours prior to breakdown, eliminating sudden pit stops.</span>
+                <span className="text-cyan-400 font-bold block text-sm font-sans">Autonomous MILP Dumper-Shovel Dispatch Optimizer</span>
+                <span className="text-slate-400 text-xs font-sans">Re-allocates haul trucks in real-time when primary crusher hopper drops &lt;30%, preventing queuing bottlenecks.</span>
               </div>
-              <span className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-xl text-xs font-bold font-sans">
-                Fleet Availability: 92.4%
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* TAB 5: DIGITAL BLAST DESIGNER & SHORTFALL MITIGATION */}
-        {tab === 'blast' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
-            {/* Blast Pattern Controls */}
-            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-5">
-              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
-                <Flame className="w-5 h-5 text-amber-400" />
-                <div>
-                  <h4 className="text-white font-bold text-sm font-sans">Digital Blast Pattern Simulator</h4>
-                  <p className="text-slate-400 text-xs font-sans">Calculate optimal burden, spacing &amp; fragmentation for {selectedMine.mine_name}</p>
-                </div>
-              </div>
-
-              <div className="space-y-1.5">
-                <div className="flex justify-between">
-                  <span className="text-slate-300">Burden (Distance to Free Face):</span>
-                  <span className="text-cyan-400 font-bold">{blastBurden} meters</span>
-                </div>
-                <input
-                  type="range"
-                  min="2.0"
-                  max="4.5"
-                  step="0.1"
-                  value={blastBurden}
-                  onChange={(e) => setBlastBurden(Number(e.target.value))}
-                  className="w-full accent-cyan-500"
-                />
-              </div>
-
-              <div className="space-y-1.5">
-                <div className="flex justify-between">
-                  <span className="text-slate-300">Spacing (Distance Between Blast Holes):</span>
-                  <span className="text-emerald-400 font-bold">{blastSpacing} meters</span>
-                </div>
-                <input
-                  type="range"
-                  min="2.5"
-                  max="5.0"
-                  step="0.1"
-                  value={blastSpacing}
-                  onChange={(e) => setBlastSpacing(Number(e.target.value))}
-                  className="w-full accent-emerald-500"
-                />
-              </div>
-
-              <div className="space-y-1.5">
-                <div className="flex justify-between">
-                  <span className="text-slate-300">Specific Charge (Powder Factor):</span>
-                  <span className="text-amber-400 font-bold">{blastCharge} kg/m³</span>
-                </div>
-                <input
-                  type="range"
-                  min="0.35"
-                  max="0.85"
-                  step="0.02"
-                  value={blastCharge}
-                  onChange={(e) => setBlastCharge(Number(e.target.value))}
-                  className="w-full accent-amber-500"
-                />
-              </div>
-
               <button
-                onClick={runBlastSim}
-                className="w-full py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-amber-500/20 transition-all"
+                onClick={handleTriggerMilp}
+                disabled={milpSimulated}
+                className="px-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-cyan-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
               >
-                Run AI Blast Fragmentation Simulation ➔
+                {milpSimulated ? '✅ 4x Dumpers Re-Routed to Bench 2!' : 'Execute Dynamic MILP Re-Route'}
               </button>
             </div>
+          </div>
+        )}
 
-            {/* Blast Results & Shortfall Recovery Action */}
-            <div className="lg:col-span-6 space-y-4">
+        {/* TAB 7: MICROSEISMIC ROCKBURST & VOD SAFETY (NEW) */}
+        {tab === 'strata' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Microseismic Grid */}
               <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-                <h4 className="font-bold text-sm text-white font-sans flex items-center gap-2">
-                  <Activity className="w-4 h-4 text-cyan-400" />
-                  <span>Blast Outcome &amp; Safety Limits</span>
-                </h4>
+                <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                  <Activity className="w-5 h-5 text-rose-400" />
+                  <div>
+                    <h4 className="text-white font-bold text-sm font-sans">Tri-Axial Geophone Microseismic Grid</h4>
+                    <p className="text-slate-400 text-xs font-sans">Deep underground crown pillar stress monitoring (Balaghat 435m)</p>
+                  </div>
+                </div>
 
-                {blastResult ? (
-                  <div className="space-y-3">
-                    <div className="grid grid-cols-2 gap-3 text-center">
-                      <div className="p-3 bg-slate-950 rounded-2xl border border-cyan-950">
-                        <span className="text-slate-500 text-[9px] block">D80 FRAGMENTATION</span>
-                        <span className="text-2xl font-black text-cyan-400 mt-0.5 block">{blastResult.fragD80} mm</span>
-                        <span className="text-[9px] text-slate-400">Crusher Limit: &le;300mm</span>
+                <div className="space-y-3">
+                  {strataGreenData.microseismic_strata_grid.map((geo: any) => (
+                    <div key={geo.sensor_id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-cyan-400 font-bold">{geo.sensor_id} • {geo.location}</span>
+                        <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold ${
+                          geo.safety_status.includes('ALERT') ? 'bg-rose-950 text-rose-300 border border-rose-800' : 'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                        }`}>
+                          {geo.safety_status.includes('ALERT') ? '⚠️ 15m Early Alert' : '✅ Stable'}
+                        </span>
                       </div>
-                      <div className="p-3 bg-slate-950 rounded-2xl border border-emerald-950">
-                        <span className="text-slate-500 text-[9px] block">PPV GROUND VIBRATION</span>
-                        <span className="text-2xl font-black text-emerald-400 mt-0.5 block">{blastResult.ppvVib} mm/s</span>
-                        <span className="text-[9px] text-slate-400">DGMS Limit: &le;5.0 mm/s</span>
+                      <div className="grid grid-cols-3 gap-2 pt-1 text-[10px]">
+                        <div><span className="text-slate-500 block">ACOUSTIC RATE</span><strong className="text-white">{geo.acoustic_events_per_min} evt/m</strong></div>
+                        <div><span className="text-slate-500 block">PEAK FREQ</span><strong className="text-amber-400">{geo.peak_frequency_khz} kHz</strong></div>
+                        <div><span className="text-slate-500 block">STRESS FACTOR</span><strong className="text-cyan-400">{geo.stress_concentration_factor}x</strong></div>
                       </div>
                     </div>
-                    <div className="p-3 bg-emerald-950/40 border border-emerald-800 rounded-2xl flex justify-between items-center text-xs font-sans">
-                      <strong className="text-emerald-300">{blastResult.verdict}</strong>
-                      <span className="text-slate-400 font-mono text-[10px]">Standoff: {blastResult.flyrockRadius}m</span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="py-12 text-center text-slate-500 font-sans">
-                    Click "Run AI Blast Fragmentation Simulation" to evaluate blast parameters.
-                  </div>
-                )}
+                  ))}
+                </div>
               </div>
 
-              {/* Active Shortfall Remediation Panel */}
-              <div className="bg-slate-900 p-6 rounded-3xl border border-amber-800/80 space-y-3 font-sans">
-                <div className="flex justify-between items-start">
+              {/* Ventilation on Demand (VOD) */}
+              <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                  <Wind className="w-5 h-5 text-cyan-400" />
                   <div>
-                    <span className="text-amber-400 text-[10px] uppercase font-bold font-mono">ACTIVE PRODUCTION SHORTFALL REMEDIATION</span>
-                    <h4 className="text-sm font-bold text-white mt-0.5">{currentShortfall.mine_name}</h4>
+                    <h4 className="text-white font-bold text-sm font-sans">Ventilation-on-Demand (VOD) Fan Control</h4>
+                    <p className="text-slate-400 text-xs font-sans">Dynamic air pacing based on stope CO, NOx &amp; post-blast fumes</p>
                   </div>
-                  <span className="px-2.5 py-0.5 bg-rose-950 text-rose-300 border border-rose-800 rounded-full text-[10px] font-mono font-bold">
-                    Deficit: -1,400 MT
-                  </span>
                 </div>
 
-                <p className="text-xs text-slate-300 bg-slate-950 p-3 rounded-2xl border border-slate-800 leading-relaxed">
-                  <strong>Root Cause:</strong> {currentShortfall.active_bottleneck}
-                </p>
-
-                <div className="p-3 bg-cyan-950/40 rounded-2xl border border-cyan-900/60 text-xs text-cyan-200 space-y-1">
-                  <div className="font-bold">⚡ AI Corrective Strategy:</div>
-                  <div>{currentShortfall.ai_corrective_action}</div>
+                <div className="space-y-3">
+                  {strataGreenData.ventilation_on_demand.map((vod: any) => (
+                    <div key={vod.fan_station} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-white font-bold text-[11px] font-sans">{vod.fan_station}</span>
+                        <span className="text-emerald-400 font-bold text-[10px]">+{vod.energy_savings_pct}% Power Saved</span>
+                      </div>
+                      <div className="flex justify-between text-[11px]">
+                        <span className="text-slate-400">Airflow: <strong>{vod.airflow_volume_m3_min} m³/min</strong></span>
+                        <span className="text-cyan-400">Fan: <strong>{vod.fan_speed_rpm} RPM</strong></span>
+                        <span className="text-slate-300">CO: <strong>{vod.co_level_ppm} ppm</strong></span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-
-                <button
-                  onClick={handleTriggerRemediation}
-                  disabled={remediationActive}
-                  className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-xs transition-all disabled:opacity-50"
-                >
-                  {remediationActive ? '✅ Fleet Re-Deployed & Sump Pump Activated!' : 'Execute Dynamic Fleet Re-Deployment'}
-                </button>
               </div>
             </div>
           </div>
         )}
 
-        {/* TAB 6: MOIL COMMAND & STEEL DISPATCH */}
-        {tab === 'dispatch' && (
+        {/* TAB 8: GREEN MANGANESE & CBAM PASSPORT (NEW) */}
+        {tab === 'green' && (
           <div className="space-y-6 font-mono text-xs">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="font-bold text-base text-white font-sans">SAIL Bhilai Steel Plant (BSP)</h4>
-                    <p className="text-slate-400 text-xs font-sans">Indian Railways BOXN Rake Dispatch Link</p>
+              {strataGreenData.cbam_green_passports.map((cbam: any) => (
+                <div key={cbam.mine_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-emerald-400 font-bold text-xs">{cbam.qr_provenance_id}</span>
+                      <h4 className="font-bold text-base text-white font-sans mt-0.5">{cbam.mine_name}</h4>
+                      <p className="text-slate-400 text-[11px] font-sans">EU Carbon Border Adjustment Mechanism (CBAM) Passport</p>
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold">
+                      {cbam.carbon_intensity_rating.split(' ')[0]}
+                    </span>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold">
-                    Paced 100%
-                  </span>
-                </div>
-                <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
-                  <div className="flex justify-between"><span>Monthly Quota:</span><strong className="text-white">24,000 MT</strong></div>
-                  <div className="flex justify-between"><span>Dispatched to Date:</span><strong className="text-cyan-400">23,800 MT (99.2%)</strong></div>
-                  <div className="flex justify-between"><span>Current Transit:</span><span className="text-amber-400">2 Rakes in Transit via SECR</span></div>
-                </div>
-              </div>
 
-              <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="font-bold text-base text-white font-sans">Tata Steel Jamshedpur / Ferro-Alloys</h4>
-                    <p className="text-slate-400 text-xs font-sans">Premium High-Dioxide Battery Grade</p>
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">EMBODIED CARBON</span>
+                      <strong className="text-emerald-400 text-sm block mt-0.5">{cbam.net_embodied_carbon_kg_co2_per_t} kg</strong>
+                      <span className="text-[9px] text-slate-500">CO₂ / tonne ore</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">SOLAR CAPTIVE OFFSET</span>
+                      <strong className="text-cyan-400 text-sm block mt-0.5">{cbam.captive_solar_offset_pct}%</strong>
+                      <span className="text-[9px] text-slate-500">Grid Replacement</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">CBAM EXEMPTION</span>
+                      <strong className="text-purple-400 text-sm block mt-0.5">{cbam.eu_cbam_tariff_exemption_pct}%</strong>
+                      <span className="text-[9px] text-slate-500">Tariff Free</span>
+                    </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold">
-                    Paced 100%
-                  </span>
-                </div>
-                <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
-                  <div className="flex justify-between"><span>Monthly Quota:</span><strong className="text-white">16,500 MT</strong></div>
-                  <div className="flex justify-between"><span>Dispatched to Date:</span><strong className="text-cyan-400">16,500 MT (100%)</strong></div>
-                  <div className="flex justify-between"><span>Grade Purity:</span><span className="text-emerald-400">52.0% Mn (&lt;0.08% P)</span></div>
-                </div>
-              </div>
-            </div>
 
-            <div className="p-6 bg-gradient-to-r from-cyan-950 via-slate-900 to-purple-950 rounded-3xl border border-cyan-800/60 flex flex-col md:flex-row items-center justify-between gap-4 font-sans">
-              <div>
-                <span className="text-cyan-400 font-bold text-xs uppercase block font-mono">NATIONAL STEEL SELF-RELIANCE IMPACT</span>
-                <h4 className="text-lg font-black text-white mt-0.5">Zero Blast Furnace Throttling Across Indian Steel Mills</h4>
-                <p className="text-xs text-slate-300 mt-1 max-w-2xl leading-relaxed">
-                  By pairing satellite exploration with real-time shortfall recovery, MOIL ensures zero manganese import reliance, saving valuable foreign exchange for India.
-                </p>
-              </div>
-              <div className="flex gap-4 text-center shrink-0 font-mono">
-                <div className="p-3 bg-slate-950 rounded-2xl border border-cyan-900">
-                  <span className="text-xl font-black text-cyan-400">100%</span>
-                  <span className="text-[9px] block text-slate-400">Steel Rake Pacing</span>
+                  <div className="p-3.5 bg-emerald-950/30 rounded-2xl border border-emerald-900/40 text-emerald-200 font-sans text-xs leading-relaxed">
+                    🌿 <strong>Green Steel Advantage</strong>: With embodied carbon 43% lower than global benchmarks ({cbam.global_benchmark_avg_kg_co2_per_t} kg CO₂/t), MOIL ore enables Indian steel producers (SAIL, Tata Steel, JSW) to export zero-tariff green steel worldwide.
+                  </div>
                 </div>
-                <div className="p-3 bg-slate-950 rounded-2xl border border-emerald-900">
-                  <span className="text-xl font-black text-emerald-400">+19.0 MT</span>
-                  <span className="text-[9px] block text-slate-400">UNFC Reserves Mapped</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         )}

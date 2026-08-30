@@ -1,0 +1,90 @@
+{
+  "core_box_scans": [
+    {
+      "tray_id": "TRAY-BLG-L07-C14",
+      "borehole_id": "BH-BLG-2026-08",
+      "mine": "Balaghat Deep Underground (Level 7)",
+      "depth_interval_m": "392.0m – 396.5m",
+      "core_recovery_pct": 98.5,
+      "rqd_pct": 92.0,
+      "predicted_minerals": {
+        "braunite_pct": 68.4,
+        "pyrolusite_pct": 21.2,
+        "rhodonite_silicate_pct": 6.8,
+        "quartz_gangue_pct": 3.6
+      },
+      "estimated_mn_grade_pct": 49.6,
+      "spectral_confidence_pct": 97.4,
+      "ai_classification": "PREMIUM HIGH-GRADE METALLURGICAL ORE",
+      "lithology_boundary": "Sharp Contact with Footwall Chorbaoli Quartzite"
+    },
+    {
+      "tray_id": "TRAY-DGB-B04-C08",
+      "borehole_id": "BH-DGB-2026-14",
+      "mine": "Dongri Buzurg Pit (Bench 4)",
+      "depth_interval_m": "130.0m – 134.8m",
+      "core_recovery_pct": 96.0,
+      "rqd_pct": 86.5,
+      "predicted_minerals": {
+        "cryptomelane_dioxide_pct": 74.5,
+        "pyrolusite_pct": 18.2,
+        "hematite_pct": 4.1,
+        "clay_minerals_pct": 3.2
+      },
+      "estimated_mn_grade_pct": 53.2,
+      "spectral_confidence_pct": 98.8,
+      "ai_classification": "BATTERY / CHEMICAL DIOXIDE GRADE",
+      "lithology_boundary": "Ferruginous Manganese Cap Rock"
+    },
+    {
+      "tray_id": "TRAY-MNS-S02-C21",
+      "borehole_id": "BH-MNS-2026-03",
+      "mine": "Mansar South Pit",
+      "depth_interval_m": "194.0m – 198.2m",
+      "core_recovery_pct": 94.2,
+      "rqd_pct": 78.0,
+      "predicted_minerals": {
+        "gondite_quartz_pct": 42.5,
+        "braunite_pct": 38.6,
+        "spessartine_garnet_pct": 14.1,
+        "apatite_phosphorus_pct": 4.8
+      },
+      "estimated_mn_grade_pct": 41.8,
+      "spectral_confidence_pct": 95.1,
+      "ai_classification": "MEDIUM SILICEOUS ORE (BLENDING STOCKPILE)",
+      "lithology_boundary": "Banded Gondite Lenses in Muscovite Schist"
+    }
+  ],
+  "drone_stockpile_surveys": [
+    {
+      "stockpile_id": "STK-DGB-ROM-01",
+      "mine": "Dongri Buzurg Open Cast",
+      "drone_flight_id": "UAV-RTK-2026-0830",
+      "survey_date": "2026-08-30",
+      "ore_grade_type": "High-Grade Run-of-Mine (ROM 48%+ Mn)",
+      "surveyed_volume_m3": 18450.0,
+      "bulk_density_t_m3": 3.42,
+      "computed_tonnage_mt": 63099.0,
+      "planned_tonnage_mt": 62500.0,
+      "volumetric_variance_pct": 0.96,
+      "cut_fill_stability": "STABLE BENCH CREST (ZERO SLUMP RISK)",
+      "stripping_ratio_current": "3.8:1 (OB:Ore)",
+      "stripping_ratio_target": "4.0:1"
+    },
+    {
+      "stockpile_id": "STK-MNS-SIL-03",
+      "mine": "Mansar Stockyard",
+      "drone_flight_id": "UAV-RTK-2026-0829",
+      "survey_date": "2026-08-29",
+      "ore_grade_type": "Medium Siliceous Stockpile (42% Mn)",
+      "surveyed_volume_m3": 9820.0,
+      "bulk_density_t_m3": 3.25,
+      "computed_tonnage_mt": 31915.0,
+      "planned_tonnage_mt": 32200.0,
+      "volumetric_variance_pct": -0.88,
+      "cut_fill_stability": "COMPACTED BASAL DRAINAGE ACTIVE",
+      "stripping_ratio_current": "2.9:1 (OB:Ore)",
+      "stripping_ratio_target": "3.0:1"
+    }
+  ]
+}

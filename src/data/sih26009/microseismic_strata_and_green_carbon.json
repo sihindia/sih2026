@@ -1,0 +1,80 @@
+{
+  "microseismic_strata_grid": [
+    {
+      "sensor_id": "GEO-BLG-L07-E01",
+      "mine": "Balaghat Deep Underground",
+      "location": "Level 7 Eastern Stope (Depth 385m)",
+      "geophone_type": "Tri-Axial High-Sensitivity Piezoelectric Geophone",
+      "acoustic_events_per_min": 14,
+      "peak_frequency_khz": 3.8,
+      "energy_release_joules": 185.0,
+      "stress_concentration_factor": 1.15,
+      "safety_status": "NORMAL_STABLE_CROWN_PILLAR",
+      "early_warning_mins": 0,
+      "dgms_compliance": "PASS"
+    },
+    {
+      "sensor_id": "GEO-BLG-L09-W04",
+      "mine": "Balaghat Deep Underground",
+      "location": "Level 9 Western Stope (Depth 435m)",
+      "geophone_type": "Tri-Axial High-Sensitivity Piezoelectric Geophone",
+      "acoustic_events_per_min": 68,
+      "peak_frequency_khz": 8.4,
+      "energy_release_joules": 840.0,
+      "stress_concentration_factor": 2.45,
+      "safety_status": "ELEVATED_MICRO_FRACTURING_ALERT",
+      "early_warning_mins": 15,
+      "dgms_compliance": "RESTRICTED_ACCESS_TEMPORARY_TIMBERING"
+    }
+  ],
+  "ventilation_on_demand": [
+    {
+      "fan_station": "VOD-FAN-STN-01 (Balaghat Shaft 2)",
+      "operating_mode": "Automated Occupancy & Gas Pacing",
+      "airflow_volume_m3_min": 4200.0,
+      "co_level_ppm": 12.0,
+      "nox_level_ppm": 1.4,
+      "fan_speed_rpm": 980,
+      "energy_savings_pct": 24.5,
+      "dgms_statutory_threshold": "CO < 50 ppm, NOx < 5 ppm",
+      "status": "OPTIMAL_AIR_QUALITY"
+    },
+    {
+      "fan_station": "VOD-FAN-STN-02 (Gumgaon Incline)",
+      "operating_mode": "Post-Blast Smoke Purge",
+      "airflow_volume_m3_min": 5800.0,
+      "co_level_ppm": 32.0,
+      "nox_level_ppm": 3.8,
+      "fan_speed_rpm": 1420,
+      "energy_savings_pct": 18.2,
+      "dgms_statutory_threshold": "CO < 50 ppm, NOx < 5 ppm",
+      "status": "PURGING_BLAST_GASES"
+    }
+  ],
+  "cbam_green_passports": [
+    {
+      "mine_id": "MOIL-BLG-01",
+      "mine_name": "Balaghat Mine",
+      "scope_1_diesel_kg_co2_per_t": 18.4,
+      "scope_2_grid_kg_co2_per_t": 28.5,
+      "captive_solar_offset_pct": 34.0,
+      "net_embodied_carbon_kg_co2_per_t": 32.8,
+      "global_benchmark_avg_kg_co2_per_t": 58.0,
+      "carbon_intensity_rating": "AAA (LOW CARBON GREEN ORE)",
+      "eu_cbam_tariff_exemption_pct": 100.0,
+      "qr_provenance_id": "MOIL-CBAM-2026-BLG-8941"
+    },
+    {
+      "mine_id": "MOIL-DGB-02",
+      "mine_name": "Dongri Buzurg Mine",
+      "scope_1_diesel_kg_co2_per_t": 24.2,
+      "scope_2_grid_kg_co2_per_t": 22.0,
+      "captive_solar_offset_pct": 42.0,
+      "net_embodied_carbon_kg_co2_per_t": 30.6,
+      "global_benchmark_avg_kg_co2_per_t": 58.0,
+      "carbon_intensity_rating": "AAA+ (SUSTAINABLE SOLAR BACKED)",
+      "eu_cbam_tariff_exemption_pct": 100.0,
+      "qr_provenance_id": "MOIL-CBAM-2026-DGB-5219"
+    }
+  ]
+}

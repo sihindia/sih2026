@@ -1,7 +1,8 @@
 """
 SIH26009: Space Tech & AI Manganese Reserve & Production Shortfall Platform (MOIL BhuDhatri 360)
 Ministry of Steel - MOIL Limited
-FastAPI Production Microservice with Satellite Mineral Remote Sensing, 3D Kriging Reserve Estimation & Mine Production Recovery API
+FastAPI Production Microservice with Satellite Mineral Remote Sensing, 3D Kriging Reserve Estimation,
+Core Box CV Photogrammetry, Drone RTK Volumetrics, Microseismic Strata Safety & CBAM Green Manganese API
 """
 
 from fastapi import FastAPI, HTTPException, status
@@ -16,7 +17,7 @@ from datetime import datetime
 app = FastAPI(
     title="MOIL BhuDhatri 360 Manganese Hub (SIH26009) - MOIL / Ministry of Steel",
     description="Using AI/ML and Space Technology to Identify Manganese Reserves and Overcome Production Shortfalls",
-    version="3.5.0"
+    version="4.0.0"
 )
 
 app.add_middleware(
@@ -45,6 +46,12 @@ class OreBlendingRequest(BaseModel):
     client: str = Field("SAIL Bhilai Steel Plant", example="SAIL Bhilai Steel Plant")
     target_mn_pct: float = Field(46.0, example=46.0)
     high_grade_ratio_pct: float = Field(60.0, example=60.0)
+
+class MilpDispatchRequest(BaseModel):
+    mine_id: str = Field("MOIL-DGB-02", example="MOIL-DGB-02")
+    active_shovels: int = Field(3, example=3)
+    active_dumpers: int = Field(12, example=12)
+    crusher_hopper_level_pct: float = Field(42.0, example=42.0)
 
 @app.get("/")
 def read_root():
@@ -78,6 +85,31 @@ def get_borehole_reserves():
 @app.get("/api/v1/blast-designs")
 def get_blast_designs():
     return load_json("blast_design_and_shortfall_remedies.json")
+
+@app.get("/api/v1/core-box-scans")
+def get_core_box_scans():
+    data = load_json("corebox_photogrammetry_and_drone_volumetrics.json")
+    return data.get("core_box_scans", [])
+
+@app.get("/api/v1/drone-surveys")
+def get_drone_surveys():
+    data = load_json("corebox_photogrammetry_and_drone_volumetrics.json")
+    return data.get("drone_stockpile_surveys", [])
+
+@app.get("/api/v1/microseismic-strata")
+def get_microseismic():
+    data = load_json("microseismic_strata_and_green_carbon.json")
+    return data.get("microseismic_strata_grid", [])
+
+@app.get("/api/v1/ventilation-on-demand")
+def get_vod():
+    data = load_json("microseismic_strata_and_green_carbon.json")
+    return data.get("ventilation_on_demand", [])
+
+@app.get("/api/v1/cbam-green-passports")
+def get_cbam():
+    data = load_json("microseismic_strata_and_green_carbon.json")
+    return data.get("cbam_green_passports", [])
 
 @app.get("/api/v1/stats")
 def get_stats():
@@ -117,6 +149,23 @@ def optimize_blending(req: OreBlendingRequest):
         },
         "blast_furnace_compliant": compliant,
         "cost_savings_inr_crore": round(hg * 5.2 + lg * 2.1, 2),
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
+@app.post("/api/v1/simulate-milp-dispatch")
+def simulate_milp_dispatch(req: MilpDispatchRequest):
+    # Dynamic dumper-to-shovel matching
+    opt_dumper_ratio = round(req.active_dumpers / req.active_shovels, 1)
+    diesel_saved_litres = round(req.active_dumpers * 18.5, 1)
+    co2_saved_kg = round(diesel_saved_litres * 2.68, 1)
+    
+    return {
+        "mine_id": req.mine_id,
+        "dumper_shovel_ratio": f"{opt_dumper_ratio}:1 (Balanced)",
+        "crusher_choke_risk": "MINIMAL (1.2m dumper cycle headway)",
+        "hourly_tonnage_tph": round(req.active_shovels * 420.0, 1),
+        "diesel_saved_litres_per_shift": diesel_saved_litres,
+        "scope_1_co2_abatement_kg": co2_saved_kg,
         "timestamp": datetime.utcnow().isoformat()
     }
 
