@@ -126,6 +126,11 @@ import sih26015Structures from '../data/sih26015/geotagged_water_harvesting_stru
 import sih26015Indices from '../data/sih26015/srishti_drishti_satellite_indices.json';
 import sih26015Streams from '../data/sih26015/drainage_morphology_and_stream_orders.json';
 import sih26015Changes from '../data/sih26015/multi_year_change_detection_epochs.json';
+import sih26017Projects from '../data/sih26017/land_projects.json';
+import sih26017Shap from '../data/sih26017/shap_delay_risk_drivers_matrix.json';
+import sih26017Actions from '../data/sih26017/proactive_policy_mitigation_actions.json';
+import sih26017Cala from '../data/sih26017/district_cala_velocity_scorecards.json';
+import sih26017Dispatches from '../data/sih26017/escalation_taskforce_dispatches.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -3660,54 +3665,504 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
     );
   }
 
+  /* =========================================================================
+     MINISTRY OF RURAL DEVELOPMENT / DoLR / SIH26017 DRISHTIPREDICT 360
+     AI Predictive Analytics System for Early Detection of Land Acquisition Delays
+     ========================================================================= */
   if (psId === 'SIH26017') {
-    const landProjects = [
-      { id: "LA-2026-NHAI-041", name: "NH-66 Greenfield Coastal Bypass (Package 4)", agency: "NHAI", state: "Maharashtra", district: "Ratnagiri", area: 342.5, families: 480, sec11: "2024-03-15", sec19: "2025-01-10", compDisbursed: 42, litigations: 8, forestStatus: "Stage-1 In-Progress", delayProb: 0.84, bottleneck: "Disputed compensation awards & pending CRZ/Forest clearance" },
-      { id: "LA-2026-RAIL-019", name: "Dedicated Freight Corridor (East Coast Link)", agency: "DFCCIL", state: "Odisha", district: "Bhadrak", area: 512.0, families: 890, sec11: "2023-11-20", sec19: "2024-08-14", compDisbursed: 88, litigations: 2, forestStatus: "Clearance Granted", delayProb: 0.18, bottleneck: "Minor utility shifting pending" }
-    ];
+    const projects = sih26017Projects;
+    const shapDrivers = sih26017Shap;
+    const mitigationActions = sih26017Actions;
+    const calaBenchmarks = sih26017Cala;
+    const initialDispatches = sih26017Dispatches;
 
-    const [selectedProj, setSelectedProj] = React.useState(landProjects[0]);
-    const [compPct, setCompPct] = React.useState(selectedProj.compDisbursed);
-    const [litigationCount, setLitigationCount] = React.useState(selectedProj.litigations);
+    const [selectedProj, setSelectedProj] = React.useState(projects[0]);
+    const [tab, setTab] = React.useState<'forecast' | 'shap' | 'whatif' | 'actions' | 'cala' | 'escalation'>('forecast');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
 
-    const compRisk = ((100 - compPct) / 100) * 0.38;
-    const litRisk = Math.min(1.0, litigationCount * 0.08) * 0.28;
-    const simDelayProb = Math.min(0.98, Number((compRisk + litRisk + 0.18).toFixed(2)));
-    const simDelayMonths = (simDelayProb * 12.5).toFixed(1);
-    const isCritical = simDelayProb > 0.70;
+    // What-If Sandbox Interactive State
+    const [simCompPct, setSimCompPct] = React.useState(selectedProj.compensation_disbursed_pct);
+    const [simLitigations, setSimLitigations] = React.useState(selectedProj.active_litigations_count);
+    const [simForestExpedited, setSimForestExpedited] = React.useState(false);
+
+    // Dynamic Sensitivity Calculation
+    const compBenefit = ((simCompPct - 42.0) / 100.0) * 0.42;
+    const litBenefit = Math.max(0, (selectedProj.active_litigations_count - simLitigations) * 0.06);
+    const forestBenefit = simForestExpedited ? 0.16 : 0.0;
+    const revisedDelayProb = Math.max(0.08, Math.min(0.98, Number((selectedProj.predicted_delay_probability - compBenefit - litBenefit - forestBenefit).toFixed(2))));
+    const revisedSlipMonths = (revisedDelayProb * 9.5).toFixed(1);
+    const capitalSavedCr = Math.max(0, Math.round((selectedProj.predicted_delay_probability - revisedDelayProb) * 280));
+
+    // Escalation Dispatch State
+    const [escalationSent, setEscalationSent] = React.useState(false);
+
+    const handleTriggerEscalation = () => {
+      setEscalationSent(true);
+      setTimeout(() => setEscalationSent(false), 4500);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF RURAL DEVELOPMENT • DoLR (DRISHTIPREDICT 360)",
+        desc: "AI/ML Delay Probability Forecasting, SHAP Explainable AI Attribution, What-If Sensitivity Sandbox & Chief Secretary Escalation",
+        tabForecast: "🤖 Delay Probability Forecast",
+        tabShap: "🔍 SHAP Root-Cause XAI",
+        tabWhatif: "🎛️ What-If Policy Sandbox",
+        tabActions: "⚖️ Proactive Policy Remedies",
+        tabCala: "🗺️ District CALA Velocity",
+        tabEscalation: "🚨 High-Priority Escalation",
+      },
+      hi: {
+        tag: "ग्रामीण विकास मंत्रालय • भूमि संसाधन विभाग (दृष्टि-प्रेडिक्ट 360)",
+        desc: "AI/ML भूमि अधिग्रहण विलंब पूर्वानुमान, SHAP व्याख्या योग्य AI, संवेदनशीलता सिमुलेटर व मुख्य सचिव चेतावनी",
+        tabForecast: "🤖 विलंब जोखिम पूर्वानुमान",
+        tabShap: "🔍 SHAP कारण विश्लेषण",
+        tabWhatif: "🎛️ क्या-अगर नीति सैंडबॉक्स",
+        tabActions: "⚖️ सक्रिय प्रशासनिक उपाय",
+        tabCala: "🗺️ जिला CALA गति स्कोरकार्ड",
+        tabEscalation: "🚨 उच्च-प्राथमिकता चेतावनी",
+      },
+      mr: {
+        tag: "ग्रामीण विकास मंत्रालय • भू-संसाधन विभाग (दृष्टी-प्रेडिक्ट 360)",
+        desc: "AI/ML भूसंपादन विलंब अंदाज, SHAP अचूक कारण शोध, काय-होईल सिम्युलेटर आणि मुख्य सचिव सतर्कता",
+        tabForecast: "🤖 विलंब संभाव्यता अंदाज",
+        tabShap: "🔍 SHAP मूळ कारण विश्लेषण",
+        tabWhatif: "🎛️ काय-होईल धोरण सँडबॉक्स",
+        tabActions: "⚖️ तातडीचे प्रशासकीय तोडगे",
+        tabCala: "🗺️ जिल्हा CALA वेग तक्ता",
+        tabEscalation: "🚨 मुख्य सचिव तातडीचा इशारा",
+      }
+    }[lang];
 
     return (
-      <div className="space-y-6">
-        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="space-y-6 font-sans">
+        {/* Header */}
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold mb-1">
-              <Building2 className="w-4 h-4" />
-              <span>DEPARTMENT OF LAND RESOURCES (DoLR) • {psId}</span>
+            <div className="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold mb-1">
+              <Building2 className="w-4 h-4 text-amber-400" />
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">AI Delay Probability Forecasting, Section 11/19 Timeline & XAI Bottleneck Attribution</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className={`px-4 py-2 rounded-2xl text-xs font-black tracking-wider border flex items-center gap-2 ${
-            isCritical ? 'bg-red-500/20 text-red-400 border-red-500' : 'bg-emerald-500/20 text-emerald-400 border-emerald-500'
-          }`}>
-            <span>{isCritical ? 'CRITICAL DELAY RISK' : 'ON-TRACK OPTIMAL'} ({(simDelayProb * 100).toFixed(0)}%)</span>
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-amber-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-amber-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {landProjects.map((p) => (
-            <button key={p.id} onClick={() => { setSelectedProj(p); setCompPct(p.compDisbursed); setLitigationCount(p.litigations); }} className={`p-4 rounded-2xl border text-left transition-all ${
-              selectedProj.id === p.id ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-md ring-1 ring-emerald-400' : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
-            }`}>
-              <div className="text-[10px] font-mono text-emerald-400 font-bold">{p.id}</div>
-              <div className="text-xs font-bold truncate mt-0.5 text-white">{p.name}</div>
-              <div className="mt-2 text-[10px] flex justify-between font-mono text-slate-400">
-                <span>Disbursed: {p.compDisbursed}%</span>
-                <span className={p.delayProb > 0.7 ? 'text-red-400 font-bold' : 'text-emerald-400 font-bold'}>{(p.delayProb * 100).toFixed(0)}% Risk</span>
-              </div>
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
+          {[
+            { id: 'forecast', label: t.tabForecast },
+            { id: 'shap', label: t.tabShap },
+            { id: 'whatif', label: t.tabWhatif },
+            { id: 'actions', label: t.tabActions },
+            { id: 'cala', label: t.tabCala },
+            { id: 'escalation', label: t.tabEscalation },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-amber-500 text-slate-950 font-black shadow-lg shadow-amber-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
             </button>
           ))}
         </div>
+
+        {/* TAB 1: DELAY PROBABILITY FORECAST */}
+        {tab === 'forecast' && (
+          <div className="space-y-6">
+            {/* Project Selector Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {projects.map((p: any) => (
+                <button
+                  key={p.project_id}
+                  onClick={() => {
+                    setSelectedProj(p);
+                    setSimCompPct(p.compensation_disbursed_pct);
+                    setSimLitigations(p.active_litigations_count);
+                  }}
+                  className={`p-5 rounded-2xl border text-left transition-all ${
+                    selectedProj.project_id === p.project_id
+                      ? 'bg-amber-950/60 border-amber-500 text-white shadow-lg ring-1 ring-amber-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-amber-400">{p.project_id}</span>
+                    <span className={p.predicted_delay_probability > 0.7 ? 'text-rose-400' : 'text-emerald-400'}>
+                      {(p.predicted_delay_probability * 100).toFixed(0)}% Delay Risk
+                    </span>
+                  </div>
+                  <div className="text-sm font-bold text-white mt-1">{p.project_name}</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">{p.executing_agency} • {p.district}, {p.state}</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-cyan-400">Compensation: {p.compensation_disbursed_pct}%</span>
+                    <span className="text-rose-400 font-bold">+{p.predicted_delay_months} Mos Slip</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Selected Project AI Risk Deep Dive */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div>
+                    <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4 text-amber-400" />
+                      <span>XGBoost Early Warning Risk Classification</span>
+                    </h4>
+                    <p className="text-slate-400 text-xs mt-0.5">{selectedProj.project_name}</p>
+                  </div>
+                  <span className={`px-3 py-1 rounded-full text-[10px] font-bold ${
+                    selectedProj.predicted_delay_probability > 0.7 ? 'bg-rose-950 text-rose-300 border border-rose-800' : 'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                  }`}>
+                    {selectedProj.risk_category}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">DELAY PROBABILITY</span>
+                    <strong className={`text-base block mt-0.5 ${selectedProj.predicted_delay_probability > 0.7 ? 'text-rose-400' : 'text-emerald-400'}`}>
+                      {(selectedProj.predicted_delay_probability * 100).toFixed(0)}%
+                    </strong>
+                    <span className="text-[9px] text-slate-500">ML Confidence 91.4%</span>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">SCHEDULE SLIPPAGE</span>
+                    <strong className="text-amber-400 text-base block mt-0.5">+{selectedProj.predicted_delay_months} Mos</strong>
+                    <span className="text-[9px] text-slate-500">Baseline Slippage</span>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">ACTIVE LITIGATIONS</span>
+                    <strong className="text-purple-400 text-base block mt-0.5">{selectedProj.active_litigations_count} Suits</strong>
+                    <span className="text-[9px] text-slate-500">High Court Stays</span>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Total Hectares &amp; Families:</span>
+                    <strong className="text-white">{selectedProj.land_required_hectares} Ha • {selectedProj.affected_families} PAFs</strong>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Section 19 Declaration:</span>
+                    <span className="text-cyan-300">{selectedProj.section_19_date}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Forest Clearance Status:</span>
+                    <span className="text-emerald-400 font-bold">{selectedProj.forest_clearance_status}</span>
+                  </div>
+                </div>
+
+                <div className="p-3.5 bg-rose-950/30 rounded-2xl border border-rose-900/40 text-rose-200 font-sans text-xs leading-relaxed">
+                  ⚠️ <strong>Identified Bottleneck</strong>: {selectedProj.primary_bottleneck}
+                </div>
+              </div>
+
+              {/* Statutory Milestone Tracker */}
+              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-amber-400" />
+                  <span>Statutory Stage Velocity Benchmark</span>
+                </h4>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between text-xs">
+                    <span className="text-slate-400">Sec 11 &rarr; Sec 19 Elapsed:</span>
+                    <strong className="text-white font-mono">245 Days</strong>
+                  </div>
+                  <div className="flex justify-between text-xs">
+                    <span className="text-slate-400">National Average:</span>
+                    <span className="text-emerald-400 font-mono">180 Days</span>
+                  </div>
+                  <div className="flex justify-between text-xs">
+                    <span className="text-slate-400">Deviation from Schedule:</span>
+                    <strong className="text-rose-400 font-mono">+65 Days Overrun</strong>
+                  </div>
+                  <div className="pt-2 border-t border-slate-900 flex justify-between text-xs">
+                    <span className="text-slate-400">Section 25 Lapse Expiry:</span>
+                    <span className="text-amber-300 font-mono font-bold">In 120 Days</span>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-[11px] font-sans text-slate-300">
+                  💡 <strong>Early Detection Value</strong>: Flagging this project at the 8-month mark saves an estimated ₹280 Cr in contractor mobilization and idling claims.
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: SHAP ROOT-CAUSE EXPLAINABLE AI */}
+        {tab === 'shap' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-4 bg-amber-950/40 rounded-3xl border border-amber-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-amber-200 font-sans">
+              <div>
+                <strong className="text-white text-sm block">🔍 SHAP (SHapley Additive exPlanations) Attribution Matrix</strong>
+                <span>Decomposes the black-box machine learning model into transparent feature impact scores (+SHAP means increasing delay risk, -SHAP means mitigating risk).</span>
+              </div>
+              <span className="px-3 py-1 bg-amber-500 text-slate-950 font-black rounded-xl text-xs font-mono shrink-0">
+                TreeSHAP Kernel
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {shapDrivers.map((driver: any) => (
+                <div key={driver.feature} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <h4 className="font-bold text-white font-sans text-sm">{driver.feature}</h4>
+                    <span className="px-2.5 py-0.5 rounded-full bg-rose-950 text-rose-300 border border-rose-800 text-[10px] font-bold">
+                      +{driver.mean_abs_shap} SHAP
+                    </span>
+                  </div>
+
+                  <div className="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-amber-500 to-rose-500" style={{ width: `${driver.mean_abs_shap * 100 * 2.2}%` }}></div>
+                  </div>
+
+                  <p className="text-slate-400 font-sans text-[11px] leading-relaxed pt-1 border-t border-slate-800">
+                    {driver.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: WHAT-IF SENSITIVITY SANDBOX */}
+        {tab === 'whatif' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            {/* Simulation Sliders */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Sliders className="w-5 h-5 text-amber-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">Policy Sensitivity &amp; Intervention Simulator</h4>
+                  <p className="text-slate-400 text-xs font-sans">Simulate administrative remedies to calculate revised risk and capital saved</p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-slate-300">PFMS Compensation Disbursed Rate:</span>
+                    <strong className="text-cyan-400">{simCompPct}%</strong>
+                  </div>
+                  <input
+                    type="range"
+                    min="42"
+                    max="100"
+                    value={simCompPct}
+                    onChange={(e) => setSimCompPct(Number(e.target.value))}
+                    className="w-full accent-cyan-500 cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[10px] text-slate-500">
+                    <span>42% (Baseline)</span>
+                    <span>70% (Satisfactory)</span>
+                    <span>100% (Full DBT Disbursed)</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-slate-300">Active High Court Litigations Remaining:</span>
+                    <strong className="text-purple-400">{simLitigations} Suits</strong>
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max={selectedProj.active_litigations_count}
+                    value={simLitigations}
+                    onChange={(e) => setSimLitigations(Number(e.target.value))}
+                    className="w-full accent-purple-500 cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[10px] text-slate-500">
+                    <span>0 Suits (All Settled in Lok Adalat)</span>
+                    <span>{selectedProj.active_litigations_count} Suits (Unresolved)</span>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between">
+                  <div>
+                    <span className="text-white font-bold block font-sans">Expedite Stage-2 Forest Diversion:</span>
+                    <span className="text-slate-500 text-[10px]">Via Parivesh 2.0 State Empowered Committee</span>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={simForestExpedited}
+                    onChange={(e) => setSimForestExpedited(e.target.checked)}
+                    className="w-5 h-5 accent-emerald-500 cursor-pointer"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Recalculated Outcomes */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-emerald-400" />
+                <span>Simulated Intervention Impact</span>
+              </h4>
+
+              <div className="p-5 bg-slate-950 rounded-2xl border border-emerald-800/80 space-y-3">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Original Baseline Delay Risk:</span>
+                  <span className="text-rose-400 font-bold">{(selectedProj.predicted_delay_probability * 100).toFixed(0)}%</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Revised Delay Probability:</span>
+                  <strong className="text-emerald-400 text-lg">{(revisedDelayProb * 100).toFixed(0)}%</strong>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-400">Revised Schedule Slippage:</span>
+                  <strong className="text-cyan-300">+{revisedSlipMonths} Months (Reduced from {selectedProj.predicted_delay_months} Mos)</strong>
+                </div>
+                <div className="pt-3 border-t border-slate-900 flex justify-between items-baseline">
+                  <span className="text-xs text-white font-bold uppercase font-sans">Capital Escalation Avoided:</span>
+                  <span className="text-2xl font-black text-emerald-400 font-sans">₹{capitalSavedCr} Cr</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: PROACTIVE POLICY REMEDIES */}
+        {tab === 'actions' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {mitigationActions.map((act: any) => (
+                <div key={act.action_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <span className="text-amber-400 font-bold">{act.action_id}</span>
+                    <span className="px-2 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full text-[9px] font-bold">
+                      RECOMMENDED
+                    </span>
+                  </div>
+                  <h4 className="font-bold text-white font-sans text-base">{act.name}</h4>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Time Saved:</span>
+                      <strong className="text-emerald-400">{act.avg_time_saved}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Cost Efficiency:</span>
+                      <strong className="text-cyan-300">{act.cost_effectiveness}</strong>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: DISTRICT CALA VELOCITY BENCHMARKS */}
+        {tab === 'cala' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {calaBenchmarks.map((c: any) => (
+                <div key={c.district} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{c.district}, {c.state}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{c.cala_authority}</h4>
+                    </div>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                      c.velocity_grade.startsWith('A') ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-rose-950 text-rose-300 border border-rose-800'
+                    }`}>
+                      Grade {c.velocity_grade.split(' ')[0]}
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">TURNAROUND</span>
+                      <strong className="text-white text-xs block mt-0.5">{c.avg_turnaround_days} Days</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">LITIGATION RATE</span>
+                      <strong className="text-rose-400 text-xs block mt-0.5">{c.litigation_rate_per_100ha} / 100Ha</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">CONSENT RATE</span>
+                      <strong className="text-emerald-400 text-xs block mt-0.5">{c.consent_resolution_pct}%</strong>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: CHIEF SECRETARY ESCALATION GATEWAY */}
+        {tab === 'escalation' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-amber-400" />
+                <span>Active Chief Secretary &amp; Collector Taskforce Dispatches</span>
+              </h4>
+
+              <div className="space-y-3">
+                {initialDispatches.map((d: any) => (
+                  <div key={d.dispatch_id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <span className="text-amber-400 font-bold">{d.dispatch_id}</span>
+                        <strong className="text-white ml-2 font-sans">{d.project_name}</strong>
+                      </div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-amber-950 text-amber-300 border border-amber-800 text-[10px] font-bold">
+                        {d.status.split('_')[0]}
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-slate-400 font-sans">
+                      Escalated To: <strong className="text-slate-200">{d.escalated_to}</strong>
+                    </div>
+                    <div className="pt-1 border-t border-slate-900 flex justify-between text-[10px] text-slate-500">
+                      <span>Reason: {d.trigger_reason}</span>
+                      <span>{d.timestamp}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Instant Escalation Trigger Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-amber-400 font-bold block text-sm font-sans">Autonomous High-Priority Escalation Dispatch</span>
+                <span className="text-slate-400 text-xs font-sans">Directly dispatches red flag dossier to Chief Secretary Govt of Maharashtra and Chairman NHAI via e-Office API.</span>
+              </div>
+              <button
+                onClick={handleTriggerEscalation}
+                disabled={escalationSent}
+                className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-amber-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {escalationSent ? '🚨 High-Priority Dossier Dispatched to Chief Secretary!' : 'Dispatch Escalation Red Flag'}
+              </button>
+            </div>
+          </div>
+        )}
+
       </div>
     );
   }

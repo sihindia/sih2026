@@ -1,0 +1,46 @@
+[
+  {
+    "district": "Vadodara",
+    "state": "Gujarat",
+    "cala_authority": "SDM & CALA Vadodara Special Corridor",
+    "avg_turnaround_days": 180,
+    "litigation_rate_per_100ha": 1.2,
+    "consent_resolution_pct": 96.5,
+    "velocity_grade": "A+ (EXCELLENT_VELOCITY)",
+    "active_projects_count": 4,
+    "risk_index": 18.2
+  },
+  {
+    "district": "Alwar",
+    "state": "Rajasthan",
+    "cala_authority": "Sub-Divisional Officer & CALA Alwar Spur",
+    "avg_turnaround_days": 320,
+    "litigation_rate_per_100ha": 5.8,
+    "consent_resolution_pct": 74.0,
+    "velocity_grade": "C (MODERATE_BOTTLENECK)",
+    "active_projects_count": 3,
+    "risk_index": 78.4
+  },
+  {
+    "district": "Palghar / Ratnagiri",
+    "state": "Maharashtra",
+    "cala_authority": "Deputy Collector (Land Acquisition) Konkan",
+    "avg_turnaround_days": 410,
+    "litigation_rate_per_100ha": 8.4,
+    "consent_resolution_pct": 58.0,
+    "velocity_grade": "D (CRITICAL_INTERVENTION_REQUIRED)",
+    "active_projects_count": 5,
+    "risk_index": 84.0
+  },
+  {
+    "district": "Dhanbad",
+    "state": "Jharkhand",
+    "cala_authority": "District Land Acquisition Officer Dhanbad",
+    "avg_turnaround_days": 260,
+    "litigation_rate_per_100ha": 3.6,
+    "consent_resolution_pct": 82.5,
+    "velocity_grade": "B (SATISFACTORY)",
+    "active_projects_count": 2,
+    "risk_index": 42.1
+  }
+]

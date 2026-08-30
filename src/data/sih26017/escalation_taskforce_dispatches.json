@@ -1,0 +1,24 @@
+[
+  {
+    "dispatch_id": "ESC-2026-MH-091",
+    "project_id": "DoLR-INFRA-2026-081",
+    "project_name": "Delhi - Mumbai Expressway Link (Package 4B)",
+    "delay_risk_pct": 84.0,
+    "escalated_to": "Chief Secretary Govt of Maharashtra & Chairman NHAI",
+    "trigger_reason": "Delay probability exceeded 75% threshold (84.0% with 8 High Court stays)",
+    "intervention_mechanism": "Convene Special Inter-Departmental Empowered Committee meeting",
+    "status": "DISPATCHED_HIGH_PRIORITY_EOFFICE",
+    "timestamp": "2026-08-29T10:15:00Z"
+  },
+  {
+    "dispatch_id": "ESC-2026-RJ-044",
+    "project_id": "PRED-EXP-088",
+    "project_name": "Delhi-Mumbai Expressway Spur Phase 3",
+    "delay_risk_pct": 78.4,
+    "escalated_to": "Principal Secretary (Revenue) Rajasthan & District Collector Alwar",
+    "trigger_reason": "Circle rate valuation disparity causing 48 missing consents",
+    "intervention_mechanism": "Direct CALA Alwar to notify Special Lok Adalat with 15% consent solatium",
+    "status": "DISPATCHED_HIGH_PRIORITY_EOFFICE",
+    "timestamp": "2026-08-28T16:30:00Z"
+  }
+]
