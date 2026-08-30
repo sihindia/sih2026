@@ -1,7 +1,8 @@
 """
 SIH26021: Honey Chain - Blockchain Honey Traceability & Smart Beekeeping (KVIC Honey Chain 360)
 Ministry of MSME - Khadi & Village Industries Commission (KVIC)
-FastAPI Production Microservice for Blockchain Ledger, Acoustic Swarm AI, Comb CV Diagnostics & Smart Escrow
+FastAPI Production Microservice for Blockchain Ledger, Acoustic Swarm AI,
+Comb CV Diagnostics, eDNA Metabarcoding, Biodiversity Credits & Smart Escrow
 """
 
 from fastapi import FastAPI, HTTPException, status
@@ -15,8 +16,8 @@ from datetime import datetime
 
 app = FastAPI(
     title="KVIC Honey Chain 360 Hub (SIH26021) - Ministry of MSME",
-    description="Blockchain-Based Honey Traceability, AI Comb CV Diagnostics & Smart IoT Beekeeping Ecosystem",
-    version="3.5.0"
+    description="Blockchain-Based Honey Traceability, AI Comb CV Diagnostics, eDNA Metabarcoding & Smart IoT Beekeeping Ecosystem",
+    version="4.0.0"
 )
 
 app.add_middleware(
@@ -25,7 +26,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-    )
+)
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 
@@ -52,6 +53,14 @@ class SmartEscrowRequest(BaseModel):
     batch_id: str = Field("BATCH-KVIC-KSH-081", description="Batch ID for Delivery Verification")
     retail_jar_id: str = Field("JAR-KVIC-081-442", description="Consumer Jar QR Serial")
     consumer_delivery_verified: bool = Field(True, description="Customer scan verification flag")
+
+class MintTokensRequest(BaseModel):
+    cluster_id: str = Field("DAO-KSH-ANANTNAG", description="Beekeeping Cooperative Cluster ID")
+    colonies_count: int = Field(840, description="Active pollinating colonies")
+
+class TriggerDefenseRequest(BaseModel):
+    hive_id: str = Field("HIVE-KSH-04", description="Target Hive Identifier")
+    threat_type: str = Field("YELLOW_JACKET_VELUTINA_SWARM", description="Detected predator species")
 
 @app.get("/")
 def read_root():
@@ -90,6 +99,36 @@ def get_floral_calendar():
 def get_kvic_subsidies():
     return load_json("kvic_honey_mission_subsidies.json")
 
+@app.get("/api/v1/edna-sequencing")
+def get_edna():
+    return load_json("edna_metabarcoding_and_pesticide_hazard.json")
+
+@app.get("/api/v1/dao-clusters")
+def get_dao():
+    return load_json("biodiversity_credits_and_apiculture_dao.json")
+
+@app.post("/api/v1/mint-biodiversity-tokens")
+def mint_tokens(req: MintTokensRequest):
+    tokens = req.colonies_count
+    return {
+        "cluster_id": req.cluster_id,
+        "biodiversity_tokens_minted": tokens,
+        "smart_contract": "0x4b9a712...BEE_BIODIVERSITY_ERC20",
+        "verra_gold_standard_status": "VERIFIED_CARBON_AND_BIODIVERSITY_CREDIT",
+        "secondary_earnings_inr": tokens * 200,
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
+@app.post("/api/v1/trigger-predator-defense")
+def trigger_defense(req: TriggerDefenseRequest):
+    return {
+        "hive_id": req.hive_id,
+        "threat_detected": req.threat_type,
+        "entrance_barrier_status": "MOTORIZED_PREDATOR_FLAP_CLOSED",
+        "colony_safety": "DEFENSE_ACTIVE_WORKERS_PROTECTED",
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
 @app.post("/api/v1/verify-passport")
 def verify_passport(req: VerifyPassportRequest):
     batches = load_json("honey_batches_and_purity_ledger.json")
@@ -112,7 +151,6 @@ def verify_passport(req: VerifyPassportRequest):
 @app.post("/api/v1/fft-swarm-analysis")
 def analyze_fft_audio(req: FftAudioAnalysisRequest):
     freq = req.audio_sample_hz
-    # Swarm piping typically occurs between 285Hz and 340Hz
     is_pre_swarm = freq >= 285.0
     risk_pct = min(100, int((freq - 200) / 1.4)) if freq > 200 else 5
     return {
@@ -157,4 +195,4 @@ def release_smart_escrow(req: SmartEscrowRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

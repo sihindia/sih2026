@@ -1,0 +1,32 @@
+[
+  {
+    "batch_id": "BATCH-KVIC-KSH-081",
+    "hive_id": "HIVE-KSH-04",
+    "edna_sequencing_platform": "Illumina NovaSeq 6000 / Oxford Nanopore Flongle",
+    "dna_barcode_marker": "ITS2 + rbcL Chloroplast Amplicon",
+    "primary_species_detected": "Robinia pseudoacacia (Black Locust/White Acacia)",
+    "species_purity_pct": 96.4,
+    "secondary_botanicals": "Trifolium repens (2.2%), Malus domestica (1.4%)",
+    "adulterant_plant_dna": "ZERO_SUNFLOWER_OR_BEET_DNA_DETECTED",
+    "pesticide_screening_result": "PASSED_ZERO_NEONICOTINOIDS (Imidacloprid < 0.001 mg/kg)",
+    "chemical_drift_alert_level": "GREEN_SAFE_ORGANIC_CORRIDOR",
+    "predator_defense_status": "AUTOMATED_VELUTINA_FLAP_ACTIVE",
+    "winter_cluster_temp_c": 33.2,
+    "winter_chilling_risk": "OPTIMAL_THERMAL_CORE"
+  },
+  {
+    "batch_id": "BATCH-KVIC-SND-014",
+    "hive_id": "HIVE-SND-12",
+    "edna_sequencing_platform": "Oxford Nanopore MinION Portable Flow Cell",
+    "dna_barcode_marker": "ITS2 + matK Genomic Locus",
+    "primary_species_detected": "Aegiceras corniculatum (Khalsi Mangrove)",
+    "species_purity_pct": 91.8,
+    "secondary_botanicals": "Avicennia marina (5.4%), Ceriops decandra (2.8%)",
+    "adulterant_plant_dna": "ZERO_COMMERCIAL_SYRUP_DNA",
+    "pesticide_screening_result": "ZERO_RESIDUES (Pristine Biosphere Reserve)",
+    "chemical_drift_alert_level": "GREEN_ZERO_AGRICULTURAL_SPRAY",
+    "predator_defense_status": "BARRIER_ARMED_AGAINST_TIGER_BEES",
+    "winter_cluster_temp_c": 29.8,
+    "winter_chilling_risk": "SAFE_COASTAL_WARMTH"
+  }
+]

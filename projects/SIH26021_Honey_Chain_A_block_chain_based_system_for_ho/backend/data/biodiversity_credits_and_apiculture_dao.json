@@ -1,0 +1,30 @@
+[
+  {
+    "cluster_id": "DAO-KSH-ANANTNAG",
+    "cluster_name": "Kashmir Himalayan Apiculture Co-op",
+    "active_beekeepers": 42,
+    "total_colonies_pollinating": 840,
+    "estimated_crop_pollination_value_inr": 4200000,
+    "apple_orchard_yield_boost_pct": 34.5,
+    "biodiversity_tokens_minted": 840,
+    "token_contract": "0x4b9a712...BEE_BIODIVERSITY_ERC20",
+    "secondary_carbon_revenue_inr": 168000,
+    "dao_treasury_floor_price_inr_kg": 720,
+    "working_capital_micro_loans_disbursed_inr": 850000,
+    "loan_default_rate_pct": 0.0
+  },
+  {
+    "cluster_id": "DAO-SND-GOSABA",
+    "cluster_name": "Sundarbans Mouli Traditional Beekeepers Union",
+    "active_beekeepers": 36,
+    "total_colonies_pollinating": 520,
+    "estimated_crop_pollination_value_inr": 3100000,
+    "apple_orchard_yield_boost_pct": 28.0,
+    "biodiversity_tokens_minted": 520,
+    "token_contract": "0x91d4e68...BEE_BIODIVERSITY_ERC20",
+    "secondary_carbon_revenue_inr": 104000,
+    "dao_treasury_floor_price_inr_kg": 850,
+    "working_capital_micro_loans_disbursed_inr": 620000,
+    "loan_default_rate_pct": 0.0
+  }
+]

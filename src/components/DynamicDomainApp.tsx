@@ -116,6 +116,8 @@ import sih26021Hives from '../data/sih26021/smart_iot_hive_telemetry.json';
 import sih26021Comb from '../data/sih26021/ai_comb_disease_diagnostics.json';
 import sih26021Flora from '../data/sih26021/floral_migration_calendar.json';
 import sih26021Subsidies from '../data/sih26021/kvic_honey_mission_subsidies.json';
+import sih26021Edna from '../data/sih26021/edna_metabarcoding_and_pesticide_hazard.json';
+import sih26021Dao from '../data/sih26021/biodiversity_credits_and_apiculture_dao.json';
 import sih26016Proposals from '../data/sih26016/land_acquisition_proposals_registry.json';
 import sih26016Stages from '../data/sih26016/rfctlarr_act_stages_workflow.json';
 import sih26016Families from '../data/sih26016/displaced_families_resettlement_registry.json';
@@ -19599,15 +19601,21 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
      KVIC / SIH26021 HONEY CHAIN BLOCKCHAIN TRACEABILITY & SMART APIARY
      Honey Mission, IoT Hive Telemetry, Acoustic Swarm AI, Comb CV & Smart Escrow
      ========================================================================= */
+  /* =========================================================================
+     KVIC / SIH26021 HONEY CHAIN BLOCKCHAIN TRACEABILITY & SMART APIARY
+     Honey Mission, IoT Hive Telemetry, Swarm AI, Comb CV, eDNA & Apiculture DAO
+     ========================================================================= */
   if (psId === 'SIH26021') {
     const batches = sih26021Batches;
     const hives = sih26021Hives;
     const combScans = sih26021Comb;
     const floralCalendar = sih26021Flora;
     const subsidies = sih26021Subsidies;
+    const ednaData = sih26021Edna;
+    const daoClusters = sih26021Dao;
 
     const [selectedBatch, setSelectedBatch] = React.useState(batches[0]);
-    const [tab, setTab] = React.useState<'ledger' | 'qr' | 'iot' | 'disease' | 'flora' | 'escrow'>('ledger');
+    const [tab, setTab] = React.useState<'ledger' | 'qr' | 'iot' | 'disease' | 'flora' | 'edna' | 'dao' | 'escrow'>('ledger');
     const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
 
     // Interactive Swarm Simulation State
@@ -19621,6 +19629,12 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
     // CV Scan State
     const [selectedComb, setSelectedComb] = React.useState(combScans[0]);
     const [scanSimulated, setScanSimulated] = React.useState(false);
+
+    // eDNA Defense State
+    const [defenseArmed, setDefenseArmed] = React.useState(false);
+
+    // Biodiversity Minting State
+    const [tokensMinted, setTokensMinted] = React.useState(false);
 
     const handleRunAcousticFft = () => {
       const isPreSwarm = audioFreq >= 285;
@@ -19643,36 +19657,52 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
       setTimeout(() => setScanSimulated(false), 3500);
     };
 
+    const handleTriggerPredatorDefense = () => {
+      setDefenseArmed(true);
+      setTimeout(() => setDefenseArmed(false), 4000);
+    };
+
+    const handleMintBiodiversityTokens = () => {
+      setTokensMinted(true);
+      setTimeout(() => setTokensMinted(false), 4000);
+    };
+
     const t = {
       en: {
         tag: "MINISTRY OF MSME • KVIC HONEY MISSION (HONEY CHAIN 360)",
-        desc: "Blockchain Farm-to-Fork Traceability, Nuclear Magnetic Resonance (NMR) Purity, IoT Smart Hives & Direct Fair-Trade Escrow",
-        tabLedger: "⛓️ Blockchain Batch Ledger",
+        desc: "Blockchain Farm-to-Fork Traceability, NMR Spectroscopy, IoT Telemetry, eDNA Metabarcoding & Apiculture DAO",
+        tabLedger: "⛓️ Batch Ledger & NMR",
         tabQr: "📱 Consumer QR Passport",
-        tabIot: "🐝 IoT Telemetry & Swarm AI",
-        tabDisease: "🔬 Comb CV Disease Scanner",
+        tabIot: "🐝 Smart IoT & Swarm AI",
+        tabDisease: "🔬 Comb CV Scanner",
         tabFlora: "🌸 Floral Migration Map",
-        tabEscrow: "💰 KVIC Subsidies & Escrow",
+        tabEdna: "🧬 eDNA & Pesticide Shield",
+        tabDao: "🌿 Biodiversity DAO Tokens",
+        tabEscrow: "💰 Subsidies & DBT Escrow",
       },
       hi: {
         tag: "सूक्ष्म, लघु एवं मध्यम उद्यम मंत्रालय • KVIC हनी मिशन (हनी चेन 360)",
-        desc: "ब्लॉकचेन ट्रेसिबिलिटी, NMR शुद्धता परीक्षण, IoT स्मार्ट मधुमक्खी बक्से व प्रत्यक्ष किसान एस्क्रो भुगतान",
-        tabLedger: "⛓️ ब्लॉकचेन बैच लेजर",
+        desc: "ब्लॉकचेन ट्रेसिबिलिटी, NMR स्पेक्ट्रोस्कोपी, IoT टेलीमेट्री, eDNA मेटाबारकोडिंग व जैव विविधता DAO",
+        tabLedger: "⛓️ बैच लेजर व NMR",
         tabQr: "📱 उपभोक्ता QR पासपोर्ट",
         tabIot: "🐝 IoT टेलीमेट्री व स्वार्म AI",
         tabDisease: "🔬 छत्ता रोग CV स्कैनर",
         tabFlora: "🌸 पुष्पन प्रवास मानचित्र",
-        tabEscrow: "💰 KVIC सब्सिडी व एस्क्रो",
+        tabEdna: "🧬 eDNA व कीटनाशक ढाल",
+        tabDao: "🌿 जैव विविधता टोकन DAO",
+        tabEscrow: "💰 सब्सिडी व DBT एस्क्रो",
       },
       mr: {
         tag: "सूक्ष्म, लघू आणि मध्यम उद्योग मंत्रालय • KVIC हनी मिशन (हनी चेन 360)",
-        desc: "ब्लॉकचेन शुद्धता पडताळणी, NMR चाचणी, IoT स्मार्ट पोळे सेन्सर्स आणि थेट शेतकरी स्मार्ट करार",
-        tabLedger: "⛓️ ब्लॉकचेन बॅच लेजर",
+        desc: "ब्लॉकचेन शुद्धता पडताळणी, NMR चाचणी, IoT पोळे सेन्सर्स, eDNA जनुकीय चाचणी आणि जैवविविधता टोकन",
+        tabLedger: "⛓️ बॅच लेजर व NMR",
         tabQr: "📱 ग्राहक QR पासपोर्ट",
         tabIot: "🐝 IoT पोळे सेन्सर्स व AI",
         tabDisease: "🔬 पोळे रोग CV स्कॅनर",
         tabFlora: "🌸 मध फुलोरा कॅलेंडर",
-        tabEscrow: "💰 KVIC अनुदान व थेट मोबदला",
+        tabEdna: "🧬 eDNA व कीटकनाशक अलर्ट",
+        tabDao: "🌿 परागीकरण जैवविविधता टोकन",
+        tabEscrow: "💰 KVIC अनुदान व DBT मोबदला",
       }
     }[lang];
 
@@ -19704,7 +19734,7 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
           </div>
         </div>
 
-        {/* 6 Tabs */}
+        {/* 8 Tabs */}
         <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
           {[
             { id: 'ledger', label: t.tabLedger },
@@ -19712,12 +19742,14 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
             { id: 'iot', label: t.tabIot },
             { id: 'disease', label: t.tabDisease },
             { id: 'flora', label: t.tabFlora },
+            { id: 'edna', label: t.tabEdna },
+            { id: 'dao', label: t.tabDao },
             { id: 'escrow', label: t.tabEscrow },
           ].map((item) => (
             <button
               key={item.id}
               onClick={() => setTab(item.id as any)}
-              className={`px-4 py-2.5 rounded-2xl transition-all ${
+              className={`px-3.5 py-2 rounded-2xl transition-all ${
                 tab === item.id
                   ? 'bg-amber-500 text-slate-950 font-black shadow-lg shadow-amber-500/20'
                   : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
@@ -19731,7 +19763,6 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
         {/* TAB 1: BLOCKCHAIN BATCH LEDGER & NMR CERTIFICATION */}
         {tab === 'ledger' && (
           <div className="space-y-6">
-            {/* Batch Selector Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {batches.map((b: any) => (
                 <button
@@ -19757,7 +19788,6 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
               ))}
             </div>
 
-            {/* Selected Batch Cryptographic Proof Deep-Dive */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
               <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-800 pb-3">
@@ -19811,7 +19841,6 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
                 </div>
               </div>
 
-              {/* Blockchain Cryptographic Verification Box */}
               <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
                 <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
                   <QrCode className="w-4 h-4 text-amber-400" />
@@ -19838,7 +19867,7 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
                 </div>
 
                 <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800/80 text-[11px] font-sans text-slate-300">
-                  🔒 <strong>Zero Middleman Assurance</strong>: The smart contract automatically transfers proceeds directly into the beekeeper's Aadhaar-linked bank account, preventing cartel underpricing.
+                  🔒 <strong>Zero Middleman Assurance</strong>: The smart contract automatically transfers proceeds directly into the beekeeper's Aadhaar-linked bank account.
                 </div>
               </div>
             </div>
@@ -19848,7 +19877,6 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
         {/* TAB 2: CONSUMER QR CODE PROVENANCE PASSPORT */}
         {tab === 'qr' && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
-            {/* Simulated Mobile QR Scanner */}
             <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 flex flex-col items-center justify-center text-center space-y-4">
               <div className="w-48 h-48 bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center">
                 <div className="w-full h-full border-4 border-slate-900 rounded-xl flex flex-col items-center justify-center p-2 text-slate-950 font-black">
@@ -19867,7 +19895,6 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
               </div>
             </div>
 
-            {/* Rendered Mobile Passport Page */}
             <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
               <div className="flex justify-between items-start border-b border-slate-800 pb-3">
                 <div>
@@ -19904,7 +19931,6 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
         {/* TAB 3: SMART IOT HIVE TELEMETRY & ACOUSTIC SWARM AI */}
         {tab === 'iot' && (
           <div className="space-y-6 font-mono text-xs">
-            {/* Hive Selector */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {hives.map((h: any) => (
                 <div
@@ -19947,7 +19973,6 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
               ))}
             </div>
 
-            {/* Acoustic FFT Audio Simulator */}
             <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
               <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
                 <Activity className="w-5 h-5 text-amber-400" />
@@ -20106,10 +20131,132 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
           </div>
         )}
 
-        {/* TAB 6: KVIC HONEY MISSION SUBSIDIES & ESCROW */}
+        {/* TAB 6: eDNA METABARCODING & PESTICIDE SHIELD */}
+        {tab === 'edna' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-4 bg-purple-950/40 rounded-3xl border border-purple-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-purple-200 font-sans">
+              <div>
+                <strong className="text-white text-sm block">🧬 Next-Generation Sequencing (NGS) eDNA Pollen Metabarcoding</strong>
+                <span>Profiles chloroplast amplicon markers (ITS2 + rbcL) to prove exact botanical species origin and verify complete absence of synthetic inverted sugar syrup or adulterant crop pollen.</span>
+              </div>
+              <button
+                onClick={handleTriggerPredatorDefense}
+                disabled={defenseArmed}
+                className="px-4 py-2 bg-purple-500 hover:bg-purple-400 text-slate-950 font-black rounded-xl text-xs font-sans shadow-md transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {defenseArmed ? '🛡️ Motorized Anti-Predator Flap Armed!' : 'Arm Anti-Predator Barrier'}
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {ednaData.map((ed: any) => (
+                <div key={ed.batch_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-purple-400 font-bold">{ed.batch_id} • {ed.hive_id}</span>
+                      <h4 className="font-bold text-white font-sans text-base mt-0.5">{ed.primary_species_detected}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{ed.edna_sequencing_platform}</p>
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-xs font-bold">
+                      {ed.species_purity_pct}% Botanical Match
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">GENOMIC LOCUS</span>
+                      <strong className="text-cyan-400 text-xs block mt-0.5">{ed.dna_barcode_marker.split(' ')[0]}</strong>
+                      <span className="text-[8px] text-slate-500">Amplicon NGS</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">PESTICIDE SCREEN</span>
+                      <strong className="text-emerald-400 text-[10px] block mt-0.5">PASSED</strong>
+                      <span className="text-[8px] text-slate-500">Zero Neonicotinoids</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">WINTER CLUSTER</span>
+                      <strong className="text-amber-400 text-xs block mt-0.5">{ed.winter_cluster_temp_c}°C</strong>
+                      <span className="text-[8px] text-slate-500">Thermal Core</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1 font-sans text-[11px]">
+                    <div className="text-slate-300">
+                      🌿 <strong>Secondary Botanicals</strong>: {ed.secondary_botanicals}
+                    </div>
+                    <div className="text-emerald-400 text-[10px] font-mono">
+                      {ed.adulterant_plant_dna}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 7: BIODIVERSITY DAO TOKENS */}
+        {tab === 'dao' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {daoClusters.map((dao: any) => (
+                <div key={dao.cluster_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{dao.cluster_id}</span>
+                      <h4 className="font-bold text-white font-sans text-base mt-0.5">{dao.cluster_name}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{dao.active_beekeepers} Co-op Beekeepers • {dao.total_colonies_pollinating} Colonies</p>
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold text-xs">
+                      {dao.biodiversity_tokens_minted} Tokens
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">POLLINATION VALUE</span>
+                      <strong className="text-emerald-400 text-xs block mt-0.5">₹{(dao.estimated_crop_pollination_value_inr / 100000).toFixed(1)} L</strong>
+                      <span className="text-[8px] text-slate-500">Orchard Multiplier</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">CROP YIELD GAIN</span>
+                      <strong className="text-cyan-400 text-xs block mt-0.5">+{dao.apple_orchard_yield_boost_pct}%</strong>
+                      <span className="text-[8px] text-slate-500">Ecosystem Gain</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">DAO FLOOR PRICE</span>
+                      <strong className="text-amber-400 text-xs block mt-0.5">₹{dao.dao_treasury_floor_price_inr_kg}/kg</strong>
+                      <span className="text-[8px] text-slate-500">Collective Minimum</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 flex justify-between items-center text-[11px] font-sans">
+                    <span className="text-slate-400">Micro-Credit Working Capital:</span>
+                    <strong className="text-white">₹{(dao.working_capital_micro_loans_disbursed_inr / 100000).toFixed(1)} Lakhs ({dao.loan_default_rate_pct}% Defaults)</strong>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Token Minting Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-amber-400 font-bold block text-sm font-sans">Verra / Gold Standard Bee-Pollination Biodiversity Credit Minting</span>
+                <span className="text-slate-400 text-xs font-sans">Mints verifiable ERC-20 biodiversity tokens representing orchard pollination acreage, creating secondary revenue for tribal beekeepers.</span>
+              </div>
+              <button
+                onClick={handleMintBiodiversityTokens}
+                disabled={tokensMinted}
+                className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-amber-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {tokensMinted ? '✅ 840 Biodiversity Tokens Minted!' : 'Mint Verra Biodiversity Tokens'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 8: KVIC HONEY MISSION SUBSIDIES & ESCROW */}
         {tab === 'escrow' && (
           <div className="space-y-6 font-mono text-xs">
-            {/* Subsidy Beneficiary Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {subsidies.map((sub: any) => (
                 <div key={sub.beekeeper_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
@@ -20149,7 +20296,6 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
               ))}
             </div>
 
-            {/* Smart Contract Instant Escrow Payout Console */}
             <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div>
                 <span className="text-amber-400 font-bold block text-sm font-sans">Automated Fair-Trade Smart Contract Escrow (Zero Deductions)</span>
