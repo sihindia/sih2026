@@ -1,0 +1,54 @@
+[
+  {
+    "corridor_id": "UTIL-DEL-MTR-01",
+    "name": "Delhi Metro Airport Express Subterranean Tunnel",
+    "city": "New Delhi",
+    "depth_top_m": -18.5,
+    "depth_bottom_m": -24.0,
+    "diameter_m": 6.8,
+    "structural_type": "Pre-cast Reinforced Concrete Twin Bored Tunnel",
+    "clearance_buffer_m": 10.0,
+    "encroachment_status": "ZERO_INTERSECTION_CLEAR",
+    "responsible_agency": "Delhi Metro Rail Corporation (DMRC)",
+    "hazard_rating": "CRITICAL_MASS_TRANSIT"
+  },
+  {
+    "corridor_id": "UTIL-PUN-PNG-04",
+    "name": "Maharashtra Natural Gas High-Pressure PNG Trunk Line",
+    "city": "Pune",
+    "depth_top_m": -2.8,
+    "depth_bottom_m": -3.6,
+    "diameter_m": 0.8,
+    "structural_type": "Coated API-5L Carbon Steel High Pressure Gas Conduit",
+    "clearance_buffer_m": 3.0,
+    "encroachment_status": "ZERO_INTERSECTION_CLEAR",
+    "responsible_agency": "MNGL Gas Authority",
+    "hazard_rating": "FLAMMABLE_HIGH_PRESSURE"
+  },
+  {
+    "corridor_id": "UTIL-BLR-ELEC-09",
+    "name": "BESCOM 66kV Underground Cable Trench Substation Link",
+    "city": "Bengaluru",
+    "depth_top_m": -4.2,
+    "depth_bottom_m": -5.5,
+    "diameter_m": 1.2,
+    "structural_type": "Cross-Linked Polyethylene (XLPE) Insulated Cable Bank",
+    "clearance_buffer_m": 4.0,
+    "encroachment_status": "ZERO_INTERSECTION_CLEAR",
+    "responsible_agency": "BESCOM Karnataka",
+    "hazard_rating": "HIGH_VOLTAGE_ELECTRICAL"
+  },
+  {
+    "corridor_id": "UTIL-MUM-SEW-02",
+    "name": "MCGM Mithi River Deep Interceptor Sewer Tunnel",
+    "city": "Mumbai",
+    "depth_top_m": -14.0,
+    "depth_bottom_m": -17.5,
+    "diameter_m": 3.2,
+    "structural_type": "Micro-Tunnelled Segmental Concrete Storm Trunk",
+    "clearance_buffer_m": 5.0,
+    "encroachment_status": "ZERO_INTERSECTION_CLEAR",
+    "responsible_agency": "Municipal Corporation of Greater Mumbai",
+    "hazard_rating": "GRAVITY_SEWAGE_TRUNK"
+  }
+]

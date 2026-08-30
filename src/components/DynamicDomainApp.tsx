@@ -18,6 +18,7 @@ import {
   ShoppingBag,
   Compass,
   Clock,
+  Key,
   Scale,
   Gavel,
   GitMerge,
@@ -98,6 +99,13 @@ import sih26009Reserves from '../data/sih26009/borehole_krige_reserves_and_blend
 import sih26009Blast from '../data/sih26009/blast_design_and_shortfall_remedies.json';
 import sih26009CoreDrone from '../data/sih26009/corebox_photogrammetry_and_drone_volumetrics.json';
 import sih26009StrataGreen from '../data/sih26009/microseismic_strata_and_green_carbon.json';
+import sih26011Cadastral from '../data/sih26011/cadastral_parcels.json';
+import sih26011Vertical from '../data/sih26011/vertical_parcels_and_3d_ulpins.json';
+import sih26011Units from '../data/sih26011/vertical_units.json';
+import sih26011Lidar from '../data/sih26011/lidar_drone_mesh_and_pointclouds.json';
+import sih26011Rules from '../data/sih26011/volumetric_topology_rules_matrix.json';
+import sih26011Utilities from '../data/sih26011/subsurface_utilities_and_metro_corridors.json';
+import sih26011Deeds from '../data/sih26011/smart_3d_title_deeds_and_mortgage_registry.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -1262,150 +1270,627 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
     );
   }
 
+  /* =========================================================================
+     MINISTRY OF RURAL DEVELOPMENT / DoLR / SIH26011 NAKSHA3D 360
+     3D ULPIN Generation & Vertical Property Mapping System (ISO 19152 LADM)
+     ========================================================================= */
   if (psId === 'SIH26011') {
-    const parcels = [
-      { ulpin: "27-584-0129-4819", name: "Antares Sky Towers (High-Rise)", city: "Pune, MH", floors: 24, basements: 3, units: 192, height: 78.5, depth: -11.4 },
-      { ulpin: "07-110-8402-9912", name: "Connaught Commercial Mall & Metro", city: "New Delhi", floors: 8, basements: 4, units: 110, height: 36.0, depth: -18.5 },
-      { ulpin: "29-612-4011-7723", name: "Silicon Horizon Tech Park (Tower B)", city: "Bengaluru, KA", floors: 16, basements: 2, units: 64, height: 58.0, depth: -8.0 }
-    ];
+    const cadastralSites = sih26011Cadastral;
+    const verticalParcels = sih26011Vertical;
+    const verticalUnits = sih26011Units;
+    const lidarSensors = sih26011Lidar;
+    const topologyRules = sih26011Rules;
+    const subsurfaceUtilities = sih26011Utilities;
+    const smartDeeds = sih26011Deeds;
 
-    const units = [
-      { id: "27-584-0129-4819-F18-U1802", name: "Apartment 1802 (4BHK Sky Penthouse)", level: "Above Ground", floor: 18, z: "54.0m to 57.2m", owner: "Vikramaditya Singhania", area: "2,450 sq.ft" },
-      { id: "27-584-0129-4819-B02-P044", name: "Basement Parking Bay P-44 (EV Charging)", level: "Subsurface Basement", floor: -2, z: "-7.5m to -4.5m", owner: "Vikramaditya Singhania", area: "165 sq.ft" },
-      { id: "07-110-8402-9912-B03-MTR01", name: "Underground Metro Transit Box", level: "Subsurface Utility", floor: -3, z: "-15.0m to -10.5m", owner: "DMRC Corporation", area: "12,500 sq.ft" }
-    ];
+    const [selectedSite, setSelectedSite] = React.useState(cadastralSites[0]);
+    const [tab, setTab] = React.useState<'twin' | 'ulpin' | 'lidar' | 'topology' | 'utilities' | 'deeds'>('twin');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
 
-    const [selectedParcel, setSelectedParcel] = React.useState(parcels[0]);
-    const [floorLevel, setFloorLevel] = React.useState(18);
-    const [unitCode, setUnitCode] = React.useState('1802');
-    const [genResult, setGenResult] = React.useState<any>(null);
-    const [isGenerating, setIsGenerating] = React.useState(false);
+    // 3D Slicer Interactive State
+    const [sliceFloor, setSliceFloor] = React.useState(18);
+    const [xrayMode, setXrayMode] = React.useState(false);
 
-    const handleGenULPIN = () => {
-      setIsGenerating(true);
-      setTimeout(() => {
-        setIsGenerating(false);
-        const prefix = floorLevel >= 0 ? 'F' : 'B';
-        const levelStr = `${prefix}${Math.abs(floorLevel).toString().padStart(2, '0')}`;
-        const code = `${selectedParcel.ulpin}-${levelStr}-U${unitCode}`;
-        setGenResult({
-          code: code,
-          zBounds: `${(floorLevel * 3.0).toFixed(1)}m to ${(floorLevel * 3.0 + 3.2).toFixed(1)}m elevation`,
-          volume: "480 m³ 3D Spatial Right (LADM ISO 19152 Verified)"
-        });
-      }, 600);
+    // 3D ULPIN Interactive Generator State
+    const [genState, setGenState] = React.useState('27');
+    const [genDistrict, setGenDistrict] = React.useState('584');
+    const [genSurvey, setGenSurvey] = React.useState('0941');
+    const [genStratum, setGenStratum] = React.useState<'F' | 'B' | 'U' | 'A'>('F');
+    const [genLevel, setGenLevel] = React.useState(14);
+    const [genUnit, setGenUnit] = React.useState('02');
+    const [genArea, setGenArea] = React.useState(165);
+    const [genHeight, setGenHeight] = React.useState(3.1);
+    const [generatedULPINResult, setGeneratedULPINResult] = React.useState<any>(null);
+
+    // Topology Validation State
+    const [collisionSimulated, setCollisionSimulated] = React.useState(false);
+
+    // Mortgage Geolock State
+    const [geolockActive, setGeolockActive] = React.useState(false);
+
+    const handleGenerateULPIN = () => {
+      const levelStr = `${genStratum}${Math.abs(genLevel).toString().padStart(2, '0')}`;
+      const code = `${genState}-${genDistrict}-${genSurvey}-${levelStr}-U${genUnit}`;
+      const vol = Number((genArea * genHeight).toFixed(1));
+      const elevationMin = genStratum === 'B' ? -(Math.abs(genLevel) * genHeight) : (genLevel * genHeight);
+      const elevationMax = Number((elevationMin + genHeight).toFixed(1));
+      
+      setGeneratedULPINResult({
+        ulpin3d: code,
+        volumeM3: vol,
+        elevationRange: `${elevationMin.toFixed(1)}m to ${elevationMax}m`,
+        ladmStandard: 'ISO 19152 LADM 3D Validated (Manifold Polyhedron)',
+        stratumType: genStratum === 'F' ? 'Above-Ground Residential' : genStratum === 'B' ? 'Subsurface Basement / Parking' : genStratum === 'U' ? 'Underground Infrastructure Corridor' : 'Air-Rights Sky Easement'
+      });
     };
 
+    const handleRunCollisionCheck = () => {
+      setCollisionSimulated(true);
+      setTimeout(() => setCollisionSimulated(false), 4500);
+    };
+
+    const handleTriggerGeolock = () => {
+      setGeolockActive(true);
+      setTimeout(() => setGeolockActive(false), 4000);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF RURAL DEVELOPMENT • DoLR (NAKSHA3D 360)",
+        desc: "3D ULPIN Bhu-Aadhaar Generation, Vertical Property Slicing, Subsurface Utilities & Volumetric Cadastre",
+        tabTwin: "🏢 3D Digital Twin Slicer",
+        tabUlpin: "🌐 3D ULPIN Generator",
+        tabLidar: "🤖 AI Building & LiDAR",
+        tabTopology: "🛡️ Volumetric Topology",
+        tabUtilities: "🚇 Subsurface Metro & Utilities",
+        tabDeeds: "📜 3D Title Deed & Mortgage",
+      },
+      hi: {
+        tag: "ग्रामीण विकास मंत्रालय • भूमि संसाधन विभाग (नक्शा3D 360)",
+        desc: "3D यूएलपिन भू-आधार सृजन, लंबवत संपत्ति विभाजन, भूमिगत उपयोगिताएं व वॉल्यूमेट्रिक कैडस्ट्रे",
+        tabTwin: "🏢 3D डिजिटल ट्विन स्लाइसर",
+        tabUlpin: "🌐 3D ULPIN जनरेटर",
+        tabLidar: "🤖 AI बिल्डिंग व LiDAR",
+        tabTopology: "🛡️ वॉल्यूमेट्रिक टोपोलॉजी",
+        tabUtilities: "🚇 भूमिगत मेट्रो व उपयोगिताएं",
+        tabDeeds: "📜 3D टाइटल डीड व बंधक",
+      },
+      mr: {
+        tag: "ग्रामीण विकास मंत्रालय • भू-संसाधन विभाग (नक्शा3D 360)",
+        desc: "3D ULPIN भू-आधार निर्मिती, उभ्या मालमत्तेचे विभाजन, भूमिगत सुविधा आणि 3D कडास्ट्रे",
+        tabTwin: "🏢 3D डिजिटल ट्विन स्लाइसर",
+        tabUlpin: "🌐 3D ULPIN जनरेटर",
+        tabLidar: "🤖 AI इमारत व LiDAR",
+        tabTopology: "🛡️ 3D टोपोलॉजी पडताळणी",
+        tabUtilities: "🚇 भूमिगत मेट्रो व वाहिन्या",
+        tabDeeds: "📜 3D मालकी हक्क व तारण",
+      }
+    }[lang];
+
     return (
-      <div className="space-y-6">
+      <div className="space-y-6 font-sans">
         {/* Header */}
-        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold mb-1">
               <Box className="w-4 h-4 text-emerald-400" />
-              <span>DEPARTMENT OF LAND RESOURCES (DoLR) • MINISTRY OF RURAL DEVELOPMENT • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">High-Rise Vertical Parcel Delineation, Subsurface Utilities & 3D Volumetric Cadastre</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-2xl text-xs font-bold flex items-center gap-2">
-            <Layers className="w-4 h-4 text-emerald-400" />
-            <span>Volumetric 3D Cadastre Active</span>
-          </span>
-        </div>
-
-        {/* Parcels (JSON Data) */}
-        <div className="space-y-2">
-          <div className="flex justify-between text-xs font-bold text-slate-400 px-1">
-            <span>🏛️ MONITORED 3D URBAN CADASTRAL SITES ({parcels.length} SITES)</span>
-            <span>Click site to inspect layers</span>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {parcels.map((p) => (
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-emerald-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
               <button
-                key={p.ulpin}
-                onClick={() => setSelectedParcel(p)}
-                className={`p-4 rounded-2xl border text-left transition-all ${
-                  selectedParcel.ulpin === p.ulpin ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-md ring-1 ring-emerald-400' : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
                 }`}
               >
-                <div className="flex justify-between items-start">
-                  <div>
-                    <span className="text-[10px] font-mono text-emerald-400 font-bold">{p.ulpin}</span>
-                    <h4 className="font-bold text-xs text-white mt-0.5">{p.name}</h4>
-                    <div className="text-[11px] text-slate-400 mt-0.5">{p.city}</div>
-                  </div>
-                  <span className="font-mono text-xs font-bold px-2 py-1 rounded bg-slate-950 text-cyan-400 border border-slate-800">
-                    {p.floors}F / {p.basements}B
-                  </span>
-                </div>
-                <div className="mt-2 text-[10px] text-slate-400 flex justify-between font-mono">
-                  <span>Height: {p.height}m</span>
-                  <span>Depth: {p.depth}m</span>
-                </div>
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Units & 3D ULPIN Generator */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-            <h4 className="font-bold text-sm text-white flex items-center gap-2">
-              <Layers className="w-4 h-4 text-emerald-400" />
-              <span>Delineated 3D Volumetric Property Units (Floor & Subsurface)</span>
-            </h4>
-            <div className="space-y-3">
-              {units.map((u) => (
-                <div key={u.id} className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
+          {[
+            { id: 'twin', label: t.tabTwin },
+            { id: 'ulpin', label: t.tabUlpin },
+            { id: 'lidar', label: t.tabLidar },
+            { id: 'topology', label: t.tabTopology },
+            { id: 'utilities', label: t.tabUtilities },
+            { id: 'deeds', label: t.tabDeeds },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-emerald-500 text-slate-950 font-black shadow-lg shadow-emerald-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        {/* TAB 1: 3D DIGITAL TWIN & FLOOR SLICER */}
+        {tab === 'twin' && (
+          <div className="space-y-6">
+            {/* Site Selector Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {cadastralSites.map((site: any) => (
+                <button
+                  key={site.base_ulpin}
+                  onClick={() => setSelectedSite(site)}
+                  className={`p-4 rounded-2xl border text-left transition-all ${
+                    selectedSite.base_ulpin === site.base_ulpin
+                      ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-lg ring-1 ring-emerald-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-emerald-400">{site.base_ulpin}</span>
+                    <span className="text-cyan-400">{site.floors_above_ground}F / {site.basements_underground}B</span>
+                  </div>
+                  <div className="text-xs font-bold text-white mt-1 line-clamp-1">{site.property_name}</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">{site.city}, {site.state}</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-purple-400">Total Units: {site.total_units_count}</span>
+                    <span className="text-amber-400">Height: {site.total_height_m}m</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Interactive 3D Slicing Stage */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div>
+                    <h4 className="text-white font-bold text-sm flex items-center gap-2">
+                      <Layers className="w-4 h-4 text-emerald-400" />
+                      <span>Volumetric 3D Building Digital Twin</span>
+                    </h4>
+                    <p className="text-slate-400 text-xs mt-0.5">{selectedSite.property_name} • LoD3 Solid Cadastre</p>
+                  </div>
+                  <button
+                    onClick={() => setXrayMode(!xrayMode)}
+                    className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                      xrayMode ? 'bg-cyan-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
+                    }`}
+                  >
+                    {xrayMode ? '👁️ X-Ray Mode ON' : 'Show Solid Envelope'}
+                  </button>
+                </div>
+
+                {/* 3D Vertical Slice Visualizer Canvas */}
+                <div className="relative h-64 bg-slate-950 rounded-2xl border-2 border-dashed border-slate-800 p-4 flex flex-col justify-between overflow-hidden">
+                  <div className="flex justify-between text-[10px] font-mono text-slate-400 z-10">
+                    <span>ELEVATION: {sliceFloor >= 0 ? `+${(sliceFloor * 3.1).toFixed(1)}m MSL` : `${(sliceFloor * 3.1).toFixed(1)}m Depth`}</span>
+                    <span className="text-emerald-400 font-bold">SLICER LEVEL: {sliceFloor >= 0 ? `Floor ${sliceFloor}` : `Basement ${sliceFloor}`}</span>
+                  </div>
+
+                  {/* Simulated 3D Floor Stacks */}
+                  <div className="relative w-full h-36 flex items-center justify-center">
+                    <div className="w-64 space-y-1">
+                      {/* Rooftop Penthouse */}
+                      <div className={`h-4 rounded border transition-all ${sliceFloor >= 20 ? 'bg-cyan-500/80 border-cyan-300 shadow-md' : 'bg-slate-800/40 border-slate-700'}`} />
+                      {/* Upper Floors */}
+                      <div className={`h-8 rounded border transition-all flex items-center justify-center text-[10px] font-mono font-bold ${sliceFloor >= 12 && sliceFloor < 20 ? 'bg-emerald-500/80 text-slate-950 border-emerald-300 shadow-lg' : 'bg-slate-800/50 text-slate-500 border-slate-700'}`}>
+                        {sliceFloor >= 12 && sliceFloor < 20 ? `ACTIVE SLICE: Floor ${sliceFloor}` : 'Upper Residential Units'}
+                      </div>
+                      {/* Mid Floors */}
+                      <div className={`h-8 rounded border transition-all flex items-center justify-center text-[10px] font-mono font-bold ${sliceFloor >= 1 && sliceFloor < 12 ? 'bg-emerald-500/80 text-slate-950 border-emerald-300 shadow-lg' : 'bg-slate-800/50 text-slate-500 border-slate-700'}`}>
+                        {sliceFloor >= 1 && sliceFloor < 12 ? `ACTIVE SLICE: Floor ${sliceFloor}` : 'Mid Residential Units'}
+                      </div>
+                      {/* Ground Datum Line */}
+                      <div className="h-0.5 bg-amber-500 relative flex items-center justify-center">
+                        <span className="bg-amber-500 text-slate-950 text-[8px] font-bold px-1.5 rounded-full uppercase tracking-wider">Ground Datum ±0.0m</span>
+                      </div>
+                      {/* Basements */}
+                      <div className={`h-7 rounded border transition-all flex items-center justify-center text-[10px] font-mono font-bold ${sliceFloor < 0 ? 'bg-purple-600/80 text-white border-purple-300 shadow-lg' : 'bg-slate-900/60 text-slate-600 border-slate-800'}`}>
+                        {sliceFloor < 0 ? `SUBSURFACE: Basement ${sliceFloor}` : 'Basement Parking & EV Bays'}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floor Slicer Control Bar */}
+                  <div className="space-y-1.5 z-10 pt-2 border-t border-slate-900">
+                    <div className="flex justify-between text-xs font-mono">
+                      <span className="text-slate-400">Vertical Slice Height:</span>
+                      <strong className="text-emerald-400">{sliceFloor >= 0 ? `Floor ${sliceFloor} (Above Ground)` : `Basement ${Math.abs(sliceFloor)} (Subsurface)`}</strong>
+                    </div>
+                    <input
+                      type="range"
+                      min={-selectedSite.basements_underground}
+                      max={selectedSite.floors_above_ground}
+                      value={sliceFloor}
+                      onChange={(e) => setSliceFloor(Number(e.target.value))}
+                      className="w-full accent-emerald-500 cursor-pointer"
+                    />
+                  </div>
+                </div>
+
+                {/* Quick Stats Grid */}
+                <div className="grid grid-cols-3 gap-3 text-center text-xs font-mono">
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">PLOT FOOTPRINT</span>
+                    <strong className="text-emerald-400 text-sm block mt-0.5">{selectedSite.ground_area_sqm} m²</strong>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">AIR-RIGHTS PEAK</span>
+                    <strong className="text-cyan-400 text-sm block mt-0.5">+{selectedSite.total_height_m}m</strong>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">SUBSURFACE DEPTH</span>
+                    <strong className="text-purple-400 text-sm block mt-0.5">{selectedSite.deepest_subsurface_m}m</strong>
+                  </div>
+                </div>
+              </div>
+
+              {/* Units on Sliced Floor */}
+              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs font-mono">
+                <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                  <Key className="w-4 h-4 text-emerald-400" />
+                  <span>Delineated Spatial Units on Slice</span>
+                </h4>
+
+                <div className="space-y-3">
+                  {verticalUnits.map((u: any) => (
+                    <div key={u.volumetric_3d_ulpin} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <span className="text-emerald-400 font-bold">{u.volumetric_3d_ulpin}</span>
+                          <div className="text-white font-bold font-sans text-xs mt-0.5">{u.unit_number}</div>
+                          <div className="text-[11px] text-slate-400 font-sans">Owner: {u.owner_name}</div>
+                        </div>
+                        <span className="px-2 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-[9px] text-cyan-300">
+                          {u.level_type.replace('_', ' ')}
+                        </span>
+                      </div>
+                      <div className="pt-2 border-t border-slate-900 flex justify-between text-[10px] text-slate-400">
+                        <span>Carpet: <strong className="text-white">{u.carpet_area_sqft} sq.ft</strong></span>
+                        <span>Z: <strong className="text-cyan-400">{u.elevation_min_m}m to {u.elevation_max_m}m</strong></span>
+                        <span className="text-emerald-400 font-bold">Tax: {u.property_tax_id}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: STANDARDIZED 3D ULPIN GENERATOR */}
+        {tab === 'ulpin' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            {/* Interactive Form */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Sliders className="w-5 h-5 text-emerald-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">18-Character 3D ULPIN (Bhu-Aadhaar) Generator</h4>
+                  <p className="text-slate-400 text-xs font-sans">ISO 19152 LADM Standardized Hierarchical Geocoding</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                <div>
+                  <label className="text-slate-400 block text-[10px] mb-1">State Code (2-Digit):</label>
+                  <input
+                    type="text"
+                    value={genState}
+                    onChange={(e) => setGenState(e.target.value)}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-white text-center font-bold"
+                  />
+                </div>
+                <div>
+                  <label className="text-slate-400 block text-[10px] mb-1">District Code (3-Digit):</label>
+                  <input
+                    type="text"
+                    value={genDistrict}
+                    onChange={(e) => setGenDistrict(e.target.value)}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-white text-center font-bold"
+                  />
+                </div>
+                <div>
+                  <label className="text-slate-400 block text-[10px] mb-1">Survey Parcel (4-Digit):</label>
+                  <input
+                    type="text"
+                    value={genSurvey}
+                    onChange={(e) => setGenSurvey(e.target.value)}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-white text-center font-bold"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                <div>
+                  <label className="text-slate-400 block text-[10px] mb-1">Stratum Class:</label>
+                  <select
+                    value={genStratum}
+                    onChange={(e) => setGenStratum(e.target.value as any)}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-white text-xs font-bold"
+                  >
+                    <option value="F">F (Floor Above-Ground)</option>
+                    <option value="B">B (Basement Subsurface)</option>
+                    <option value="U">U (Utility / Metro Tunnel)</option>
+                    <option value="A">A (Air-Rights Easement)</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-slate-400 block text-[10px] mb-1">Floor Level:</label>
+                  <input
+                    type="number"
+                    value={genLevel}
+                    onChange={(e) => setGenLevel(Number(e.target.value))}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-white text-center font-bold"
+                  />
+                </div>
+                <div>
+                  <label className="text-slate-400 block text-[10px] mb-1">Unit / Bay No:</label>
+                  <input
+                    type="text"
+                    value={genUnit}
+                    onChange={(e) => setGenUnit(e.target.value)}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-white text-center font-bold"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-slate-400 block text-[10px] mb-1">Floor Area (m²):</label>
+                  <input
+                    type="number"
+                    value={genArea}
+                    onChange={(e) => setGenArea(Number(e.target.value))}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-white text-center font-bold"
+                  />
+                </div>
+                <div>
+                  <label className="text-slate-400 block text-[10px] mb-1">Ceiling Height (m):</label>
+                  <input
+                    type="number"
+                    step="0.1"
+                    value={genHeight}
+                    onChange={(e) => setGenHeight(Number(e.target.value))}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-white text-center font-bold"
+                  />
+                </div>
+              </div>
+
+              <button
+                onClick={handleGenerateULPIN}
+                className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-emerald-500/20 transition-all active:scale-95"
+              >
+                Generate 3D ULPIN &amp; Verify LADM Manifold
+              </button>
+            </div>
+
+            {/* Generated Result Card */}
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-emerald-400" />
+                <span>Certified 3D Bhu-Aadhaar Certificate</span>
+              </h4>
+
+              {generatedULPINResult ? (
+                <div className="p-5 bg-slate-950 rounded-2xl border border-emerald-800/80 space-y-3 animate-fadeIn">
+                  <div className="text-[10px] text-slate-400 uppercase font-bold">STANDARDIZED 3D ULPIN:</div>
+                  <div className="text-lg font-black text-emerald-400 bg-slate-900 p-3 rounded-xl border border-slate-800 select-all">
+                    {generatedULPINResult.ulpin3d}
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 text-xs">
+                    <div><span className="text-slate-500 block text-[10px]">VOLUMETRIC CAPACITY:</span><strong className="text-cyan-400">{generatedULPINResult.volumeM3} m³ Solid</strong></div>
+                    <div><span className="text-slate-500 block text-[10px]">VERTICAL ELEVATION Z:</span><strong className="text-amber-400">{generatedULPINResult.elevationRange}</strong></div>
+                  </div>
+                  <div className="p-3 bg-emerald-950/40 rounded-xl border border-emerald-900/60 text-emerald-200 text-[11px] font-sans">
+                    ✅ <strong>ISO 19152 Compliance</strong>: {generatedULPINResult.ladmStandard}. Stratum allocated as {generatedULPINResult.stratumType}.
+                  </div>
+                </div>
+              ) : (
+                <div className="h-64 flex flex-col items-center justify-center p-6 bg-slate-950 rounded-2xl border border-dashed border-slate-800 text-center text-slate-500">
+                  <Box className="w-10 h-10 mb-2 opacity-40 text-emerald-400" />
+                  <span>Configure the parameters on the left and click Generate to produce the official 3D ULPIN.</span>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: AI BUILDING EXTRACTION & LIDAR */}
+        {tab === 'lidar' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-4 bg-emerald-950/40 rounded-3xl border border-emerald-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-emerald-200 font-sans">
+              <div>
+                <strong className="text-white text-sm block">🤖 AI/ML Building Extraction &amp; Point Cloud Delineation</strong>
+                <span>PointNet++ and Mask R-CNN segment aerial drone photogrammetry and LiDAR point clouds to extract building envelope solids.</span>
+              </div>
+              <span className="px-3 py-1 bg-emerald-500 text-slate-950 font-black rounded-xl text-xs font-mono shrink-0">
+                PointNet++ 3D Mesh
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {lidarSensors.map((s: any) => (
+                <div key={s.source} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <span className="text-emerald-400 font-bold block">{s.source}</span>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Sensor Hardware:</span>
+                      <strong className="text-white">{s.sensor_model}</strong>
+                    </div>
+                    {s.gsd_cm_px && (
+                      <div className="flex justify-between text-slate-400">
+                        <span>Ground Sampling Distance:</span>
+                        <span className="text-cyan-400 font-bold">{s.gsd_cm_px} cm/pixel</span>
+                      </div>
+                    )}
+                    {s.point_density_pts_m2 && (
+                      <div className="flex justify-between text-slate-400">
+                        <span>LiDAR Point Density:</span>
+                        <span className="text-cyan-400 font-bold">{s.point_density_pts_m2} pts/m²</span>
+                      </div>
+                    )}
+                    <div className="flex justify-between text-slate-400">
+                      <span>Spatial Accuracy:</span>
+                      <span className="text-emerald-400 font-bold">{s.accuracy_hz_cm ? `±${s.accuracy_hz_cm} cm` : `±${s.accuracy_vt_cm} cm`}</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400 font-sans leading-relaxed">
+                    <strong>Delineated Features</strong>: {s.extracted_features}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: 3D VOLUMETRIC TOPOLOGY & ENCROACHMENT RESOLVER */}
+        {tab === 'topology' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {topologyRules.map((r: any) => (
+                <div key={r.rule_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-emerald-400 font-bold">{r.rule_id}</span>
+                    <span className="px-2 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full text-[9px]">ENFORCED</span>
+                  </div>
+                  <h4 className="font-bold text-white font-sans text-sm">{r.name}</h4>
+                  <div className="text-[10px] text-cyan-400">{r.standard}</div>
+                  <p className="text-slate-400 font-sans text-[11px] pt-2 border-t border-slate-800 leading-relaxed">
+                    {r.enforcement}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Collision Checker Action Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-emerald-400 font-bold block text-sm font-sans">Automated 3D CSG Polyhedral Boolean Collision Engine</span>
+                <span className="text-slate-400 text-xs font-sans">Scans all 192 spatial units, ensuring zero overlapping volumes (A ∩ B = ∅) and road RoW clearance.</span>
+              </div>
+              <button
+                onClick={handleRunCollisionCheck}
+                disabled={collisionSimulated}
+                className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-emerald-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {collisionSimulated ? '✅ 100% Manifold Verified: Zero Collisions!' : 'Run 3D Topology Audit'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: SUBSURFACE UTILITIES & METRO CORRIDOR CADASTRE */}
+        {tab === 'utilities' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {subsurfaceUtilities.map((util: any) => (
+                <div key={util.corridor_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
                   <div className="flex justify-between items-start">
                     <div>
-                      <span className="font-mono text-xs font-bold text-emerald-400">{u.id}</span>
-                      <div className="font-bold text-xs text-white mt-0.5">{u.name}</div>
-                      <div className="text-[11px] text-slate-400">Owner: {u.owner} • {u.area}</div>
+                      <span className="text-cyan-400 font-bold">{util.corridor_id} • {util.city}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{util.name}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{util.responsible_agency}</p>
                     </div>
-                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-950 text-blue-300 border border-blue-800">{u.level}</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-slate-950 text-emerald-300 border border-slate-800 text-[10px] font-bold">
+                      {util.encroachment_status.split('_')[0]}
+                    </span>
                   </div>
-                  <div className="pt-2 border-t border-slate-900 text-[11px] font-mono text-slate-400 flex justify-between">
-                    <span>Elevation Z: {u.z}</span>
-                    <span className="text-emerald-400 font-bold">No Spatial Clash</span>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">DEPTH EXTENT</span>
+                      <strong className="text-purple-400 text-sm block mt-0.5">{util.depth_top_m}m to {util.depth_bottom_m}m</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">CONDUIT DIAMETER</span>
+                      <strong className="text-cyan-400 text-sm block mt-0.5">{util.diameter_m}m</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">SAFETY BUFFER</span>
+                      <strong className="text-amber-400 text-sm block mt-0.5">±{util.clearance_buffer_m}m Envelope</strong>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800/80 text-[11px] font-sans text-slate-300">
+                    🏗️ <strong>Subterranean Piling Restriction</strong>: Foundation pilings within {util.clearance_buffer_m}m horizontal radius are automatically geo-locked in municipal building approval software to prevent structural strikes.
                   </div>
                 </div>
               ))}
             </div>
           </div>
+        )}
 
-          <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs">
-            <h4 className="font-bold text-sm text-white flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              <span>3D Volumetric ULPIN Generator</span>
-            </h4>
-            <div className="space-y-3">
-              <div className="grid grid-cols-2 gap-2">
-                <div>
-                  <label className="text-slate-400 font-bold block mb-1">Floor Level</label>
-                  <input type="number" value={floorLevel} onChange={(e) => setFloorLevel(Number(e.target.value))} className="w-full p-2 bg-slate-950 border border-slate-800 rounded-xl text-slate-100 font-mono" />
+        {/* TAB 6: SMART 3D TITLE DEEDS & MORTGAGE REGISTRY */}
+        {tab === 'deeds' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {smartDeeds.map((deed: any) => (
+                <div key={deed.deed_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-emerald-400 font-bold text-[10px]">{deed.qr_certificate_hash}</span>
+                      <h4 className="font-bold text-white font-sans text-xs mt-0.5">{deed.property_name}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">Owner: {deed.owner_name}</p>
+                    </div>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[9px] font-bold">
+                      VERIFIED
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>3D Spatial Volume:</span>
+                      <strong className="text-cyan-400">{deed.volumetric_volume_m3} m³</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Vertical Slice:</span>
+                      <strong className="text-white">{deed.elevation_slice}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Mortgage Bank:</span>
+                      <span className="text-amber-400 font-bold">{deed.mortgage_bank}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Altitude Tax Multiplier:</span>
+                      <span className="text-purple-400 font-bold">{deed.altitude_tax_multiplier}</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-800 text-[10px] text-emerald-400 flex justify-between font-sans">
+                    <span>{deed.duplicate_pledge_protection}</span>
+                    <span className="text-slate-500 font-mono">{deed.rera_registration}</span>
+                  </div>
                 </div>
-                <div>
-                  <label className="text-slate-400 font-bold block mb-1">Unit Code</label>
-                  <input type="text" value={unitCode} onChange={(e) => setUnitCode(e.target.value)} className="w-full p-2 bg-slate-950 border border-slate-800 rounded-xl text-slate-100 font-mono" />
-                </div>
+              ))}
+            </div>
+
+            {/* Bank Geolock Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-emerald-400 font-bold block text-sm font-sans">Cryptographic Bank Mortgage Geo-Lock Interlock</span>
+                <span className="text-slate-400 text-xs font-sans">Locks apartment 3D spatial boundary in favor of lending bank, completely eliminating multi-financing fraud.</span>
               </div>
-              <button onClick={handleGenULPIN} disabled={isGenerating} className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-md">
-                {isGenerating ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Box className="w-4 h-4" />}
-                <span>Generate Standard 3D Volumetric ULPIN</span>
+              <button
+                onClick={handleTriggerGeolock}
+                disabled={geolockActive}
+                className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-emerald-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {geolockActive ? '🔒 Cryptographic 3D Geo-Lock Enforced!' : 'Enforce Bank Mortgage Geo-Lock'}
               </button>
-              {genResult && (
-                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 animate-fadeIn font-mono">
-                  <span className="font-bold text-emerald-400 text-xs block">✅ Standard 3D ULPIN:</span>
-                  <div className="text-xs font-bold text-cyan-300 bg-slate-900 p-2 rounded-lg">{genResult.code}</div>
-                  <div className="text-[10px] text-slate-400">{genResult.zBounds}</div>
-                  <div className="text-[10px] text-emerald-400 font-bold">{genResult.volume}</div>
-                </div>
-              )}
             </div>
           </div>
-        </div>
+        )}
+
       </div>
     );
   }
