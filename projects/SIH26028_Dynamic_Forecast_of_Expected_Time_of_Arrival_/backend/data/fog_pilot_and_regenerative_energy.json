@@ -1,0 +1,30 @@
+[
+  {
+    "train_number": "22436",
+    "train_name": "Vande Bharat Express (NDLS -> BSB)",
+    "fog_visibility_meters": 45.0,
+    "dense_fog_zone": "Ghaziabad – Aligarh Junction (NCR)",
+    "conventional_fog_speed_km_h": 45,
+    "ai_fog_pilot_advised_speed_km_h": 115,
+    "kavach_aspect_preview": "DOUBLE_YELLOW_TO_GREEN_CLEAR",
+    "signals_lookahead_clear_count": 4,
+    "delay_recovered_in_fog_mins": 48,
+    "loco_class": "Train 16 Self-Propelled Distributed Power Unit",
+    "regenerative_energy_saved_kwh": 1420.5,
+    "coasting_efficiency_pct": 94.2
+  },
+  {
+    "train_number": "12302",
+    "train_name": "Howrah Rajdhani Express (NDLS -> HWH)",
+    "fog_visibility_meters": 30.0,
+    "dense_fog_zone": "Tundla – Kanpur Central (NCR)",
+    "conventional_fog_speed_km_h": 40,
+    "ai_fog_pilot_advised_speed_km_h": 110,
+    "kavach_aspect_preview": "GREEN_CLEAR_MAIN_LINE",
+    "signals_lookahead_clear_count": 3,
+    "delay_recovered_in_fog_mins": 55,
+    "loco_class": "WAP-7 Twin High-Speed Electric Locomotive",
+    "regenerative_energy_saved_kwh": 2180.0,
+    "coasting_efficiency_pct": 91.8
+  }
+]

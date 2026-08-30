@@ -1,0 +1,28 @@
+[
+  {
+    "connection_id": "CONN-DDU-JCT-401",
+    "inbound_train": "22436 (Vande Bharat Express)",
+    "connecting_train": "12302 (Howrah Rajdhani Express)",
+    "transfer_station": "Pt. Deen Dayal Upadhyaya Junction (DDU)",
+    "connecting_passengers_count": 42,
+    "pnr_cluster_ids": ["PNR-2481029182", "PNR-4910284719", "PNR-8819203810"],
+    "buffer_window_mins": 14,
+    "decision_recommendation": "HOLD_CONNECTING_TRAIN_BY_8_MINUTES",
+    "delay_cascade_risk_score": "LOW_RECOVERABLE_IN_NEXT_SECTION",
+    "dead_reckoning_tunnel_status": "KALMAN_FILTER_ACTIVE_TUNNEL_KM_541",
+    "inertial_accuracy_meters": 1.8
+  },
+  {
+    "connection_id": "CONN-CNB-JCT-108",
+    "inbound_train": "12302 (Howrah Rajdhani Express)",
+    "connecting_train": "14154 (Kanpur – Prayagraj Express)",
+    "transfer_station": "Kanpur Central (CNB)",
+    "connecting_passengers_count": 28,
+    "pnr_cluster_ids": ["PNR-1192840192", "PNR-6619284012"],
+    "buffer_window_mins": 8,
+    "decision_recommendation": "CROSS_PLATFORM_SAME_SHED_BERTH_SWAP",
+    "delay_cascade_risk_score": "ZERO_HOLD_REQUIRED",
+    "dead_reckoning_tunnel_status": "CANOPY_SHED_INERTIAL_TRACKING_LOCKED",
+    "inertial_accuracy_meters": 2.1
+  }
+]
