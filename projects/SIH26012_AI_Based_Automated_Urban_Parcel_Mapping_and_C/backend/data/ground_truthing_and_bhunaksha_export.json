@@ -1,0 +1,52 @@
+{
+  "field_ground_truthing_tasks": [
+    {
+      "task_id": "GT-PUN-2026-0841",
+      "parcel_ulpin": "27-584-0941-1001",
+      "patwari_name": "Sanjay Deshmukh (Talathi Office Kothrud)",
+      "rover_device": "Leica GS18 T GNSS RTK Rover",
+      "cors_station": "MH-PUN-CORS-01 (Baseline 4.2 km)",
+      "horizontal_accuracy_cm": 1.4,
+      "citizen_signature_captured": true,
+      "survey_status": "GROUND_TRUTH_VERIFIED_100%",
+      "verified_area_sqm": 420.5,
+      "ai_predicted_area_sqm": 420.5,
+      "variance_sqm": 0.0,
+      "boundary_monument_pegged": "RCC Pillar #1001"
+    },
+    {
+      "task_id": "GT-PUN-2026-0842",
+      "parcel_ulpin": "27-584-0941-1002",
+      "patwari_name": "Sanjay Deshmukh (Talathi Office Kothrud)",
+      "rover_device": "Trimble R12i GNSS Receiver",
+      "cors_station": "MH-PUN-CORS-01 (Baseline 4.2 km)",
+      "horizontal_accuracy_cm": 1.8,
+      "citizen_signature_captured": true,
+      "survey_status": "GROUND_TRUTH_VERIFIED_100%",
+      "verified_area_sqm": 614.8,
+      "ai_predicted_area_sqm": 615.0,
+      "variance_sqm": -0.2,
+      "boundary_monument_pegged": "RCC Pillar #1002"
+    }
+  ],
+  "bhunaksha_export_formats": [
+    {
+      "format": "NIC BhuNaksha XML 3.0",
+      "mimetype": "application/xml",
+      "description": "Direct ingestion schema for National Land Record Modernization Programme (NLRMP)",
+      "record_count": 142
+    },
+    {
+      "format": "ESRI Shapefile (.SHP/.SHX/.DBF/.PRJ)",
+      "mimetype": "application/x-shapefile",
+      "description": "Standard projected polygon vector format (EPSG:32643 - WGS84 / UTM Zone 43N)",
+      "record_count": 142
+    },
+    {
+      "format": "OGC GeoPackage (.GPKG)",
+      "mimetype": "application/geopackage+sqlite3",
+      "description": "Open container containing parcel polygons, building footprints, and road centerlines",
+      "record_count": 356
+    }
+  ]
+}

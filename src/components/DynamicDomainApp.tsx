@@ -106,6 +106,11 @@ import sih26011Lidar from '../data/sih26011/lidar_drone_mesh_and_pointclouds.jso
 import sih26011Rules from '../data/sih26011/volumetric_topology_rules_matrix.json';
 import sih26011Utilities from '../data/sih26011/subsurface_utilities_and_metro_corridors.json';
 import sih26011Deeds from '../data/sih26011/smart_3d_title_deeds_and_mortgage_registry.json';
+import sih26012Zones from '../data/sih26012/drone_survey_zones_and_flights.json';
+import sih26012Parcels from '../data/sih26012/extracted_cadastral_parcels_and_ulpins.json';
+import sih26012Rules from '../data/sih26012/topology_validation_and_sliver_rules.json';
+import sih26012Roads from '../data/sih26012/road_networks_and_access_corridors.json';
+import sih26012GtExport from '../data/sih26012/ground_truthing_and_bhunaksha_export.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -1105,72 +1110,552 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
   /* =========================================================================
      2. CADASTRAL GIS, 3D ULPIN, DRONE MAPPING & LAND STACK (SIH26011 - SIH26014)
      ========================================================================= */
+  /* =========================================================================
+     MINISTRY OF RURAL DEVELOPMENT / DoLR / SIH26012 NAKSHADRONE 360
+     AI-Based Automated Urban Parcel Mapping & Cadastral Feature Extraction System
+     ========================================================================= */
   if (psId === 'SIH26012') {
-    const zones = [
-      { id: "DRONE-PUNE-W04", name: "Kothrud Urban Sector 4", city: "Pune, MH", gsd: "3.2 cm/px", alt: 120, area: "84,500 m²", parcels: 142, bldgs: 186, conf: "96.8%", status: "Cadastral Finalized" },
-      { id: "DRONE-LKO-W12", name: "Gomti Nagar Extension B", city: "Lucknow, UP", gsd: "2.8 cm/px", alt: 100, area: "112,000 m²", parcels: 218, bldgs: 294, conf: "95.4%", status: "Field Ground Truthing" },
-      { id: "DRONE-AMD-W09", name: "Sabarmati Riverfront Ward", city: "Ahmedabad, GJ", gsd: "3.0 cm/px", alt: 110, area: "95,000 m²", parcels: 175, bldgs: 240, conf: "97.2%", status: "Cadastral Finalized" }
-    ];
+    const droneZones = sih26012Zones;
+    const extractedParcels = sih26012Parcels;
+    const topologyRules = sih26012Rules;
+    const roadCorridors = sih26012Roads;
+    const gtExportData = sih26012GtExport;
 
-    const extracted = [
-      { id: "PARCEL-101", ulpin: "27-584-0941-1001", area: "420.5 m²", use: "Residential Multi-Family", bldg: "290 m²", road: "9.0m Width", conf: "98.4%" },
-      { id: "PARCEL-102", ulpin: "27-584-0941-1002", area: "615.0 m²", use: "Commercial Mixed-Use", bldg: "480 m²", road: "12.0m Width", conf: "96.9%" },
-      { id: "PARCEL-103", ulpin: "27-584-0941-1003", area: "280.0 m²", use: "Residential Villa", bldg: "165 m²", road: "7.5m Width", conf: "99.1%" }
-    ];
+    const [selectedZone, setSelectedZone] = React.useState(droneZones[0]);
+    const [tab, setTab] = React.useState<'swipe' | 'segmentation' | 'regularize' | 'topology' | 'roads' | 'export'>('swipe');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
 
-    const [selectedZone, setSelectedZone] = React.useState(zones[0]);
+    // Dual-Pane Swipe State
+    const [swipePos, setSwipePos] = React.useState(50);
+    const [activeLayer, setActiveLayer] = React.useState<'all' | 'parcels' | 'buildings' | 'roads'>('all');
+
+    // Snapping Simulation State
+    const [snappedClean, setSnappedClean] = React.useState(false);
+    const [snapTolerance, setSnapTolerance] = React.useState(5.0);
+
+    // Regularization Angle State
+    const [orthoAngleThreshold, setOrthoAngleThreshold] = React.useState(15);
+    const [regularizeActive, setRegularizeActive] = React.useState(false);
+
+    // Export Feedback State
+    const [exportedFormat, setExportedFormat] = React.useState<string | null>(null);
+
+    const handleRunSnapSlivers = () => {
+      setSnappedClean(true);
+      setTimeout(() => setSnappedClean(false), 4500);
+    };
+
+    const handleRunRegularization = () => {
+      setRegularizeActive(true);
+      setTimeout(() => setRegularizeActive(false), 4000);
+    };
+
+    const handleTriggerExport = (fmtName: string) => {
+      setExportedFormat(fmtName);
+      setTimeout(() => setExportedFormat(null), 3500);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF RURAL DEVELOPMENT • DoLR (NAKSHADRONE 360)",
+        desc: "AI Urban Parcel Mapping, High-Res Drone Orthophoto Feature Extraction, Topology Cleaner & BhuNaksha Export",
+        tabSwipe: "🪟 Dual-Pane Swipe Canvas",
+        tabSegmentation: "🤖 GeoAI SAM & Mask R-CNN",
+        tabRegularize: "📐 Orthogonal Regularizer",
+        tabTopology: "🛡️ Topology & Sliver Cleaner",
+        tabRoads: "🛣️ Road Network Vectorizer",
+        tabExport: "📱 Ground Truthing & Export",
+      },
+      hi: {
+        tag: "ग्रामीण विकास मंत्रालय • भूमि संसाधन विभाग (नक्शा-ड्रोन 360)",
+        desc: "AI शहरी पार्सल मानचित्रण, उच्च-रिज़ॉल्यूशन ड्रोन ऑर्थोफोटो निष्कर्षण, टोपोलॉजी क्लीनर व भू-नक्शा निर्यात",
+        tabSwipe: "🪟 स्वाइप दोहरी-स्क्रीन दृश्य",
+        tabSegmentation: "🤖 GeoAI SAM व सेगमेंटेशन",
+        tabRegularize: "📐 बहुभुज समकोणीय सुधारक",
+        tabTopology: "🛡️ टोपोलॉजी व स्लीवर सफाई",
+        tabRoads: "🛣️ सड़क संजाल रेखांकन",
+        tabExport: "📱 ग्राउंड ट्रूथिंग व निर्यात",
+      },
+      mr: {
+        tag: "ग्रामीण विकास मंत्रालय • भू-संसाधन विभाग (नक्शा-ड्रोन 360)",
+        desc: "AI शहरी पार्सल मॅपिंग, ड्रोन ऑर्थोफोटो वैशिष्ट्ये निष्कर्षण, टोपोलॉजी सुधारणा आणि भू-नकाशा निर्यात",
+        tabSwipe: "🪟 स्वाइप दुहेरी-स्क्रीन व्ह्यू",
+        tabSegmentation: "🤖 GeoAI इमारत व पार्सल AI",
+        tabRegularize: "📐 काटकोन भूमिती सुधारक",
+        tabTopology: "🛡️ टोपोलॉजी व अंतर सफाई",
+        tabRoads: "🛣️ रस्ता व रस्ता रुंदी व्हेक्टरायझर",
+        tabExport: "📱 प्रत्यक्ष पडताळणी व निर्यात",
+      }
+    }[lang];
 
     return (
-      <div className="space-y-6">
-        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="space-y-6 font-sans">
+        {/* Header */}
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold mb-1">
               <Camera className="w-4 h-4 text-emerald-400" />
-              <span>DEPARTMENT OF LAND RESOURCES (DoLR) • NAKSHA PROGRAMME • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">High-Resolution Drone Orthorectified Imagery (ORI), Deep Learning Parcel Segmentation & Topology Validator</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-2xl text-xs font-bold flex items-center gap-2">
-            <span>GeoAI Parcel Extractor Active</span>
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-emerald-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-emerald-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {zones.map((z) => (
-            <button key={z.id} onClick={() => setSelectedZone(z)} className={`p-4 rounded-2xl border text-left transition-all ${
-              selectedZone.id === z.id ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-md ring-1 ring-emerald-400' : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
-            }`}>
-              <div className="text-[10px] font-mono text-emerald-400 font-bold">{z.id}</div>
-              <div className="text-xs font-bold truncate text-white mt-0.5">{z.name}</div>
-              <div className="text-[11px] text-slate-400 mt-1">{z.city} • {z.gsd}</div>
-              <div className="mt-2 text-[10px] flex justify-between font-mono text-slate-400">
-                <span>{z.parcels} Parcels</span>
-                <span className="text-emerald-400 font-bold">{z.conf} Conf</span>
-              </div>
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
+          {[
+            { id: 'swipe', label: t.tabSwipe },
+            { id: 'segmentation', label: t.tabSegmentation },
+            { id: 'regularize', label: t.tabRegularize },
+            { id: 'topology', label: t.tabTopology },
+            { id: 'roads', label: t.tabRoads },
+            { id: 'export', label: t.tabExport },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-emerald-500 text-slate-950 font-black shadow-lg shadow-emerald-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
             </button>
           ))}
         </div>
 
-        <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-          <h4 className="font-bold text-sm text-white flex items-center gap-2">
-            <Layers className="w-4 h-4 text-emerald-400" />
-            <span>Extracted Parcel Boundaries & Building Footprints ({selectedZone.name})</span>
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {extracted.map((p) => (
-              <div key={p.id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5 text-xs">
-                <div className="flex justify-between font-mono text-[10px]">
-                  <span className="text-emerald-400 font-bold">{p.ulpin}</span>
-                  <span className="text-slate-500">{p.conf}</span>
+        {/* TAB 1: DUAL-PANE SWIPE CANVAS */}
+        {tab === 'swipe' && (
+          <div className="space-y-6">
+            {/* Zone Selector Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {droneZones.map((z: any) => (
+                <button
+                  key={z.zone_id}
+                  onClick={() => setSelectedZone(z)}
+                  className={`p-4 rounded-2xl border text-left transition-all ${
+                    selectedZone.zone_id === z.zone_id
+                      ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-lg ring-1 ring-emerald-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-emerald-400">{z.zone_id}</span>
+                    <span className="text-cyan-400">{z.gsd_cm_px} cm/px GSD</span>
+                  </div>
+                  <div className="text-xs font-bold text-white mt-1 line-clamp-1">{z.name}</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">{z.city}, {z.state}</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-purple-400">Parcels: {z.total_parcels_extracted}</span>
+                    <span className="text-amber-400">Buildings: {z.building_footprints_delineated}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Interactive Dual-View Split Screen */}
+            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+                <div>
+                  <h4 className="text-white font-bold text-sm flex items-center gap-2">
+                    <Layers className="w-4 h-4 text-emerald-400" />
+                    <span>Dual-Pane Drone Orthophoto vs. AI Cadastral Vector Layer</span>
+                  </h4>
+                  <p className="text-slate-400 text-xs mt-0.5">{selectedZone.name} • Hasselblad L2D-20c RGB (Altitude {selectedZone.flight_altitude_m}m)</p>
                 </div>
-                <div className="font-bold text-white text-sm">{p.id} • {p.use}</div>
-                <div className="text-[11px] text-slate-400">Parcel Area: {p.area} • Building: {p.bldg}</div>
-                <div className="pt-2 border-t border-slate-900 text-[10px] text-emerald-400 font-mono">Road Access: {p.road}</div>
+                <div className="flex items-center gap-2 text-xs font-mono">
+                  {(['all', 'parcels', 'buildings', 'roads'] as const).map((layer) => (
+                    <button
+                      key={layer}
+                      onClick={() => setActiveLayer(layer)}
+                      className={`px-3 py-1 rounded-xl font-bold uppercase transition-colors ${
+                        activeLayer === layer ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
+                      }`}
+                    >
+                      {layer}
+                    </button>
+                  ))}
+                </div>
               </div>
-            ))}
+
+              {/* Swipe Canvas Frame */}
+              <div className="relative h-72 bg-slate-950 rounded-2xl border-2 border-dashed border-slate-800 overflow-hidden select-none">
+                {/* Left Side: Raw Drone Orthophoto (Simulated) */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-amber-950/40 via-emerald-950/30 to-slate-950 flex items-center justify-start p-6"
+                  style={{ clipPath: `polygon(0 0, ${swipePos}% 0, ${swipePos}% 100%, 0 100%)` }}
+                >
+                  <div className="space-y-2 max-w-xs opacity-90">
+                    <span className="px-2.5 py-1 bg-amber-500 text-slate-950 font-black text-[10px] rounded-lg uppercase tracking-wider font-mono">
+                      RAW DRONE ORTHOPHOTO (ORI)
+                    </span>
+                    <p className="text-xs text-amber-200 font-mono">2.8 cm/px RGB Optical Imagery without Vector Overlays</p>
+                    <div className="w-32 h-20 border border-dashed border-amber-400/60 rounded-xl flex items-center justify-center text-[10px] font-mono text-amber-300">
+                      High-Res Pixels
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Side: AI-Extracted Vector Cadastral Layer */}
+                <div
+                  className="absolute inset-0 bg-slate-950 flex items-center justify-end p-6"
+                  style={{ clipPath: `polygon(${swipePos}% 0, 100% 0, 100% 100%, ${swipePos}% 100%)` }}
+                >
+                  <div className="space-y-2 max-w-sm text-right">
+                    <span className="px-2.5 py-1 bg-emerald-500 text-slate-950 font-black text-[10px] rounded-lg uppercase tracking-wider font-mono">
+                      AI VECTOR CADASTRAL LAYER
+                    </span>
+                    <p className="text-xs text-emerald-200 font-mono">Regularized Polygons, 14-Digit ULPIN, Road Frontage &amp; Building Outlines</p>
+                    <div className="flex justify-end gap-2 text-[10px] font-mono">
+                      <span className="px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800">142 Parcels</span>
+                      <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">186 Buildings</span>
+                      <span className="px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800">14.8km Roads</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Central Draggable Divider Bar */}
+                <div
+                  className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize flex items-center justify-center shadow-2xl z-20"
+                  style={{ left: `${swipePos}%` }}
+                >
+                  <div className="w-8 h-8 rounded-full bg-slate-900 border-2 border-white text-white flex items-center justify-center text-[10px] font-black shadow-lg">
+                    ⇄
+                  </div>
+                </div>
+
+                {/* Top Overlay Legend */}
+                <div className="absolute top-3 left-3 right-3 flex justify-between text-[10px] font-mono text-slate-400 z-10 pointer-events-none">
+                  <span>DRONE GSD: {selectedZone.gsd_cm_px} CM/PX</span>
+                  <span className="text-emerald-400 font-bold">SWIPE SPLIT: {swipePos}%</span>
+                </div>
+              </div>
+
+              {/* Swipe Slider Control Bar */}
+              <div className="space-y-1.5 pt-2">
+                <div className="flex justify-between text-xs font-mono">
+                  <span className="text-slate-400">Swipe Split Position:</span>
+                  <strong className="text-emerald-400 font-bold">{swipePos}% (Slide left/right to compare raw drone image vs vector)</strong>
+                </div>
+                <input
+                  type="range"
+                  min="5"
+                  max="95"
+                  value={swipePos}
+                  onChange={(e) => setSwipePos(Number(e.target.value))}
+                  className="w-full accent-emerald-500 cursor-pointer"
+                />
+              </div>
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* TAB 2: GEOAI SEGMENTATION (SAM + MASK R-CNN) */}
+        {tab === 'segmentation' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-4 bg-emerald-950/40 rounded-3xl border border-emerald-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-emerald-200 font-sans">
+              <div>
+                <strong className="text-white text-sm block">🤖 Deep Learning Feature Extraction Pipeline</strong>
+                <span>Segment Anything Model (SAM) and Mask R-CNN segment aerial drone orthophotos, nDSM elevation rasters, and spectral signatures into discrete land-use polygons.</span>
+              </div>
+              <span className="px-3 py-1 bg-emerald-500 text-slate-950 font-black rounded-xl text-xs font-mono shrink-0">
+                ResNet-101 + FPN SAM
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {extractedParcels.map((p: any) => (
+                <div key={p.parcel_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-emerald-400 font-bold">{p.ulpin}</span>
+                      <h4 className="font-bold text-white font-sans text-xs mt-0.5">{p.parcel_id}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{p.land_use}</p>
+                    </div>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      {p.extraction_confidence_pct}% Conf
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Parcel Plot Area:</span>
+                      <strong className="text-white">{p.parcel_area_sqm} m²</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Building Footprint:</span>
+                      <strong className="text-cyan-400">{p.building_footprint_sqm} m²</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Ground Coverage Ratio:</span>
+                      <span className="text-amber-400 font-bold">{((p.building_footprint_sqm / p.parcel_area_sqm) * 100).toFixed(1)}%</span>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Boundary Edge Type:</span>
+                      <span className="text-slate-300">{p.boundary_type.split(' ')[0]}</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-800 text-[10px] text-emerald-400 flex justify-between font-sans">
+                    <span>Access: {p.road_access_width_m}</span>
+                    <span className="text-slate-500 font-mono">{p.topology_status}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: VECTOR REGULARIZATION & SQUARING */}
+        {tab === 'regularize' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Sliders className="w-5 h-5 text-emerald-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">Orthogonal Polygon Regularizer &amp; Vertex Filter</h4>
+                  <p className="text-slate-400 text-xs font-sans">Eliminates jagged pixel staircase edges into crisp Survey of India legal boundaries</p>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-300">Right-Angle Squaring Tolerance:</span>
+                  <span className="text-emerald-400 font-bold">±{orthoAngleThreshold}°</span>
+                </div>
+                <input
+                  type="range"
+                  min="5"
+                  max="30"
+                  value={orthoAngleThreshold}
+                  onChange={(e) => setOrthoAngleThreshold(Number(e.target.value))}
+                  className="w-full accent-emerald-500 cursor-pointer"
+                />
+                <div className="flex justify-between text-[10px] text-slate-500">
+                  <span>±5° (Strict Rectangular)</span>
+                  <span>±15° (Optimal Urban Cadastre)</span>
+                  <span>±30° (Loose Approximation)</span>
+                </div>
+              </div>
+
+              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 font-sans text-xs">
+                <span className="text-[10px] text-slate-500 uppercase font-mono font-bold block">ALGORITHM APPLIED:</span>
+                <div className="flex justify-between">
+                  <span>Vertex Reduction:</span>
+                  <strong className="text-emerald-400 font-mono">Douglas-Peucker (ε = 0.05m)</strong>
+                </div>
+                <div className="flex justify-between">
+                  <span>Corner Orthogonalization:</span>
+                  <strong className="text-cyan-400 font-mono">Minimum Bounding Box Alignment</strong>
+                </div>
+                <div className="flex justify-between">
+                  <span>Party Wall Co-linearization:</span>
+                  <strong className="text-purple-400 font-mono">Shared Boundary Snap Enforced</strong>
+                </div>
+              </div>
+
+              <button
+                onClick={handleRunRegularization}
+                disabled={regularizeActive}
+                className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-emerald-500/20 transition-all active:scale-95 disabled:opacity-50"
+              >
+                {regularizeActive ? '✅ 142 Parcels Regularized to 90° Corners!' : 'Execute Vector Polygon Regularization'}
+              </button>
+            </div>
+
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-emerald-400" />
+                <span>Survey-Grade Cadastral Vector Quality</span>
+              </h4>
+
+              <div className="grid grid-cols-3 gap-3 text-center">
+                <div className="p-4 bg-slate-950 rounded-2xl border border-emerald-950">
+                  <span className="text-slate-500 text-[9px] block">VERTEX REDUCTION</span>
+                  <span className="text-2xl font-black text-emerald-400 mt-1 block">-68%</span>
+                  <span className="text-[9px] text-slate-400">File Size Optimized</span>
+                </div>
+                <div className="p-4 bg-slate-950 rounded-2xl border border-cyan-950">
+                  <span className="text-slate-500 text-[9px] block">ORTHOGONAL ANGLES</span>
+                  <span className="text-2xl font-black text-cyan-400 mt-1 block">90.0°</span>
+                  <span className="text-[9px] text-slate-400">Square Corners</span>
+                </div>
+                <div className="p-4 bg-slate-950 rounded-2xl border border-purple-950">
+                  <span className="text-slate-500 text-[9px] block">AREA PRESERVATION</span>
+                  <span className="text-2xl font-black text-purple-400 mt-1 block">99.98%</span>
+                  <span className="text-[9px] text-slate-400">&plusmn;0.02 m² Shift</span>
+                </div>
+              </div>
+
+              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-xs font-sans text-slate-300">
+                <div className="text-white font-bold">Statutory Survey Alignment</div>
+                <p className="leading-relaxed text-[11px]">
+                  Regularized output files match Survey of India 1:500 scale specifications and can be directly committed into the state land registration portal without redrafting.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: AUTOMATED TOPOLOGY & SLIVER CLEANER */}
+        {tab === 'topology' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {topologyRules.map((r: any) => (
+                <div key={r.rule} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-emerald-400 font-bold">{r.rule}</span>
+                    <span className="px-2 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full text-[9px]">ENFORCED</span>
+                  </div>
+                  <div className="text-[11px] text-cyan-300 font-mono">{r.tolerance}</div>
+                  <p className="text-slate-400 font-sans text-[11px] pt-2 border-t border-slate-800 leading-relaxed">
+                    {r.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Snapping Action Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-emerald-400 font-bold block text-sm font-sans">Automated Cadastral Topology Snapping Engine</span>
+                <span className="text-slate-400 text-xs font-sans">Snaps micro-gaps within {snapTolerance}cm tolerance, eliminates dangling nodes, and resolves shared boundary party walls.</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={handleRunSnapSlivers}
+                  disabled={snappedClean}
+                  className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-emerald-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+                >
+                  {snappedClean ? '✅ 14 Slivers Eliminated • 0 Overlaps!' : 'Run Automated Topology Snapper'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: ROAD NETWORK & ACCESS CORRIDOR VECTORIZER */}
+        {tab === 'roads' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {roadCorridors.map((rd: any) => (
+                <div key={rd.road_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-cyan-400 font-bold">{rd.road_id}</span>
+                      <h4 className="font-bold text-white font-sans text-xs mt-0.5">{rd.name}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{rd.classification}</p>
+                    </div>
+                    <span className="px-2 py-0.5 rounded-full bg-slate-950 text-emerald-300 border border-slate-800 text-[9px] font-bold">
+                      {rd.emergency_vehicle_access.split(' ')[0]}
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Carriageway Width:</span>
+                      <strong className="text-emerald-400">{rd.carriageway_width_m} meters</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Total Right-of-Way (RoW):</span>
+                      <strong className="text-white">{rd.total_row_width_m} meters</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Pavement Material:</span>
+                      <span className="text-slate-300">{rd.pavement_type.split(' ')[0]}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Connected Frontages:</span>
+                      <span className="text-purple-400 font-bold">{rd.frontage_parcels_count} Properties</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-800 text-[10px] text-slate-400 font-sans truncate">
+                    Centerline: {rd.centerline_geometry}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: FIELD GROUND-TRUTHING & BHUNAKSHA EXPORT */}
+        {tab === 'export' && (
+          <div className="space-y-6 font-mono text-xs">
+            {/* Ground Truthing Table */}
+            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <span>Field Ground Truthing (GT) Rover Verification Tasks</span>
+              </h4>
+
+              <div className="space-y-3">
+                {gtExportData.field_ground_truthing_tasks.map((gt: any) => (
+                  <div key={gt.task_id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                    <div className="flex flex-wrap justify-between items-center gap-2">
+                      <div>
+                        <span className="text-emerald-400 font-bold">{gt.task_id}</span>
+                        <strong className="text-white ml-2 text-xs font-sans">ULPIN: {gt.parcel_ulpin}</strong>
+                        <span className="text-slate-500 text-xs ml-2 font-sans">{gt.patwari_name}</span>
+                      </div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold text-[10px]">
+                        {gt.survey_status}
+                      </span>
+                    </div>
+                    <div className="pt-1 border-t border-slate-900 flex justify-between items-center text-[10px] text-slate-400">
+                      <span>Device: <strong className="text-slate-300">{gt.rover_device} (RTK ±{gt.horizontal_accuracy_cm}cm)</strong></span>
+                      <span>Verified Area: <strong className="text-white">{gt.verified_area_sqm} m²</strong> (AI: {gt.ai_predicted_area_sqm} m²)</span>
+                      <span className="text-emerald-400 font-bold">Monument: {gt.boundary_monument_pegged}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* BhuNaksha & GIS Export Cards */}
+            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <Download className="w-4 h-4 text-emerald-400" />
+                <span>National Cadastral Formats 1-Click Export</span>
+              </h4>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {gtExportData.bhunaksha_export_formats.map((fmt: any) => (
+                  <div key={fmt.format} className="p-5 bg-slate-950 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-3">
+                    <div>
+                      <span className="text-emerald-400 font-bold block text-sm font-sans">{fmt.format}</span>
+                      <p className="text-[11px] text-slate-400 font-sans mt-1 leading-relaxed">{fmt.description}</p>
+                      <div className="mt-2 text-[10px] text-slate-500 font-mono">Contains {fmt.record_count} verified cadastral features</div>
+                    </div>
+                    <button
+                      onClick={() => handleTriggerExport(fmt.format)}
+                      className="w-full py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs font-sans shadow-md transition-all active:scale-95"
+                    >
+                      {exportedFormat === fmt.format ? '✅ Downloaded!' : `Export ${fmt.format.split(' ')[0]}`}
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
     );
   }

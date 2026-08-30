@@ -1,0 +1,41 @@
+[
+  {
+    "road_id": "ROAD-PUN-0941-R01",
+    "name": "Kothrud Main Boulevard Avenue",
+    "zone": "Kothrud Urban Sector 4",
+    "classification": "Major Urban Arterial",
+    "carriageway_width_m": 14.5,
+    "total_row_width_m": 24.0,
+    "pavement_type": "Dense Bituminous Macadam (DBM)",
+    "sidewalk_width_m": 2.5,
+    "frontage_parcels_count": 28,
+    "emergency_vehicle_access": "OPTIMAL (PASS)",
+    "centerline_geometry": "[[18.5201, 73.8560], [18.5215, 73.8575], [18.5230, 73.8590]]"
+  },
+  {
+    "road_id": "ROAD-PUN-0941-R02",
+    "name": "Shree Ganesh Residential Connector",
+    "zone": "Kothrud Urban Sector 4",
+    "classification": "Internal Collector Road",
+    "carriageway_width_m": 7.5,
+    "total_row_width_m": 12.0,
+    "pavement_type": "Interlocking Concrete Paver Blocks",
+    "sidewalk_width_m": 1.5,
+    "frontage_parcels_count": 16,
+    "emergency_vehicle_access": "ADEQUATE (PASS)",
+    "centerline_geometry": "[[18.5208, 73.8565], [18.5218, 73.8570]]"
+  },
+  {
+    "road_id": "ROAD-PUN-0941-R03",
+    "name": "Gaothan Internal Access Alley 4",
+    "zone": "Kothrud Urban Sector 4",
+    "classification": "Pedestrian / Two-Wheeler Access Way",
+    "carriageway_width_m": 2.8,
+    "total_row_width_m": 3.2,
+    "pavement_type": "Cement Concrete (CC) Paving",
+    "sidewalk_width_m": 0.0,
+    "frontage_parcels_count": 12,
+    "emergency_vehicle_access": "RESTRICTED (Mini-Tender Only)",
+    "centerline_geometry": "[[18.5212, 73.8568], [18.5216, 73.8572]]"
+  }
+]
