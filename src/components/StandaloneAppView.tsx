@@ -35,7 +35,7 @@ export const StandaloneAppView: React.FC<StandaloneAppViewProps> = ({
 }) => {
   const [copiedUrl, setCopiedUrl] = React.useState(false);
   const psId = ps.ps_number || `SIH${ps.id}`;
-  const directAppUrl = getSeoFriendlyAppUrl(psId);
+  const directAppUrl = getSeoFriendlyAppUrl(ps);
 
   const handleCopyDirectUrl = () => {
     copyToClipboard(directAppUrl);

@@ -34,7 +34,7 @@ interface FullAppRunnerProps {
 export const FullAppRunner: React.FC<FullAppRunnerProps> = ({ ps, onClose }) => {
   const [activeTab, setActiveTab] = React.useState<'app' | 'tutorial' | 'codebase'>('app');
   const psId = ps.ps_number || `SIH${ps.id}`;
-  const directAppUrl = getSeoFriendlyAppUrl(psId);
+  const directAppUrl = getSeoFriendlyAppUrl(ps);
   const [copiedDirectUrl, setCopiedDirectUrl] = React.useState(false);
 
   const handleCopyDirectUrl = () => {

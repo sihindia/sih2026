@@ -21,12 +21,14 @@ import {
   Cpu,
   Server,
   Layers,
-  Code
+  Code,
+  Share2
 } from 'lucide-react';
 import { ProblemStatement } from '../types';
 import { copyToClipboard, downloadMarkdown } from '../utils/export';
 import { generateSolutionBlueprint, generateStarterProjectFiles } from '../utils/solutionGenerator';
 import { InteractiveSimulator } from './InteractiveSimulator';
+import { getSeoFriendlyAppUrl } from '../utils/seo';
 
 interface PSDetailModalProps {
   ps: ProblemStatement | null;
@@ -54,7 +56,10 @@ export const PSDetailModal: React.FC<PSDetailModalProps> = ({
   const [localNote, setLocalNote] = React.useState(note || '');
   const [noteSaved, setNoteSaved] = React.useState(false);
   const [copiedId, setCopiedId] = React.useState(false);
+  const [copiedShareUrl, setCopiedShareUrl] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState<'overview' | 'solution' | 'simulator' | 'starter' | 'notes'>('overview');
+
+  const friendlyUrl = ps ? getSeoFriendlyAppUrl(ps, true) : '';
 
   React.useEffect(() => {
     setLocalNote(note || '');
@@ -75,6 +80,12 @@ export const PSDetailModal: React.FC<PSDetailModalProps> = ({
     copyToClipboard(ps.ps_number || ps.id);
     setCopiedId(true);
     setTimeout(() => setCopiedId(false), 2000);
+  };
+
+  const handleCopyShareUrl = () => {
+    copyToClipboard(friendlyUrl);
+    setCopiedShareUrl(true);
+    setTimeout(() => setCopiedShareUrl(false), 2500);
   };
 
   const handleDownloadStarterReadme = () => {
@@ -101,6 +112,26 @@ export const PSDetailModal: React.FC<PSDetailModalProps> = ({
                   <span>{ps.ps_number || `SIH${ps.id}`}</span>
                   {copiedId ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5 opacity-60" />}
                 </button>
+
+                <button
+                  onClick={handleCopyShareUrl}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-indigo-50 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 hover:bg-indigo-100 transition-colors"
+                  title="Copy Search-Friendly Direct Link"
+                >
+                  {copiedShareUrl ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Share2 className="w-3.5 h-3.5 text-indigo-500" />}
+                  <span>{copiedShareUrl ? 'Link Copied!' : 'Share SEO URL'}</span>
+                </button>
+
+                <a
+                  href={friendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  title="Open Canonical Search-Friendly URL in new tab"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">Canonical Link</span>
+                </a>
 
                 <span className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
                   {ps.category} Category

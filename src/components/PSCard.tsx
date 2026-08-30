@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { ProblemStatement } from '../types';
 import { copyToClipboard } from '../utils/export';
+import { getSeoFriendlyAppUrl } from '../utils/seo';
 
 interface PSCardProps {
   ps: ProblemStatement;
@@ -106,9 +107,20 @@ export const PSCard: React.FC<PSCardProps> = ({
           </span>
         </div>
 
-        {/* Title */}
+        {/* Title with search-friendly link */}
         <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors leading-snug mb-2">
-          {ps.title}
+          <a
+            href={getSeoFriendlyAppUrl(ps, false)}
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onSelect(ps);
+              }
+            }}
+            className="hover:underline focus:outline-none"
+          >
+            {ps.title}
+          </a>
         </h3>
 
         {/* Ministry / Org */}
@@ -137,21 +149,36 @@ export const PSCard: React.FC<PSCardProps> = ({
         )}
       </div>
 
-      {/* Footer Details & Action Buttons */}
+      {/* Footer Details & Action Buttons with Search-Friendly Anchor Links */}
       <div className="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-2 text-xs">
-        <button
-          onClick={handleLaunch}
+        <a
+          href={getSeoFriendlyAppUrl(ps, false)}
+          onClick={(e) => {
+            if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+              e.preventDefault();
+              handleLaunch(e);
+            }
+          }}
           className="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white flex items-center gap-1.5 shadow-sm shadow-amber-500/20 transition-colors"
           title="Launch Full Working Application"
         >
           <Zap className="w-3.5 h-3.5 fill-current" />
           <span>Launch App</span>
-        </button>
+        </a>
 
-        <div className="flex items-center gap-1 text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform">
+        <a
+          href={getSeoFriendlyAppUrl(ps, false)}
+          onClick={(e) => {
+            if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+              e.preventDefault();
+              onSelect(ps);
+            }
+          }}
+          className="flex items-center gap-1 text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform"
+        >
           <span>Details</span>
           <ArrowRight className="w-3.5 h-3.5" />
-        </div>
+        </a>
       </div>
     </div>
   );

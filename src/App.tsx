@@ -30,7 +30,7 @@ import { FavoritesDrawer } from './components/FavoritesDrawer';
 import { FullAppRunner } from './components/FullAppRunner';
 import { StandaloneAppView } from './components/StandaloneAppView';
 import { Pagination } from './components/Pagination';
-import { updateSeoMeta, getSeoFriendlyAppUrl } from './utils/seo';
+import { updateSeoMeta, getSeoFriendlyAppUrl, parsePsIdFromLocation } from './utils/seo';
 import { Sparkles, Layers, RefreshCw, ShieldAlert, Heart, ExternalLink, Zap, BookOpen } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -60,25 +60,16 @@ export const App: React.FC = () => {
   const [showContactModal, setShowContactModal] = React.useState(false);
   const [showFavoritesDrawer, setShowFavoritesDrawer] = React.useState(false);
 
-  // Check URL parameters for direct live app launch e.g. /?app=SIH26001 or /app/SIH26001
+  // Check URL parameters & search-friendly pathnames for direct live app launch e.g. /ps/sih26028-slug or /?app=SIH26028
   React.useEffect(() => {
     const checkUrl = () => {
-      const params = new URLSearchParams(window.location.search);
-      let appId = params.get('app') || params.get('ps');
-      
-      // Also support SEO friendly pathnames: /app/SIH26031 or /ps/SIH26031
-      if (!appId && typeof window !== 'undefined') {
-        const pathMatch = window.location.pathname.match(/\/(?:app|ps|problem-statement)\/([a-zA-Z0-9]+)/i);
-        if (pathMatch) {
-          appId = pathMatch[1];
-        }
-      }
+      const appId = parsePsIdFromLocation(window.location.pathname, window.location.search);
 
       if (appId) {
         const raw = appId.toLowerCase().trim();
         const cleanNumber = raw.replace(/^sih/, '');
         
-        // Exact match by ps_number or id
+        // Match by ps_number or id
         const match = allData.find(p => {
           const pPsNumber = (p.ps_number || '').toLowerCase();
           const pId = String(p.id).toLowerCase();
@@ -90,17 +81,13 @@ export const App: React.FC = () => {
 
         if (match) {
           setStandalonePS(match);
-          const psCode = match.ps_number || `SIH${match.id}`;
-          updateSeoMeta({
-            title: `${psCode}: ${match.title}`,
-            description: `${match.organization} • ${match.category} • ${match.theme}: ${match.description.slice(0, 160)}...`,
-            url: getSeoFriendlyAppUrl(psCode)
-          });
+          updateSeoMeta({ ps: match });
+          return;
         }
-      } else {
-        setStandalonePS(null);
-        updateSeoMeta({});
       }
+
+      setStandalonePS(null);
+      updateSeoMeta({});
     };
 
     checkUrl();
@@ -276,25 +263,33 @@ export const App: React.FC = () => {
     }));
   };
 
+  const handleSelectPS = (ps: ProblemStatement | null) => {
+    setSelectedPS(ps);
+    if (ps) {
+      const friendlyUrl = getSeoFriendlyAppUrl(ps, false);
+      window.history.pushState(null, '', friendlyUrl);
+      updateSeoMeta({ ps });
+    } else {
+      window.history.pushState(null, '', '/');
+      updateSeoMeta({});
+    }
+  };
+
   const handleLaunchApp = (ps: ProblemStatement) => {
-    const psId = ps.ps_number || `SIH${ps.id}`;
-    window.history.pushState(null, '', `?app=${psId}`);
+    const friendlyUrl = getSeoFriendlyAppUrl(ps, false);
+    window.history.pushState(null, '', friendlyUrl);
     setRunningAppPS(ps);
-    updateSeoMeta({
-      title: `${psId}: ${ps.title}`,
-      description: `${ps.organization} • ${ps.category} • ${ps.theme}: ${ps.description.slice(0, 160)}...`,
-      url: getSeoFriendlyAppUrl(psId)
-    });
+    updateSeoMeta({ ps });
   };
 
   const handleCloseApp = () => {
-    window.history.pushState(null, '', window.location.pathname);
+    window.history.pushState(null, '', '/');
     setRunningAppPS(null);
     updateSeoMeta({});
   };
 
   const handleExitStandalone = () => {
-    window.history.pushState(null, '', window.location.pathname);
+    window.history.pushState(null, '', '/');
     setStandalonePS(null);
     updateSeoMeta({});
   };
@@ -400,7 +395,7 @@ export const App: React.FC = () => {
                       onToggleFavorite={handleToggleFavorite}
                       isCompared={compareList.includes(ps.id)}
                       onToggleCompare={handleToggleCompare}
-                      onSelect={setSelectedPS}
+                      onSelect={handleSelectPS}
                       onLaunchApp={handleLaunchApp}
                       searchQuery={filter.searchQuery}
                     />
@@ -422,7 +417,7 @@ export const App: React.FC = () => {
               <SplitView
                 items={filteredItems}
                 selectedPS={selectedPS}
-                onSelectPS={setSelectedPS}
+                onSelectPS={handleSelectPS}
                 onLaunchApp={handleLaunchApp}
                 favorites={favorites}
                 onToggleFavorite={handleToggleFavorite}
@@ -437,7 +432,7 @@ export const App: React.FC = () => {
               <>
                 <TableView
                   items={paginatedItems}
-                  onSelectPS={setSelectedPS}
+                  onSelectPS={handleSelectPS}
                   onLaunchApp={handleLaunchApp}
                   favorites={favorites}
                   onToggleFavorite={handleToggleFavorite}
@@ -563,7 +558,7 @@ export const App: React.FC = () => {
       {selectedPS && (
         <PSDetailModal
           ps={selectedPS}
-          onClose={() => setSelectedPS(null)}
+          onClose={() => handleSelectPS(null)}
           isFavorite={favorites.includes(selectedPS.id)}
           onToggleFavorite={handleToggleFavorite}
           isCompared={compareList.includes(selectedPS.id)}
@@ -588,7 +583,7 @@ export const App: React.FC = () => {
           comparedItems={comparedItems}
           onClose={() => setShowCompareModal(false)}
           onRemove={handleToggleCompare}
-          onSelectPS={setSelectedPS}
+          onSelectPS={handleSelectPS}
         />
       )}
 
@@ -627,7 +622,7 @@ export const App: React.FC = () => {
         onClose={() => setShowFavoritesDrawer(false)}
         favorites={favorites}
         allPS={allData}
-        onSelectPS={setSelectedPS}
+        onSelectPS={handleSelectPS}
         onToggleFavorite={handleToggleFavorite}
         notes={notes}
       />
