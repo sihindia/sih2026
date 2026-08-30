@@ -111,6 +111,11 @@ import sih26012Parcels from '../data/sih26012/extracted_cadastral_parcels_and_ul
 import sih26012Rules from '../data/sih26012/topology_validation_and_sliver_rules.json';
 import sih26012Roads from '../data/sih26012/road_networks_and_access_corridors.json';
 import sih26012GtExport from '../data/sih26012/ground_truthing_and_bhunaksha_export.json';
+import sih26021Batches from '../data/sih26021/honey_batches_and_purity_ledger.json';
+import sih26021Hives from '../data/sih26021/smart_iot_hive_telemetry.json';
+import sih26021Comb from '../data/sih26021/ai_comb_disease_diagnostics.json';
+import sih26021Flora from '../data/sih26021/floral_migration_calendar.json';
+import sih26021Subsidies from '../data/sih26021/kvic_honey_mission_subsidies.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -17444,43 +17449,577 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
   /* =========================================================================
      KVIC / SIH26021 HONEY CHAIN BLOCKCHAIN TRACEABILITY & SMART APIARY
      ========================================================================= */
+  /* =========================================================================
+     KVIC / SIH26021 HONEY CHAIN BLOCKCHAIN TRACEABILITY & SMART APIARY
+     Honey Mission, IoT Hive Telemetry, Acoustic Swarm AI, Comb CV & Smart Escrow
+     ========================================================================= */
   if (psId === 'SIH26021') {
-    const batches = [
-      { id: "BATCH-KVIC-KSH-081", apiary: "Sundarbans Wild Mangrove Apiary", pollen: "88.5% Wild Mangrove (Avicennia)", moisture: "18.2%", hmf: "14.2 mg/kg", nmr: "Zero C4 Sugar Adulteration (PASSED)", farmer: "Subhash Mondal (South 24 Parganas, WB)", price: "₹850 / 500g" },
-      { id: "BATCH-KVIC-KNG-042", apiary: "Kangra Valley Mustard Honey", pollen: "94.2% Brassica Campestris", moisture: "17.4%", hmf: "11.0 mg/kg", nmr: "Pure Monofloral Certified (PASSED)", farmer: "Kashmir Singh (Himachal Pradesh)", price: "₹620 / 500g" }
-    ];
+    const batches = sih26021Batches;
+    const hives = sih26021Hives;
+    const combScans = sih26021Comb;
+    const floralCalendar = sih26021Flora;
+    const subsidies = sih26021Subsidies;
+
     const [selectedBatch, setSelectedBatch] = React.useState(batches[0]);
+    const [tab, setTab] = React.useState<'ledger' | 'qr' | 'iot' | 'disease' | 'flora' | 'escrow'>('ledger');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
+
+    // Interactive Swarm Simulation State
+    const [selectedHive, setSelectedHive] = React.useState(hives[0]);
+    const [audioFreq, setAudioFreq] = React.useState(235);
+    const [simulatedSwarmResult, setSimulatedSwarmResult] = React.useState<any>(null);
+
+    // Escrow Release State
+    const [escrowReleased, setEscrowReleased] = React.useState(false);
+
+    // CV Scan State
+    const [selectedComb, setSelectedComb] = React.useState(combScans[0]);
+    const [scanSimulated, setScanSimulated] = React.useState(false);
+
+    const handleRunAcousticFft = () => {
+      const isPreSwarm = audioFreq >= 285;
+      const riskPct = Math.min(100, Math.max(5, Math.round((audioFreq - 200) / 1.4)));
+      setSimulatedSwarmResult({
+        freq: audioFreq,
+        risk: riskPct,
+        status: isPreSwarm ? 'PRE-SWARM QUEEN PIPING WARNING (48h Window)' : 'EQUILIBRIUM FORAGING (Colony Stable)',
+        action: isPreSwarm ? 'Execute Pagden artificial swarm split immediately' : 'Normal routine monitoring'
+      });
+    };
+
+    const handleTriggerEscrow = () => {
+      setEscrowReleased(true);
+      setTimeout(() => setEscrowReleased(false), 4500);
+    };
+
+    const handleTriggerCombScan = () => {
+      setScanSimulated(true);
+      setTimeout(() => setScanSimulated(false), 3500);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF MSME • KVIC HONEY MISSION (HONEY CHAIN 360)",
+        desc: "Blockchain Farm-to-Fork Traceability, Nuclear Magnetic Resonance (NMR) Purity, IoT Smart Hives & Direct Fair-Trade Escrow",
+        tabLedger: "⛓️ Blockchain Batch Ledger",
+        tabQr: "📱 Consumer QR Passport",
+        tabIot: "🐝 IoT Telemetry & Swarm AI",
+        tabDisease: "🔬 Comb CV Disease Scanner",
+        tabFlora: "🌸 Floral Migration Map",
+        tabEscrow: "💰 KVIC Subsidies & Escrow",
+      },
+      hi: {
+        tag: "सूक्ष्म, लघु एवं मध्यम उद्यम मंत्रालय • KVIC हनी मिशन (हनी चेन 360)",
+        desc: "ब्लॉकचेन ट्रेसिबिलिटी, NMR शुद्धता परीक्षण, IoT स्मार्ट मधुमक्खी बक्से व प्रत्यक्ष किसान एस्क्रो भुगतान",
+        tabLedger: "⛓️ ब्लॉकचेन बैच लेजर",
+        tabQr: "📱 उपभोक्ता QR पासपोर्ट",
+        tabIot: "🐝 IoT टेलीमेट्री व स्वार्म AI",
+        tabDisease: "🔬 छत्ता रोग CV स्कैनर",
+        tabFlora: "🌸 पुष्पन प्रवास मानचित्र",
+        tabEscrow: "💰 KVIC सब्सिडी व एस्क्रो",
+      },
+      mr: {
+        tag: "सूक्ष्म, लघू आणि मध्यम उद्योग मंत्रालय • KVIC हनी मिशन (हनी चेन 360)",
+        desc: "ब्लॉकचेन शुद्धता पडताळणी, NMR चाचणी, IoT स्मार्ट पोळे सेन्सर्स आणि थेट शेतकरी स्मार्ट करार",
+        tabLedger: "⛓️ ब्लॉकचेन बॅच लेजर",
+        tabQr: "📱 ग्राहक QR पासपोर्ट",
+        tabIot: "🐝 IoT पोळे सेन्सर्स व AI",
+        tabDisease: "🔬 पोळे रोग CV स्कॅनर",
+        tabFlora: "🌸 मध फुलोरा कॅलेंडर",
+        tabEscrow: "💰 KVIC अनुदान व थेट मोबदला",
+      }
+    }[lang];
 
     return (
-      <div className="space-y-6">
-        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="space-y-6 font-sans">
+        {/* Header */}
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold mb-1">
               <QrCode className="w-4 h-4 text-amber-400" />
-              <span>KHADI & VILLAGE INDUSTRIES COMMISSION (KVIC) • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">Smart Apiary IoT Hive Acoustic Telemetry & Blockchain Purity Verification</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-amber-950 text-amber-300 border border-amber-800 rounded-2xl text-xs font-bold">
-            Blockchain Verified
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-amber-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-amber-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {batches.map((b) => (
-            <button key={b.id} onClick={() => setSelectedBatch(b)} className={`p-4 rounded-2xl border text-left transition-all ${
-              selectedBatch.id === b.id ? 'bg-amber-950/60 border-amber-500 text-white shadow-md ring-1 ring-amber-400' : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
-            }`}>
-              <div className="text-[10px] font-mono text-amber-400 font-bold">{b.id}</div>
-              <div className="text-xs font-bold text-white mt-0.5">{b.apiary}</div>
-              <div className="mt-2 text-[10px] flex justify-between font-mono text-slate-400">
-                <span className="text-emerald-400 font-bold">{b.nmr.split('(')[0]}</span>
-                <span className="text-amber-300">{b.price}</span>
-              </div>
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
+          {[
+            { id: 'ledger', label: t.tabLedger },
+            { id: 'qr', label: t.tabQr },
+            { id: 'iot', label: t.tabIot },
+            { id: 'disease', label: t.tabDisease },
+            { id: 'flora', label: t.tabFlora },
+            { id: 'escrow', label: t.tabEscrow },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-amber-500 text-slate-950 font-black shadow-lg shadow-amber-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
             </button>
           ))}
         </div>
+
+        {/* TAB 1: BLOCKCHAIN BATCH LEDGER & NMR CERTIFICATION */}
+        {tab === 'ledger' && (
+          <div className="space-y-6">
+            {/* Batch Selector Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {batches.map((b: any) => (
+                <button
+                  key={b.batch_id}
+                  onClick={() => setSelectedBatch(b)}
+                  className={`p-5 rounded-2xl border text-left transition-all ${
+                    selectedBatch.batch_id === b.batch_id
+                      ? 'bg-amber-950/60 border-amber-500 text-white shadow-lg ring-1 ring-amber-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-amber-400">{b.batch_id}</span>
+                    <span className="text-emerald-400">Trust Score: {b.trust_index_score}/100</span>
+                  </div>
+                  <div className="text-sm font-bold text-white mt-1">{b.apiary_name}</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">{b.region} • {b.botanical_origin}</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-cyan-400">Pollen: {b.pollen_purity_pct}%</span>
+                    <span className="text-amber-300 font-bold">{b.retail_pack_price}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Selected Batch Cryptographic Proof Deep-Dive */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div>
+                    <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                      <span>FSSAI &amp; Nuclear Magnetic Resonance (NMR) Lab Profile</span>
+                    </h4>
+                    <p className="text-slate-400 text-[11px] mt-0.5">{selectedBatch.beekeeper_name} ({selectedBatch.aadhaar_dbt_ref})</p>
+                  </div>
+                  <span className="px-3 py-1 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full text-[10px] font-bold">
+                    {selectedBatch.nmr_test_result}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">POLLEN PURITY</span>
+                    <strong className="text-emerald-400 text-base block mt-0.5">{selectedBatch.pollen_purity_pct}%</strong>
+                    <span className="text-[9px] text-slate-500">Monofloral Verified</span>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">MOISTURE CONTENT</span>
+                    <strong className="text-cyan-400 text-base block mt-0.5">{selectedBatch.moisture_pct}%</strong>
+                    <span className="text-[9px] text-slate-500">Spec: &le;20.0%</span>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">HMF LEVEL</span>
+                    <strong className="text-amber-400 text-base block mt-0.5">{selectedBatch.hmf_mg_kg} mg/kg</strong>
+                    <span className="text-[9px] text-slate-500">Spec: &le;40 mg/kg</span>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Carbon-13 IRMS Delta:</span>
+                    <strong className="text-emerald-400">{selectedBatch.c13_irms_delta}</strong>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">GPS Origin Coords:</span>
+                    <span className="text-white">{selectedBatch.gps_coordinates} (Alt: {selectedBatch.elevation_m}m)</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Harvest Date &amp; Weight:</span>
+                    <span className="text-cyan-300">{selectedBatch.harvest_date} • {selectedBatch.batch_weight_kg} kg Extracted</span>
+                  </div>
+                </div>
+
+                <div className="p-3.5 bg-amber-950/30 rounded-2xl border border-amber-900/40 text-amber-200 font-sans text-xs leading-relaxed">
+                  🍯 <strong>Flavor Notes</strong>: {selectedBatch.flavor_notes}
+                </div>
+              </div>
+
+              {/* Blockchain Cryptographic Verification Box */}
+              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                  <QrCode className="w-4 h-4 text-amber-400" />
+                  <span>Polygon PoS &amp; IPFS Merkle Proof</span>
+                </h4>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2.5">
+                  <div>
+                    <span className="text-slate-500 text-[10px] block">SMART CONTRACT TRANSACTION:</span>
+                    <span className="text-cyan-400 text-[11px] break-all select-all">{selectedBatch.polygon_tx_hash}</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500 text-[10px] block">IPFS LAB NMR CERTIFICATE CID:</span>
+                    <span className="text-amber-300 text-[11px] break-all select-all">{selectedBatch.ipfs_lab_cid}</span>
+                  </div>
+                  <div className="pt-2 border-t border-slate-900 flex justify-between">
+                    <span className="text-slate-400">Escrow Settlement:</span>
+                    <strong className="text-emerald-400">{selectedBatch.escrow_status.split('_')[0]} RELEASED</strong>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Farmer Net Earnings:</span>
+                    <strong className="text-white">{selectedBatch.beekeeper_net_cut}</strong>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800/80 text-[11px] font-sans text-slate-300">
+                  🔒 <strong>Zero Middleman Assurance</strong>: The smart contract automatically transfers proceeds directly into the beekeeper's Aadhaar-linked bank account, preventing cartel underpricing.
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: CONSUMER QR CODE PROVENANCE PASSPORT */}
+        {tab === 'qr' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            {/* Simulated Mobile QR Scanner */}
+            <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 flex flex-col items-center justify-center text-center space-y-4">
+              <div className="w-48 h-48 bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center">
+                <div className="w-full h-full border-4 border-slate-900 rounded-xl flex flex-col items-center justify-center p-2 text-slate-950 font-black">
+                  <QrCode className="w-24 h-24 text-slate-950" />
+                  <span className="text-[9px] tracking-widest mt-1">SCAN FOR PROVENANCE</span>
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <span className="text-amber-400 font-bold block text-sm font-sans">Live Honey Jar Tamper Seal</span>
+                <span className="text-slate-400 text-xs font-sans">Single-scan cryptographic token ensures counterfeit bottles cannot be refilled.</span>
+              </div>
+
+              <div className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-xl text-xs font-bold">
+                ✅ Anti-Counterfeit Seal Active (Verified 1st Scan)
+              </div>
+            </div>
+
+            {/* Rendered Mobile Passport Page */}
+            <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex justify-between items-start border-b border-slate-800 pb-3">
+                <div>
+                  <span className="text-amber-400 font-bold text-xs">KVIC DIGITAL HONEY PASSPORT</span>
+                  <h4 className="text-lg font-bold text-white font-sans mt-0.5">{selectedBatch.apiary_name}</h4>
+                  <p className="text-[11px] text-slate-400 font-sans">Produced by {selectedBatch.beekeeper_name} • {selectedBatch.region}</p>
+                </div>
+                <span className="px-3 py-1 bg-amber-500 text-slate-950 font-black rounded-xl text-xs font-sans">
+                  Grade A Pure
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1">
+                  <span className="text-slate-500 text-[10px]">FLORAL NECTAR:</span>
+                  <strong className="text-white block font-sans text-xs">{selectedBatch.botanical_origin}</strong>
+                </div>
+                <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1">
+                  <span className="text-slate-500 text-[10px]">NMR CERTIFICATION:</span>
+                  <strong className="text-emerald-400 block font-sans text-xs">Zero Synthetic Sugars (100% Floral)</strong>
+                </div>
+              </div>
+
+              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 font-sans text-xs">
+                <div className="text-white font-bold">Beekeeper Story &amp; Origin</div>
+                <p className="text-slate-300 leading-relaxed text-[11px]">
+                  Ghulam Nabi Mir tends 28 indigenous Apis Cerana Indica colonies along the pine and acacia terraces of Anantnag. Under KVIC Honey Mission, this batch was naturally ripened on the comb without micro-filtration, preserving living bee enzymes and pollen nutrients.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: SMART IOT HIVE TELEMETRY & ACOUSTIC SWARM AI */}
+        {tab === 'iot' && (
+          <div className="space-y-6 font-mono text-xs">
+            {/* Hive Selector */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {hives.map((h: any) => (
+                <div
+                  key={h.hive_id}
+                  onClick={() => { setSelectedHive(h); setAudioFreq(h.acoustic_frequency_hz); }}
+                  className={`p-5 bg-slate-900 rounded-3xl border transition-all cursor-pointer ${
+                    selectedHive.hive_id === h.hive_id ? 'border-amber-500 ring-1 ring-amber-400' : 'border-slate-800 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{h.hive_id} • {h.apiary_cluster}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">Beekeeper: {h.beekeeper}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">Comb Capping: {h.comb_capping_pct}% • {h.harvest_readiness}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold text-[10px]">
+                      {h.battery_pct}% Battery
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-4 gap-2 text-center mt-3">
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">INTERNAL TEMP</span>
+                      <strong className="text-emerald-400 text-xs block mt-0.5">{h.internal_temp_c}°C</strong>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">HUMIDITY</span>
+                      <strong className="text-cyan-400 text-xs block mt-0.5">{h.internal_humidity_pct}%</strong>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">WEIGHT</span>
+                      <strong className="text-amber-400 text-xs block mt-0.5">{h.current_weight_kg} kg</strong>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">ACOUSTIC PEAK</span>
+                      <strong className="text-purple-400 text-xs block mt-0.5">{h.acoustic_frequency_hz} Hz</strong>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Acoustic FFT Audio Simulator */}
+            <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <Activity className="w-5 h-5 text-amber-400" />
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans">Acoustic Audio AI Analyzer (Spectral FFT 100Hz–600Hz)</h4>
+                  <p className="text-slate-400 text-xs font-sans">Detects queen piping, colony distress &amp; gives 48-hour advance swarming warning</p>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-300">Dominant Hive Acoustic Resonance Frequency:</span>
+                  <span className="text-amber-400 font-bold">{audioFreq} Hz</span>
+                </div>
+                <input
+                  type="range"
+                  min="180"
+                  max="350"
+                  value={audioFreq}
+                  onChange={(e) => setAudioFreq(Number(e.target.value))}
+                  className="w-full accent-amber-500 cursor-pointer"
+                />
+                <div className="flex justify-between text-[10px] text-slate-500">
+                  <span>200 Hz (Quiet Night)</span>
+                  <span>235 Hz (Normal Daytime Foraging)</span>
+                  <span>290 Hz+ (Pre-Swarm Queen Piping Alert)</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-2">
+                <button
+                  onClick={handleRunAcousticFft}
+                  className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-amber-500/20 transition-all active:scale-95"
+                >
+                  Analyze Acoustic Frequency
+                </button>
+
+                {simulatedSwarmResult && (
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1 text-xs">
+                    <div className="flex gap-2 items-center">
+                      <span className="text-slate-400">Swarm Risk:</span>
+                      <strong className={simulatedSwarmResult.risk >= 50 ? 'text-rose-400 font-bold' : 'text-emerald-400 font-bold'}>
+                        {simulatedSwarmResult.risk}%
+                      </strong>
+                      <span className="text-amber-300 font-bold font-sans">({simulatedSwarmResult.status})</span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 font-sans">{simulatedSwarmResult.action}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: COMB CV DISEASE SCANNER */}
+        {tab === 'disease' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-4 bg-amber-950/40 rounded-3xl border border-amber-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-amber-200 font-sans">
+              <div>
+                <strong className="text-white text-sm block">🔬 Computer Vision Brood Comb Health Diagnostics</strong>
+                <span>YOLOv11 object detector scans smartphone camera photos of active brood frames to detect Varroa destructor mites, American Foulbrood, and wax moth larvae.</span>
+              </div>
+              <button
+                onClick={handleTriggerCombScan}
+                disabled={scanSimulated}
+                className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs font-sans shadow-md transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {scanSimulated ? '✅ Scan Completed: 98/100 Health Score' : 'Simulate Comb CV Scan'}
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {combScans.map((scan: any) => (
+                <div key={scan.scan_id} className="p-5 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{scan.scan_id} • {scan.hive_id}</span>
+                      <h4 className="font-bold text-white font-sans text-xs mt-0.5">{scan.apiary}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{scan.comb_frame_number}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      Health: {scan.ai_comb_health_score}/100
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">VARROA MITES</span>
+                      <strong className="text-emerald-400 text-sm block mt-0.5">{scan.detected_varroa_mites}</strong>
+                      <span className="text-[8px] text-slate-500">{scan.varroa_infestation_rate_pct}% Rate</span>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">FOULBROOD CELLS</span>
+                      <strong className="text-cyan-400 text-sm block mt-0.5">{scan.american_foulbrood_cells} AFB</strong>
+                      <span className="text-[8px] text-slate-500">Zero Disease</span>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">QUEEN DETECTED</span>
+                      <strong className="text-purple-400 text-sm block mt-0.5">{scan.queen_presence_detected ? 'ACTIVE' : 'NONE'}</strong>
+                      <span className="text-[8px] text-slate-500">Laying Pattern 97%</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-slate-300 font-sans text-[11px]">
+                    💊 <strong>Treatment Protocol</strong>: {scan.treatment_guidance}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: FLORAL MIGRATION CALENDAR */}
+        {tab === 'flora' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {floralCalendar.map((fl: any) => (
+                <div key={fl.flora_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{fl.flora_id}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{fl.crop_name}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{fl.region}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-slate-950 text-amber-300 border border-slate-800 text-[10px] font-bold">
+                      {fl.bloom_window}
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">PEAK FLOW DAYS</span>
+                      <strong className="text-amber-400 text-sm block mt-0.5">{fl.peak_nectar_days} Days</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">YIELD / HIVE</span>
+                      <strong className="text-emerald-400 text-sm block mt-0.5">{fl.avg_yield_per_hive_kg} kg</strong>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">SUGAR BRIX</span>
+                      <strong className="text-cyan-400 text-sm block mt-0.5">{fl.nectar_sugar_concentration_pct}</strong>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5 font-sans">
+                    <div className="text-slate-300 text-[11px]">
+                      🚚 <strong>Nomadic Route</strong>: {fl.migration_route}
+                    </div>
+                    <div className="text-emerald-400 text-[10px] font-mono">
+                      {fl.gi_tag_status}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: KVIC HONEY MISSION SUBSIDIES & ESCROW */}
+        {tab === 'escrow' && (
+          <div className="space-y-6 font-mono text-xs">
+            {/* Subsidy Beneficiary Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {subsidies.map((sub: any) => (
+                <div key={sub.beekeeper_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{sub.beekeeper_id} • {sub.category}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{sub.name}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{sub.village}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      +{sub.income_growth_pct}% Income Growth
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">KVIC BOXES</span>
+                      <strong className="text-cyan-400 text-sm block mt-0.5">{sub.kvic_boxes_allotted} Boxes</strong>
+                      <span className="text-[9px] text-slate-500">100% Free Toolkits</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">DBT SUBSIDY</span>
+                      <strong className="text-emerald-400 text-sm block mt-0.5">₹{sub.dbt_subsidy_amount_inr.toLocaleString()}</strong>
+                      <span className="text-[9px] text-slate-500">PFMS Aadhaar</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">ANNUAL HONEY</span>
+                      <strong className="text-amber-400 text-sm block mt-0.5">{sub.annual_honey_produced_kg} kg</strong>
+                      <span className="text-[9px] text-slate-500">Certified Output</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-slate-300 font-sans text-[11px]">
+                    🎓 <strong>Training Wing</strong>: {sub.training_center}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Smart Contract Instant Escrow Payout Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-amber-400 font-bold block text-sm font-sans">Automated Fair-Trade Smart Contract Escrow (Zero Deductions)</span>
+                <span className="text-slate-400 text-xs font-sans">Disburses ₹720/500g directly to beekeeper upon NMR lab validation and retail jar scan verification.</span>
+              </div>
+              <button
+                onClick={handleTriggerEscrow}
+                disabled={escrowReleased}
+                className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-amber-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {escrowReleased ? '✅ ₹720 Credited via PFMS Aadhaar DBT!' : 'Release Fair-Trade Smart Contract Escrow'}
+              </button>
+            </div>
+          </div>
+        )}
+
       </div>
     );
   }
