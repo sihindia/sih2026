@@ -1,0 +1,20 @@
+[
+  {
+    "defect_type": "Sprouted Green Shoots",
+    "impact": "Shelf life reduction (<7 days)",
+    "cv_detection_accuracy": "98.9%",
+    "penalty_rate": "\u20b9120/qtl deducted"
+  },
+  {
+    "defect_type": "Black Mold Fungal Rot (Aspergillus)",
+    "impact": "Immediate contamination risk",
+    "cv_detection_accuracy": "99.4%",
+    "penalty_rate": "Reject from buffer storage"
+  },
+  {
+    "defect_type": "Undersized (<30mm Diameter)",
+    "impact": "Unsuitable for retail consumer grade",
+    "cv_detection_accuracy": "97.8%",
+    "penalty_rate": "Grade C secondary sorting"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "dispute_id": "DISP-2026-012",
+    "lot_id": "LOT-KURNOOL-2026-109",
+    "farmer": "K. Venkataswamy Reddy",
+    "manual_grader_finding": "35% URS Reject claimed by local assayer",
+    "ai_vision_audit_finding": "15.5% URS Reject, 58% Grade A confirmed by 3-angle optical scan",
+    "tribunal_resolution": "Upgraded payout from \u20b91,450 to \u20b91,820/Qtl (+\u20b935,150 compensated to farmer)",
+    "status": "RESOLVED_FAVOR_FARMER"
+  },
+  {
+    "dispute_id": "DISP-2026-004",
+    "lot_id": "LOT-INDORE-2026-077",
+    "farmer": "Rameshwar Patidar",
+    "manual_grader_finding": "Excessive moisture 16% reported",
+    "ai_vision_audit_finding": "13.0% Moisture confirmed via calibrated NIR spectral probe",
+    "tribunal_resolution": "Zero penalty applied, full Base MSP \u20b92,400 approved",
+    "status": "RESOLVED_FAVOR_FARMER"
+  }
+]

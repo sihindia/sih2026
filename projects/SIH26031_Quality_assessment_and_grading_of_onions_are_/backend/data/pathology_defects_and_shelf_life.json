@@ -1,0 +1,42 @@
+[
+  {
+    "pathology_id": "PATH-MOLD-ASPERGILLUS",
+    "defect_name": "Black Mold Rot (Aspergillus niger)",
+    "severity_index": "HIGH_RISK_CONTAGION",
+    "optical_signature": "Dry black powdery spores beneath outer papery scale",
+    "safe_storage_tolerance_pct": 1.0,
+    "current_detection_pct": 0.4,
+    "quarantine_action": "Isolate lot; divert to rapid dehydration if >2.5%",
+    "shelf_life_impact_days": -45
+  },
+  {
+    "pathology_id": "PATH-BASAL-FUSARIUM",
+    "defect_name": "Basal Plate Rot (Fusarium oxysporum)",
+    "severity_index": "CRITICAL_SPOILAGE",
+    "optical_signature": "Softening, water-soaked basal plate with white mycelium",
+    "safe_storage_tolerance_pct": 0.5,
+    "current_detection_pct": 0.2,
+    "quarantine_action": "Strict rejection from buffer silos",
+    "shelf_life_impact_days": -90
+  },
+  {
+    "pathology_id": "PATH-SPROUT-PRECOCIOUS",
+    "defect_name": "Precocious Green Sprouting",
+    "severity_index": "MARKET_DISCOUNT",
+    "optical_signature": "Emerging green apical shoot >5mm from bulb neck",
+    "safe_storage_tolerance_pct": 2.0,
+    "current_detection_pct": 0.8,
+    "quarantine_action": "Immediate local retail liquidation",
+    "shelf_life_impact_days": -30
+  },
+  {
+    "pathology_id": "PATH-DOUBLE-BULB",
+    "defect_name": "Splitting / Double Twin Bulb",
+    "severity_index": "COSMETIC_SECONDARY",
+    "optical_signature": "Two distinct growing points encased in shared tunic",
+    "safe_storage_tolerance_pct": 5.0,
+    "current_detection_pct": 1.2,
+    "quarantine_action": "Accept for domestic Grade B consumption",
+    "shelf_life_impact_days": -15
+  }
+]

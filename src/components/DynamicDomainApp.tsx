@@ -156,6 +156,12 @@ import sih26027Trains from '../data/sih26027/train_headway_punctuality_impacts.j
 import sih26027Kavach from '../data/sih26027/kavach_atp_tsr_and_otm_fleet.json';
 import sih26027GatiShakti from '../data/sih26027/cris_gati_shakti_interoperability_metrics.json';
 import sih26027Logs from '../data/sih26027/section_controller_safety_logs.json';
+import sih26031Lots from '../data/sih26031/onion_procurement_lots_and_grading.json';
+import sih26031Detections from '../data/sih26031/cv_detected_onion_samples.json';
+import sih26031Hubs from '../data/sih26031/procurement_hubs_telemetry.json';
+import sih26031Disputes from '../data/sih26031/dispute_redressal_cases.json';
+import sih26031Pathology from '../data/sih26031/pathology_defects_and_shelf_life.json';
+import sih26031Blockchain from '../data/sih26031/blockchain_qac_and_silo_iot.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -18135,43 +18141,33 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
   );
 }
 
+  /* =========================================================================
+     MINISTRY OF CONSUMER AFFAIRS / SIH26031 PYAAZPARIKSHAN AI 360
+     Computer Vision Onion Quality Assessment, Multi-Spectral Pathology & QAC
+     ========================================================================= */
   if (psId === 'SIH26031') {
-    const lots = [
-      { id: "LOT-LASALGAON", mandi: "Lasalgaon NAFED Hub (Nashik, MH)", farmer: "Dnyaneshwar Vitthal Shinde", aadhaar: "XXXX-XXXX-4819", variety: "Nashik Red Garva (Rabi Storage)", qtl: 140, samples: 120, ga: 82.5, gb: 13.0, gc: 3.0, urs: 1.5, dia: "56.4 mm", moist: "12.8%", sprout: "0.8%", mold: "0.4%", msp: "₹2,400", prem: "+₹80", rate: "₹2,480 / Qtl", total: "₹3,47,200", gradeClass: "GRADE A BUFFER ELIGIBLE", days: 180, qac: "QAC-DOCA-2026-LAS-08194", dbt: "SBIN00841920-NFT-8812" },
-      { id: "LOT-MAHUVA", mandi: "Mahuva APMC Dehydration (Bhavnagar, GJ)", farmer: "Hareshbhai Patel", aadhaar: "XXXX-XXXX-9022", variety: "Mahuva High-TSS White", qtl: 220, samples: 150, ga: 88.0, gb: 9.5, gc: 1.5, urs: 1.0, dia: "62.0 mm", moist: "11.2%", sprout: "0.4%", mold: "0.3%", msp: "₹2,400", prem: "+₹250", rate: "₹2,650 / Qtl", total: "₹5,83,000", gradeClass: "GRADE A PREMIUM EXPORT", days: 210, qac: "QAC-DOCA-2026-MAH-04218", dbt: "BARB0MAHUVA-NFT-9402" },
-      { id: "LOT-KURNOOL", mandi: "Kurnool Market Yard (AP)", farmer: "K. Venkataswamy Reddy", aadhaar: "XXXX-XXXX-3341", variety: "Kurnool Early Kharif Red", qtl: 95, samples: 100, ga: 58.0, gb: 26.5, gc: 8.0, urs: 7.5, dia: "41.2 mm", moist: "14.5%", sprout: "4.8%", mold: "2.2%", msp: "₹2,000", prem: "-₹180", rate: "₹1,820 / Qtl", total: "₹1,72,900", gradeClass: "GRADE B DOMESTIC SALE", days: 45, qac: "QAC-DOCA-2026-KUR-10901", dbt: "APGB0001090-NFT-3312" },
-      { id: "LOT-INDORE", mandi: "Choithram Mandi Indore (MP)", farmer: "Rameshwar Patidar", aadhaar: "XXXX-XXXX-6612", variety: "Malwa Yellow Globe", qtl: 180, samples: 130, ga: 76.0, gb: 18.0, gc: 4.0, urs: 2.0, dia: "52.8 mm", moist: "13.0%", sprout: "1.0%", mold: "0.8%", msp: "₹2,400", prem: "₹0", rate: "₹2,400 / Qtl", total: "₹4,32,000", gradeClass: "GRADE A BUFFER ELIGIBLE", days: 150, qac: "QAC-DOCA-2026-IND-07741", dbt: "CBIN0281489-NFT-7714" }
-    ];
-
-    const detections = [
-      { id: 1, x: 10, y: 15, w: 18, h: 18, dia: "58.2mm", grade: "A", defect: "NONE", status: "Sound Bulb" },
-      { id: 2, x: 32, y: 14, w: 19, h: 19, dia: "61.4mm", grade: "A", defect: "NONE", status: "Sound Bulb" },
-      { id: 3, x: 55, y: 16, w: 17, h: 17, dia: "54.0mm", grade: "A", defect: "NONE", status: "Sound Bulb" },
-      { id: 4, x: 76, y: 18, w: 16, h: 16, dia: "51.5mm", grade: "A", defect: "NONE", status: "Sound Bulb" },
-      { id: 5, x: 12, y: 44, w: 17, h: 17, dia: "55.8mm", grade: "A", defect: "NONE", status: "Sound Bulb" },
-      { id: 6, x: 34, y: 42, w: 18, h: 18, dia: "57.0mm", grade: "A", defect: "NONE", status: "Sound Bulb" },
-      { id: 7, x: 56, y: 45, w: 14, h: 14, dia: "42.1mm", grade: "B", defect: "SKIN_PEEL", status: "Minor Skin Peel" },
-      { id: 8, x: 74, y: 44, w: 18, h: 18, dia: "59.2mm", grade: "A", defect: "NONE", status: "Sound Bulb" },
-      { id: 9, x: 14, y: 72, w: 18, h: 18, dia: "56.4mm", grade: "A", defect: "NONE", status: "Sound Bulb" },
-      { id: 10, x: 36, y: 70, w: 12, h: 12, dia: "36.5mm", grade: "B", defect: "NONE", status: "Small Domestic" },
-      { id: 11, x: 54, y: 73, w: 19, h: 19, dia: "63.0mm", grade: "A", defect: "NONE", status: "Export Grade" },
-      { id: 12, x: 77, y: 74, w: 11, h: 11, dia: "27.8mm", grade: "URS", defect: "SPROUT_TIP", status: "Sprouted Tip" }
-    ];
-
-    const hubs = [
-      { id: "APMC-LASALGAON", name: "Lasalgaon NAFED Mega Hub", state: "MH", target: "1,500 MT/day", procured: "42,500 MT", temp: "24.2°C", rh: "65%", qIdx: "86.4/100", trucks: 14 },
-      { id: "APMC-MAHUVA", name: "Mahuva Dehydration Terminal", state: "GJ", target: "1,200 MT/day", procured: "36,800 MT", temp: "23.5°C", rh: "62%", qIdx: "91.2/100", trucks: 8 },
-      { id: "APMC-INDORE", name: "Indore Choithram Mandi", state: "MP", target: "800 MT/day", procured: "21,000 MT", temp: "25.0°C", rh: "68%", qIdx: "79.5/100", trucks: 11 }
-    ];
+    const lots = sih26031Lots;
+    const detections = sih26031Detections;
+    const hubs = sih26031Hubs;
+    const disputes = sih26031Disputes;
+    const pathologyList = sih26031Pathology;
+    const blockchainRecords = sih26031Blockchain;
 
     const [selectedLot, setSelectedLot] = React.useState(lots[0]);
     const [selectedOnion, setSelectedOnion] = React.useState<any>(null);
-    const [tab, setTab] = React.useState<'inspector' | 'qac' | 'hubs' | 'studio' | 'disputes'>('inspector');
+    const [tab, setTab] = React.useState<'inspector' | 'pathology' | 'qac' | 'blockchain' | 'studio' | 'disputes'>('inspector');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr' | 'gu'>('en');
 
     // Studio Sim
     const [studioSamples, setStudioSamples] = React.useState(150);
     const [studioWeight, setStudioWeight] = React.useState(160);
     const [simResult, setSimResult] = React.useState<any>(null);
+
+    // Blockchain Verification State
+    const [qrVerified, setQrVerified] = React.useState(false);
+
+    // Appeal Submission State
+    const [appealSubmitted, setAppealSubmitted] = React.useState(false);
 
     const runSim = () => {
       const ga = Number((Math.random() * (88 - 76) + 76).toFixed(1));
@@ -18181,43 +18177,107 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
       setSimResult({ ga, gb, urs, rate, total: rate * studioWeight });
     };
 
+    const handleVerifyQr = () => {
+      setQrVerified(true);
+      setTimeout(() => setQrVerified(false), 4000);
+    };
+
+    const handleSubmitAppeal = () => {
+      setAppealSubmitted(true);
+      setTimeout(() => setAppealSubmitted(false), 4000);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF CONSUMER AFFAIRS (DoCA) • NAFED ONION BUFFER (PYAAZPARIKSHAN 360)",
+        desc: "Edge-AI Computer Vision Caliper Geometry, Multi-Spectral Pathology Delineation, Blockchain QAC & Instant Aadhaar DBT Disbursal",
+        tabInspector: "🔍 Optical Crate Inspector",
+        tabPathology: "🔬 Multi-Spectral Pathology",
+        tabQac: "📜 Digital QAC Certificate",
+        tabBlockchain: "⛓️ Blockchain & Silo IoT",
+        tabStudio: "🧪 Assayer Simulation Studio",
+        tabDisputes: "⚖️ Re-Grading Tribunal",
+      },
+      hi: {
+        tag: "उपभोक्ता मामले मंत्रालय (DoCA) • नेफेड प्याज बफर (प्याजपरीक्षण 360)",
+        desc: "एज-AI कंप्यूटर विजन कैलीपर ज्यामिति, बहु-स्पेक्ट्रल विकृति पहचान, ब्लॉकचेन QAC व तत्काल आधार DBT भुगतान",
+        tabInspector: "🔍 ऑप्टिकल क्रेट निरीक्षक",
+        tabPathology: "🔬 बहु-स्पेक्ट्रल पैथोलॉजी",
+        tabQac: "📜 डिजिटल QAC प्रमाणपत्र",
+        tabBlockchain: "⛓️ ब्लॉकचेन व साइलो IoT",
+        tabStudio: "🧪 परीक्षक सिमुलेशन स्टूडियो",
+        tabDisputes: "⚖️ पुनर्गणना निवारण अधिकरण",
+      },
+      mr: {
+        tag: "ग्राहक व्यवहार मंत्रालय (DoCA) • नाफेड कांदा बफर (कांदापरीक्षण 360)",
+        desc: "एज-AI कॉम्प्युटर व्हिजन कॅलिपर भूमिती, मल्टी-स्पेक्ट्रल रोग निदान, ब्लॉकचेन QAC व थेट आधार DBT वाटप",
+        tabInspector: "🔍 ऑप्टिकल क्रेट निरीक्षक",
+        tabPathology: "🔬 बहु-स्पेक्ट्रल पॅथॉलॉजी",
+        tabQac: "📜 डिजिटल QAC प्रमाणपत्र",
+        tabBlockchain: "⛓️ ब्लॉकचेन व सायलॉ IoT",
+        tabStudio: "🧪 चाचणी सिम्युलेशन स्टुडिओ",
+        tabDisputes: "⚖️ पुनर्प्रतवारी लवाद",
+      },
+      gu: {
+        tag: "ગ્રાહક બાબતોનું મંત્રાલય (DoCA) • નાફેડ ડુંગળી બફર (ડુંગળીપરીક્ષણ 360)",
+        desc: "એજ-AI કમ્પ્યુટર વિઝન કેલિપર ભૂમિતિ, મલ્ટી-સ્પેક્ટ્રલ રોગ પરીક્ષણ, બ્લોકચેન QAC અને સીધું આધાર DBT ચુકવણી",
+        tabInspector: "🔍 ઓપ્ટિકલ ક્રેટ નિરીક્ષક",
+        tabPathology: "🔬 મલ્ટી-સ્પેક્ટ્રલ પેથોલોજી",
+        tabQac: "📜 ડિજિટલ QAC પ્રમાણપત્ર",
+        tabBlockchain: "⛓️ બ્લોકચેન અને સાયલો IoT",
+        tabStudio: "🧪 ટેસ્ટિંગ સિમ્યુલેશન સ્ટુડિયો",
+        tabDisputes: "⚖️ પુનર્ગ્રેડિંગ ટ્રિબ્યુનલ",
+      }
+    }[lang];
+
     return (
-      <div className="space-y-6">
+      <div className="space-y-6 font-sans">
         {/* Header */}
         <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold mb-1">
               <Camera className="w-4 h-4 text-amber-400" />
-              <span>MINISTRY OF CONSUMER AFFAIRS (DoCA) • NAFED ONION BUFFER • {psId}</span>
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">Computer Vision Defect Delineation (45-70mm), Caliper Geometry, Quality Certificates & Instant DBT Settlement</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-amber-950 text-amber-300 border border-amber-800 rounded-2xl text-xs font-bold flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>CV Engine v3.4 Active</span>
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-amber-400 ml-1.5" />
+            {(['en', 'hi', 'mr', 'gu'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-amber-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : l === 'mr' ? 'मराठी' : 'ગુજરાતી'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Global Tabs */}
-        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3">
+        {/* 6 Global Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
           {[
-            { id: 'inspector', label: '🔍 Optical Vision Crate Inspector' },
-            { id: 'qac', label: '📜 Digital Quality Certificate (QAC)' },
-            { id: 'hubs', label: '🏢 Mandi Buffer Silo Network' },
-            { id: 'studio', label: '🧪 Custom Assayer Simulation Studio' },
-            { id: 'disputes', label: '⚖️ Re-Grading Dispute Tribunal' }
-          ].map((t) => (
+            { id: 'inspector', label: t.tabInspector },
+            { id: 'pathology', label: t.tabPathology },
+            { id: 'qac', label: t.tabQac },
+            { id: 'blockchain', label: t.tabBlockchain },
+            { id: 'studio', label: t.tabStudio },
+            { id: 'disputes', label: t.tabDisputes },
+          ].map((item) => (
             <button
-              key={t.id}
-              onClick={() => setTab(t.id as any)}
-              className={`px-3.5 py-2 rounded-2xl text-xs font-bold transition-all ${
-                tab === t.id
-                  ? 'bg-amber-500 text-slate-950 font-black shadow-md'
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-amber-500 text-slate-950 font-black shadow-lg shadow-amber-500/20'
                   : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
               }`}
             >
-              {t.label}
+              {item.label}
             </button>
           ))}
         </div>
@@ -18226,47 +18286,47 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
         {tab === 'inspector' && (
           <div className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
-              {lots.map((l) => (
+              {lots.map((l: any) => (
                 <button
-                  key={l.id}
+                  key={l.lot_id}
                   onClick={() => { setSelectedLot(l); setSelectedOnion(null); }}
-                  className={`p-3.5 rounded-2xl border text-left transition-all ${
-                    selectedLot.id === l.id
-                      ? 'bg-amber-950/60 border-amber-500 text-white shadow-md ring-1 ring-amber-400'
+                  className={`p-4 rounded-2xl border text-left transition-all ${
+                    selectedLot.lot_id === l.lot_id
+                      ? 'bg-amber-950/60 border-amber-500 text-white shadow-lg ring-1 ring-amber-400'
                       : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
                   }`}
                 >
-                  <div className="text-[10px] font-mono text-amber-400 font-bold">{l.id}</div>
-                  <div className="text-xs font-bold truncate text-white mt-0.5">{l.mandi.split('(')[0]}</div>
-                  <div className="text-[11px] text-slate-400 truncate">{l.farmer}</div>
+                  <div className="text-[10px] font-mono text-amber-400 font-bold">{l.lot_id}</div>
+                  <div className="text-xs font-bold truncate text-white mt-0.5">{l.mandi_center.split('(')[0]}</div>
+                  <div className="text-[11px] text-slate-400 truncate">{l.farmer_name}</div>
                   <div className="mt-2 text-[10px] flex justify-between font-mono pt-1 border-t border-slate-800">
-                    <span className="text-emerald-400 font-bold">{l.ga}% Gr.A</span>
-                    <span className="text-amber-300">{l.rate.split(' ')[0]}</span>
+                    <span className="text-emerald-400 font-bold">{l.grade_a_pct}% Gr.A</span>
+                    <span className="text-amber-300">{l.final_payout_rate.split(' ')[0]}</span>
                   </div>
                 </button>
               ))}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
                 <div className="flex justify-between items-start border-b border-slate-800 pb-2">
                   <div>
-                    <span className="font-mono text-xs font-bold text-amber-400">{selectedLot.id} • {selectedLot.variety}</span>
-                    <h4 className="font-bold text-sm text-white mt-0.5">{selectedLot.mandi}</h4>
+                    <span className="font-mono text-xs font-bold text-amber-400">{selectedLot.lot_id} • {selectedLot.variety}</span>
+                    <h4 className="font-bold text-sm text-white font-sans mt-0.5">{selectedLot.mandi_center}</h4>
                   </div>
                   <span className="font-mono text-[10px] text-emerald-400 bg-slate-950 px-2.5 py-1 rounded-xl border border-slate-800">
-                    {selectedLot.samples} Optical Samples Analyzed
+                    {selectedLot.cv_samples_scanned} Optical Samples Analyzed
                   </span>
                 </div>
 
-                {/* Simulated Crate Visualizer */}
+                {/* Simulated Crate Visualizer with Coin Reference */}
                 <div className="relative aspect-[16/9] w-full bg-slate-950 rounded-2xl border-2 border-dashed border-slate-800 p-3 overflow-hidden flex flex-col justify-between">
                   <div className="flex justify-between text-[10px] font-mono text-slate-500 z-10">
-                    <span>LIVE CALIPER SCAN FOV: 800x450mm</span>
-                    <span className="text-amber-400">Multi-Angle RGB-D Active</span>
+                    <span>LIVE OPTICAL FOV: 800x450mm • ₹10 COIN CALIPER REF</span>
+                    <span className="text-amber-400">YOLOv10 INT8 Edge-AI Active (30 FPS)</span>
                   </div>
                   <div className="relative w-full h-full my-1">
-                    {detections.map((o) => {
+                    {detections.map((o: any) => {
                       const isGrA = o.grade === 'A';
                       const isSel = selectedOnion?.id === o.id;
                       return (
@@ -18281,7 +18341,7 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
                           }`}
                         >
                           <span className={`px-1 rounded font-bold ${isGrA ? 'bg-emerald-950 text-emerald-300' : 'bg-rose-950 text-rose-300'}`}>
-                            #{o.id} {o.dia}
+                            #{o.id} {o.diameter_mm}
                           </span>
                           {o.defect !== 'NONE' && (
                             <span className="bg-rose-600 text-white font-bold px-0.5 rounded text-[7px] truncate">⚠️ {o.defect}</span>
@@ -18291,57 +18351,58 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
                     })}
                   </div>
                   <div className="flex justify-between text-[10px] font-mono text-slate-400 pt-1 border-t border-slate-900 z-10">
-                    <span>Click any onion box to view geometry</span>
-                    <span className="text-emerald-400 font-bold">🟢 Grade A (Buffer) | 🔴 Defect/URS</span>
+                    <span>Click any bulb to inspect caliper metrics</span>
+                    <span className="text-emerald-400 font-bold">🟢 Grade A (45-70mm) | 🔴 Defect / URS</span>
                   </div>
                 </div>
 
                 {selectedOnion && (
-                  <div className="p-3 bg-amber-950/40 border border-amber-500/50 rounded-2xl font-mono text-[11px] flex justify-between items-center">
+                  <div className="p-3.5 bg-amber-950/40 border border-amber-500/50 rounded-2xl font-mono text-[11px] flex justify-between items-center">
                     <div>
                       <span className="text-amber-400 font-bold">Bulb #{selectedOnion.id}: {selectedOnion.status}</span>
-                      <div className="text-slate-400 text-[10px]">Diameter: {selectedOnion.dia} • Pathology: {selectedOnion.defect}</div>
+                      <div className="text-slate-400 text-[10px]">Diameter: {selectedOnion.diameter_mm} • Pathology: {selectedOnion.defect}</div>
                     </div>
                     <span className="text-emerald-400 font-bold px-2 py-1 bg-slate-950 rounded-lg">Class: Grade {selectedOnion.grade}</span>
                   </div>
                 )}
               </div>
 
+              {/* Lot Grading Summary */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs">
+                <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 font-sans">
                   <h4 className="font-bold text-sm text-white flex items-center gap-2">
                     <Scale className="w-4 h-4 text-amber-400" />
-                    <span>Grading & Size Distribution</span>
+                    <span>Grading &amp; Size Distribution</span>
                   </h4>
                   <div className="grid grid-cols-3 gap-2 text-center font-mono">
                     <div className="bg-slate-950 p-3 rounded-2xl border border-emerald-950">
                       <span className="text-slate-500 block text-[9px]">GRADE A (45-70mm)</span>
-                      <span className="text-lg font-black text-emerald-400 mt-1 block">{selectedLot.ga}%</span>
+                      <span className="text-lg font-black text-emerald-400 mt-1 block">{selectedLot.grade_a_pct}%</span>
                     </div>
                     <div className="bg-slate-950 p-3 rounded-2xl border border-amber-950">
                       <span className="text-slate-500 block text-[9px]">GRADE B (35-45mm)</span>
-                      <span className="text-lg font-black text-amber-400 mt-1 block">{selectedLot.gb}%</span>
+                      <span className="text-lg font-black text-amber-400 mt-1 block">{selectedLot.grade_b_pct}%</span>
                     </div>
                     <div className="bg-slate-950 p-3 rounded-2xl border border-rose-950">
                       <span className="text-slate-500 block text-[9px]">URS REJECT (&lt;30mm)</span>
-                      <span className="text-lg font-black text-rose-400 mt-1 block">{selectedLot.urs}%</span>
+                      <span className="text-lg font-black text-rose-400 mt-1 block">{selectedLot.urs_pct}%</span>
                     </div>
                   </div>
 
                   <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 font-mono text-[11px]">
-                    <div className="flex justify-between text-slate-400"><span>Mean Diameter:</span><span className="text-white font-bold">{selectedLot.dia}</span></div>
-                    <div className="flex justify-between text-slate-400"><span>Moisture Content:</span><span className="text-cyan-400 font-bold">{selectedLot.moist}</span></div>
-                    <div className="flex justify-between text-slate-400"><span>Sprouting Rate:</span><span className="text-amber-400">{selectedLot.sprout}</span></div>
-                    <div className="flex justify-between text-slate-400"><span>Black Mold:</span><span className="text-emerald-400">{selectedLot.mold} (Safe limit &lt;1.5%)</span></div>
-                    <div className="flex justify-between text-slate-400"><span>Buffer Longevity:</span><span className="text-purple-400 font-bold">{selectedLot.days} Days</span></div>
+                    <div className="flex justify-between text-slate-400"><span>Mean Diameter:</span><span className="text-white font-bold">{selectedLot.mean_diameter_mm}</span></div>
+                    <div className="flex justify-between text-slate-400"><span>Moisture Content:</span><span className="text-cyan-400 font-bold">{selectedLot.moisture_content_pct}</span></div>
+                    <div className="flex justify-between text-slate-400"><span>Sprouting Rate:</span><span className="text-amber-400">{selectedLot.sprouting_pct}</span></div>
+                    <div className="flex justify-between text-slate-400"><span>Black Mold:</span><span className="text-emerald-400">{selectedLot.black_mold_pct} (Safe limit &lt;1.0%)</span></div>
+                    <div className="flex justify-between text-slate-400"><span>Buffer Longevity:</span><span className="text-purple-400 font-bold">{selectedLot.storage_shelf_life_days} Days</span></div>
                   </div>
 
                   <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-2xl flex justify-between items-center font-mono">
                     <div>
                       <span className="text-slate-500 block text-[9px] uppercase font-bold">Total Disbursed (DBT)</span>
-                      <span className="text-lg font-black text-amber-400">{selectedLot.total}</span>
+                      <span className="text-lg font-black text-amber-400">{selectedLot.total_lot_value}</span>
                     </div>
-                    <button onClick={() => setTab('qac')} className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-xs">
+                    <button onClick={() => setTab('qac')} className="px-3.5 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-xs font-sans shadow-md">
                       View QAC ➔
                     </button>
                   </div>
@@ -18351,14 +18412,68 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
           </div>
         )}
 
-        {/* VIEW 2: DIGITAL QAC CERTIFICATE */}
+        {/* VIEW 2: MULTI-SPECTRAL PATHOLOGY */}
+        {tab === 'pathology' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-4 bg-amber-950/30 rounded-3xl border border-amber-900/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-amber-200 font-sans">
+              <div>
+                <strong className="text-white text-sm block">🔬 Multi-Spectral Pathology &amp; Fungal Infection Delineation</strong>
+                <span>Identifies internal and sub-surface pathogens to calculate buffer storage longevity, preventing catastrophic post-harvest rotting inside central NAFED silos.</span>
+              </div>
+              <span className="px-3 py-1 bg-amber-500 text-slate-950 font-black rounded-xl text-xs shrink-0">
+                NIR Spectroscopy Calibrated
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {pathologyList.map((p: any) => (
+                <div key={p.pathology_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{p.pathology_id}</span>
+                      <h4 className="font-bold text-white font-sans text-base mt-0.5">{p.defect_name}</h4>
+                    </div>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                      p.severity_index === 'CRITICAL_SPOILAGE' ? 'bg-rose-950 text-rose-300 border border-rose-800' :
+                      p.severity_index === 'HIGH_RISK_CONTAGION' ? 'bg-amber-950 text-amber-300 border border-amber-800' :
+                      'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                    }`}>
+                      {p.severity_index.replace(/_/g, ' ')}
+                    </span>
+                  </div>
+
+                  <p className="text-slate-300 font-sans text-xs bg-slate-950 p-3 rounded-2xl border border-slate-800">
+                    🔍 <strong>Optical Signature</strong>: {p.optical_signature}
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-2 text-center text-[11px]">
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 block text-[9px]">DETECTED INCIDENCE</span>
+                      <strong className="text-white text-sm">{p.current_detection_pct}% (Max {p.safe_storage_tolerance_pct}%)</strong>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 block text-[9px]">SHELF LIFE IMPACT</span>
+                      <strong className="text-rose-400 text-sm">{p.shelf_life_impact_days} Days</strong>
+                    </div>
+                  </div>
+
+                  <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-slate-300 text-[11px] font-sans">
+                    🛡️ <strong>NAFED Protocol</strong>: {p.quarantine_action}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* VIEW 3: DIGITAL QAC CERTIFICATE */}
         {tab === 'qac' && (
           <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 max-w-4xl mx-auto space-y-6 shadow-2xl font-mono text-xs">
             <div className="flex justify-between items-center border-b-2 border-amber-500/40 pb-4">
               <div>
-                <span className="text-amber-400 font-bold text-[10px] uppercase">GOVERNMENT OF INDIA • DoCA & NAFED</span>
+                <span className="text-amber-400 font-bold text-[10px] uppercase">GOVERNMENT OF INDIA • DoCA &amp; NAFED</span>
                 <h3 className="text-xl font-black text-white font-sans mt-0.5">Digital Quality Assessment Certificate (QAC)</h3>
-                <p className="text-slate-400 text-[11px]">Certificate Code: {selectedLot.qac}</p>
+                <p className="text-slate-400 text-[11px]">Certificate Code: {selectedLot.quality_certificate_no}</p>
               </div>
               <QrCode className="w-12 h-12 text-amber-400" />
             </div>
@@ -18366,67 +18481,89 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
                 <span className="text-amber-400 font-bold text-[10px] uppercase block">PRODUCER / FARMER DETAILS:</span>
-                <div className="flex justify-between"><span className="text-slate-500">Name:</span><span className="text-white font-bold">{selectedLot.farmer}</span></div>
-                <div className="flex justify-between"><span className="text-slate-500">Aadhaar (Masked):</span><span>{selectedLot.aadhaar}</span></div>
-                <div className="flex justify-between"><span className="text-slate-500">Center:</span><span className="text-amber-300">{selectedLot.mandi}</span></div>
+                <div className="flex justify-between"><span className="text-slate-500">Name:</span><span className="text-white font-bold">{selectedLot.farmer_name}</span></div>
+                <div className="flex justify-between"><span className="text-slate-500">Aadhaar (Masked):</span><span>{selectedLot.aadhaar_masked}</span></div>
+                <div className="flex justify-between"><span className="text-slate-500">Center:</span><span className="text-amber-300">{selectedLot.mandi_center}</span></div>
               </div>
               <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
                 <span className="text-cyan-400 font-bold text-[10px] uppercase block">LOT SPECIFICATIONS:</span>
                 <div className="flex justify-between"><span className="text-slate-500">Variety:</span><span className="text-white font-bold">{selectedLot.variety}</span></div>
-                <div className="flex justify-between"><span className="text-slate-500">Net Weight:</span><span className="text-emerald-400 font-bold">{selectedLot.qtl} Quintals</span></div>
-                <div className="flex justify-between"><span className="text-slate-500">Grade Class:</span><span className="text-amber-400">{selectedLot.gradeClass}</span></div>
+                <div className="flex justify-between"><span className="text-slate-500">Net Weight:</span><span className="text-emerald-400 font-bold">{selectedLot.lot_weight_quintals} Quintals</span></div>
+                <div className="flex justify-between"><span className="text-slate-500">Grade Class:</span><span className="text-amber-400">{selectedLot.grade_classification}</span></div>
               </div>
             </div>
 
             <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 text-center">
               <span className="text-slate-500 text-[9px] uppercase font-bold block mb-2">OPTICAL ASSAYING VERIFIED QUALITY BREAKDOWN:</span>
               <div className="grid grid-cols-4 gap-2 text-[11px]">
-                <div className="p-2 bg-slate-900 rounded-xl"><span className="text-slate-500 block text-[9px]">GRADE A</span><span className="text-emerald-400 font-bold">{selectedLot.ga}%</span></div>
-                <div className="p-2 bg-slate-900 rounded-xl"><span className="text-slate-500 block text-[9px]">GRADE B</span><span className="text-amber-400 font-bold">{selectedLot.gb}%</span></div>
-                <div className="p-2 bg-slate-900 rounded-xl"><span className="text-slate-500 block text-[9px]">URS REJECT</span><span className="text-rose-400 font-bold">{selectedLot.urs}%</span></div>
-                <div className="p-2 bg-slate-900 rounded-xl"><span className="text-slate-500 block text-[9px]">MOISTURE</span><span className="text-cyan-400 font-bold">{selectedLot.moist}</span></div>
+                <div className="p-2 bg-slate-900 rounded-xl"><span className="text-slate-500 block text-[9px]">GRADE A</span><span className="text-emerald-400 font-bold">{selectedLot.grade_a_pct}%</span></div>
+                <div className="p-2 bg-slate-900 rounded-xl"><span className="text-slate-500 block text-[9px]">GRADE B</span><span className="text-amber-400 font-bold">{selectedLot.grade_b_pct}%</span></div>
+                <div className="p-2 bg-slate-900 rounded-xl"><span className="text-slate-500 block text-[9px]">URS REJECT</span><span className="text-rose-400 font-bold">{selectedLot.urs_pct}%</span></div>
+                <div className="p-2 bg-slate-900 rounded-xl"><span className="text-slate-500 block text-[9px]">MOISTURE</span><span className="text-cyan-400 font-bold">{selectedLot.moisture_content_pct}</span></div>
               </div>
             </div>
 
             <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-2xl flex justify-between items-center">
               <div>
                 <span className="text-emerald-400 font-bold text-[10px] uppercase block">TOTAL DBT PAYMENT DISBURSED:</span>
-                <span className="text-2xl font-black text-white font-sans">{selectedLot.total}</span>
-                <div className="text-slate-400 text-[10px] mt-0.5">Rate: {selectedLot.rate} • Bank Ref: {selectedLot.dbt}</div>
+                <span className="text-2xl font-black text-white font-sans">{selectedLot.total_lot_value}</span>
+                <div className="text-slate-400 text-[10px] mt-0.5">Rate: {selectedLot.final_payout_rate} • Bank Ref: {selectedLot.dbt_transaction_utr}</div>
               </div>
-              <button onClick={() => alert(`Certificate ${selectedLot.qac} printed.`)} className="px-4 py-2 bg-emerald-500 text-slate-950 font-bold rounded-xl text-xs">
+              <button onClick={() => alert(`Certificate ${selectedLot.quality_certificate_no} printed successfully.`)} className="px-5 py-2.5 bg-emerald-500 text-slate-950 font-bold rounded-xl text-xs font-sans shadow-md active:scale-95">
                 Print Official QAC
               </button>
             </div>
           </div>
         )}
 
-        {/* VIEW 3: HUBS */}
-        {tab === 'hubs' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-            {hubs.map((h) => (
-              <div key={h.id} className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-3">
-                <div className="flex justify-between items-start border-b border-slate-800 pb-2">
-                  <div>
-                    <span className="text-[10px] text-amber-400 font-bold">{h.id}</span>
-                    <h4 className="font-bold text-sm text-white font-sans mt-0.5">{h.name}</h4>
+        {/* VIEW 4: BLOCKCHAIN & SILO IOT */}
+        {tab === 'blockchain' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-sans">
+              <div>
+                <span className="text-amber-400 font-bold block text-sm">Polygon PoS Blockchain QAC &amp; Buffer Silo IoT Telemetry</span>
+                <span className="text-slate-400 text-xs">Cryptographic SHA-256 certificate hashes prevent middleman adulteration, while automated silo gas sensors trigger rot alerts 72 hours in advance.</span>
+              </div>
+              <button
+                onClick={handleVerifyQr}
+                disabled={qrVerified}
+                className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs shadow-lg shadow-amber-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {qrVerified ? '✅ Blockchain Cryptographic Hash Verified Authentic!' : 'Verify Certificate on Blockchain'}
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {blockchainRecords.map((bc: any) => (
+                <div key={bc.qac_certificate_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-amber-400 font-bold">{bc.qac_certificate_id}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{bc.mandi_hub}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">{bc.farmer_name} • {bc.lot_weight_quintals} Qtl</p>
+                    </div>
+                    <span className="px-3 py-1 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full font-bold text-[10px]">
+                      {bc.grade_a_certified_pct}% Gr.A Verified
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between"><span className="text-slate-400">Ledger:</span><span className="text-cyan-300">{bc.blockchain_ledger}</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Assayer Sign:</span><span className="text-amber-400">{bc.assayer_digital_sign}</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Silo Microclimate:</span><strong className="text-white">{bc.silo_ambient_temp_c}°C • {bc.silo_relative_humidity_pct}% RH</strong></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Ethylene Gas:</span><strong className="text-emerald-400">{bc.ethylene_ppm} ppm (Safe &lt;1.0)</strong></div>
+                  </div>
+
+                  <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-[10px] text-slate-400 truncate">
+                    SHA-256: <span className="text-amber-400">{bc.sha256_hash}</span>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-2 text-center text-[11px]">
-                  <div className="p-2 bg-slate-950 rounded-xl"><span className="text-slate-500 block text-[9px]">DAILY TARGET</span><span className="text-white font-bold">{h.target}</span></div>
-                  <div className="p-2 bg-slate-950 rounded-xl"><span className="text-slate-500 block text-[9px]">PROCURED</span><span className="text-cyan-400 font-bold">{h.procured}</span></div>
-                </div>
-                <div className="p-3 bg-slate-950 rounded-xl space-y-1 text-slate-400 text-[10px]">
-                  <div className="flex justify-between"><span>Silo Temp / RH:</span><span className="text-white">{h.temp} • {h.rh}</span></div>
-                  <div className="flex justify-between"><span>Quality Score:</span><span className="text-emerald-400 font-bold">{h.qIdx}</span></div>
-                  <div className="flex justify-between"><span>Trucks Waiting:</span><span className="text-amber-400 font-bold">{h.trucks} Trucks</span></div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
 
-        {/* VIEW 4: STUDIO */}
+        {/* VIEW 5: STUDIO */}
         {tab === 'studio' && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 text-xs">
             <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
@@ -18443,7 +18580,7 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
                   <div className="flex justify-between font-bold mb-1"><span className="text-slate-300">Total Lot Weight:</span><span className="font-mono text-cyan-400">{studioWeight} Qtl</span></div>
                   <input type="range" min="10" max="500" step="5" value={studioWeight} onChange={(e) => setStudioWeight(Number(e.target.value))} className="w-full accent-cyan-500" />
                 </div>
-                <button onClick={runSim} className="w-full py-3 bg-amber-500 text-slate-950 font-black rounded-2xl text-xs font-sans">
+                <button onClick={runSim} className="w-full py-3 bg-amber-500 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-amber-500/20 active:scale-95 transition-all">
                   Run Live Optical Assaying Inference
                 </button>
               </div>
@@ -18473,33 +18610,51 @@ curl -X GET "https://worldmonitor.ntro.local\${selectedVuln.comp.replace('{node_
           </div>
         )}
 
-        {/* VIEW 5: DISPUTES */}
+        {/* VIEW 6: DISPUTES */}
         {tab === 'disputes' && (
-          <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4 text-xs font-mono">
-            <h4 className="font-bold text-sm text-white font-sans flex items-center gap-2">
-              <Gavel className="w-4 h-4 text-amber-400" />
-              <span>NAFED / APMC Quality Dispute Resolution Tribunal</span>
-            </h4>
-            <div className="space-y-3">
-              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
-                <div className="flex justify-between"><span className="text-amber-400 font-bold">DISP-2026-012 • Lot: LOT-KURNOOL</span><span className="text-emerald-400 font-bold">RESOLVED FAVOR FARMER</span></div>
-                <div className="grid grid-cols-2 gap-2 text-[11px]">
-                  <div className="p-2.5 bg-rose-950/30 rounded-xl text-rose-300"><strong>Manual Assayer:</strong> 35% URS claimed</div>
-                  <div className="p-2.5 bg-emerald-950/30 rounded-xl text-emerald-300"><strong>AI Vision:</strong> 15.5% URS, 58% Grade A confirmed</div>
-                </div>
-                <div className="text-slate-300 font-sans text-xs pt-1 border-t border-slate-900">
-                  <strong>Verdict:</strong> Payout upgraded to ₹1,820/Qtl (+₹35,150 compensated to farmer).
-                </div>
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-sans">
+              <div>
+                <span className="text-amber-400 font-bold block text-sm">NAFED / APMC Quality Dispute Resolution Tribunal</span>
+                <span className="text-slate-400 text-xs">Provides automated second-opinion audits with 3-angle optical photographic evidence, protecting farmers against arbitrary assayer dockage.</span>
               </div>
+              <button
+                onClick={handleSubmitAppeal}
+                disabled={appealSubmitted}
+                className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs shadow-lg shadow-amber-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {appealSubmitted ? '✅ Second-Opinion Appeal Lodged with Tribunal!' : 'Submit Farmer Re-Grading Appeal'}
+              </button>
+            </div>
+
+            <div className="space-y-3">
+              {disputes.map((d: any) => (
+                <div key={d.dispute_id} className="p-5 bg-slate-900 rounded-2xl border border-slate-800 space-y-2.5">
+                  <div className="flex justify-between items-center">
+                    <span className="text-amber-400 font-bold">{d.dispute_id} • {d.mandi}</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      RESOLVED FAVOR FARMER
+                    </span>
+                  </div>
+                  <div className="text-white font-bold font-sans text-xs">Farmer: {d.farmer} (Lot: {d.lot_id})</div>
+                  <div className="grid grid-cols-2 gap-2 text-[11px]">
+                    <div className="p-2.5 bg-rose-950/30 rounded-xl text-rose-300"><strong>Manual Assayer:</strong> {d.manual_grader_claim}</div>
+                    <div className="p-2.5 bg-emerald-950/30 rounded-xl text-emerald-300"><strong>AI Vision:</strong> {d.ai_cv_audit_result}</div>
+                  </div>
+                  <div className="text-slate-300 font-sans text-xs pt-1 border-t border-slate-800">
+                    <strong>Verdict:</strong> {d.resolution}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
 
       </div>
-  );
-}
+    );
+  }
 
-    /* =========================================================================
+  /* =========================================================================
      INDIAN RAILWAYS / SIH26028 DYNAMIC TRAIN ETA FORECASTING ENGINE
      ========================================================================= */
   /* =========================================================================

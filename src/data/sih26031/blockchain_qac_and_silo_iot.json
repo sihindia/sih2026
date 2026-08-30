@@ -1,0 +1,32 @@
+[
+  {
+    "qac_certificate_id": "QAC-DOCA-2026-LAS-08194",
+    "mandi_hub": "Lasalgaon NAFED Mega Buffer Hub",
+    "farmer_name": "Dnyaneshwar Vitthal Shinde",
+    "lot_weight_quintals": 140.0,
+    "grade_a_certified_pct": 82.5,
+    "blockchain_ledger": "Polygon PoS / AgriChain Smart Contract",
+    "sha256_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assayer_digital_sign": "DOCA-INSP-NASHIK-7718",
+    "silo_ambient_temp_c": 24.2,
+    "silo_relative_humidity_pct": 65.0,
+    "ethylene_ppm": 0.4,
+    "ventilation_mode": "ACTIVE_FORCED_CROSS_DRAFT",
+    "spoilage_risk_index": "LOW_SAFE_STORAGE"
+  },
+  {
+    "qac_certificate_id": "QAC-DOCA-2026-MAH-04218",
+    "mandi_hub": "Mahuva Dehydration Terminal",
+    "farmer_name": "Hareshbhai Patel",
+    "lot_weight_quintals": 220.0,
+    "grade_a_certified_pct": 88.0,
+    "blockchain_ledger": "Polygon PoS / AgriChain Smart Contract",
+    "sha256_hash": "8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4",
+    "assayer_digital_sign": "DOCA-INSP-BHAVNAGAR-4401",
+    "silo_ambient_temp_c": 23.5,
+    "silo_relative_humidity_pct": 62.0,
+    "ethylene_ppm": 0.3,
+    "ventilation_mode": "CONTROLLED_ATMOSPHERE_CHAMBER",
+    "spoilage_risk_index": "OPTIMAL_PREMIUM_EXPORT"
+  }
+]
