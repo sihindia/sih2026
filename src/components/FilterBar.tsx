@@ -53,7 +53,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     filter.onlyFavorites;
 
   return (
-    <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-16 z-30 shadow-sm transition-colors">
+    <div className="bg-white border-b border-slate-200 sticky top-16 z-30 shadow-sm transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
         
         {/* Top Controls Row */}
@@ -69,12 +69,12 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               value={filter.searchQuery}
               onChange={(e) => setFilter(prev => ({ ...prev, searchQuery: e.target.value }))}
               placeholder="Search by PS ID (e.g. 26001), Title, Ministry, or Keyword..."
-              className="w-full pl-10 pr-10 py-2.5 bg-slate-50 dark:bg-slate-800/90 border border-slate-300/80 dark:border-slate-700/80 rounded-xl text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 transition-all"
+              className="w-full pl-10 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-900/30 focus:border-[#0B192C] transition-all"
             />
             {filter.searchQuery && (
               <button
                 onClick={() => setFilter(prev => ({ ...prev, searchQuery: '' }))}
-                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-700"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -85,12 +85,12 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <div className="flex items-center gap-2 sm:gap-3 shrink-0 flex-wrap">
             
             {/* Sort Selector */}
-            <div className="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-2.5 py-1.5 text-xs text-slate-700 dark:text-slate-300">
+            <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs text-slate-700">
               <ArrowUpDown className="w-3.5 h-3.5 text-slate-400" />
               <select
                 value={filter.sortBy}
                 onChange={(e) => setFilter(prev => ({ ...prev, sortBy: e.target.value as any }))}
-                className="bg-transparent focus:outline-none cursor-pointer pr-1 font-medium"
+                className="bg-transparent focus:outline-none cursor-pointer pr-1 font-medium text-slate-800"
               >
                 <option value="id_asc">PS ID (Ascending)</option>
                 <option value="id_desc">PS ID (Descending)</option>
@@ -102,13 +102,13 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             </div>
 
             {/* View Mode Buttons */}
-            <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
+            <div className="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-1.5 rounded-lg text-xs font-medium transition-colors ${
                   viewMode === 'grid'
-                    ? 'bg-white dark:bg-slate-900 text-brand-600 dark:text-brand-400 shadow-sm'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    ? 'bg-[#0B192C] text-white shadow-sm'
+                    : 'text-slate-600 hover:text-[#0B192C]'
                 }`}
                 title="Grid Cards View"
               >
@@ -118,8 +118,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onClick={() => setViewMode('split')}
                 className={`p-1.5 rounded-lg text-xs font-medium transition-colors ${
                   viewMode === 'split'
-                    ? 'bg-white dark:bg-slate-900 text-brand-600 dark:text-brand-400 shadow-sm'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    ? 'bg-[#0B192C] text-white shadow-sm'
+                    : 'text-slate-600 hover:text-[#0B192C]'
                 }`}
                 title="Split Reader View"
               >
@@ -129,8 +129,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onClick={() => setViewMode('table')}
                 className={`p-1.5 rounded-lg text-xs font-medium transition-colors ${
                   viewMode === 'table'
-                    ? 'bg-white dark:bg-slate-900 text-brand-600 dark:text-brand-400 shadow-sm'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    ? 'bg-[#0B192C] text-white shadow-sm'
+                    : 'text-slate-600 hover:text-[#0B192C]'
                 }`}
                 title="Dense Table View"
               >
@@ -140,8 +140,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onClick={() => setViewMode('analytics')}
                 className={`p-1.5 rounded-lg text-xs font-medium transition-colors ${
                   viewMode === 'analytics'
-                    ? 'bg-white dark:bg-slate-900 text-brand-600 dark:text-brand-400 shadow-sm'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    ? 'bg-[#0B192C] text-white shadow-sm'
+                    : 'text-slate-600 hover:text-[#0B192C]'
                 }`}
                 title="Analytics & Charts"
               >

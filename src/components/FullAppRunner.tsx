@@ -138,23 +138,23 @@ export const FullAppRunner: React.FC<FullAppRunnerProps> = ({ ps, onClose }) => 
         className="bg-white dark:bg-slate-900 w-full max-w-7xl h-[95vh] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex items-center justify-between gap-4 shrink-0">
+        {/* Header - Navy Blue Theme */}
+        <div className="p-4 sm:p-5 border-b border-[#1E3E62] bg-[#0B192C] text-white flex items-center justify-between gap-4 shrink-0 shadow-md">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white font-black text-base shadow-md shadow-brand-500/20">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-500 to-cyan-400 flex items-center justify-center text-[#0B192C] font-black text-base shadow-md">
               ⚡
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded-lg bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800">
+                <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded-lg bg-[#102A43] text-cyan-300 border border-[#243B53]">
                   {psId}
                 </span>
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 flex items-center gap-1">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   Live Product Workspace
                 </span>
               </div>
-              <h2 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white truncate max-w-2xl mt-0.5">
+              <h2 className="text-sm sm:text-base font-extrabold text-white truncate max-w-2xl mt-0.5">
                 {ps.title}
               </h2>
             </div>
@@ -163,10 +163,10 @@ export const FullAppRunner: React.FC<FullAppRunnerProps> = ({ ps, onClose }) => 
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopyDirectUrl}
-              className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-300 text-xs font-semibold flex items-center gap-1.5 transition-colors border border-slate-200 dark:border-slate-700"
+              className="px-3 py-1.5 rounded-xl bg-[#102A43] hover:bg-[#1E3E62] text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-colors border border-[#243B53]"
               title="Copy Direct Shareable Live URL"
             >
-              {copiedDirectUrl ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5 text-brand-500" />}
+              {copiedDirectUrl ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-cyan-400" />}
               <span className="hidden sm:inline">{copiedDirectUrl ? 'URL Copied!' : 'Copy Live URL'}</span>
             </button>
 
@@ -174,7 +174,7 @@ export const FullAppRunner: React.FC<FullAppRunnerProps> = ({ ps, onClose }) => 
               href={`/?app=${psId}`}
               target="_blank"
               rel="noreferrer"
-              className="px-3 py-1.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-sm"
+              className="px-3 py-1.5 rounded-xl bg-[#1E3E62] hover:bg-[#243B53] text-white text-xs font-bold flex items-center gap-1.5 transition-colors border border-blue-400/40 shadow-sm"
               title="Launch standalone full-window application"
             >
               <ExternalLink className="w-3.5 h-3.5" />
@@ -183,7 +183,7 @@ export const FullAppRunner: React.FC<FullAppRunnerProps> = ({ ps, onClose }) => 
 
             <button
               onClick={onClose}
-              className="p-2 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="p-2 text-slate-300 hover:text-white rounded-xl hover:bg-[#1E3E62] transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -191,16 +191,16 @@ export const FullAppRunner: React.FC<FullAppRunnerProps> = ({ ps, onClose }) => 
         </div>
 
         {/* 3 Streamlined Tabs */}
-        <div className="bg-slate-100 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 px-4 sm:px-6 py-2 flex items-center gap-2 overflow-x-auto shrink-0 text-xs font-bold">
+        <div className="bg-slate-50 border-b border-slate-200 px-4 sm:px-6 py-2 flex items-center gap-2 overflow-x-auto shrink-0 text-xs font-bold">
           <button
             onClick={() => setActiveTab('app')}
             className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 ${
               activeTab === 'app'
-                ? 'bg-white dark:bg-slate-800 text-brand-600 dark:text-brand-400 shadow-sm border border-slate-200/80 dark:border-slate-700'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                ? 'bg-white text-[#0B192C] shadow-sm border border-slate-200 font-black'
+                : 'text-slate-600 hover:text-[#0B192C]'
             }`}
           >
-            <Activity className="w-4 h-4 text-emerald-500" />
+            <Activity className="w-4 h-4 text-emerald-600" />
             <span>⚡ Live Working Application</span>
           </button>
 
@@ -208,11 +208,11 @@ export const FullAppRunner: React.FC<FullAppRunnerProps> = ({ ps, onClose }) => 
             onClick={() => setActiveTab('tutorial')}
             className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 ${
               activeTab === 'tutorial'
-                ? 'bg-white dark:bg-slate-800 text-brand-600 dark:text-brand-400 shadow-sm border border-slate-200/80 dark:border-slate-700'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                ? 'bg-white text-[#0B192C] shadow-sm border border-slate-200 font-black'
+                : 'text-slate-600 hover:text-[#0B192C]'
             }`}
           >
-            <BookOpen className="w-4 h-4 text-indigo-500" />
+            <BookOpen className="w-4 h-4 text-blue-600" />
             <span>📖 Step-by-Step Setup Tutorial</span>
           </button>
 
@@ -220,21 +220,21 @@ export const FullAppRunner: React.FC<FullAppRunnerProps> = ({ ps, onClose }) => 
             onClick={() => setActiveTab('codebase')}
             className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 ${
               activeTab === 'codebase'
-                ? 'bg-white dark:bg-slate-800 text-brand-600 dark:text-brand-400 shadow-sm border border-slate-200/80 dark:border-slate-700'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                ? 'bg-white text-[#0B192C] shadow-sm border border-slate-200 font-black'
+                : 'text-slate-600 hover:text-[#0B192C]'
             }`}
           >
-            <FolderTree className="w-4 h-4 text-amber-500" />
-            <span>📁 Project Files & Folder Structure</span>
+            <FolderTree className="w-4 h-4 text-amber-600" />
+            <span>📁 Project Files &amp; Folder Structure</span>
           </button>
         </div>
 
-        {/* Viewport */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-slate-50/50 dark:bg-slate-950/50">
+        {/* Viewport on Pure White Background */}
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-white text-slate-900">
           
           {/* TAB 1: LIVE WORKING APPLICATION */}
           {activeTab === 'app' && (
-            <div className="space-y-6">
+            <div className="space-y-6 domain-app-white-theme bg-white text-slate-900 rounded-3xl">
               <DynamicDomainApp ps={ps} />
             </div>
           )}

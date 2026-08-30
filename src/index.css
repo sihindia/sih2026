@@ -5,6 +5,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #ffffff;
+  }
+  body {
+    background-color: #ffffff;
+    color: #0f172a;
   }
 }
 
@@ -15,16 +20,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(100, 116, 139, 0.08);
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.25);
+  background: #94a3b8;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.45);
+  background: #64748b;
 }
 
 /* Animation utilities */
@@ -35,4 +40,110 @@
 
 .animate-pulse-subtle {
   animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* =========================================================================
+   APPLICATION LAUNCH APP & DOMAIN APPS WHITE BACKGROUND & NAVY BLUE THEME
+   ========================================================================= */
+
+.domain-app-white-theme {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* Main Top Application Header Card inside Domain Apps -> Authoritative Navy Blue */
+.domain-app-white-theme > div > .bg-slate-900:first-child,
+.domain-app-white-theme > div > div:first-child > .bg-slate-900:first-child {
+  background-color: #0B192C !important;
+  border-color: #1E3E62 !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(11, 25, 44, 0.25) !important;
+}
+
+.domain-app-white-theme > div > .bg-slate-900:first-child .text-white,
+.domain-app-white-theme > div > div:first-child > .bg-slate-900:first-child .text-white {
+  color: #ffffff !important;
+}
+
+.domain-app-white-theme > div > .bg-slate-900:first-child .text-slate-400,
+.domain-app-white-theme > div > div:first-child > .bg-slate-900:first-child .text-slate-400 {
+  color: #cbd5e1 !important;
+}
+
+/* Interior Cards in Domain Apps -> Crisp White with Subtle Slate Borders & Light Shadow */
+.domain-app-white-theme .bg-slate-900:not(:first-child),
+.domain-app-white-theme .bg-slate-950 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+  box-shadow: 0 1px 3px 0 rgba(11, 25, 44, 0.04), 0 1px 2px -1px rgba(11, 25, 44, 0.04) !important;
+}
+
+/* Nested cards inside cards -> Clean Soft Off-White */
+.domain-app-white-theme .bg-slate-900 .bg-slate-950,
+.domain-app-white-theme .bg-slate-950 .bg-slate-900 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+/* Headings in White Cards -> Deep Navy Blue */
+.domain-app-white-theme .bg-slate-900:not(:first-child) h3,
+.domain-app-white-theme .bg-slate-900:not(:first-child) h4,
+.domain-app-white-theme .bg-slate-900:not(:first-child) h5,
+.domain-app-white-theme .bg-slate-950 h3,
+.domain-app-white-theme .bg-slate-950 h4,
+.domain-app-white-theme .bg-slate-950 h5 {
+  color: #0B192C !important;
+}
+
+/* Bold white text in white cards -> Deep Navy */
+.domain-app-white-theme .bg-slate-900:not(:first-child) .text-white,
+.domain-app-white-theme .bg-slate-950 .text-white {
+  color: #0B192C !important;
+}
+
+/* Slate text in white cards -> Readable Darker Slate */
+.domain-app-white-theme .bg-slate-900:not(:first-child) .text-slate-400,
+.domain-app-white-theme .bg-slate-950 .text-slate-400 {
+  color: #475569 !important;
+}
+
+.domain-app-white-theme .bg-slate-900:not(:first-child) .text-slate-300,
+.domain-app-white-theme .bg-slate-950 .text-slate-300 {
+  color: #334155 !important;
+}
+
+.domain-app-white-theme .bg-slate-900:not(:first-child) .text-slate-500,
+.domain-app-white-theme .bg-slate-950 .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Borders in domain apps */
+.domain-app-white-theme .border-slate-800,
+.domain-app-white-theme .border-slate-900 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Navigation Tabs in Domain Apps: Inactive Tabs */
+.domain-app-white-theme button.bg-slate-900,
+.domain-app-white-theme button.bg-slate-950 {
+  background-color: #f1f5f9 !important;
+  color: #102a43 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.domain-app-white-theme button.bg-slate-900:hover,
+.domain-app-white-theme button.bg-slate-950:hover {
+  background-color: #e2e8f0 !important;
+  color: #0B192C !important;
+}
+
+/* Active primary buttons with purple/amber/cyan/blue keep text readable */
+.domain-app-white-theme .bg-purple-500,
+.domain-app-white-theme .bg-cyan-500,
+.domain-app-white-theme .bg-amber-500,
+.domain-app-white-theme .bg-emerald-500 {
+  color: #0B192C !important;
+  font-weight: 800 !important;
 }

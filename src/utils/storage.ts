@@ -51,7 +51,7 @@ export const getStoredDarkMode = (): boolean => {
     if (raw !== null) {
       return raw === 'true';
     }
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return false;
   } catch (e) {
     return false;
   }
