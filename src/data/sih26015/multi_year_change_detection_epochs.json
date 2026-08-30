@@ -1,0 +1,53 @@
+[
+  {
+    "watershed_id": "WTR-BUND-01",
+    "name": "Bundelkhand Betwa Micro-Watershed",
+    "baseline_year": 2021,
+    "current_year": 2026,
+    "baseline_ndvi_mean": 0.28,
+    "current_ndvi_mean": 0.44,
+    "vegetation_gain_pct": 57.1,
+    "water_spread_area_baseline_ha": 42.0,
+    "water_spread_area_current_ha": 118.5,
+    "water_spread_expansion_pct": 182.1,
+    "groundwater_table_rise_m": 3.4,
+    "double_crop_area_gain_ha": 480.0,
+    "sediment_trapped_metric_tons": 14200,
+    "erosion_reduction_pct": 44.5,
+    "ecological_recovery_verdict": "SIGNIFICANT_ENVIRONMENTAL_REBOUND"
+  },
+  {
+    "watershed_id": "WTR-RAYAL-02",
+    "name": "Rayalaseema Semi-Arid Basin",
+    "baseline_year": 2021,
+    "current_year": 2026,
+    "baseline_ndvi_mean": 0.21,
+    "current_ndvi_mean": 0.31,
+    "vegetation_gain_pct": 47.6,
+    "water_spread_area_baseline_ha": 65.0,
+    "water_spread_area_current_ha": 142.0,
+    "water_spread_expansion_pct": 118.4,
+    "groundwater_table_rise_m": 2.1,
+    "double_crop_area_gain_ha": 340.0,
+    "sediment_trapped_metric_tons": 21800,
+    "erosion_reduction_pct": 36.0,
+    "ecological_recovery_verdict": "MODERATE_RECOVERY_DROUGHT_BUFFERED"
+  },
+  {
+    "watershed_id": "WTR-MARATH-03",
+    "name": "Marathwada Godavari Sub-Basin",
+    "baseline_year": 2021,
+    "current_year": 2026,
+    "baseline_ndvi_mean": 0.31,
+    "current_ndvi_mean": 0.52,
+    "vegetation_gain_pct": 67.7,
+    "water_spread_area_baseline_ha": 58.0,
+    "water_spread_area_current_ha": 175.0,
+    "water_spread_expansion_pct": 201.7,
+    "groundwater_table_rise_m": 4.2,
+    "double_crop_area_gain_ha": 620.0,
+    "sediment_trapped_metric_tons": 18500,
+    "erosion_reduction_pct": 52.0,
+    "ecological_recovery_verdict": "HIGH_IMPACT_STABILIZED_SILTATION"
+  }
+]

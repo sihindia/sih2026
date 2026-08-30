@@ -1,0 +1,47 @@
+[
+  {
+    "stream_id": "STRM-BUND-01",
+    "watershed_id": "WTR-BUND-01",
+    "stream_order": 3,
+    "strahler_classification": "Order 3 Main Drainage Channel",
+    "length_km": 8.4,
+    "catchment_area_sqkm": 24.2,
+    "average_slope_pct": 3.8,
+    "runoff_coefficient": 0.42,
+    "peak_monsoon_discharge_cumec": 38.5,
+    "recommended_structure": "Masonry Core Check Dam with Stilling Basin",
+    "existing_structures_count": 4,
+    "siting_suitability_score": 94,
+    "siting_coordinates": "25.4492° N, 78.5710° E"
+  },
+  {
+    "stream_id": "STRM-BUND-02",
+    "watershed_id": "WTR-BUND-01",
+    "stream_order": 2,
+    "strahler_classification": "Order 2 Ridge Tributary",
+    "length_km": 4.1,
+    "catchment_area_sqkm": 8.6,
+    "average_slope_pct": 6.2,
+    "runoff_coefficient": 0.55,
+    "peak_monsoon_discharge_cumec": 14.2,
+    "recommended_structure": "Continuous Contour Trenches (CCT) & Gabion Check",
+    "existing_structures_count": 6,
+    "siting_suitability_score": 88,
+    "siting_coordinates": "25.4560° N, 78.5880° E"
+  },
+  {
+    "stream_id": "STRM-RAYAL-01",
+    "watershed_id": "WTR-RAYAL-02",
+    "stream_order": 4,
+    "strahler_classification": "Order 4 Ephemeral Valley Floor",
+    "length_km": 14.8,
+    "catchment_area_sqkm": 46.5,
+    "average_slope_pct": 2.1,
+    "runoff_coefficient": 0.38,
+    "peak_monsoon_discharge_cumec": 62.0,
+    "recommended_structure": "Sub-Surface Dykes & Wide Percolation Tank",
+    "existing_structures_count": 8,
+    "siting_suitability_score": 91,
+    "siting_coordinates": "14.6819° N, 77.6006° E"
+  }
+]

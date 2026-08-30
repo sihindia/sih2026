@@ -121,6 +121,11 @@ import sih26016Stages from '../data/sih26016/rfctlarr_act_stages_workflow.json';
 import sih26016Families from '../data/sih26016/displaced_families_resettlement_registry.json';
 import sih26016Compensation from '../data/sih26016/compensation_calculator_and_solatium_benchmarks.json';
 import sih26016Watchdog from '../data/sih26016/rfctlarr_lapse_watchdog_and_escalation_alerts.json';
+import sih26015Basins from '../data/sih26015/watershed_basins_and_ecological_scores.json';
+import sih26015Structures from '../data/sih26015/geotagged_water_harvesting_structures.json';
+import sih26015Indices from '../data/sih26015/srishti_drishti_satellite_indices.json';
+import sih26015Streams from '../data/sih26015/drainage_morphology_and_stream_orders.json';
+import sih26015Changes from '../data/sih26015/multi_year_change_detection_epochs.json';
 
 interface DynamicDomainAppProps {
   ps: ProblemStatement;
@@ -2393,74 +2398,539 @@ export const DynamicDomainApp: React.FC<DynamicDomainAppProps> = ({ ps }) => {
     /* =========================================================================
      2. CADASTRAL GIS, WATERSHED & LAND ACQUISITION (SIH26015 & SIH26016)
      ========================================================================= */
+  /* =========================================================================
+     MINISTRY OF RURAL DEVELOPMENT / DoLR / SIH26015 SRISHTI-DRISHTI JALDRISHTI 360
+     Geospatial Techniques for Geo-Coded Images & 30m Satellite Watershed Analytics
+     ========================================================================= */
   if (psId === 'SIH26015') {
-    const watersheds = [
-      { id: "WTR-BUND-01", name: "Bundelkhand Betwa Micro-Watershed", loc: "Jhansi, UP", area: "3,450 Ha", ndvi: "+28.5%", moisture: "42.0%", structures: 18, capacity: "145,000 m³", score: "86.4/100", status: "Positive Ecological Impact" },
-      { id: "WTR-RAYAL-02", name: "Rayalaseema Semi-Arid Basin", loc: "Anantapur, AP", area: "5,200 Ha", ndvi: "+14.2%", moisture: "21.5%", structures: 32, capacity: "280,000 m³", score: "64.0/100", status: "Monitoring Active" },
-      { id: "WTR-MARATH-03", name: "Marathwada Godavari Sub-Basin", loc: "Beed, MH", area: "4,100 Ha", ndvi: "+34.0%", moisture: "48.0%", structures: 24, capacity: "195,000 m³", score: "91.2/100", status: "Stabilized Siltation" }
-    ];
+    const basins = sih26015Basins;
+    const structures = sih26015Structures;
+    const satelliteIndices = sih26015Indices;
+    const streamOrders = sih26015Streams;
+    const changeDetectionEpochs = sih26015Changes;
 
-    const photos = [
-      { id: "PHOTO-01", type: "Check Dam (Masonry Core)", lat: "25.4484°N", lng: "78.5685°E", holding: "88.0%", silt: "Low (12%)" },
-      { id: "PHOTO-02", type: "Percolation Tank with Silt Trap", lat: "25.4312°N", lng: "78.5810°E", holding: "94.0%", silt: "Optimal" },
-      { id: "PHOTO-03", type: "Continuous Contour Trench (CCT)", lat: "25.4520°N", lng: "78.5940°E", holding: "72.0%", silt: "Low" }
-    ];
+    const [selectedBasin, setSelectedBasin] = React.useState(basins[0]);
+    const [tab, setTab] = React.useState<'satellite' | 'cv_photos' | 'epochs' | 'streams' | 'scoring' | 'upload'>('satellite');
+    const [lang, setLang] = React.useState<'en' | 'hi' | 'mr'>('en');
 
-    const [selectedWtr, setSelectedWtr] = React.useState(watersheds[0]);
+    // Interactive Photo CV Inspection State
+    const [selectedStructure, setSelectedStructure] = React.useState(structures[0]);
+    const [cvInspected, setCvInspected] = React.useState(false);
+
+    // DEM Drainage Simulator State
+    const [selectedStream, setSelectedStream] = React.useState(streamOrders[0]);
+    const [sitingEvaluated, setSitingEvaluated] = React.useState(false);
+
+    // Upload Simulation State
+    const [uploadedSync, setUploadedSync] = React.useState(false);
+
+    const handleRunCvInspection = () => {
+      setCvInspected(true);
+      setTimeout(() => setCvInspected(false), 4000);
+    };
+
+    const handleRunSitingSolver = () => {
+      setSitingEvaluated(true);
+      setTimeout(() => setSitingEvaluated(false), 3500);
+    };
+
+    const handleTriggerBhuvanSync = () => {
+      setUploadedSync(true);
+      setTimeout(() => setUploadedSync(false), 4000);
+    };
+
+    const t = {
+      en: {
+        tag: "MINISTRY OF RURAL DEVELOPMENT • DoLR (SRISHTI-DRISHTI 360)",
+        desc: "Geospatial Visualization & AI Computer Vision for Geo-Coded Photos, 30m Satellite Multi-Spectral Indices & Watershed Health",
+        tabSatellite: "🛰️ SRISHTI-DRISHTI 30m Satellite",
+        tabCvPhotos: "🔬 Geo-Tagged Photo CV AI",
+        tabEpochs: "⏳ Multi-Year Change Detection",
+        tabStreams: "🏞️ DEM Drainage & Stream Orders",
+        tabScoring: "📊 Composite Health Score",
+        tabUpload: "📱 Bhuvan Field Photo Sync",
+      },
+      hi: {
+        tag: "ग्रामीण विकास मंत्रालय • भूमि संसाधन विभाग (सृष्टि-दृष्टि 360)",
+        desc: "जियो-कोडेड चित्रों व 30m उपग्रह डेटा का भू-स्थानिक विश्लेषण, कंप्यूटर विज़न जल-संरचना व जलग्रहण स्वास्थ्य",
+        tabSatellite: "🛰️ सृष्टि-दृष्टि 30m उपग्रह",
+        tabCvPhotos: "🔬 जियो-टैग्ड फोटो CV AI",
+        tabEpochs: "⏳ बहु-वर्षीय परिवर्तन विश्लेषण",
+        tabStreams: "🏞️ DEM जल निकासी व धारा क्रम",
+        tabScoring: "📊 समग्र पारिस्थितिक स्कोर",
+        tabUpload: "📱 भुवन फील्ड फोटो सिंक",
+      },
+      mr: {
+        tag: "ग्रामीण विकास मंत्रालय • भू-संसाधन विभाग (सृष्टी-दृष्टी 360)",
+        desc: "जियो-कोडेड छायाचित्रे व ३० मीटर उपग्रह माहितीचे विश्लेषण, कृत्रिम बुद्धिमत्ता जलसंधारण व पाणलोट आरोग्य",
+        tabSatellite: "🛰️ सृष्टी-दृष्टी ३०मी उपग्रह",
+        tabCvPhotos: "🔬 जियो-टॅग्ड फोटो CV AI",
+        tabEpochs: "⏳ बहुवर्षीय बदल मोजमाप",
+        tabStreams: "🏞️ DEM प्रवाह व प्रवाह क्रम",
+        tabScoring: "📊 पाणलोट आरोग्य निर्देशांक",
+        tabUpload: "📱 भुवन फील्ड फोटो सिंक",
+      }
+    }[lang];
 
     return (
-      <div className="space-y-6">
-        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="space-y-6 font-sans">
+        {/* Header */}
+        <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold mb-1">
-              <Camera className="w-4 h-4 text-emerald-400" />
-              <span>DEPARTMENT OF LAND RESOURCES (DoLR) • SRISHTI-DRISHTI PLATFORM • {psId}</span>
+            <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 font-bold mb-1">
+              <Camera className="w-4 h-4 text-cyan-400" />
+              <span>{t.tag} • {psId}</span>
             </div>
             <h3 className="text-xl font-black">{ps.title}</h3>
-            <p className="text-xs text-slate-400 mt-1">Geospatial Interpretation of Geo-Coded Images, 30m Satellite Datasets & Watershed Conservation Health</p>
+            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">{t.desc}</p>
           </div>
-          <span className="px-4 py-2 bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-2xl text-xs font-bold">
-            SRISHTI-DRISHTI Synced
-          </span>
+          <div className="flex items-center gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 shrink-0">
+            <Globe className="w-4 h-4 text-cyan-400 ml-1.5" />
+            {(['en', 'hi', 'mr'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded-xl text-xs font-bold transition-colors ${
+                  lang === l ? 'bg-cyan-500 text-slate-950 font-black' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {l === 'en' ? 'English' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {watersheds.map((w) => (
-            <button key={w.id} onClick={() => setSelectedWtr(w)} className={`p-4 rounded-2xl border text-left transition-all ${
-              selectedWtr.id === w.id ? 'bg-emerald-950/60 border-emerald-500 text-white shadow-md ring-1 ring-emerald-400' : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
-            }`}>
-              <div className="text-[10px] font-mono text-emerald-400 font-bold">{w.id}</div>
-              <div className="text-xs font-bold truncate text-white mt-0.5">{w.name.split(' ')[0]} {w.name.split(' ')[1]}</div>
-              <div className="text-[11px] text-slate-400 mt-1">{w.loc} • {w.area}</div>
-              <div className="mt-2 text-[10px] flex justify-between font-mono text-slate-400">
-                <span className="text-emerald-400 font-bold">NDVI: {w.ndvi}</span>
-                <span>Score: {w.score}</span>
-              </div>
+        {/* 6 Tabs */}
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3 text-xs font-bold font-sans">
+          {[
+            { id: 'satellite', label: t.tabSatellite },
+            { id: 'cv_photos', label: t.tabCvPhotos },
+            { id: 'epochs', label: t.tabEpochs },
+            { id: 'streams', label: t.tabStreams },
+            { id: 'scoring', label: t.tabScoring },
+            { id: 'upload', label: t.tabUpload },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setTab(item.id as any)}
+              className={`px-4 py-2.5 rounded-2xl transition-all ${
+                tab === item.id
+                  ? 'bg-cyan-500 text-slate-950 font-black shadow-lg shadow-cyan-500/20'
+                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              {item.label}
             </button>
           ))}
         </div>
 
-        <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
-          <h4 className="font-bold text-sm text-white flex items-center gap-2">
-            <Camera className="w-4 h-4 text-cyan-400" />
-            <span>Geo-Tagged Field Structures & Water Holding Telemetry ({selectedWtr.name})</span>
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {photos.map((p) => (
-              <div key={p.id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-xs">
-                <div className="flex justify-between items-start">
-                  <span className="font-mono text-xs font-bold text-emerald-400">{p.id}</span>
-                  <span className="font-mono text-[10px] text-slate-500">{p.lat}, {p.lng}</span>
+        {/* TAB 1: SRISHTI-DRISHTI 30M SATELLITE INDICES */}
+        {tab === 'satellite' && (
+          <div className="space-y-6">
+            {/* Watershed Selector Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {basins.map((b: any) => (
+                <button
+                  key={b.watershed_id}
+                  onClick={() => setSelectedBasin(b)}
+                  className={`p-5 rounded-2xl border text-left transition-all ${
+                    selectedBasin.watershed_id === b.watershed_id
+                      ? 'bg-cyan-950/60 border-cyan-500 text-white shadow-lg ring-1 ring-cyan-400'
+                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                    <span className="text-cyan-400">{b.watershed_id}</span>
+                    <span className="text-emerald-400">Score: {b.ecological_health_score}/100</span>
+                  </div>
+                  <div className="text-sm font-bold text-white mt-1 line-clamp-1">{b.name}</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">{b.location} • {b.area_hectares} Ha</div>
+                  <div className="mt-2 pt-2 border-t border-slate-800 flex justify-between text-[10px] font-mono">
+                    <span className="text-emerald-400">NDVI: +{b.ndvi_gain_pct}%</span>
+                    <span className="text-blue-400">Storage: {(b.storage_capacity_cum / 1000).toFixed(0)}k m³</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Selected Basin Remote Sensing Telemetry */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+              <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div>
+                    <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                      <Layers className="w-4 h-4 text-cyan-400" />
+                      <span>SRISHTI-DRISHTI 30m Multi-Spectral Surface Indices</span>
+                    </h4>
+                    <p className="text-slate-400 text-xs mt-0.5">{selectedBasin.name} ({selectedBasin.basin})</p>
+                  </div>
+                  <span className="px-3 py-1 bg-cyan-950 text-cyan-300 border border-cyan-800 rounded-full text-[10px] font-bold">
+                    30M SPATIAL RESOLUTION
+                  </span>
                 </div>
-                <div className="font-bold text-white text-sm">{p.type}</div>
-                <div className="flex justify-between items-center pt-2 border-t border-slate-900 font-mono text-[11px]">
-                  <span className="text-blue-400 font-bold">Water: {p.holding}</span>
-                  <span className="text-slate-400">Silt: {p.silt}</span>
+
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">NDVI VEGETATION GAIN</span>
+                    <strong className="text-emerald-400 text-base block mt-0.5">+{selectedBasin.ndvi_gain_pct}%</strong>
+                    <span className="text-[9px] text-slate-500">Post-Monsoon Biomass</span>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">SOIL MOISTURE (SMI)</span>
+                    <strong className="text-cyan-400 text-base block mt-0.5">{selectedBasin.soil_moisture_pct}%</strong>
+                    <span className="text-[9px] text-slate-500">Sentinel-1 C-Band SAR</span>
+                  </div>
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                    <span className="text-slate-500 text-[9px] block">WATER HARVESTING</span>
+                    <strong className="text-blue-400 text-base block mt-0.5">{selectedBasin.active_structures_count} Units</strong>
+                    <span className="text-[9px] text-slate-500">Active Dams &amp; Ponds</span>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Total Live Impoundment:</span>
+                    <strong className="text-white">{selectedBasin.storage_capacity_cum.toLocaleString()} m³</strong>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Silt Bed Status:</span>
+                    <strong className="text-emerald-400">{selectedBasin.siltation_level}</strong>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Intervention Verdict:</span>
+                    <span className="text-cyan-300 font-bold">{selectedBasin.monitoring_status}</span>
+                  </div>
                 </div>
               </div>
-            ))}
+
+              {/* Satellite Formulas Card */}
+              <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+                <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-cyan-400" />
+                  <span>Spectral Index Formulations</span>
+                </h4>
+
+                <div className="space-y-3">
+                  {satelliteIndices.map((idx: any) => (
+                    <div key={idx.index} className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1">
+                      <div className="flex justify-between items-center text-[10px]">
+                        <strong className="text-cyan-400 font-sans">{idx.index.split('(')[0]}</strong>
+                        <span className="text-slate-500">{idx.satellite_platform.split(' ')[0]}</span>
+                      </div>
+                      <div className="text-emerald-300 font-mono text-[11px] font-bold">{idx.formula}</div>
+                      <p className="text-slate-400 font-sans text-[10px] leading-relaxed pt-1">
+                        {idx.purpose}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* TAB 2: COMPUTER VISION GEO-TAGGED FIELD PHOTO INTERPRETER */}
+        {tab === 'cv_photos' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="p-4 bg-cyan-950/40 rounded-3xl border border-cyan-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-cyan-200 font-sans">
+              <div>
+                <strong className="text-white text-sm block">🔬 Computer Vision Geo-Tagged Field Photo Interpretation AI</strong>
+                <span>Deep learning CNN analyzes smartphone photos uploaded by WDC-PMKSY field officers to classify water harvesting structures, verify water impoundment %, and detect siltation buildup.</span>
+              </div>
+              <button
+                onClick={handleRunCvInspection}
+                disabled={cvInspected}
+                className="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-xl text-xs font-sans shadow-md transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {cvInspected ? '✅ CV Inspection Completed: 96.4% Conf' : 'Run Photo Interpretation AI'}
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {structures.map((st: any) => (
+                <div
+                  key={st.structure_id}
+                  onClick={() => setSelectedStructure(st)}
+                  className={`p-5 bg-slate-900 rounded-3xl border transition-all cursor-pointer space-y-3 ${
+                    selectedStructure.structure_id === st.structure_id ? 'border-cyan-500 ring-1 ring-cyan-400' : 'border-slate-800 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-cyan-400 font-bold">{st.structure_id}</span>
+                      <h4 className="font-bold text-white font-sans text-xs mt-0.5">{st.type}</h4>
+                      <p className="text-[10px] text-slate-400">{st.coordinates}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-300 border border-blue-800 text-[10px] font-bold">
+                      {st.water_holding_pct}% Water
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-slate-400">
+                      <span>Silt Bed Condition:</span>
+                      <strong className="text-emerald-400">{st.silt_status.split('(')[0]}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-400">
+                      <span>Aquifer Impact:</span>
+                      <strong className="text-cyan-300">{st.impact}</strong>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-800 text-[10px] text-slate-500 font-sans truncate">
+                    Inspected By: {st.inspected_by}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: MULTI-YEAR CHANGE DETECTION EPOCHS */}
+        {tab === 'epochs' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {changeDetectionEpochs.map((ep: any) => (
+                <div key={ep.watershed_id} className="p-6 bg-slate-900 rounded-3xl border border-slate-800 space-y-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-cyan-400 font-bold">{ep.watershed_id}</span>
+                      <h4 className="font-bold text-base text-white font-sans mt-0.5">{ep.name}</h4>
+                      <p className="text-slate-400 text-[11px] font-sans">Baseline {ep.baseline_year} vs Current {ep.current_year}</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                      +{ep.vegetation_gain_pct}% Biomass
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 text-center">
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">WATER SPREAD EXPANSION</span>
+                      <strong className="text-blue-400 text-sm block mt-0.5">+{ep.water_spread_expansion_pct}%</strong>
+                      <span className="text-[8px] text-slate-500">{ep.water_spread_area_baseline_ha} Ha &rarr; {ep.water_spread_area_current_ha} Ha</span>
+                    </div>
+                    <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800">
+                      <span className="text-slate-500 text-[9px] block">GROUNDWATER TABLE</span>
+                      <strong className="text-emerald-400 text-sm block mt-0.5">+{ep.groundwater_table_rise_m} meters</strong>
+                      <span className="text-[8px] text-slate-500">Dug Well Lift</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5 font-sans">
+                    <div className="flex justify-between text-slate-300">
+                      <span>Double-Cropped Area Gain:</span>
+                      <strong className="text-cyan-400 font-mono">+{ep.double_crop_area_gain_ha} Hectares</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span>Sediment Trapped:</span>
+                      <strong className="text-amber-400 font-mono">{ep.sediment_trapped_metric_tons.toLocaleString()} Tons</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span>Soil Erosion Reduction:</span>
+                      <strong className="text-emerald-400 font-mono">-{ep.erosion_reduction_pct}% Runoff Loss</strong>
+                    </div>
+                  </div>
+
+                  <div className="p-2.5 bg-cyan-950/40 rounded-xl text-cyan-200 text-[10px] text-center font-bold">
+                    {ep.ecological_recovery_verdict.replace(/_/g, ' ')}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: DEM DRAINAGE BASIN & STRAHLER STREAM ORDER */}
+        {tab === 'streams' && (
+          <div className="space-y-6 font-mono text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {streamOrders.map((st: any) => (
+                <div
+                  key={st.stream_id}
+                  onClick={() => setSelectedStream(st)}
+                  className={`p-6 bg-slate-900 rounded-3xl border transition-all cursor-pointer space-y-3 ${
+                    selectedStream.stream_id === st.stream_id ? 'border-cyan-500 ring-1 ring-cyan-400' : 'border-slate-800 hover:bg-slate-800/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-cyan-400 font-bold">{st.stream_id}</span>
+                      <h4 className="font-bold text-white font-sans text-sm mt-0.5">{st.strahler_classification}</h4>
+                      <p className="text-[11px] text-slate-400 font-sans">Order {st.stream_order} Channel ({st.length_km} km)</p>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-slate-950 text-cyan-300 border border-slate-800 text-[10px] font-bold">
+                      {st.siting_suitability_score}% Match
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">CATCHMENT</span>
+                      <strong className="text-white text-xs block mt-0.5">{st.catchment_area_sqkm} km²</strong>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">SLOPE GRADIENT</span>
+                      <strong className="text-amber-400 text-xs block mt-0.5">{st.average_slope_pct}%</strong>
+                    </div>
+                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800">
+                      <span className="text-slate-500 text-[8px] block">PEAK RUNOFF</span>
+                      <strong className="text-blue-400 text-xs block mt-0.5">{st.peak_monsoon_discharge_cumec} m³/s</strong>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 space-y-1 font-sans text-[11px]">
+                    <span className="text-slate-400 block text-[10px]">AI RECOMMENDED STRUCTURE:</span>
+                    <strong className="text-emerald-400">{st.recommended_structure}</strong>
+                    <div className="text-[10px] text-slate-500 pt-1 border-t border-slate-900">
+                      Optimal GPS Siting: {st.siting_coordinates}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Siting Solver Console */}
+            <div className="p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span className="text-cyan-400 font-bold block text-sm font-sans">Hydrological Siting Optimization Solver (Q = C × I × A)</span>
+                <span className="text-slate-400 text-xs font-sans">Evaluates DEM flow accumulation and upstream slope gradient to prevent structure damage from flash floods.</span>
+              </div>
+              <button
+                onClick={handleRunSitingSolver}
+                disabled={sitingEvaluated}
+                className="px-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-cyan-500/20 transition-all active:scale-95 disabled:opacity-50 shrink-0"
+              >
+                {sitingEvaluated ? '✅ Optimal Check Dam Siting Confirmed!' : 'Execute Hydrological Siting Solver'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 5: COMPOSITE WATERSHED HEALTH SCORE (0-100) */}
+        {tab === 'scoring' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            <div className="lg:col-span-7 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                  <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                    <Activity className="w-4 h-4 text-cyan-400" />
+                    <span>Multi-Criteria Watershed Ecological Sustainability Matrix</span>
+                  </h4>
+                  <p className="text-slate-400 text-xs mt-0.5">{selectedBasin.name}</p>
+                </div>
+                <div className="text-right">
+                  <span className="text-3xl font-black text-emerald-400 font-sans">{selectedBasin.ecological_health_score}</span>
+                  <span className="text-slate-500 text-[10px] block">/ 100 INDEX</span>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {[
+                  { name: 'Water Storage & Retention Resilience (25%)', val: 92, color: 'bg-blue-500', note: '145k m³ impoundment capacity active' },
+                  { name: 'Vegetation Canopy & Biomass Density (25%)', val: 86, color: 'bg-emerald-500', note: '+28.5% post-monsoon NDVI gain' },
+                  { name: 'Soil Erosion & Runoff Velocity Reduction (25%)', val: 88, color: 'bg-cyan-500', note: '44.5% sediment loss mitigated' },
+                  { name: 'Silt Bed Maintenance & Desilting Status (25%)', val: 80, color: 'bg-amber-500', note: 'Low 12% silt bed accumulation' },
+                ].map((crit) => (
+                  <div key={crit.name} className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-1.5">
+                    <div className="flex justify-between text-xs font-sans">
+                      <span className="text-slate-300 font-bold">{crit.name}</span>
+                      <strong className="text-white">{crit.val}/100</strong>
+                    </div>
+                    <div className="w-full h-2 bg-slate-900 rounded-full overflow-hidden">
+                      <div className={`h-full ${crit.color}`} style={{ width: `${crit.val}%` }}></div>
+                    </div>
+                    <span className="text-[10px] text-slate-500 font-sans block">{crit.note}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                <span>Policy &amp; Funding Advisory</span>
+              </h4>
+
+              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-3 font-sans text-xs">
+                <div className="text-emerald-400 font-bold text-sm">WDC-PMKSY Tier 1 Beneficiary Basin</div>
+                <p className="text-slate-300 leading-relaxed text-[11px]">
+                  Based on satellite NDVI recovery (+28.5%) and groundwater table stabilization, this watershed qualifies for an additional ₹1.45 Cr Phase-2 ridge-to-valley maintenance allocation.
+                </p>
+                <div className="pt-2 border-t border-slate-900 text-slate-400 text-[10px]">
+                  Central Sanction Order: DoLR/PMKSY/2026/WTR-BUND-01
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 6: BHUVAN FIELD PHOTO UPLOADER & SYNC */}
+        {tab === 'upload' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 font-mono text-xs">
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 flex flex-col items-center justify-center text-center space-y-4">
+              <div className="w-full h-48 border-2 border-dashed border-cyan-800/80 rounded-2xl bg-slate-950 flex flex-col items-center justify-center p-4 text-slate-400 space-y-2">
+                <Camera className="w-10 h-10 text-cyan-400 animate-pulse" />
+                <span className="font-bold text-white text-xs font-sans">Drag &amp; Drop Geo-Tagged Smartphone Photo</span>
+                <span className="text-[10px] text-slate-500">Extracts EXIF GPS coordinates (Lat, Lng, Azimuth &amp; Timestamp)</span>
+              </div>
+
+              <div className="w-full p-4 bg-slate-950 rounded-2xl border border-slate-800 text-left space-y-2">
+                <span className="text-[10px] text-slate-500 uppercase font-bold block">EXTRACTED EXIF GEOTAGS:</span>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Coordinates:</span>
+                  <strong className="text-cyan-400 font-mono">25.4484° N, 78.5685° E</strong>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Camera Bearing:</span>
+                  <strong className="text-white font-mono">142° SE (Downstream Apron)</strong>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Watershed Boundary:</span>
+                  <strong className="text-emerald-400 font-mono">Bundelkhand Betwa Catchment 4</strong>
+                </div>
+              </div>
+
+              <button
+                onClick={handleTriggerBhuvanSync}
+                disabled={uploadedSync}
+                className="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-2xl text-xs font-sans shadow-lg shadow-cyan-500/20 transition-all active:scale-95 disabled:opacity-50"
+              >
+                {uploadedSync ? '✅ Synced to DoLR / ISRO Bhuvan Drishti API!' : 'Upload & Sync with Bhuvan Drishti API'}
+              </button>
+            </div>
+
+            <div className="lg:col-span-6 bg-slate-900 p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h4 className="text-white font-bold text-sm font-sans flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400" />
+                <span>Automated Computer Vision Extraction Summary</span>
+              </h4>
+
+              <div className="p-5 bg-slate-950 rounded-2xl border border-slate-800 space-y-3 font-sans text-xs">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Classified Asset:</span>
+                  <strong className="text-white">Masonry Core Check Dam (Type B)</strong>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Live Water Storage:</span>
+                  <strong className="text-blue-400 font-mono">88.0% Impoundment Capacity</strong>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Silt Bed Depth:</span>
+                  <strong className="text-emerald-400 font-mono">15.0 cm (Low 12% Silt Ratio)</strong>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">Structural Integrity:</span>
+                  <strong className="text-emerald-400 font-mono">Zero Cracks / Leakage (Passed)</strong>
+                </div>
+                <div className="pt-2 border-t border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-400">Bhuvan Drishti Asset Token:</span>
+                  <span className="text-cyan-300 font-mono text-[10px]">BHUVAN-WTR-2026-0914</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
     );
   }
