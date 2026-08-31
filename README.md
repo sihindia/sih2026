@@ -7,6 +7,10 @@
 [![Vite 6](https://img.shields.io/badge/Frontend-React%2018%20%7C%20TypeScript%20%7C%20Vite%206-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://vitejs.dev/)
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI%20%7C%20Python%203.10+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 
+<div align="center">
+  <img src="public/sih_marketing_banner.jpg" alt="Smart India Hackathon 2026 Marketing Banner" width="100%" />
+</div>
+
 > **A national-scale open-source developer platform built by Flugelsoft Labs featuring interactive working applications, production-ready zero-cost ($0.00) cloud architectures, and starter codebases for all 175 Software Category Problem Statements in Smart India Hackathon (SIH) 2026.**
 
 ---
