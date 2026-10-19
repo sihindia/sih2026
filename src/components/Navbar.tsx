@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
                 categoryFilter === 'Hardware' ? 'bg-blue-100 text-[#0B192C]' : 'bg-[#1E3E62] text-white'
               }`}>
-                54
+                {totalAllCount - totalSoftwareCount}
               </span>
             </button>
             <button
@@ -304,7 +304,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => { setCategoryFilter('Hardware'); setMobileMenuOpen(false); }}
                 className={`flex-1 py-1.5 text-center rounded-lg ${categoryFilter === 'Hardware' ? 'bg-white text-[#0B192C] font-black shadow-sm' : 'text-slate-300'}`}
               >
-                Hardware (54)
+                Hardware ({totalAllCount - totalSoftwareCount})
               </button>
               <button
                 onClick={() => { setCategoryFilter('all'); setMobileMenuOpen(false); }}

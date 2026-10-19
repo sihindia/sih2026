@@ -1,6 +1,6 @@
 # SIH26043: A digital platform to crowdsource societal challenges and facilitate collaborative problem solving through universities and industry partnerships
 
-> **Ministry / Organization:** Governmcnt of Jharkhand  
+> **Ministry / Organization:** Government of Jharkhand  
 > **Theme:** Smart Education  
 > **Category:** Software  
 > **Platform:** Smart India Hackathon 2026  

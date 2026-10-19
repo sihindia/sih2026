@@ -1,7 +1,7 @@
 # SIH26176: ORCA Marine EcOsystem Reasoning with Collaborative Agents
 
 > **Ministry / Organization:** Indian Space Research Organisation(ISRO)  
-> **Theme:** Disaster Management  
+> **Theme:** Space Technology  
 > **Category:** Software  
 > **Platform:** Smart India Hackathon 2026  
 > **Hosting Cost:** $0.00 (100% Free-Tier Architecture)

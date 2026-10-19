@@ -1,6 +1,6 @@
 # SIH26042: Al-Powered Vernacular Pedagogy and Real-Time Translation Tool for Mother Tongue-Based Primary Education
 
-> **Ministry / Organization:** Governmcnt of Jharkhand  
+> **Ministry / Organization:** Government of Jharkhand  
 > **Theme:** Smart Education  
 > **Category:** Software  
 > **Platform:** Smart India Hackathon 2026  

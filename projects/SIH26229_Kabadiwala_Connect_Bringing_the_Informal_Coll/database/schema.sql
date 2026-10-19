@@ -1,4 +1,5 @@
--- Supabase / PostgreSQL Schema for SIH26229 (Kabadiwala Connect – Bringing the Informal Collector into the Formal Recycling Chain)
+-- Supabase / PostgreSQL Schema for SIH26229 (Kabadiwala Connect – Bringing the Informal Collector into the Formal Recycling
+Chain)
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- 1. Operational Telemetry & Record Table

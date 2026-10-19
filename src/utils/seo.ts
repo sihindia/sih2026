@@ -107,7 +107,7 @@ export const updateSeoMeta = (options: SeoOptions) => {
   if (typeof document === 'undefined') return;
 
   const defaultTitle = 'SIH 2026 Problem Statements Explorer & Full-Stack Applications | Flugelsoft Labs';
-  const defaultDesc = 'Explore, filter, and launch live working prototypes for all 175 Software Category Problem Statements in Smart India Hackathon (SIH) 2026. Built with a 100% free-tier stack by Flugelsoft Labs.';
+  const defaultDesc = 'Explore, filter, and launch live working prototypes for all 196 Software Category Problem Statements (265 Total) in Smart India Hackathon (SIH) 2026. Built with a 100% free-tier stack by Flugelsoft Labs.';
   const defaultKeywords = 'Smart India Hackathon, SIH 2026, SIH problem statements, SIH software projects, hackathon solutions, Flugelsoft Labs, GovTech, Indian Railways hackathon, NAFED onion grading, Coal India hackathon, DILRMP land records, free tier tech stack';
   const defaultUrl = `${BASE_DEPLOYMENT_URL}/`;
   const defaultImage = `${BASE_DEPLOYMENT_URL}/favicon.svg`;

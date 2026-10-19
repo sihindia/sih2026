@@ -40,6 +40,12 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8">
           
+          {/* New Batch Live Alert Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 mb-3 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>New Batch Live: 265 Problem Statements (196 Software + 69 Hardware)</span>
+          </div>
+
           {/* Motivation Tagline Banner */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-[#0B192C] border border-blue-200 mb-4 shadow-sm cursor-pointer hover:scale-105 transition-transform" onClick={onOpenAboutTutorial}>
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-current" />
@@ -64,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-black text-[#0B192C]">{totalSoftware}</div>
-              <div className="text-xs font-semibold text-slate-500">Software PS</div>
+              <div className="text-xs font-semibold text-slate-500">Software ({totalHardware} H/W)</div>
             </div>
           </div>
 
@@ -93,8 +99,8 @@ export const Hero: React.FC<HeroProps> = ({
               <Calendar className="w-5 h-5 text-amber-600" />
             </div>
             <div>
-              <div className="text-sm sm:text-base font-black text-[#0B192C] truncate">20 Sep 2026</div>
-              <div className="text-xs font-semibold text-slate-500">Idea Deadline</div>
+              <div className="text-sm sm:text-base font-black text-[#0B192C] truncate">28 Oct 2026</div>
+              <div className="text-xs font-semibold text-slate-500">Latest Batch Active</div>
             </div>
           </div>
 

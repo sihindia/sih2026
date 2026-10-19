@@ -1,6 +1,6 @@
 # SIH26106: AI-Powered Email Threat Detection, GeoLocation and Forensic Intelligence Platform
 
-> **Ministry / Organization:** All India Council for Technical Education (AICTE)  
+> **Ministry / Organization:** All India Council for Technical Education (Cyber Security Cell)  
 > **Theme:** Blockchain & Cybersecurity  
 > **Category:** Software  
 > **Platform:** Smart India Hackathon 2026  

@@ -1,6 +1,6 @@
 # SIH26041: AR-Based Vocational Training Simulator for Industrial Safety in Jharkhand's Mining & Manufacturing Sector
 
-> **Ministry / Organization:** Governmcnt of Jharkhand  
+> **Ministry / Organization:** Government of Jharkhand  
 > **Theme:** Smart Education  
 > **Category:** Software  
 > **Platform:** Smart India Hackathon 2026  

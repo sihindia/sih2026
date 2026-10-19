@@ -1,4 +1,5 @@
-# SIH26229: Kabadiwala Connect – Bringing the Informal Collector into the Formal Recycling Chain
+# SIH26229: Kabadiwala Connect – Bringing the Informal Collector into the Formal Recycling
+Chain
 
 > **Ministry / Organization:** Ministry of Mines (MoM)  
 > **Theme:** Clean & Green Technology  

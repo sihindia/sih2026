@@ -1,6 +1,6 @@
 # SIH26104: AI-Powered Real-Time Detection and Prevention of Voice Cloning Impersonation Attacks
 
-> **Ministry / Organization:** All India Council for Technical Education (AICTE)  
+> **Ministry / Organization:** All India Council for Technical Education (Cyber Security Cell)  
 > **Theme:** Blockchain & Cybersecurity  
 > **Category:** Software  
 > **Platform:** Smart India Hackathon 2026  

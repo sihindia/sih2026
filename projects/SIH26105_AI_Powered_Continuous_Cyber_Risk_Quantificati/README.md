@@ -1,6 +1,6 @@
 # SIH26105: AI-Powered Continuous Cyber Risk Quantification and Investment Optimization Platform
 
-> **Ministry / Organization:** All India Council for Technical Education (AICTE)  
+> **Ministry / Organization:** All India Council for Technical Education (Cyber Security Cell)  
 > **Theme:** Blockchain & Cybersecurity  
 > **Category:** Software  
 > **Platform:** Smart India Hackathon 2026  

@@ -11,7 +11,7 @@
   <img src="public/sih_marketing_banner.jpg" alt="Smart India Hackathon 2026 Marketing Banner" width="100%" />
 </div>
 
-> **A national-scale open-source developer platform built by Flugelsoft Labs featuring interactive working applications, production-ready zero-cost ($0.00) cloud architectures, and starter codebases for all 175 Software Category Problem Statements in Smart India Hackathon (SIH) 2026.**
+> **A national-scale open-source developer platform built by Flugelsoft Labs featuring interactive working applications, production-ready zero-cost ($0.00) cloud architectures, and starter codebases for all 196 Software Category Problem Statements (265 Total Problem Statements) in Smart India Hackathon (SIH) 2026.**
 
 ---
 
@@ -43,10 +43,11 @@
 
 SIH is a nationwide platform designed to crowdsource innovative, out-of-the-box digital and hardware solutions from college students across India to resolve pressing challenges faced by Central Ministries, State Government Departments, Public Sector Undertakings (PSUs), and premier private enterprises.
 
-### Core Structure of SIH 2026:
+### Core Structure of SIH 2026 (Updated Live Batch):
+* **Total Problem Statements**: **265 Total National Challenges** (continuously synchronized from [sih.gov.in](https://sih.gov.in/sih2026PS)).
 * **Two Tracks**:
-  * **Software Edition**: 175 real-world problem statements requiring web applications, mobile apps, artificial intelligence, machine learning, computer vision, blockchain, GIS mapping, and cybersecurity solutions.
-  * **Hardware Edition**: 54 complex problem statements involving IoT, robotics, electronics, automation, and physical engineering prototypes.
+  * **Software Edition**: **196 real-world problem statements** requiring web applications, mobile apps, artificial intelligence, machine learning, computer vision, blockchain, GIS mapping, and cybersecurity solutions.
+  * **Hardware Edition**: **69 complex problem statements** involving IoT, robotics, electronics, automation, and physical engineering prototypes.
 * **National Reach**: Over 5,00,000+ student applicants across 3,000+ higher educational institutions in India.
 * **Evaluation Matrix**: Idea submission evaluation $\rightarrow$ Internal college SPOC shortlisting $\rightarrow$ Regional nodal center Grand Finale with live hackathons (36 straight hours of non-stop coding).
 
@@ -55,7 +56,7 @@ SIH is a nationwide platform designed to crowdsource innovative, out-of-the-box 
 ## 💡 Why SIH is Nationally & Academically Important
 
 ### 1. For Students & Young Technologists
-* **Real-World Impact**: Solutions are not toy classroom assignments; they address real national bottlenecks in Indian Railways safety, coal logistics, agricultural price stabilization, land records digitization, and disaster management.
+* **Real-World Impact**: Solutions are not toy classroom assignments; they address real national bottlenecks in Indian Railways safety, coal logistics, agricultural price stabilization, land records digitization, defence simulation, and disaster management.
 * **Direct Interaction with Ministry Leadership**: Finalists pitch directly to Joint Secretaries, Chief Technology Officers, and domain scientists of participating Ministries and PSUs.
 * **Seed Grants & Cash Awards**: National winners receive cash prizes of **₹1,00,000 per problem statement**, incubation support, and direct fast-track pathways for government procurement and startup grants.
 * **Industry & Career Launchpad**: SIH finalists are actively recruited by top technology companies and tech consultancies for high-impact software engineering roles.
@@ -75,7 +76,7 @@ SIH is a nationwide platform designed to crowdsource innovative, out-of-the-box 
 
 This repository is an all-in-one companion built by **Flugelsoft Labs** to accelerate the development lifecycle of SIH 2026 participants:
 
-* 🔎 **175 Software Problem Statements Explorer**: Real-time multi-facet filtering by ministry, theme, technology domain, and keywords.
+* 🔎 **196 Software Problem Statements Explorer (265 Total)**: Real-time multi-facet filtering by ministry, theme, technology domain, and keywords.
 * ⚡ **Live Interactive Prototypes**: In-browser working applications with visual simulations, telemetry radars, optical inspectors, and algorithmic solvers.
 * 🏛️ **Government of India Navy Blue & White Theme**: Professional, high-contrast, accessible UI compliant with modern GovTech standards.
 * 📦 **Individual Microservices for Problem Statements**: Complete standalone project directories containing FastAPI backends, mock datasets, requirements, and Dockerfiles.
@@ -87,7 +88,7 @@ This repository is an all-in-one companion built by **Flugelsoft Labs** to accel
 
 | Resource | Canonical URL | Description |
 | :--- | :--- | :--- |
-| **Official Production Deployment** | [https://sih2026.flugelsoft.com/](https://sih2026.flugelsoft.com/) | Live public portal with all 175 explorer views |
+| **Official Production Deployment** | [https://sih2026.flugelsoft.com/](https://sih2026.flugelsoft.com/) | Live public portal with all 265 problem statement explorer views and 196 software applications |
 | **Local Development Server** | `http://localhost:5180/` | Local Vite development workspace |
 | **Official SIH Portal** | [https://sih.gov.in/sih2026PS](https://sih.gov.in/sih2026PS) | National Ministry portal for team registrations |
 
@@ -332,7 +333,8 @@ sih2026/
     │   ├── PSDetailModal.tsx                # Problem statement deep-dive modal
     │   └── ...
     ├── data/                                # Structured problem statements & telemetry data
-    │   ├── software_ps.json                 # 175 Software Category Problem Statements
+    │   ├── software_ps.json                 # 196 Software Category Problem Statements
+    │   ├── all_ps.json                      # 265 Total Problem Statements (Software + Hardware)
     │   ├── sih26031/                        # Datasets for Onion Caliper Vision & Silo IoT
     │   ├── sih26028/                        # Datasets for RTIS Live Radar & Fog Speeds
     │   ├── sih26027/                        # Datasets for KAVACH TSR & Shadow Blocks
@@ -351,6 +353,10 @@ sih2026/
 | **SIH26027** | **Ministry of Railways / CRIS / COIS** | **RailBlockAI 360** | Integrated rolling corridor Gantt scheduler, multi-department shadow block generator (Track, OHE, S&T), KAVACH 4.0 ATP & TSR safety portal, and Gati Shakti section capacity gains analytics. |
 | **SIH26024** | **Ministry of Coal / Coal India (CIL)** | **CoalLogistics 360** | Multi-modal railway rake vs. road freight cost-matrix optimizer, first-mile rail siding dispatch engine, and real-time transit telemetry. |
 | **SIH26023** | **Ministry of Coal / Indian Railways** | **Coal Rake Overload Sentinel** | Laser LiDAR profiling, conveyor weighbridge integration, axle-weight differential alerting, and automated penalty dockage calculation. |
+| **SIH26265** | **AICTE / Regulation Bureau** | **AICTE FDR Sentinel 360** | Streamlined security deposit & FDR verification portal, automated bank validity tracking, renewal escalations, and refund audit trail. |
+| **SIH26263** | **AICTE / Approval Bureau** | **APAAR StudentVerify 360** | APAAR ID-based student data management, tamper-proof academic identity verification, and multi-bureau compliance synchronization. |
+| **SIH26251** | **Ministry of Defence (MoD)** | **ArmyLogix 360** | Indian Army forward supply chain forecasting, extreme terrain consumption models, ammunition lifecycle alerts, and degraded-comms mesh sync. |
+| **SIH26237** | **Ministry of Defence (MoD)** | **CryptoVault 360** | Cryptographic attribution, zero-knowledge verifiable decryption provenance, and immutable audit logging for multi-recipient classified documents. |
 
 ---
 
@@ -358,8 +364,9 @@ sih2026/
 
 * **Official SIH Portal**: [https://sih.gov.in/](https://sih.gov.in/)
 * **Problem Statements Directory**: [https://sih.gov.in/sih2026PS](https://sih.gov.in/sih2026PS)
-* **Idea Submission Deadline**: **20 September 2026**
-* **College SPOC Verification Deadline**: **25 September 2026**
+* **Active Batch Submission Deadline**: **28 October 2026** *(AICTE & MoJS additions)*
+* **Initial Batches Submission Deadlines**: **20 September 2026** / **5 October 2026**
+* **College SPOC Verification Deadline**: Within 5 days of submission closing
 * **Grand Finale**: Announced by AICTE / Ministry of Education Innovation Cell (MIC)
 
 ---

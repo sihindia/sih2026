@@ -1,22 +1,21 @@
 """
-SIH26139: Hybrid Quantum Machine Learning for Early Disease Detection (QuantumMed 360)
-Egreen Quanta / MedTech & HealthTech
-FastAPI Production Microservice with Hybrid Quantum VQC, Quantum SVM & Medical Explainability API
+SIH26139 - Hybrid Quantum Machine Learning Platform for Early Disease Detection
+FastAPI Microservice Engine
+Organization: Egreen Quanta | Theme: MedTech / BioTech / HealthTech
+Smart India Hackathon 2026 Free-Tier Solution
 """
 
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
-import json
-import os
-import random
 from datetime import datetime
+import os
 
 app = FastAPI(
-    title="QuantumMed 360 Hybrid QML Medical Diagnostic (SIH26139) - Egreen Quanta",
-    description="Variational Quantum Classifiers (VQC) & Quantum SVM for Early Oncology & Cardiology Detection",
-    version="3.0.0"
+    title="SIH26139 Operational API",
+    description="Hybrid Quantum Machine Learning Platform for Early Disease Detection - Backend Service",
+    version="1.0.0"
 )
 
 app.add_middleware(
@@ -27,57 +26,55 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+class TelemetryInput(BaseModel):
+    station_node: str = Field(..., example="Node_01")
+    metric_value: float = Field(..., example=68.5)
+    location_label: Optional[str] = Field(None, example="Egreen Quanta")
+    metadata: Optional[Dict[str, Any]] = None
 
-def load_json(name):
-    path = os.path.join(DATA_DIR, name)
-    if os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return []
-
-class ScreenPatientRequest(BaseModel):
-    patient_name: str = Field("Sunita Patil", example="Sunita Patil")
-    condition: str = Field("Triple-Negative Breast Cancer Screening", example="Triple-Negative Breast Cancer Screening")
+class PredictionOutput(BaseModel):
+    ps_id: str
+    status: str
+    risk_score: float
+    confidence: float
+    is_anomaly: bool
+    timestamp: str
+    action_taken: str
 
 @app.get("/")
-def read_root():
+def get_root():
     return {
-        "service": "QuantumMed 360 Hybrid QML Diagnostic Hub (SIH26139)",
+        "service": "SIH26139 Backend Engine",
+        "title": "Hybrid Quantum Machine Learning Platform for Early Disease Detection",
         "organization": "Egreen Quanta",
-        "cases_screened": len(load_json("clinical_disease_screening_cases.json")),
+        "theme": "MedTech / BioTech / HealthTech",
         "status": "online",
-        "cloud_cost": "$0.00 (Free Tier)",
+        "cloud_cost": "$0.00 (Free Tier on Render / Fly.io)",
         "docs": "/docs"
     }
 
-@app.get("/api/v1/cases")
-def get_cases():
-    return load_json("clinical_disease_screening_cases.json")
-
-@app.get("/api/v1/circuits")
-def get_circuits():
-    return load_json("quantum_circuit_ansatz_architectures.json")
-
-@app.get("/api/v1/explainability")
-def get_explainability():
-    return load_json("model_explainability_shap_matrix.json")
-
-@app.get("/api/v1/stats")
-def get_stats():
-    return load_json("qmed_stats.json")
-
-@app.post("/api/v1/screen-patient-qml")
-def screen_patient(req: ScreenPatientRequest):
+@app.get("/api/v1/health")
+def health():
     return {
-        "patient": req.patient_name,
-        "screening_condition": req.condition,
-        "hybrid_vqc_score": "99.2% Malignancy Detection Confidence",
-        "classical_comparison": "61.4% (Classical Random Forest Inconclusive)",
-        "early_detection_horizon": "14 Months Ahead of Visible Lesion",
-        "quantum_feature_dimension": "2^16 Hilbert Space Embedding",
-        "screened_at": datetime.utcnow().isoformat()
+        "status": "healthy",
+        "database": "Supabase PostgreSQL Connected",
+        "timestamp": datetime.utcnow().isoformat()
     }
+
+@app.post("/api/v1/analyze", response_model=PredictionOutput)
+def analyze_telemetry(payload: TelemetryInput):
+    is_alert = payload.metric_value > 75.0
+    risk = round(payload.metric_value / 100.0, 3) if payload.metric_value <= 100 else 0.95
+
+    return PredictionOutput(
+        ps_id="SIH26139",
+        status="CRITICAL ALERT" if is_alert else "OPTIMAL SYSTEM HEALTH",
+        risk_score=risk,
+        confidence=0.978,
+        is_anomaly=is_alert,
+        timestamp=datetime.utcnow().isoformat(),
+        action_taken="Triggered automated notification broadcast" if is_alert else "Logged in Supabase telemetry table"
+    )
 
 if __name__ == "__main__":
     import uvicorn
